@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
 
 /* =========================================================
@@ -22,6 +21,7 @@
   --adms-green:#ff8eaf;
   --adms-gold:#ffd36e;
   --adms-purple:#b88cff;
+  --adms-carmin:#d64066;
   --adms-shadow-cyan:0 0 12px rgba(25,217,255,.65),0 0 30px rgba(25,217,255,.22);
   --adms-shadow-pink:0 0 14px rgba(255,142,175,.6),0 0 28px rgba(255,79,124,.18);
   width:820px;
@@ -42,9 +42,13 @@
 }
 
 .adms a:hover{
-  color:#d64066!important;
+  color:var(--adms-carmin)!important;
   text-shadow:none!important;
 }
+
+/* =========================
+   STRUCTURE GLOBALE
+========================= */
 
 .adms-box{
   position:relative;
@@ -52,8 +56,13 @@
   padding:20px;
   border:1px solid rgba(140,236,255,.22);
   border-radius:20px;
-  background:radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),linear-gradient(180deg,#15122e 0%,#16132d 55%,#111026 100%);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.03),0 0 0 1px rgba(5,10,25,.8),var(--adms-shadow-cyan);
+  background:
+    radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
+    linear-gradient(180deg,#15122e 0%,#16132d 55%,#111026 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.03),
+    0 0 0 1px rgba(5,10,25,.8),
+    var(--adms-shadow-cyan);
 }
 
 .adms-box:before{
@@ -71,12 +80,18 @@
   z-index:1;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 .adms-head{
   margin:0 0 14px;
   padding:22px 24px;
   border:1px solid rgba(25,217,255,.32);
   border-radius:16px;
-  background:linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif") center/cover;
+  background:
+    linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+    url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif") center/cover;
   box-shadow:inset 0 0 42px rgba(0,0,0,.65);
 }
 
@@ -110,7 +125,11 @@
   text-transform:uppercase;
   white-space:nowrap;
   letter-spacing:1px;
-  text-shadow:0 0 6px rgba(25,217,255,.95),0 0 18px rgba(25,217,255,.65),0 0 34px rgba(25,217,255,.35),3px 3px 0 rgba(255,79,124,.22);
+  text-shadow:
+    0 0 6px rgba(25,217,255,.95),
+    0 0 18px rgba(25,217,255,.65),
+    0 0 34px rgba(25,217,255,.35),
+    3px 3px 0 rgba(255,79,124,.22);
 }
 
 .adms-sub{
@@ -122,6 +141,10 @@
   text-transform:uppercase;
   letter-spacing:2px;
 }
+
+/* =========================
+   TEXTES INTRO
+========================= */
 
 .adms-important{
   margin:14px 0;
@@ -148,10 +171,15 @@
 .adms-texte a,
 .adms-important a,
 .adms-note a,
-.adms-bloc a{
+.adms-bloc a,
+.karma-help a{
   display:inline!important;
   white-space:normal!important;
 }
+
+/* =========================
+   TAGS
+========================= */
 
 .adms-tags{
   display:flex;
@@ -190,6 +218,10 @@
   margin:18px 0;
   background:linear-gradient(90deg,transparent,rgba(25,217,255,.55),transparent);
 }
+
+/* =========================
+   BLOCS PRINCIPAUX
+========================= */
 
 .adms-bloc{
   position:relative;
@@ -232,32 +264,37 @@
   letter-spacing:1px;
 }
 
+/* =========================
+   LISTES KARMA
+========================= */
+
 .karma-list{
-  display:grid;
-  gap:8px;
-  margin-top:10px;
+  display:grid!important;
+  gap:8px!important;
+  margin-top:10px!important;
 }
 
 .karma-item{
   --karma-accent:var(--adms-green);
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  gap:12px;
-  align-items:center;
-  padding:9px 11px;
-  border-radius:10px;
-  background:linear-gradient(90deg,rgba(255,142,175,.16) 0%,rgba(255,142,175,.06) 30%,rgba(255,255,255,.035) 100%);
-  border-left:3px solid var(--karma-accent);
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:12px!important;
+  align-items:center!important;
+  padding:9px 11px!important;
+  border:0!important;
+  border-left:3px solid var(--karma-accent)!important;
+  border-radius:10px!important;
+  background:linear-gradient(90deg,rgba(255,142,175,.16) 0%,rgba(255,142,175,.06) 30%,rgba(255,255,255,.035) 100%)!important;
 }
 
 .karma-item:has(.karma-price-big){
   --karma-accent:var(--adms-gold);
-  background:linear-gradient(90deg,rgba(255,211,110,.18) 0%,rgba(255,211,110,.07) 30%,rgba(255,255,255,.035) 100%);
+  background:linear-gradient(90deg,rgba(255,211,110,.18) 0%,rgba(255,211,110,.07) 30%,rgba(255,255,255,.035) 100%)!important;
 }
 
 .karma-item:has(.karma-price-note){
   --karma-accent:var(--adms-purple);
-  background:linear-gradient(90deg,rgba(184,140,255,.16) 0%,rgba(184,140,255,.06) 30%,rgba(255,255,255,.035) 100%);
+  background:linear-gradient(90deg,rgba(184,140,255,.16) 0%,rgba(184,140,255,.06) 30%,rgba(255,255,255,.035) 100%)!important;
 }
 
 .karma-item span:first-child{
@@ -320,6 +357,10 @@
   line-height:1.45;
   white-space:pre-line;
 }
+
+/* =========================
+   DOUBLE COMPTE
+========================= */
 
 .karma-double{
   margin-top:10px;
@@ -407,16 +448,11 @@
 }
 
 .karma-double-free{
-  border-left:3px solid #d64066;
+  border-left:3px solid var(--adms-carmin);
   background:linear-gradient(90deg,rgba(214,64,102,.18) 0%,rgba(214,64,102,.07) 35%,rgba(255,255,255,.025) 100%);
 }
 
-.karma-double-free .karma-double-value{
-  background:rgba(214,64,102,.18);
-  color:#ffd7e1;
-  border:1px solid rgba(214,64,102,.35);
-}
-
+.karma-double-free .karma-double-value,
 .karma-free-value{
   background:rgba(214,64,102,.18)!important;
   color:#ffd7e1!important;
@@ -432,6 +468,10 @@
   background:rgba(255,211,110,.18);
   color:var(--adms-gold);
 }
+
+/* =========================
+   NOTE / FOOTER
+========================= */
 
 .adms-note{
   margin:14px 0;
@@ -456,10 +496,14 @@
   letter-spacing:2px;
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media(max-width:560px){
   .karma-item{
-    grid-template-columns:1fr;
-    gap:6px;
+    grid-template-columns:1fr!important;
+    gap:6px!important;
   }
 
   .karma-price{

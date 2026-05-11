@@ -1,6 +1,552 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
- 
+
+/* =========================================================
+   CTXM — CONTEXTE LEMEGETON
+========================================================= */
+
+.ctxm,
+.ctxm *{
+  box-sizing:border-box;
+}
+
+.ctxm{
+  --ctxm-bg:#344c70;
+  --ctxm-white:#ecfbff;
+  --ctxm-text:#c8efff;
+  --ctxm-muted:#7ec7e5;
+  --ctxm-ink:#0d1022;
+
+  --ctxm-creation:#29d8ff;
+  --ctxm-creation-soft:#9ceeff;
+  --ctxm-vie:#ffd36e;
+  --ctxm-vie-soft:#ffe8a8;
+  --ctxm-erreur:#b88cff;
+  --ctxm-erreur-soft:#dcc6ff;
+  --ctxm-eden:#ff8eaf;
+  --ctxm-eden-soft:#ffc2d3;
+  --ctxm-serpent:#62d6b3;
+  --ctxm-serpent-soft:#b9f3e2;
+  --ctxm-punition:#d64066;
+  --ctxm-punition-soft:#ff9ab4;
+  --ctxm-royaumes:#ffae57;
+  --ctxm-royaumes-soft:#ffd19d;
+  --ctxm-aujourdhui:#9ea8ff;
+  --ctxm-aujourdhui-soft:#d2d7ff;
+
+  --ctxm-cyan:var(--ctxm-creation);
+  --ctxm-cyan-soft:var(--ctxm-creation-soft);
+  --ctxm-pink:var(--ctxm-eden);
+  --ctxm-gold:var(--ctxm-vie);
+  --ctxm-purple:var(--ctxm-erreur);
+  --ctxm-green:var(--ctxm-serpent);
+  --ctxm-red:var(--ctxm-punition);
+
+  --ctxm-shadow-cyan:0 0 12px rgba(41,216,255,.52),0 0 30px rgba(41,216,255,.18);
+  --ctxm-shadow-pink:0 0 14px rgba(255,142,175,.45),0 0 28px rgba(255,79,124,.14);
+
+  width:920px;
+  max-width:100%;
+  margin:30px auto;
+  padding:24px;
+  color:var(--ctxm-text);
+  background:var(--ctxm-bg);
+  font-family:"Rajdhani",Arial,sans-serif;
+  box-shadow:0 28px 80px rgba(0,0,0,.5);
+}
+
+.ctxm a{
+  color:var(--ctxm-creation-soft);
+  text-decoration:none;
+  font-weight:800;
+}
+
+.ctxm a:hover{
+  color:var(--ctxm-punition-soft)!important;
+}
+
+.ctxm-box{
+  position:relative;
+  overflow:hidden;
+  padding:20px;
+  border:1px solid rgba(156,238,255,.22);
+  border-radius:20px;
+  background:radial-gradient(circle at 50% 0%,rgba(41,216,255,.14),transparent 36%),linear-gradient(180deg,#15122e 0%,#16132d 55%,#111026 100%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.03),0 0 0 1px rgba(5,10,25,.8),var(--ctxm-shadow-cyan);
+}
+
+.ctxm-box:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.20;
+  background-image:radial-gradient(circle,rgba(156,238,255,.65) 1px,transparent 1.4px);
+  background-size:18px 18px;
+}
+
+.ctxm-inner{
+  position:relative;
+  z-index:1;
+}
+
+.ctxm-head{
+  margin:0 0 14px;
+  padding:22px 24px;
+  border:1px solid rgba(41,216,255,.32);
+  border-radius:16px;
+  background:linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif") center/cover;
+  box-shadow:inset 0 0 42px rgba(0,0,0,.65);
+}
+
+.ctxm-kicker{
+  display:inline-block;
+  color:var(--ctxm-eden-soft);
+  font:800 14px/1 "Barlow Condensed",Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  text-shadow:var(--ctxm-shadow-pink);
+}
+
+.ctxm-kicker:before,
+.ctxm-kicker:after{
+  content:"✦";
+  display:inline-block;
+  margin:0 8px;
+  color:var(--ctxm-creation);
+  text-shadow:var(--ctxm-shadow-cyan);
+}
+
+.ctxm-title{
+  display:block;
+  margin:4px 0 0;
+  overflow:hidden;
+  color:var(--ctxm-creation-soft);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:clamp(36px,7vw,68px);
+  font-weight:400;
+  line-height:.95;
+  text-transform:uppercase;
+  white-space:nowrap;
+  letter-spacing:1px;
+  text-shadow:0 0 6px rgba(41,216,255,.85),0 0 18px rgba(41,216,255,.46),0 0 34px rgba(41,216,255,.22),3px 3px 0 rgba(255,142,175,.18);
+}
+
+.ctxm-sub{
+  margin:-8px 0 0;
+  color:var(--ctxm-creation-soft);
+  font-size:15px;
+  font-weight:700;
+  line-height:1.3;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.ctxm-summary{
+  margin:14px 0;
+  padding:14px 16px;
+  border-left:3px solid var(--ctxm-eden);
+  border-radius:12px;
+  background:linear-gradient(90deg,rgba(255,142,175,.14),rgba(41,216,255,.045));
+  color:var(--ctxm-white);
+  font-size:16px;
+  line-height:1.6;
+  font-weight:700;
+  white-space:pre-line;
+}
+
+.ctxm-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:14px 0 18px;
+}
+
+.ctxm-nav a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:7px 12px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  color:var(--ctxm-white);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,color .2s ease;
+}
+
+.ctxm-nav a:hover{
+  transform:translateY(-1px);
+}
+
+.ctxm-tag-creation{
+  --tag:var(--ctxm-creation);
+  --tag-soft:var(--ctxm-creation-soft);
+  --tag-rgb:41,216,255;
+}
+
+.ctxm-tag-vie{
+  --tag:var(--ctxm-vie);
+  --tag-soft:var(--ctxm-vie-soft);
+  --tag-rgb:255,211,110;
+}
+
+.ctxm-tag-erreur{
+  --tag:var(--ctxm-erreur);
+  --tag-soft:var(--ctxm-erreur-soft);
+  --tag-rgb:184,140,255;
+}
+
+.ctxm-tag-eden{
+  --tag:var(--ctxm-eden);
+  --tag-soft:var(--ctxm-eden-soft);
+  --tag-rgb:255,142,175;
+}
+
+.ctxm-tag-serpent{
+  --tag:var(--ctxm-serpent);
+  --tag-soft:var(--ctxm-serpent-soft);
+  --tag-rgb:98,214,179;
+}
+
+.ctxm-tag-punition{
+  --tag:var(--ctxm-punition);
+  --tag-soft:var(--ctxm-punition-soft);
+  --tag-rgb:214,64,102;
+}
+
+.ctxm-tag-royaumes{
+  --tag:var(--ctxm-royaumes);
+  --tag-soft:var(--ctxm-royaumes-soft);
+  --tag-rgb:255,174,87;
+}
+
+.ctxm-tag-aujourdhui{
+  --tag:var(--ctxm-aujourdhui);
+  --tag-soft:var(--ctxm-aujourdhui-soft);
+  --tag-rgb:158,168,255;
+}
+
+.ctxm-nav a[class*="ctxm-tag-"]{
+  color:var(--tag-soft)!important;
+  border-color:rgba(var(--tag-rgb),.45)!important;
+  box-shadow:inset 3px 0 0 var(--tag),0 0 10px rgba(var(--tag-rgb),.14);
+}
+
+.ctxm-chapter{
+  --chap:var(--ctxm-creation);
+  --chap-soft:var(--ctxm-creation-soft);
+  --chap-rgb:41,216,255;
+  margin:16px 0;
+  overflow:hidden;
+  border:1px solid rgba(156,238,255,.20);
+  border-radius:16px;
+  background:rgba(22,19,45,.92);
+}
+
+#ctxm-creation{
+  --chap:var(--ctxm-creation);
+  --chap-soft:var(--ctxm-creation-soft);
+  --chap-rgb:41,216,255;
+}
+
+#ctxm-vie{
+  --chap:var(--ctxm-vie);
+  --chap-soft:var(--ctxm-vie-soft);
+  --chap-rgb:255,211,110;
+}
+
+#ctxm-erreur{
+  --chap:var(--ctxm-erreur);
+  --chap-soft:var(--ctxm-erreur-soft);
+  --chap-rgb:184,140,255;
+}
+
+#ctxm-homme-femme{
+  --chap:var(--ctxm-eden);
+  --chap-soft:var(--ctxm-eden-soft);
+  --chap-rgb:255,142,175;
+}
+
+#ctxm-serpent{
+  --chap:var(--ctxm-serpent);
+  --chap-soft:var(--ctxm-serpent-soft);
+  --chap-rgb:98,214,179;
+}
+
+#ctxm-punition{
+  --chap:var(--ctxm-punition);
+  --chap-soft:var(--ctxm-punition-soft);
+  --chap-rgb:214,64,102;
+}
+
+#ctxm-royaumes{
+  --chap:var(--ctxm-royaumes);
+  --chap-soft:var(--ctxm-royaumes-soft);
+  --chap-rgb:255,174,87;
+}
+
+#ctxm-today{
+  --chap:var(--ctxm-aujourdhui);
+  --chap-soft:var(--ctxm-aujourdhui-soft);
+  --chap-rgb:158,168,255;
+}
+
+.ctxm-chapter-head{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:12px;
+  align-items:center;
+  padding:12px 15px 11px;
+  border-bottom:1px solid rgba(var(--chap-rgb),.30);
+  background:linear-gradient(90deg,rgba(var(--chap-rgb),.20),rgba(var(--chap-rgb),.055));
+}
+
+.ctxm-num{
+  display:inline-block;
+  padding:7px 10px;
+  border-left:3px solid var(--chap);
+  border-radius:999px;
+  background:rgba(var(--chap-rgb),.09);
+  color:var(--chap-soft);
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.ctxm-chapter h2{
+  margin:0;
+  color:var(--chap-soft);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:30px;
+  font-weight:800;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-shadow:0 0 12px rgba(var(--chap-rgb),.22);
+}
+
+.ctxm-chapter-body{
+  padding:16px;
+}
+
+.ctxm-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:0 0 14px;
+}
+
+.ctxm-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:5px 9px;
+  border:1px solid rgba(var(--chap-rgb),.25);
+  border-left:3px solid var(--chap);
+  border-radius:999px;
+  background:rgba(var(--chap-rgb),.08);
+  color:var(--chap-soft);
+  font:900 11px/1 "Barlow Condensed",Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+}
+
+.ctxm-tag:before{
+  content:"✦";
+  font-size:9px;
+  opacity:.9;
+}
+
+.ctxm-text{
+  margin:0;
+  color:var(--ctxm-text);
+  font-size:16px;
+  font-weight:600;
+  line-height:1.68;
+  white-space:pre-line;
+}
+
+.ctxm-text p{
+  margin:0 0 12px;
+}
+
+.ctxm-text p:last-child{
+  margin-bottom:0;
+}
+
+.ctxm-hi,
+.ctxm-hi-key,
+.ctxm-hi-danger,
+.ctxm-hi-mystic,
+.ctxm-hi-love,
+.ctxm-hi-realm,
+.ctxm-hi-modern{
+  position:relative;
+  display:inline;
+  padding:0 3px;
+  border-radius:4px;
+  background:rgba(var(--chap-rgb),.08);
+  color:var(--chap-soft);
+  font-weight:900;
+  text-shadow:none;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+
+.ctxm-hi:after,
+.ctxm-hi-key:after,
+.ctxm-hi-danger:after,
+.ctxm-hi-mystic:after,
+.ctxm-hi-love:after,
+.ctxm-hi-realm:after,
+.ctxm-hi-modern:after{
+  content:"";
+  position:absolute;
+  left:3px;
+  right:3px;
+  bottom:-.12em;
+  height:2px;
+  z-index:0;
+  border-radius:999px;
+  opacity:.9;
+  background:linear-gradient(90deg,rgba(var(--chap-rgb),.88),rgba(var(--chap-rgb),.25));
+}
+
+.ctxm-quote{
+  margin:16px 0;
+  padding:18px 20px;
+  border-left:4px solid var(--ctxm-punition);
+  border-radius:14px;
+  background:linear-gradient(90deg,rgba(214,64,102,.18),rgba(158,168,255,.05));
+  color:var(--ctxm-white);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:27px;
+  font-weight:800;
+  line-height:1.12;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.ctxm-quote:before,
+.ctxm-quote:after{
+  content:"✦";
+  display:inline-block;
+  margin:0 10px;
+  color:var(--ctxm-eden);
+  text-shadow:var(--ctxm-shadow-pink);
+}
+
+.ctxm-duo{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:14px 0;
+}
+
+.ctxm-duo-card{
+  padding:14px 15px;
+  border-radius:14px;
+  border-left:3px solid var(--ctxm-vie);
+  background:linear-gradient(90deg,rgba(255,211,110,.12),rgba(255,255,255,.035));
+  color:var(--ctxm-text);
+  font-size:15.5px;
+  font-weight:600;
+  line-height:1.55;
+  white-space:pre-line;
+}
+
+.ctxm-duo-card:nth-child(2){
+  border-left-color:var(--ctxm-punition);
+  background:linear-gradient(90deg,rgba(214,64,102,.14),rgba(255,255,255,.035));
+}
+
+.ctxm-duo-card b{
+  display:block;
+  margin-bottom:6px;
+  color:var(--ctxm-white);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:22px;
+  font-weight:800;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.ctxm-final{
+  margin:16px 0 0;
+  padding:16px 18px;
+  border-left:3px solid var(--ctxm-aujourdhui);
+  border-radius:14px;
+  background:linear-gradient(90deg,rgba(158,168,255,.16),rgba(41,216,255,.06));
+  color:var(--ctxm-white);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:25px;
+  font-weight:800;
+  line-height:1.1;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-align:center;
+}
+
+.ctxm-footer{
+  margin-top:18px;
+  color:var(--ctxm-muted);
+  font-size:12px;
+  font-weight:700;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+@media(max-width:760px){
+  .ctxm{
+    padding:16px;
+  }
+
+  .ctxm-box{
+    padding:14px;
+  }
+
+  .ctxm-head{
+    padding:18px;
+  }
+
+  .ctxm-title{
+    font-size:42px;
+  }
+
+  .ctxm-sub{
+    margin-top:-4px;
+    font-size:13px;
+  }
+
+  .ctxm-chapter-head{
+    grid-template-columns:1fr;
+    gap:7px;
+  }
+
+  .ctxm-chapter h2{
+    font-size:26px;
+  }
+
+  .ctxm-duo{
+    grid-template-columns:1fr;
+  }
+
+  .ctxm-quote{
+    font-size:22px;
+  }
+} 
 /* =========================================================
    CHRO — CHRONOLOGIE LEMEGETON
 ========================================================= */

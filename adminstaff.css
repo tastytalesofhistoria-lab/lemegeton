@@ -1,5 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
+/* =========================================================
+   COMPLÉMENT — PAGE LOULOUPS
+   À ajouter au CSS .adms déjà existant
+========================================================= */
 
+.adms-major{
+  border-left-color:var(--adms-cyan)!important;
+  background:linear-gradient(90deg,rgba(25,217,255,.16) 0%,rgba(25,217,255,.06) 32%,rgba(255,255,255,.025) 100%)!important;
+}
+
+.adms-major .adms-bloc-titre{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:-2px 0 12px;
+  color:var(--adms-cyan-soft);
+  font-size:27px;
+  text-shadow:var(--adms-shadow-cyan);
+}
+
+.adms-major .adms-bloc-titre:before{
+  content:"✦";
+  color:var(--adms-pink);
+  font-size:18px;
+  text-shadow:var(--adms-shadow-pink);
+}
+
+.adms-type-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:14px 0;
+}
+
+.adms-type{
+  margin:0!important;
+  min-height:100%;
+}
+
+.adms-type .adms-bloc-titre{
+  color:var(--adms-gold);
+  font-size:20px;
+}
+
+.adms-type:nth-child(2) .adms-bloc-titre{
+  color:var(--adms-pink);
+}
+
+.adms-type:nth-child(3) .adms-bloc-titre{
+  color:var(--adms-green);
+}
+
+.adms-type:nth-child(4) .adms-bloc-titre{
+  color:var(--adms-purple);
+}
+
+.adms-bloc b{
+  color:var(--adms-white);
+}
+
+.adms-bloc i{
+  color:var(--adms-cyan-soft);
+}
+
+.adms-bloc u{
+  text-decoration-color:var(--adms-pink);
+  text-decoration-thickness:2px;
+  text-underline-offset:3px;
+}
+
+@media(max-width:760px){
+  .adms-type-grid{
+    grid-template-columns:1fr;
+  }
+
+  .adms-major .adms-bloc-titre{
+    font-size:23px;
+  }
+}
 .ent-mgl,
 .ent-mgl *{
   box-sizing:border-box;

@@ -1,5 +1,7 @@
  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
+
 .pwrm,
 .pwrm *{
   box-sizing:border-box;
@@ -168,6 +170,11 @@
   letter-spacing:1px;
 }
 
+.pwrm-empty{
+  color:rgba(236,251,255,.38);
+  text-shadow:none;
+}
+
 .pwrm-nav{
   display:flex;
   flex-wrap:wrap;
@@ -257,15 +264,12 @@
 }
 
 .pwrm-power{
-  display:grid;
-  grid-template-columns:92px minmax(0,1fr) auto;
-  gap:11px;
-  align-items:center;
+  display:block;
+  width:100%;
   padding:10px 12px;
   border-left:3px solid var(--cat);
   border-radius:12px;
   background:linear-gradient(90deg,rgba(var(--cat-rgb),.12),rgba(255,255,255,.035));
-  cursor:pointer;
   transition:background .22s ease,box-shadow .22s ease,transform .22s ease;
 }
 
@@ -274,30 +278,21 @@
   box-shadow:inset 0 0 0 1px rgba(var(--cat-rgb),.22),0 0 14px rgba(var(--cat-rgb),.12);
 }
 
-.pwrm-stars{
-  color:var(--pwrm-gold);
-  font-size:15px;
-  font-weight:900;
-  line-height:1;
-  letter-spacing:1px;
-  white-space:nowrap;
-  text-shadow:0 0 8px rgba(255,211,110,.22);
+.pwrm-power summary{
+  display:grid;
+  width:100%;
+  grid-template-columns:92px minmax(0,1fr) auto;
+  gap:11px;
+  align-items:center;
+  list-style:none;
+  cursor:pointer;
 }
 
-.pwrm-empty{
-  color:rgba(236,251,255,.38);
-  text-shadow:none;
+.pwrm-power summary::-webkit-details-marker{
+  display:none;
 }
 
-.pwrm-name{
-  min-width:0;
-  color:var(--pwrm-white);
-  font-size:15.5px;
-  font-weight:800;
-  line-height:1.25;
-}
-
-.pwrm-power:after{
+.pwrm-power summary:after{
   content:"+";
   justify-self:end;
   align-self:center;
@@ -310,39 +305,48 @@
   background:rgba(var(--cat-rgb),.16);
   color:var(--cat-soft);
   font:900 16px/1 "Rajdhani",Arial,sans-serif;
-  grid-column:3;
-  grid-row:1;
 }
 
-.pwrm-power.pwrm-open:after{
+.pwrm-power[open] summary:after{
   content:"−";
   background:rgba(var(--cat-rgb),.26);
 }
 
+.pwrm-stars{
+  color:var(--pwrm-gold);
+  font-size:15px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:1px;
+  white-space:nowrap;
+  text-shadow:0 0 8px rgba(255,211,110,.22);
+}
+
+.pwrm-name{
+  min-width:0;
+  color:var(--pwrm-white);
+  font-size:15.5px;
+  font-weight:800;
+  line-height:1.25;
+}
+
 .pwrm-desc{
-  display:none;
-  grid-column:1 / -1;
-  margin:6px 0 0;
+  display:block;
+  width:100%;
+  margin:9px 0 0;
   padding:0;
-  border:0;
-  border-radius:0;
-  background:transparent;
   color:var(--pwrm-text);
   font-size:14px;
   font-weight:600;
   line-height:1.55;
-  white-space:pre-line;
+  white-space:normal;
   opacity:.92;
-}
-
-.pwrm-open .pwrm-desc{
-  display:block;
   animation:pwrmDescOpen .18s ease;
 }
 
 @keyframes pwrmDescOpen{
   from{opacity:0;transform:translateY(-3px);}
-  to{opacity:1;transform:translateY(0);}
+  to{opacity:.92;transform:translateY(0);}
 }
 
 .pwrm-note{
@@ -380,8 +384,9 @@
   .pwrm-head{padding:18px;}
   .pwrm-title{font-size:42px;}
   .pwrm-sub{margin-top:-4px;font-size:13px;}
-  .pwrm-power{grid-template-columns:1fr;gap:5px;}
-  .pwrm-power:after{grid-column:1;grid-row:auto;justify-self:start;}
+  .pwrm-power summary{grid-template-columns:1fr;gap:5px;}
+  .pwrm-power summary:after{justify-self:start;}
+  .pwrm-desc{white-space:normal;}
 }
 /* =========================================================
    INTRM — INTRIGUE LEMEGETON

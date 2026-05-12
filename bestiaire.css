@@ -385,6 +385,193 @@
     font-size:23px;
   }
 }
+
+/* =========================================================
+   INTRM — COULEURS PAR SECTION / CARTES
+   À placer APRÈS le CSS intrigue existant
+========================================================= */
+
+/* Base couleur modulable */
+.intrm-card{
+  --intrm-card-color:var(--intrm-red);
+  --intrm-card-soft:var(--intrm-red-soft);
+  --intrm-card-rgb:214,64,102;
+
+  border-color:rgba(var(--intrm-card-rgb),.28);
+  background:
+    radial-gradient(circle at 0% 0%,rgba(var(--intrm-card-rgb),.10),transparent 38%),
+    rgba(22,19,45,.92);
+}
+
+/* 1 — événement déclencheur */
+.intrm-layout > .intrm-card:nth-of-type(1){
+  --intrm-card-color:var(--intrm-red);
+  --intrm-card-soft:var(--intrm-red-soft);
+  --intrm-card-rgb:214,64,102;
+}
+
+/* 2 — Paradis */
+.intrm-layout > .intrm-card:nth-of-type(2){
+  --intrm-card-color:var(--intrm-gold);
+  --intrm-card-soft:var(--intrm-gold-soft);
+  --intrm-card-rgb:255,211,110;
+}
+
+/* 3 — Primordiaux */
+.intrm-layout > .intrm-card:nth-of-type(3){
+  --intrm-card-color:var(--intrm-purple);
+  --intrm-card-soft:var(--intrm-purple-soft);
+  --intrm-card-rgb:184,140,255;
+}
+
+/* 4 — Enfer */
+.intrm-layout > .intrm-card:nth-of-type(4){
+  --intrm-card-color:var(--intrm-red);
+  --intrm-card-soft:var(--intrm-red-soft);
+  --intrm-card-rgb:214,64,102;
+}
+
+/* 5 — Terre */
+.intrm-layout > .intrm-card:nth-of-type(5){
+  --intrm-card-color:var(--intrm-green);
+  --intrm-card-soft:var(--intrm-green-soft);
+  --intrm-card-rgb:98,214,179;
+}
+
+/* Titres de cartes */
+.intrm-card-title{
+  color:var(--intrm-card-soft)!important;
+  border-bottom-color:rgba(var(--intrm-card-rgb),.32)!important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(var(--intrm-card-rgb),.22),
+      rgba(var(--intrm-card-rgb),.06)
+    )!important;
+  text-shadow:0 0 12px rgba(var(--intrm-card-rgb),.28);
+}
+
+.intrm-card-title:before{
+  color:var(--intrm-card-color)!important;
+}
+
+/* Cartes texte */
+.intrm-card-body{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--intrm-card-rgb),.035),
+      transparent 42%
+    );
+}
+
+/* Warning dans une carte : suit la couleur de la carte */
+.intrm-card .intrm-warning{
+  border-left-color:var(--intrm-card-color)!important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(var(--intrm-card-rgb),.15),
+      rgba(255,255,255,.035)
+    )!important;
+  color:var(--intrm-white);
+}
+
+/* Question finale */
+.intrm-question{
+  border-left-color:var(--intrm-cyan)!important;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(41,216,255,.16),transparent 42%),
+    linear-gradient(90deg,rgba(41,216,255,.16),rgba(184,140,255,.10),rgba(214,64,102,.10))!important;
+  color:var(--intrm-white);
+  box-shadow:0 0 18px rgba(41,216,255,.14);
+}
+
+/* Tags plus lisibles */
+.intrm-tag{
+  background:rgba(255,255,255,.045);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+.intrm-tag:nth-child(1){
+  border-left-color:var(--intrm-red);
+  color:var(--intrm-red-soft);
+  background:rgba(214,64,102,.10);
+}
+
+.intrm-tag:nth-child(2){
+  border-left-color:var(--intrm-gold);
+  color:var(--intrm-gold-soft);
+  background:rgba(255,211,110,.10);
+}
+
+.intrm-tag:nth-child(3){
+  border-left-color:var(--intrm-purple);
+  color:var(--intrm-purple-soft);
+  background:rgba(184,140,255,.10);
+}
+
+.intrm-tag:nth-child(4){
+  border-left-color:var(--intrm-cyan);
+  color:var(--intrm-cyan-soft);
+  background:rgba(41,216,255,.10);
+}
+
+.intrm-tag:nth-child(5){
+  border-left-color:var(--intrm-green);
+  color:var(--intrm-green-soft);
+  background:rgba(98,214,179,.10);
+}
+
+/* Highlights : couleurs assumées */
+.intrm-hi,
+.intrm-hi-red{
+  background:rgba(214,64,102,.13)!important;
+  color:var(--intrm-red-soft)!important;
+}
+
+.intrm-hi:after,
+.intrm-hi-red:after{
+  background:linear-gradient(90deg,rgba(214,64,102,.9),rgba(214,64,102,.25))!important;
+}
+
+.intrm-hi-gold{
+  background:rgba(255,211,110,.13)!important;
+  color:var(--intrm-gold-soft)!important;
+}
+
+.intrm-hi-gold:after{
+  background:linear-gradient(90deg,rgba(255,211,110,.9),rgba(255,211,110,.25))!important;
+}
+
+.intrm-hi-cyan{
+  background:rgba(41,216,255,.13)!important;
+  color:var(--intrm-cyan-soft)!important;
+}
+
+.intrm-hi-cyan:after{
+  background:linear-gradient(90deg,rgba(41,216,255,.9),rgba(41,216,255,.25))!important;
+}
+
+.intrm-hi-purple{
+  background:rgba(184,140,255,.13)!important;
+  color:var(--intrm-purple-soft)!important;
+}
+
+.intrm-hi-purple:after{
+  background:linear-gradient(90deg,rgba(184,140,255,.9),rgba(184,140,255,.25))!important;
+}
+
+/* Responsive propre */
+@media(max-width:760px){
+  .intrm-card-title{
+    font-size:24px;
+  }
+
+  .intrm-tag{
+    font-size:11px;
+  }
+}
 /* =========================================================
    CTXM — CONTEXTE LEMEGETON
 ========================================================= */

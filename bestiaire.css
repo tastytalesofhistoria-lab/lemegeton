@@ -1,6 +1,10 @@
 /* =========================================================
    INTRM — INTRIGUE LEMEGETON
 ========================================================= */
+/* =========================================================
+   INTRM — INTRIGUE LEMEGETON
+   Version nettoyée / doublons fusionnés / Forumactif
+========================================================= */
 
 .intrm,
 .intrm *{
@@ -43,14 +47,27 @@
   font-weight:800;
 }
 
+.intrm a:hover{
+  color:var(--intrm-red-soft)!important;
+}
+
+/* =========================================================
+   STRUCTURE
+========================================================= */
+
 .intrm-box{
   position:relative;
   overflow:hidden;
   padding:20px;
   border:1px solid rgba(156,238,255,.22);
   border-radius:20px;
-  background:radial-gradient(circle at 50% 0%,rgba(214,64,102,.16),transparent 34%),linear-gradient(180deg,#15122e 0%,#16132d 55%,#111026 100%);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.03),0 0 0 1px rgba(5,10,25,.8),var(--intrm-shadow-cyan);
+  background:
+    radial-gradient(circle at 50% 0%,rgba(214,64,102,.16),transparent 34%),
+    linear-gradient(180deg,#15122e 0%,#16132d 55%,#111026 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.03),
+    0 0 0 1px rgba(5,10,25,.8),
+    var(--intrm-shadow-cyan);
 }
 
 .intrm-box:before{
@@ -68,12 +85,18 @@
   z-index:1;
 }
 
+/* =========================================================
+   HEADER
+========================================================= */
+
 .intrm-head{
   margin:0 0 14px;
   padding:22px 24px;
   border:1px solid rgba(214,64,102,.32);
   border-radius:16px;
-  background:linear-gradient(90deg,rgba(5,8,22,.94),rgba(39,7,18,.72)),url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif") center/cover;
+  background:
+    linear-gradient(90deg,rgba(5,8,22,.94),rgba(39,7,18,.72)),
+    url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif") center/cover;
   box-shadow:inset 0 0 42px rgba(0,0,0,.68);
 }
 
@@ -104,7 +127,11 @@
   line-height:.95;
   text-transform:uppercase;
   letter-spacing:1px;
-  text-shadow:0 0 6px rgba(214,64,102,.85),0 0 18px rgba(214,64,102,.46),0 0 34px rgba(214,64,102,.22),3px 3px 0 rgba(255,211,110,.16);
+  text-shadow:
+    0 0 6px rgba(214,64,102,.85),
+    0 0 18px rgba(214,64,102,.46),
+    0 0 34px rgba(214,64,102,.22),
+    3px 3px 0 rgba(255,211,110,.16);
 }
 
 .intrm-sub{
@@ -116,6 +143,10 @@
   text-transform:uppercase;
   letter-spacing:2px;
 }
+
+/* =========================================================
+   RÉSUMÉ + TAGS
+========================================================= */
 
 .intrm-summary{
   margin:14px 0;
@@ -177,6 +208,10 @@
   color:var(--intrm-green-soft);
 }
 
+/* =========================================================
+   CARTES
+========================================================= */
+
 .intrm-layout{
   display:grid;
   grid-template-columns:minmax(0,1fr);
@@ -234,35 +269,29 @@
   margin-bottom:0;
 }
 
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
 .intrm-hi,
 .intrm-hi-red,
 .intrm-hi-gold,
 .intrm-hi-cyan,
-.intrm-hi-purple{
+.intrm-hi-purple,
+.intrm-hi-green{
   position:relative;
   display:inline;
   padding:0 3px;
   border-radius:4px;
-  background:rgba(214,64,102,.08);
-  color:var(--intrm-red-soft);
   font-weight:900;
   box-decoration-break:clone;
   -webkit-box-decoration-break:clone;
 }
 
-.intrm-hi:after,
-.intrm-hi-red:after,
-.intrm-hi-gold:after,
-.intrm-hi-cyan:after,
-.intrm-hi-purple:after{
-  content:"";
-  position:absolute;
-  left:3px;
-  right:3px;
-  bottom:-.12em;
-  height:2px;
-  border-radius:999px;
-  background:linear-gradient(90deg,rgba(214,64,102,.88),rgba(214,64,102,.25));
+.intrm-hi,
+.intrm-hi-red{
+  background:rgba(214,64,102,.08);
+  color:var(--intrm-red-soft);
 }
 
 .intrm-hi-gold{
@@ -270,17 +299,9 @@
   color:var(--intrm-gold-soft);
 }
 
-.intrm-hi-gold:after{
-  background:linear-gradient(90deg,rgba(255,211,110,.88),rgba(255,211,110,.25));
-}
-
 .intrm-hi-cyan{
   background:rgba(41,216,255,.08);
   color:var(--intrm-cyan-soft);
-}
-
-.intrm-hi-cyan:after{
-  background:linear-gradient(90deg,rgba(41,216,255,.88),rgba(41,216,255,.25));
 }
 
 .intrm-hi-purple{
@@ -288,9 +309,50 @@
   color:var(--intrm-purple-soft);
 }
 
+.intrm-hi-green{
+  background:rgba(98,214,179,.08);
+  color:var(--intrm-green-soft);
+}
+
+.intrm-hi:after,
+.intrm-hi-red:after,
+.intrm-hi-gold:after,
+.intrm-hi-cyan:after,
+.intrm-hi-purple:after,
+.intrm-hi-green:after{
+  content:"";
+  position:absolute;
+  left:3px;
+  right:3px;
+  bottom:-.12em;
+  height:2px;
+  border-radius:999px;
+}
+
+.intrm-hi:after,
+.intrm-hi-red:after{
+  background:linear-gradient(90deg,rgba(214,64,102,.88),rgba(214,64,102,.25));
+}
+
+.intrm-hi-gold:after{
+  background:linear-gradient(90deg,rgba(255,211,110,.88),rgba(255,211,110,.25));
+}
+
+.intrm-hi-cyan:after{
+  background:linear-gradient(90deg,rgba(41,216,255,.88),rgba(41,216,255,.25));
+}
+
 .intrm-hi-purple:after{
   background:linear-gradient(90deg,rgba(184,140,255,.88),rgba(184,140,255,.25));
 }
+
+.intrm-hi-green:after{
+  background:linear-gradient(90deg,rgba(98,214,179,.88),rgba(98,214,179,.25));
+}
+
+/* =========================================================
+   VIDÉO / WARNING
+========================================================= */
 
 .intrm-video{
   margin:16px auto;
@@ -329,6 +391,10 @@
   line-height:1.55;
 }
 
+/* =========================================================
+   QUESTION SIMPLE — ANCIEN FORMAT
+========================================================= */
+
 .intrm-question{
   margin:16px 0 0;
   padding:17px 18px;
@@ -345,6 +411,126 @@
   letter-spacing:1px;
 }
 
+/* =========================================================
+   FINAL MENACE — THE FIRST OMEN
+========================================================= */
+
+.intrm-final-call{
+  margin:16px 0 0;
+  overflow:hidden;
+  border:1px solid rgba(214,64,102,.34);
+  border-radius:16px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(214,64,102,.20),transparent 44%),
+    linear-gradient(180deg,rgba(22,19,45,.98),rgba(8,8,22,.98));
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.03),
+    0 0 24px rgba(214,64,102,.18);
+}
+
+.intrm-final-top{
+  padding:16px 18px;
+  border-bottom:1px solid rgba(214,64,102,.28);
+  background:linear-gradient(90deg,rgba(214,64,102,.18),rgba(255,211,110,.07),rgba(41,216,255,.06));
+  color:var(--intrm-white);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:27px;
+  font-weight:800;
+  line-height:1.12;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.intrm-final-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  padding:14px;
+}
+
+.intrm-final-choice{
+  padding:14px 15px;
+  border-radius:13px;
+  color:var(--intrm-text);
+  font-size:15.5px;
+  font-weight:700;
+  line-height:1.5;
+}
+
+.intrm-final-choice:nth-child(1){
+  border-left:3px solid var(--intrm-red);
+  background:linear-gradient(90deg,rgba(214,64,102,.16),rgba(255,255,255,.035));
+}
+
+.intrm-final-choice:nth-child(2){
+  border-left:3px solid var(--intrm-cyan);
+  background:linear-gradient(90deg,rgba(41,216,255,.14),rgba(255,255,255,.035));
+}
+
+.intrm-final-choice b{
+  display:block;
+  margin-bottom:6px;
+  color:var(--intrm-white);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:23px;
+  font-weight:800;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.intrm-final-voice{
+  margin:0 14px 14px;
+  padding:15px 16px;
+  border-left:3px solid var(--intrm-gold);
+  border-radius:13px;
+  background:linear-gradient(90deg,rgba(255,211,110,.13),rgba(184,140,255,.06));
+  color:var(--intrm-white);
+  font-size:16px;
+  font-weight:800;
+  line-height:1.55;
+  text-align:center;
+}
+
+.intrm-omen{
+  display:block;
+  margin-top:12px;
+  padding:16px 18px;
+  border-radius:14px;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(214,64,102,.28),transparent 55%),
+    linear-gradient(90deg,rgba(214,64,102,.24),rgba(8,8,22,.92),rgba(214,64,102,.24));
+  color:var(--intrm-red-soft);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:clamp(32px,6vw,58px);
+  font-weight:400;
+  line-height:.95;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-shadow:
+    0 0 8px rgba(214,64,102,.95),
+    0 0 22px rgba(214,64,102,.62),
+    0 0 42px rgba(214,64,102,.32),
+    3px 3px 0 rgba(0,0,0,.45);
+}
+
+.intrm-omen-sub{
+  display:block;
+  margin-top:8px;
+  color:var(--intrm-gold-soft);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
 .intrm-footer{
   margin-top:18px;
   color:var(--intrm-muted);
@@ -354,6 +540,10 @@
   text-transform:uppercase;
   letter-spacing:2px;
 }
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:760px){
   .intrm{
@@ -384,8 +574,15 @@
   .intrm-question{
     font-size:23px;
   }
-}
 
+  .intrm-final-grid{
+    grid-template-columns:1fr;
+  }
+
+  .intrm-final-top{
+    font-size:23px;
+  }
+}
 /* =========================================================
    INTRM — COULEURS PAR SECTION / CARTES
    À placer APRÈS le CSS intrigue existant

@@ -1,6 +1,128 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800;900&family=Monoton&display=swap');
  
 /* =========================================================
+   PREL — PRÉ-LIENS LEMEGETON
+   Optimisé Forumactif ModernBB
+========================================================= */
+
+.prel,.prel *{box-sizing:border-box;}
+
+.prel{
+--prel-bg:#314d77;
+--prel-panel:#183861;
+--prel-panel-2:#132d53;
+--prel-panel-3:#0c1b35;
+--prel-soft:rgba(14,29,55,.94);
+--prel-white:#ecfbff;
+--prel-text:#c8efff;
+--prel-muted:#7ec7e5;
+--prel-cyan:#19d9ff;
+--prel-cyan-soft:#8cecff;
+--prel-pink:#ff4f7c;
+--prel-pink-soft:#ffb0c3;
+--prel-gold:#ffd36e;
+--prel-gold-soft:#ffe39a;
+--prel-red:#d64066;
+--prel-red-soft:#ff8eaf;
+--prel-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+width:920px;
+max-width:100%;
+margin:30px auto;
+padding:24px;
+color:var(--prel-text);
+background:var(--prel-bg);
+font-family:"Rajdhani",Arial,sans-serif;
+box-shadow:0 28px 80px rgba(0,0,0,.50);
+}
+
+.prel a{color:var(--prel-cyan-soft);text-decoration:none;font-weight:900;}
+.prel a:hover{color:var(--prel-pink-soft)!important;}
+
+.prel-box{position:relative;overflow:hidden;padding:20px;border:1px solid rgba(140,236,255,.22);border-radius:22px;background:radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 34%),linear-gradient(180deg,var(--prel-panel) 0%,var(--prel-panel-2) 42%,var(--prel-panel-3) 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.03),0 0 0 1px rgba(5,10,25,.80),0 0 18px rgba(44,196,255,.26),0 0 42px rgba(44,196,255,.16);}
+.prel-box:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(circle,rgba(140,236,255,.65) 1px,transparent 1.4px);background-size:18px 18px;}
+.prel-box:after{content:"";position:absolute;inset:12px;pointer-events:none;border:1px solid rgba(25,217,255,.18);border-radius:18px;box-shadow:0 0 18px rgba(25,217,255,.12);}
+.prel-inner{position:relative;z-index:1;display:grid;gap:14px;}
+
+.prel-head{padding:22px 24px;border:1px solid rgba(255,211,110,.42);border-radius:16px;background:linear-gradient(90deg,rgba(15,2,18,.94),rgba(7,16,39,.74)),var(--prel-head-img) center/cover;box-shadow:inset 0 0 42px rgba(0,0,0,.68),0 0 20px rgba(255,211,110,.20);}
+.prel-kicker{display:inline-block;color:var(--prel-gold);font:900 14px/1 "Barlow Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:2px;text-shadow:0 0 14px rgba(255,211,110,.70),0 0 28px rgba(255,211,110,.22);}
+.prel-kicker:before,.prel-kicker:after{content:"✦";display:inline-block;margin:0 8px;color:var(--prel-cyan);text-shadow:0 0 12px rgba(25,217,255,.75),0 0 30px rgba(25,217,255,.25);}
+.prel-title{display:block;margin:4px 0 0;color:#ffe39a;font-family:"Monoton",Arial,sans-serif;font-size:clamp(30px,5.8vw,58px);font-weight:400;line-height:.96;text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 6px rgba(255,227,154,.95),0 0 18px rgba(255,211,110,.65),0 0 34px rgba(255,211,110,.35),3px 3px 0 rgba(25,217,255,.18);}
+.prel-sub{margin:2px 0 0;color:var(--prel-cyan-soft);font-size:15px;font-weight:800;line-height:1.3;text-transform:uppercase;letter-spacing:2px;}
+
+.prel-section{--sect:var(--prel-cyan);--sect-soft:var(--prel-cyan-soft);--sect-rgb:25,217,255;overflow:hidden;border:1px solid rgba(var(--sect-rgb),.24);border-radius:16px;background:var(--prel-soft);}
+.prel-quoi{--sect:var(--prel-pink);--sect-soft:var(--prel-pink-soft);--sect-rgb:255,79,124;}
+.prel-comment{--sect:var(--prel-cyan);--sect-soft:var(--prel-cyan-soft);--sect-rgb:25,217,255;}
+.prel-modele{--sect:var(--prel-gold);--sect-soft:var(--prel-gold-soft);--sect-rgb:255,211,110;}
+
+.prel-section-title{margin:0;padding:12px 15px 11px;border-bottom:1px solid rgba(var(--sect-rgb),.30);color:var(--sect-soft);background:linear-gradient(90deg,rgba(var(--sect-rgb),.22),rgba(var(--sect-rgb),.06));font-family:"Barlow Condensed",Arial,sans-serif;font-size:30px;font-weight:900;line-height:1;text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 12px rgba(var(--sect-rgb),.34);}
+.prel-content{padding:16px;}
+.prel-text{margin:0;color:var(--prel-text);font-size:15.5px;font-weight:700;line-height:1.6;}
+.prel-text+.prel-text{margin-top:10px;}
+.prel-text b{color:var(--sect-soft);text-shadow:0 0 8px rgba(var(--sect-rgb),.25);}
+
+.prel-steps{display:grid;gap:9px;}
+.prel-step{display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:start;padding:11px 12px;border:1px solid rgba(var(--sect-rgb),.18);border-radius:13px;background:rgba(255,255,255,.04);}
+.prel-step-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-left:3px solid var(--sect);border-radius:999px;background:rgba(var(--sect-rgb),.12);color:var(--sect-soft);font:900 17px/1 "Barlow Condensed",Arial,sans-serif;box-shadow:0 0 10px rgba(var(--sect-rgb),.18);}
+.prel-step-text{color:var(--prel-white);font-size:14.8px;font-weight:800;line-height:1.45;}
+.prel-example{display:block;margin-top:6px;padding-left:12px;border-left:3px solid rgba(var(--sect-rgb),.35);color:var(--prel-muted);font-size:13px;font-style:italic;font-weight:800;}
+
+.prel-codebox{margin:0;padding:14px;border:1px solid rgba(255,211,110,.24);border-left:4px solid var(--prel-gold);border-radius:14px;background:rgba(8,13,32,.74);color:var(--prel-white);font:700 13px/1.45 Consolas,"Courier New",monospace;white-space:pre-wrap;overflow:auto;box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 0 14px rgba(255,211,110,.08);}
+.prel-footer{color:var(--prel-muted);font-size:12px;font-weight:900;text-align:center;text-transform:uppercase;letter-spacing:2px;}
+
+/* =========================================================
+   MODÈLE RÉUTILISABLE POUR LES SUJETS DE PRÉ-LIENS
+========================================================= */
+
+.plcard,.plcard *{box-sizing:border-box;}
+
+.plcard{
+--pl-bg:#314d77;
+--pl-panel:#183861;
+--pl-panel-2:#132d53;
+--pl-panel-3:#0c1b35;
+--pl-white:#ecfbff;
+--pl-text:#c8efff;
+--pl-cyan:#19d9ff;
+--pl-cyan-soft:#8cecff;
+--pl-gold:#ffd36e;
+--pl-gold-soft:#ffe39a;
+--pl-green:#a7ff3f;
+--pl-green-soft:#cfff9a;
+--pl-red:#d64066;
+--pl-red-soft:#ff8eaf;
+--pl-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+width:760px;
+max-width:100%;
+margin:25px auto;
+padding:20px;
+color:var(--pl-text);
+background:var(--pl-bg);
+font-family:"Rajdhani",Arial,sans-serif;
+box-shadow:0 24px 60px rgba(0,0,0,.45);
+}
+
+.plcard-box{position:relative;overflow:hidden;padding:18px;border:1px solid rgba(140,236,255,.22);border-radius:20px;background:radial-gradient(circle at 50% 0%,rgba(25,217,255,.12),transparent 34%),linear-gradient(180deg,var(--pl-panel) 0%,var(--pl-panel-2) 45%,var(--pl-panel-3) 100%);}
+.plcard-head{margin:0 0 14px;padding:18px 20px;border:1px solid rgba(255,211,110,.36);border-radius:15px;background:linear-gradient(90deg,rgba(15,2,18,.94),rgba(7,16,39,.74)),var(--pl-head-img) center/cover;box-shadow:inset 0 0 36px rgba(0,0,0,.65);}
+.plcard-title{display:block;color:var(--pl-gold-soft);font-family:"Monoton",Arial,sans-serif;font-size:clamp(28px,5vw,46px);font-weight:400;line-height:.98;text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 6px rgba(255,227,154,.95),0 0 18px rgba(255,211,110,.45),3px 3px 0 rgba(25,217,255,.18);}
+.plcard-sub{display:block;margin-top:4px;color:var(--pl-cyan-soft);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:1.6px;}
+.plcard-list{display:grid;gap:12px;}
+
+.plink{--stat:var(--pl-green);--stat-soft:var(--pl-green-soft);--stat-rgb:167,255,63;padding:14px;border:1px solid rgba(var(--stat-rgb),.24);border-left:4px solid var(--stat);border-radius:15px;background:radial-gradient(circle at top left,rgba(var(--stat-rgb),.15),transparent 36%),rgba(14,29,55,.90);box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);}
+.plink.pris{--stat:var(--pl-red);--stat-soft:var(--pl-red-soft);--stat-rgb:214,64,102;}
+.plink-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px;}
+.plink-status{display:inline-flex;align-items:center;justify-content:center;min-height:28px;padding:6px 10px;border:1px solid rgba(var(--stat-rgb),.34);border-radius:999px;background:rgba(var(--stat-rgb),.12);color:var(--stat-soft);font:900 13px/1 "Barlow Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;box-shadow:inset 3px 0 0 var(--stat),0 0 10px rgba(var(--stat-rgb),.16);}
+.plink-name{color:var(--pl-white);font-family:"Barlow Condensed",Arial,sans-serif;font-size:25px;font-weight:900;line-height:1;text-transform:uppercase;letter-spacing:.8px;}
+.plink-text{margin:0;color:var(--pl-text);font-size:15px;font-weight:700;line-height:1.55;}
+.plink-text em{color:var(--stat-soft);font-style:normal;font-weight:900;text-transform:uppercase;letter-spacing:.5px;}
+
+@media(max-width:760px){
+.prel,.plcard{padding:16px;}
+.prel-box,.plcard-box{padding:14px;}
+.prel-title,.plcard-title{font-size:34px;}
+.prel-step{grid-template-columns:1fr;}
+.prel-step-num{width:max-content;padding:0 10px;}
+}
+/* =========================================================
    DOSPNJ — DOSSIER PNJ LEMEGETON
    Style dossier / archives / fiche consultable
 ========================================================= */

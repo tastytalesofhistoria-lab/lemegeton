@@ -42,14 +42,14 @@
 .qeel-wrapper{
   position:relative;
   display:grid;
-  grid-template-columns:450px 300px 200px;
+  grid-template-columns:minmax(0,1.1fr) minmax(250px,300px) 170px;
   align-items:stretch;
   justify-content:center;
-  gap:22px;
+  gap:14px;
   width:100%;
-  max-width:1200px;
+  max-width:1000px;
   margin:30px auto;
-  padding:24px;
+  padding:18px;
   box-sizing:border-box;
   border:1px solid rgba(25,217,255,.28);
   border-radius:20px;
@@ -89,23 +89,19 @@
 .who-image-2{
   position:relative;
   z-index:1;
-}
-
-.qeel-left{
-  width:450px;
   min-width:0;
 }
 
+.qeel-left,
 .qeel-right{
-  width:300px;
-  min-width:0;
+  width:auto;
 }
 
 /* ===================== STATS ===================== */
 
 .who-stats{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:12px;
   width:100%;
   margin:0 0 18px;
@@ -116,6 +112,7 @@
   display:flex;
   align-items:center;
   justify-content:center;
+  min-width:0;
   min-height:58px;
   padding:8px 12px;
   box-sizing:border-box;
@@ -149,7 +146,7 @@
 .who-box.online{
   color:var(--lem-cyan-soft);
   font-family:"Monoton",sans-serif;
-  font-size:22px;
+  font-size:20px;
   letter-spacing:1px;
   text-shadow:
     0 0 4px rgba(236,251,255,.95),
@@ -298,7 +295,7 @@
 .online-users{
   position:relative;
   float:left;
-  width:50%;
+  width:calc(60% - 10px);
   height:235px;
   margin:0 0 0 10px;
   padding:14px;
@@ -348,9 +345,9 @@
 .who-groups{
   position:relative;
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  width:300px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  width:100%;
   height:400px;
   margin:0 auto;
   align-content:start;
@@ -365,6 +362,7 @@
   align-items:center;
   justify-content:flex-end;
   width:100%;
+  min-width:0;
   height:39px;
   padding:0 10px;
   box-sizing:border-box;
@@ -375,7 +373,7 @@
   background-position:center;
   color:var(--lem-white);
   font-family:"Rajdhani",Arial,sans-serif;
-  font-size:12px;
+  font-size:11px;
   font-weight:900;
   line-height:1;
   text-align:right;
@@ -415,6 +413,7 @@
 }
 
 .grp span{
+  flex-shrink:0;
   margin-left:6px;
   color:var(--lem-cyan);
   font-weight:900;
@@ -478,9 +477,9 @@
 /* ===================== IMAGE QEEL ===================== */
 
 .who-image-2{
-  width:200px;
+  width:170px;
   height:400px;
-  flex:0 0 200px;
+  flex:0 0 170px;
   border:1px solid rgba(25,217,255,.30);
   border-radius:14px;
   background:
@@ -498,12 +497,13 @@
   align-items:center;
   gap:18px;
   width:100%;
-  max-width:1200px;
+  max-width:1000px;
   margin:30px auto 0;
   color:var(--lem-cyan-soft);
   font-family:"Bahianita",cursive;
   text-align:center;
   font-size:40px;
+  box-sizing:border-box;
 }
 
 .dialogue-box{
@@ -848,6 +848,7 @@
   .qeel-wrapper{
     grid-template-columns:1fr;
     justify-items:center;
+    max-width:100%;
   }
 
   .qeel-left,
@@ -875,6 +876,7 @@
 
   .qeel-online-custom{
     flex-direction:column;
+    max-width:100%;
   }
 
   #speaker-avatar{

@@ -367,16 +367,39 @@
 
 #newest_user a{
   display:inline-block;
-  color:var(--lem-cyan-soft);
+  margin:4px 0;
+  padding:3px 10px 4px;
+  border:1px solid rgba(25,217,255,.35);
+  border-radius:999px;
+  background:
+    linear-gradient(180deg,rgba(7,10,26,.92),rgba(12,16,36,.96));
+  color:inherit;
   text-decoration:none;
-  font-size:26px;
-  text-shadow:0 0 10px rgba(25,217,255,.55);
+  font-size:24px;
+  line-height:1;
+  text-shadow:
+    0 0 2px #ffffff,
+    0 0 6px rgba(25,217,255,.75),
+    0 0 12px rgba(25,217,255,.45);
+  box-shadow:
+    inset 0 0 10px rgba(25,217,255,.10),
+    0 0 10px rgba(25,217,255,.18);
+  -webkit-text-stroke:.35px rgba(236,251,255,.75);
 }
 
 #newest_user a:hover{
-  color:var(--lem-white);
+  color:var(--lem-white) !important;
+  border-color:rgba(255,211,110,.55);
+  box-shadow:
+    inset 0 0 10px rgba(255,211,110,.12),
+    0 0 12px rgba(255,211,110,.28);
 }
 
+#newest_user a span,
+#newest_user a strong,
+#newest_user a font{
+  color:inherit !important;
+}
 /* ===================== PRÉSENCES ===================== */
 
 .online-users{

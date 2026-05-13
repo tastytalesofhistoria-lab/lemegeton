@@ -52,7 +52,19 @@ font-weight:900;
 .qst a:hover{
 color:var(--qst-pink-soft)!important;
 }
-
+.qst-npc-img{
+float:left;
+width:100px!important;
+height:120px!important;
+object-fit:contain;
+object-position:center center;
+margin:0 12px 8px 0;
+padding:5px;
+border:1px solid rgba(var(--sect-rgb),.28);
+border-radius:12px;
+background:radial-gradient(circle at 50% 18%,rgba(var(--sect-rgb),.28),rgba(9,11,24,.88) 100%);
+box-shadow:0 0 14px rgba(var(--sect-rgb),.18);
+}
 .qst-box{
 position:relative;
 overflow:hidden;

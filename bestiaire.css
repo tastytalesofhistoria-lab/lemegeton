@@ -63,6 +63,21 @@ opacity:.18;
 background-image:radial-gradient(circle,rgba(140,236,255,.65) 1px,transparent 1.4px);
 background-size:18px 18px;
 }
+.pnjd-example-code{
+display:block;
+width:100%;
+min-height:230px;
+margin-top:10px;
+padding:10px;
+border:1px solid rgba(255,211,110,.22);
+border-radius:12px;
+background:rgba(13,16,36,.72);
+color:var(--pnjd-white);
+font:700 13px/1.45 Consolas,"Courier New",monospace;
+white-space:pre-wrap;
+overflow:auto;
+resize:vertical;
+}
 
 .pnjd-box:after{
 content:"";

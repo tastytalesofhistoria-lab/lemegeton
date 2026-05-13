@@ -422,28 +422,44 @@ margin-top:10px;
 ========================= */
 
 .pnjd-list{
-margin:10px 0 0;
-padding:0;
-list-style:none;
+display:grid;
+gap:7px;
+margin:10px 0 0!important;
+padding:0!important;
+list-style:none!important;
 }
 
-.pnjd-list li{
+.pnjd-list li,
+.pnjd-list-item{
 position:relative;
-margin:7px 0;
-padding-left:22px;
+display:block;
+margin:0!important;
+padding:0 0 0 22px!important;
 color:var(--pnjd-white);
 font-size:15px;
 font-weight:800;
 line-height:1.38;
+list-style:none!important;
 }
 
-.pnjd-list li:before{
+.pnjd-list li::marker{
+content:""!important;
+font-size:0!important;
+}
+
+.pnjd-list li:before,
+.pnjd-list-item:before{
 content:"⛧";
 position:absolute;
 left:0;
 top:0;
 color:var(--card-soft,var(--sect-soft));
 text-shadow:0 0 8px rgba(var(--card-rgb,var(--sect-rgb)),.78);
+}
+
+.pnjd-list li:after,
+.pnjd-list-item:after{
+content:none!important;
 }
 
 .pnjd-links{
@@ -467,10 +483,11 @@ font-weight:900;
 text-transform:uppercase;
 letter-spacing:.5px;
 text-decoration:none!important;
+list-style:none!important;
 }
 
 .pnjd-link:before{
-content:"\2665";
+content:"♥";
 margin-right:7px;
 color:var(--sect-soft);
 text-shadow:0 0 8px rgba(var(--sect-rgb),.75);

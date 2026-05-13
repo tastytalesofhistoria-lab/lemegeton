@@ -477,32 +477,51 @@
 /* ===================== IMAGE QEEL ===================== */
 
 .who-image-2{
+  position:relative;
   width:170px;
   height:400px;
   flex:0 0 170px;
+  overflow:hidden;
   border:1px solid rgba(25,217,255,.30);
   border-radius:14px;
-  background:
-    linear-gradient(180deg,rgba(5,10,28,.04),rgba(5,10,28,.52)),
-    url("https://i.redd.it/vcu7rt9fa3gc1.gif") center/cover no-repeat;
+  background:#080d20;
   box-shadow:
     inset 0 0 36px rgba(0,0,0,.48),
     0 0 18px rgba(25,217,255,.25);
-  animation:qeelImageLoop 14s infinite steps(1,end);
 }
 
-@keyframes qeelImageLoop{
-  0%,49.99%{
-    background:
-      linear-gradient(180deg,rgba(5,10,28,.04),rgba(5,10,28,.52)),
-      url("https://i.redd.it/vcu7rt9fa3gc1.gif") center/cover no-repeat;
-  }
+.who-image-2::before,
+.who-image-2::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  box-shadow:inset 0 0 42px rgba(0,0,0,.45);
+  pointer-events:none;
+}
 
-  50%,100%{
-    background:
-      linear-gradient(180deg,rgba(5,10,28,.04),rgba(5,10,28,.52)),
-      url("https://i.redd.it/evehl1cha3gc1.gif") center/cover no-repeat;
-  }
+.who-image-2::before{
+  background-image:url("https://i.redd.it/vcu7rt9fa3gc1.gif");
+  animation:qeelImgOne 6s infinite linear;
+}
+
+.who-image-2::after{
+  background-image:url("https://i.redd.it/evehl1cha3gc1.gif");
+  animation:qeelImgTwo 6s infinite linear;
+}
+
+@keyframes qeelImgOne{
+  0%,48%{opacity:1;}
+  50%,98%{opacity:0;}
+  100%{opacity:1;}
+}
+
+@keyframes qeelImgTwo{
+  0%,48%{opacity:0;}
+  50%,98%{opacity:1;}
+  100%{opacity:0;}
 }
 
 /* ===================== PHRASE QEEL / PERSOS ===================== */
@@ -880,6 +899,7 @@
     width:100%;
     max-width:300px;
     height:420px;
+    flex:0 0 auto;
   }
 
   #last_user,

@@ -1,5 +1,532 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
- 
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
+
+/* =========================================================
+   GRPM — GROUPES LEMEGETON
+   Optimisé Forumactif ModernBB
+========================================================= */
+
+.grpm,
+.grpm *{
+  box-sizing:border-box;
+}
+
+.grpm{
+  --grpm-bg:#344c70;
+  --grpm-panel:#16132d;
+  --grpm-panel-dark:#111026;
+  --grpm-cyan:#19d9ff;
+  --grpm-cyan-soft:#8cecff;
+  --grpm-pink:#ff8eaf;
+  --grpm-white:#ecfbff;
+  --grpm-text:#c8efff;
+  --grpm-muted:#7ec7e5;
+  --grpm-gold:#ffd36e;
+  --grpm-purple:#b88cff;
+  --grpm-green:#57c785;
+  --grpm-carmin:#d64066;
+  --grpm-open:#73ff4d;
+  --grpm-closed:#8b001f;
+
+  --grpm-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+  --grpm-hellborn:#a7ff3f;
+  --grpm-sinner:#ff8eaf;
+  --grpm-overlord:#d64066;
+  --grpm-deadly-sin:#b88cff;
+  --grpm-fallen:#9aa3ad;
+  --grpm-heavenborn:#d8f7ff;
+  --grpm-winner:#ffd36e;
+  --grpm-vertue:#8cecff;
+  --grpm-seraphin:#c77dff;
+  --grpm-lamb:#ffc982;
+  --grpm-humain-innocent:#1f5b43;
+  --grpm-humain-initie:#1f9c8a;
+  --grpm-creature:#ff4fd8;
+  --grpm-fausse-divinite:#ff7f6e;
+
+  width:920px;
+  max-width:100%;
+  margin:30px auto;
+  padding:24px;
+  color:var(--grpm-text);
+  background:var(--grpm-bg);
+  font-family:"Rajdhani",Arial,sans-serif;
+  box-shadow:0 28px 80px rgba(0,0,0,.50);
+}
+
+.grpm a{
+  color:var(--grpm-cyan-soft);
+  text-decoration:none;
+  font-weight:800;
+}
+
+.grpm a:hover{
+  color:var(--grpm-carmin)!important;
+}
+
+.grpm-box{
+  position:relative;
+  overflow:hidden;
+  padding:20px;
+  border:1px solid rgba(140,236,255,.22);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
+    linear-gradient(180deg,#15122e 0%,var(--grpm-panel) 55%,var(--grpm-panel-dark) 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.03),
+    0 0 0 1px rgba(5,10,25,.80),
+    0 0 12px rgba(25,217,255,.65),
+    0 0 30px rgba(25,217,255,.22);
+}
+
+.grpm-box:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.20;
+  background-image:radial-gradient(circle,rgba(140,236,255,.65) 1px,transparent 1.4px);
+  background-size:18px 18px;
+}
+
+.grpm-inner{
+  position:relative;
+  z-index:1;
+}
+
+/* EN-TÊTE */
+
+.grpm-head{
+  margin:0 0 14px;
+  padding:22px 24px;
+  border:1px solid rgba(25,217,255,.32);
+  border-radius:16px;
+  background:
+    linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+    var(--grpm-head-img) center/cover;
+  box-shadow:inset 0 0 42px rgba(0,0,0,.65);
+}
+
+.grpm-kicker{
+  display:inline-block;
+  color:var(--grpm-pink);
+  font:800 14px/1 "Barlow Condensed",Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  text-shadow:0 0 14px rgba(255,142,175,.60),0 0 28px rgba(255,79,124,.18);
+}
+
+.grpm-kicker:before,
+.grpm-kicker:after{
+  content:"✦";
+  display:inline-block;
+  margin:0 8px;
+  color:var(--grpm-cyan);
+  text-shadow:0 0 12px rgba(25,217,255,.65),0 0 30px rgba(25,217,255,.22);
+}
+
+.grpm-title{
+  display:block;
+  margin:4px 0 0;
+  overflow:hidden;
+  color:var(--grpm-cyan-soft);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:clamp(36px,7vw,68px);
+  font-weight:400;
+  line-height:.95;
+  text-transform:uppercase;
+  white-space:nowrap;
+  letter-spacing:1px;
+  text-shadow:
+    0 0 6px rgba(25,217,255,.95),
+    0 0 18px rgba(25,217,255,.65),
+    0 0 34px rgba(25,217,255,.35),
+    3px 3px 0 rgba(255,79,124,.22);
+}
+
+.grpm-sub{
+  margin:-8px 0 0;
+  color:var(--grpm-cyan-soft);
+  font-size:15px;
+  font-weight:700;
+  line-height:1.3;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+/* NAVIGATION */
+
+.grpm-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:14px 0;
+}
+
+.grpm-nav a{
+  --nav:var(--grpm-cyan);
+  display:inline-block;
+  padding:7px 11px;
+  border:1px solid rgba(255,255,255,.08);
+  border-left:3px solid var(--nav);
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  color:var(--grpm-white)!important;
+  font:900 12px/1 "Rajdhani",Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.grpm-nav a:hover{
+  color:var(--nav)!important;
+  box-shadow:0 0 12px rgba(25,217,255,.22);
+}
+
+.grpm-link-hell{--nav:var(--grpm-carmin)!important;}
+.grpm-link-heaven{--nav:var(--grpm-gold)!important;}
+.grpm-link-earth{--nav:var(--grpm-green)!important;}
+.grpm-link-special{--nav:var(--grpm-purple)!important;}
+
+/* SECTIONS */
+
+.grpm-zone{
+  margin:16px 0;
+  overflow:hidden;
+  border:1px solid rgba(140,236,255,.20);
+  border-radius:16px;
+  background:rgba(22,19,45,.92);
+}
+
+.grpm-zone-title{
+  margin:0;
+  padding:12px 15px 11px;
+  border-bottom:1px solid rgba(25,217,255,.24);
+  color:var(--zone-color,var(--grpm-cyan));
+  background:linear-gradient(90deg,rgba(var(--zone-rgb,25,217,255),.20),rgba(var(--zone-rgb,25,217,255),.055));
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:30px;
+  font-weight:800;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-shadow:0 0 12px rgba(var(--zone-rgb,25,217,255),.22);
+}
+
+#grpm-enfer{--zone-color:var(--grpm-carmin);--zone-rgb:214,64,102;}
+#grpm-paradis{--zone-color:var(--grpm-gold);--zone-rgb:255,211,110;}
+#grpm-terre{--zone-color:var(--grpm-green);--zone-rgb:87,199,133;}
+#grpm-hors-systeme{--zone-color:var(--grpm-purple);--zone-rgb:184,140,255;}
+
+.grpm-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  padding:14px;
+}
+
+/* CARTES */
+
+.grpm-card{
+  --grp:var(--grpm-cyan);
+  --grp-rgb:25,217,255;
+  position:relative;
+  display:grid;
+  grid-template-columns:126px minmax(0,1fr);
+  gap:18px;
+  align-items:start;
+  min-height:170px;
+  padding:16px 18px;
+  overflow:hidden;
+  border:1px solid rgba(var(--grp-rgb),.24);
+  border-left:4px solid var(--grp);
+  border-radius:16px;
+  background:
+    radial-gradient(circle at 70px 58px,rgba(var(--grp-rgb),.18),transparent 36%),
+    linear-gradient(90deg,rgba(var(--grp-rgb),.10),rgba(255,255,255,.025));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 10px 26px rgba(0,0,0,.18);
+}
+
+.grpm-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,rgba(var(--grp-rgb),.09),transparent 42%);
+}
+
+.grpm-card:nth-child(even){
+  grid-template-columns:minmax(0,1fr) 126px;
+  border-left:1px solid rgba(var(--grp-rgb),.24);
+  border-right:4px solid var(--grp);
+  background:
+    radial-gradient(circle at calc(100% - 70px) 58px,rgba(var(--grp-rgb),.18),transparent 36%),
+    linear-gradient(270deg,rgba(var(--grp-rgb),.10),rgba(255,255,255,.025));
+}
+
+.grpm-card:nth-child(even):after{
+  background:linear-gradient(270deg,rgba(var(--grp-rgb),.09),transparent 42%);
+}
+
+.grpm-media,
+.grpm-content{
+  position:relative;
+  z-index:2;
+}
+
+.grpm-media{
+  grid-column:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  width:126px;
+}
+
+.grpm-card:nth-child(even) .grpm-media{
+  grid-column:2;
+  grid-row:1;
+}
+
+.grpm-content{
+  grid-column:2;
+  min-width:0;
+}
+
+.grpm-card:nth-child(even) .grpm-content{
+  grid-column:1;
+  grid-row:1;
+  text-align:right;
+}
+
+.grpm-img{
+  display:block;
+  width:118px;
+  height:82px;
+  border:1px solid rgba(var(--grp-rgb),.42);
+  border-radius:13px;
+  object-fit:cover;
+  background:#090b18;
+  box-shadow:0 0 18px rgba(var(--grp-rgb),.22),inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+.grpm-card-title{
+  margin:0 0 8px;
+  color:var(--grp);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:34px;
+  font-weight:800;
+  line-height:.95;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-shadow:0 0 12px rgba(var(--grp-rgb),.38);
+}
+
+.grpm-card-text{
+  margin:0;
+  color:var(--grpm-text);
+  font-size:15.5px;
+  font-weight:700;
+  line-height:1.5;
+}
+
+.grpm-card-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:12px 0 0;
+}
+
+.grpm-card:nth-child(even) .grpm-card-tags{
+  justify-content:flex-end;
+}
+
+.grpm-mini-tag{
+  display:inline-flex;
+  align-items:center;
+  min-height:25px;
+  padding:5px 9px;
+  border-radius:999px;
+  background:rgba(255,255,255,.055);
+  color:var(--grpm-white);
+  font-size:11px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.55px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+.grpm-card:hover{
+  transform:translateY(-1px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.03),
+    0 14px 30px rgba(0,0,0,.22),
+    0 0 20px rgba(var(--grp-rgb),.08);
+}
+
+/* STATUTS */
+
+.grpm-status{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  width:118px;
+  min-height:28px;
+  padding:6px 8px;
+  border:1px solid rgba(115,255,77,.62);
+  border-radius:999px;
+  background:linear-gradient(90deg,rgba(115,255,77,.22),rgba(115,255,77,.08));
+  color:#dfffcb;
+  font:900 11px/1 "Barlow Condensed",Arial,sans-serif;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  white-space:nowrap;
+  box-shadow:inset 3px 0 0 var(--grpm-open),0 0 10px rgba(115,255,77,.55),0 0 22px rgba(115,255,77,.22);
+  animation:grpm-status-open-pulse 1.8s ease-in-out infinite;
+}
+
+.grpm-status:before{
+  content:"✦";
+  color:var(--grpm-open);
+  font-size:9px;
+  text-shadow:0 0 8px rgba(115,255,77,.90);
+}
+
+.grpm-status-ferme{
+  border-color:rgba(130,0,24,.82);
+  background:linear-gradient(90deg,rgba(92,0,18,.88),rgba(32,0,10,.72));
+  color:#ffd6dc;
+  box-shadow:inset 3px 0 0 var(--grpm-closed),0 0 12px rgba(139,0,31,.48),0 0 24px rgba(60,0,12,.36);
+  animation:none;
+}
+
+.grpm-status-ferme:before{
+  color:#ff244e;
+  text-shadow:0 0 8px rgba(255,36,78,.72);
+}
+
+@keyframes grpm-status-open-pulse{
+  0%,100%{
+    transform:scale(1);
+    border-color:rgba(115,255,77,.52);
+    box-shadow:inset 3px 0 0 var(--grpm-open),0 0 8px rgba(115,255,77,.42),0 0 18px rgba(115,255,77,.16);
+  }
+
+  50%{
+    transform:scale(1.04);
+    border-color:rgba(190,255,157,.95);
+    box-shadow:inset 3px 0 0 #bfff9d,0 0 16px rgba(115,255,77,.82),0 0 34px rgba(115,255,77,.32);
+  }
+}
+
+/* COULEURS PAR GROUPE */
+
+.grpm-hellborn{--grp:var(--grpm-hellborn);--grp-rgb:167,255,63;}
+.grpm-sinner{--grp:var(--grpm-sinner);--grp-rgb:255,142,175;}
+.grpm-overlord{--grp:var(--grpm-overlord);--grp-rgb:214,64,102;}
+.grpm-deadly-sin{--grp:var(--grpm-deadly-sin);--grp-rgb:184,140,255;}
+.grpm-fallen{--grp:var(--grpm-fallen);--grp-rgb:154,163,173;}
+.grpm-heavenborn{--grp:var(--grpm-heavenborn);--grp-rgb:216,247,255;}
+.grpm-winner{--grp:var(--grpm-winner);--grp-rgb:255,211,110;}
+.grpm-vertue{--grp:var(--grpm-vertue);--grp-rgb:140,236,255;}
+.grpm-seraphin{--grp:var(--grpm-seraphin);--grp-rgb:199,125,255;}
+.grpm-lamb{--grp:var(--grpm-lamb);--grp-rgb:255,201,130;}
+.grpm-humain-innocent{--grp:var(--grpm-humain-innocent);--grp-rgb:31,91,67;}
+.grpm-humain-initie{--grp:var(--grpm-humain-initie);--grp-rgb:31,156,138;}
+.grpm-creature{--grp:var(--grpm-creature);--grp-rgb:255,79,216;}
+.grpm-fausse-divinite{--grp:var(--grpm-fausse-divinite);--grp-rgb:255,127,110;}
+
+.grpm-footer{
+  margin-top:18px;
+  color:var(--grpm-muted);
+  font-size:12px;
+  font-weight:700;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:760px){
+  .grpm{
+    padding:16px;
+  }
+
+  .grpm-box{
+    padding:14px;
+  }
+
+  .grpm-head{
+    padding:18px;
+  }
+
+  .grpm-title{
+    font-size:42px;
+  }
+
+  .grpm-sub{
+    margin-top:-4px;
+    font-size:13px;
+  }
+
+  .grpm-card,
+  .grpm-card:nth-child(even){
+    grid-template-columns:102px minmax(0,1fr);
+    gap:12px;
+    min-height:0;
+    padding:12px;
+    border-left:3px solid var(--grp);
+    border-right:1px solid rgba(var(--grp-rgb),.24);
+    background:
+      radial-gradient(circle at 51px 51px,rgba(var(--grp-rgb),.18),transparent 34%),
+      linear-gradient(90deg,rgba(var(--grp-rgb),.10),rgba(255,255,255,.025));
+  }
+
+  .grpm-card:after,
+  .grpm-card:nth-child(even):after{
+    background:linear-gradient(90deg,rgba(var(--grp-rgb),.09),transparent 42%);
+  }
+
+  .grpm-media,
+  .grpm-card:nth-child(even) .grpm-media{
+    grid-column:1;
+    grid-row:1;
+    width:102px;
+  }
+
+  .grpm-content,
+  .grpm-card:nth-child(even) .grpm-content{
+    grid-column:2;
+    grid-row:1;
+    text-align:left;
+  }
+
+  .grpm-img{
+    width:96px;
+    height:78px;
+  }
+
+  .grpm-status{
+    width:96px;
+    min-height:24px;
+    padding:4px 6px;
+    font-size:10px;
+  }
+
+  .grpm-card-title{
+    font-size:34px;
+  }
+
+  .grpm-card-tags,
+  .grpm-card:nth-child(even) .grpm-card-tags{
+    justify-content:flex-start;
+  }
+}
 /* =========================================================
    BST — BESTIAIRE LEMEGETON
 ========================================================= */

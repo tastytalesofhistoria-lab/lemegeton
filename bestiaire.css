@@ -1,6 +1,340 @@
  
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
 /* =========================================================
+PNJ ANGES — PNJ DATING / LISTE ANGES
+Optimisé Forumactif ModernBB
+========================================================= */
+
+.pnjang,.pnjang *{box-sizing:border-box;}
+.pnjang img{max-width:100%;height:auto;border:0;}
+
+.pnjang{
+--pnjang-bg:#314d77;
+--pnjang-panel:#183861;
+--pnjang-panel-2:#132d53;
+--pnjang-panel-3:#0c1b35;
+--pnjang-white:#ecfbff;
+--pnjang-text:#c8efff;
+--pnjang-cyan:#19d9ff;
+--pnjang-cyan-soft:#8cecff;
+--pnjang-pink:#ff4f7c;
+--pnjang-pink-soft:#ffb0c3;
+--pnjang-red:#d64066;
+--pnjang-lime:#a7ff3f;
+--pnjang-lime-soft:#cfff9a;
+--pnjang-gold:#ffd36e;
+--pnjang-orange:#ff9b45;
+--pnjang-orange-soft:#ffc18a;
+--pnjang-purple:#b88cff;
+--pnjang-purple-soft:#d7b4ff;
+--pnjang-blue:#2f6bff;
+--pnjang-blue-soft:#8ec5ff;
+--pnjang-heart:#ff8de1;
+--pnjang-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+width:920px;
+max-width:100%;
+margin:30px auto;
+padding:24px;
+color:var(--pnjang-text);
+background:var(--pnjang-bg);
+font-family:"Rajdhani",Arial,sans-serif;
+box-shadow:0 28px 80px rgba(0,0,0,.50);
+}
+
+.pnjang a{color:var(--pnjang-cyan-soft);text-decoration:none;font-weight:900;}
+.pnjang a:hover{color:var(--pnjang-pink-soft)!important;}
+
+.pnjang-box{
+position:relative;
+overflow:hidden;
+padding:20px;
+border:1px solid rgba(140,236,255,.22);
+border-radius:22px;
+background:radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 34%),linear-gradient(180deg,var(--pnjang-panel) 0%,var(--pnjang-panel-2) 42%,var(--pnjang-panel-3) 100%);
+box-shadow:inset 0 0 0 1px rgba(255,255,255,.03),0 0 0 1px rgba(5,10,25,.80),0 0 18px rgba(44,196,255,.26),0 0 42px rgba(44,196,255,.16);
+}
+
+.pnjang-box:before{
+content:"";
+position:absolute;
+inset:0;
+pointer-events:none;
+opacity:.18;
+background-image:radial-gradient(circle,rgba(140,236,255,.65) 1px,transparent 1.4px);
+background-size:18px 18px;
+}
+
+.pnjang-box:after{
+content:"";
+position:absolute;
+inset:12px;
+pointer-events:none;
+border:1px solid rgba(25,217,255,.18);
+border-radius:18px;
+box-shadow:0 0 18px rgba(25,217,255,.12);
+}
+
+.pnjang-inner{position:relative;z-index:1;}
+
+.pnjang-head{
+margin:0 0 14px;
+padding:22px 24px;
+border:1px solid rgba(255,211,110,.45);
+border-radius:16px;
+background:linear-gradient(90deg,rgba(15,2,18,.94),rgba(7,16,39,.74)),var(--pnjang-head-img) center/cover;
+box-shadow:inset 0 0 42px rgba(0,0,0,.68),0 0 20px rgba(255,211,110,.22);
+}
+
+.pnjang-kicker{
+display:inline-block;
+color:var(--pnjang-gold);
+font:800 14px/1 "Barlow Condensed",Arial,sans-serif;
+text-transform:uppercase;
+letter-spacing:2px;
+text-shadow:0 0 14px rgba(255,211,110,.70),0 0 28px rgba(255,211,110,.22);
+}
+
+.pnjang-kicker:before,.pnjang-kicker:after{
+content:"✦";
+display:inline-block;
+margin:0 8px;
+color:var(--pnjang-gold);
+text-shadow:0 0 12px rgba(255,211,110,.85),0 0 30px rgba(255,211,110,.25);
+}
+
+.pnjang-title{
+display:block;
+margin:4px 0 0;
+color:#ffe39a;
+font-family:"Monoton",Arial,sans-serif;
+font-size:clamp(32px,6.4vw,62px);
+font-weight:400;
+line-height:.95;
+text-transform:uppercase;
+white-space:nowrap;
+letter-spacing:1px;
+text-shadow:0 0 6px rgba(255,227,154,.95),0 0 18px rgba(255,211,110,.65),0 0 34px rgba(255,211,110,.35),3px 3px 0 rgba(25,217,255,.18);
+}
+
+.pnjang-sub{
+margin:-5px 0 0;
+color:var(--pnjang-cyan-soft);
+font-size:15px;
+font-weight:800;
+line-height:1.3;
+text-transform:uppercase;
+letter-spacing:2px;
+}
+
+.pnjang-nav{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:14px 0;
+}
+
+.pnjang-nav a{
+--nav:var(--pnjang-gold);
+--nav-soft:#ffe39a;
+--nav-rgb:255,211,110;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-height:32px;
+padding:7px 13px;
+border:1px solid rgba(var(--nav-rgb),.35)!important;
+border-left:3px solid var(--nav)!important;
+border-radius:999px;
+background:linear-gradient(180deg,rgba(var(--nav-rgb),.24),rgba(var(--nav-rgb),.10))!important;
+color:var(--pnjang-white)!important;
+font:900 12px/1 "Rajdhani",Arial,sans-serif;
+text-transform:uppercase;
+letter-spacing:.6px;
+box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 0 12px rgba(var(--nav-rgb),.18)!important;
+}
+
+.pnjang-nav a:before{
+content:"";
+width:6px;
+height:6px;
+margin-right:7px;
+border-radius:999px;
+background:var(--nav)!important;
+box-shadow:0 0 8px rgba(var(--nav-rgb),.75)!important;
+}
+
+.pnjang-nav a:nth-child(1){--nav:var(--pnjang-purple);--nav-soft:var(--pnjang-purple-soft);--nav-rgb:184,140,255;}
+.pnjang-nav a:nth-child(2){--nav:#b8894f;--nav-soft:#ffd2a0;--nav-rgb:184,137,79;}
+.pnjang-nav a:nth-child(3){--nav:var(--pnjang-blue);--nav-soft:var(--pnjang-blue-soft);--nav-rgb:47,107,255;}
+.pnjang-nav a:nth-child(4){--nav:var(--pnjang-orange);--nav-soft:var(--pnjang-orange-soft);--nav-rgb:255,155,69;}
+.pnjang-nav a:nth-child(5){--nav:var(--pnjang-cyan);--nav-soft:var(--pnjang-cyan-soft);--nav-rgb:25,217,255;}
+.pnjang-nav a:nth-child(6){--nav:var(--pnjang-pink);--nav-soft:var(--pnjang-pink-soft);--nav-rgb:255,79,124;}
+
+.pnjang-intro{
+margin:14px 0;
+padding:14px 16px;
+border-left:3px solid var(--pnjang-gold);
+border-radius:12px;
+background:linear-gradient(90deg,rgba(255,211,110,.18),rgba(25,217,255,.05));
+color:var(--pnjang-white);
+font-size:16px;
+font-weight:700;
+line-height:1.6;
+}
+
+.pnjang-list{display:grid;grid-template-columns:1fr;gap:18px;}
+
+.pnjang-card{
+--pnj:var(--pnjang-gold);
+--pnj-soft:#ffe39a;
+--pnj-rgb:255,211,110;
+position:relative;
+overflow:hidden;
+border:1px solid rgba(var(--pnj-rgb),.24);
+border-left:4px solid var(--pnj);
+border-radius:18px;
+background:radial-gradient(circle at top left,rgba(var(--pnj-rgb),.16),transparent 38%),linear-gradient(180deg,rgba(14,29,55,.96),rgba(13,16,36,.78));
+box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 12px 28px rgba(0,0,0,.22),0 0 18px rgba(var(--pnj-rgb),.08);
+}
+
+.pnjang-card-head{
+display:grid;
+grid-template-columns:150px minmax(0,1fr);
+gap:16px;
+padding:16px;
+align-items:start;
+}
+
+.pnjang-avatar{
+display:block;
+width:150px!important;
+min-width:150px;
+max-width:150px!important;
+height:190px!important;
+min-height:190px;
+max-height:190px;
+object-fit:contain;
+object-position:center center;
+border:1px solid rgba(var(--pnj-rgb),.44);
+border-radius:16px;
+background:radial-gradient(circle at 50% 18%,rgba(var(--pnj-rgb),.36),rgba(var(--pnj-rgb),.12) 42%,rgba(9,11,24,.92) 100%);
+box-shadow:0 0 18px rgba(var(--pnj-rgb),.22),inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+.pnjang-name{
+margin:0;
+color:var(--pnj-soft);
+font-family:"Barlow Condensed",Arial,sans-serif;
+font-size:34px;
+font-weight:800;
+line-height:1;
+text-transform:uppercase;
+letter-spacing:1px;
+text-shadow:0 0 12px rgba(var(--pnj-rgb),.42);
+}
+
+.pnjang-species{
+display:inline-flex;
+margin:8px 0 10px;
+padding:5px 10px;
+border:1px solid rgba(var(--pnj-rgb),.30);
+border-radius:999px;
+background:rgba(var(--pnj-rgb),.12);
+color:var(--pnjang-white);
+font-size:12px;
+font-weight:900;
+text-transform:uppercase;
+letter-spacing:.7px;
+}
+
+.pnjang-desc{
+margin:0;
+color:var(--pnjang-text);
+font-size:15.5px;
+font-weight:700;
+line-height:1.55;
+}
+
+.pnjang-rewards{padding:0 16px 16px;}
+.pnjang-reward-list{display:grid;gap:8px;}
+
+.pnjang-reward{
+display:grid;
+grid-template-columns:70px minmax(0,1fr);
+gap:10px;
+align-items:start;
+padding:10px;
+border:1px solid rgba(var(--pnj-rgb),.16);
+border-radius:12px;
+background:rgba(255,255,255,.04);
+}
+
+.pnjang-step{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-height:28px;
+padding:6px 8px;
+border:1px solid rgba(255,211,110,.42);
+border-radius:999px;
+background:rgba(255,211,110,.12);
+color:#ffe39a;
+font-size:13px;
+font-weight:900;
+white-space:nowrap;
+box-shadow:inset 3px 0 0 var(--pnjang-gold);
+}
+
+.pnjang-step:before{
+content:"\2665";
+margin-right:5px;
+color:var(--pnjang-heart);
+text-shadow:0 0 8px rgba(255,141,225,.8);
+}
+
+.pnjang-reward-text{
+min-width:0;
+color:var(--pnjang-white);
+font-size:14.5px;
+font-weight:700;
+line-height:1.45;
+overflow-wrap:anywhere;
+}
+
+.pnjang-reward-text b{
+color:var(--pnj-soft);
+text-shadow:0 0 8px rgba(var(--pnj-rgb),.30);
+}
+
+.pnjang-done{
+display:inline-flex;
+vertical-align:middle;
+margin-left:4px;
+color:var(--pnjang-lime-soft);
+font-weight:900;
+}
+
+.pnjang-metatron{--pnj:var(--pnjang-purple);--pnj-soft:var(--pnjang-purple-soft);--pnj-rgb:184,140,255;}
+.pnjang-hut{--pnj:#b8894f;--pnj-soft:#ffd2a0;--pnj-rgb:184,137,79;}
+.pnjang-galathee{--pnj:var(--pnjang-blue);--pnj-soft:var(--pnjang-blue-soft);--pnj-rgb:47,107,255;}
+.pnjang-andyral{--pnj:var(--pnjang-orange);--pnj-soft:var(--pnjang-orange-soft);--pnj-rgb:255,155,69;}
+.pnjang-madalphee{--pnj:var(--pnjang-cyan);--pnj-soft:var(--pnjang-cyan-soft);--pnj-rgb:25,217,255;}
+.pnjang-elvira{--pnj:var(--pnjang-pink);--pnj-soft:var(--pnjang-pink-soft);--pnj-rgb:255,79,124;}
+
+@media(max-width:760px){
+.pnjang{padding:16px;}
+.pnjang-box{padding:14px;}
+.pnjang-head{padding:18px;}
+.pnjang-title{font-size:38px;white-space:normal;}
+.pnjang-sub{margin-top:0;font-size:13px;}
+.pnjang-card-head{grid-template-columns:1fr;}
+.pnjang-avatar{width:150px!important;min-width:150px;max-width:150px!important;height:190px!important;min-height:190px;max-height:190px;margin:0 auto;}
+.pnjang-reward{grid-template-columns:1fr;}
+.pnjang-step{width:max-content;}
+}
+
+
+/* =========================================================
    PNJ DEMONS — PNJ DATING / LISTE DÉMONS
    Optimisé Forumactif ModernBB
 ========================================================= */

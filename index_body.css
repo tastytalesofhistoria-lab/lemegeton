@@ -40,7 +40,9 @@
 /* ===================== WRAPPER GLOBAL ===================== */
 
 .qeel-wrapper,
-.qeel-wrapper *{
+.qeel-wrapper *,
+.qeel-online-custom,
+.qeel-online-custom *{
   box-sizing:border-box;
 }
 
@@ -243,6 +245,7 @@
     inset 0 0 0 1px rgba(255,255,255,.025),
     inset 0 0 18px rgba(25,217,255,.10),
     0 0 14px rgba(25,217,255,.14);
+  transition:.25s ease;
 }
 
 .who-box::before{
@@ -372,7 +375,7 @@
   border:1px solid rgba(25,217,255,.38);
   border-radius:999px;
   background:#02040d;
-  color:inherit !important;
+  color:inherit!important;
   text-decoration:none;
   font-size:23px;
   line-height:1;
@@ -395,10 +398,11 @@
 #newest_user a span,
 #newest_user a strong,
 #newest_user a font{
-  color:inherit !important;
-  text-shadow:none !important;
-  -webkit-text-stroke:0 !important;
+  color:inherit!important;
+  text-shadow:none!important;
+  -webkit-text-stroke:0!important;
 }
+
 /* ===================== PRÉSENCES ===================== */
 
 .online-users{
@@ -438,13 +442,35 @@
 }
 
 .online-users a{
-  color:var(--lem-cyan);
+  display:inline-block;
+  margin:2px 2px;
+  padding:2px 7px 3px;
+  border-radius:999px;
+  background:#02040d;
+  color:inherit!important;
   text-decoration:none;
   font-weight:900;
+  text-shadow:none!important;
+  box-shadow:
+    inset 0 0 8px rgba(25,217,255,.10),
+    0 0 7px rgba(0,0,0,.55);
 }
 
 .online-users a:hover{
-  color:var(--lem-white);
+  background:#000;
+  color:var(--lem-white)!important;
+  box-shadow:
+    inset 0 0 8px rgba(25,217,255,.18),
+    0 0 10px rgba(25,217,255,.22);
+}
+
+.online-users a *,
+.online-users a span,
+.online-users a strong,
+.online-users a font{
+  color:inherit!important;
+  text-shadow:none!important;
+  -webkit-text-stroke:0!important;
 }
 
 /* ===================== IMAGE QEEL ===================== */
@@ -638,6 +664,7 @@
   flex:1;
   min-height:150px;
   padding:18px 20px;
+  overflow:hidden;
   border:1px solid rgba(25,217,255,.26);
   border-left:4px solid var(--lem-purple);
   border-radius:16px;
@@ -680,6 +707,8 @@
 }
 
 #delf{
+  position:relative;
+  z-index:3;
   font-size:32px!important;
   font-weight:500;
   word-break:break-word;
@@ -704,16 +733,76 @@
 /* ===================== EFFETS PERSOS ===================== */
 
 .bubble-alastor{
-  background:radial-gradient(circle,#2a0000,#0d0000);
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at top left,rgba(255,0,76,.22),transparent 38%),
+    radial-gradient(circle at bottom right,rgba(122,255,0,.12),transparent 42%),
+    linear-gradient(135deg,#250003,#090004 70%);
   border:2px solid #ff004c;
-  box-shadow:0 0 20px rgba(255,0,76,.90);
   color:#ffb3c6;
+  box-shadow:
+    0 0 16px rgba(255,0,76,.75),
+    0 0 30px rgba(255,0,76,.28),
+    inset 0 0 18px rgba(255,0,76,.18);
+  animation:alastorBoxSignal 2.4s infinite steps(1,end);
 }
 
-.alastor{
+.dialogue-box.bubble-alastor::before{
+  content:"✦ RADIO DEMON BROADCAST ✦";
+  position:relative;
+  z-index:3;
+  display:block;
+  margin-bottom:8px;
+  color:#caff2e;
+  text-align:center;
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  text-shadow:
+    0 0 5px #7aff00,
+    0 0 12px rgba(122,255,0,.70);
+}
+
+.dialogue-box.bubble-alastor::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:block;
+  pointer-events:none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.08) 0,
+      rgba(255,255,255,.08) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    radial-gradient(circle at center,rgba(122,255,0,.10),transparent 55%);
+  mix-blend-mode:screen;
+  opacity:.22;
+  animation:alastorScan 1.6s infinite linear;
+}
+
+.dialogue-box.bubble-alastor > *{
+  position:relative;
+  z-index:3;
+}
+
+.alastor,
+.dialogue-box.bubble-alastor #delf{
+  color:#ffb3c6!important;
   font-family:"Courier New",monospace;
-  text-shadow:0 0 8px #ff004c;
-  animation:radioNoise .15s infinite;
+  text-shadow:
+    1px 0 #ff004c,
+    -1px 0 #7aff00,
+    0 0 8px #ff004c,
+    0 0 14px rgba(122,255,0,.45);
+  animation:alastorTextTwitch .45s infinite steps(2,end);
 }
 
 .bubble-angel{
@@ -784,10 +873,47 @@
   color:#fff2b3;
 }
 
+/* ===================== ANIMATIONS PERSOS ===================== */
+
 @keyframes radioNoise{
   0%{opacity:1;}
   50%{opacity:.85;}
   100%{opacity:1;}
+}
+
+@keyframes alastorBoxSignal{
+  0%,100%{
+    transform:translate(0,0);
+    filter:brightness(1) contrast(1.05);
+  }
+  8%{
+    transform:translate(-1px,1px);
+    filter:brightness(1.25) contrast(1.25);
+  }
+  10%{transform:translate(2px,-1px);}
+  12%{transform:translate(0,0);}
+  46%{filter:brightness(.85) contrast(1.4) saturate(1.4);}
+  48%{transform:translate(-2px,0);}
+  50%{
+    transform:translate(1px,1px);
+    filter:brightness(1.35) contrast(1.2);
+  }
+  52%{transform:translate(0,0);}
+  76%{filter:brightness(.95) contrast(1.7);}
+  78%{transform:translate(2px,0);}
+  80%{transform:translate(0,0);}
+}
+
+@keyframes alastorScan{
+  0%{transform:translateY(-12px);}
+  100%{transform:translateY(12px);}
+}
+
+@keyframes alastorTextTwitch{
+  0%,100%{transform:translate(0,0);}
+  25%{transform:translate(1px,0);}
+  50%{transform:translate(-1px,1px);}
+  75%{transform:translate(0,-1px);}
 }
 
 /* ===================== RUMEURS / ZONES ===================== */
@@ -991,14 +1117,14 @@
     margin:0 auto;
   }
 
-.who-groups{
-  width:100%;
-  max-width:450px;
-  height:auto;
-  max-height:none;
-  overflow:visible;
-  margin:0 auto;
-}
+  .who-groups{
+    width:100%;
+    max-width:450px;
+    height:auto;
+    max-height:none;
+    overflow:visible;
+    margin:0 auto;
+  }
 
   .qeel-online-custom{
     flex-direction:column;

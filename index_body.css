@@ -504,12 +504,12 @@
 
 .who-image-2::before{
   background-image:url("https://i.redd.it/vcu7rt9fa3gc1.gif");
-  animation:qeelImgOne 3s infinite linear;
+  animation:qeelImgOne 4s infinite linear;
 }
 
 .who-image-2::after{
   background-image:url("https://i.redd.it/evehl1cha3gc1.gif");
-  animation:qeelImgTwo 3s infinite linear;
+  animation:qeelImgTwo 4s infinite linear;
 }
 
 @keyframes qeelImgOne{

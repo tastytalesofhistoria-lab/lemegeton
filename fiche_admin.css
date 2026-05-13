@@ -549,13 +549,17 @@ line-height:1.45;
     grid-template-columns:1fr;
   }
 
-  .qst-npc-img{
-    margin:0 auto;
-  }
+ 
 
-  .qst-quote{
-    padding:16px 14px;
-  }
+.qst-npc-img{
+margin:0 auto;
+}
+
+.qst-quote{
+min-height:0;
+padding:16px 14px;
+}
+ 
 
   .qst-done{
     grid-template-columns:1fr;

@@ -846,7 +846,101 @@
   box-shadow:0 0 20px rgba(0,234,255,1);
   color:#8fffff;
 }
+/* ===================== GLITCH VOX — BOX + TEXTE ===================== */
 
+.bubble-vox{
+  position:relative;
+  overflow:hidden;
+}
+
+.bubble-vox::before,
+.bubble-vox::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:0;
+  mix-blend-mode:screen;
+  z-index:1;
+}
+
+.bubble-vox::before{
+  background:
+    linear-gradient(90deg,transparent 0 18%,rgba(0,234,255,.35) 19%,transparent 22%),
+    repeating-linear-gradient(180deg,rgba(255,255,255,.08) 0 1px,transparent 1px 4px);
+}
+
+.bubble-vox::after{
+  background:
+    linear-gradient(90deg,transparent 0 28%,rgba(255,0,60,.28) 29%,transparent 33%),
+    repeating-linear-gradient(180deg,rgba(0,234,255,.08) 0 1px,transparent 1px 6px);
+}
+
+.bubble-vox.vox-glitch-on{
+  animation:voxBoxGlitch .18s steps(2,end);
+}
+
+.bubble-vox.vox-glitch-on::before{
+  opacity:.85;
+  animation:voxScanA .18s steps(2,end);
+}
+
+.bubble-vox.vox-glitch-on::after{
+  opacity:.65;
+  animation:voxScanB .18s steps(2,end);
+}
+
+.bubble-vox.vox-glitch-on #delf{
+  animation:voxTextGlitch .18s steps(2,end);
+}
+
+@keyframes voxBoxGlitch{
+  0%{transform:translate(0);}
+  20%{transform:translate(-3px,1px) skewX(-2deg);}
+  40%{transform:translate(3px,-1px) skewX(2deg);}
+  60%{transform:translate(-2px,2px);}
+  80%{transform:translate(2px,-2px);}
+  100%{transform:translate(0);}
+}
+
+@keyframes voxTextGlitch{
+  0%{
+    transform:translate(0);
+    text-shadow:
+      2px 0 #00eaff,
+      -2px 0 #ff003c,
+      0 0 10px #00eaff;
+  }
+  35%{
+    transform:translate(-4px,1px);
+    text-shadow:
+      5px 0 #00eaff,
+      -5px 0 #ff003c,
+      0 0 14px #00eaff;
+  }
+  70%{
+    transform:translate(4px,-1px);
+    text-shadow:
+      -5px 0 #00eaff,
+      5px 0 #ff003c,
+      0 0 18px #ff003c;
+  }
+  100%{
+    transform:translate(0);
+  }
+}
+
+@keyframes voxScanA{
+  0%{transform:translateX(-8px);}
+  50%{transform:translateX(8px);}
+  100%{transform:translateX(0);}
+}
+
+@keyframes voxScanB{
+  0%{transform:translateX(8px);}
+  50%{transform:translateX(-8px);}
+  100%{transform:translateX(0);}
+}
 .vox{
   position:relative;
   text-shadow:

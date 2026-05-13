@@ -368,36 +368,27 @@
 #newest_user a{
   display:inline-block;
   margin:5px 0;
-  padding:4px 12px 5px;
-  border:1px solid rgba(25,217,255,.45);
+  padding:5px 13px 6px;
+  border:1px solid rgba(25,217,255,.38);
   border-radius:999px;
-  background:
-    radial-gradient(circle at center,rgba(25,217,255,.16),transparent 62%),
-    linear-gradient(180deg,rgba(4,8,22,.96),rgba(9,14,34,.98));
+  background:#02040d;
   color:inherit;
   text-decoration:none;
   font-size:23px;
   line-height:1;
   letter-spacing:.4px;
-
-  -webkit-text-stroke:.45px rgba(0,0,0,.95);
-  text-shadow:
-    1px 1px 0 #000,
-    -1px 1px 0 #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000,
-    0 0 5px currentColor;
-
+  text-shadow:none;
   box-shadow:
-    inset 0 0 10px rgba(25,217,255,.16),
-    0 0 10px rgba(25,217,255,.28);
+    inset 0 0 8px rgba(25,217,255,.14),
+    0 0 10px rgba(25,217,255,.26);
 }
 
 #newest_user a:hover{
-  border-color:rgba(255,211,110,.65);
+  background:#000;
+  border-color:rgba(255,211,110,.55);
   box-shadow:
-    inset 0 0 10px rgba(255,211,110,.14),
-    0 0 12px rgba(255,211,110,.32);
+    inset 0 0 8px rgba(255,211,110,.12),
+    0 0 12px rgba(255,211,110,.28);
 }
 
 #newest_user a *,
@@ -405,13 +396,8 @@
 #newest_user a strong,
 #newest_user a font{
   color:inherit !important;
-  -webkit-text-stroke:.45px rgba(0,0,0,.95);
-  text-shadow:
-    1px 1px 0 #000,
-    -1px 1px 0 #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000,
-    0 0 5px currentColor !important;
+  text-shadow:none !important;
+  -webkit-text-stroke:0 !important;
 }
 /* ===================== PRÉSENCES ===================== */
 

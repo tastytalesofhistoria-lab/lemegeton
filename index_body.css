@@ -23,7 +23,642 @@
   --lem-shadow-cyan:0 0 12px rgba(25,217,255,.65),0 0 30px rgba(25,217,255,.22);
   --lem-shadow-pink:0 0 14px rgba(255,79,124,.55),0 0 28px rgba(255,79,124,.18);
 }
+/* =========================================================
+   QEEL — LEMEGETON
+   Qui est en ligne / groupes / stats / dernier membre
+   À placer séparément du CSS PA
+========================================================= */
 
+:root{
+  --lem-bg:#0f0a28;
+  --lem-bg-deep:#080d20;
+  --lem-panel:#12183c;
+  --lem-panel-2:#17264a;
+  --lem-card:rgba(12,16,36,.88);
+
+  --lem-white:#ecfbff;
+  --lem-text:#c8efff;
+  --lem-muted:#7ec7e5;
+
+  --lem-cyan:#19d9ff;
+  --lem-cyan-soft:#8cecff;
+  --lem-blue:#03f8fc;
+  --lem-blue-soft:#b8dce0;
+
+  --lem-pink:#ff4f7c;
+  --lem-pink-soft:#faa0b6;
+  --lem-red:#ff003c;
+  --lem-gold:#ffd36e;
+  --lem-lime:#a7ff3f;
+
+  --lem-line:rgba(25,217,255,.26);
+}
+
+/* ===================== WRAPPER GLOBAL QEEL ===================== */
+
+.qeel-wrapper{
+  position:relative;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  gap:20px;
+  width:100%;
+  max-width:1200px;
+  margin:30px auto;
+  padding:24px;
+  box-sizing:border-box;
+  border:1px solid rgba(25,217,255,.22);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at top left,rgba(25,217,255,.12),transparent 32%),
+    radial-gradient(circle at top right,rgba(255,79,124,.10),transparent 30%),
+    linear-gradient(180deg,#31496d 0%,#263a5b 45%,#233654 100%);
+  color:var(--lem-text);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.03),
+    0 0 28px rgba(25,217,255,.12);
+}
+
+.qeel-left,
+.qeel-right{
+  width:450px;
+  min-width:0;
+}
+
+.qeel-left{
+  display:block;
+}
+
+.qeel-right{
+  display:flex;
+  justify-content:center;
+}
+
+/* ===================== STATS ===================== */
+
+.who-stats{
+  display:flex;
+  gap:15px;
+  width:100%;
+  margin:0 0 20px;
+}
+
+.who-box{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:50px;
+  padding:0 10px;
+  box-sizing:border-box;
+  border:1px solid rgba(25,217,255,.20);
+  border-radius:8px;
+  background:
+    radial-gradient(circle at top left,rgba(25,217,255,.14),transparent 38%),
+    rgba(13,24,58,.88);
+  color:var(--lem-white);
+  text-align:center;
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-weight:900;
+  box-shadow:0 0 12px rgba(25,217,255,.10);
+  transition:.25s ease;
+}
+
+.who-box.online{
+  flex:1;
+  width:200px;
+  padding:0;
+  color:var(--lem-cyan-soft);
+  font-family:"Bahianita",cursive;
+  font-size:30px;
+  letter-spacing:1px;
+  background:
+    linear-gradient(135deg,rgba(10,14,36,.96),rgba(26,29,63,.92),rgba(42,52,112,.88),rgba(91,192,235,.70));
+  text-shadow:0 0 10px rgba(25,217,255,.70);
+}
+
+.who-box.members,
+.who-box.messages{
+  width:140px;
+}
+
+/* ===================== LOSER BOX ===================== */
+
+.loser-box{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  margin:0 0 20px;
+  padding:12px 20px;
+  box-sizing:border-box;
+  border:1px solid rgba(25,217,255,.30);
+  border-radius:10px;
+  background:
+    radial-gradient(circle at top left,rgba(25,217,255,.18),transparent 36%),
+    linear-gradient(135deg,#00111f,#002b4d,#0066ff);
+  text-align:center;
+  box-shadow:
+    0 0 15px rgba(0,150,255,.50),
+    inset 0 0 15px rgba(0,200,255,.30);
+  animation:flickerBox 3s infinite;
+}
+
+.loser-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:10px;
+  box-shadow:
+    0 0 8px #00cfff,
+    0 0 15px #009dff,
+    0 0 30px #0066ff;
+  opacity:.6;
+  pointer-events:none;
+}
+
+.loser-box::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:10px;
+  background-image:radial-gradient(circle,#66ccff 2px,transparent 3px);
+  background-size:18px 18px;
+  opacity:.15;
+  pointer-events:none;
+}
+
+.loser-text{
+  position:relative;
+  z-index:2;
+  font-family:"Monoton",sans-serif;
+  font-size:32px;
+  line-height:1;
+  letter-spacing:3px;
+  color:#e6f7ff;
+  text-shadow:
+    0 0 3px #ffffff,
+    0 0 6px #00cfff,
+    0 0 12px #009dff,
+    0 0 25px #0066ff;
+  animation:flickerText 2.5s infinite;
+}
+
+@keyframes flickerBox{
+  0%,100%{filter:brightness(1);}
+  50%{filter:brightness(1.08);}
+}
+
+@keyframes flickerText{
+  0%,18%,22%,25%,53%,57%,100%{opacity:1;}
+  20%,24%,55%{opacity:.55;}
+}
+
+/* ===================== DERNIER MEMBRE ===================== */
+
+#last_user{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  float:left;
+  width:40%;
+  min-height:190px;
+  margin-top:0;
+  padding:10px;
+  box-sizing:border-box;
+  text-align:center;
+}
+
+#avatar_dernier_membre img{
+  width:40px;
+  height:55px;
+  margin-right:10px;
+  object-fit:cover;
+  object-position:center;
+  border:1px solid rgba(25,217,255,.34);
+  border-radius:5px;
+  box-shadow:0 0 8px rgba(25,217,255,.65);
+}
+
+#newest_user{
+  color:var(--lem-cyan-soft);
+  font-family:"Bahianita",cursive;
+  font-size:22px;
+  line-height:1.45;
+  text-shadow:0 0 8px rgba(25,217,255,.25);
+}
+
+#newest_user a{
+  display:inline-block;
+  color:#0000ff;
+  text-decoration:none;
+  font-size:24px;
+  text-shadow:0 0 8px rgba(25,217,255,.45);
+}
+
+#newest_user a:hover{
+  color:var(--lem-white);
+}
+
+/* ===================== UTILISATEURS EN LIGNE ===================== */
+
+.online-users{
+  float:left;
+  width:50%;
+  height:235px;
+  margin-top:0;
+  padding:12px;
+  overflow:auto;
+  box-sizing:border-box;
+  border:1px solid rgba(25,217,255,.18);
+  border-left:4px solid var(--lem-cyan);
+  border-radius:10px;
+  background:
+    radial-gradient(circle at top left,rgba(25,217,255,.08),transparent 38%),
+    rgba(18,24,60,.90);
+  color:var(--lem-muted);
+  font-size:14px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--lem-cyan) transparent;
+}
+
+.online-users::-webkit-scrollbar{
+  width:6px;
+}
+
+.online-users::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+.online-users::-webkit-scrollbar-thumb{
+  background:var(--lem-cyan);
+  border-radius:10px;
+  box-shadow:0 0 8px rgba(25,217,255,.60);
+}
+
+.online-users a{
+  color:var(--lem-cyan);
+  text-decoration:none;
+}
+
+.online-users a:hover{
+  color:var(--lem-white);
+}
+
+/* ===================== GROUPES QEEL ===================== */
+
+.who-groups{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:10px;
+  width:300px;
+  height:400px;
+  margin:0 auto;
+  align-content:start;
+}
+
+.grp{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  width:100%;
+  height:35px;
+  padding:0 10px;
+  box-sizing:border-box;
+  border:1px solid rgba(25,217,255,.18);
+  border-radius:6px;
+  background-color:#0a1028;
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:11px;
+  font-weight:900;
+  line-height:1;
+  text-align:right;
+  text-shadow:0 0 6px rgba(0,0,0,.75);
+  transition:.3s ease;
+  isolation:isolate;
+}
+
+.grp::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:inherit;
+  background-size:cover;
+  background-position:center;
+  transform:scale(1);
+  transition:.4s ease;
+}
+
+.grp::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(to left,rgba(0,0,0,.82),rgba(0,0,0,.28)),
+    radial-gradient(circle at right,rgba(25,217,255,.18),transparent 60%);
+}
+
+.grp:hover::before{
+  transform:scale(1.25);
+}
+
+.grp:hover{
+  transform:translateY(-1px);
+}
+
+.grp span{
+  position:relative;
+  z-index:2;
+  margin-left:6px;
+  color:var(--lem-cyan);
+  font-weight:900;
+  font-size:11px;
+  text-shadow:0 0 8px rgba(25,217,255,.75);
+}
+
+.grp{
+  position:relative;
+  z-index:1;
+}
+
+.grp *{
+  position:relative;
+  z-index:2;
+}
+
+/* Couleurs hover groupes */
+.g1:hover{box-shadow:0 0 15px #ff4d6d;}
+.g2:hover{box-shadow:0 0 15px #b88cff;}
+.g3:hover{box-shadow:0 0 15px #ff1d35;}
+.g4:hover{box-shadow:0 0 15px #ff7fb6;}
+.g5:hover{box-shadow:0 0 15px #a7ff3f;}
+.g6:hover{box-shadow:0 0 15px #8cecff;}
+.g7:hover{box-shadow:0 0 15px #ffd166;}
+.g8:hover{box-shadow:0 0 15px #d7b4ff;}
+.g9:hover{box-shadow:0 0 15px #ffd36e;}
+.g10:hover{box-shadow:0 0 15px #9fdcff;}
+.g11:hover{box-shadow:0 0 15px #9d9d9d;}
+.g12:hover{box-shadow:0 0 15px #ffb875;}
+.g13:hover{box-shadow:0 0 15px #ff7a5c;}
+.g14:hover{box-shadow:0 0 15px #ff4fd8;}
+.g15:hover{box-shadow:0 0 15px #0b5d44;}
+.g16:hover{box-shadow:0 0 15px #0ea7a0;}
+
+/* Images groupes */
+.g1{
+  background-image:url("https://ih1.redbubble.net/image.5448884326.8810/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg");
+}
+
+.g2{
+  background-image:url("https://i.pinimg.com/736x/47/fd/77/47fd77dc3c0ea5d7d3e09adcd0ba37b1.jpg");
+}
+
+.g3{
+  background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8YKAFfR10MggRLiJKcdiI0OIClTbw_FbOw&s");
+}
+
+.g4{
+  background-image:url("https://preview.redd.it/some-helluva-hazbin-icons-i-made-all-are-inspired-by-v0-p6y5waenoqye1.jpg?width=1080&crop=smart&auto=webp&s=0af79c1349a30349333ec3b8cd6cf9b9cddb656c");
+}
+
+.g5{background-image:url("https://via.placeholder.com/150/a7ff3f/0f0a28");}
+.g6{background-image:url("https://via.placeholder.com/150/8cecff/0f0a28");}
+.g7{background-image:url("https://via.placeholder.com/150/ffd166/0f0a28");}
+.g8{background-image:url("https://via.placeholder.com/150/d7b4ff/0f0a28");}
+.g9{background-image:url("https://via.placeholder.com/150/ffd36e/0f0a28");}
+.g10{background-image:url("https://via.placeholder.com/150/9fdcff/0f0a28");}
+.g11{background-image:url("https://via.placeholder.com/150/9d9d9d/0f0a28");}
+.g12{background-image:url("https://via.placeholder.com/150/ffb875/0f0a28");}
+.g13{background-image:url("https://via.placeholder.com/150/ff7a5c/0f0a28");}
+.g14{background-image:url("https://via.placeholder.com/150/ff4fd8/0f0a28");}
+.g15{background-image:url("https://via.placeholder.com/150/0b5d44/ecfbff");}
+.g16{background-image:url("https://via.placeholder.com/150/0ea7a0/ecfbff");}
+
+/* ===================== IMAGE QEEL DROITE ===================== */
+
+.who-image-2{
+  width:200px;
+  height:400px;
+  flex:0 0 200px;
+  border:1px solid rgba(25,217,255,.22);
+  border-radius:12px;
+  background:
+    linear-gradient(180deg,rgba(5,10,28,.05),rgba(5,10,28,.55)),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJemZJ8vDobrX7WslWydj5p871m18R4MLQTw&s") center/cover no-repeat;
+  box-shadow:
+    inset 0 0 36px rgba(0,0,0,.45),
+    0 0 15px rgba(25,217,255,.20);
+}
+
+/* ===================== QEEL PHRASE / PERSOS ===================== */
+
+.qeel-online-custom{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  width:100%;
+  max-width:1200px;
+  margin:30px auto 0;
+  color:var(--lem-cyan-soft);
+  font-family:"Bahianita",cursive;
+  text-align:center;
+  font-size:40px;
+}
+
+.dialogue-box{
+  position:relative;
+  flex:1;
+  height:150px;
+  padding:14px 18px;
+  box-sizing:border-box;
+  border:1px solid rgba(25,217,255,.22);
+  border-left:4px solid var(--lem-cyan);
+  border-radius:14px;
+  background:
+    radial-gradient(circle at top left,rgba(25,217,255,.10),transparent 40%),
+    rgba(18,24,60,.90);
+  box-shadow:
+    0 0 14px rgba(25,217,255,.12),
+    inset 0 0 18px rgba(25,217,255,.04);
+  font-size:32px!important;
+  line-height:1.5;
+  transition:.2s ease;
+}
+
+.dialogue-box::before{
+  content:"✦ ... Commentaire que personne n'a demandé ... ✦";
+  display:block;
+  margin-bottom:8px;
+  text-align:center;
+  color:var(--lem-pink-soft);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2px;
+  opacity:.75;
+  text-transform:uppercase;
+  text-shadow:0 0 8px rgba(255,79,124,.35);
+}
+
+.dialogue-box::after{
+  display:none;
+}
+
+.dialogue-box:hover{
+  transform:scale(1.015);
+}
+
+#delf{
+  font-size:32px!important;
+  font-weight:500;
+  word-break:break-word;
+}
+
+#speaker-avatar{
+  width:100px;
+  height:100px;
+  object-fit:cover;
+  border:1px solid rgba(140,236,255,.32);
+  border-radius:14px;
+  background:#080d20;
+  box-shadow:
+    0 0 10px rgba(25,217,255,.32),
+    0 0 20px rgba(25,217,255,.12);
+}
+
+#speaker-name{
+  display:none;
+}
+
+/* ===================== EFFETS PERSOS ===================== */
+
+.bubble-alastor{
+  background:radial-gradient(circle,#2a0000,#0d0000);
+  border:2px solid #ff004c;
+  box-shadow:0 0 20px rgba(255,0,76,.90);
+  color:#ffb3c6;
+}
+
+.alastor{
+  font-family:"Courier New",monospace;
+  text-shadow:0 0 8px #ff004c;
+  animation:radioNoise .15s infinite;
+}
+
+.bubble-angel{
+  background:linear-gradient(135deg,#2a001f,#4d0039);
+  border:2px solid #ff66cc;
+  box-shadow:0 0 15px rgba(255,102,204,.80);
+  color:#ffd6f2;
+}
+
+.bubble-blitzo{
+  background:linear-gradient(135deg,#2a0a00,#000);
+  border:2px solid #ff3300;
+  box-shadow:0 0 20px rgba(255,51,0,1);
+  color:#ffb3a0;
+}
+
+.bubble-stolas{
+  background:linear-gradient(135deg,#140b1f,#000);
+  border:2px solid #cc66ff;
+  box-shadow:0 0 20px rgba(204,102,255,.90);
+  color:#e6ccff;
+}
+
+.bubble-loona{
+  background:linear-gradient(135deg,#0a0a1a,#000);
+  border:2px solid #9999ff;
+  box-shadow:0 0 12px rgba(153,153,255,.50);
+  color:#ccccff;
+}
+
+.bubble-charlie{
+  background:linear-gradient(135deg,#2a1f0a,#000);
+  border:2px solid #ffcc66;
+  box-shadow:0 0 15px rgba(255,204,102,.80);
+  color:#fff0cc;
+}
+
+.bubble-vox{
+  background:linear-gradient(135deg,#001f24,#000);
+  border:2px solid #00eaff;
+  box-shadow:0 0 20px rgba(0,234,255,1);
+  color:#8fffff;
+}
+
+.vox{
+  position:relative;
+  text-shadow:
+    2px 0 #00eaff,
+    -2px 0 red,
+    0 0 10px #00eaff;
+}
+
+.bubble-moxxie{
+  background:#111425;
+  border:2px solid #ecfbff;
+  color:#fff;
+}
+
+.bubble-millie{
+  background:linear-gradient(135deg,#2a0000,#000);
+  border:2px solid #ff6666;
+  color:#ffd6d6;
+}
+
+.bubble-lucifer{
+  background:linear-gradient(135deg,#332200,#000);
+  border:2px solid #ffcc00;
+  color:#fff2b3;
+}
+
+@keyframes radioNoise{
+  0%{opacity:1;}
+  50%{opacity:.85;}
+  100%{opacity:1;}
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width:980px){
+  .qeel-wrapper{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .qeel-left,
+  .qeel-right{
+    width:100%;
+  }
+
+  .who-groups{
+    width:100%;
+    max-width:450px;
+  }
+
+  .who-image-2{
+    width:100%;
+    max-width:300px;
+    height:420px;
+  }
+
+  .qeel-online-custom{
+    flex-direction:column;
+  }
+
+  #speaker-avatar{
+    width:130px;
+    height:130px;
+  }
+}
 /* ===================== QEEL PHRASE / PERSOS ===================== */
 
 .qeel-online-custom{

@@ -1520,3 +1520,223 @@ body{
 .timeline-wrapper{
   overflow:visible!important;
 }
+
+/* ===================== LOSER BOX ===================== */
+.loser-box {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 12px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #00111f, #002b4d, #0066ff);
+  border-radius: 10px;
+  box-shadow:
+    0 0 15px rgba(0, 150, 255, 0.5),
+    inset 0 0 15px rgba(0, 200, 255, 0.3);
+  animation: flickerBox 3s infinite;
+}
+
+.loser-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  box-shadow:
+    0 0 8px #00cfff,
+    0 0 15px #009dff,
+    0 0 30px #0066ff;
+  opacity: 0.6;
+}
+
+.loser-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background-image: radial-gradient(circle, #66ccff 2px, transparent 3px);
+  background-size: 18px 18px;
+  opacity: 0.15;
+}
+
+.loser-text {
+  font-family: "Monoton", sans-serif;
+  font-size: 32px;
+  letter-spacing: 3px;
+  color: #e6f7ff;
+  text-shadow:
+    0 0 3px #ffffff,
+    0 0 6px #00cfff,
+    0 0 12px #009dff,
+    0 0 25px #0066ff;
+  animation: flickerText 2.5s infinite;
+}
+
+/* ===================== QEEL GROUPES ===================== */
+.who-stats {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.who-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 10px;
+  background: #1f173e;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.who-box.online {
+  flex: 1;
+  width: 200px;
+  height: 50px;
+  padding: 0;
+  background: linear-gradient(135deg, #0a0e24, #1a1d3f, #2a3470, #5bc0eb);
+  color: #8fd3ff;
+  font-size: 30px;
+  font-family: "Bahianita", cursive;
+}
+
+.who-box.members,
+.who-box.messages {
+  width: 140px;
+}
+
+.wholoser {
+  width: 400px;
+}
+
+.totaluseronl {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(135deg, #0a0f2c, #1a1f4d);
+  color: #8fd3ff;
+  font-weight: 500;
+}
+
+.qeel-wrapper,
+.who-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.who-wrapper {
+  gap: 40px;
+  padding: 30px;
+  background: #1f173e;
+  color: #fff;
+}
+
+.who-title {
+  position: relative;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.who-title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  margin-top: 5px;
+  background: linear-gradient(90deg, #ff7eb3, #7b6cff);
+}
+
+.who-groups {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 300px;
+  height: 400px;
+}
+
+.grp {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: calc(50% - 3px);
+  height: 35px;
+  padding-right: 10px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  font-size: 11px;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.grp span {
+  margin-left: 6px;
+  color: #00eaff;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.grp::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+}
+
+.grp * {
+  position: relative;
+  z-index: 2;
+}
+
+.grp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  transition: 0.4s ease;
+}
+
+.grp:hover::before {
+  transform: scale(8);
+}
+
+.g1:hover  { box-shadow: 0 0 15px #ff4d6d; }
+.g2:hover  { box-shadow: 0 0 15px #4cc9f0; }
+.g3:hover  { box-shadow: 0 0 15px #f72585; }
+.g4:hover  { box-shadow: 0 0 15px #7209b7; }
+.g5:hover  { box-shadow: 0 0 15px #3a86ff; }
+.g6:hover  { box-shadow: 0 0 15px #06d6a0; }
+.g7:hover  { box-shadow: 0 0 15px #ffd166; }
+.g8:hover  { box-shadow: 0 0 15px #ef476f; }
+.g9:hover  { box-shadow: 0 0 15px #8338ec; }
+.g10:hover { box-shadow: 0 0 15px #00f5d4; }
+.g11:hover { box-shadow: 0 0 15px #ff9f1c; }
+.g12:hover { box-shadow: 0 0 15px #2ec4b6; }
+.g13:hover { box-shadow: 0 0 15px #e71d36; }
+.g14:hover { box-shadow: 0 0 15px #ffbf69; }
+.g15:hover { box-shadow: 0 0 15px #cbf3f0; }
+.g16:hover { box-shadow: 0 0 15px #ff006e; }
+
+.g1  { background-image: url("https://ih1.redbubble.net/image.5448884326.8810/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg"); }
+.g2  { background-image: url("https://i.pinimg.com/736x/47/fd/77/47fd77dc3c0ea5d7d3e09adcd0ba37b1.jpg"); }
+.g3  { background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8YKAFfR10MggRLiJKcdiI0OIClTbw_FbOw&s"); }
+.g4  { background-image: url("https://preview.redd.it/some-helluva-hazbin-icons-i-made-all-are-inspired-by-v0-p6y5waenoqye1.jpg?width=1080&crop=smart&auto=webp&s=0af79c1349a30349333ec3b8cd6cf9b9cddb656c"); }
+.g5  { background-image: url("https://via.placeholder.com/150/3a86ff"); }
+.g6  { background-image: url("https://via.placeholder.com/150/06d6a0"); }
+.g7  { background-image: url("https://via.placeholder.com/150/ffd166"); }
+.g8  { background-image: url("https://via.placeholder.com/150/ef476f"); }
+.g9  { background-image: url("https://via.placeholder.com/150/8338ec"); }
+.g10 { background-image: url("https://via.placeholder.com/150/00f5d4"); }
+.g11 { background-image: url("https://via.placeholder.com/150/ff9f1c"); }
+.g12 { background-image: url("https://via.placeholder.com/150/2ec4b6"); }
+.g13 { background-image: url("https://via.placeholder.com/150/e71d36"); }
+.g14 { background-image: url("https://via.placeholder.com/150/ffbf69"); }
+.g15 { background-image: url("https://via.placeholder.com/150/cbf3f0"); }
+.g16 { background-image: url("https://via.placeholder.com/150/ff006e"); }

@@ -382,7 +382,7 @@
 .online-users{
   position:relative;
   width:100%;
-  height:292px;
+  height:288px;
   margin:0;
   padding:14px;
   overflow:auto;
@@ -467,29 +467,13 @@
   position:relative;
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:8px;
+  gap:7px;
   width:100%;
-  height:362px;
+  height:auto;
   margin:0;
   align-content:start;
-  overflow:auto;
-  padding-right:4px;
-  scrollbar-width:thin;
-  scrollbar-color:var(--lem-pink) transparent;
-}
-
-.who-groups::-webkit-scrollbar{
-  width:5px;
-}
-
-.who-groups::-webkit-scrollbar-track{
-  background:transparent;
-}
-
-.who-groups::-webkit-scrollbar-thumb{
-  background:var(--lem-pink);
-  border-radius:999px;
-  box-shadow:0 0 8px rgba(255,79,124,.70);
+  overflow:visible;
+  padding-right:0;
 }
 
 .grp{
@@ -502,8 +486,8 @@
   justify-content:flex-end;
   width:100%;
   min-width:0;
-  height:39px;
-  padding:0 10px;
+  height:36px;
+  padding:0 9px;
   border:1px solid rgba(25,217,255,.22);
   border-radius:9px;
   background-color:#0a1028;
@@ -511,7 +495,7 @@
   background-position:center;
   color:var(--lem-white);
   font-family:"Rajdhani",Arial,sans-serif;
-  font-size:11px;
+  font-size:10px;
   font-weight:900;
   line-height:1;
   text-align:right;
@@ -552,10 +536,10 @@
 
 .grp span{
   flex-shrink:0;
-  margin-left:6px;
+  margin-left:5px;
   color:var(--lem-cyan);
   font-weight:900;
-  font-size:12px;
+  font-size:11px;
   text-shadow:0 0 8px rgba(25,217,255,.85);
 }
 
@@ -985,13 +969,14 @@
     margin:0 auto;
   }
 
-  .who-groups{
-    width:100%;
-    max-width:450px;
-    height:auto;
-    max-height:420px;
-    margin:0 auto;
-  }
+.who-groups{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  max-height:none;
+  overflow:visible;
+  margin:0 auto;
+}
 
   .qeel-online-custom{
     flex-direction:column;

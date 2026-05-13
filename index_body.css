@@ -367,32 +367,38 @@
 
 #newest_user a{
   display:inline-block;
-  margin:4px 0;
-  padding:3px 10px 4px;
-  border:1px solid rgba(25,217,255,.35);
+  margin:5px 0;
+  padding:4px 12px 5px;
+  border:1px solid rgba(25,217,255,.45);
   border-radius:999px;
   background:
-    linear-gradient(180deg,rgba(7,10,26,.92),rgba(12,16,36,.96));
-  color:inherit;
+    linear-gradient(180deg,rgba(4,8,22,.96),rgba(9,14,34,.98));
+  color:#ecfbff !important;
   text-decoration:none;
-  font-size:24px;
+  font-size:23px;
   line-height:1;
+  letter-spacing:.4px;
+
+  /* lisibilité */
   text-shadow:
-    0 0 2px #ffffff,
-    0 0 6px rgba(25,217,255,.75),
-    0 0 12px rgba(25,217,255,.45);
+    1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0 0 3px rgba(0,0,0,.95);
+
+  /* glow sur la pastille, pas sur les lettres */
   box-shadow:
-    inset 0 0 10px rgba(25,217,255,.10),
-    0 0 10px rgba(25,217,255,.18);
-  -webkit-text-stroke:.35px rgba(236,251,255,.75);
+    inset 0 0 10px rgba(25,217,255,.18),
+    0 0 10px rgba(25,217,255,.35);
 }
 
 #newest_user a:hover{
-  color:var(--lem-white) !important;
-  border-color:rgba(255,211,110,.55);
+  color:#ffffff !important;
+  border-color:rgba(255,211,110,.65);
   box-shadow:
-    inset 0 0 10px rgba(255,211,110,.12),
-    0 0 12px rgba(255,211,110,.28);
+    inset 0 0 10px rgba(255,211,110,.16),
+    0 0 12px rgba(255,211,110,.35);
 }
 
 #newest_user a span,

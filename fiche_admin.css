@@ -1,6 +1,506 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800;900&family=Monoton&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800;900&family=Monoton&display=swap');
+ /* =========================================================
+   SCENGUIDE — GUIDE DES SCÉNARIOS LEMEGETON
+   Optimisé Forumactif / ModernBB
+========================================================= */
+ 
+ 
+.scenguide,
+.scenguide *{
+  box-sizing:border-box;
+}
 
+.scenguide{
+  --sg-card:rgba(18,24,60,.92);
+
+  --sg-white:#ecfbff;
+  --sg-text:#c6e9ff;
+  --sg-muted:#8dbddd;
+
+  --sg-cyan:#19d9ff;
+  --sg-cyan-soft:#8cecff;
+  --sg-pink:#ff4f9b;
+  --sg-pink-soft:#ffb6d2;
+  --sg-gold:#ffd36e;
+  --sg-gold-soft:#ffe7a8;
+  --sg-red:#ff4f6d;
+
+  --sg-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+  position:relative;
+  overflow:hidden;
+  width:920px;
+  max-width:100%;
+  margin:30px auto;
+  padding:18px;
+  border:1px solid rgba(25,217,255,.32);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at top left,rgba(25,217,255,.13),transparent 32%),
+    radial-gradient(circle at top right,rgba(255,79,155,.12),transparent 30%),
+    linear-gradient(180deg,#0a0f2b 0%,#10153a 52%,#0b1030 100%);
+  color:var(--sg-text);
+  font-family:"Rajdhani",Arial,sans-serif;
+  box-shadow:
+    0 0 0 1px rgba(20,40,95,.9),
+    0 0 26px rgba(25,217,255,.16),
+    0 28px 70px rgba(0,0,0,.46);
+}
+
+.scenguide:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.14;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:100% 8px,8px 100%;
+}
+
+.scenguide a{
+  color:var(--sg-cyan-soft);
+  text-decoration:none;
+  font-weight:900;
+}
+
+.scenguide a:hover{
+  color:var(--sg-pink-soft)!important;
+}
+
+.scenguide-box{
+  position:relative;
+  z-index:1;
+  padding:16px;
+  border:1px solid rgba(25,217,255,.18);
+  border-radius:17px;
+  background:
+    radial-gradient(circle at top,rgba(25,217,255,.07),transparent 30%),
+    linear-gradient(180deg,rgba(16,23,60,.96),rgba(10,15,41,.96));
+}
+
+/* HEADER */
+
+.scenguide-head{
+  padding:22px 22px 20px;
+  border:1px solid rgba(25,217,255,.38);
+  border-radius:15px;
+  background:
+    linear-gradient(90deg,rgba(5,10,28,.96),rgba(4,12,35,.75)),
+    var(--sg-head-img) center/cover;
+  box-shadow:
+    inset 0 0 38px rgba(0,0,0,.62),
+    0 0 20px rgba(25,217,255,.12);
+}
+
+.scenguide-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--sg-pink-soft);
+  font:900 14px/1 "Barlow Condensed",Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1.6px;
+  text-shadow:0 0 12px rgba(255,79,155,.55);
+}
+
+.scenguide-kicker:before,
+.scenguide-kicker:after{
+  content:"✦";
+  color:var(--sg-cyan);
+  text-shadow:0 0 10px rgba(25,217,255,.85);
+}
+
+.scenguide-title{
+  margin:5px 0 0;
+  color:var(--sg-cyan-soft);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:clamp(34px,6vw,64px);
+  font-weight:400;
+  line-height:.92;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-shadow:
+    0 0 6px rgba(140,236,255,.95),
+    0 0 18px rgba(25,217,255,.62),
+    0 0 36px rgba(25,217,255,.32);
+}
+
+.scenguide-sub{
+  margin:8px 0 0;
+  color:var(--sg-cyan-soft);
+  font-size:14px;
+  font-weight:900;
+  line-height:1.35;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+}
+
+/* INTRO */
+
+.scenguide-intro{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:12px;
+  margin-top:12px;
+}
+
+.scenguide-lead{
+  padding:15px 16px;
+  border:1px solid rgba(255,79,155,.24);
+  border-left:4px solid var(--sg-pink);
+  border-radius:13px;
+  background:linear-gradient(90deg,rgba(255,79,155,.11),rgba(111,70,255,.08));
+  color:var(--sg-white);
+  font-size:15.5px;
+  font-weight:800;
+  line-height:1.55;
+}
+
+.scenguide-mini{
+  display:grid;
+  gap:10px;
+}
+
+.scenguide-mini-card{
+  padding:12px 13px;
+  border:1px solid rgba(25,217,255,.24);
+  border-left:4px solid var(--sg-cyan);
+  border-radius:12px;
+  background:rgba(255,255,255,.035);
+}
+
+.scenguide-mini-card:nth-child(2){
+  border-left-color:var(--sg-gold);
+}
+
+.scenguide-mini-label{
+  display:block;
+  margin-bottom:5px;
+  color:var(--sg-pink-soft);
+  font:900 13px/1 "Barlow Condensed",Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.scenguide-mini-text{
+  color:var(--sg-white);
+  font-size:14px;
+  font-weight:800;
+  line-height:1.35;
+}
+
+/* SECTIONS */
+
+.scenguide-section{
+  --sg-sec:var(--sg-cyan);
+  --sg-sec-soft:var(--sg-cyan-soft);
+  --sg-sec-rgb:25,217,255;
+
+  margin-top:12px;
+  overflow:hidden;
+  border:1px solid rgba(var(--sg-sec-rgb),.24);
+  border-radius:14px;
+  background:var(--sg-card);
+}
+
+.scenguide-section.what{
+  --sg-sec:var(--sg-pink);
+  --sg-sec-soft:var(--sg-pink-soft);
+  --sg-sec-rgb:255,79,155;
+}
+
+.scenguide-section.how{
+  --sg-sec:var(--sg-cyan);
+  --sg-sec-soft:var(--sg-cyan-soft);
+  --sg-sec-rgb:25,217,255;
+}
+
+.scenguide-section.form{
+  --sg-sec:var(--sg-gold);
+  --sg-sec-soft:var(--sg-gold-soft);
+  --sg-sec-rgb:255,211,110;
+}
+
+.scenguide-section.rules{
+  --sg-sec:var(--sg-red);
+  --sg-sec-soft:#ffb8c3;
+  --sg-sec-rgb:255,79,109;
+}
+
+.scenguide-section-title{
+  margin:0;
+  padding:12px 15px 11px;
+  border-bottom:1px solid rgba(var(--sg-sec-rgb),.28);
+  color:var(--sg-sec-soft);
+  background:linear-gradient(90deg,rgba(var(--sg-sec-rgb),.20),rgba(var(--sg-sec-rgb),.055));
+  font:900 28px/1 "Barlow Condensed",Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-shadow:0 0 12px rgba(var(--sg-sec-rgb),.32);
+}
+
+.scenguide-content{
+  padding:15px;
+}
+
+.scenguide-text{
+  margin:0;
+  color:var(--sg-text);
+  font-size:15.5px;
+  font-weight:700;
+  line-height:1.6;
+}
+
+.scenguide-text + .scenguide-text{
+  margin-top:10px;
+}
+
+.scenguide-text b{
+  color:var(--sg-sec-soft);
+  text-shadow:0 0 8px rgba(var(--sg-sec-rgb),.25);
+}
+
+.scenguide-mark{
+  display:inline;
+  padding:1px 6px;
+  border:1px solid rgba(var(--sg-sec-rgb),.28);
+  border-radius:8px;
+  background:rgba(var(--sg-sec-rgb),.12);
+  color:var(--sg-sec-soft);
+  font-weight:900;
+  text-shadow:0 0 8px rgba(var(--sg-sec-rgb),.28);
+  box-shadow:inset 3px 0 0 var(--sg-sec);
+}
+
+/* PASTILLES */
+
+.scenguide-keywords{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:7px;
+  margin-top:12px;
+  text-align:center;
+}
+
+.scenguide-keyword{
+  display:inline-flex;
+  align-items:center;
+  min-height:26px;
+  padding:6px 10px;
+  border:1px solid rgba(var(--sg-sec-rgb),.26);
+  border-radius:999px;
+  background:rgba(var(--sg-sec-rgb),.10);
+  color:var(--sg-white);
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  box-shadow:inset 3px 0 0 var(--sg-sec);
+}
+
+.scenguide-keyword:before{
+  content:"✦";
+  margin-right:7px;
+  color:var(--sg-sec-soft);
+  text-shadow:0 0 8px rgba(var(--sg-sec-rgb),.65);
+}
+
+.scenguide-break{
+  flex-basis:100%;
+  height:0;
+}
+
+/* ÉTAPES */
+
+.scenguide-steps{
+  display:grid;
+  gap:9px;
+}
+
+.scenguide-step{
+  display:grid;
+  grid-template-columns:34px minmax(0,1fr);
+  gap:10px;
+  align-items:start;
+  padding:11px 12px;
+  border:1px solid rgba(var(--sg-sec-rgb),.16);
+  border-radius:12px;
+  background:rgba(255,255,255,.035);
+}
+
+.scenguide-num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:999px;
+  background:rgba(var(--sg-sec-rgb),.12);
+  color:var(--sg-sec-soft);
+  font:900 15px/1 "Barlow Condensed",Arial,sans-serif;
+  box-shadow:inset 3px 0 0 var(--sg-sec);
+}
+
+.scenguide-step-text{
+  color:var(--sg-white);
+  font-size:14.8px;
+  font-weight:800;
+  line-height:1.45;
+}
+
+.scenguide-example{
+  display:block;
+  margin-top:6px;
+  padding-left:12px;
+  border-left:3px solid rgba(var(--sg-sec-rgb),.35);
+  color:var(--sg-muted);
+  font-size:13px;
+  font-style:italic;
+  font-weight:800;
+}
+
+/* ALERTE */
+
+.scenguide-alert-wrap{
+  display:grid;
+  grid-template-columns:64px minmax(0,1fr);
+  gap:12px;
+  align-items:center;
+}
+
+.scenguide-alert-label{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:64px;
+  height:64px;
+  color:#ffd1da;
+  font-size:46px;
+  line-height:1;
+  text-shadow:
+    0 0 10px rgba(255,79,109,.9),
+    0 0 28px rgba(255,79,109,.38);
+}
+
+.scenguide-alert-label:before{
+  content:"⚠";
+}
+
+.scenguide-warning{
+  padding:13px 15px;
+  border:1px solid rgba(255,79,109,.38);
+  border-left:4px solid var(--sg-red);
+  border-radius:12px;
+  background:
+    radial-gradient(circle at top left,rgba(255,79,109,.18),transparent 36%),
+    linear-gradient(90deg,rgba(255,79,109,.12),rgba(255,211,110,.06));
+  color:var(--sg-white);
+  font-size:14.8px;
+  font-weight:900;
+  line-height:1.45;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+}
+
+.scenguide-warning b{
+  color:#ffd1da;
+  text-shadow:0 0 8px rgba(255,79,109,.35);
+}
+
+/* CTA */
+
+.scenguide-cta{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:12px;
+  align-items:center;
+  padding:14px 15px;
+  border:1px solid rgba(255,211,110,.26);
+  border-left:4px solid var(--sg-gold);
+  border-radius:13px;
+  background:linear-gradient(90deg,rgba(255,211,110,.10),rgba(25,217,255,.06));
+}
+
+.scenguide-cta-title{
+  display:block;
+  margin-bottom:5px;
+  color:var(--sg-gold-soft);
+  font:900 22px/1 "Barlow Condensed",Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.scenguide-cta-text{
+  color:var(--sg-white);
+  font-size:14.5px;
+  font-weight:800;
+  line-height:1.35;
+}
+
+.scenguide-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  padding:10px 15px;
+  border:1px solid rgba(25,217,255,.45);
+  border-radius:999px;
+  background:linear-gradient(180deg,rgba(14,99,185,.92),rgba(10,55,111,.92));
+  color:var(--sg-white)!important;
+  font:900 13px/1 "Barlow Condensed",Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  box-shadow:0 0 14px rgba(25,217,255,.22);
+}
+
+.scenguide-button:hover{
+  filter:brightness(1.13);
+}
+
+.scenguide-footer{
+  margin-top:12px;
+  color:var(--sg-muted);
+  font-size:12px;
+  font-weight:900;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:760px){
+  .scenguide{
+    padding:12px;
+  }
+
+  .scenguide-box{
+    padding:12px;
+  }
+
+  .scenguide-title{
+    font-size:38px;
+  }
+
+  .scenguide-intro,
+  .scenguide-cta{
+    grid-template-columns:1fr;
+  }
+
+  .scenguide-step,
+  .scenguide-alert-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .scenguide-alert-label{
+    margin:auto;
+  }
+}
 /* =========================================================
    PREDEF — PRÉDÉFINIS LEMEGETON
    Guide d'incarnation / Optimisé Forumactif ModernBB

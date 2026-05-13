@@ -372,7 +372,7 @@
   border:1px solid rgba(25,217,255,.38);
   border-radius:999px;
   background:#02040d;
-  color:inherit;
+  color:inherit !important;
   text-decoration:none;
   font-size:23px;
   line-height:1;

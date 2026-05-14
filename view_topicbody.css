@@ -810,27 +810,41 @@
 	overflow:visible!important;
 }
 
-.postprofile-awards.promess .pm-award,
+/* Award natif Forumactif : div.award avec --award-image */
 .postprofile-awards.promess .award{
 	position:relative!important;
 	display:inline-flex!important;
-	align-items:center;
-	justify-content:center;
+	align-items:center!important;
+	justify-content:center!important;
 	width:38px!important;
 	height:38px!important;
+	min-width:38px!important;
+	min-height:38px!important;
 	border-radius:50%!important;
-	isolation:isolate;
 	overflow:visible!important;
-	background:transparent!important;
+	isolation:isolate;
+	cursor:help;
+	background-color:transparent!important;
+	background-image:var(--award-image)!important;
+	background-size:cover!important;
+	background-position:center!important;
+	background-repeat:no-repeat!important;
+	box-shadow:
+		0 0 8px rgba(36,228,255,.18),
+		0 0 0 1px rgba(36,228,255,.22)!important;
+	transition:
+		transform .22s ease,
+		filter .22s ease,
+		box-shadow .22s ease;
 }
 
-.postprofile-awards.promess .pm-award::before,
+/* Trait lumineux derrière l'award natif */
 .postprofile-awards.promess .award::before{
 	content:"";
 	position:absolute;
 	left:50%;
 	top:50%;
-	z-index:0;
+	z-index:-1;
 	width:54px;
 	height:8px;
 	transform:translate(-50%,-50%);
@@ -842,9 +856,9 @@
 	transition:.22s ease;
 }
 
-.postprofile-awards.promess .pm-award img,
-.postprofile-awards.promess .award img,
-.postprofile-awards.promess img{
+/* Si certains awards sortent en image */
+.postprofile-awards.promess > img,
+.postprofile-awards.promess .award img{
 	position:relative;
 	z-index:2;
 	display:block;
@@ -865,14 +879,15 @@
 		box-shadow .22s ease;
 }
 
-/* Bulle custom + bulle native Forumactif */
-.postprofile-awards.promess .pm-award-bubble,
-.postprofile-awards.promess .award_tooltiptext{
+/* Bulle native Forumactif */
+.postprofile-awards.promess .award .award_tooltiptext,
+.postprofile-awards.promess .award > .award_tooltiptext,
+.postprofile-awards.promess div.award span.award_tooltiptext{
 	position:absolute!important;
 	top:50%!important;
 	left:auto!important;
 	right:calc(100% + 16px)!important;
-	z-index:9999!important;
+	z-index:99999!important;
 	width:150px!important;
 	min-height:58px!important;
 	padding:10px 12px!important;
@@ -884,6 +899,7 @@
 	font-weight:600!important;
 	line-height:1.25!important;
 	color:var(--pm-cyan,#24e4ff)!important;
+	background:none!important;
 	background-color:#0b0f2a!important;
 	background-image:
 		radial-gradient(circle at top right,rgba(255,79,134,.22),transparent 45%),
@@ -907,37 +923,19 @@
 		transform .22s ease!important;
 }
 
-/* Corrige les enfants internes qui gardent parfois un fond natif */
-.postprofile-awards.promess .pm-award-bubble *,
-.postprofile-awards.promess .award_tooltiptext *{
-	background:transparent!important;
+/* Empêche les enfants internes de remettre du blanc */
+.postprofile-awards.promess .award .award_tooltiptext *,
+.postprofile-awards.promess .award > .award_tooltiptext *{
+	background:none!important;
 	background-color:transparent!important;
+	background-image:none!important;
 	color:inherit!important;
-}
-
-.postprofile-awards.promess .pm-award-bubble::before,
-.postprofile-awards.promess .award_tooltiptext::before{
-	content:"";
-	position:absolute;
-	top:50%;
-	right:-16px;
-	width:16px;
-	height:6px;
-	transform:translateY(-50%);
-	background:var(--pm-cyan,#24e4ff)!important;
-	box-shadow:0 0 8px rgba(36,228,255,.45)!important;
-}
-
-.postprofile-awards.promess .pm-award-bubble::after,
-.postprofile-awards.promess .award_tooltiptext::after{
-	background:transparent!important;
-	border:0!important;
 	box-shadow:none!important;
 }
 
-.postprofile-awards.promess .pm-award-title,
+/* Titre de la bulle native */
 .postprofile-awards.promess .award_tooltiptext_title{
-	display:block;
+	display:block!important;
 	margin:0 0 4px!important;
 	padding:0!important;
 	font-family:"Barlow Condensed",Rajdhani,Arial,sans-serif!important;
@@ -950,22 +948,144 @@
 	text-shadow:0 0 6px rgba(36,228,255,.45)!important;
 }
 
-.postprofile-awards.promess .pm-award-desc{
-	display:block;
-	color:rgba(36,228,255,.70);
-	font-size:10px;
-	font-weight:600;
-	line-height:1.2;
+/* Connecteur entre bulle et award */
+.postprofile-awards.promess .award .award_tooltiptext::before,
+.postprofile-awards.promess .award > .award_tooltiptext::before{
+	content:"";
+	position:absolute;
+	top:50%;
+	right:-16px;
+	width:16px;
+	height:6px;
+	transform:translateY(-50%);
+	background:var(--pm-cyan,#24e4ff)!important;
+	box-shadow:0 0 8px rgba(36,228,255,.45)!important;
 }
 
-.postprofile-awards.promess .pm-award:hover,
+/* Supprime les restes blancs éventuels */
+.postprofile-awards.promess .award .award_tooltiptext::after,
+.postprofile-awards.promess .award > .award_tooltiptext::after{
+	content:none!important;
+	display:none!important;
+	background:none!important;
+	background-color:transparent!important;
+	background-image:none!important;
+	border:0!important;
+	box-shadow:none!important;
+}
+
+/* Hover award natif */
 .postprofile-awards.promess .award:hover{
-	z-index:10000!important;
+	z-index:100000!important;
+	transform:scale(1.08);
+	filter:saturate(1.15) brightness(1.08);
+	box-shadow:
+		0 0 12px rgba(255,79,134,.28),
+		0 0 10px rgba(36,228,255,.28),
+		0 0 0 1px rgba(36,228,255,.42)!important;
 }
 
-.postprofile-awards.promess .pm-award:hover img,
-.postprofile-awards.promess .award:hover img,
-.postprofile-awards.promess img:hover{
+.postprofile-awards.promess .award:hover::before{
+	width:68px;
+	opacity:1;
+	background:linear-gradient(90deg,var(--pm-pink,#ff4f86),var(--pm-cyan,#24e4ff));
+	box-shadow:
+		0 0 12px rgba(36,228,255,.42),
+		0 0 10px rgba(255,79,134,.22);
+}
+
+.postprofile-awards.promess .award:hover .award_tooltiptext,
+.postprofile-awards.promess .award:hover > .award_tooltiptext{
+	opacity:1!important;
+	visibility:visible!important;
+	transform:translateY(-50%) translateX(0) scale(1)!important;
+}
+
+/* Ancien système custom pm-award conservé au cas où */
+.postprofile-awards.promess .pm-award{
+	position:relative!important;
+	display:inline-flex!important;
+	align-items:center;
+	justify-content:center;
+	width:38px!important;
+	height:38px!important;
+	border-radius:50%!important;
+	overflow:visible!important;
+	isolation:isolate;
+}
+
+.postprofile-awards.promess .pm-award::before{
+	content:"";
+	position:absolute;
+	left:50%;
+	top:50%;
+	z-index:0;
+	width:54px;
+	height:8px;
+	transform:translate(-50%,-50%);
+	border-radius:999px;
+	background:var(--pm-cyan,#24e4ff);
+	box-shadow:0 0 10px rgba(36,228,255,.35);
+	opacity:.55;
+	pointer-events:none;
+	transition:.22s ease;
+}
+
+.postprofile-awards.promess .pm-award img{
+	position:relative;
+	z-index:2;
+	display:block;
+	width:30px!important;
+	height:30px!important;
+	max-width:30px!important;
+	max-height:30px!important;
+	padding:0!important;
+	margin:0!important;
+	border-radius:50%!important;
+	object-fit:cover;
+	cursor:help;
+	filter:saturate(.9) brightness(.95);
+	box-shadow:0 0 8px rgba(36,228,255,.10);
+	transition:.22s ease;
+}
+
+.postprofile-awards.promess .pm-award-bubble{
+	position:absolute!important;
+	top:50%!important;
+	right:calc(100% + 16px)!important;
+	z-index:99999!important;
+	width:150px!important;
+	min-height:58px!important;
+	padding:10px 12px!important;
+	box-sizing:border-box!important;
+	border-radius:6px!important;
+	text-align:center!important;
+	font-family:Rajdhani,Arial,sans-serif!important;
+	font-size:11px!important;
+	font-weight:600!important;
+	line-height:1.25!important;
+	color:var(--pm-cyan,#24e4ff)!important;
+	background-color:#0b0f2a!important;
+	background-image:
+		radial-gradient(circle at top right,rgba(255,79,134,.22),transparent 45%),
+		linear-gradient(135deg,rgba(11,15,42,.98),rgba(32,27,61,.98))!important;
+	border:1px solid rgba(36,228,255,.55)!important;
+	box-shadow:
+		0 8px 22px rgba(0,0,0,.45),
+		0 0 12px rgba(36,228,255,.22),
+		0 0 12px rgba(255,79,134,.18)!important;
+	opacity:0!important;
+	visibility:hidden!important;
+	pointer-events:none!important;
+	transform:translateY(-50%) translateX(8px) scale(.96)!important;
+	transition:.22s ease!important;
+}
+
+.postprofile-awards.promess .pm-award:hover{
+	z-index:100000!important;
+}
+
+.postprofile-awards.promess .pm-award:hover img{
 	transform:scale(1.12);
 	filter:saturate(1.15) brightness(1.08);
 	box-shadow:
@@ -973,19 +1093,13 @@
 		0 0 10px rgba(36,228,255,.24);
 }
 
-.postprofile-awards.promess .pm-award:hover::before,
-.postprofile-awards.promess .award:hover::before{
+.postprofile-awards.promess .pm-award:hover::before{
 	width:68px;
 	opacity:1;
-	background:
-		linear-gradient(90deg,var(--pm-pink,#ff4f86),var(--pm-cyan,#24e4ff));
-	box-shadow:
-		0 0 12px rgba(36,228,255,.42),
-		0 0 10px rgba(255,79,134,.22);
+	background:linear-gradient(90deg,var(--pm-pink,#ff4f86),var(--pm-cyan,#24e4ff));
 }
 
-.postprofile-awards.promess .pm-award:hover .pm-award-bubble,
-.postprofile-awards.promess .award:hover .award_tooltiptext{
+.postprofile-awards.promess .pm-award:hover .pm-award-bubble{
 	opacity:1!important;
 	visibility:visible!important;
 	transform:translateY(-50%) translateX(0) scale(1)!important;
@@ -1629,13 +1743,13 @@
 
 	.postprofile-awards.promess .pm-award-bubble::before,
 	.postprofile-awards.promess .award_tooltiptext::before{
-		top:auto;
-		right:auto;
-		left:50%;
-		bottom:-10px;
-		width:6px;
-		height:10px;
-		transform:translateX(-50%);
+		top:auto!important;
+		right:auto!important;
+		left:50%!important;
+		bottom:-10px!important;
+		width:6px!important;
+		height:10px!important;
+		transform:translateX(-50%)!important;
 	}
 
 	.postprofile-awards.promess .pm-award:hover .pm-award-bubble,

@@ -1,8 +1,7 @@
 /* =========================================================
-   QEEL — LEMEGETON
-   Ambiance néon / fiche quête
-   Qui est en ligne / stats / groupes / dernier membre / phrase
-   À garder séparé du CSS PA
+   INDEX BODY — LEMEGETON
+   QEEL + IFRAME PA
+   CSS nettoyé / doublons fusionnés / conflits limités
 ========================================================= */
 
 :root{
@@ -37,11 +36,15 @@
   --lem-shadow-gold:0 0 14px rgba(255,211,110,.42),0 0 28px rgba(255,211,110,.14);
 }
 
-/* ===================== PA IFRAME — INDEX BODY UNIQUEMENT ===================== */
+/* =========================================================
+   PA IFRAME — INDEX BODY UNIQUEMENT
+   Ne pas mettre dans le CSS de la page iframe /h1-pa
+========================================================= */
 
 .pa-frame-wrap,
 #main-content .pa-frame-wrap,
-#container .pa-frame-wrap{
+#container .pa-frame-wrap,
+#page-body .pa-frame-wrap{
   position:relative!important;
   display:block!important;
   width:100%!important;
@@ -58,12 +61,14 @@
   background:transparent!important;
   border:0!important;
   outline:0!important;
+  clear:both!important;
 }
 
 .pa-frame-wrap iframe,
 iframe.pa-frame,
 #main-content iframe.pa-frame,
-#container iframe.pa-frame{
+#container iframe.pa-frame,
+#page-body iframe.pa-frame{
   position:relative!important;
   display:block!important;
   width:100%!important;
@@ -81,6 +86,7 @@ iframe.pa-frame,
   vertical-align:top!important;
 }
 
+/* Sécurité si la PA est placée à côté d'une chronologie */
 .timeline-layout .pa-frame-wrap,
 .timeline-layout iframe.pa-frame{
   height:598px!important;
@@ -89,7 +95,9 @@ iframe.pa-frame,
   overflow:hidden!important;
 }
 
-/* ===================== WRAPPER GLOBAL QEEL ===================== */
+/* =========================================================
+   WRAPPER GLOBAL QEEL
+========================================================= */
 
 .qeel-wrapper,
 .qeel-wrapper *,
@@ -164,7 +172,9 @@ iframe.pa-frame,
   min-width:0;
 }
 
-/* ===================== TITRES PANNEAUX ===================== */
+/* =========================================================
+   TITRES PANNEAUX
+========================================================= */
 
 .qeel-panel-title{
   display:flex;
@@ -194,7 +204,9 @@ iframe.pa-frame,
   text-shadow:0 0 10px rgba(255,79,124,.55);
 }
 
-/* ===================== LOSER BOX ===================== */
+/* =========================================================
+   LOSER BOX
+========================================================= */
 
 .loser-box{
   position:relative;
@@ -251,7 +263,9 @@ iframe.pa-frame,
   animation:flickerText 2.8s infinite;
 }
 
-/* ===================== STATS LED ===================== */
+/* =========================================================
+   STATS LED
+========================================================= */
 
 .who-stats{
   position:relative;
@@ -370,7 +384,9 @@ iframe.pa-frame,
     0 0 18px rgba(25,217,255,.30);
 }
 
-/* ===================== DERNIER MEMBRE ===================== */
+/* =========================================================
+   DERNIER MEMBRE
+========================================================= */
 
 #last_user{
   position:relative;
@@ -439,7 +455,9 @@ iframe.pa-frame,
   -webkit-text-stroke:0!important;
 }
 
-/* ===================== PRÉSENCES ===================== */
+/* =========================================================
+   PRÉSENCES
+========================================================= */
 
 .online-users{
   position:relative;
@@ -509,7 +527,9 @@ iframe.pa-frame,
   -webkit-text-stroke:0!important;
 }
 
-/* ===================== IMAGE QEEL ===================== */
+/* =========================================================
+   IMAGE QEEL
+========================================================= */
 
 .who-image-2{
   position:relative;
@@ -545,7 +565,9 @@ iframe.pa-frame,
   object-position:center;
 }
 
-/* ===================== GROUPES QEEL ===================== */
+/* =========================================================
+   GROUPES QEEL
+========================================================= */
 
 .who-groups{
   position:relative;
@@ -627,7 +649,6 @@ iframe.pa-frame,
   text-shadow:0 0 8px rgba(25,217,255,.85);
 }
 
-/* Couleurs groupes */
 .g1{border-left:4px solid #ff4f7c;background-image:url("https://ih1.redbubble.net/image.5448884326.8810/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg");}
 .g2{border-left:4px solid #b88cff;background-image:url("https://i.pinimg.com/736x/47/fd/77/47fd77dc3c0ea5d7d3e09adcd0ba37b1.jpg");}
 .g3{border-left:4px solid #ff003c;background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8YKAFfR10MggRLiJKcdiI0OIClTbw_FbOw&s");}
@@ -662,7 +683,9 @@ iframe.pa-frame,
 .g15:hover{box-shadow:0 0 15px rgba(11,93,68,.75);}
 .g16:hover{box-shadow:0 0 15px rgba(14,167,160,.75);}
 
-/* ===================== PHRASE QEEL / PERSOS ===================== */
+/* =========================================================
+   PHRASE QEEL / PERSOS
+========================================================= */
 
 .qeel-online-custom{
   display:flex;
@@ -748,7 +771,9 @@ iframe.pa-frame,
   display:none;
 }
 
-/* ===================== EFFETS PERSOS ===================== */
+/* =========================================================
+   EFFETS PERSOS
+========================================================= */
 
 .bubble-alastor{
   position:relative;
@@ -793,13 +818,7 @@ iframe.pa-frame,
   display:block;
   pointer-events:none;
   background:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,.08) 0,
-      rgba(255,255,255,.08) 1px,
-      transparent 1px,
-      transparent 4px
-    ),
+    repeating-linear-gradient(to bottom,rgba(255,255,255,.08) 0,rgba(255,255,255,.08) 1px,transparent 1px,transparent 4px),
     radial-gradient(circle at center,rgba(122,255,0,.10),transparent 55%);
   mix-blend-mode:screen;
   opacity:.22;
@@ -934,7 +953,9 @@ iframe.pa-frame,
   color:#fff2b3;
 }
 
-/* ===================== RUMEURS / ZONES ===================== */
+/* =========================================================
+   RUMEURS / ZONES
+========================================================= */
 
 .zone{
   display:flex;
@@ -989,7 +1010,6 @@ iframe.pa-frame,
   transition:opacity .3s;
 }
 
-/* Enfer */
 #rumeur-enfer{
   position:relative;
   overflow:hidden;
@@ -1060,7 +1080,6 @@ iframe.pa-frame,
     -2px 2px 0 #66ffcc;
 }
 
-/* Terre */
 #rumeur-terre{
   position:relative;
   background:#0f1419;
@@ -1092,7 +1111,6 @@ iframe.pa-frame,
   font-size:12px;
 }
 
-/* Paradis */
 #rumeur-paradis{
   position:relative;
   height:100%;
@@ -1112,7 +1130,9 @@ iframe.pa-frame,
     0 0 20px rgba(255,215,0,.30);
 }
 
-/* ===================== ANIMATIONS ===================== */
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 
 @keyframes lemQeelSweep{
   0%,45%{transform:translateX(-100%);}
@@ -1142,24 +1162,15 @@ iframe.pa-frame,
 @keyframes voxTextGlitch{
   0%{
     transform:translate(0);
-    text-shadow:
-      2px 0 #00eaff,
-      -2px 0 #ff003c,
-      0 0 10px #00eaff;
+    text-shadow:2px 0 #00eaff,-2px 0 #ff003c,0 0 10px #00eaff;
   }
   35%{
     transform:translate(-4px,1px);
-    text-shadow:
-      5px 0 #00eaff,
-      -5px 0 #ff003c,
-      0 0 14px #00eaff;
+    text-shadow:5px 0 #00eaff,-5px 0 #ff003c,0 0 14px #00eaff;
   }
   70%{
     transform:translate(4px,-1px);
-    text-shadow:
-      -5px 0 #00eaff,
-      5px 0 #ff003c,
-      0 0 18px #ff003c;
+    text-shadow:-5px 0 #00eaff,5px 0 #ff003c,0 0 18px #ff003c;
   }
   100%{transform:translate(0);}
 }
@@ -1183,22 +1194,13 @@ iframe.pa-frame,
 }
 
 @keyframes alastorBoxSignal{
-  0%,100%{
-    transform:translate(0,0);
-    filter:brightness(1) contrast(1.05);
-  }
-  8%{
-    transform:translate(-1px,1px);
-    filter:brightness(1.25) contrast(1.25);
-  }
+  0%,100%{transform:translate(0,0);filter:brightness(1) contrast(1.05);}
+  8%{transform:translate(-1px,1px);filter:brightness(1.25) contrast(1.25);}
   10%{transform:translate(2px,-1px);}
   12%{transform:translate(0,0);}
   46%{filter:brightness(.85) contrast(1.4) saturate(1.4);}
   48%{transform:translate(-2px,0);}
-  50%{
-    transform:translate(1px,1px);
-    filter:brightness(1.35) contrast(1.2);
-  }
+  50%{transform:translate(1px,1px);filter:brightness(1.35) contrast(1.2);}
   52%{transform:translate(0,0);}
   76%{filter:brightness(.95) contrast(1.7);}
   78%{transform:translate(2px,0);}
@@ -1217,7 +1219,9 @@ iframe.pa-frame,
   75%{transform:translate(0,-1px);}
 }
 
-/* ===================== RESPONSIVE ===================== */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media (max-width:980px){
   .qeel-wrapper{
@@ -1261,6 +1265,20 @@ iframe.pa-frame,
 }
 
 @media (max-width:620px){
+  .pa-frame-wrap,
+  #main-content .pa-frame-wrap,
+  #container .pa-frame-wrap,
+  #page-body .pa-frame-wrap,
+  .pa-frame-wrap iframe,
+  iframe.pa-frame,
+  #main-content iframe.pa-frame,
+  #container iframe.pa-frame,
+  #page-body iframe.pa-frame{
+    height:598px!important;
+    min-height:598px!important;
+    max-height:598px!important;
+  }
+
   .who-stats-two{
     grid-template-columns:1fr;
   }

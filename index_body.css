@@ -54,7 +54,7 @@
   position:relative;
   display:grid;
   grid-template-columns:minmax(0,1fr) 145px;
-  gap:14px;
+  gap:34px; /* avant 14px */
   align-items:start;
   width:100%;
   max-width:1000px;

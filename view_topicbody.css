@@ -1801,3 +1801,53 @@
 		padding-right:42px!important;
 	}
 }
+/* =========================
+   FIX FINAL — BULLE AWARD NATIVE FORUMACTIF
+   À placer TOUT EN BAS
+========================= */
+
+.postprofile-top.promess .col-awards.promess .postprofile-awards.promess div.award > span.award_tooltiptext{
+	background:#0b0f2a!important;
+	background-color:#0b0f2a!important;
+	background-image:
+		radial-gradient(circle at top right,rgba(255,79,134,.28),transparent 46%),
+		linear-gradient(135deg,#0b0f2a 0%,#201b3d 100%)!important;
+	color:var(--pm-cyan,#24e4ff)!important;
+	border:1px solid rgba(36,228,255,.65)!important;
+	box-shadow:
+		inset 0 0 0 999px rgba(11,15,42,.18),
+		0 8px 22px rgba(0,0,0,.45),
+		0 0 12px rgba(36,228,255,.28),
+		0 0 12px rgba(255,79,134,.18)!important;
+}
+
+.postprofile-top.promess .col-awards.promess .postprofile-awards.promess div.award > span.award_tooltiptext div,
+.postprofile-top.promess .col-awards.promess .postprofile-awards.promess div.award > span.award_tooltiptext span,
+.postprofile-top.promess .col-awards.promess .postprofile-awards.promess div.award > span.award_tooltiptext p{
+	background:transparent!important;
+	background-color:transparent!important;
+	background-image:none!important;
+	color:inherit!important;
+	box-shadow:none!important;
+}
+
+.postprofile-top.promess .col-awards.promess .postprofile-awards.promess div.award > span.award_tooltiptext .award_tooltiptext_title{
+	background:transparent!important;
+	color:var(--pm-cyan,#24e4ff)!important;
+	text-shadow:0 0 6px rgba(36,228,255,.45)!important;
+}
+
+.postprofile-top.promess .col-awards.promess .postprofile-awards.promess div.award > span.award_tooltiptext::before{
+	background:var(--pm-cyan,#24e4ff)!important;
+	box-shadow:0 0 8px rgba(36,228,255,.55)!important;
+}
+
+.postprofile-top.promess .col-awards.promess .postprofile-awards.promess div.award > span.award_tooltiptext::after{
+	content:none!important;
+	display:none!important;
+	background:transparent!important;
+	background-color:transparent!important;
+	background-image:none!important;
+	border:0!important;
+	box-shadow:none!important;
+}

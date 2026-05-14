@@ -2,6 +2,7 @@
    PA — LEMEGETON
    Ambiance néon / fiche quête
    Version iframe 800x600 — onglets à gauche
+   CSS nettoyé, conflits corrigés
 ========================================================= */
 
 :root{
@@ -57,35 +58,30 @@ body{
 
 #pa-container{
   position:relative;
-  width:100%;
-  height:100vh;
-  min-height:600px;
-  padding:16px;
+  width:800px;
+  height:600px;
+  margin:0;
+  padding:0;
   overflow:hidden;
-  background:
-    radial-gradient(circle at top left,rgba(25,217,255,.10),transparent 28%),
-    radial-gradient(circle at top right,rgba(255,79,124,.10),transparent 30%),
-    linear-gradient(180deg,#31496d 0%,#223957 48%,#141d3b 100%);
+  background:transparent;
 }
 
 #pa-wrapper{
   position:relative;
-  width:100%;
-  max-width:768px;
-  height:568px;
-  margin:0 auto;
-  padding:12px;
+  width:800px;
+  height:600px;
+  margin:0;
+  padding:22px 26px;
   overflow:hidden;
-  border:1px solid rgba(25,217,255,.26);
-  border-radius:22px;
+  border:0;
+  border-radius:0;
   background:
     radial-gradient(circle at 12% 10%,rgba(25,217,255,.14),transparent 34%),
     radial-gradient(circle at 88% 0%,rgba(255,79,124,.10),transparent 32%),
     linear-gradient(180deg,rgba(14,31,58,.94),rgba(8,13,32,.98));
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.035),
-    inset 0 0 40px rgba(25,217,255,.05),
-    0 0 34px rgba(25,217,255,.16);
+    inset 0 0 0 1px rgba(255,255,255,.025),
+    inset 0 0 40px rgba(25,217,255,.05);
 }
 
 #pa-wrapper::before{
@@ -93,7 +89,7 @@ body{
   position:absolute;
   inset:0;
   pointer-events:none;
-  opacity:.16;
+  opacity:.15;
   background-image:radial-gradient(circle,rgba(140,236,255,.75) 1px,transparent 1.4px);
   background-size:18px 18px;
 }
@@ -101,7 +97,7 @@ body{
 #pa-wrapper::after{
   content:"";
   position:absolute;
-  inset:10px;
+  inset:22px 26px;
   pointer-events:none;
   border:1px solid rgba(25,217,255,.11);
   border-radius:18px;
@@ -122,12 +118,11 @@ body{
   width:100%;
   height:100%;
   display:grid;
-  grid-template-columns:74px minmax(0,1fr) 145px;
+  grid-template-columns:74px minmax(0,1fr) 130px;
   gap:10px;
 }
 
-/* Important : permet aux enfants de .tabs-container
-   de devenir les colonnes directes du grid */
+/* Les enfants de .tabs-container deviennent des enfants directs de .layout */
 .tabs-container{
   display:contents;
 }
@@ -205,7 +200,9 @@ body{
 
 .tab-content{
   display:none;
+  width:100%;
   height:100%;
+  min-height:0;
   padding:10px;
   overflow:hidden;
   border:1px solid rgba(25,217,255,.24);
@@ -230,6 +227,7 @@ body{
 .grid-2,
 .grid-3{
   display:flex;
+  width:100%;
   height:100%;
   gap:10px;
   min-height:0;
@@ -526,15 +524,12 @@ body{
   height:100%;
   display:flex;
   align-items:stretch;
+  justify-content:center;
   overflow:visible!important;
-  border:1px solid rgba(25,217,255,.24);
-  border-radius:18px;
-  background:
-    radial-gradient(circle at top,rgba(25,217,255,.12),transparent 45%),
-    linear-gradient(180deg,rgba(18,31,66,.92),rgba(8,13,32,.98));
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.025),
-    0 0 16px rgba(25,217,255,.10);
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
 }
 
 .timeline{
@@ -546,17 +541,17 @@ body{
   width:100%;
   height:100%;
   margin:0;
-  padding-left:44px;
-  padding-top:34px;
+  padding-left:42px;
+  padding-top:42px;
 }
 
 #timeline::before{
   content:"";
   position:absolute;
   left:22px;
-  top:28px;
+  top:30px;
   width:3px;
-  height:calc(100% - 56px);
+  height:420px;
   background:linear-gradient(to bottom,var(--lem-pink),var(--lem-cyan),#4a90e2);
   box-shadow:
     0 0 8px rgba(25,217,255,.60),
@@ -565,19 +560,20 @@ body{
 
 .item{
   position:relative;
-  margin:8px 0;
-  padding-bottom:6px;
+  margin:16px 0;
+  padding-bottom:0;
 }
 
 .date{
   position:relative;
   z-index:5;
-  color:var(--lem-gold);
+  color:var(--lem-cyan-soft);
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-weight:900;
   font-size:12px;
+  line-height:1.35;
   letter-spacing:1px;
-  text-transform:uppercase;
+  text-transform:none;
   cursor:pointer;
   transition:color .25s ease,text-shadow .25s ease;
 }
@@ -589,7 +585,7 @@ body{
 
 .circle{
   position:absolute;
-  left:-25px;
+  left:-20px;
   top:0;
   transform:translate(-50%,0);
   border:none!important;
@@ -613,10 +609,10 @@ body{
 
 .content{
   position:absolute;
-  right:34px;
-  top:10px;
-  z-index:10;
-  width:215px;
+  right:120px;
+  top:-4px;
+  z-index:50;
+  width:230px;
   padding:9px;
   border:1px solid rgba(255,79,124,.30);
   border-left:4px solid var(--lem-pink);
@@ -645,19 +641,7 @@ body{
 }
 
 .timeline-title{
-  position:absolute;
-  top:50%;
-  z-index:100;
-  margin-left:-38px;
-  transform:rotate(-90deg) translateY(-50%);
-  transform-origin:left center;
-  color:var(--lem-cyan-soft);
-  font-family:"Bahianita",cursive;
-  font-size:24px;
-  letter-spacing:3px;
-  text-shadow:
-    0 0 5px rgba(255,255,255,.70),
-    0 0 14px rgba(25,217,255,.70);
+  display:none;
 }
 
 @keyframes elasticPop{

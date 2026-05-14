@@ -1,0 +1,1279 @@
+/* =========================
+   BASE
+========================= */
+.sceditor-container iframe,
+.sceditor-container textarea,
+.sceditor-container.promess iframe,
+.sceditor-container.promess textarea {
+    background: #fff;
+    border: 0;
+    color: #999 !important;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 5px;
+    outline: 0;
+    padding: 0;
+    resize: none;
+}
+
+.label,
+.label.promess {
+    font-weight: bolder;
+}
+
+.postprofile-info img,
+.postprofile-info.promess img {
+    width: 150px;
+    padding: 3px;
+}
+
+.field #text,
+.field.promess #text {
+    padding: 5px;
+}
+
+.post,
+.post.row1,
+.post.row2 {
+    display: block;
+    width: 100%;
+    clear: both;
+    float: none !important;
+    margin: 0 0 20px !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* =========================
+   TOP AREA
+========================= */
+.sub-header.promess {
+    display: block;
+    width: 100%;
+    clear: both;
+    margin: 0 0 10px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.sub-header-buttons.promess,
+.topic-actions-buttons.promess {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.topic-actions.promess,
+.quick-nav-topics.promess,
+.topic-title-wrap.promess {
+    clear: both;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sub-header-info.promess {
+    width: calc(100% - 70px);
+    max-width: 930px;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BLOC TITRE DE SUJET
+========================= */
+.topic-title-wrap.promess {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: calc(100% - 70px);
+    max-width: 930px;
+    margin: 18px auto 14px;
+    padding: 24px 26px 22px;
+    border-radius: 18px;
+    text-align: center;
+    background:
+        radial-gradient(circle at center, rgba(24, 132, 255, 0.18) 0%, rgba(24, 132, 255, 0.08) 28%, rgba(10, 22, 52, 0) 70%),
+        linear-gradient(135deg, #14284f 0%, #183765 45%, #1c55a4 100%);
+    border: 1px solid rgba(103, 190, 255, 0.22);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+        inset 0 -18px 30px rgba(0, 180, 255, 0.08),
+        0 0 18px rgba(0, 120, 255, 0.12);
+}
+
+.topic-title-wrap.promess::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0.22;
+    background-image: radial-gradient(rgba(150, 220, 255, 0.55) 1.4px, transparent 1.4px);
+    background-size: 18px 18px;
+}
+
+.topic-title-wrap.promess::after {
+    content: "";
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: -8px;
+    height: 26px;
+    border-radius: 999px;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(89, 206, 255, 0.35) 0%,
+        rgba(89, 206, 255, 0.14) 38%,
+        rgba(89, 206, 255, 0) 75%
+    );
+    filter: blur(8px);
+}
+
+.topic-title-wrap.promess .sub-header-info.promess {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+/* =========================
+   TITRE
+========================= */
+.page-title.promess {
+    margin: 0 0 10px !important;
+    text-align: center !important;
+    line-height: 1;
+}
+
+.page-title.promess a,
+.page-title a {
+    display: inline-block;
+    font-family: "Monoton", sans-serif !important;
+    font-size: 40px !important;
+    line-height: 1.05;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    color: #b3f0ff !important;
+    text-shadow:
+        0 0 4px #ffffff,
+        0 0 8px #00eaff,
+        0 0 16px #009dff,
+        0 0 30px #0066ff;
+    animation: flickerCat 3s infinite;
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.page-title.promess::after {
+    content: "You're a loser just like me ♫ ♪";
+    display: block;
+    margin-top: 8px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(179, 240, 255, 0.55);
+    text-shadow: 0 0 6px rgba(0, 234, 255, 0.18);
+}
+
+.page-title.promess a:hover,
+.page-title a:hover {
+    color: #ff5c7a !important;
+    text-shadow:
+        0 0 4px #ffffff,
+        0 0 8px #ff5c7a,
+        0 0 16px #ff2e63,
+        0 0 30px #b71c3c !important;
+    animation: none !important;
+}
+
+/* =========================
+   FIL D’ARIANE
+========================= */
+.sub-header-path.promess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-top: 10px;
+    text-align: center !important;
+    opacity: 0.95;
+}
+
+ 
+
+.sub-header-path.promess a,
+.nav,
+.nav a {
+    font-family: inherit !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: rgba(139, 233, 253, 0.85) !important;
+    text-decoration: none !important;
+    text-shadow: 0 0 6px rgba(139, 233, 253, 0.25);
+    transition: 0.2s ease;
+    animation: none !important;
+}
+
+ 
+
+.sub-header-path.promess a:hover,
+.nav a:hover {
+    color: #baf6ff !important;
+    text-shadow:
+        0 0 8px rgba(139, 233, 253, 0.45),
+        0 0 14px rgba(91, 212, 255, 0.2);
+}
+
+/* =========================
+   BLOC PROFIL
+========================= */
+.postprofile-top,
+.postprofile-top.promess {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 200px 140px;
+    align-items: start;
+    gap: 15px;
+    width: 100%;
+    clear: both;
+    float: none !important;
+    margin: 0 0 10px !important;
+    padding: 18px;
+    border-radius: 14px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, rgba(20, 15, 40, 0.95), rgba(30, 20, 60, 0.95)) !important;
+    box-shadow:
+        0 0 0 1px rgba(139, 233, 253, 0.12),
+        0 0 15px rgba(139, 233, 253, 0.08);
+}
+
+.postprofile-header,
+.postprofile-header.promess {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin-bottom: 0;
+}
+
+/* =========================
+   HERO PROFIL
+========================= */
+.promess-hero.promess {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    align-items: stretch;
+    min-height: 120px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: rgba(18, 18, 22, 0.98);
+    background-image: linear-gradient(90deg, rgba(18, 18, 22, 0.55), rgba(28, 22, 36, 0.35));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+        0 0 20px rgba(0, 0, 0, 0.18);
+}
+
+.promess-hero.promess::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        rgba(8, 10, 18, 0.45) 0%,
+        rgba(12, 12, 22, 0.3) 45%,
+        rgba(20, 16, 34, 0.12) 100%
+    );
+}
+
+.promess-hero-main.promess,
+.promess-hero-media.promess {
+    position: relative;
+    z-index: 1;
+}
+
+.promess-hero-main.promess {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 24px 28px;
+}
+
+.promess-hero-name.promess {
+    margin: 0;
+    font-size: 3rem;
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #59b8ff;
+    text-shadow:
+        0 0 10px rgba(89, 184, 255, 0.2),
+        0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.promess-hero-rank.promess {
+    margin-top: 6px;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #59b8ff;
+    opacity: 0.9;
+}
+
+.promess-hero-media.promess {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    min-height: 120px;
+    padding: 10px;
+    overflow: hidden;
+    background: #5865f2;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.promess-hero-thumb.promess {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.promess-hero.promess.has-cover .promess-hero-thumb.promess {
+    display: block;
+}
+
+.field.promess.is-banner-promess,
+.field.promess.is-header-bg-promess {
+    display: none !important;
+}
+
+/* =========================
+   INFOS PROFIL
+========================= */
+.col-infos,
+.col-infos.promess {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.postprofile-info.promess {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 1.2;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.col-infos .field,
+.col-infos.promess .field,
+.col-infos .field.promess,
+.col-infos.promess .field.promess {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #d9ecff;
+    background: transparent;
+}
+
+.col-infos .field.promess .field-label.promess,
+.col-infos.promess .field.promess .field-label.promess,
+.col-infos .field.promess .label,
+.col-infos.promess .field.promess .label {
+    display: none !important;
+}
+
+.col-infos .field.promess::after,
+.col-infos.promess .field.promess::after {
+    content: "•";
+    display: inline-block;
+    margin: 0 10px;
+    font-weight: 700;
+    color: rgba(139, 233, 253, 0.9);
+}
+
+.col-infos .field.promess:last-child::after,
+.col-infos.promess .field.promess:last-child::after {
+    display: none;
+}
+
+.field-content.promess {
+    display: inline;
+}
+
+.postprofile-contact,
+.postprofile-contact.promess {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0;
+}
+
+.promess-contact-icons.promess {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.col-texte,
+.col-texte.promess {
+    display: none;
+}
+
+/* =========================
+   TON MONDE
+========================= */
+.profile-location.promess {
+    grid-column: 1 / 2;
+    grid-row: 3;
+    width: 100%;
+    min-width: 0;
+    align-self: stretch;
+}
+
+.profile-location.promess .field.promess {
+    display: block;
+    width: 100%;
+    height: 320px;
+    margin-bottom: 0;
+    padding: 14px 16px;
+    overflow: auto;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.profile-location.promess .field.promess .field-label.promess,
+.profile-location.promess .field.promess .label {
+    display: none !important;
+}
+
+/* =========================
+   AVATAR / OVERLAY
+========================= */
+.col-avatar,
+.col-avatar.promess {
+    position: relative;
+    grid-column: 2;
+    grid-row: 3;
+    width: 200px;
+    min-width: 200px;
+    overflow: hidden;
+}
+
+.postprofile-avatar.promess {
+    position: relative;
+    width: 100%;
+    height: 320px;
+}
+
+.postprofile-avatar img,
+.postprofile-avatar.promess img {
+    display: block;
+    width: 200px !important;
+    height: 320px !important;
+    margin-left: 0;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 0;
+}
+
+.profile-extra.promess {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0;
+    padding: 10px;
+    overflow: auto;
+    background: rgba(10, 10, 20, 0.88);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.col-avatar.promess:hover .profile-extra.promess,
+.col-avatar:hover .profile-extra.promess {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.profile-extra.promess .field.promess {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 42px 8px 8px;
+    overflow: visible;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #d9ecff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.profile-extra.promess .field.promess .field-label.promess,
+.profile-extra.promess .field.promess .label {
+    display: none !important;
+}
+
+.profile-extra.promess .field.promess::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.25;
+    text-transform: none;
+    color: #9ef7ff;
+    text-shadow:
+        0 0 6px rgba(158, 247, 255, 0.35),
+        0 0 12px rgba(91, 212, 255, 0.18);
+}
+
+.profile-extra.promess .field.promess::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    width: 60%;
+    height: 2px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(139, 233, 253, 0.95) 25%,
+        rgba(139, 233, 253, 1) 50%,
+        rgba(139, 233, 253, 0.95) 75%,
+        transparent 100%
+    );
+    box-shadow:
+        0 0 6px rgba(139, 233, 253, 0.8),
+        0 0 12px rgba(139, 233, 253, 0.4);
+}
+
+.profile-extra.promess .field.promess:first-child::before {
+    content: "Warning";
+}
+
+.profile-extra.promess .field.promess:last-child::before {
+    content: "Je n'accepte pas";
+}
+
+/* =========================
+   AWARDS
+========================= */
+.col-awards,
+.col-awards.promess {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 3;
+    grid-row: 3;
+    width: 140px;
+    min-width: 140px;
+    min-height: 320px;
+    margin-left: 0 !important;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.postprofile-awards,
+.postprofile-awards.promess {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 100%;
+}
+
+.postprofile-awards img,
+.postprofile-awards.promess img {
+    height: 30px;
+    margin: 0;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.postprofile-awards img:hover,
+.postprofile-awards.promess img:hover {
+    transform: scale(1.1);
+}
+
+/* =========================
+   LABELS HORIZONTAUX
+========================= */
+.postprofile-info.promess .label,
+.postprofile-info.promess .field.promess .label,
+.postprofile-info.promess .field.promess .field-label.promess,
+.profile-extra.promess .label,
+.profile-extra.promess .field.promess .label,
+.profile-extra.promess .field.promess .field-label.promess {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    transform: none !important;
+}
+
+/* =========================
+   BOUTONS PRINCIPAUX
+========================= */
+.sub-header-buttons.promess a.button1,
+.topic-actions-buttons.promess a.button1,
+.sub-header-buttons.promess .login-for.button1,
+.topic-actions-buttons.promess .login-for.button1 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    height: 40px;
+    padding: 0 22px;
+    overflow: hidden;
+    border-radius: 12px;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #dff8ff !important;
+    background:
+        radial-gradient(circle at center, rgba(24, 132, 255, 0.18) 0%, rgba(24, 132, 255, 0.08) 28%, rgba(10, 22, 52, 0) 70%),
+        linear-gradient(135deg, #14284f 0%, #183765 45%, #1c55a4 100%) !important;
+    border: 1px solid rgba(103, 190, 255, 0.32) !important;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        inset 0 -10px 18px rgba(0, 180, 255, 0.08),
+        0 0 12px rgba(0, 120, 255, 0.14) !important;
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.sub-header-buttons.promess a.button1::before,
+.topic-actions-buttons.promess a.button1::before,
+.sub-header-buttons.promess .login-for.button1::before,
+.topic-actions-buttons.promess .login-for.button1::before,
+.promess-contact-buttons.promess a::before,
+.fa_like_left.promess .rep-button::before,
+.fa_like_right.promess > a::before,
+.fa_like_right.promess > span::before,
+.fa_like_right.promess > strong::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0.18;
+    background-image: radial-gradient(rgba(150, 220, 255, 0.55) 1.2px, transparent 1.2px);
+    background-size: 16px 16px;
+}
+
+.sub-header-buttons.promess a.button1::after,
+.topic-actions-buttons.promess a.button1::after,
+.sub-header-buttons.promess .login-for.button1::after,
+.topic-actions-buttons.promess .login-for.button1::after,
+.promess-contact-buttons.promess a::after,
+.fa_like_left.promess .rep-button::after,
+.fa_like_right.promess > a::after,
+.fa_like_right.promess > span::after,
+.fa_like_right.promess > strong::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: -6px;
+    height: 14px;
+    border-radius: 999px;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(89, 206, 255, 0.30) 0%,
+        rgba(89, 206, 255, 0.10) 45%,
+        rgba(89, 206, 255, 0) 75%
+    );
+    filter: blur(6px);
+}
+
+.sub-header-buttons.promess .button1 img,
+.topic-actions-buttons.promess .button1 img {
+    position: relative;
+    z-index: 2;
+    width: auto;
+    max-height: 16px;
+    margin-right: 6px;
+    filter: brightness(0) invert(1);
+    transition: 0.25s ease;
+}
+
+.sub-header-buttons.promess a.button1:hover,
+.topic-actions-buttons.promess a.button1:hover,
+.sub-header-buttons.promess .login-for.button1:hover,
+.topic-actions-buttons.promess .login-for.button1:hover {
+    transform: translateY(-1px);
+    color: #b71c3c !important;
+    text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.8),
+        0 0 6px rgba(255, 120, 150, 0.4);
+    background:
+        radial-gradient(circle at center, rgba(255, 205, 225, 0.55) 0%, rgba(255, 182, 193, 0.35) 30%, rgba(255, 160, 185, 0.18) 55%, rgba(255, 160, 185, 0) 78%),
+        linear-gradient(135deg, #ffe3ec 0%, #ffc1d4 45%, #ff9fbd 100%) !important;
+    border-color: rgba(255, 120, 150, 0.88) !important;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+        inset 0 -10px 18px rgba(255, 150, 190, 0.16),
+        0 0 14px rgba(255, 120, 150, 0.28) !important;
+}
+
+.sub-header-buttons.promess .button1:hover img,
+.topic-actions-buttons.promess .button1:hover img {
+    filter: brightness(0) saturate(100%) invert(19%) sepia(86%) saturate(2245%) hue-rotate(338deg) brightness(91%) contrast(95%);
+}
+
+/* =========================
+   BOUTONS CONTACT
+========================= */
+.promess-contact-buttons.promess {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.promess-contact-field.promess {
+    display: inline-flex;
+}
+
+.promess-contact-buttons.promess a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 88px;
+    height: 34px;
+    padding: 0 16px;
+    overflow: hidden;
+    border-radius: 10px;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.promess-contact-buttons.promess a:hover {
+    transform: translateY(-1px);
+}
+
+.promess-btn-fiche {
+    color: #ffffff !important;
+    text-shadow: 0 0 6px rgba(160, 240, 255, 0.45);
+    background:
+        radial-gradient(circle at center, rgba(24, 132, 255, 0.18) 0%, rgba(24, 132, 255, 0.08) 28%, rgba(10, 22, 52, 0) 70%),
+        linear-gradient(135deg, #16335f 0%, #1b4a87 45%, #2e7fe0 100%) !important;
+    border: 1px solid rgba(106, 222, 255, 0.72) !important;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        inset 0 -10px 18px rgba(0, 180, 255, 0.10),
+        0 0 12px rgba(83, 193, 255, 0.22) !important;
+}
+
+.promess-btn-dating {
+    color: #dff8ff !important;
+    background:
+        radial-gradient(circle at center, rgba(24, 132, 255, 0.18) 0%, rgba(24, 132, 255, 0.08) 28%, rgba(10, 22, 52, 0) 70%),
+        linear-gradient(135deg, #14284f 0%, #183765 45%, #1c55a4 100%) !important;
+    border: 1px solid rgba(103, 190, 255, 0.32) !important;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        inset 0 -10px 18px rgba(0, 180, 255, 0.08),
+        0 0 12px rgba(0, 120, 255, 0.14) !important;
+}
+
+.promess-btn-looking {
+    color: #ffe6fb !important;
+    background:
+        radial-gradient(circle at center, rgba(190, 120, 255, 0.16) 0%, rgba(190, 120, 255, 0.08) 28%, rgba(20, 12, 34, 0) 70%),
+        linear-gradient(135deg, #2b1749 0%, #4b2270 45%, #7b3db3 100%) !important;
+    border: 1px solid rgba(220, 132, 255, 0.45) !important;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        inset 0 -10px 18px rgba(190, 120, 255, 0.08),
+        0 0 12px rgba(180, 84, 220, 0.16) !important;
+}
+
+.promess-btn-fiche:hover,
+.promess-btn-dating:hover,
+.promess-btn-looking:hover {
+    color: #b71c3c !important;
+    text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.8),
+        0 0 6px rgba(255, 120, 150, 0.4);
+    background:
+        radial-gradient(circle at center, rgba(255, 205, 225, 0.55) 0%, rgba(255, 182, 193, 0.35) 30%, rgba(255, 160, 185, 0.18) 55%, rgba(255, 160, 185, 0) 78%),
+        linear-gradient(135deg, #ffe3ec 0%, #ffc1d4 45%, #ff9fbd 100%) !important;
+    border-color: rgba(255, 120, 150, 0.88) !important;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+        inset 0 -10px 18px rgba(255, 150, 190, 0.16),
+        0 0 14px rgba(255, 120, 150, 0.28) !important;
+}
+
+/* =========================
+   HEADER DU MESSAGE
+========================= */
+.post-head {
+    padding: 8px 0 4px !important;
+    text-align: center;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.topic-title.promess {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+}
+
+.topic-title.promess a {
+    display: block;
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #8be9fd !important;
+    text-shadow:
+        0 0 8px rgba(139, 233, 253, 0.35),
+        0 0 16px rgba(91, 212, 255, 0.15);
+}
+
+.topic-date.promess {
+    display: block !important;
+    margin: 2px 0 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.4px;
+    color: rgba(190, 230, 255, 0.78) !important;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.post-head::before,
+.post-head::after,
+.topic-date.promess::before,
+.topic-date.promess::after,
+.topic-title.promess::before,
+.topic-title.promess::after,
+.postbody.promess::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+.postbody.promess {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    padding: 22px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    color: #dcddde !important;
+    background: linear-gradient(135deg, rgba(20, 15, 40, 0.95), rgba(30, 20, 60, 0.95));
+    box-shadow:
+        0 0 0 1px rgba(139, 233, 253, 0.18),
+        0 0 15px rgba(139, 233, 253, 0.1);
+}
+
+.postbody.promess .content.post-content.promess {
+    display: block !important;
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: #dcddde !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    text-align: left !important;
+    text-indent: 0 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    white-space: normal !important;
+}
+
+
+
+.postbody.promess .content.post-content.promess strong {
+    color: #ffffff !important;
+}
+
+.postbody.promess .content.post-content.promess a {
+    color: #8be9fd !important;
+}
+
+.postbody.promess blockquote {
+    margin: 10px 0;
+    padding: 10px;
+    color: #dcddde !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-left: 3px solid #8be9fd;
+}
+
+.postbody.promess .attachbox,
+.postbody.promess .file,
+.postbody.promess .attachments {
+    color: inherit !important;
+    background: transparent !important;
+}
+.postbody.promess .content.post-content.promess a,
+.postbody.promess .content.post-content.promess a * {
+    pointer-events: auto !important;
+}
+.edited-message.promess {
+    margin-top: 12px;
+}
+
+.signature_div.promess {
+    margin-top: 15px;
+    padding-top: 10px;
+    opacity: 0.85;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================
+   BARRE LIKE / ACTIONS
+========================= */
+.fa_like_div.promess {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    flex-wrap: nowrap;
+}
+
+.fa_like_left.promess {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.fa_like_right.promess {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.fa_like_left.promess .rep-button,
+.fa_like_right.promess > a,
+.fa_like_right.promess > span,
+.fa_like_right.promess > strong {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 100px;
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none !important;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #dff8ff !important;
+    background:
+        radial-gradient(circle at center, rgba(24, 132, 255, 0.18) 0%, rgba(24, 132, 255, 0.08) 28%, rgba(10, 22, 52, 0) 70%),
+        linear-gradient(135deg, #14284f 0%, #183765 45%, #1c55a4 100%) !important;
+    border: 1px solid rgba(103, 190, 255, 0.32) !important;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        inset 0 -10px 18px rgba(0, 180, 255, 0.08),
+        0 0 12px rgba(0, 120, 255, 0.14) !important;
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.fa_like_right.promess > a,
+.fa_like_right.promess > span,
+.fa_like_right.promess > strong {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+    padding: 0;
+}
+
+.fa_like_left.promess .rep-button:hover,
+.fa_like_right.promess > a:hover,
+.fa_like_right.promess > span:hover,
+.fa_like_right.promess > strong:hover {
+    transform: translateY(-1px);
+    color: #b71c3c !important;
+    text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.8),
+        0 0 6px rgba(255, 120, 150, 0.4);
+    background:
+        radial-gradient(circle at center, rgba(255, 205, 225, 0.55) 0%, rgba(255, 182, 193, 0.35) 30%, rgba(255, 160, 185, 0.18) 55%, rgba(255, 160, 185, 0) 78%),
+        linear-gradient(135deg, #ffe3ec 0%, #ffc1d4 45%, #ff9fbd 100%) !important;
+    border-color: rgba(255, 120, 150, 0.88) !important;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+        inset 0 -10px 18px rgba(255, 150, 190, 0.16),
+        0 0 14px rgba(255, 120, 150, 0.28) !important;
+}
+
+.fa_like_left.promess .rep-button i {
+    position: relative;
+    z-index: 2;
+    font-size: 14px;
+}
+
+.fa_like_right.promess img {
+    max-width: 18px;
+    max-height: 18px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: 0.25s ease;
+}
+
+.fa_like_right.promess > a:hover img,
+.fa_like_right.promess > span:hover img,
+.fa_like_right.promess > strong:hover img {
+    filter: brightness(0) saturate(100%) invert(19%) sepia(86%) saturate(2245%) hue-rotate(338deg) brightness(91%) contrast(95%);
+}
+
+/* =========================
+   ANIMATION TITRE
+========================= */
+@keyframes flickerCat {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+        text-shadow:
+            0 0 4px #ffffff,
+            0 0 8px #00eaff,
+            0 0 16px #009dff,
+            0 0 30px #0066ff;
+    }
+    20%, 24%, 55% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+    21%, 23% {
+        opacity: 0.7;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media screen and (max-width: 900px) {
+    .sub-header-info.promess {
+        width: calc(100% - 30px);
+    }
+
+    .postprofile-top,
+    .postprofile-top.promess {
+        grid-template-columns: 1fr;
+    }
+
+    .col-infos,
+    .col-infos.promess,
+    .col-avatar,
+    .col-avatar.promess,
+    .profile-location.promess,
+    .col-awards,
+    .col-awards.promess {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .col-avatar,
+    .col-avatar.promess {
+        order: 1;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .col-infos,
+    .col-infos.promess {
+        order: 2;
+    }
+
+    .profile-location.promess {
+        order: 3;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .col-awards,
+    .col-awards.promess {
+        order: 4;
+        width: 100%;
+        min-width: 0;
+        min-height: 120px;
+        margin-left: 0;
+    }
+
+    .promess-hero.promess {
+        grid-template-columns: 1fr 100px;
+        min-height: 100px;
+    }
+
+    .promess-hero-main.promess {
+        padding: 18px 20px;
+    }
+
+    .promess-hero-name.promess {
+        font-size: 2.2rem;
+    }
+
+    .postprofile-info.promess {
+        padding: 10px;
+    }
+
+    .col-infos .field,
+    .col-infos.promess .field,
+    .col-infos .field.promess,
+    .col-infos.promess .field.promess {
+        white-space: normal;
+    }
+
+    .profile-location.promess .field.promess {
+        height: 240px;
+    }
+
+    .postprofile-avatar.promess,
+    .postprofile-avatar img,
+    .postprofile-avatar.promess img {
+        width: 100% !important;
+        height: 320px !important;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .topic-title-wrap.promess {
+        width: calc(100% - 30px);
+        padding: 18px 18px 16px;
+    }
+
+    .topic-title-wrap.promess::after {
+        left: 18px;
+        right: 18px;
+    }
+
+    .page-title.promess a,
+    .page-title a {
+        font-size: 30px !important;
+    }
+
+    .fa_like_div.promess {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .fa_like_left.promess {
+        justify-content: flex-start;
+    }
+
+    .fa_like_right.promess {
+        margin-left: 0;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+}

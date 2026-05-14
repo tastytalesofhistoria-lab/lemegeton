@@ -1,7 +1,7 @@
 /* =========================================================
    PA — LEMEGETON
    Ambiance néon / fiche quête
-   Version iframe 800x600 — conflits corrigés
+   Version iframe 800x600 — onglets à gauche
 ========================================================= */
 
 :root{
@@ -36,7 +36,7 @@
 }
 
 /* =========================================================
-   BASE IFRAME
+   BASE IFRAME 800x600
 ========================================================= */
 
 html,
@@ -44,7 +44,7 @@ body{
   margin:0;
   padding:0;
   width:100%;
-  min-height:100%;
+  height:100%;
   overflow:hidden;
   background:#140e2a;
 }
@@ -56,11 +56,12 @@ body{
 }
 
 #pa-container{
-  width:100%;
-  min-height:600px;
-  padding:18px;
   position:relative;
-  z-index:1;
+  width:100%;
+  height:100vh;
+  min-height:600px;
+  padding:16px;
+  overflow:hidden;
   background:
     radial-gradient(circle at top left,rgba(25,217,255,.10),transparent 28%),
     radial-gradient(circle at top right,rgba(255,79,124,.10),transparent 30%),
@@ -70,11 +71,11 @@ body{
 #pa-wrapper{
   position:relative;
   width:100%;
-  max-width:764px;
-  height:564px;
+  max-width:768px;
+  height:568px;
   margin:0 auto;
-  padding:14px;
-  z-index:1;
+  padding:12px;
+  overflow:hidden;
   border:1px solid rgba(25,217,255,.26);
   border-radius:22px;
   background:
@@ -85,7 +86,6 @@ body{
     inset 0 0 0 1px rgba(255,255,255,.035),
     inset 0 0 40px rgba(25,217,255,.05),
     0 0 34px rgba(25,217,255,.16);
-  overflow:hidden;
 }
 
 #pa-wrapper::before{
@@ -113,7 +113,7 @@ body{
 }
 
 /* =========================================================
-   STRUCTURE PA / ONGLET
+   STRUCTURE PA / ONGLET À GAUCHE
 ========================================================= */
 
 .layout{
@@ -122,29 +122,29 @@ body{
   width:100%;
   height:100%;
   display:grid;
-  grid-template-columns:minmax(0,1fr) 150px;
+  grid-template-columns:74px minmax(0,1fr) 145px;
   gap:10px;
 }
 
+/* Important : permet aux enfants de .tabs-container
+   de devenir les colonnes directes du grid */
 .tabs-container{
-  display:flex;
-  flex-direction:column;
-  min-width:0;
-  height:100%;
+  display:contents;
 }
 
 .tabs{
-  flex:0 0 58px;
-  width:100%;
+  grid-column:1;
+  grid-row:1;
+  width:74px;
+  height:100%;
   display:flex;
-  flex-direction:row;
+  flex-direction:column;
   align-items:center;
-  justify-content:center;
-  gap:12px;
-  padding:7px 12px;
+  justify-content:flex-start;
+  gap:20px;
+  padding:16px 9px;
   border:1px solid rgba(25,217,255,.24);
-  border-bottom:0;
-  border-radius:18px 18px 0 0;
+  border-radius:18px 0 0 18px;
   background:
     radial-gradient(circle at top,rgba(25,217,255,.13),transparent 45%),
     linear-gradient(180deg,rgba(19,33,70,.96),rgba(8,13,32,.98));
@@ -157,15 +157,15 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  width:42px;
-  height:42px;
+  width:48px;
+  height:48px;
   border:1px solid rgba(25,217,255,.26);
   border-radius:14px;
   background:
     radial-gradient(circle at top,rgba(25,217,255,.12),transparent 55%),
     rgba(5,10,28,.74);
   color:var(--lem-cyan);
-  font-size:28px;
+  font-size:29px;
   cursor:pointer;
   text-shadow:0 0 10px rgba(25,217,255,.65);
   box-shadow:
@@ -197,23 +197,25 @@ body{
 }
 
 .tabs-content{
-  flex:1;
-  min-height:0;
+  grid-column:2;
+  grid-row:1;
+  min-width:0;
+  height:100%;
 }
 
 .tab-content{
   display:none;
   height:100%;
   padding:10px;
+  overflow:hidden;
   border:1px solid rgba(25,217,255,.24);
-  border-radius:0 0 18px 18px;
+  border-radius:0 18px 18px 0;
   background:
     radial-gradient(circle at top left,rgba(25,217,255,.10),transparent 34%),
     linear-gradient(180deg,rgba(18,31,66,.94),rgba(8,13,32,.98));
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,.025),
     0 0 16px rgba(25,217,255,.10);
-  overflow:hidden;
 }
 
 .tab-content.active{
@@ -273,6 +275,7 @@ body{
 .grid-2 .top-box,
 .grid-2 .bottom-box,
 .right-stack .box{
+  overflow:hidden;
   border:1px solid rgba(25,217,255,.22);
   border-left:4px solid rgba(25,217,255,.58);
   border-radius:14px;
@@ -282,7 +285,6 @@ body{
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,.025),
     0 0 12px rgba(25,217,255,.10);
-  overflow:hidden;
   transition:.25s ease;
 }
 
@@ -517,16 +519,14 @@ body{
    CHRONOLOGIE / TIMELINE
 ========================================================= */
 
-.timeline,
 .timeline-wrapper{
-  overflow:visible!important;
-}
-
-.timeline-wrapper{
-  width:auto;
+  grid-column:3;
+  grid-row:1;
+  width:100%;
   height:100%;
   display:flex;
   align-items:stretch;
+  overflow:visible!important;
   border:1px solid rgba(25,217,255,.24);
   border-radius:18px;
   background:
@@ -537,11 +537,16 @@ body{
     0 0 16px rgba(25,217,255,.10);
 }
 
+.timeline{
+  overflow:visible!important;
+}
+
 #timeline{
   position:relative;
+  width:100%;
   height:100%;
   margin:0;
-  padding-left:46px;
+  padding-left:44px;
   padding-top:34px;
 }
 

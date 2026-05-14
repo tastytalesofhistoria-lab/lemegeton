@@ -773,6 +773,8 @@
 
 .col-awards,
 .col-awards.promess{
+	position:relative;
+	z-index:5;
 	display:flex;
 	align-items:center;
 	justify-content:center;
@@ -787,7 +789,9 @@
 	box-sizing:border-box;
 	border-radius:12px;
 	text-align:center;
-	background:radial-gradient(circle at top,rgba(36,228,255,.08),transparent 46%),rgba(4,6,20,.32);
+	background:
+		radial-gradient(circle at top,rgba(36,228,255,.08),transparent 46%),
+		rgba(4,6,20,.32);
 	border:1px solid rgba(36,228,255,.12);
 	box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
 }
@@ -795,6 +799,7 @@
 .postprofile-awards,
 .postprofile-awards.promess{
 	position:relative;
+	z-index:6;
 	display:flex;
 	flex-wrap:wrap;
 	align-items:center;
@@ -805,20 +810,42 @@
 	overflow:visible!important;
 }
 
-.postprofile-awards.promess .pm-award{
-	position:relative;
-	display:inline-flex;
+/* Base commune : award custom + award Forumactif */
+.postprofile-awards.promess .pm-award,
+.postprofile-awards.promess .award{
+	position:relative!important;
+	display:inline-flex!important;
 	align-items:center;
 	justify-content:center;
 	width:38px;
 	height:38px;
 	border-radius:50%;
 	isolation:isolate;
-	overflow:visible;
+	overflow:visible!important;
 }
 
+/* Trait lumineux derrière l'award */
+.postprofile-awards.promess .pm-award::before,
+.postprofile-awards.promess .award::before{
+	content:"";
+	position:absolute;
+	left:50%;
+	top:50%;
+	z-index:0;
+	width:54px;
+	height:8px;
+	transform:translate(-50%,-50%);
+	border-radius:999px;
+	background:var(--pm-cyan,#24e4ff);
+	box-shadow:0 0 10px rgba(36,228,255,.35);
+	opacity:.55;
+	pointer-events:none;
+	transition:.22s ease;
+}
+
+/* Images awards */
 .postprofile-awards.promess .pm-award img,
-.postprofile-awards img,
+.postprofile-awards.promess .award img,
 .postprofile-awards.promess img{
 	position:relative;
 	z-index:2;
@@ -840,50 +867,48 @@
 		box-shadow .22s ease;
 }
 
-.postprofile-awards.promess .pm-award::before{
-	content:"";
-	position:absolute;
-	left:50%;
-	top:50%;
-	z-index:0;
-	width:54px;
-	height:8px;
-	transform:translate(-50%,-50%);
-	border-radius:999px;
-	background:var(--pm-cyan,#24e4ff);
-	box-shadow:0 0 10px rgba(36,228,255,.35);
-	opacity:.55;
-	transition:.22s ease;
-}
-
-.postprofile-awards.promess .pm-award-bubble{
-	position:absolute;
-	top:50%;
-	right:calc(100% + 16px);
-	z-index:80;
-	width:150px;
-	min-height:58px;
-	padding:10px 12px;
-	border-radius:5px;
-	background:#f8f8ff;
-	color:var(--pm-cyan,#24e4ff);
-	text-align:center;
-	font-family:Rajdhani,Arial,sans-serif;
-	font-size:11px;
-	font-weight:600;
-	line-height:1.25;
-	box-shadow:0 8px 22px rgba(0,0,0,.28);
-	opacity:0;
-	visibility:hidden;
-	transform:translateY(-50%) translateX(8px) scale(.96);
-	pointer-events:none;
+/* Bulles : custom + Forumactif */
+.postprofile-awards.promess .pm-award-bubble,
+.postprofile-awards.promess .award_tooltiptext{
+	position:absolute!important;
+	top:50%!important;
+	left:auto!important;
+	right:calc(100% + 16px)!important;
+	z-index:999!important;
+	width:150px!important;
+	min-height:58px!important;
+	padding:10px 12px!important;
+	box-sizing:border-box!important;
+	border-radius:6px!important;
+	text-align:center!important;
+	font-family:Rajdhani,Arial,sans-serif!important;
+	font-size:11px!important;
+	font-weight:600!important;
+	line-height:1.25!important;
+	color:var(--pm-cyan,#24e4ff)!important;
+	background:
+		radial-gradient(circle at top right,rgba(255,79,134,.18),transparent 42%),
+		linear-gradient(135deg,rgba(11,15,42,.98),rgba(32,27,61,.98))!important;
+	border:1px solid rgba(36,228,255,.42)!important;
+	box-shadow:
+		0 8px 22px rgba(0,0,0,.38),
+		0 0 12px rgba(36,228,255,.18),
+		0 0 12px rgba(255,79,134,.12)!important;
+	opacity:0!important;
+	visibility:hidden!important;
+	pointer-events:none!important;
+	white-space:normal!important;
+	word-break:break-word!important;
+	transform:translateY(-50%) translateX(8px) scale(.96)!important;
 	transition:
 		opacity .22s ease,
 		visibility .22s ease,
-		transform .22s ease;
+		transform .22s ease!important;
 }
 
-.postprofile-awards.promess .pm-award-bubble::before{
+/* Connecteur de bulle */
+.postprofile-awards.promess .pm-award-bubble::before,
+.postprofile-awards.promess .award_tooltiptext::before{
 	content:"";
 	position:absolute;
 	top:50%;
@@ -892,21 +917,26 @@
 	height:6px;
 	transform:translateY(-50%);
 	background:var(--pm-cyan,#24e4ff);
-	box-shadow:0 0 8px rgba(36,228,255,.28);
+	box-shadow:0 0 8px rgba(36,228,255,.38);
 }
 
-.postprofile-awards.promess .pm-award-title{
+/* Titre de bulle : custom + Forumactif */
+.postprofile-awards.promess .pm-award-title,
+.postprofile-awards.promess .award_tooltiptext_title{
 	display:block;
-	margin:0 0 3px;
-	font-family:"Barlow Condensed",Rajdhani,Arial,sans-serif;
-	font-size:13px;
-	font-weight:900;
-	line-height:1;
-	text-transform:uppercase;
-	letter-spacing:.4px;
-	color:var(--pm-cyan,#24e4ff);
+	margin:0 0 4px!important;
+	padding:0!important;
+	font-family:"Barlow Condensed",Rajdhani,Arial,sans-serif!important;
+	font-size:13px!important;
+	font-weight:900!important;
+	line-height:1!important;
+	text-transform:uppercase!important;
+	letter-spacing:.5px!important;
+	color:var(--pm-cyan,#24e4ff)!important;
+	text-shadow:0 0 6px rgba(36,228,255,.35)!important;
 }
 
+/* Description de bulle custom */
 .postprofile-awards.promess .pm-award-desc{
 	display:block;
 	color:rgba(36,228,255,.70);
@@ -915,12 +945,14 @@
 	line-height:1.2;
 }
 
-.postprofile-awards.promess .pm-award:hover{
-	z-index:90;
+/* Hover */
+.postprofile-awards.promess .pm-award:hover,
+.postprofile-awards.promess .award:hover{
+	z-index:1000!important;
 }
 
 .postprofile-awards.promess .pm-award:hover img,
-.postprofile-awards img:hover,
+.postprofile-awards.promess .award:hover img,
 .postprofile-awards.promess img:hover{
 	transform:scale(1.12);
 	filter:saturate(1.15) brightness(1.08);
@@ -929,21 +961,55 @@
 		0 0 10px rgba(36,228,255,.24);
 }
 
-.postprofile-awards.promess .pm-award:hover::before{
+.postprofile-awards.promess .pm-award:hover::before,
+.postprofile-awards.promess .award:hover::before{
 	width:68px;
 	opacity:1;
-	background:linear-gradient(90deg,var(--pm-pink,#ff4f86),var(--pm-cyan,#24e4ff));
+	background:
+		linear-gradient(
+			90deg,
+			var(--pm-pink,#ff4f86),
+			var(--pm-cyan,#24e4ff)
+		);
 	box-shadow:
 		0 0 12px rgba(36,228,255,.42),
 		0 0 10px rgba(255,79,134,.22);
 }
 
-.postprofile-awards.promess .pm-award:hover .pm-award-bubble{
-	opacity:1;
-	visibility:visible;
-	transform:translateY(-50%) translateX(0) scale(1);
+.postprofile-awards.promess .pm-award:hover .pm-award-bubble,
+.postprofile-awards.promess .award:hover .award_tooltiptext{
+	opacity:1!important;
+	visibility:visible!important;
+	transform:translateY(-50%) translateX(0) scale(1)!important;
 }
 
+/* Mobile : bulle au-dessus */
+@media screen and (max-width:900px){
+	.postprofile-awards.promess .pm-award-bubble,
+	.postprofile-awards.promess .award_tooltiptext{
+		top:auto!important;
+		right:auto!important;
+		left:50%!important;
+		bottom:calc(100% + 14px)!important;
+		transform:translateX(-50%) translateY(8px) scale(.96)!important;
+	}
+
+	.postprofile-awards.promess .pm-award-bubble::before,
+	.postprofile-awards.promess .award_tooltiptext::before{
+		top:auto;
+		right:auto;
+		left:50%;
+		bottom:-10px;
+		width:6px;
+		height:10px;
+		transform:translateX(-50%);
+	}
+
+	.postprofile-awards.promess .pm-award:hover .pm-award-bubble,
+	.postprofile-awards.promess .award:hover .award_tooltiptext{
+		transform:translateX(-50%) translateY(0) scale(1)!important;
+	}
+}
 /* =========================
    BOUTONS
 ========================= */

@@ -37,7 +37,59 @@
   --lem-shadow-gold:0 0 14px rgba(255,211,110,.42),0 0 28px rgba(255,211,110,.14);
 }
 
-/* ===================== WRAPPER GLOBAL ===================== */
+/* ===================== PA IFRAME — INDEX BODY UNIQUEMENT ===================== */
+
+.pa-frame-wrap,
+#main-content .pa-frame-wrap,
+#container .pa-frame-wrap{
+  position:relative!important;
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  height:598px!important;
+  min-height:598px!important;
+  max-height:598px!important;
+  margin:0 auto 18px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  line-height:0!important;
+  font-size:0!important;
+  background:transparent!important;
+  border:0!important;
+  outline:0!important;
+}
+
+.pa-frame-wrap iframe,
+iframe.pa-frame,
+#main-content iframe.pa-frame,
+#container iframe.pa-frame{
+  position:relative!important;
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  height:598px!important;
+  min-height:598px!important;
+  max-height:598px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  outline:0!important;
+  overflow:hidden!important;
+  background:transparent!important;
+  vertical-align:top!important;
+}
+
+.timeline-layout .pa-frame-wrap,
+.timeline-layout iframe.pa-frame{
+  height:598px!important;
+  min-height:598px!important;
+  max-height:598px!important;
+  overflow:hidden!important;
+}
+
+/* ===================== WRAPPER GLOBAL QEEL ===================== */
 
 .qeel-wrapper,
 .qeel-wrapper *,
@@ -199,17 +251,6 @@
   animation:flickerText 2.8s infinite;
 }
 
-@keyframes lemQeelSweep{
-  0%,45%{transform:translateX(-100%);}
-  65%{transform:translateX(100%);}
-  100%{transform:translateX(100%);}
-}
-
-@keyframes flickerText{
-  0%,18%,22%,25%,53%,57%,100%{opacity:1;}
-  20%,24%,55%{opacity:.55;}
-}
-
 /* ===================== STATS LED ===================== */
 
 .who-stats{
@@ -327,11 +368,6 @@
     inset 0 0 0 1px rgba(255,255,255,.04),
     inset 0 0 22px rgba(25,217,255,.16),
     0 0 18px rgba(25,217,255,.30);
-}
-
-@keyframes qeelLedSweep{
-  0%,45%{transform:translateX(-120%);}
-  70%,100%{transform:translateX(120%);}
 }
 
 /* ===================== DERNIER MEMBRE ===================== */
@@ -592,22 +628,22 @@
 }
 
 /* Couleurs groupes */
-.g1{border-left:4px solid #ff4f7c;}
-.g2{border-left:4px solid #b88cff;}
-.g3{border-left:4px solid #ff003c;}
-.g4{border-left:4px solid #ff7fb6;}
-.g5{border-left:4px solid #a7ff3f;}
-.g6{border-left:4px solid #8cecff;}
-.g7{border-left:4px solid #ffd36e;}
-.g8{border-left:4px solid #d7b4ff;}
-.g9{border-left:4px solid #ffe7a8;}
-.g10{border-left:4px solid #9fdcff;}
-.g11{border-left:4px solid #9d9d9d;}
-.g12{border-left:4px solid #ffb875;}
-.g13{border-left:4px solid #ff7a5c;}
-.g14{border-left:4px solid #ff4fd8;}
-.g15{border-left:4px solid #0b5d44;}
-.g16{border-left:4px solid #0ea7a0;}
+.g1{border-left:4px solid #ff4f7c;background-image:url("https://ih1.redbubble.net/image.5448884326.8810/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg");}
+.g2{border-left:4px solid #b88cff;background-image:url("https://i.pinimg.com/736x/47/fd/77/47fd77dc3c0ea5d7d3e09adcd0ba37b1.jpg");}
+.g3{border-left:4px solid #ff003c;background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8YKAFfR10MggRLiJKcdiI0OIClTbw_FbOw&s");}
+.g4{border-left:4px solid #ff7fb6;background-image:url("https://preview.redd.it/some-helluva-hazbin-icons-i-made-all-are-inspired-by-v0-p6y5waenoqye1.jpg?width=1080&crop=smart&auto=webp&s=0af79c1349a30349333ec3b8cd6cf9b9cddb656c");}
+.g5{border-left:4px solid #a7ff3f;background-image:url("https://via.placeholder.com/150/a7ff3f/0f0a28");}
+.g6{border-left:4px solid #8cecff;background-image:url("https://via.placeholder.com/150/8cecff/0f0a28");}
+.g7{border-left:4px solid #ffd36e;background-image:url("https://via.placeholder.com/150/ffd166/0f0a28");}
+.g8{border-left:4px solid #d7b4ff;background-image:url("https://via.placeholder.com/150/d7b4ff/0f0a28");}
+.g9{border-left:4px solid #ffe7a8;background-image:url("https://via.placeholder.com/150/ffd36e/0f0a28");}
+.g10{border-left:4px solid #9fdcff;background-image:url("https://via.placeholder.com/150/9fdcff/0f0a28");}
+.g11{border-left:4px solid #9d9d9d;background-image:url("https://via.placeholder.com/150/9d9d9d/0f0a28");}
+.g12{border-left:4px solid #ffb875;background-image:url("https://via.placeholder.com/150/ffb875/0f0a28");}
+.g13{border-left:4px solid #ff7a5c;background-image:url("https://via.placeholder.com/150/ff7a5c/0f0a28");}
+.g14{border-left:4px solid #ff4fd8;background-image:url("https://via.placeholder.com/150/ff4fd8/0f0a28");}
+.g15{border-left:4px solid #0b5d44;background-image:url("https://via.placeholder.com/150/0b5d44/ecfbff");}
+.g16{border-left:4px solid #0ea7a0;background-image:url("https://via.placeholder.com/150/0ea7a0/ecfbff");}
 
 .g1:hover{box-shadow:0 0 15px rgba(255,79,124,.65);}
 .g2:hover{box-shadow:0 0 15px rgba(184,140,255,.65);}
@@ -625,24 +661,6 @@
 .g14:hover{box-shadow:0 0 15px rgba(255,79,216,.65);}
 .g15:hover{box-shadow:0 0 15px rgba(11,93,68,.75);}
 .g16:hover{box-shadow:0 0 15px rgba(14,167,160,.75);}
-
-/* Images groupes */
-.g1{background-image:url("https://ih1.redbubble.net/image.5448884326.8810/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg");}
-.g2{background-image:url("https://i.pinimg.com/736x/47/fd/77/47fd77dc3c0ea5d7d3e09adcd0ba37b1.jpg");}
-.g3{background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8YKAFfR10MggRLiJKcdiI0OIClTbw_FbOw&s");}
-.g4{background-image:url("https://preview.redd.it/some-helluva-hazbin-icons-i-made-all-are-inspired-by-v0-p6y5waenoqye1.jpg?width=1080&crop=smart&auto=webp&s=0af79c1349a30349333ec3b8cd6cf9b9cddb656c");}
-.g5{background-image:url("https://via.placeholder.com/150/a7ff3f/0f0a28");}
-.g6{background-image:url("https://via.placeholder.com/150/8cecff/0f0a28");}
-.g7{background-image:url("https://via.placeholder.com/150/ffd166/0f0a28");}
-.g8{background-image:url("https://via.placeholder.com/150/d7b4ff/0f0a28");}
-.g9{background-image:url("https://via.placeholder.com/150/ffd36e/0f0a28");}
-.g10{background-image:url("https://via.placeholder.com/150/9fdcff/0f0a28");}
-.g11{background-image:url("https://via.placeholder.com/150/9d9d9d/0f0a28");}
-.g12{background-image:url("https://via.placeholder.com/150/ffb875/0f0a28");}
-.g13{background-image:url("https://via.placeholder.com/150/ff7a5c/0f0a28");}
-.g14{background-image:url("https://via.placeholder.com/150/ff4fd8/0f0a28");}
-.g15{background-image:url("https://via.placeholder.com/150/0b5d44/ecfbff");}
-.g16{background-image:url("https://via.placeholder.com/150/0ea7a0/ecfbff");}
 
 /* ===================== PHRASE QEEL / PERSOS ===================== */
 
@@ -841,16 +859,12 @@
 }
 
 .bubble-vox{
+  position:relative;
+  overflow:hidden;
   background:linear-gradient(135deg,#001f24,#000);
   border:2px solid #00eaff;
   box-shadow:0 0 20px rgba(0,234,255,1);
   color:#8fffff;
-}
-/* ===================== GLITCH VOX — BOX + TEXTE ===================== */
-
-.bubble-vox{
-  position:relative;
-  overflow:hidden;
 }
 
 .bubble-vox::before,
@@ -894,53 +908,6 @@
   animation:voxTextGlitch .18s steps(2,end);
 }
 
-@keyframes voxBoxGlitch{
-  0%{transform:translate(0);}
-  20%{transform:translate(-3px,1px) skewX(-2deg);}
-  40%{transform:translate(3px,-1px) skewX(2deg);}
-  60%{transform:translate(-2px,2px);}
-  80%{transform:translate(2px,-2px);}
-  100%{transform:translate(0);}
-}
-
-@keyframes voxTextGlitch{
-  0%{
-    transform:translate(0);
-    text-shadow:
-      2px 0 #00eaff,
-      -2px 0 #ff003c,
-      0 0 10px #00eaff;
-  }
-  35%{
-    transform:translate(-4px,1px);
-    text-shadow:
-      5px 0 #00eaff,
-      -5px 0 #ff003c,
-      0 0 14px #00eaff;
-  }
-  70%{
-    transform:translate(4px,-1px);
-    text-shadow:
-      -5px 0 #00eaff,
-      5px 0 #ff003c,
-      0 0 18px #ff003c;
-  }
-  100%{
-    transform:translate(0);
-  }
-}
-
-@keyframes voxScanA{
-  0%{transform:translateX(-8px);}
-  50%{transform:translateX(8px);}
-  100%{transform:translateX(0);}
-}
-
-@keyframes voxScanB{
-  0%{transform:translateX(8px);}
-  50%{transform:translateX(-8px);}
-  100%{transform:translateX(0);}
-}
 .vox{
   position:relative;
   text-shadow:
@@ -965,49 +932,6 @@
   background:linear-gradient(135deg,#332200,#000);
   border:2px solid #ffcc00;
   color:#fff2b3;
-}
-
-/* ===================== ANIMATIONS PERSOS ===================== */
-
-@keyframes radioNoise{
-  0%{opacity:1;}
-  50%{opacity:.85;}
-  100%{opacity:1;}
-}
-
-@keyframes alastorBoxSignal{
-  0%,100%{
-    transform:translate(0,0);
-    filter:brightness(1) contrast(1.05);
-  }
-  8%{
-    transform:translate(-1px,1px);
-    filter:brightness(1.25) contrast(1.25);
-  }
-  10%{transform:translate(2px,-1px);}
-  12%{transform:translate(0,0);}
-  46%{filter:brightness(.85) contrast(1.4) saturate(1.4);}
-  48%{transform:translate(-2px,0);}
-  50%{
-    transform:translate(1px,1px);
-    filter:brightness(1.35) contrast(1.2);
-  }
-  52%{transform:translate(0,0);}
-  76%{filter:brightness(.95) contrast(1.7);}
-  78%{transform:translate(2px,0);}
-  80%{transform:translate(0,0);}
-}
-
-@keyframes alastorScan{
-  0%{transform:translateY(-12px);}
-  100%{transform:translateY(12px);}
-}
-
-@keyframes alastorTextTwitch{
-  0%,100%{transform:translate(0,0);}
-  25%{transform:translate(1px,0);}
-  50%{transform:translate(-1px,1px);}
-  75%{transform:translate(0,-1px);}
 }
 
 /* ===================== RUMEURS / ZONES ===================== */
@@ -1186,6 +1110,111 @@
   box-shadow:
     0 0 8px rgba(255,215,0,.60),
     0 0 20px rgba(255,215,0,.30);
+}
+
+/* ===================== ANIMATIONS ===================== */
+
+@keyframes lemQeelSweep{
+  0%,45%{transform:translateX(-100%);}
+  65%{transform:translateX(100%);}
+  100%{transform:translateX(100%);}
+}
+
+@keyframes flickerText{
+  0%,18%,22%,25%,53%,57%,100%{opacity:1;}
+  20%,24%,55%{opacity:.55;}
+}
+
+@keyframes qeelLedSweep{
+  0%,45%{transform:translateX(-120%);}
+  70%,100%{transform:translateX(120%);}
+}
+
+@keyframes voxBoxGlitch{
+  0%{transform:translate(0);}
+  20%{transform:translate(-3px,1px) skewX(-2deg);}
+  40%{transform:translate(3px,-1px) skewX(2deg);}
+  60%{transform:translate(-2px,2px);}
+  80%{transform:translate(2px,-2px);}
+  100%{transform:translate(0);}
+}
+
+@keyframes voxTextGlitch{
+  0%{
+    transform:translate(0);
+    text-shadow:
+      2px 0 #00eaff,
+      -2px 0 #ff003c,
+      0 0 10px #00eaff;
+  }
+  35%{
+    transform:translate(-4px,1px);
+    text-shadow:
+      5px 0 #00eaff,
+      -5px 0 #ff003c,
+      0 0 14px #00eaff;
+  }
+  70%{
+    transform:translate(4px,-1px);
+    text-shadow:
+      -5px 0 #00eaff,
+      5px 0 #ff003c,
+      0 0 18px #ff003c;
+  }
+  100%{transform:translate(0);}
+}
+
+@keyframes voxScanA{
+  0%{transform:translateX(-8px);}
+  50%{transform:translateX(8px);}
+  100%{transform:translateX(0);}
+}
+
+@keyframes voxScanB{
+  0%{transform:translateX(8px);}
+  50%{transform:translateX(-8px);}
+  100%{transform:translateX(0);}
+}
+
+@keyframes radioNoise{
+  0%{opacity:1;}
+  50%{opacity:.85;}
+  100%{opacity:1;}
+}
+
+@keyframes alastorBoxSignal{
+  0%,100%{
+    transform:translate(0,0);
+    filter:brightness(1) contrast(1.05);
+  }
+  8%{
+    transform:translate(-1px,1px);
+    filter:brightness(1.25) contrast(1.25);
+  }
+  10%{transform:translate(2px,-1px);}
+  12%{transform:translate(0,0);}
+  46%{filter:brightness(.85) contrast(1.4) saturate(1.4);}
+  48%{transform:translate(-2px,0);}
+  50%{
+    transform:translate(1px,1px);
+    filter:brightness(1.35) contrast(1.2);
+  }
+  52%{transform:translate(0,0);}
+  76%{filter:brightness(.95) contrast(1.7);}
+  78%{transform:translate(2px,0);}
+  80%{transform:translate(0,0);}
+}
+
+@keyframes alastorScan{
+  0%{transform:translateY(-12px);}
+  100%{transform:translateY(12px);}
+}
+
+@keyframes alastorTextTwitch{
+  0%,100%{transform:translate(0,0);}
+  25%{transform:translate(1px,0);}
+  50%{transform:translate(-1px,1px);}
+  75%{transform:translate(0,-1px);}
 }
 
 /* ===================== RESPONSIVE ===================== */

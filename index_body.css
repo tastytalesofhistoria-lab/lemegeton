@@ -1,6 +1,6 @@
 /* =========================================================
    INDEX BODY — LEMEGETON
-   QEEL + IFRAME PA
+   QEEL + IFRAME PA + CHRONO
    CSS nettoyé / doublons fusionnés / conflits limités
 ========================================================= */
 
@@ -37,14 +37,84 @@
 }
 
 /* =========================================================
-   PA IFRAME — INDEX BODY UNIQUEMENT
-   Ne pas mettre dans le CSS de la page iframe /h1-pa
+   PA + CHRONO — STRUCTURE CÔTE À CÔTE
+   À utiliser avec :
+   <div class="pa-chrono-layout">
+     <div class="pa-frame-wrap"><iframe class="pa-frame"></iframe></div>
+     <div class="timeline-wrapper">...</div>
+   </div>
 ========================================================= */
 
-.pa-frame-wrap,
-#main-content .pa-frame-wrap,
-#container .pa-frame-wrap,
-#page-body .pa-frame-wrap{
+.pa-chrono-layout,
+.pa-chrono-layout *{
+  box-sizing:border-box;
+}
+
+.pa-chrono-layout{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 145px;
+  gap:14px;
+  align-items:start;
+  width:100%;
+  max-width:1000px;
+  height:598px;
+  min-height:598px;
+  max-height:598px;
+  margin:0 auto 18px;
+  padding:0;
+  overflow:visible;
+  background:transparent;
+}
+
+/* Dans le layout PA + chrono, la PA prend uniquement sa colonne */
+.pa-chrono-layout .pa-frame-wrap{
+  position:relative!important;
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  height:598px!important;
+  min-height:598px!important;
+  max-height:598px!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  line-height:0!important;
+  font-size:0!important;
+  background:transparent!important;
+  border:0!important;
+  outline:0!important;
+  clear:none!important;
+}
+
+.pa-chrono-layout iframe.pa-frame{
+  position:relative!important;
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  height:598px!important;
+  min-height:598px!important;
+  max-height:598px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  outline:0!important;
+  overflow:hidden!important;
+  background:transparent!important;
+  vertical-align:top!important;
+}
+
+/* =========================================================
+   PA IFRAME SEULE — hors chronologie
+   Ne s’applique pas quand la PA est dans .pa-chrono-layout
+========================================================= */
+
+.pa-frame-wrap:not(.pa-chrono-layout .pa-frame-wrap),
+#main-content > .pa-frame-wrap,
+#container > .pa-frame-wrap,
+#page-body > .pa-frame-wrap{
   position:relative!important;
   display:block!important;
   width:100%!important;
@@ -64,11 +134,10 @@
   clear:both!important;
 }
 
-.pa-frame-wrap iframe,
-iframe.pa-frame,
-#main-content iframe.pa-frame,
-#container iframe.pa-frame,
-#page-body iframe.pa-frame{
+.pa-frame-wrap:not(.pa-chrono-layout .pa-frame-wrap) iframe,
+#main-content > .pa-frame-wrap iframe,
+#container > .pa-frame-wrap iframe,
+#page-body > .pa-frame-wrap iframe{
   position:relative!important;
   display:block!important;
   width:100%!important;
@@ -86,13 +155,126 @@ iframe.pa-frame,
   vertical-align:top!important;
 }
 
-/* Sécurité si la PA est placée à côté d'une chronologie */
-.timeline-layout .pa-frame-wrap,
-.timeline-layout iframe.pa-frame{
-  height:598px!important;
-  min-height:598px!important;
-  max-height:598px!important;
-  overflow:hidden!important;
+/* =========================================================
+   CHRONO PA — COLONNE DROITE
+   Classes préfixées tl- pour éviter les conflits.
+========================================================= */
+
+.pa-chrono-layout .timeline-wrapper{
+  position:relative;
+  width:145px;
+  height:598px;
+  min-height:598px;
+  max-height:598px;
+  margin:0!important;
+  padding:44px 0 0;
+  overflow:visible;
+  color:var(--lem-cyan-soft);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+}
+
+.pa-chrono-layout #timeline{
+  position:relative;
+  width:100%;
+  height:510px;
+  padding:0 0 0 38px;
+  margin:0;
+}
+
+.pa-chrono-layout #timeline::before{
+  content:"";
+  position:absolute;
+  left:16px;
+  top:0;
+  width:4px;
+  height:100%;
+  background:linear-gradient(to bottom,#172947,#2f86c5,#55a9d6);
+  box-shadow:0 0 12px rgba(85,169,214,.45);
+}
+
+.pa-chrono-layout .tl-item{
+  position:relative;
+  height:72px;
+  margin:0;
+  padding:0;
+}
+
+.pa-chrono-layout .tl-circle{
+  position:absolute;
+  left:-33px;
+  top:0;
+  width:24px;
+  height:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--lem-cyan-soft);
+  font-size:19px;
+  line-height:1;
+  text-shadow:0 0 8px rgba(140,236,255,.85);
+}
+
+.pa-chrono-layout .tl-circle::before{
+  content:"✧";
+}
+
+.pa-chrono-layout .tl-date{
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  min-height:24px;
+  color:var(--lem-cyan-soft);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.05;
+  letter-spacing:.3px;
+  cursor:pointer;
+  text-shadow:0 0 8px rgba(85,169,214,.55);
+  transition:color .25s ease,text-shadow .25s ease;
+}
+
+.pa-chrono-layout .tl-item:hover .tl-date{
+  color:var(--lem-pink-soft);
+  text-shadow:0 0 10px rgba(228,91,104,.75);
+}
+
+.pa-chrono-layout .tl-content{
+  position:absolute;
+  right:150px;
+  top:-8px;
+  z-index:80;
+  width:260px;
+  max-height:175px;
+  padding:11px;
+  overflow:auto;
+  opacity:0;
+  pointer-events:none;
+  transform:translateX(10px) scale(.96);
+  border:1px solid rgba(85,169,214,.28);
+  border-left:4px solid rgba(228,91,104,.62);
+  border-radius:14px;
+  background:
+    radial-gradient(circle at top left,rgba(85,169,214,.14),transparent 38%),
+    linear-gradient(180deg,rgba(13,29,41,.96),rgba(7,11,20,.98));
+  color:var(--lem-cyan-soft);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:11px;
+  line-height:1.35;
+  text-align:left;
+  box-shadow:0 0 18px rgba(85,169,214,.18);
+  transition:opacity .25s ease,transform .25s ease;
+}
+
+.pa-chrono-layout .tl-content p{
+  margin:0;
+}
+
+.pa-chrono-layout .tl-item:hover .tl-content{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateX(0) scale(1);
 }
 
 /* =========================================================
@@ -1224,6 +1406,61 @@ iframe.pa-frame,
 ========================================================= */
 
 @media (max-width:980px){
+  .pa-chrono-layout{
+    height:auto;
+    min-height:0;
+    max-height:none;
+    display:block;
+    overflow:visible;
+  }
+
+  .pa-chrono-layout .pa-frame-wrap,
+  .pa-chrono-layout iframe.pa-frame{
+    height:598px!important;
+    min-height:598px!important;
+    max-height:598px!important;
+  }
+
+  .pa-chrono-layout .timeline-wrapper{
+    width:100%;
+    height:auto;
+    min-height:0;
+    max-height:none;
+    padding:18px 0 0;
+  }
+
+  .pa-chrono-layout #timeline{
+    width:100%;
+    height:auto;
+    padding-left:42px;
+  }
+
+  .pa-chrono-layout #timeline::before{
+    left:18px;
+  }
+
+  .pa-chrono-layout .tl-item{
+    height:auto;
+    min-height:46px;
+    margin-bottom:8px;
+  }
+
+  .pa-chrono-layout .tl-circle{
+    left:-34px;
+  }
+
+  .pa-chrono-layout .tl-content{
+    position:relative;
+    right:auto;
+    top:auto;
+    width:100%;
+    max-height:none;
+    margin:8px 0 0;
+    opacity:1;
+    pointer-events:auto;
+    transform:none;
+  }
+
   .qeel-wrapper{
     max-width:100%;
   }

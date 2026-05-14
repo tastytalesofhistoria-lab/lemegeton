@@ -33,12 +33,12 @@ html,
 body{
   margin:0!important;
   padding:0!important;
-  width:790px!important;
-  height:598px!important;
-  min-width:790px!important;
-  max-width:790px!important;
-  min-height:598px!important;
-  max-height:598px!important;
+width:790px!important;
+height:598px!important;
+min-width:790px!important;
+max-width:790px!important;
+min-height:598px!important;
+max-height:598px!important;
   overflow:hidden!important;
   background:transparent!important;
 }

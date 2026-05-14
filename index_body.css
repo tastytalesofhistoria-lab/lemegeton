@@ -1,6 +1,6 @@
 /* =========================================================
    INDEX BODY — LEMEGETON
-   QEEL + IFRAME PA + CHRONO
+   QEEL + IFRAME PA + CHRONO OPTIONNELLE
    CSS nettoyé / doublons fusionnés / conflits limités
 ========================================================= */
 
@@ -37,84 +37,17 @@
 }
 
 /* =========================================================
-   PA + CHRONO — STRUCTURE CÔTE À CÔTE
-   À utiliser avec :
-   <div class="pa-chrono-layout">
-     <div class="pa-frame-wrap"><iframe class="pa-frame"></iframe></div>
-     <div class="timeline-wrapper">...</div>
+   PA IFRAME SEULE — VERSION SANS CHRONO
+   Structure :
+   <div class="pa-frame-wrap">
+     <iframe class="pa-frame" ...></iframe>
    </div>
 ========================================================= */
 
-.pa-chrono-layout,
-.pa-chrono-layout *{
-  box-sizing:border-box;
-}
-
-.pa-chrono-layout{
-  position:relative;
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 145px;
-  gap:34px; /* avant 14px */
-  align-items:start;
-  width:100%;
-  max-width:1000px;
-  height:598px;
-  min-height:598px;
-  max-height:598px;
-  margin:0 auto 18px;
-  padding:0;
-  overflow:visible;
-  background:transparent;
-}
-
-/* Dans le layout PA + chrono, la PA prend uniquement sa colonne */
-.pa-chrono-layout .pa-frame-wrap{
-  position:relative!important;
-  display:block!important;
-  width:100%!important;
-  max-width:none!important;
-  min-width:0!important;
-  height:598px!important;
-  min-height:598px!important;
-  max-height:598px!important;
-  margin:0!important;
-  padding:0!important;
-  overflow:hidden!important;
-  line-height:0!important;
-  font-size:0!important;
-  background:transparent!important;
-  border:0!important;
-  outline:0!important;
-  clear:none!important;
-}
-
-.pa-chrono-layout iframe.pa-frame{
-  position:relative!important;
-  display:block!important;
-  width:100%!important;
-  max-width:none!important;
-  min-width:0!important;
-  height:598px!important;
-  min-height:598px!important;
-  max-height:598px!important;
-  margin:0!important;
-  padding:0!important;
-  border:0!important;
-  outline:0!important;
-  overflow:hidden!important;
-  background:transparent!important;
-  vertical-align:top!important;
-}
-
-/* =========================================================
-   PA IFRAME SEULE — hors chronologie
-   Ne s’applique pas quand la PA est dans .pa-chrono-layout
-========================================================= */
-
-.pa-frame-wrap:not(.pa-chrono-layout .pa-frame-wrap),
-#main-content > .pa-frame-wrap,
-#container > .pa-frame-wrap,
-#page-body > .pa-frame-wrap{
+.pa-frame-wrap,
+#main-content .pa-frame-wrap,
+#container .pa-frame-wrap,
+#page-body .pa-frame-wrap{
   position:relative!important;
   display:block!important;
   width:100%!important;
@@ -134,10 +67,11 @@
   clear:both!important;
 }
 
-.pa-frame-wrap:not(.pa-chrono-layout .pa-frame-wrap) iframe,
-#main-content > .pa-frame-wrap iframe,
-#container > .pa-frame-wrap iframe,
-#page-body > .pa-frame-wrap iframe{
+.pa-frame-wrap iframe,
+iframe.pa-frame,
+#main-content iframe.pa-frame,
+#container iframe.pa-frame,
+#page-body iframe.pa-frame{
   position:relative!important;
   display:block!important;
   width:100%!important;
@@ -153,6 +87,53 @@
   overflow:hidden!important;
   background:transparent!important;
   vertical-align:top!important;
+}
+
+/* =========================================================
+   PA + CHRONO OPTIONNELLE — STRUCTURE CÔTE À CÔTE
+   À utiliser uniquement si tu remets une chronologie :
+   <div class="pa-chrono-layout">
+     <div class="pa-frame-wrap"><iframe class="pa-frame"></iframe></div>
+     <div class="timeline-wrapper">...</div>
+   </div>
+========================================================= */
+
+.pa-chrono-layout,
+.pa-chrono-layout *{
+  box-sizing:border-box;
+}
+
+.pa-chrono-layout{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 145px;
+  gap:34px;
+  align-items:start;
+  width:100%;
+  max-width:1000px;
+  height:598px;
+  min-height:598px;
+  max-height:598px;
+  margin:0 auto 18px;
+  padding:0;
+  overflow:visible;
+  background:transparent;
+}
+
+.pa-chrono-layout .pa-frame-wrap{
+  width:100%!important;
+  height:598px!important;
+  min-height:598px!important;
+  max-height:598px!important;
+  margin:0!important;
+  clear:none!important;
+}
+
+.pa-chrono-layout iframe.pa-frame{
+  width:100%!important;
+  height:598px!important;
+  min-height:598px!important;
+  max-height:598px!important;
 }
 
 /* =========================================================
@@ -355,7 +336,7 @@
 }
 
 /* =========================================================
-   TITRES PANNEAUX
+   TITRES PANNEAUX QEEL
 ========================================================= */
 
 .qeel-panel-title{
@@ -777,6 +758,7 @@
   height:36px;
   padding:0 9px;
   border:1px solid rgba(25,217,255,.22);
+  border-left-width:4px;
   border-radius:9px;
   background-color:#0a1028;
   background-size:cover;
@@ -831,22 +813,22 @@
   text-shadow:0 0 8px rgba(25,217,255,.85);
 }
 
-.g1{border-left:4px solid #ff4f7c;background-image:url("https://ih1.redbubble.net/image.5448884326.8810/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg");}
-.g2{border-left:4px solid #b88cff;background-image:url("https://i.pinimg.com/736x/47/fd/77/47fd77dc3c0ea5d7d3e09adcd0ba37b1.jpg");}
-.g3{border-left:4px solid #ff003c;background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8YKAFfR10MggRLiJKcdiI0OIClTbw_FbOw&s");}
-.g4{border-left:4px solid #ff7fb6;background-image:url("https://preview.redd.it/some-helluva-hazbin-icons-i-made-all-are-inspired-by-v0-p6y5waenoqye1.jpg?width=1080&crop=smart&auto=webp&s=0af79c1349a30349333ec3b8cd6cf9b9cddb656c");}
-.g5{border-left:4px solid #a7ff3f;background-image:url("https://via.placeholder.com/150/a7ff3f/0f0a28");}
-.g6{border-left:4px solid #8cecff;background-image:url("https://via.placeholder.com/150/8cecff/0f0a28");}
-.g7{border-left:4px solid #ffd36e;background-image:url("https://via.placeholder.com/150/ffd166/0f0a28");}
-.g8{border-left:4px solid #d7b4ff;background-image:url("https://via.placeholder.com/150/d7b4ff/0f0a28");}
-.g9{border-left:4px solid #ffe7a8;background-image:url("https://via.placeholder.com/150/ffd36e/0f0a28");}
-.g10{border-left:4px solid #9fdcff;background-image:url("https://via.placeholder.com/150/9fdcff/0f0a28");}
-.g11{border-left:4px solid #9d9d9d;background-image:url("https://via.placeholder.com/150/9d9d9d/0f0a28");}
-.g12{border-left:4px solid #ffb875;background-image:url("https://via.placeholder.com/150/ffb875/0f0a28");}
-.g13{border-left:4px solid #ff7a5c;background-image:url("https://via.placeholder.com/150/ff7a5c/0f0a28");}
-.g14{border-left:4px solid #ff4fd8;background-image:url("https://via.placeholder.com/150/ff4fd8/0f0a28");}
-.g15{border-left:4px solid #0b5d44;background-image:url("https://via.placeholder.com/150/0b5d44/ecfbff");}
-.g16{border-left:4px solid #0ea7a0;background-image:url("https://via.placeholder.com/150/0ea7a0/ecfbff");}
+.g1{border-left-color:#ff4f7c;background-image:url("https://ih1.redbubble.net/image.5448884326.8810/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg");}
+.g2{border-left-color:#b88cff;background-image:url("https://i.pinimg.com/736x/47/fd/77/47fd77dc3c0ea5d7d3e09adcd0ba37b1.jpg");}
+.g3{border-left-color:#ff003c;background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8YKAFfR10MggRLiJKcdiI0OIClTbw_FbOw&s");}
+.g4{border-left-color:#ff7fb6;background-image:url("https://preview.redd.it/some-helluva-hazbin-icons-i-made-all-are-inspired-by-v0-p6y5waenoqye1.jpg?width=1080&crop=smart&auto=webp&s=0af79c1349a30349333ec3b8cd6cf9b9cddb656c");}
+.g5{border-left-color:#a7ff3f;background-image:url("https://via.placeholder.com/150/a7ff3f/0f0a28");}
+.g6{border-left-color:#8cecff;background-image:url("https://via.placeholder.com/150/8cecff/0f0a28");}
+.g7{border-left-color:#ffd36e;background-image:url("https://via.placeholder.com/150/ffd166/0f0a28");}
+.g8{border-left-color:#d7b4ff;background-image:url("https://via.placeholder.com/150/d7b4ff/0f0a28");}
+.g9{border-left-color:#ffe7a8;background-image:url("https://via.placeholder.com/150/ffd36e/0f0a28");}
+.g10{border-left-color:#9fdcff;background-image:url("https://via.placeholder.com/150/9fdcff/0f0a28");}
+.g11{border-left-color:#9d9d9d;background-image:url("https://via.placeholder.com/150/9d9d9d/0f0a28");}
+.g12{border-left-color:#ffb875;background-image:url("https://via.placeholder.com/150/ffb875/0f0a28");}
+.g13{border-left-color:#ff7a5c;background-image:url("https://via.placeholder.com/150/ff7a5c/0f0a28");}
+.g14{border-left-color:#ff4fd8;background-image:url("https://via.placeholder.com/150/ff4fd8/0f0a28");}
+.g15{border-left-color:#0b5d44;background-image:url("https://via.placeholder.com/150/0b5d44/ecfbff");}
+.g16{border-left-color:#0ea7a0;background-image:url("https://via.placeholder.com/150/0ea7a0/ecfbff");}
 
 .g1:hover{box-shadow:0 0 15px rgba(255,79,124,.65);}
 .g2:hover{box-shadow:0 0 15px rgba(184,140,255,.65);}

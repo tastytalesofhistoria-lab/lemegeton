@@ -1,13 +1,13 @@
 /* =========================================================
    INDEX / CATÉGORIES — LEMEGETON
-   Base conservée + doublons fusionnés + image verticale corrigée
+   Base conservée + doublons fusionnés + couleurs harmonisées navbar
 ========================================================= */
 
 /* ===================== LAST POST ===================== */
 
 .forum_lastpost{
   text-align:center;
-  color:#8dbddd;
+  color:#b9cce8;
   font-family:"Rajdhani",Arial,sans-serif;
   font-weight:700;
 }
@@ -29,7 +29,7 @@
 }
 
 .lastpost_auteurdate a:hover{
-  color:#ffb6d2!important;
+  color:#ff4f86!important;
 }
 
 .lastpost_auteurdate .lastpost-sep,
@@ -52,12 +52,12 @@
 
 .forabg{
   width:100%;
-  border:1px solid rgba(25,217,255,.22);
+  border:1px solid rgba(36,228,255,.22);
   border-radius:18px;
   background:
-    radial-gradient(circle at top left,rgba(25,217,255,.12),transparent 32%),
-    radial-gradient(circle at top right,rgba(255,79,155,.10),transparent 30%),
-    linear-gradient(180deg,#0a0f2b 0%,#10153a 52%,#0b1030 100%);
+    radial-gradient(circle at top left,rgba(36,228,255,.12),transparent 32%),
+    radial-gradient(circle at top right,rgba(254,3,124,.10),transparent 30%),
+    linear-gradient(180deg,#0a122d 0%,#1b224e 52%,#070b18 100%);
   box-shadow:none!important;
 }
 
@@ -116,12 +116,12 @@
   overflow:hidden;
   border:1px solid rgba(140,236,255,.34);
   border-radius:50%;
-  background:#0a0e23;
+  background:#070b18;
   box-shadow:
-    0 0 8px rgba(25,217,255,.60),
-    0 0 18px rgba(25,217,255,.32),
-    0 0 30px rgba(25,217,255,.16),
-    inset 0 0 12px rgba(25,217,255,.18);
+    0 0 8px rgba(36,228,255,.60),
+    0 0 18px rgba(36,228,255,.32),
+    0 0 30px rgba(36,228,255,.16),
+    inset 0 0 12px rgba(36,228,255,.18);
   transition:.3s ease;
 }
 
@@ -133,12 +133,12 @@
 }
 
 .avatcat_icon:hover .avatcat_ava_inside{
-  border-color:rgba(255,182,210,.52);
+  border-color:rgba(255,79,134,.52);
   box-shadow:
-    0 0 12px rgba(255,79,155,.58),
-    0 0 24px rgba(25,217,255,.38),
-    0 0 42px rgba(255,79,155,.22),
-    inset 0 0 16px rgba(255,79,155,.22);
+    0 0 12px rgba(254,3,124,.58),
+    0 0 24px rgba(36,228,255,.38),
+    0 0 42px rgba(254,3,124,.22),
+    inset 0 0 16px rgba(254,3,124,.22);
 }
 
 .topiclist.forums dl.icon{
@@ -161,20 +161,20 @@
   border:1px solid rgba(140,236,255,.34);
   border-radius:50%;
   background:
-    radial-gradient(circle at 40% 35%,rgba(140,236,255,.45),rgba(25,36,82,.88) 62%,rgba(8,13,32,.96));
+    radial-gradient(circle at 40% 35%,rgba(140,236,255,.45),rgba(27,34,78,.88) 62%,rgba(7,11,24,.96));
   box-shadow:
-    0 0 8px rgba(25,217,255,.50),
-    0 0 18px rgba(25,217,255,.28),
-    inset 0 0 10px rgba(25,217,255,.18);
+    0 0 8px rgba(36,228,255,.50),
+    0 0 18px rgba(36,228,255,.28),
+    inset 0 0 10px rgba(36,228,255,.18);
 }
 
 .topiclist.forums dl.icon:hover::before{
-  border-color:rgba(255,182,210,.48);
+  border-color:rgba(255,79,134,.48);
   box-shadow:
-    0 0 12px rgba(255,79,155,.52),
-    0 0 24px rgba(25,217,255,.35),
-    0 0 38px rgba(255,79,155,.20),
-    inset 0 0 14px rgba(255,79,155,.18);
+    0 0 12px rgba(254,3,124,.52),
+    0 0 24px rgba(36,228,255,.35),
+    0 0 38px rgba(254,3,124,.20),
+    inset 0 0 14px rgba(254,3,124,.18);
 }
 
 .forum-avatar{
@@ -188,7 +188,7 @@
   border:1px solid rgba(140,236,255,.34);
   border-radius:50%;
   object-fit:cover;
-  box-shadow:0 0 10px rgba(25,217,255,.28);
+  box-shadow:0 0 10px rgba(36,228,255,.28);
 }
 
 /* ===================== DESCRIPTION / SOUS-FORUMS ===================== */
@@ -201,13 +201,13 @@
   height:80px;
   padding:5px;
   overflow:auto;
-  border:1px solid rgba(25,217,255,.18);
-  border-left:4px solid #19d9ff;
+  border:1px solid rgba(36,228,255,.18);
+  border-left:4px solid #24e4ff;
   border-radius:10px;
   background:
-    radial-gradient(circle at top left,rgba(25,217,255,.08),transparent 40%),
-    rgba(18,24,60,.90);
-  color:#c6e9ff;
+    radial-gradient(circle at top left,rgba(36,228,255,.08),transparent 40%),
+    rgba(27,34,78,.90);
+  color:#d8ecff;
   scrollbar-width:none;
   -ms-overflow-style:none;
 }
@@ -232,7 +232,7 @@
   overflow-y:auto;
   padding:5px;
   box-sizing:border-box;
-  background:rgba(10,13,32,.96);
+  background:rgba(7,11,24,.96);
   font-size:0;
   opacity:0;
   visibility:hidden;
@@ -256,10 +256,10 @@
   margin:0 auto;
   padding:5px 10px;
   box-sizing:border-box;
-  border:1px solid rgba(25,217,255,.28);
+  border:1px solid rgba(36,228,255,.28);
   border-radius:999px;
-  background:rgba(20,34,86,.88);
-  color:#ecfbff!important;
+  background:rgba(27,34,78,.88);
+  color:#d8ecff!important;
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:11px;
   font-weight:900;
@@ -269,17 +269,17 @@
   text-transform:uppercase;
   letter-spacing:.4px;
   white-space:nowrap;
-  box-shadow:inset 3px 0 0 #19d9ff;
+  box-shadow:inset 3px 0 0 #24e4ff;
 }
 
 .subforum-buttons a:hover{
   opacity:1;
-  color:#ffb6d2!important;
-  background:rgba(64,30,82,.90);
-  border-color:rgba(255,182,210,.40);
+  color:#ff4f86!important;
+  background:rgba(54,42,92,.90);
+  border-color:rgba(255,79,134,.40);
   box-shadow:
-    inset 3px 0 0 #ff4f9b,
-    0 0 10px rgba(255,79,155,.20);
+    inset 3px 0 0 #fe037c,
+    0 0 10px rgba(254,3,124,.20);
 }
 
 /* ===================== TITRES ===================== */
@@ -300,7 +300,7 @@
   z-index:-1;
   width:80%;
   height:100%;
-  background:radial-gradient(circle,rgba(25,217,255,.24),transparent 70%);
+  background:radial-gradient(circle,rgba(36,228,255,.24),transparent 70%);
   filter:blur(20px);
 }
 
@@ -315,9 +315,9 @@
   letter-spacing:3px;
   text-shadow:
     0 0 6px rgba(140,236,255,.95),
-    0 0 18px rgba(25,217,255,.65),
-    0 0 34px rgba(25,217,255,.35),
-    3px 3px 0 rgba(255,79,155,.20);
+    0 0 18px rgba(36,228,255,.65),
+    0 0 34px rgba(36,228,255,.35),
+    3px 3px 0 rgba(254,3,124,.20);
   animation:flickerCat 3s infinite;
 }
 
@@ -326,9 +326,9 @@
     opacity:1;
     text-shadow:
       0 0 6px rgba(140,236,255,.95),
-      0 0 18px rgba(25,217,255,.65),
-      0 0 34px rgba(25,217,255,.35),
-      3px 3px 0 rgba(255,79,155,.20);
+      0 0 18px rgba(36,228,255,.65),
+      0 0 34px rgba(36,228,255,.35),
+      3px 3px 0 rgba(254,3,124,.20);
   }
   20%,24%,55%{
     opacity:.45;
@@ -340,18 +340,18 @@
 }
 
 a.forumtitle{
-  color:#ffb6d2!important;
+  color:#ff4f86!important;
   font-family:"Bahianita",cursive;
   font-size:30px;
   text-transform:uppercase;
   text-decoration:none;
-  text-shadow:0 0 10px rgba(255,79,155,.30);
+  text-shadow:0 0 10px rgba(254,3,124,.30);
 }
 
 a.forumtitle:hover{
   color:#8cecff!important;
   text-decoration:none;
-  text-shadow:0 0 12px rgba(25,217,255,.45);
+  text-shadow:0 0 12px rgba(36,228,255,.45);
 }
 
 .hierarchy{
@@ -375,7 +375,7 @@ a.forumtitle:hover{
 .sujetmess{
   width:auto!important;
   height:auto!important;
-  color:#8dbddd;
+  color:#b9cce8;
   font-family:"Rajdhani",Arial,sans-serif;
   font-size:12px;
   font-weight:900;
@@ -410,11 +410,11 @@ a.forumtitle:hover{
   flex-shrink:0;
   border-radius:14px;
   background:
-    linear-gradient(180deg,rgba(5,10,28,.05),rgba(5,10,28,.55)),
+    linear-gradient(180deg,rgba(7,11,24,.05),rgba(7,11,24,.55)),
     url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJemZJ8vDobrX7WslWydj5p871m18R4MLQTw&s") center/cover no-repeat;
   box-shadow:
     inset 0 0 42px rgba(0,0,0,.50),
-    0 0 16px rgba(25,217,255,.12);
+    0 0 16px rgba(36,228,255,.12);
 }
 
 .categories-wrapper > .forabg:nth-child(2) .header{
@@ -462,45 +462,45 @@ a.forumtitle:hover{
 /* ===================== CARTES PARADIS / TERRE / ENFER ===================== */
 
 .cat-paradis .topiclist.forums{
-  background:radial-gradient(circle,#ffd36e 0%,#8a5c10 100%);
+  background:radial-gradient(circle,#e4d3b4 0%,#7a6648 100%);
 }
 
 .cat-terre .topiclist.forums{
-  background:radial-gradient(circle,#8cecff 0%,#1e6fa8 100%);
+  background:radial-gradient(circle,#8cecff 0%,#009dff 100%);
 }
 
 .cat-enfer .topiclist.forums{
-  background:radial-gradient(circle,#b4141c 0%,#270006 100%);
+  background:radial-gradient(circle,#ff2f5f 0%,#070b18 100%);
 }
 
 .cat-paradis .descrpfo{
-  border:1px solid rgba(255,215,0,.65);
-  background:rgba(35,20,0,.82);
+  border:1px solid rgba(228,211,180,.65);
+  background:rgba(26,20,10,.82);
 }
 
 .cat-terre .descrpfo{
-  border:1px solid rgba(135,206,250,.65);
-  background:rgba(10,35,60,.82);
+  border:1px solid rgba(140,236,255,.65);
+  background:rgba(10,18,45,.82);
 }
 
 .cat-enfer .descrpfo{
-  border:1px solid rgba(255,40,40,.65);
-  background:rgba(45,0,0,.82);
+  border:1px solid rgba(255,47,95,.65);
+  background:rgba(45,0,18,.82);
 }
 
 .cat-paradis .forum-content::before{
-  color:#fff5cc;
-  text-shadow:0 0 5px #ffd700,0 0 15px #ffcc00,0 0 30px #ffaa00;
+  color:#f4efe4;
+  text-shadow:0 0 5px #e4d3b4,0 0 15px #c2a368,0 0 30px #7a6648;
 }
 
 .cat-terre .forum-content::before{
-  color:#eefaff;
-  text-shadow:0 0 5px #87ceeb,0 0 15px #00bfff,0 0 30px #1e90ff;
+  color:#d8ecff;
+  text-shadow:0 0 5px #8cecff,0 0 15px #24e4ff,0 0 30px #009dff;
 }
 
 .cat-enfer .forum-content::before{
-  color:#ffcccc;
-  text-shadow:0 0 5px #ff0000,0 0 15px #cc0000,0 0 30px #8b0000;
+  color:#ffd8e2;
+  text-shadow:0 0 5px #ff2f5f,0 0 15px #fe037c,0 0 30px #070b18;
 }
 
 .category-card{
@@ -571,7 +571,7 @@ a.forumtitle:hover{
 .category-card .forum_lastpost{
   display:block;
   margin-top:8px;
-  color:#fff;
+  color:#ffffff;
   font-size:12px;
   text-align:center;
 }
@@ -615,7 +615,7 @@ a.forumtitle:hover{
   overflow:auto;
   border-radius:10px;
   box-sizing:border-box;
-  color:#ecf6ff;
+  color:#d8ecff;
   scrollbar-width:none;
   -ms-overflow-style:none;
 }
@@ -633,7 +633,7 @@ a.forumtitle:hover{
   overflow-y:auto;
   padding:8px;
   box-sizing:border-box;
-  background:rgba(17,20,53,.96);
+  background:rgba(7,11,24,.96);
   font-size:0;
   opacity:0;
   visibility:hidden;
@@ -658,7 +658,7 @@ a.forumtitle:hover{
   padding:6px 8px;
   box-sizing:border-box;
   border-radius:999px;
-  color:#fff!important;
+  color:#ffffff!important;
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:11px;
   font-weight:900;
@@ -671,15 +671,15 @@ a.forumtitle:hover{
 }
 
 .cat-paradis .subforum-buttons a{
-  background:linear-gradient(135deg,#f7d774,#b8860b);
+  background:linear-gradient(135deg,#e4d3b4,#7a6648);
 }
 
 .cat-terre .subforum-buttons a{
-  background:linear-gradient(135deg,#8fd8ff,#2d8cff);
+  background:linear-gradient(135deg,#8cecff,#009dff);
 }
 
 .cat-enfer .subforum-buttons a{
-  background:linear-gradient(135deg,#d12626,#7a0000);
+  background:linear-gradient(135deg,#ff2f5f,#fe037c);
 }
 
 .category-card .subforum-buttons a:hover{

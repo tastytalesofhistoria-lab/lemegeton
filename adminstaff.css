@@ -255,11 +255,13 @@
 }
 
 .faq-mark{
-  padding:0 3px;
+  padding:0 4px;
   border-radius:4px;
-  background:rgba(255,211,110,.28);
-  color:var(--faq-white);
-  box-shadow:0 0 10px rgba(255,211,110,.18);
+  background:var(--faq-lime);
+  color:#05070f;
+  font-weight:900;
+  text-shadow:none;
+  box-shadow:0 0 10px rgba(167,255,63,.35),0 0 18px rgba(167,255,63,.16);
 }
 
 .faq-nav{

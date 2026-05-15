@@ -1,499 +1,491 @@
-/* =========================================================
-   SWITCHEROO — MODERNBB / LEMEGETON
-   Barre verticale droite + modal native Monomer
+ /* =========================================================
+   SWITCHEROO — LEMEGETON / MODERNBB
+   Base sidebar droite + CSS Switcheroo corrigé
 ========================================================= */
+
+/* =========================
+   SIDEBAR À DROITE
+========================= */
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: auto;
+  z-index: 99999;
+
+  width: 78px;
+  height: 100vh;
+  padding-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--couleurfond2, var(--neutralDark, #101525));
+  border-left: 1px solid var(--couleurtertiaire, var(--accentClr, #19d9ff));
+  box-shadow: 0 0 25px rgba(0, 0, 0, .45);
+
+  transition: height 0.8s ease;
+}
+
+.sidebar_top,
+.sidebar_bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar_bottom {
+  gap: 10px;
+  padding-bottom: 14px;
+}
+
+.sidebar_bottom a {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--couleurtertiaire, var(--accentClr, #19d9ff));
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(25, 217, 255, .45);
+  border-radius: 14px;
+
+  text-decoration: none;
+  font-size: 18px;
+  transition: .25s ease;
+}
+
+.sidebar_bottom a:hover {
+  color: var(--texte, var(--textColor, #ffffff)) !important;
+  background: var(--couleurfond4, var(--neutralDarker, #263057));
+  box-shadow: 0 0 12px rgba(25, 217, 255, .35);
+}
+
+/* =========================
+   BOUTON TOGGLE OPTIONNEL
+========================= */
+
+.toggle-sidebar {
+  position: fixed;
+  top: 35px;
+  right: 20px;
+  left: auto;
+  cursor: pointer;
+  z-index: 999999;
+  padding: 5px;
+  background-color: var(--couleurfond2, var(--neutralDark, #101525));
+  color: var(--couleurtertiaire, var(--accentClr, #19d9ff));
+  border-radius: 5px;
+}
+
+.toggle-sidebar:hover {
+  background: var(--couleurfond4, var(--neutralDarker, #263057));
+  color: var(--texte, var(--textColor, #ffffff)) !important;
+}
+
+.none {
+  display: none;
+}
+
+/* =========================
+   VARIABLES SWITCHEROO
+========================= */
 
 :root {
-  --sw-bg: var(--couleurfond2, #101525);
-  --sw-bg-soft: var(--couleurfond4, #263057);
-  --sw-cyan: var(--couleurtertiaire, #19d9ff);
-  --sw-text: var(--texte, #ffffff);
-  --sw-pink: #ff3f78;
-  --sw-border: rgba(25, 217, 255, .55);
-  --sw-shadow: rgba(0, 0, 0, .65);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.43, 0.09, 0.38, 2.56);
+
+  --sw-text: var(--textColor, var(--texte, #ecfbff));
+  --sw-bg: var(--neutralDark, var(--couleurfond2, #101525));
+  --sw-bg-dark: var(--neutralDarker, var(--couleurfond4, #070b18));
+  --sw-bg-panel: var(--neutral, #101936);
+  --sw-accent: var(--accentClr, var(--couleurtertiaire, #19d9ff));
+  --sw-light: var(--contrastLight, #ffffff);
+  --sw-lighter: var(--contrastLighter, #dfeaff);
+  --sw-shadow: var(--shadowBox, 0 0 35px rgba(0, 0, 0, .65));
 }
 
 /* =========================
-   BARRE PRINCIPALE
+   SWITCHEROO — BASE
 ========================= */
 
-#switcheroo.switcheroo {
-  position: fixed !important;
-  top: 0 !important;
-  right: 0 !important;
-  left: auto !important;
-  bottom: auto !important;
-  z-index: 99999 !important;
-
-  width: 78px !important;
-  height: 100vh !important;
-
-  color: var(--sw-text) !important;
-  background: var(--sw-bg) !important;
-  border: 0 !important;
-  border-left: 1px solid var(--sw-cyan) !important;
-  box-shadow: 0 0 25px rgba(0, 0, 0, .45) !important;
-
-  overflow: visible !important;
+.switcheroo {
+  color: var(--sw-text);
+  background: transparent;
 }
 
-#switcheroo,
-#switcheroo *,
-#switcheroo *::before,
-#switcheroo *::after {
-  box-sizing: border-box !important;
+.switcheroo,
+.switcheroo *,
+.switcheroo *::before,
+.switcheroo *::after {
+  box-sizing: border-box;
 }
 
-/* liste verticale */
-#switcheroo .switcheroo__squircles {
-  width: 100% !important;
-  height: auto !important;
-
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 12px !important;
-
-  margin: 0 !important;
-  padding: 24px 8px !important;
-
-  list-style: none !important;
+.switcheroo__squircles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 15px;
 }
 
 /* =========================
-   BOUTONS / AVATARS
+   COMPTES / AVATARS
 ========================= */
 
-#switcheroo .switcheroo__squircle,
-#switcheroo .switcheroo__logo,
-#switcheroo .switcheroo__squircle--button {
-  position: relative !important;
+.switcheroo__squircle {
+  position: relative;
 
-  width: 44px !important;
-  height: 44px !important;
-  min-width: 44px !important;
-  max-width: 44px !important;
+  width: 35px;
+  height: 35px;
 
-  display: grid !important;
-  place-items: center !important;
+  display: grid;
+  place-items: center;
 
-  margin: 0 !important;
-  padding: 0 !important;
+  cursor: pointer;
 
-  cursor: pointer !important;
-  overflow: visible !important;
+  background-color: var(--sw-bg);
+  border: 1px solid rgba(25, 217, 255, .45);
+  border-radius: 50%;
+  outline: 5px solid transparent;
 
-  color: var(--sw-cyan) !important;
-  background: rgba(255, 255, 255, .06) !important;
-  border: 1px solid var(--sw-border) !important;
-  border-radius: 15px !important;
-
-  font-size: 0 !important;
-  line-height: 0 !important;
-  text-decoration: none !important;
-
-  box-shadow: inset 0 0 12px rgba(25, 217, 255, .10) !important;
-  transition: .25s ease !important;
+  transition:
+    border-radius 128ms var(--ease),
+    background-color 128ms var(--ease),
+    outline-color 128ms var(--ease),
+    box-shadow 128ms var(--ease);
 }
 
-#switcheroo .switcheroo__squircle:hover,
-#switcheroo .switcheroo__logo:hover,
-#switcheroo .switcheroo__squircle--button:hover {
-  background: var(--sw-bg-soft) !important;
-  border-color: var(--sw-cyan) !important;
-  border-radius: 12px !important;
-  box-shadow: 0 0 14px rgba(25, 217, 255, .38) !important;
+.switcheroo__squircle:hover {
+  outline-color: var(--sw-bg-dark);
+  border-radius: 8px;
+  background-color: var(--sw-bg-dark);
+  box-shadow: 0 0 12px rgba(25, 217, 255, .35);
 }
 
-#switcheroo .switcheroo__squircle.active,
-#switcheroo .switcheroo__squircle.active img {
-  border-radius: 12px !important;
-  cursor: default !important;
+.switcheroo__squircle:hover img {
+  border-radius: 8px;
 }
 
-/* contour actif / hover */
-#switcheroo .switcheroo__squircle::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: -5px !important;
-  z-index: -1 !important;
-
-  display: block !important;
-
-  border: 1px solid rgba(25, 217, 255, .38) !important;
-  border-radius: 18px !important;
-  background: rgba(25, 217, 255, .06) !important;
-
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transition: .25s ease !important;
+.switcheroo__avatar {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
 }
 
-#switcheroo .switcheroo__squircle:hover::before,
-#switcheroo .switcheroo__squircle.active::before {
-  opacity: 1 !important;
+.switcheroo__avatar img {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+
+  transition: border-radius 128ms var(--ease);
 }
 
-/* avatars */
-#switcheroo .switcheroo__avatar,
-#switcheroo .switcheroo__avatar img {
-  width: 44px !important;
-  height: 44px !important;
-  min-width: 44px !important;
-  max-width: 44px !important;
-}
-
-#switcheroo .switcheroo__avatar img {
-  display: block !important;
-  object-fit: cover !important;
-  object-position: center !important;
-
-  border-radius: 15px !important;
-  transition: .25s ease !important;
-}
-
-#switcheroo .switcheroo__avatar img:hover {
-  border-radius: 12px !important;
-}
-
-/* icônes forcées */
-#switcheroo .lem-switcheroo-icon {
-  width: 100% !important;
-  height: 100% !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  color: var(--sw-cyan) !important;
-  font-size: 24px !important;
-  line-height: 1 !important;
-  font-weight: 900 !important;
-  font-style: normal !important;
-  text-indent: 0 !important;
-  opacity: 1 !important;
-  pointer-events: none !important;
-}
-
-#switcheroo .lem-switcheroo-icon-home {
-  font-size: 20px !important;
-}
-
-#switcheroo .lem-switcheroo-icon-add {
-  font-size: 31px !important;
-  margin-top: -3px !important;
-}
-
-#switcheroo .lem-switcheroo-icon-delete {
-  font-size: 22px !important;
+.switcheroo__squircle.active,
+.switcheroo__squircle.active img {
+  outline-color: var(--sw-bg);
+  border-radius: 8px;
+  cursor: default;
 }
 
 /* =========================
-   SÉPARATEUR
+   BOUTON AJOUTER
 ========================= */
 
-#switcheroo .switcheroo__divider {
-  width: 38px !important;
-  height: 1px !important;
+.switcheroo__squircle--button {
+  color: var(--sw-light);
+  transition:
+    border-radius 128ms var(--ease),
+    color 128ms var(--ease),
+    background-color 128ms var(--ease);
+}
 
-  margin: 2px 0 !important;
+.switcheroo__squircle--button i {
+  font-size: 19px;
+  line-height: 1;
+}
 
-  background: rgba(25, 217, 255, .32) !important;
-  border-radius: 999px !important;
+.switcheroo__squircle--button:hover {
+  color: var(--sw-accent);
 }
 
 /* =========================
-   DELETE
+   BOUTON SUPPRIMER
 ========================= */
 
-#switcheroo .switcheroo__delete {
-  position: absolute !important;
-  top: -7px !important;
-  right: -7px !important;
-  z-index: 5 !important;
+.switcheroo__delete {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  z-index: 5;
 
-  width: 18px !important;
-  height: 18px !important;
+  width: 16px;
+  height: 16px;
 
-  display: grid !important;
-  place-items: center !important;
+  display: grid;
+  place-items: center;
 
-  color: #ffffff !important;
-  background: var(--sw-pink) !important;
-  border: 1px solid rgba(255, 255, 255, .35) !important;
-  border-radius: 50% !important;
+  cursor: pointer;
 
-  font-size: 13px !important;
-  line-height: 1 !important;
-  font-weight: 900 !important;
+  color: var(--sw-bg-panel);
+  background-color: var(--sw-accent);
+  border-radius: 50%;
 
-  opacity: 0 !important;
-  transform: scale(0) !important;
-  transition: .2s ease !important;
+  font-size: 12px;
+  line-height: 0;
+
+  opacity: 1;
+  transform: scale(0);
+
+  transition:
+    transform 128ms var(--ease),
+    opacity 64ms var(--ease);
 }
 
-#switcheroo .switcheroo__squircle:hover .switcheroo__delete {
-  opacity: 1 !important;
-  transform: scale(1) !important;
+.switcheroo__squircle:hover .switcheroo__delete {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* =========================
-   TOOLTIP PSEUDO
+   INFOBULLE / PSEUDO
+   Corrigée pour sidebar à droite :
+   elle s’ouvre vers la gauche.
 ========================= */
 
-#switcheroo .switcheroo__popper {
-  position: absolute !important;
-  left: auto !important;
-  right: 155% !important;
-  top: 50% !important;
-  z-index: 999999 !important;
+.switcheroo__popper {
+  position: absolute;
+  top: 50%;
+  right: 155%;
+  left: auto;
+  z-index: 999999;
 
-  width: max-content !important;
-  max-width: 220px !important;
+  width: max-content;
+  max-width: 220px;
+  padding: 0.3rem 1rem;
 
-  padding: 8px 12px !important;
+  pointer-events: none;
 
-  color: var(--sw-cyan) !important;
-  background: var(--sw-bg) !important;
-  border: 1px solid var(--sw-border) !important;
-  border-radius: 10px !important;
-  box-shadow: 0 0 18px rgba(0, 0, 0, .45) !important;
+  color: var(--sw-text);
+  background-color: var(--sw-bg-dark);
+  border: 1px solid rgba(25, 217, 255, .35);
+  border-radius: 5px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, .45);
 
-  font-size: 11px !important;
-  line-height: 1.2 !important;
-  font-weight: 800 !important;
-  text-transform: uppercase !important;
-  white-space: nowrap !important;
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: nowrap;
 
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transform: translateY(-50%) scale(.96) !important;
-  transform-origin: right center !important;
-  transition: .22s ease !important;
+  opacity: 0;
+  transform-origin: right center;
+  transform: translateY(-50%) scale(0.98);
+
+  transition:
+    opacity 64ms var(--ease),
+    transform 128ms var(--ease-bounce);
 }
 
-#switcheroo .switcheroo__popper::before {
-  content: "" !important;
-  position: absolute !important;
-  right: -5px !important;
-  left: auto !important;
-  top: 50% !important;
+.switcheroo__popper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -3px;
+  left: auto;
+  z-index: -1;
 
-  width: 10px !important;
-  height: 10px !important;
+  width: 20px;
+  height: 20px;
 
-  background: var(--sw-bg) !important;
-  border-right: 1px solid var(--sw-border) !important;
-  border-bottom: 1px solid var(--sw-border) !important;
+  background-color: var(--sw-bg-dark);
+  border-radius: 2px;
 
-  transform: translateY(-50%) rotate(-45deg) !important;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
-#switcheroo .switcheroo__squircle:hover .switcheroo__popper {
-  opacity: 1 !important;
-  transform: translateY(-50%) scale(1) !important;
+.switcheroo__squircle:hover .switcheroo__popper {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
 }
 
-/* =========================================================
-   MODAL MONOMER / FORMULAIRE DE CONNEXION
-   Ne pas cibler #switcheroo form : ModernBB + Monomer sortent la modal du nav.
-========================================================= */
+/* =========================
+   LOGO / DIVIDER
+========================= */
+
+.switcheroo__logo,
+.switcheroo__divider {
+  display: none;
+}
+
+/* =========================
+   MODAL MONOMER
+========================= */
 
 .monomer-overlay {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 999998 !important;
+  position: fixed;
+  z-index: 999998;
+  top: 0;
+  left: 0;
 
-  width: 100% !important;
-  height: 100% !important;
+  width: 100%;
+  height: 100%;
 
-  background: rgba(5, 8, 20, .62) !important;
-  backdrop-filter: blur(2px) !important;
+  opacity: 0;
 
-  opacity: 0 !important;
-  transition: .2s opacity ease !important;
+  background: rgba(5, 8, 20, .65);
+
+  transition: 0.2s opacity ease;
 }
 
 .monomer-modal {
-  position: fixed !important;
-  top: 90px !important;
-  right: 96px !important;
-  left: auto !important;
-  bottom: auto !important;
-  z-index: 999999 !important;
+  position: fixed;
+  z-index: 999999;
+  top: 50%;
+  left: 50%;
 
-  width: 330px !important;
-  max-width: calc(100vw - 120px) !important;
+  width: 94%;
+  max-width: 360px;
+  padding: 50px;
 
-  padding: 0 !important;
+  opacity: 0;
 
-  color: var(--sw-text) !important;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 18px !important;
+  color: var(--sw-text);
+  background: var(--sw-bg-panel);
+  border: 1px solid rgba(25, 217, 255, .45);
+  border-radius: 10px;
+  box-shadow: var(--sw-shadow);
 
-  opacity: 0 !important;
-  transform: none !important;
-  transition: .2s opacity ease !important;
+  transform: translate(-50%, -50%);
+
+  transition: 0.2s opacity ease;
 }
 
 .monomer-modal.monomer-open,
 .monomer-overlay.monomer-open {
-  opacity: 1 !important;
+  opacity: 1;
 }
 
-/* formulaire natif */
-.monomer-modal .switcheroo__form {
-  width: 100% !important;
-  padding: 18px !important;
+/* =========================
+   FORMULAIRE SWITCHEROO
+========================= */
 
-  background: var(--sw-bg) !important;
-  border: 1px solid var(--sw-cyan) !important;
-  border-radius: 18px !important;
-  box-shadow: 0 0 35px var(--sw-shadow) !important;
-
-  color: var(--sw-text) !important;
+.switcheroo__form-row {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
 }
 
-.monomer-modal .switcheroo__form-row {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: stretch !important;
-  gap: 5px !important;
+.switcheroo__form-label {
+  margin-bottom: 8px;
 
-  margin: 0 0 12px !important;
+  color: var(--sw-accent);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.monomer-modal .switcheroo__form-label {
-  margin: 0 !important;
+.switcheroo__form-input {
+  width: 100%;
+  padding: 6px !important;
 
-  color: var(--sw-cyan) !important;
-  font-size: 11px !important;
-  line-height: 1.2 !important;
-  font-weight: 900 !important;
-  text-transform: uppercase !important;
+  color: var(--sw-light);
+  background-color: var(--sw-bg);
+  border: 1px solid rgba(25, 217, 255, .45) !important;
+  border-radius: 4px;
+
+  cursor: text;
 }
 
-.monomer-modal .switcheroo__form-input {
-  width: 100% !important;
-  height: 36px !important;
+.switcheroo__form-button {
+  align-self: center;
 
-  padding: 8px 10px !important;
+  margin-top: 10px;
+  padding: 4px 10px 5px;
 
-  color: #07101f !important;
-  background: #dfeaff !important;
-  border: 1px solid rgba(25, 217, 255, .55) !important;
-  border-radius: 9px !important;
-  border-bottom: 1px solid rgba(25, 217, 255, .55) !important;
+  cursor: pointer;
 
-  font-size: 13px !important;
-  line-height: 1.2 !important;
-  cursor: text !important;
+  color: var(--sw-bg-panel);
+  background-color: var(--sw-accent);
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: none;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-.monomer-modal .switcheroo__form-button {
-  width: 100% !important;
-  height: 36px !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  margin: 10px 0 0 auto !important;
-  padding: 8px 10px !important;
-
-  cursor: pointer !important;
-
-  color: var(--sw-cyan) !important;
-  background: rgba(25, 217, 255, .12) !important;
-  border: 1px solid var(--sw-cyan) !important;
-  border-radius: 10px !important;
-
-  font-size: 12px !important;
-  font-weight: 900 !important;
-  line-height: 1 !important;
-  text-transform: uppercase !important;
-
-  box-shadow: none !important;
+.switcheroo__form-button:hover {
+  background: var(--sw-light);
 }
 
-.monomer-modal .switcheroo__form-button:hover {
-  color: #ffffff !important;
-  background: rgba(25, 217, 255, .24) !important;
-}
+/* =========================
+   FERMETURE MODAL
+========================= */
 
-/* fermeture modal */
 .monomer-close {
-  position: absolute !important;
-  top: -9px !important;
-  right: -9px !important;
-  z-index: 1000000 !important;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 
-  width: 24px !important;
-  height: 24px !important;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  padding-left: 1px;
 
-  display: grid !important;
-  place-items: center !important;
+  cursor: pointer;
 
-  padding: 0 !important;
+  color: var(--sw-text);
+  background: var(--sw-lighter);
+  border: 0;
+  border-radius: 4px;
+  outline: none;
 
-  cursor: pointer !important;
-
-  color: #ffffff !important;
-  background: var(--sw-pink) !important;
-  border: 1px solid rgba(255, 255, 255, .35) !important;
-  border-radius: 50% !important;
-
-  font-size: 18px !important;
-  line-height: 1 !important;
-  font-weight: 900 !important;
+  font-size: 16px;
+  line-height: 12px;
 }
 
 .monomer-close:hover {
-  background: var(--sw-cyan) !important;
-  color: #07101f !important;
+  background: var(--sw-light);
 }
 
-/* =========================================================
-   OPTIONS : MASQUER TOOLBAR SANS LA DÉSACTIVER
-========================================================= */
-
-/*
-#fa_toolbar,
-#fa_toolbar_hidden {
-  display: none !important;
-}
-*/
-
-/* =========================================================
+/* =========================
    RESPONSIVE
-========================================================= */
+========================= */
 
 @media (max-width: 700px) {
-  #switcheroo.switcheroo {
-    width: 64px !important;
+  #sidebar {
+    width: 64px;
   }
 
-  #switcheroo .switcheroo__squircles {
-    padding: 18px 6px !important;
-    gap: 10px !important;
+  .switcheroo__squircle {
+    width: 32px;
+    height: 32px;
   }
 
-  #switcheroo .switcheroo__squircle,
-  #switcheroo .switcheroo__logo,
-  #switcheroo .switcheroo__squircle--button,
-  #switcheroo .switcheroo__avatar,
-  #switcheroo .switcheroo__avatar img {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    max-width: 38px !important;
+  .switcheroo__squircles {
+    gap: 12px;
   }
 
   .monomer-modal {
-    top: 70px !important;
-    right: 74px !important;
-    width: 260px !important;
-    max-width: calc(100vw - 88px) !important;
+    width: calc(100vw - 32px);
+    max-width: 320px;
+    padding: 34px 22px;
   }
 }

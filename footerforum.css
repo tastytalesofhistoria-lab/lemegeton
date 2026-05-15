@@ -1,1 +1,506 @@
 
+/* =========================================================
+   LEMEGETON — FOOTER GLOBAL MODERNBB
+   Fichier : footerforum.css
+   Préfixe principal : lem-footer / lem-admin
+   Compatible avec overall_footer_begin + overall_footer_end
+========================================================= */
+
+/* ===================== VARIABLES FOOTER ===================== */
+
+#page-footer.lem-footer,
+.lem-footer-user,
+.lem-admin-footer{
+  --lf-bg:#040614;
+  --lf-deep:#0b0f2a;
+  --lf-panel:#201b3d;
+  --lf-panel-soft:#3c3068;
+
+  --lf-cyan:#24e4ff;
+  --lf-cyan-soft:#b8f4ff;
+  --lf-pink:#ff4f86;
+  --lf-pink-hot:#FE037C;
+  --lf-purple:#b88cff;
+
+  --lf-text:#d8ecff;
+  --lf-white:#ecfbff;
+  --lf-muted:#89abc1;
+
+  box-sizing:border-box;
+}
+
+#page-footer.lem-footer *,
+#page-footer.lem-footer *::before,
+#page-footer.lem-footer *::after,
+.lem-footer-user *,
+.lem-footer-user *::before,
+.lem-footer-user *::after,
+.lem-admin-footer *,
+.lem-admin-footer *::before,
+.lem-admin-footer *::after{
+  box-sizing:border-box;
+}
+
+/* ===================== WRAPPER GLOBAL ===================== */
+
+#page-footer.lem-footer,
+.lem-footer-user,
+.lem-admin-footer{
+  width:min(1000px,calc(100% - 40px));
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+#page-footer.lem-footer{
+  position:relative;
+  margin-top:30px!important;
+  padding:0!important;
+  border:1px solid rgba(36,228,255,.18);
+  border-bottom:0;
+  border-radius:22px 22px 0 0;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(36,228,255,.13),transparent 32%),
+    radial-gradient(circle at 88% 0%,rgba(254,3,124,.12),transparent 30%),
+    linear-gradient(135deg,rgba(4,6,20,.98) 0%,rgba(11,15,42,.98) 45%,rgba(32,27,61,.96) 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    0 0 26px rgba(0,0,0,.30),
+    0 0 24px rgba(36,228,255,.06);
+  overflow:hidden;
+}
+
+#page-footer.lem-footer::before{
+  content:"";
+  display:block;
+  height:7px;
+  background:linear-gradient(90deg,var(--lf-cyan),var(--lf-pink-hot),var(--lf-purple),var(--lf-cyan));
+  background-size:220% 100%;
+  animation:lfKaraokeBar 7s linear infinite;
+}
+
+#page-footer.lem-footer::after{
+  content:"FOOTER";
+  position:absolute;
+  top:50%;
+  right:24px;
+  transform:translateY(-50%);
+  color:rgba(255,255,255,.035);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:62px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:4px;
+  pointer-events:none;
+}
+
+/* ===================== BARRE ACCUEIL ===================== */
+
+.lem-footer-wrap{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+}
+
+.lem-footer-system{
+  position:relative;
+  z-index:2;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:14px;
+  min-height:62px;
+  margin:0!important;
+  padding:0 30px!important;
+  border:0!important;
+  background:transparent!important;
+  list-style:none!important;
+}
+
+.lem-footer-system li{
+  float:none!important;
+  display:flex!important;
+  align-items:center!important;
+  margin:0!important;
+  padding:0!important;
+}
+
+.lem-footer-system .rightside{
+  margin-left:auto!important;
+}
+
+.lem-footer-home{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px;
+  min-height:34px;
+  padding:0 13px;
+  border:1px solid rgba(36,228,255,.22);
+  border-radius:999px;
+  background:rgba(4,6,20,.28);
+  color:var(--lf-white)!important;
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-decoration:none!important;
+  text-transform:uppercase;
+  text-shadow:0 0 8px rgba(36,228,255,.28);
+  transition:
+    color .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    background .18s ease;
+}
+
+.lem-footer-home i{
+  color:var(--lf-cyan);
+  font-size:17px;
+  line-height:1;
+  text-shadow:
+    0 0 5px rgba(36,228,255,.75),
+    0 0 12px rgba(36,228,255,.35);
+}
+
+.lem-footer-home:hover{
+  color:var(--lf-cyan)!important;
+  border-color:rgba(36,228,255,.55);
+  background:rgba(4,6,20,.45);
+  box-shadow:
+    0 0 10px rgba(36,228,255,.14),
+    inset 0 0 10px rgba(36,228,255,.05);
+}
+
+/* ===================== LIENS FORUMACTIF ===================== */
+
+.lem-footer-user{
+  position:relative;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:wrap;
+  gap:0;
+  margin-top:0!important;
+  margin-bottom:0!important;
+  padding:16px 28px!important;
+  border-left:1px solid rgba(36,228,255,.18);
+  border-right:1px solid rgba(36,228,255,.18);
+  border-top:1px solid rgba(255,255,255,.055);
+  background:
+    radial-gradient(circle at 50% 0%,rgba(36,228,255,.07),transparent 45%),
+    linear-gradient(90deg,rgba(10,18,45,.94),rgba(32,27,61,.96));
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.025),
+    inset 0 0 18px rgba(36,228,255,.035);
+  list-style:none!important;
+  text-align:center;
+}
+
+.lem-footer-user::before{
+  content:"";
+  position:absolute;
+  left:5%;
+  right:5%;
+  top:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(36,228,255,.34),rgba(255,79,134,.24),transparent);
+}
+
+.lem-footer-user li{
+  float:none!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  margin:0!important;
+  padding:0!important;
+  color:var(--lf-muted);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.25;
+}
+
+.lem-footer-user li:not(:last-child)::after{
+  content:"|";
+  margin:0 7px;
+  color:rgba(236,251,255,.55);
+  font-weight:700;
+}
+
+.lem-footer-time{
+  color:var(--lf-muted)!important;
+}
+
+.lem-footer-time i{
+  margin-right:5px;
+  color:var(--lf-cyan);
+  font-size:13px;
+  text-shadow:
+    0 0 5px rgba(36,228,255,.65),
+    0 0 10px rgba(36,228,255,.30);
+}
+
+.lem-footer-link-item{
+  float:none!important;
+}
+
+.lem-footer-link{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  color:var(--lf-white)!important;
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  line-height:1.2;
+  text-decoration:none!important;
+  text-shadow:0 0 6px rgba(36,228,255,.16);
+  transition:
+    color .18s ease,
+    text-shadow .18s ease;
+}
+
+.lem-footer-link:hover{
+  color:var(--lf-pink)!important;
+  text-shadow:
+    0 0 6px rgba(255,79,134,.42),
+    0 0 12px rgba(254,3,124,.22);
+}
+
+/* ===================== ADMIN FOOTER ===================== */
+
+.lem-admin-footer{
+  position:relative;
+  margin-top:0!important;
+  margin-bottom:26px!important;
+  padding:0!important;
+  border:1px solid rgba(36,228,255,.18);
+  border-top:1px solid rgba(255,255,255,.06);
+  border-radius:0 0 22px 22px;
+  background:
+    radial-gradient(circle at 50% 100%,rgba(255,79,134,.08),transparent 48%),
+    linear-gradient(135deg,rgba(4,6,20,.98),rgba(11,15,42,.98));
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.025),
+    0 0 22px rgba(0,0,0,.22);
+  overflow:hidden;
+}
+
+.lem-admin-footer::before{
+  content:"";
+  position:absolute;
+  left:5%;
+  right:5%;
+  top:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,79,134,.26),rgba(36,228,255,.22),transparent);
+}
+
+.lem-admin-footer .wrap{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+}
+
+.lem-admin-link{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:58px;
+  margin:0!important;
+  padding:0 20px!important;
+  text-align:center!important;
+  color:var(--lf-muted);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+}
+
+.lem-admin-link a{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  min-height:32px;
+  padding:0 14px;
+  border:1px solid rgba(36,228,255,.24);
+  border-right:2px solid var(--lf-cyan);
+  border-radius:999px;
+  background:rgba(4,6,20,.32);
+  color:var(--lf-white)!important;
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-decoration:none!important;
+  text-transform:uppercase;
+  text-shadow:0 0 8px rgba(36,228,255,.30);
+  transition:
+    color .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    background .18s ease;
+}
+
+.lem-admin-link a::before{
+  content:"⛧";
+  margin-right:7px;
+  color:var(--lf-pink);
+  text-shadow:0 0 6px rgba(255,79,134,.52);
+}
+
+.lem-admin-link a:hover{
+  color:var(--lf-cyan)!important;
+  border-color:rgba(255,79,134,.42);
+  border-right-color:var(--lf-pink);
+  background:rgba(4,6,20,.48);
+  box-shadow:
+    0 0 10px rgba(36,228,255,.14),
+    0 0 14px rgba(255,79,134,.10);
+}
+
+/* ===================== BOUTON WEBPUSH FORUMACTIF ===================== */
+
+#sub-to-pushs{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin-left:12px;
+  padding:5px 10px;
+  border:1px solid rgba(36,228,255,.24);
+  border-radius:999px;
+  background:rgba(4,6,20,.35);
+  color:var(--lf-cyan-soft);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.4px;
+  cursor:pointer;
+  text-transform:uppercase;
+  transition:
+    color .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease;
+}
+
+#sub-to-pushs i{
+  color:var(--lf-cyan);
+  font-size:13px;
+  text-shadow:0 0 6px rgba(36,228,255,.55);
+}
+
+#sub-to-pushs:hover{
+  color:var(--lf-pink);
+  border-color:rgba(255,79,134,.42);
+  box-shadow:0 0 10px rgba(255,79,134,.14);
+}
+
+/* ===================== NETTOYAGE LIENS / COPYRIGHT NATIFS ===================== */
+
+.lem-footer-user .copyright,
+.lem-admin-footer .copyright,
+.lem-footer-user a.copyright,
+.lem-admin-footer a.copyright{
+  background:transparent!important;
+  border:0;
+}
+
+.lem-footer-user a,
+.lem-admin-footer a{
+  outline:none;
+}
+
+/* ===================== ANIMATION ===================== */
+
+@keyframes lfKaraokeBar{
+  0%{
+    background-position:0% 50%;
+  }
+
+  100%{
+    background-position:220% 50%;
+  }
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media(max-width:700px){
+  #page-footer.lem-footer,
+  .lem-footer-user,
+  .lem-admin-footer{
+    width:calc(100% - 24px);
+  }
+
+  #page-footer.lem-footer::after{
+    font-size:42px;
+    right:14px;
+  }
+
+  .lem-footer-system{
+    justify-content:center!important;
+    min-height:54px;
+    padding:0 14px!important;
+  }
+
+  .lem-footer-system .rightside{
+    margin-left:0!important;
+  }
+
+  .lem-footer-home{
+    min-height:32px;
+    font-size:13px;
+  }
+
+  .lem-footer-user{
+    padding:14px!important;
+  }
+
+  .lem-footer-user li{
+    font-size:11px;
+  }
+
+  .lem-footer-time{
+    width:100%;
+    justify-content:center!important;
+    margin-bottom:6px!important;
+  }
+
+  .lem-footer-time::after{
+    display:none;
+  }
+
+  .lem-admin-link{
+    min-height:54px;
+  }
+
+  .lem-admin-link a{
+    font-size:13px;
+  }
+
+  #sub-to-pushs{
+    margin-left:0;
+    margin-top:8px;
+  }
+}
+
+@media(max-width:460px){
+  .lem-footer-user li:not(:last-child)::after{
+    margin:0 5px;
+  }
+
+  .lem-footer-link,
+  .lem-footer-user li{
+    font-size:10px;
+  }
+
+  .lem-admin-link{
+    padding:10px!important;
+  }
+
+  .lem-admin-link a{
+    width:100%;
+    max-width:260px;
+  }
+}

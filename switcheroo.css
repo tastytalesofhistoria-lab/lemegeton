@@ -1,0 +1,499 @@
+/* =========================================================
+   SWITCHEROO — MODERNBB / LEMEGETON
+   Barre verticale droite + modal native Monomer
+========================================================= */
+
+:root {
+  --sw-bg: var(--couleurfond2, #101525);
+  --sw-bg-soft: var(--couleurfond4, #263057);
+  --sw-cyan: var(--couleurtertiaire, #19d9ff);
+  --sw-text: var(--texte, #ffffff);
+  --sw-pink: #ff3f78;
+  --sw-border: rgba(25, 217, 255, .55);
+  --sw-shadow: rgba(0, 0, 0, .65);
+}
+
+/* =========================
+   BARRE PRINCIPALE
+========================= */
+
+#switcheroo.switcheroo {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 99999 !important;
+
+  width: 78px !important;
+  height: 100vh !important;
+
+  color: var(--sw-text) !important;
+  background: var(--sw-bg) !important;
+  border: 0 !important;
+  border-left: 1px solid var(--sw-cyan) !important;
+  box-shadow: 0 0 25px rgba(0, 0, 0, .45) !important;
+
+  overflow: visible !important;
+}
+
+#switcheroo,
+#switcheroo *,
+#switcheroo *::before,
+#switcheroo *::after {
+  box-sizing: border-box !important;
+}
+
+/* liste verticale */
+#switcheroo .switcheroo__squircles {
+  width: 100% !important;
+  height: auto !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+
+  margin: 0 !important;
+  padding: 24px 8px !important;
+
+  list-style: none !important;
+}
+
+/* =========================
+   BOUTONS / AVATARS
+========================= */
+
+#switcheroo .switcheroo__squircle,
+#switcheroo .switcheroo__logo,
+#switcheroo .switcheroo__squircle--button {
+  position: relative !important;
+
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  max-width: 44px !important;
+
+  display: grid !important;
+  place-items: center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  cursor: pointer !important;
+  overflow: visible !important;
+
+  color: var(--sw-cyan) !important;
+  background: rgba(255, 255, 255, .06) !important;
+  border: 1px solid var(--sw-border) !important;
+  border-radius: 15px !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-decoration: none !important;
+
+  box-shadow: inset 0 0 12px rgba(25, 217, 255, .10) !important;
+  transition: .25s ease !important;
+}
+
+#switcheroo .switcheroo__squircle:hover,
+#switcheroo .switcheroo__logo:hover,
+#switcheroo .switcheroo__squircle--button:hover {
+  background: var(--sw-bg-soft) !important;
+  border-color: var(--sw-cyan) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 14px rgba(25, 217, 255, .38) !important;
+}
+
+#switcheroo .switcheroo__squircle.active,
+#switcheroo .switcheroo__squircle.active img {
+  border-radius: 12px !important;
+  cursor: default !important;
+}
+
+/* contour actif / hover */
+#switcheroo .switcheroo__squircle::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -5px !important;
+  z-index: -1 !important;
+
+  display: block !important;
+
+  border: 1px solid rgba(25, 217, 255, .38) !important;
+  border-radius: 18px !important;
+  background: rgba(25, 217, 255, .06) !important;
+
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: .25s ease !important;
+}
+
+#switcheroo .switcheroo__squircle:hover::before,
+#switcheroo .switcheroo__squircle.active::before {
+  opacity: 1 !important;
+}
+
+/* avatars */
+#switcheroo .switcheroo__avatar,
+#switcheroo .switcheroo__avatar img {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  max-width: 44px !important;
+}
+
+#switcheroo .switcheroo__avatar img {
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center !important;
+
+  border-radius: 15px !important;
+  transition: .25s ease !important;
+}
+
+#switcheroo .switcheroo__avatar img:hover {
+  border-radius: 12px !important;
+}
+
+/* icônes forcées */
+#switcheroo .lem-switcheroo-icon {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  color: var(--sw-cyan) !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  text-indent: 0 !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+}
+
+#switcheroo .lem-switcheroo-icon-home {
+  font-size: 20px !important;
+}
+
+#switcheroo .lem-switcheroo-icon-add {
+  font-size: 31px !important;
+  margin-top: -3px !important;
+}
+
+#switcheroo .lem-switcheroo-icon-delete {
+  font-size: 22px !important;
+}
+
+/* =========================
+   SÉPARATEUR
+========================= */
+
+#switcheroo .switcheroo__divider {
+  width: 38px !important;
+  height: 1px !important;
+
+  margin: 2px 0 !important;
+
+  background: rgba(25, 217, 255, .32) !important;
+  border-radius: 999px !important;
+}
+
+/* =========================
+   DELETE
+========================= */
+
+#switcheroo .switcheroo__delete {
+  position: absolute !important;
+  top: -7px !important;
+  right: -7px !important;
+  z-index: 5 !important;
+
+  width: 18px !important;
+  height: 18px !important;
+
+  display: grid !important;
+  place-items: center !important;
+
+  color: #ffffff !important;
+  background: var(--sw-pink) !important;
+  border: 1px solid rgba(255, 255, 255, .35) !important;
+  border-radius: 50% !important;
+
+  font-size: 13px !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+
+  opacity: 0 !important;
+  transform: scale(0) !important;
+  transition: .2s ease !important;
+}
+
+#switcheroo .switcheroo__squircle:hover .switcheroo__delete {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* =========================
+   TOOLTIP PSEUDO
+========================= */
+
+#switcheroo .switcheroo__popper {
+  position: absolute !important;
+  left: auto !important;
+  right: 155% !important;
+  top: 50% !important;
+  z-index: 999999 !important;
+
+  width: max-content !important;
+  max-width: 220px !important;
+
+  padding: 8px 12px !important;
+
+  color: var(--sw-cyan) !important;
+  background: var(--sw-bg) !important;
+  border: 1px solid var(--sw-border) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 0 18px rgba(0, 0, 0, .45) !important;
+
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(-50%) scale(.96) !important;
+  transform-origin: right center !important;
+  transition: .22s ease !important;
+}
+
+#switcheroo .switcheroo__popper::before {
+  content: "" !important;
+  position: absolute !important;
+  right: -5px !important;
+  left: auto !important;
+  top: 50% !important;
+
+  width: 10px !important;
+  height: 10px !important;
+
+  background: var(--sw-bg) !important;
+  border-right: 1px solid var(--sw-border) !important;
+  border-bottom: 1px solid var(--sw-border) !important;
+
+  transform: translateY(-50%) rotate(-45deg) !important;
+}
+
+#switcheroo .switcheroo__squircle:hover .switcheroo__popper {
+  opacity: 1 !important;
+  transform: translateY(-50%) scale(1) !important;
+}
+
+/* =========================================================
+   MODAL MONOMER / FORMULAIRE DE CONNEXION
+   Ne pas cibler #switcheroo form : ModernBB + Monomer sortent la modal du nav.
+========================================================= */
+
+.monomer-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 999998 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  background: rgba(5, 8, 20, .62) !important;
+  backdrop-filter: blur(2px) !important;
+
+  opacity: 0 !important;
+  transition: .2s opacity ease !important;
+}
+
+.monomer-modal {
+  position: fixed !important;
+  top: 90px !important;
+  right: 96px !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 999999 !important;
+
+  width: 330px !important;
+  max-width: calc(100vw - 120px) !important;
+
+  padding: 0 !important;
+
+  color: var(--sw-text) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 18px !important;
+
+  opacity: 0 !important;
+  transform: none !important;
+  transition: .2s opacity ease !important;
+}
+
+.monomer-modal.monomer-open,
+.monomer-overlay.monomer-open {
+  opacity: 1 !important;
+}
+
+/* formulaire natif */
+.monomer-modal .switcheroo__form {
+  width: 100% !important;
+  padding: 18px !important;
+
+  background: var(--sw-bg) !important;
+  border: 1px solid var(--sw-cyan) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 0 35px var(--sw-shadow) !important;
+
+  color: var(--sw-text) !important;
+}
+
+.monomer-modal .switcheroo__form-row {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 5px !important;
+
+  margin: 0 0 12px !important;
+}
+
+.monomer-modal .switcheroo__form-label {
+  margin: 0 !important;
+
+  color: var(--sw-cyan) !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+}
+
+.monomer-modal .switcheroo__form-input {
+  width: 100% !important;
+  height: 36px !important;
+
+  padding: 8px 10px !important;
+
+  color: #07101f !important;
+  background: #dfeaff !important;
+  border: 1px solid rgba(25, 217, 255, .55) !important;
+  border-radius: 9px !important;
+  border-bottom: 1px solid rgba(25, 217, 255, .55) !important;
+
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  cursor: text !important;
+}
+
+.monomer-modal .switcheroo__form-button {
+  width: 100% !important;
+  height: 36px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 10px 0 0 auto !important;
+  padding: 8px 10px !important;
+
+  cursor: pointer !important;
+
+  color: var(--sw-cyan) !important;
+  background: rgba(25, 217, 255, .12) !important;
+  border: 1px solid var(--sw-cyan) !important;
+  border-radius: 10px !important;
+
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+
+  box-shadow: none !important;
+}
+
+.monomer-modal .switcheroo__form-button:hover {
+  color: #ffffff !important;
+  background: rgba(25, 217, 255, .24) !important;
+}
+
+/* fermeture modal */
+.monomer-close {
+  position: absolute !important;
+  top: -9px !important;
+  right: -9px !important;
+  z-index: 1000000 !important;
+
+  width: 24px !important;
+  height: 24px !important;
+
+  display: grid !important;
+  place-items: center !important;
+
+  padding: 0 !important;
+
+  cursor: pointer !important;
+
+  color: #ffffff !important;
+  background: var(--sw-pink) !important;
+  border: 1px solid rgba(255, 255, 255, .35) !important;
+  border-radius: 50% !important;
+
+  font-size: 18px !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+}
+
+.monomer-close:hover {
+  background: var(--sw-cyan) !important;
+  color: #07101f !important;
+}
+
+/* =========================================================
+   OPTIONS : MASQUER TOOLBAR SANS LA DÉSACTIVER
+========================================================= */
+
+/*
+#fa_toolbar,
+#fa_toolbar_hidden {
+  display: none !important;
+}
+*/
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  #switcheroo.switcheroo {
+    width: 64px !important;
+  }
+
+  #switcheroo .switcheroo__squircles {
+    padding: 18px 6px !important;
+    gap: 10px !important;
+  }
+
+  #switcheroo .switcheroo__squircle,
+  #switcheroo .switcheroo__logo,
+  #switcheroo .switcheroo__squircle--button,
+  #switcheroo .switcheroo__avatar,
+  #switcheroo .switcheroo__avatar img {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+  }
+
+  .monomer-modal {
+    top: 70px !important;
+    right: 74px !important;
+    width: 260px !important;
+    max-width: calc(100vw - 88px) !important;
+  }
+}

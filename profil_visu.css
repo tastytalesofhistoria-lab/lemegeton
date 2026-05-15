@@ -3,7 +3,7 @@
    Fichier : profil_visu.css
    Base : profile-modern Forumactif
    Classes ajoutées : vp-
-   CSS corrigé / contacts texte / 2 colonnes / hover rose
+   CSS corrigé / sidebar 200px / avatar 320px / contacts centrés / hover rose
 ========================================================= */
 
 /* ===================== BASE ===================== */
@@ -130,7 +130,7 @@
 .profile-main.vp-hero{
   position:relative;
   display:grid!important;
-  grid-template-columns:300px minmax(0,1fr)!important;
+  grid-template-columns:200px minmax(0,1fr)!important;
   gap:18px!important;
   align-items:start!important;
   margin:0 0 18px!important;
@@ -184,19 +184,23 @@
   display:flex;
   flex-direction:column;
   gap:14px;
+  width:200px!important;
+  max-width:200px!important;
 }
 
 .profile-content{
   display:flex;
   flex-direction:column;
   gap:16px;
+  min-width:0;
 }
 
 /* ===================== AVATAR ===================== */
 
 .profile-avatar{
-  width:100%;
-  padding:10px;
+  width:200px!important;
+  max-width:200px!important;
+  padding:8px!important;
   border:1px solid rgba(36,228,255,.28);
   border-radius:18px;
   background:rgba(4,6,20,.50);
@@ -208,8 +212,8 @@
 
 .vp-avatar{
   display:block;
-  width:100%;
-  height:380px;
+  width:100%!important;
+  height:320px!important;
   border:1px solid rgba(36,228,255,.52);
   border-radius:14px;
   overflow:hidden;
@@ -432,6 +436,52 @@
   border-radius:12px;
 }
 
+/* ===================== SIDEBAR 200PX — ANTI CASSE ===================== */
+
+.profile-sidebar .profile-field,
+.profile-sidebar .profile-presence .profile-field,
+.profile-sidebar .vp-contact-extra,
+.profile-sidebar .vp-admin-user{
+  grid-template-columns:1fr!important;
+  gap:6px!important;
+  text-align:left!important;
+}
+
+.profile-sidebar .profile-value,
+.profile-sidebar .profile-value *,
+.profile-sidebar .profile-field a,
+.profile-sidebar .profile-field strong{
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  white-space:normal!important;
+}
+
+.profile-sidebar .profile-label{
+  width:100%!important;
+}
+
+.profile-sidebar .profile-value{
+  width:100%!important;
+}
+
+.profile-sidebar .profile-value a{
+  display:inline-flex!important;
+  width:auto!important;
+  max-width:100%!important;
+  min-width:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  color:var(--vp-cyan-soft)!important;
+  box-shadow:none!important;
+  text-align:left!important;
+}
+
+.profile-sidebar .profile-value a:hover{
+  color:var(--vp-pink)!important;
+  text-shadow:0 0 8px rgba(255,79,134,.35);
+}
+
 /* ===================== GROUPES / LIENS PROFIL ===================== */
 
 .profile-groups,
@@ -439,6 +489,10 @@
   display:flex!important;
   flex-wrap:wrap;
   gap:7px;
+}
+
+.profile-sidebar .profile-groups{
+  justify-content:center!important;
 }
 
 .profile-groups a,
@@ -457,6 +511,10 @@
   letter-spacing:.8px!important;
   text-decoration:none!important;
   text-transform:uppercase!important;
+  text-align:center!important;
+  white-space:normal!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
 }
 
 .profile-groups a:hover,
@@ -465,20 +523,23 @@
   color:var(--vp-cyan)!important;
 }
 
-/* ===================== CONTACTS — TEXTE UNIQUEMENT / 2 PAR 2 ===================== */
+/* ===================== CONTACTS — TEXTE UNIQUEMENT / CENTRÉS ===================== */
 
 .vp-contact-box{
-  display:grid!important;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
   gap:8px!important;
 }
 
 .vp-contact-box h3{
-  grid-column:1 / -1;
+  width:100%!important;
 }
 
 .vp-contact-box .vp-contact-field{
-  display:block!important;
+  display:flex!important;
+  justify-content:center!important;
+  width:100%!important;
   min-height:0!important;
   margin:0!important;
   padding:0!important;
@@ -496,7 +557,8 @@
 }
 
 .vp-contact-box .vp-contact-field .profile-value{
-  display:block!important;
+  display:flex!important;
+  justify-content:center!important;
   width:100%!important;
   min-width:0!important;
   margin:0!important;
@@ -514,9 +576,11 @@
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
-  width:100%!important;
+  width:150px!important;
+  min-width:150px!important;
+  max-width:150px!important;
   min-height:38px!important;
-  margin:0!important;
+  margin:0 auto!important;
   padding:7px 9px!important;
   border:1px solid rgba(36,228,255,.22)!important;
   border-radius:12px!important;
@@ -539,7 +603,6 @@
     transform .22s ease;
 }
 
-/* Survol rose restauré */
 .vp-contact-box .vp-contact-field .profile-value a:hover,
 .vp-contact-box .vp-contact-text:hover,
 .vp-contact-text:hover{
@@ -568,9 +631,23 @@
   display:none!important;
 }
 
+/* Bloc administrer l'utilisateur dans contact */
 .vp-contact-extra{
-  grid-column:1 / -1;
+  width:100%!important;
   margin-top:8px!important;
+  padding:10px!important;
+  border:1px solid rgba(36,228,255,.14)!important;
+  border-radius:14px!important;
+  background:rgba(4,6,20,.24)!important;
+}
+
+.vp-contact-extra .profile-label{
+  display:block!important;
+  margin-bottom:5px!important;
+}
+
+.vp-contact-extra .profile-value{
+  display:block!important;
 }
 
 /* ===================== BOUTONS GÉNÉRAUX ===================== */
@@ -582,9 +659,10 @@
   display:inline-flex!important;
   align-items:center!important;
   justify-content:center!important;
+  width:100%;
   min-height:42px!important;
-  min-width:190px;
-  padding:0 22px!important;
+  min-width:0!important;
+  padding:0 14px!important;
   border:1px solid rgba(36,228,255,.26)!important;
   border-radius:14px!important;
   background:
@@ -779,7 +857,14 @@
   }
 
   .profile-sidebar{
+    width:100%!important;
     max-width:none!important;
+  }
+
+  .profile-avatar{
+    width:100%!important;
+    max-width:260px!important;
+    margin:0 auto!important;
   }
 
   .profile-top-grid,
@@ -811,11 +896,7 @@
   }
 
   .vp-avatar{
-    height:340px;
-  }
-
-  .vp-contact-box{
-    grid-template-columns:1fr!important;
+    height:340px!important;
   }
 
   .vp-contact-box .vp-contact-field .profile-value a,
@@ -825,123 +906,8 @@
   .profile-modern .button1,
   .profile-modern .button2,
   .profile-modern .followBtn{
-    width:100%;
-    min-width:0;
-  }
-}
-/* =========================================================
-   AJUSTEMENT COLONNE GAUCHE / AVATAR / CONTACTS
-========================================================= */
-
-/* Colonne gauche à 200px */
-.profile-main.vp-hero{
-  grid-template-columns:200px minmax(0,1fr)!important;
-}
-
-/* Sidebar plus compacte */
-.profile-sidebar{
-  width:200px!important;
-  max-width:200px!important;
-  gap:14px!important;
-}
-
-/* Avatar : carte compacte */
-.profile-avatar{
-  width:200px!important;
-  max-width:200px!important;
-  padding:8px!important;
-}
-
-/* Avatar visuel à 320px de haut */
-.vp-avatar{
-  width:100%!important;
-  height:320px!important;
-}
-
-/* Image bien cadrée */
-.vp-avatar img,
-.profile-avatar img{
-  width:100%!important;
-  height:100%!important;
-  object-fit:cover!important;
-  object-position:center!important;
-}
-
-/* Bouton follow éventuel à la largeur de la colonne */
-.profile-sidebar .followBtn,
-.profile-sidebar .vp-button{
-  width:100%!important;
-  min-width:0!important;
-}
-
-/* Box contact : boutons en colonne, centrés, avec espace */
-.vp-contact-box{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  gap:8px!important;
-}
-
-/* Titre contact pleine largeur */
-.vp-contact-box h3{
-  width:100%!important;
-}
-
-/* Chaque ligne contact centrée */
-.vp-contact-box .vp-contact-field{
-  width:100%!important;
-  display:flex!important;
-  justify-content:center!important;
-}
-
-/* Boutons contact centrés et espacés */
-.vp-contact-box .vp-contact-field .profile-value{
-  display:flex!important;
-  justify-content:center!important;
-  width:100%!important;
-}
-
-.vp-contact-box .vp-contact-field .profile-value a,
-.vp-contact-box .vp-contact-text,
-.vp-contact-text{
-  width:150px!important;
-  min-width:150px!important;
-  max-width:150px!important;
-  min-height:38px!important;
-  margin:0 auto!important;
-}
-
-/* Présence : évite que les groupes débordent trop dans 200px */
-.profile-presence .profile-field{
-  grid-template-columns:1fr!important;
-  gap:5px!important;
-}
-
-.profile-groups{
-  justify-content:center!important;
-}
-
-.profile-groups a{
-  max-width:100%!important;
-  text-align:center!important;
-  white-space:normal!important;
-  word-break:break-word!important;
-}
-
-/* Mobile : on repasse large */
-@media(max-width:920px){
-  .profile-main.vp-hero{
-    grid-template-columns:1fr!important;
-  }
-
-  .profile-sidebar{
     width:100%!important;
-    max-width:none!important;
-  }
-
-  .profile-avatar{
-    width:100%!important;
-    max-width:260px!important;
-    margin:0 auto!important;
+    min-width:0!important;
+    max-width:100%!important;
   }
 }

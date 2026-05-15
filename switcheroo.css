@@ -752,3 +752,55 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
     padding: 38px 22px 28px;
   }
 }
+/* =========================
+   FLÈCHES SIDEBAR EN IMAGE
+========================= */
+
+.sidebar-toggle-close i,
+.sidebar-toggle-open i {
+  display: none !important;
+}
+
+.sidebar-toggle-close::before,
+.sidebar-toggle-open::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+
+  display: block;
+
+  background-image: url("https://urls.fr/-84-a5");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter:
+    drop-shadow(0 0 4px rgba(25, 217, 255, .65))
+    drop-shadow(0 0 8px rgba(255, 63, 120, .25));
+
+  transition: transform .22s ease, filter .22s ease;
+}
+
+/* bouton fermer : flèche vers la droite */
+.sidebar-toggle-close::before {
+  transform: rotate(0deg);
+}
+
+/* bouton ouvrir : flèche vers la gauche */
+.sidebar-toggle-open::before {
+  transform: rotate(180deg);
+}
+
+.sidebar-toggle-close:hover::before {
+  transform: rotate(0deg) translateX(2px);
+  filter:
+    drop-shadow(0 0 5px rgba(255, 255, 255, .75))
+    drop-shadow(0 0 10px rgba(255, 63, 120, .45));
+}
+
+.sidebar-toggle-open:hover::before {
+  transform: rotate(180deg) translateX(2px);
+  filter:
+    drop-shadow(0 0 5px rgba(255, 255, 255, .75))
+    drop-shadow(0 0 10px rgba(255, 63, 120, .45));
+}

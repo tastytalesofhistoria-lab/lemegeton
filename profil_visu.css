@@ -200,7 +200,8 @@
 .profile-avatar{
   width:200px!important;
   max-width:200px!important;
-  padding:8px!important;
+  height:320px!important;
+  padding:0!important;
   border:1px solid rgba(36,228,255,.28);
   border-radius:18px;
   background:rgba(4,6,20,.50);
@@ -208,19 +209,23 @@
     0 0 0 1px rgba(255,255,255,.03) inset,
     0 0 18px rgba(36,228,255,.12);
   text-align:center;
+  overflow:hidden;
 }
 
 .vp-avatar{
   display:block;
   width:100%!important;
-  height:320px!important;
-  border:1px solid rgba(36,228,255,.52);
-  border-radius:14px;
+  height:100%!important;
+  padding:8px!important;
+  border-radius:18px;
   overflow:hidden;
-  background:#040614;
-  box-shadow:
-    0 0 0 2px rgba(4,6,20,.85),
-    0 0 18px rgba(36,228,255,.22);
+}
+
+.profile-avatar a,
+.vp-avatar a{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
 }
 
 .profile-avatar img,
@@ -230,7 +235,12 @@
   height:100%!important;
   object-fit:cover!important;
   object-position:center!important;
-  border-radius:0!important;
+  border:1px solid rgba(36,228,255,.52);
+  border-radius:14px!important;
+  background:#040614;
+  box-shadow:
+    0 0 0 2px rgba(4,6,20,.85),
+    0 0 18px rgba(36,228,255,.22);
 }
 
 .profile-avatar br{

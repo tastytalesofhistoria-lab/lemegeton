@@ -1,8 +1,8 @@
 /* =========================================================
    LEMEGETON — PROFIL AFFICHÉ MODERNBB
    Fichier : profil_visu.css
+   Base Forumactif conservée + organisation façon canvas
    Préfixe ajouté : vp-
-   Base Forumactif conservée : panel / bg1 / bg2 / column1 / column2 / details
 ========================================================= */
 
 .vp-page,
@@ -111,7 +111,7 @@
     3px 3px 0 rgba(254,3,124,.20);
 }
 
-/* ===================== PANELS FORUMACTIF ===================== */
+/* ===================== PANELS GÉNÉRAUX ===================== */
 
 .vp-panel{
   position:relative;
@@ -140,10 +140,12 @@
   pointer-events:none;
 }
 
+/* ===================== HERO PROFIL ===================== */
+
 .vp-main-panel{
   display:grid;
   grid-template-columns:300px minmax(0,1fr);
-  gap:18px;
+  gap:22px;
   min-height:430px;
   padding:22px!important;
   background:
@@ -165,13 +167,6 @@
   pointer-events:none;
 }
 
-.vp-contact-stats-panel{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 330px;
-  gap:18px;
-  padding:18px!important;
-}
-
 .vp-column-presence,
 .vp-column-profile,
 .vp-column-contact,
@@ -183,7 +178,7 @@
   min-width:0;
 }
 
-/* ===================== TITRES SECTIONS ===================== */
+/* ===================== TITRES DE BLOCS ===================== */
 
 .vp-section-title{
   position:relative;
@@ -212,7 +207,7 @@
   text-shadow:0 0 6px rgba(255,79,134,.52);
 }
 
-/* ===================== AVATAR / PRÉSENCE ===================== */
+/* ===================== AVATAR ===================== */
 
 .vp-avatar-block{
   width:100%!important;
@@ -255,20 +250,7 @@
   border-radius:0!important;
 }
 
-.vp-follow-block{
-  width:100%!important;
-  margin:0 0 12px!important;
-  padding:0!important;
-}
-
-.vp-follow-block dt{
-  display:none!important;
-}
-
-.vp-follow-block dd{
-  margin:0!important;
-  padding:0!important;
-}
+/* ===================== FIELDS DE BASE ===================== */
 
 .vp-presence-details,
 .vp-groups-details,
@@ -331,13 +313,6 @@
   line-height:1.3;
 }
 
-.vp-profile-field dd,
-.vp-contact-field dd{
-  max-height:160px;
-  overflow:auto;
-  scrollbar-width:thin;
-}
-
 .vp-profile-field a,
 .vp-contact-field a,
 .vp-stat-field a,
@@ -354,11 +329,126 @@
   color:var(--vp-pink)!important;
 }
 
-.vp-hidden-field{
+/* ===================== ORGANISATION PROFIL COMME CANVAS ===================== */
+
+.vp-column-profile{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  align-content:start;
+}
+
+.vp-column-profile > .vp-section-title{
+  grid-column:1 / -1;
+  margin-bottom:4px!important;
+}
+
+.vp-profile-field{
+  display:grid;
+  grid-template-columns:1fr;
+  min-height:54px;
+}
+
+.vp-profile-field dt{
+  order:1;
+}
+
+.vp-profile-field dd{
+  order:2;
+}
+
+/* champs d’en-tête */
+.vp-profile-field[data-vp-field="genre"],
+.vp-profile-field[data-vp-field="sexualite"],
+.vp-profile-field[data-vp-field="emploi"],
+.vp-profile-field[data-vp-field="emploi-loisirs"]{
+  min-height:66px;
+  border-left-width:4px;
+  background:
+    radial-gradient(circle at top right,rgba(255,95,140,.12),transparent 34%),
+    rgba(4,6,20,.38);
+}
+
+.vp-profile-field[data-vp-field="genre"]{order:1;}
+.vp-profile-field[data-vp-field="sexualite"]{order:2;}
+.vp-profile-field[data-vp-field="emploi"],
+.vp-profile-field[data-vp-field="emploi-loisirs"]{order:3;}
+
+/* gros blocs */
+.vp-profile-field[data-vp-field="ton-monde"],
+.vp-profile-field[data-vp-field="naccepte-pas"],
+.vp-profile-field[data-vp-field="warning"],
+.vp-profile-field[data-vp-field="warnings"]{
+  grid-column:1 / -1;
+}
+
+.vp-profile-field[data-vp-field="ton-monde"]{
+  order:20;
+}
+
+.vp-profile-field[data-vp-field="naccepte-pas"]{
+  order:30;
+  border-left-color:var(--vp-pink);
+}
+
+.vp-profile-field[data-vp-field="warning"],
+.vp-profile-field[data-vp-field="warnings"]{
+  order:31;
+  border-color:rgba(184,140,255,.30);
+  border-left-color:var(--vp-purple);
+  box-shadow:0 0 14px rgba(184,140,255,.08);
+}
+
+.vp-profile-field[data-vp-field="warning"] dt,
+.vp-profile-field[data-vp-field="warnings"] dt{
+  color:var(--vp-purple)!important;
+  text-shadow:0 0 8px rgba(184,140,255,.35);
+}
+
+.vp-profile-field[data-vp-field="ton-monde"] dd,
+.vp-profile-field[data-vp-field="naccepte-pas"] dd,
+.vp-profile-field[data-vp-field="warning"] dd,
+.vp-profile-field[data-vp-field="warnings"] dd{
+  max-height:150px;
+  overflow:auto;
+  padding-right:6px!important;
+  scrollbar-width:thin;
+}
+
+/* profil personnalisé */
+.vp-profile-field[data-vp-field="en-deal-avec"]{order:40;}
+.vp-profile-field[data-vp-field="attributs"]{order:41;}
+.vp-profile-field[data-vp-field="triggers"]{order:42;}
+.vp-profile-field[data-vp-field="intervention-pnj"]{order:43;}
+.vp-profile-field[data-vp-field="anglais-dans-le-rp"]{order:44;}
+.vp-profile-field[data-vp-field="multicomptes"]{order:45;}
+.vp-profile-field[data-vp-field="animaux"]{order:46;}
+.vp-profile-field[data-vp-field="credit"],
+.vp-profile-field[data-vp-field="credits"]{order:47;}
+
+/* identité / stats */
+.vp-profile-field[data-vp-field="humeur"]{order:10;}
+.vp-profile-field[data-vp-field="date-de-naissance"],
+.vp-profile-field[data-vp-field="naissance"]{order:11;}
+.vp-profile-field[data-vp-field="date-dinscription"],
+.vp-profile-field[data-vp-field="inscription"]{order:12;}
+.vp-profile-field[data-vp-field="messages"]{order:13;}
+.vp-profile-field[data-vp-field="points"]{order:14;}
+.vp-profile-field[data-vp-field="age"]{order:15;}
+
+/* images utilisées en background : cachées */
+.vp-hidden-field,
+.vp-profile-field[data-vp-field="fond-header"],
+.vp-profile-field[data-vp-field="banniere-profil"]{
   display:none!important;
 }
 
-/* ===================== GROUPES ===================== */
+/* champs à éviter en doublon visuel si tu ne veux pas les revoir en liste */
+.vp-profile-field[data-vp-field="texte-alternatif"]{
+  display:none!important;
+}
+
+/* ===================== GROUPES / PRÉSENCE GAUCHE ===================== */
 
 .vp-group-list{
   display:flex!important;
@@ -422,46 +512,100 @@
   text-shadow:0 0 10px rgba(36,228,255,.30);
 }
 
-/* ===================== AWARDS ===================== */
+/* ===================== CONTACT / STATS ===================== */
 
-.vp-awards-wrapper{
-  position:relative;
-  z-index:2;
-  margin-top:12px;
+.vp-contact-stats-panel{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 330px;
+  gap:18px;
+  padding:18px!important;
 }
 
-.vp-awards-list{
-  padding:12px;
-  border:1px solid rgba(255,79,134,.22);
-  border-radius:14px;
-  background:rgba(4,6,20,.30);
+.vp-column-contact,
+.vp-column-stats{
+  display:grid;
+  align-content:start;
+  gap:9px;
 }
 
-/* ===================== ADMIN / COMMENTAIRES ===================== */
-
-.vp-admin-comment{
-  width:100%!important;
-  min-height:120px!important;
-  padding:10px!important;
-  border:1px solid rgba(36,228,255,.24)!important;
-  border-radius:12px!important;
-  background:rgba(4,6,20,.46)!important;
-  color:var(--vp-white)!important;
-  font-family:"Rajdhani",Arial,sans-serif!important;
-  font-size:13px!important;
-  font-weight:800!important;
-  resize:vertical;
+.vp-column-contact form{
+  display:grid;
+  gap:9px;
 }
 
-.vp-actions{
-  position:relative;
-  z-index:2;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:12px!important;
+.vp-contact-field{
+  min-height:46px;
+}
+
+.vp-contact-field[data-vp-contact="fiche-presentation"],
+.vp-contact-field[data-vp-contact="pnj-dating"],
+.vp-contact-field[data-vp-contact="site-web"],
+.vp-contact-field[data-vp-contact="facebook"],
+.vp-contact-field[data-vp-contact="x-twitter"],
+.vp-contact-field[data-vp-contact="twitter"],
+.vp-contact-field[data-vp-contact="pinterest"],
+.vp-contact-field[data-vp-contact="skype"]{
   padding:0!important;
-  border:0!important;
+  border:0;
+  background:transparent;
+}
+
+.vp-contact-field[data-vp-contact="fiche-presentation"] dt,
+.vp-contact-field[data-vp-contact="pnj-dating"] dt,
+.vp-contact-field[data-vp-contact="site-web"] dt,
+.vp-contact-field[data-vp-contact="facebook"] dt,
+.vp-contact-field[data-vp-contact="x-twitter"] dt,
+.vp-contact-field[data-vp-contact="twitter"] dt,
+.vp-contact-field[data-vp-contact="pinterest"] dt,
+.vp-contact-field[data-vp-contact="skype"] dt{
+  display:none!important;
+}
+
+.vp-contact-field[data-vp-contact="fiche-presentation"] dd a,
+.vp-contact-field[data-vp-contact="pnj-dating"] dd a,
+.vp-contact-field[data-vp-contact="site-web"] dd a,
+.vp-contact-field[data-vp-contact="facebook"] dd a,
+.vp-contact-field[data-vp-contact="x-twitter"] dd a,
+.vp-contact-field[data-vp-contact="twitter"] dd a,
+.vp-contact-field[data-vp-contact="pinterest"] dd a,
+.vp-contact-field[data-vp-contact="skype"] dd a{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 16px;
+  border:1px solid rgba(36,228,255,.26);
+  border-radius:14px;
+  background:
+    linear-gradient(135deg,rgba(12,20,54,.96) 0%,rgba(20,28,74,.96) 52%,rgba(39,28,86,.96) 100%);
+  color:#ecfbff!important;
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+  text-shadow:0 0 6px rgba(36,228,255,.22);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.03),
+    0 0 14px rgba(36,228,255,.08);
+}
+
+.vp-contact-field[data-vp-contact="fiche-presentation"] dd a:hover,
+.vp-contact-field[data-vp-contact="pnj-dating"] dd a:hover,
+.vp-contact-field[data-vp-contact="site-web"] dd a:hover,
+.vp-contact-field[data-vp-contact="facebook"] dd a:hover,
+.vp-contact-field[data-vp-contact="x-twitter"] dd a:hover,
+.vp-contact-field[data-vp-contact="twitter"] dd a:hover,
+.vp-contact-field[data-vp-contact="pinterest"] dd a:hover,
+.vp-contact-field[data-vp-contact="skype"] dd a:hover{
+  border-color:rgba(255,79,134,.65);
+  background:
+    linear-gradient(135deg,rgba(110,32,92,.96) 0%,rgba(164,38,106,.96) 48%,rgba(255,79,134,.96) 100%);
+  color:#fff!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.05),
+    0 0 18px rgba(255,79,134,.26),
+    0 0 26px rgba(254,3,124,.16);
 }
 
 /* ===================== BOUTONS ===================== */
@@ -493,12 +637,7 @@
     inset 0 0 0 1px rgba(255,255,255,.03),
     0 0 14px rgba(36,228,255,.08);
   cursor:pointer;
-  transition:
-    background .22s ease,
-    border-color .22s ease,
-    box-shadow .22s ease,
-    color .22s ease,
-    transform .22s ease;
+  transition:.22s ease;
 }
 
 .vp-button:hover,
@@ -516,7 +655,47 @@
   transform:translateY(-1px);
 }
 
-/* ===================== RPG ===================== */
+/* ===================== AWARDS ===================== */
+
+.vp-awards-wrapper{
+  position:relative;
+  z-index:2;
+  margin-top:12px;
+}
+
+.vp-awards-list{
+  padding:12px;
+  border:1px solid rgba(255,79,134,.22);
+  border-radius:14px;
+  background:rgba(4,6,20,.30);
+}
+
+/* ===================== ADMIN / RPG ===================== */
+
+.vp-admin-comment{
+  width:100%!important;
+  min-height:120px!important;
+  padding:10px!important;
+  border:1px solid rgba(36,228,255,.24)!important;
+  border-radius:12px!important;
+  background:rgba(4,6,20,.46)!important;
+  color:var(--vp-white)!important;
+  font-family:"Rajdhani",Arial,sans-serif!important;
+  font-size:13px!important;
+  font-weight:800!important;
+  resize:vertical;
+}
+
+.vp-actions{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:12px!important;
+  padding:0!important;
+  border:0!important;
+}
 
 .vp-rpg-title{
   margin-top:18px!important;
@@ -553,12 +732,12 @@
   box-shadow:none!important;
 }
 
-.vp-page .clear{
-  clear:both;
-}
-
 .vp-page .left-box{
   float:none!important;
+}
+
+.vp-page .clear{
+  clear:both;
 }
 
 .vp-page strong{
@@ -585,6 +764,17 @@
     grid-template-columns:1fr;
   }
 
+  .vp-column-profile{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .vp-profile-field[data-vp-field="ton-monde"],
+  .vp-profile-field[data-vp-field="naccepte-pas"],
+  .vp-profile-field[data-vp-field="warning"],
+  .vp-profile-field[data-vp-field="warnings"]{
+    grid-column:1 / -1;
+  }
+
   .vp-avatar{
     height:340px;
   }
@@ -603,6 +793,10 @@
   .vp-contact-stats-panel,
   .vp-rpg-panel{
     padding:14px!important;
+  }
+
+  .vp-column-profile{
+    grid-template-columns:1fr;
   }
 
   .vp-banner{

@@ -3,7 +3,13 @@
    Fichier : profil_visu.css
    Base : profile-modern Forumactif
    Classes ajoutées : vp-
-   CSS corrigé / sidebar 200px / avatar 320px / contacts centrés / hover rose
+   CSS corrigé / fusionné
+   - sidebar 200px
+   - avatar exact 200x320px
+   - image interne forcée à remplir
+   - contacts centrés
+   - hover rose
+   - anti-casse colonne gauche
 ========================================================= */
 
 /* ===================== BASE ===================== */
@@ -185,6 +191,7 @@
   flex-direction:column;
   gap:14px;
   width:200px!important;
+  min-width:200px!important;
   max-width:200px!important;
 }
 
@@ -195,55 +202,88 @@
   min-width:0;
 }
 
-/* ===================== AVATAR ===================== */
+/* ===================== AVATAR 200x320 EXACT ===================== */
 
-.profile-avatar{
+.profile-avatar,
+.profile-avatar.vp-avatar-card{
+  display:block!important;
   width:200px!important;
+  min-width:200px!important;
   max-width:200px!important;
   height:320px!important;
+  min-height:320px!important;
+  max-height:320px!important;
+  margin:0!important;
   padding:0!important;
-  border:1px solid rgba(36,228,255,.28);
-  border-radius:18px;
-  background:rgba(4,6,20,.50);
+  border:1px solid rgba(36,228,255,.28)!important;
+  border-radius:18px!important;
+  background:rgba(4,6,20,.50)!important;
   box-shadow:
     0 0 0 1px rgba(255,255,255,.03) inset,
-    0 0 18px rgba(36,228,255,.12);
-  text-align:center;
-  overflow:hidden;
+    0 0 18px rgba(36,228,255,.12)!important;
+  text-align:center!important;
+  overflow:hidden!important;
 }
 
+.profile-avatar .vp-avatar,
 .vp-avatar{
-  display:block;
+  display:block!important;
   width:100%!important;
+  min-width:100%!important;
+  max-width:100%!important;
   height:100%!important;
-  padding:8px!important;
-  border-radius:18px;
-  overflow:hidden;
+  min-height:100%!important;
+  max-height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
 }
 
 .profile-avatar a,
-.vp-avatar a{
+.profile-avatar span,
+.profile-avatar .vp-avatar a,
+.profile-avatar .vp-avatar span,
+.vp-avatar a,
+.vp-avatar span{
   display:block!important;
   width:100%!important;
+  min-width:100%!important;
+  max-width:100%!important;
   height:100%!important;
+  min-height:100%!important;
+  max-height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
 }
 
 .profile-avatar img,
-.vp-avatar img{
+.vp-avatar img,
+.profile-modern .profile-avatar img,
+.profile-modern .vp-avatar img{
   display:block!important;
   width:100%!important;
+  min-width:100%!important;
+  max-width:100%!important;
   height:100%!important;
+  min-height:100%!important;
+  max-height:100%!important;
+  margin:0!important;
+  padding:0!important;
   object-fit:cover!important;
-  object-position:center!important;
-  border:1px solid rgba(36,228,255,.52);
-  border-radius:14px!important;
-  background:#040614;
+  object-position:center center!important;
+  border:1px solid rgba(36,228,255,.52)!important;
+  border-radius:18px!important;
+  background:#040614!important;
   box-shadow:
     0 0 0 2px rgba(4,6,20,.85),
-    0 0 18px rgba(36,228,255,.22);
+    0 0 18px rgba(36,228,255,.22)!important;
 }
 
-.profile-avatar br{
+.profile-avatar br,
+.vp-avatar br{
   display:none!important;
 }
 
@@ -436,9 +476,10 @@
   overflow-wrap:anywhere;
 }
 
-.profile-value img,
-.profile-box img,
-.profile-card img,
+/* Images générales, sans casser l’avatar */
+.profile-content .profile-value img,
+.profile-box img:not(.profile-avatar img):not(.vp-avatar img),
+.profile-card img:not(.profile-avatar img):not(.vp-avatar img),
 .profile-content img,
 .profile-rpg-image img{
   max-width:100%!important;
@@ -466,10 +507,7 @@
   white-space:normal!important;
 }
 
-.profile-sidebar .profile-label{
-  width:100%!important;
-}
-
+.profile-sidebar .profile-label,
 .profile-sidebar .profile-value{
   width:100%!important;
 }
@@ -809,6 +847,7 @@
 
 .profile-rpg-image img{
   max-width:260px!important;
+  height:auto!important;
   border:1px solid rgba(36,228,255,.24);
   border-radius:16px;
 }
@@ -868,12 +907,18 @@
 
   .profile-sidebar{
     width:100%!important;
+    min-width:0!important;
     max-width:none!important;
   }
 
-  .profile-avatar{
-    width:100%!important;
-    max-width:260px!important;
+  .profile-avatar,
+  .profile-avatar.vp-avatar-card{
+    width:200px!important;
+    min-width:200px!important;
+    max-width:200px!important;
+    height:320px!important;
+    min-height:320px!important;
+    max-height:320px!important;
     margin:0 auto!important;
   }
 
@@ -903,10 +948,6 @@
 
   .profile-field{
     grid-template-columns:1fr!important;
-  }
-
-  .vp-avatar{
-    height:340px!important;
   }
 
   .vp-contact-box .vp-contact-field .profile-value a,

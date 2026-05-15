@@ -1,6 +1,6 @@
 /* =========================================================
    SWITCHEROO — LEMEGETON / MODERNBB
-   Sidebar droite harmonisée avec le design du forum
+   Sidebar droite harmonisée
 ========================================================= */
 
 /* =========================
@@ -67,17 +67,8 @@
   top: 10px;
   bottom: 10px;
   left: -1px;
-
   width: 1px;
-
-  background: linear-gradient(
-    180deg,
-    transparent,
-    var(--sw-cyan),
-    var(--sw-pink),
-    transparent
-  );
-
+  background: linear-gradient(180deg, transparent, var(--sw-cyan), var(--sw-pink), transparent);
   opacity: .85;
   pointer-events: none;
 }
@@ -86,7 +77,6 @@
 .sidebar_bottom {
   position: relative;
   z-index: 2;
-
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -108,6 +98,8 @@
 
 .sidebar_bottom a,
 .sidebar_bottom .color-scheme-toggle {
+  position: relative;
+
   width: 38px;
   height: 38px;
   min-width: 38px;
@@ -150,16 +142,42 @@
   transform: translateX(-2px);
 }
 
+.sidebar_bottom a i,
+.sidebar_bottom .color-scheme-toggle i {
+  display: block;
+  color: inherit;
+  font-size: 18px;
+  line-height: 1;
+}
+
 .sidebar_bottom .color-scheme-toggle {
   padding: 0;
   cursor: pointer;
+  border-width: 1px;
+  outline: none;
 }
 
 .sidebar_bottom .color-scheme-toggle .icon {
+  position: absolute;
+  inset: 0;
   margin: 0 !important;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+/* si mode clair actif, on montre la lune */
+html:not([data-color-scheme="dark"]) .sidebar_bottom .color-scheme-toggle .icon.dark {
+  opacity: 1;
+}
+
+/* si mode sombre actif, on montre le soleil */
+html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light {
+  opacity: 1;
 }
 
 /* =========================
@@ -213,15 +231,12 @@
 
 .switcheroo__squircles {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 11px;
-
   margin: 0;
   padding: 0;
-
   list-style: none;
 }
 
@@ -239,6 +254,7 @@
   place-items: center;
 
   cursor: pointer;
+  overflow: hidden;
 
   color: var(--sw-cyan);
   background:
@@ -250,8 +266,6 @@
   box-shadow:
     inset 0 0 12px rgba(25, 217, 255, .08),
     0 0 0 rgba(25, 217, 255, 0);
-
-  overflow: visible;
 
   transition:
     border-radius 160ms var(--ease),
@@ -296,7 +310,6 @@
   transform: scale(1);
 }
 
-/* compte actif */
 .switcheroo__squircle.active {
   cursor: default;
   border-color: var(--sw-cyan);
@@ -314,7 +327,6 @@
   transform: scale(1);
 }
 
-/* avatar */
 .switcheroo__avatar {
   width: 100%;
   height: 100%;
@@ -322,25 +334,28 @@
 }
 
 .switcheroo__avatar img {
-  position: relative;
-
-  width: 100%;
-  height: 100%;
+  width: 112%;
+  height: 112%;
+  max-width: none;
 
   display: block;
   object-fit: cover;
   object-position: center;
 
-  border-radius: 13px;
+  margin: -6%;
+
+  border-radius: 11px;
 
   transition:
     border-radius 160ms var(--ease),
-    filter 160ms var(--ease);
+    filter 160ms var(--ease),
+    transform 160ms var(--ease);
 }
 
 .switcheroo__squircle:hover img,
 .switcheroo__squircle.active img {
-  border-radius: 11px;
+  border-radius: 10px;
+  transform: scale(1.02);
 }
 
 /* =========================
@@ -350,10 +365,6 @@
 .switcheroo__squircle--button {
   color: var(--sw-cyan);
   font-size: 0;
-  transition:
-    border-radius 160ms var(--ease),
-    color 160ms var(--ease),
-    background-color 160ms var(--ease);
 }
 
 .switcheroo__squircle--button i,
@@ -412,7 +423,6 @@
 
 /* =========================
    INFOBULLE / PSEUDO
-   Ouverture vers la gauche
 ========================= */
 
 .switcheroo__popper {
@@ -481,20 +491,10 @@
    LOGO / DIVIDER
 ========================= */
 
-.switcheroo__logo {
-  display: grid;
-  place-items: center;
-}
-
+/* supprime le bouton accueil */
+.switcheroo__logo,
 .switcheroo__divider {
-  width: 34px;
-  height: 1px;
-
-  margin: 1px 0;
-
-  background: linear-gradient(90deg, transparent, var(--sw-cyan), var(--sw-pink), transparent);
-  border-radius: 999px;
-  opacity: .75;
+  display: none !important;
 }
 
 /* =========================
@@ -610,13 +610,11 @@
   cursor: pointer;
 
   color: #07101f;
-  background:
-    linear-gradient(90deg, var(--sw-cyan), #8fefff);
+  background: linear-gradient(90deg, var(--sw-cyan), #8fefff);
   border: 0;
   border-radius: 999px;
   outline: none;
-  box-shadow:
-    0 0 14px rgba(25, 217, 255, .32);
+  box-shadow: 0 0 14px rgba(25, 217, 255, .32);
 
   font-size: 12px;
   line-height: 1;
@@ -631,10 +629,8 @@
 
 .switcheroo__form-button:hover {
   color: #ffffff;
-  background:
-    linear-gradient(90deg, var(--sw-pink), var(--sw-violet));
-  box-shadow:
-    0 0 16px rgba(255, 63, 120, .38);
+  background: linear-gradient(90deg, var(--sw-pink), var(--sw-violet));
+  box-shadow: 0 0 16px rgba(255, 63, 120, .38);
   transform: translateY(-1px);
 }
 
@@ -690,6 +686,12 @@
   .switcheroo__squircle {
     width: 34px;
     height: 34px;
+  }
+
+  .switcheroo__avatar img {
+    width: 114%;
+    height: 114%;
+    margin: -7%;
   }
 
   .switcheroo__squircles {

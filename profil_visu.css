@@ -711,10 +711,25 @@
   border:0!important;
 }
 
-/* ===================== SOURCES CACHÉES ===================== */
+/* ===================== SOURCES FORUMACTIF — SÉCURISÉ ===================== */
+/* On ne cache PAS les champs sources par défaut.
+   Ils restent visibles si le JS ne remplit pas correctement les blocs custom. */
 
 .vp-source-fields,
 .vp-source-contacts{
+  display:block!important;
+}
+
+/* Une fois le JS exécuté correctement, il ajoute .vp-ready sur .vp-page
+   et seulement là, on cache les sources. */
+.vp-page.vp-ready .vp-source-fields,
+.vp-page.vp-ready .vp-source-contacts{
+  display:none!important;
+}
+
+/* Champs techniques qu’on peut cacher même en mode secours */
+.vp-source-field[data-vp-field="fond-header"],
+.vp-source-field[data-vp-field="banniere-profil"]{
   display:none!important;
 }
 

@@ -754,3 +754,270 @@ input[name="avatargallery"]{
     align-items:center!important;
   }
 }
+/* =========================================================
+   MODULE — AMIS ET IGNORÉS
+   Page générée Forumactif / sans template dédié
+========================================================= */
+
+/* Base de la page Amis / Ignorés */
+#cp-main.ucp-main > h1.page-title,
+.ucp-main > h1.page-title{
+  position:relative;
+  margin:16px 16px 0!important;
+  padding:18px 20px!important;
+  border:1px solid rgba(36,228,255,.18)!important;
+  border-left:4px solid var(--ucp-cyan)!important;
+  border-radius:18px 18px 0 0!important;
+  background:
+    linear-gradient(90deg,rgba(10,18,45,.96) 0%,rgba(27,34,78,.98) 45%,rgba(54,42,92,.98) 100%)!important;
+  color:var(--ucp-cyan)!important;
+  font-family:"Barlow Condensed",Arial,sans-serif!important;
+  font-size:22px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  letter-spacing:1.6px!important;
+  text-transform:uppercase!important;
+  text-shadow:0 0 8px rgba(36,228,255,.35)!important;
+}
+
+#cp-main.ucp-main > h1.page-title::before,
+.ucp-main > h1.page-title::before{
+  content:"⛧";
+  margin-right:8px;
+  color:var(--ucp-pink);
+  text-shadow:0 0 6px rgba(255,79,134,.52);
+}
+
+/* Panel juste sous chaque titre */
+#cp-main.ucp-main > h1.page-title + .panel,
+.ucp-main > h1.page-title + .panel{
+  position:relative;
+  margin:0 16px 16px!important;
+  padding:16px!important;
+  border:1px solid rgba(255,79,134,.24)!important;
+  border-left:4px solid var(--ucp-cyan)!important;
+  border-top:0!important;
+  border-radius:0 0 18px 18px!important;
+  background:
+    radial-gradient(circle at top right,rgba(255,95,140,.10),transparent 34%),
+    linear-gradient(135deg,rgba(60,48,104,.93) 0%,rgba(32,27,61,.98) 100%)!important;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.03) inset,
+    0 0 16px rgba(255,64,120,.10)!important;
+  overflow:hidden!important;
+}
+
+#cp-main.ucp-main > h1.page-title + .panel::before,
+.ucp-main > h1.page-title + .panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:14px 14px;
+  opacity:.12;
+  pointer-events:none;
+}
+
+/* Nettoyage inner/corners */
+#cp-main.ucp-main > h1.page-title + .panel > .inner,
+.ucp-main > h1.page-title + .panel > .inner{
+  position:relative;
+  z-index:2;
+  padding:0!important;
+  border:0!important;
+}
+
+#cp-main.ucp-main > h1.page-title + .panel .corners-top,
+#cp-main.ucp-main > h1.page-title + .panel .corners-bottom,
+.ucp-main > h1.page-title + .panel .corners-top,
+.ucp-main > h1.page-title + .panel .corners-bottom{
+  display:none!important;
+}
+
+/* Paragraphes explicatifs */
+#cp-main.ucp-main > h1.page-title + .panel p,
+.ucp-main > h1.page-title + .panel p{
+  margin:0 0 16px!important;
+  color:var(--ucp-cyan-soft)!important;
+  font-family:"Rajdhani",Arial,sans-serif!important;
+  font-size:14px!important;
+  font-weight:800!important;
+  line-height:1.35!important;
+}
+
+/* Fieldsets */
+#cp-main.ucp-main > h1.page-title + .panel fieldset,
+.ucp-main > h1.page-title + .panel fieldset{
+  display:grid!important;
+  gap:10px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+}
+
+/* Chaque ligne Liste / Ajouter */
+#cp-main.ucp-main > h1.page-title + .panel dl,
+.ucp-main > h1.page-title + .panel dl{
+  display:grid!important;
+  grid-template-columns:230px minmax(0,1fr)!important;
+  gap:14px!important;
+  align-items:center!important;
+  margin:0!important;
+  padding:14px!important;
+  border:1px solid rgba(36,228,255,.14)!important;
+  border-radius:14px!important;
+  background:rgba(4,6,20,.24)!important;
+}
+
+/* Labels gauche */
+#cp-main.ucp-main > h1.page-title + .panel dt,
+#cp-main.ucp-main > h1.page-title + .panel dt label,
+.ucp-main > h1.page-title + .panel dt,
+.ucp-main > h1.page-title + .panel dt label{
+  margin:0!important;
+  padding:0!important;
+  color:var(--ucp-cyan-soft)!important;
+  font-family:"Barlow Condensed",Arial,sans-serif!important;
+  font-size:15px!important;
+  font-weight:900!important;
+  line-height:1.15!important;
+  letter-spacing:.8px!important;
+  text-transform:uppercase!important;
+}
+
+/* Contenu droite */
+#cp-main.ucp-main > h1.page-title + .panel dd,
+.ucp-main > h1.page-title + .panel dd{
+  display:flex!important;
+  align-items:center!important;
+  flex-wrap:wrap!important;
+  gap:8px 10px!important;
+  min-height:34px!important;
+  margin:0!important;
+  padding:0!important;
+  color:var(--ucp-text)!important;
+  font-family:"Rajdhani",Arial,sans-serif!important;
+  font-size:13px!important;
+  font-weight:800!important;
+}
+
+/* Messages vides : Admin n'a pas encore d'amis, aucune demande, etc. */
+#cp-main.ucp-main > h1.page-title + .panel dd em,
+.ucp-main > h1.page-title + .panel dd em{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:32px!important;
+  padding:6px 12px!important;
+  border:1px solid rgba(36,228,255,.18)!important;
+  border-radius:999px!important;
+  background:rgba(4,6,20,.28)!important;
+  color:var(--ucp-muted)!important;
+  font-size:12px!important;
+  font-style:normal!important;
+  font-weight:900!important;
+}
+
+/* Formulaire ajouter ami / ignoré */
+#cp-main.ucp-main > h1.page-title + .panel form,
+.ucp-main > h1.page-title + .panel form{
+  display:flex!important;
+  align-items:center!important;
+  flex-wrap:wrap!important;
+  gap:8px!important;
+  width:100%!important;
+  margin:0!important;
+}
+
+/* Inputs */
+#cp-main.ucp-main > h1.page-title + .panel input[type="text"],
+.ucp-main > h1.page-title + .panel input[type="text"]{
+  flex:1 1 260px!important;
+  width:auto!important;
+  max-width:420px!important;
+  min-height:34px!important;
+  margin:0!important;
+  padding:0 10px!important;
+  border:1px solid rgba(36,228,255,.24)!important;
+  border-radius:10px!important;
+  background:rgba(4,6,20,.46)!important;
+  color:var(--ucp-white)!important;
+  font-family:"Rajdhani",Arial,sans-serif!important;
+  font-size:13px!important;
+  font-weight:800!important;
+  outline:none!important;
+}
+
+#cp-main.ucp-main > h1.page-title + .panel input[type="text"]:focus,
+.ucp-main > h1.page-title + .panel input[type="text"]:focus{
+  border-color:rgba(36,228,255,.58)!important;
+  box-shadow:0 0 10px rgba(36,228,255,.16)!important;
+}
+
+/* Boutons Ajouter */
+#cp-main.ucp-main > h1.page-title + .panel input[type="submit"],
+.ucp-main > h1.page-title + .panel input[type="submit"]{
+  min-height:34px!important;
+  margin:0!important;
+  padding:0 18px!important;
+  border:1px solid rgba(36,228,255,.34)!important;
+  border-radius:10px!important;
+  background:linear-gradient(135deg,rgba(36,228,255,.22),rgba(254,3,124,.20))!important;
+  color:var(--ucp-cyan-soft)!important;
+  font-family:"Barlow Condensed",Arial,sans-serif!important;
+  font-size:14px!important;
+  font-weight:900!important;
+  letter-spacing:.8px!important;
+  text-transform:uppercase!important;
+  cursor:pointer!important;
+  text-shadow:0 0 6px rgba(36,228,255,.35)!important;
+}
+
+#cp-main.ucp-main > h1.page-title + .panel input[type="submit"]:hover,
+.ucp-main > h1.page-title + .panel input[type="submit"]:hover{
+  border-color:rgba(255,79,134,.50)!important;
+  color:var(--ucp-pink)!important;
+  box-shadow:0 0 12px rgba(254,3,124,.18)!important;
+}
+
+/* Séparations plus compactes */
+#cp-main.ucp-main > h1.page-title + .panel br,
+.ucp-main > h1.page-title + .panel br{
+  display:none!important;
+}
+
+/* Le premier panel Amis ne doit pas être bleu Forumactif */
+#cp-main.ucp-main > .panel.row3,
+.ucp-main > .panel.row3{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+/* Responsive */
+@media(max-width:760px){
+  #cp-main.ucp-main > h1.page-title + .panel dl,
+  .ucp-main > h1.page-title + .panel dl{
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+  }
+
+  #cp-main.ucp-main > h1.page-title + .panel dd,
+  .ucp-main > h1.page-title + .panel dd{
+    justify-content:flex-start!important;
+  }
+
+  #cp-main.ucp-main > h1.page-title + .panel form,
+  .ucp-main > h1.page-title + .panel form{
+    flex-direction:column!important;
+    align-items:stretch!important;
+  }
+
+  #cp-main.ucp-main > h1.page-title + .panel input[type="text"],
+  #cp-main.ucp-main > h1.page-title + .panel input[type="submit"],
+  .ucp-main > h1.page-title + .panel input[type="text"],
+  .ucp-main > h1.page-title + .panel input[type="submit"]{
+    width:100%!important;
+    max-width:none!important;
+  }
+}

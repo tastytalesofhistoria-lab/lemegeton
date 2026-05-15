@@ -812,3 +812,71 @@ a.forumtitle:hover{
     font-size:28px;
   }
 }
+
+/* =========================================================
+   PATCH LASTPOST INDEX — SUPPRIME L'ESPACE ENTRE TITRE / AUTEUR
+========================================================= */
+
+.forum_lastpost{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:2px!important;
+  line-height:1.1!important;
+}
+
+.forum_lastpost .lastpost-infos{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:2px!important;
+  line-height:1.1!important;
+}
+
+.forum_lastpost .lastpost-infos br{
+  display:none!important;
+}
+
+.lastpost-topic-line{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  margin:0!important;
+  padding:0!important;
+  line-height:1.05!important;
+}
+
+.lastpost-topic-line .lastpost_link{
+  margin:0!important;
+  padding:0!important;
+  line-height:1.05!important;
+}
+
+.lastpost-goto{
+  margin:0!important;
+  padding:0!important;
+  line-height:1!important;
+}
+
+.lastpost_auteurdate{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:wrap!important;
+  gap:4px!important;
+  margin:0!important;
+  padding:0!important;
+  line-height:1.05!important;
+}
+
+.lastpost_auteurdate a,
+.lastpost_auteurdate .lastpost-author-text,
+.lastpost_auteurdate .lastpost-date-text,
+.lastpost_auteurdate .lastpost-sep{
+  margin:0!important;
+  padding:0!important;
+  line-height:1.05!important;
+}

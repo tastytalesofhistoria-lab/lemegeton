@@ -829,3 +829,119 @@
     min-width:0;
   }
 }
+/* =========================================================
+   AJUSTEMENT COLONNE GAUCHE / AVATAR / CONTACTS
+========================================================= */
+
+/* Colonne gauche à 200px */
+.profile-main.vp-hero{
+  grid-template-columns:200px minmax(0,1fr)!important;
+}
+
+/* Sidebar plus compacte */
+.profile-sidebar{
+  width:200px!important;
+  max-width:200px!important;
+  gap:14px!important;
+}
+
+/* Avatar : carte compacte */
+.profile-avatar{
+  width:200px!important;
+  max-width:200px!important;
+  padding:8px!important;
+}
+
+/* Avatar visuel à 320px de haut */
+.vp-avatar{
+  width:100%!important;
+  height:320px!important;
+}
+
+/* Image bien cadrée */
+.vp-avatar img,
+.profile-avatar img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+
+/* Bouton follow éventuel à la largeur de la colonne */
+.profile-sidebar .followBtn,
+.profile-sidebar .vp-button{
+  width:100%!important;
+  min-width:0!important;
+}
+
+/* Box contact : boutons en colonne, centrés, avec espace */
+.vp-contact-box{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  gap:8px!important;
+}
+
+/* Titre contact pleine largeur */
+.vp-contact-box h3{
+  width:100%!important;
+}
+
+/* Chaque ligne contact centrée */
+.vp-contact-box .vp-contact-field{
+  width:100%!important;
+  display:flex!important;
+  justify-content:center!important;
+}
+
+/* Boutons contact centrés et espacés */
+.vp-contact-box .vp-contact-field .profile-value{
+  display:flex!important;
+  justify-content:center!important;
+  width:100%!important;
+}
+
+.vp-contact-box .vp-contact-field .profile-value a,
+.vp-contact-box .vp-contact-text,
+.vp-contact-text{
+  width:150px!important;
+  min-width:150px!important;
+  max-width:150px!important;
+  min-height:38px!important;
+  margin:0 auto!important;
+}
+
+/* Présence : évite que les groupes débordent trop dans 200px */
+.profile-presence .profile-field{
+  grid-template-columns:1fr!important;
+  gap:5px!important;
+}
+
+.profile-groups{
+  justify-content:center!important;
+}
+
+.profile-groups a{
+  max-width:100%!important;
+  text-align:center!important;
+  white-space:normal!important;
+  word-break:break-word!important;
+}
+
+/* Mobile : on repasse large */
+@media(max-width:920px){
+  .profile-main.vp-hero{
+    grid-template-columns:1fr!important;
+  }
+
+  .profile-sidebar{
+    width:100%!important;
+    max-width:none!important;
+  }
+
+  .profile-avatar{
+    width:100%!important;
+    max-width:260px!important;
+    margin:0 auto!important;
+  }
+}

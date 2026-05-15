@@ -268,38 +268,107 @@
   transform: translateX(-2px);
 }
 
+/* =========================
+   ICÔNES BAS — FORCÉES EN TEXTE
+   flèche haut / soleil-lune / flèche bas
+========================= */
+
+/* on masque les anciennes icônes */
 .sidebar_bottom a i,
 .sidebar_bottom .color-scheme-toggle i {
-  display: block;
-  color: inherit;
-  font-size: 18px;
-  line-height: 1;
+  display: none !important;
 }
 
+/* centrage propre */
+.sidebar_bottom a,
 .sidebar_bottom .color-scheme-toggle {
-  cursor: pointer;
-  outline: none;
+  position: relative;
+  overflow: hidden;
 }
 
+/* flèche haut */
+.sidebar_bottom a[href="#top"]::before {
+  content: "↑";
+  display: block;
+  color: var(--sw-cyan);
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 900;
+  transition: color .22s ease, transform .22s ease;
+}
+
+/* flèche bas */
+.sidebar_bottom a[href="#bottom"]::before {
+  content: "↓";
+  display: block;
+  color: var(--sw-cyan);
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 900;
+  transition: color .22s ease, transform .22s ease;
+}
+
+/* hover flèches */
+.sidebar_bottom a:hover::before {
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+/* =========================
+   SOLEIL / LUNE
+========================= */
+
+/* on cache les anciens blocs icon si besoin */
 .sidebar_bottom .color-scheme-toggle .icon {
   position: absolute;
   inset: 0;
   margin: 0 !important;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  opacity: 0;
-  transition: opacity .2s ease;
 }
 
-html:not([data-color-scheme="dark"]) .sidebar_bottom .color-scheme-toggle .icon.dark {
-  opacity: 1;
+/* on masque les vieux <i> */
+.sidebar_bottom .color-scheme-toggle .icon i {
+  display: none !important;
 }
 
-html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light {
-  opacity: 1;
+/* lune affichée par défaut */
+html:not([data-color-scheme="dark"]) .sidebar_bottom .color-scheme-toggle .dark::before {
+  content: "☽";
+  color: var(--sw-cyan);
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+/* soleil affiché en dark mode */
+html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .light::before {
+  content: "☼";
+  color: var(--sw-cyan);
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+/* hover soleil/lune */
+.sidebar_bottom .color-scheme-toggle:hover .light::before,
+.sidebar_bottom .color-scheme-toggle:hover .dark::before {
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+/* petit fix responsive */
+@media (max-width: 700px) {
+  .sidebar_bottom a[href="#top"]::before,
+  .sidebar_bottom a[href="#bottom"]::before {
+    font-size: 18px;
+  }
+
+  html:not([data-color-scheme="dark"]) .sidebar_bottom .color-scheme-toggle .dark::before,
+  html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .light::before {
+    font-size: 18px;
+  }
 }
 
 /* =========================

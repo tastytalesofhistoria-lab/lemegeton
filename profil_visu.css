@@ -1,7 +1,7 @@
 /* =========================================================
    LEMEGETON — PROFIL AFFICHÉ MODERNBB
    Fichier : profil_visu.css
-   Organisation canvas / sources Forumactif cachées
+   Organisation canvas / sources Forumactif cachées après JS
    Préfixe : vp-
 ========================================================= */
 
@@ -138,6 +138,7 @@
     radial-gradient(circle at top left,rgba(36,228,255,.16),transparent 32%),
     radial-gradient(circle at top right,rgba(254,3,124,.17),transparent 36%),
     linear-gradient(to bottom,rgba(4,6,20,.08),rgba(4,6,20,.86));
+  pointer-events:none;
 }
 
 .vp-hero::after{
@@ -163,6 +164,10 @@
   align-items:end;
   min-height:360px;
   padding:22px;
+}
+
+.vp-hero-avatar{
+  min-width:0;
 }
 
 .vp-avatar-card{
@@ -338,6 +343,11 @@
   align-items:start;
 }
 
+.vp-sidebar,
+.vp-main{
+  min-width:0;
+}
+
 .vp-panel{
   position:relative;
   margin:0 0 16px;
@@ -481,6 +491,17 @@
   scrollbar-width:thin;
 }
 
+.vp-scroll::-webkit-scrollbar,
+.vp-alert div::-webkit-scrollbar{
+  width:6px;
+}
+
+.vp-scroll::-webkit-scrollbar-thumb,
+.vp-alert div::-webkit-scrollbar-thumb{
+  border-radius:999px;
+  background:rgba(36,228,255,.28);
+}
+
 .vp-field a{
   color:var(--vp-cyan-soft)!important;
   text-decoration:none!important;
@@ -552,7 +573,12 @@
     inset 0 0 0 1px rgba(255,255,255,.03),
     0 0 14px rgba(36,228,255,.08);
   cursor:pointer;
-  transition:.22s ease;
+  transition:
+    background .22s ease,
+    border-color .22s ease,
+    box-shadow .22s ease,
+    color .22s ease,
+    transform .22s ease;
 }
 
 .vp-contact:hover,
@@ -569,6 +595,14 @@
     0 0 18px rgba(255,79,134,.26),
     0 0 26px rgba(254,3,124,.16);
   transform:translateY(-1px);
+}
+
+.vp-contact:active,
+.vp-button:active,
+.vp-page .button1:active,
+.vp-page .button2:active,
+.vp-page .followBtn:active{
+  transform:translateY(0);
 }
 
 .vp-contact.is-empty{
@@ -711,26 +745,36 @@
   border:0!important;
 }
 
-/* ===================== SOURCES FORUMACTIF — SÉCURISÉ ===================== */
-/* On ne cache PAS les champs sources par défaut.
-   Ils restent visibles si le JS ne remplit pas correctement les blocs custom. */
+/* ===================== SOURCES FORUMACTIF ===================== */
 
 .vp-source-fields,
 .vp-source-contacts{
   display:block!important;
+  margin-top:18px;
+  padding:12px;
+  border:1px dashed rgba(36,228,255,.22);
+  border-radius:16px;
+  background:rgba(4,6,20,.22);
 }
 
-/* Une fois le JS exécuté correctement, il ajoute .vp-ready sur .vp-page
-   et seulement là, on cache les sources. */
 .vp-page.vp-ready .vp-source-fields,
 .vp-page.vp-ready .vp-source-contacts{
   display:none!important;
 }
 
-/* Champs techniques qu’on peut cacher même en mode secours */
 .vp-source-field[data-vp-field="fond-header"],
-.vp-source-field[data-vp-field="banniere-profil"]{
+.vp-source-field[data-vp-field="fond-header-"],
+.vp-source-field[data-vp-field="banniere-profil"],
+.vp-source-field[data-vp-field="banniere-profil-"]{
   display:none!important;
+}
+
+.vp-source-field,
+.vp-source-contact{
+  margin:0 0 6px!important;
+  padding:6px!important;
+  color:var(--vp-cyan-soft);
+  font-size:12px;
 }
 
 /* ===================== RPG ===================== */

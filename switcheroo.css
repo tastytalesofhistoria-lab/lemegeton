@@ -1,6 +1,6 @@
 /* =========================================================
    SWITCHEROO — LEMEGETON / MODERNBB
-   Sidebar droite harmonisée
+   Version corrigée
 ========================================================= */
 
 /* =========================
@@ -25,24 +25,25 @@
   --sw-light: #ffffff;
 
   --sw-border: rgba(25, 217, 255, .45);
-  --sw-border-soft: rgba(255, 63, 120, .28);
   --sw-shadow: 0 0 26px rgba(0, 0, 0, .55);
 }
 
 /* =========================
    SIDEBAR À DROITE
+   -> tout en haut
+   -> fond style navbar
 ========================= */
 
 #sidebar {
   position: fixed;
-  top: 39px;
+  top: 0;
   right: 0;
   left: auto;
   z-index: 99999;
 
   width: 66px;
-  height: calc(100vh - 39px);
-  padding: 14px 7px 14px;
+  height: 100vh;
+  padding: 54px 7px 14px;
 
   display: flex;
   flex-direction: column;
@@ -50,26 +51,27 @@
   justify-content: space-between;
 
   background:
-    linear-gradient(180deg, rgba(15, 22, 48, .96), rgba(5, 8, 20, .98) 48%, rgba(16, 8, 34, .96)),
-    radial-gradient(circle at top, rgba(25, 217, 255, .12), transparent 45%),
-    radial-gradient(circle at bottom, rgba(255, 63, 120, .13), transparent 48%);
+    linear-gradient(90deg,
+      #13244c 0%,
+      #192d5d 22%,
+      #223667 45%,
+      #3b2e61 72%,
+      #6e2d67 100%);
   border-left: 1px solid var(--sw-cyan);
   box-shadow:
-    -10px 0 30px rgba(0, 0, 0, .38),
+    -10px 0 26px rgba(0, 0, 0, .38),
     inset 1px 0 0 rgba(255, 255, 255, .04);
-
-  transition: height .8s ease;
 }
 
 #sidebar::before {
   content: "";
   position: absolute;
-  top: 10px;
-  bottom: 10px;
+  top: 0;
   left: -1px;
   width: 1px;
-  background: linear-gradient(180deg, transparent, var(--sw-cyan), var(--sw-pink), transparent);
-  opacity: .85;
+  height: 100%;
+  background: linear-gradient(180deg, var(--sw-cyan), var(--sw-pink));
+  opacity: .9;
   pointer-events: none;
 }
 
@@ -99,7 +101,6 @@
 .sidebar_bottom a,
 .sidebar_bottom .color-scheme-toggle {
   position: relative;
-
   width: 38px;
   height: 38px;
   min-width: 38px;
@@ -153,7 +154,6 @@
 .sidebar_bottom .color-scheme-toggle {
   padding: 0;
   cursor: pointer;
-  border-width: 1px;
   outline: none;
 }
 
@@ -161,55 +161,19 @@
   position: absolute;
   inset: 0;
   margin: 0 !important;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   opacity: 0;
   transition: opacity .2s ease;
 }
 
-/* si mode clair actif, on montre la lune */
 html:not([data-color-scheme="dark"]) .sidebar_bottom .color-scheme-toggle .icon.dark {
   opacity: 1;
 }
 
-/* si mode sombre actif, on montre le soleil */
 html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light {
   opacity: 1;
-}
-
-/* =========================
-   BOUTON TOGGLE OPTIONNEL
-========================= */
-
-.toggle-sidebar {
-  position: fixed;
-  top: 48px;
-  right: 72px;
-  left: auto;
-  z-index: 999999;
-
-  cursor: pointer;
-  padding: 6px 8px;
-
-  color: var(--sw-cyan);
-  background: var(--sw-bg-soft);
-  border: 1px solid var(--sw-border);
-  border-radius: 10px;
-
-  box-shadow: 0 0 12px rgba(0, 0, 0, .45);
-}
-
-.toggle-sidebar:hover {
-  color: #ffffff !important;
-  background: var(--sw-bg-deep);
-  border-color: var(--sw-pink);
-}
-
-.none {
-  display: none;
 }
 
 /* =========================
@@ -246,7 +210,6 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
 
 .switcheroo__squircle {
   position: relative;
-
   width: 40px;
   height: 40px;
 
@@ -254,7 +217,6 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
   place-items: center;
 
   cursor: pointer;
-  overflow: hidden;
 
   color: var(--sw-cyan);
   background:
@@ -262,6 +224,9 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
   border: 1px solid rgba(25, 217, 255, .52);
   border-radius: 14px;
   outline: 0;
+
+  /* IMPORTANT : visible pour la croix */
+  overflow: visible;
 
   box-shadow:
     inset 0 0 12px rgba(25, 217, 255, .08),
@@ -280,14 +245,11 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
   position: absolute;
   inset: -5px;
   z-index: -1;
-
   border-radius: 18px;
   border: 1px solid rgba(25, 217, 255, .22);
   background: rgba(25, 217, 255, .04);
-
   opacity: 0;
   transform: scale(.9);
-
   transition:
     opacity 160ms var(--ease),
     transform 160ms var(--ease);
@@ -327,28 +289,26 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
   transform: scale(1);
 }
 
+/* avatar : on coupe ici, pas sur .switcheroo__squircle */
 .switcheroo__avatar {
   width: 100%;
   height: 100%;
   aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .switcheroo__avatar img {
-  width: 112%;
-  height: 112%;
+  width: 118%;
+  height: 118%;
   max-width: none;
-
   display: block;
   object-fit: cover;
   object-position: center;
-
-  margin: -6%;
-
-  border-radius: 11px;
-
+  margin: -9%;
+  border-radius: 12px;
   transition:
     border-radius 160ms var(--ease),
-    filter 160ms var(--ease),
     transform 160ms var(--ease);
 }
 
@@ -381,16 +341,17 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
 
 /* =========================
    BOUTON SUPPRIMER
+   -> passe au premier plan
 ========================= */
 
 .switcheroo__delete {
   position: absolute;
-  top: -7px;
-  right: -7px;
-  z-index: 5;
+  top: -8px;
+  right: -8px;
+  z-index: 50;
 
-  width: 17px;
-  height: 17px;
+  width: 18px;
+  height: 18px;
 
   display: grid;
   place-items: center;
@@ -399,7 +360,7 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
 
   color: #ffffff;
   background: linear-gradient(145deg, var(--sw-pink), #ff174f);
-  border: 1px solid rgba(255, 255, 255, .35);
+  border: 1px solid rgba(255, 255, 255, .45);
   border-radius: 50%;
 
   font-size: 12px;
@@ -409,7 +370,9 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
   opacity: 0;
   transform: scale(0);
 
-  box-shadow: 0 0 8px rgba(255, 63, 120, .5);
+  box-shadow:
+    0 0 10px rgba(255, 63, 120, .55),
+    0 0 0 2px rgba(7, 16, 31, .95);
 
   transition:
     transform 128ms var(--ease),
@@ -488,17 +451,16 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
 }
 
 /* =========================
-   LOGO / DIVIDER
+   SUPPRIME ACCUEIL / DIVIDER
 ========================= */
 
-/* supprime le bouton accueil */
 .switcheroo__logo,
 .switcheroo__divider {
   display: none !important;
 }
 
 /* =========================
-   MODAL MONOMER
+   MODAL
 ========================= */
 
 .monomer-overlay {
@@ -506,15 +468,11 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
   z-index: 999998;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
   opacity: 0;
-
   background: rgba(4, 7, 20, .68);
   backdrop-filter: blur(2px);
-
   transition: .2s opacity ease;
 }
 
@@ -541,7 +499,6 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
     inset 0 0 20px rgba(255, 255, 255, .025);
 
   transform: translate(-50%, -50%);
-
   transition: .2s opacity ease;
 }
 
@@ -551,7 +508,7 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
 }
 
 /* =========================
-   FORMULAIRE SWITCHEROO
+   FORMULAIRE
 ========================= */
 
 .switcheroo__form-row {
@@ -563,7 +520,6 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
 
 .switcheroo__form-label {
   margin-bottom: 8px;
-
   color: var(--sw-cyan);
   font-size: 12px;
   line-height: 1.2;
@@ -602,7 +558,6 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
 
 .switcheroo__form-button {
   align-self: center;
-
   min-width: 128px;
   margin-top: 10px;
   padding: 8px 14px;
@@ -633,10 +588,6 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
   box-shadow: 0 0 16px rgba(255, 63, 120, .38);
   transform: translateY(-1px);
 }
-
-/* =========================
-   FERMETURE MODAL
-========================= */
 
 .monomer-close {
   position: absolute;
@@ -676,11 +627,9 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
 
 @media (max-width: 700px) {
   #sidebar {
-    top: 39px;
     width: 58px;
-    height: calc(100vh - 39px);
-    padding-left: 5px;
-    padding-right: 5px;
+    height: 100vh;
+    padding: 50px 5px 14px;
   }
 
   .switcheroo__squircle {
@@ -689,9 +638,9 @@ html[data-color-scheme="dark"] .sidebar_bottom .color-scheme-toggle .icon.light 
   }
 
   .switcheroo__avatar img {
-    width: 114%;
-    height: 114%;
-    margin: -7%;
+    width: 120%;
+    height: 120%;
+    margin: -10%;
   }
 
   .switcheroo__squircles {

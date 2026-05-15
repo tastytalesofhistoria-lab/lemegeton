@@ -771,6 +771,7 @@
 
 /* =========================
    AWARDS + BULLES AWARDS
+   Case carrée / sans barre centrale
 ========================= */
 
 .col-awards,
@@ -812,7 +813,7 @@
 	overflow:visible!important;
 }
 
-/* Award natif Forumactif */
+/* Award natif Forumactif : case carrée */
 .postprofile-awards.promess div.award,
 .postprofile-awards.promess .award{
 	position:relative!important;
@@ -820,12 +821,12 @@
 	display:inline-flex!important;
 	align-items:center!important;
 	justify-content:center!important;
-	width:38px!important;
-	height:38px!important;
-	min-width:38px!important;
-	min-height:38px!important;
+	width:42px!important;
+	height:42px!important;
+	min-width:42px!important;
+	min-height:42px!important;
 	margin:3px!important;
-	border-radius:50%!important;
+	border-radius:6px!important;
 	overflow:visible!important;
 	isolation:isolate!important;
 	cursor:help;
@@ -846,26 +847,15 @@
 		border-color .22s ease;
 }
 
-/* Trait lumineux derrière l’award */
+/* Supprime la barre lumineuse au centre */
 .postprofile-awards.promess div.award::before,
-.postprofile-awards.promess .award::before{
-	content:"";
-	position:absolute;
-	left:50%;
-	top:50%;
-	z-index:-1;
-	width:58px;
-	height:8px;
-	transform:translate(-50%,-50%);
-	border-radius:999px;
-	background:var(--pm-cyan,#24e4ff);
-	box-shadow:0 0 10px rgba(36,228,255,.35);
-	opacity:.55;
-	pointer-events:none;
-	transition:.22s ease;
+.postprofile-awards.promess .award::before,
+.postprofile-awards.promess .pm-award::before{
+	content:none!important;
+	display:none!important;
 }
 
-/* Infobulle native Forumactif — mise au premier plan */
+/* Infobulle native Forumactif — premier plan */
 .postprofile-awards.promess div.award > span.award_tooltiptext,
 .postprofile-awards.promess .award > .award_tooltiptext,
 .postprofile-awards.promess .award .award_tooltiptext{
@@ -941,7 +931,7 @@
 	text-shadow:0 0 6px rgba(36,228,255,.45)!important;
 }
 
-/* Connecteur : remplace la flèche native */
+/* Connecteur de bulle */
 .postprofile-awards.promess div.award > span.award_tooltiptext::after,
 .postprofile-awards.promess .award > .award_tooltiptext::after,
 .postprofile-awards.promess .award .award_tooltiptext::after{
@@ -980,16 +970,6 @@
 		0 0 0 1px rgba(36,228,255,.42) inset!important;
 }
 
-.postprofile-awards.promess div.award:hover::before,
-.postprofile-awards.promess .award:hover::before{
-	width:72px;
-	opacity:1;
-	background:linear-gradient(90deg,var(--pm-pink,#ff4f86),var(--pm-cyan,#24e4ff));
-	box-shadow:
-		0 0 12px rgba(36,228,255,.42),
-		0 0 10px rgba(255,79,134,.22);
-}
-
 .postprofile-awards.promess div.award:hover > span.award_tooltiptext,
 .postprofile-awards.promess .award:hover > .award_tooltiptext,
 .postprofile-awards.promess .award:hover .award_tooltiptext{
@@ -1004,30 +984,33 @@
 	position:relative!important;
 	z-index:999999!important;
 	display:inline-flex!important;
-	align-items:center;
-	justify-content:center;
-	width:38px!important;
-	height:38px!important;
-	border-radius:50%!important;
+	align-items:center!important;
+	justify-content:center!important;
+	width:42px!important;
+	height:42px!important;
+	min-width:42px!important;
+	min-height:42px!important;
+	border-radius:6px!important;
 	overflow:visible!important;
 	isolation:isolate;
+	background:transparent!important;
 }
 
 .postprofile-awards.promess .pm-award img{
 	position:relative;
 	z-index:2;
 	display:block;
-	width:30px!important;
-	height:30px!important;
-	max-width:30px!important;
-	max-height:30px!important;
+	width:100%!important;
+	height:100%!important;
+	max-width:100%!important;
+	max-height:100%!important;
 	padding:0!important;
 	margin:0!important;
-	border-radius:50%!important;
-	object-fit:cover;
+	border-radius:4px!important;
+	object-fit:cover!important;
 	cursor:help;
 	filter:saturate(.9) brightness(.95);
-	box-shadow:0 0 8px rgba(36,228,255,.10);
+	box-shadow:none!important;
 	transition:.22s ease;
 }
 
@@ -1068,14 +1051,14 @@
 
 .postprofile-awards.promess .pm-award:hover{
 	z-index:2147483647!important;
+	transform:scale(1.08);
+	filter:saturate(1.15) brightness(1.08);
 }
 
 .postprofile-awards.promess .pm-award:hover img{
-	transform:scale(1.12);
-	filter:saturate(1.15) brightness(1.08);
 	box-shadow:
 		0 0 12px rgba(255,79,134,.28),
-		0 0 10px rgba(36,228,255,.24);
+		0 0 10px rgba(36,228,255,.24)!important;
 }
 
 .postprofile-awards.promess .pm-award:hover .pm-award-bubble{
@@ -1737,7 +1720,6 @@
 	.postprofile-awards.promess .award:hover .award_tooltiptext{
 		transform:translateX(-50%) translateY(0) scale(1)!important;
 	}
-}
 
 @media screen and (max-width:700px){
 	.topic-title-wrap.promess{

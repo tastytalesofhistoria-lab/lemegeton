@@ -485,11 +485,40 @@
 
 /* ===================== AVATAR ===================== */
 
+.ucp-field:has(.ucp-avatar-preview){
+  grid-template-columns:230px minmax(0,1fr)!important;
+  align-items:center!important;
+  padding:18px 20px!important;
+}
+
+.ucp-field:has(.ucp-avatar-preview) dt,
+.ucp-field:has(.ucp-avatar-preview) dt label{
+  max-width:190px!important;
+  margin:0!important;
+  color:var(--ucp-cyan-soft)!important;
+  font-family:"Barlow Condensed",Arial,sans-serif!important;
+  font-size:14px!important;
+  font-weight:900!important;
+  line-height:1.08!important;
+  letter-spacing:.7px!important;
+  text-transform:uppercase!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  hyphens:none!important;
+}
+
+.ucp-field:has(.ucp-avatar-preview) dd{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+}
+
 .ucp-avatar-preview{
   display:flex!important;
-  align-items:flex-start!important;
+  flex-direction:column!important;
+  align-items:center!important;
   justify-content:center!important;
-  gap:18px!important;
+  gap:10px!important;
   width:100%!important;
 }
 
@@ -518,14 +547,45 @@
   border-radius:0!important;
 }
 
-.ucp-avatar-preview > span:last-child,
+.ucp-avatar-preview > span:last-child{
+  display:flex!important;
+  justify-content:center!important;
+  width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  font-size:0!important;
+  line-height:0!important;
+}
+
+.ucp-avatar-preview > span:last-child br{
+  display:none!important;
+}
+
+.ucp-avatar-preview > span:last-child label,
 .ucp-avatar-preview > label{
-  align-self:flex-start!important;
-  margin-top:12px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  min-height:30px!important;
+  margin:0!important;
+  padding:5px 12px!important;
+  border:1px solid rgba(255,79,134,.28)!important;
+  border-radius:999px!important;
+  background:rgba(4,6,20,.36)!important;
   color:var(--ucp-cyan-soft)!important;
   font-family:"Rajdhani",Arial,sans-serif!important;
-  font-size:13px!important;
-  font-weight:800!important;
+  font-size:12px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  text-transform:none!important;
+}
+
+.ucp-avatar-preview > span:last-child label:hover,
+.ucp-avatar-preview > label:hover{
+  color:var(--ucp-pink)!important;
+  border-color:rgba(255,79,134,.52)!important;
+  box-shadow:0 0 10px rgba(254,3,124,.16)!important;
 }
 
 /* Cache l’accès à la galerie avatar */
@@ -640,6 +700,16 @@ input[name="avatargallery"]{
 
   .ucp-field dd{
     justify-content:flex-start;
+  }
+
+  .ucp-field:has(.ucp-avatar-preview){
+    grid-template-columns:1fr!important;
+  }
+
+  .ucp-field:has(.ucp-avatar-preview) dt,
+  .ucp-field:has(.ucp-avatar-preview) dt label{
+    max-width:100%!important;
+    text-align:center!important;
   }
 }
 

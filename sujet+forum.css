@@ -1,1 +1,461 @@
 
+/* =========================================================
+   LEMEGETON — SUJETS / FORUM MODERNBB
+   Fichier : sujet+forum.css
+   Préfixe unique : lt-
+========================================================= */
+
+.forumbg.lt-topics-board,
+.forumbg.lt-topics-board *,
+.forumbg.lt-topics-board *::before,
+.forumbg.lt-topics-board *::after{
+  box-sizing:border-box;
+}
+
+.forumbg.lt-topics-board{
+  --lt-bg:#040614;
+  --lt-deep:#0b0f2a;
+  --lt-panel:#201b3d;
+  --lt-panel-soft:#3c3068;
+  --lt-cyan:#24e4ff;
+  --lt-cyan-soft:#b8f4ff;
+  --lt-pink:#ff4f86;
+  --lt-pink-hot:#FE037C;
+  --lt-purple:#b88cff;
+  --lt-text:#d8ecff;
+  --lt-white:#ecfbff;
+  --lt-muted:#89abc1;
+
+  width:100%;
+  max-width:1000px;
+  margin:18px auto;
+  padding:0;
+  border:1px solid rgba(36,228,255,.18);
+  border-top:2px solid rgba(42,233,255,.22);
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(36,228,255,.14),transparent 28%),
+    radial-gradient(circle at 88% 12%,rgba(254,3,124,.15),transparent 32%),
+    linear-gradient(135deg,rgba(4,6,20,.98) 0%,rgba(11,15,42,.98) 45%,rgba(32,27,61,.98) 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    0 0 26px rgba(0,0,0,.38),
+    0 0 24px rgba(36,228,255,.06);
+  overflow:hidden;
+}
+
+.forumbg.lt-topics-board::before{
+  content:"";
+  display:block;
+  height:7px;
+  background:linear-gradient(90deg,var(--lt-cyan),var(--lt-pink-hot),var(--lt-purple),var(--lt-cyan));
+  background-size:220% 100%;
+  animation:ltKaraokeBar 7s linear infinite;
+  opacity:.95;
+}
+
+.lt-topics-board ul.topiclist{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.lt-topics-board .bg_none{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:16px;
+  background:transparent!important;
+}
+
+/* ===================== HEADER ===================== */
+
+.lt-topic-head{
+  position:relative;
+  overflow:hidden;
+  padding:18px 20px;
+  background:linear-gradient(90deg,rgba(10,18,45,.96) 0%,rgba(27,34,78,.98) 45%,rgba(54,42,92,.98) 100%);
+  border-bottom:1px solid rgba(36,228,255,.18);
+  box-shadow:inset 0 0 18px rgba(36,228,255,.06);
+}
+
+.lt-topic-head::after{
+  content:"TOPICS";
+  position:absolute;
+  top:50%;
+  right:18px;
+  transform:translateY(-50%);
+  color:rgba(255,255,255,.045);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:54px;
+  font-weight:900;
+  letter-spacing:4px;
+  line-height:1;
+  pointer-events:none;
+}
+
+.lt-topic-head dl.icon{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 72px 72px 220px;
+  align-items:center;
+  gap:12px;
+  min-height:0;
+  margin:0;
+  background:none!important;
+}
+
+.lt-topic-head dt,
+.lt-topic-head dd{
+  position:relative;
+  z-index:2;
+  margin:0;
+}
+
+.lt-topic-head dt,
+.lt-topic-head .dterm{
+  color:var(--lt-cyan);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:18px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  text-shadow:0 0 8px rgba(36,228,255,.35);
+}
+
+.lt-topic-head dd{
+  color:var(--lt-cyan-soft);
+  text-align:center;
+  font-size:18px;
+  text-shadow:0 0 8px rgba(36,228,255,.24);
+}
+
+/* ===================== LIGNE SUJET ===================== */
+
+.lt-topic-row{
+  position:relative;
+  margin:0!important;
+  padding:0!important;
+  border:1px solid rgba(255,79,134,.30);
+  border-left:4px solid var(--lt-cyan);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at top right,rgba(255,95,140,.11),transparent 34%),
+    linear-gradient(135deg,rgba(60,48,104,.93) 0%,rgba(32,27,61,.98) 100%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.03) inset,
+    0 0 16px rgba(255,64,120,.12);
+  overflow:hidden;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+
+.lt-topic-row:hover{
+  transform:translateY(-2px);
+  border-color:rgba(36,228,255,.58);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05) inset,
+    0 0 20px rgba(36,228,255,.13),
+    0 0 22px rgba(255,64,120,.12);
+}
+
+.lt-topic-row::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:14px 14px;
+  opacity:.14;
+  pointer-events:none;
+}
+
+.lt-topic-row dl.icon{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 72px 72px 220px;
+  align-items:center;
+  gap:12px;
+  min-height:96px;
+  margin:0;
+  padding:14px 14px 14px 18px;
+  background:none!important;
+}
+
+.lt-topic-main{
+  min-width:0;
+  margin:0!important;
+  padding:0!important;
+}
+
+/* ===================== TITRE + ICÔNE ===================== */
+
+.lt-topic-title-container{
+  display:grid;
+  grid-template-columns:38px minmax(0,1fr);
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+
+.lt-topic-status-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  border:1px solid rgba(36,228,255,.35);
+  border-radius:13px;
+  background:radial-gradient(circle at 50% 20%,rgba(36,228,255,.18),rgba(4,6,20,.42));
+  box-shadow:
+    inset 0 0 12px rgba(36,228,255,.06),
+    0 0 10px rgba(36,228,255,.10);
+}
+
+.lt-topic-status-icon img{
+  display:block;
+  max-width:22px;
+  max-height:22px;
+  width:auto;
+  height:auto;
+  filter:drop-shadow(0 0 5px rgba(36,228,255,.42));
+}
+
+.lt-topic-title-wrap{
+  min-width:0;
+}
+
+.lt-topic-title{
+  display:inline;
+  margin:0;
+  padding:0;
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:22px;
+  font-weight:900;
+  line-height:1.05;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+}
+
+.lt-topic-title a.topictitle{
+  color:var(--lt-white)!important;
+  text-decoration:none!important;
+  text-shadow:
+    0 0 4px rgba(255,255,255,.30),
+    0 0 10px rgba(36,228,255,.22);
+  transition:color .18s ease,text-shadow .18s ease;
+}
+
+.lt-topic-row:hover .lt-topic-title a.topictitle{
+  color:var(--lt-cyan)!important;
+  text-shadow:
+    0 0 6px rgba(36,228,255,.55),
+    0 0 14px rgba(0,157,255,.30);
+}
+
+/* ===================== DESCRIPTION / AUTEUR ===================== */
+
+.lt-topic-description{
+  display:block;
+  margin:7px 0 0;
+  color:var(--lt-muted);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:13px;
+  font-weight:600;
+  line-height:1.25;
+}
+
+.lt-topic-author{
+  display:inline-flex;
+  align-items:center;
+  margin-top:8px;
+  color:var(--lt-cyan-soft);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:13px;
+  font-weight:700;
+  line-height:1;
+}
+
+.lt-topic-author::before{
+  content:"⛧";
+  margin-right:5px;
+  color:var(--lt-pink);
+  text-shadow:0 0 6px rgba(255,79,134,.52);
+}
+
+.lt-topic-pages{
+  display:inline-block;
+  margin-left:6px;
+  color:var(--lt-muted);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:12px;
+  font-weight:700;
+}
+
+.lt-topic-pages a{
+  color:var(--lt-cyan-soft)!important;
+  text-decoration:none!important;
+}
+
+/* ===================== STATS ===================== */
+
+.lt-topic-stat{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:56px;
+  margin:0!important;
+  padding:8px 6px;
+  color:var(--lt-white);
+  border:1px solid rgba(36,228,255,.16);
+  border-radius:14px;
+  background:rgba(4,6,20,.34);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:20px;
+  font-weight:900;
+  line-height:1;
+  text-align:center;
+  box-shadow:inset 0 0 12px rgba(36,228,255,.035);
+}
+
+.lt-topic-stat dfn{
+  display:block;
+  margin-top:4px;
+  color:var(--lt-muted);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:10px;
+  font-style:normal;
+  font-weight:800;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+
+/* ===================== DERNIER MESSAGE ===================== */
+
+.lt-topic-lastpost{
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr);
+  align-items:center;
+  gap:10px;
+  min-width:0;
+  margin:0!important;
+  padding:8px;
+  border:1px solid rgba(255,79,134,.22);
+  border-radius:16px;
+  background:rgba(4,6,20,.28);
+}
+
+.lt-topic-lastpost .lastpost-avatar{
+  display:block;
+  width:44px;
+  height:44px;
+  overflow:hidden;
+  border:1px solid rgba(36,228,255,.45);
+  border-radius:50%;
+  background:var(--lt-deep);
+  box-shadow:0 0 10px rgba(36,228,255,.16);
+}
+
+.lt-topic-lastpost .lastpost-avatar img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover;
+}
+
+.lt-topic-lastpost .lastpost-infos{
+  min-width:0;
+  color:var(--lt-muted);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.18;
+}
+
+.lt-topic-lastpost .lastpost-infos a{
+  color:var(--lt-cyan-soft)!important;
+  text-decoration:none!important;
+  font-weight:800;
+}
+
+.lt-topic-lastpost .lastpost-infos br{
+  display:block;
+}
+
+/* ===================== SECTIONS / AUCUN SUJET ===================== */
+
+.lt-section-title,
+.lt-no-topic{
+  margin:0!important;
+  padding:20px;
+  border:1px solid rgba(36,228,255,.20);
+  border-radius:18px;
+  background:rgba(4,6,20,.34);
+  color:var(--lt-cyan-soft);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:18px;
+  font-weight:900;
+  text-align:center;
+  text-transform:uppercase;
+}
+
+/* ===================== ANIMATION ===================== */
+
+@keyframes ltKaraokeBar{
+  0%{background-position:0% 50%;}
+  100%{background-position:220% 50%;}
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media(max-width:900px){
+  .lt-topic-head dl.icon{
+    grid-template-columns:minmax(0,1fr) 52px 52px;
+  }
+
+  .lt-topic-head .lastpost{
+    display:none;
+  }
+
+  .lt-topic-row dl.icon{
+    grid-template-columns:minmax(0,1fr) 58px 58px;
+  }
+
+  .lt-topic-lastpost{
+    grid-column:1 / -1;
+    margin-top:4px!important;
+  }
+}
+
+@media(max-width:600px){
+  .lt-topics-board .bg_none{
+    padding:12px;
+  }
+
+  .lt-topic-head dl.icon,
+  .lt-topic-row dl.icon{
+    grid-template-columns:1fr;
+  }
+
+  .lt-topic-head dd{
+    display:none;
+  }
+
+  .lt-topic-title-container{
+    grid-template-columns:34px minmax(0,1fr);
+  }
+
+  .lt-topic-status-icon{
+    width:34px;
+    height:34px;
+  }
+
+  .lt-topic-stat{
+    flex-direction:row;
+    gap:6px;
+    min-height:0;
+  }
+
+  .lt-topic-stat dfn{
+    margin:0;
+  }
+}

@@ -1,8 +1,8 @@
-
 /* =========================================================
    LEMEGETON — ÉDITION PROFIL MODERNBB
    Fichier : editionprofil.css
    Préfixe unique : ucp-
+   CSS corrigé / doublons fusionnés / préférences + avatar intégrés
 ========================================================= */
 
 /* ===================== BASE ===================== */
@@ -253,7 +253,7 @@
 
 .ucp-section{
   position:relative;
-  margin:16px!important;
+  margin:12px 16px!important;
   padding:14px!important;
   border:1px solid rgba(255,79,134,.24)!important;
   border-left:4px solid var(--ucp-cyan)!important;
@@ -265,6 +265,10 @@
     0 0 0 1px rgba(255,255,255,.03) inset,
     0 0 16px rgba(255,64,120,.10)!important;
   overflow:hidden;
+}
+
+.ucp-section:first-of-type{
+  margin-top:16px!important;
 }
 
 .ucp-section::before{
@@ -313,7 +317,7 @@
   font-weight:800;
 }
 
-/* ===================== FIELDS ===================== */
+/* ===================== FIELDSETS / FIELDS ===================== */
 
 .ucp-fieldset{
   position:relative;
@@ -327,11 +331,12 @@
 
 .ucp-field{
   display:grid;
-  grid-template-columns:230px minmax(0,1fr);
+  grid-template-columns:minmax(260px,32%) minmax(0,1fr);
   gap:14px;
   align-items:center;
+  min-height:auto;
   margin:0!important;
-  padding:10px!important;
+  padding:12px 14px!important;
   border:1px solid rgba(36,228,255,.14);
   border-radius:14px;
   background:rgba(4,6,20,.24);
@@ -351,15 +356,26 @@
 
 .ucp-field dt,
 .ucp-field dt label{
+  max-width:100%;
   color:var(--ucp-cyan-soft)!important;
   font-family:"Barlow Condensed",Arial,sans-serif;
-  font-size:14px;
+  font-size:15px!important;
   font-weight:900;
-  letter-spacing:.8px;
+  line-height:1.15!important;
+  letter-spacing:.7px;
   text-transform:uppercase;
+  white-space:normal;
+  word-break:normal;
+  overflow-wrap:normal;
+  hyphens:none;
 }
 
 .ucp-field dd{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px 12px;
+  min-height:34px;
   color:var(--ucp-text);
   font-size:13px;
   font-weight:800;
@@ -409,6 +425,11 @@
   resize:vertical;
 }
 
+.ucp-page select{
+  width:100%;
+  max-width:520px;
+}
+
 .ucp-page input:focus,
 .ucp-page select:focus,
 .ucp-page textarea:focus{
@@ -418,49 +439,74 @@
 
 .ucp-page input[type="radio"],
 .ucp-page input[type="checkbox"]{
+  width:auto!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:0!important;
   accent-color:#24e4ff;
 }
 
-.ucp-field label{
-  display:inline-flex;
+/* ===================== LABELS / RADIOS ===================== */
+
+.ucp-field dd > label{
+  display:inline-flex!important;
   align-items:center;
-  gap:5px;
-  margin-right:10px;
-  color:var(--ucp-text);
-  font-weight:800;
+  justify-content:center;
+  gap:6px;
+  min-height:28px;
+  margin:0!important;
+  padding:4px 10px;
+  border:1px solid rgba(36,228,255,.18);
+  border-radius:999px;
+  background:rgba(4,6,20,.28);
+  color:var(--ucp-text)!important;
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  text-transform:none;
 }
 
 .ucp-field .italic,
 .ucp-page .italic{
+  flex:0 0 100%;
   display:block;
-  margin-top:5px;
-  color:var(--ucp-muted);
-  font-size:12px;
+  margin:2px 0 0!important;
+  color:var(--ucp-muted)!important;
+  font-size:12px!important;
   font-style:normal!important;
   font-weight:700;
+  line-height:1.25;
+}
+
+.ucp-field dd br{
+  display:none;
 }
 
 /* ===================== AVATAR ===================== */
 
 .ucp-avatar-preview{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:18px!important;
+  width:100%!important;
 }
 
 .ucp-avatar-img{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:74px;
-  height:74px;
-  border:1px solid rgba(36,228,255,.48);
-  border-radius:50%;
-  overflow:hidden;
-  background:#040614;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:400px!important;
+  height:640px!important;
+  max-width:100%!important;
+  border:1px solid rgba(36,228,255,.48)!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+  background:#040614!important;
   box-shadow:
     0 0 0 2px rgba(4,6,20,.85),
-    0 0 16px rgba(36,228,255,.22);
+    0 0 22px rgba(36,228,255,.22)!important;
 }
 
 .ucp-avatar-img img{
@@ -468,7 +514,27 @@
   width:100%!important;
   height:100%!important;
   object-fit:cover!important;
-  border-radius:50%!important;
+  object-position:center!important;
+  border-radius:0!important;
+}
+
+.ucp-avatar-preview > span:last-child,
+.ucp-avatar-preview > label{
+  align-self:flex-start!important;
+  margin-top:12px!important;
+  color:var(--ucp-cyan-soft)!important;
+  font-family:"Rajdhani",Arial,sans-serif!important;
+  font-size:13px!important;
+  font-weight:800!important;
+}
+
+/* Cache l’accès à la galerie avatar */
+input[name="avatargallery"]{
+  display:none!important;
+}
+
+.ucp-field:has(input[name="avatargallery"]){
+  display:none!important;
 }
 
 /* ===================== BUTTONS ===================== */
@@ -563,13 +629,17 @@
 /* ===================== RESPONSIVE ===================== */
 
 @media(max-width:900px){
-  .ucp-field{
-    grid-template-columns:1fr;
-    gap:6px;
-  }
-
   .ucp-tabs{
     justify-content:center;
+  }
+
+  .ucp-field{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .ucp-field dd{
+    justify-content:flex-start;
   }
 }
 
@@ -601,101 +671,16 @@
     width:100%;
   }
 }
-/* =========================================================
-   CORRECTION — PRÉFÉRENCES PROFIL
-   Rend les lignes plus lisibles et évite les labels en colonne
-========================================================= */
 
-/* Les champs de préférences deviennent plus larges et moins hauts */
-.ucp-section .ucp-field{
-  grid-template-columns:minmax(260px,32%) minmax(0,1fr);
-  align-items:center;
-  min-height:auto;
-  padding:12px 14px!important;
-}
-
-/* Titre du champ : meilleure lisibilité */
-.ucp-section .ucp-field dt,
-.ucp-section .ucp-field dt label{
-  max-width:100%;
-  color:var(--ucp-cyan-soft)!important;
-  font-size:15px!important;
-  line-height:1.15!important;
-  letter-spacing:.7px;
-  white-space:normal;
-  word-break:normal;
-  overflow-wrap:normal;
-  hyphens:none;
-}
-
-/* Zone des choix */
-.ucp-section .ucp-field dd{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:8px 12px;
-  min-height:34px;
-}
-
-/* Les labels Oui / Non deviennent des mini-pills propres */
-.ucp-section .ucp-field dd > label{
-  display:inline-flex!important;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  min-height:28px;
-  margin:0!important;
-  padding:4px 10px;
-  border:1px solid rgba(36,228,255,.18);
-  border-radius:999px;
-  background:rgba(4,6,20,.28);
-  color:var(--ucp-text)!important;
-  font-family:"Rajdhani",Arial,sans-serif;
-  font-size:12px;
-  font-weight:900;
-  line-height:1;
-  text-transform:none;
-}
-
-/* Radio / checkbox mieux intégrées */
-.ucp-section .ucp-field input[type="radio"],
-.ucp-section .ucp-field input[type="checkbox"]{
-  width:auto!important;
-  min-height:0!important;
-  margin:0!important;
-  padding:0!important;
-  accent-color:#24e4ff;
-}
-
-/* Descriptions sous les choix */
-.ucp-section .ucp-field dd .italic,
-.ucp-section .ucp-field dd br + .italic{
-  flex:0 0 100%;
-  margin:2px 0 0!important;
-  color:var(--ucp-muted)!important;
-  font-size:12px!important;
-  line-height:1.25;
-}
-
-/* Évite les grands espaces causés par les <br> Forumactif */
-.ucp-section .ucp-field dd br{
-  display:none;
-}
-
-/* Sélecteurs longs : langue, fuseau horaire, format date */
-.ucp-section .ucp-field dd select{
-  width:100%;
-  max-width:520px;
-}
-
-/* Variante responsive */
-@media(max-width:760px){
-  .ucp-section .ucp-field{
-    grid-template-columns:1fr;
-    gap:8px;
+@media(max-width:520px){
+  .ucp-avatar-img{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:400 / 640;
   }
 
-  .ucp-section .ucp-field dd{
-    justify-content:flex-start;
+  .ucp-avatar-preview{
+    flex-direction:column!important;
+    align-items:center!important;
   }
 }

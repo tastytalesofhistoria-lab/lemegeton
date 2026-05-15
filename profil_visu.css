@@ -1,8 +1,8 @@
 /* =========================================================
    LEMEGETON — PROFIL AFFICHÉ MODERNBB
    Fichier : profil_visu.css
-   Base Forumactif conservée + organisation façon canvas
-   Préfixe ajouté : vp-
+   Organisation canvas / sources Forumactif cachées
+   Préfixe : vp-
 ========================================================= */
 
 .vp-page,
@@ -111,54 +111,41 @@
     3px 3px 0 rgba(254,3,124,.20);
 }
 
-/* ===================== PANELS GÉNÉRAUX ===================== */
+/* ===================== HERO ===================== */
 
-.vp-panel{
+.vp-hero{
   position:relative;
-  margin:0 0 18px!important;
-  padding:0!important;
-  border:1px solid rgba(36,228,255,.18)!important;
-  border-top:2px solid rgba(42,233,255,.22)!important;
-  border-radius:22px!important;
-  background:
-    radial-gradient(circle at 12% 0%,rgba(36,228,255,.10),transparent 28%),
-    radial-gradient(circle at 88% 12%,rgba(254,3,124,.12),transparent 32%),
-    linear-gradient(135deg,rgba(4,6,20,.98) 0%,rgba(11,15,42,.98) 45%,rgba(32,27,61,.98) 100%)!important;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.035),
-    0 0 26px rgba(0,0,0,.34)!important;
+  min-height:360px;
+  margin:0 0 16px;
+  border:1px solid rgba(36,228,255,.18);
+  border-top:2px solid rgba(42,233,255,.22);
+  border-radius:22px;
   overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(4,6,20,.92) 0%,rgba(11,15,42,.58) 48%,rgba(4,6,20,.96) 100%),
+    var(--vp-header) center/cover no-repeat;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.03),
+    0 0 26px rgba(0,0,0,.36),
+    0 0 24px rgba(36,228,255,.06);
 }
 
-.vp-panel::before{
+.vp-hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
-  background-size:14px 14px;
-  opacity:.10;
-  pointer-events:none;
-}
-
-/* ===================== HERO PROFIL ===================== */
-
-.vp-main-panel{
-  display:grid;
-  grid-template-columns:300px minmax(0,1fr);
-  gap:22px;
-  min-height:430px;
-  padding:22px!important;
   background:
-    linear-gradient(90deg,rgba(4,6,20,.92) 0%,rgba(11,15,42,.62) 48%,rgba(4,6,20,.96) 100%),
-    var(--vp-header) center/cover no-repeat!important;
+    radial-gradient(circle at top left,rgba(36,228,255,.16),transparent 32%),
+    radial-gradient(circle at top right,rgba(254,3,124,.17),transparent 36%),
+    linear-gradient(to bottom,rgba(4,6,20,.08),rgba(4,6,20,.86));
 }
 
-.vp-main-panel::after{
+.vp-hero::after{
   content:"DOSSIER";
   position:absolute;
-  right:28px;
-  bottom:18px;
-  color:rgba(255,255,255,.045);
+  right:24px;
+  bottom:16px;
+  color:rgba(255,255,255,.05);
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:70px;
   font-weight:900;
@@ -167,71 +154,34 @@
   pointer-events:none;
 }
 
-.vp-column-presence,
-.vp-column-profile,
-.vp-column-contact,
-.vp-column-stats{
+.vp-hero-inner{
   position:relative;
   z-index:2;
-  float:none!important;
-  width:auto!important;
-  min-width:0;
+  display:grid;
+  grid-template-columns:250px minmax(0,1fr);
+  gap:22px;
+  align-items:end;
+  min-height:360px;
+  padding:22px;
 }
 
-/* ===================== TITRES DE BLOCS ===================== */
-
-.vp-section-title{
+.vp-avatar-card{
   position:relative;
-  z-index:2;
-  display:flex!important;
-  align-items:center;
-  min-height:44px;
-  margin:0 0 14px!important;
-  padding:0 14px!important;
-  border:1px solid rgba(36,228,255,.16);
-  border-radius:14px;
-  background:linear-gradient(90deg,rgba(10,18,45,.88),rgba(54,42,92,.74));
-  color:var(--vp-cyan)!important;
-  font-family:"Barlow Condensed",Arial,sans-serif!important;
-  font-size:19px!important;
-  font-weight:900!important;
-  letter-spacing:1.6px;
-  text-transform:uppercase;
-  text-shadow:0 0 8px rgba(36,228,255,.35);
-}
-
-.vp-section-title::before{
-  content:"⛧";
-  margin-right:8px;
-  color:var(--vp-pink);
-  text-shadow:0 0 6px rgba(255,79,134,.52);
-}
-
-/* ===================== AVATAR ===================== */
-
-.vp-avatar-block{
-  width:100%!important;
-  margin:0 0 12px!important;
-  padding:10px!important;
-  border:1px solid rgba(36,228,255,.22);
+  width:230px;
+  min-height:330px;
+  padding:10px;
+  border:1px solid rgba(36,228,255,.28);
   border-radius:18px;
   background:rgba(4,6,20,.50);
-  box-shadow:0 0 18px rgba(36,228,255,.12);
-}
-
-.vp-avatar-block dt{
-  display:none!important;
-}
-
-.vp-avatar-block dd{
-  margin:0!important;
-  padding:0!important;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.03) inset,
+    0 0 18px rgba(36,228,255,.12);
 }
 
 .vp-avatar{
   display:block;
   width:100%;
-  height:360px;
+  height:310px;
   border:1px solid rgba(36,228,255,.52);
   border-radius:14px;
   overflow:hidden;
@@ -250,243 +200,110 @@
   border-radius:0!important;
 }
 
-/* ===================== FIELDS DE BASE ===================== */
-
-.vp-presence-details,
-.vp-groups-details,
-.vp-friendsfoes,
-.vp-admin-user,
-.vp-profile-field,
-.vp-contact-field,
-.vp-stat-field,
-.vp-rpg-field,
-.vp-admin-comment-block{
-  position:relative;
-  z-index:2;
-  width:100%!important;
-  margin:0 0 9px!important;
-  padding:10px!important;
-  border:1px solid rgba(36,228,255,.14);
-  border-left:4px solid var(--vp-cyan);
-  border-radius:14px;
-  background:rgba(4,6,20,.30);
+.vp-follow-zone{
+  margin-top:9px;
 }
 
-.vp-presence-details dt,
-.vp-groups-details dt,
-.vp-friendsfoes dt,
-.vp-admin-user dt,
-.vp-profile-field dt,
-.vp-contact-field dt,
-.vp-stat-field dt,
-.vp-rpg-field dt,
-.vp-admin-comment-block dt{
-  float:none!important;
-  width:auto!important;
-  margin:0 0 4px!important;
-  padding:0!important;
-  color:var(--vp-cyan-soft)!important;
-  font-family:"Barlow Condensed",Arial,sans-serif!important;
-  font-size:13px!important;
-  font-weight:900!important;
-  line-height:1.1;
-  letter-spacing:.8px;
+.vp-hero-main{
+  min-width:0;
+  padding-bottom:12px;
+}
+
+.vp-kicker{
+  display:inline-flex;
+  width:max-content;
+  max-width:100%;
+  padding:5px 10px;
+  border:1px solid rgba(36,228,255,.28);
+  border-radius:999px;
+  background:rgba(4,6,20,.46);
+  color:var(--vp-cyan);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-shadow:0 0 8px rgba(36,228,255,.35);
+}
+
+.vp-name{
+  margin:10px 0 8px;
+  color:var(--vp-white);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:56px;
+  font-weight:900;
+  line-height:.92;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  text-shadow:
+    0 0 5px rgba(255,255,255,.22),
+    0 0 12px rgba(36,228,255,.18);
+}
+
+.vp-rank{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:12px;
+  padding:6px 12px;
+  border:1px solid rgba(255,79,134,.26);
+  border-radius:999px;
+  background:rgba(4,6,20,.36);
+  color:var(--vp-pink);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:1px;
   text-transform:uppercase;
 }
 
-.vp-presence-details dd,
-.vp-groups-details dd,
-.vp-friendsfoes dd,
-.vp-admin-user dd,
-.vp-profile-field dd,
-.vp-contact-field dd,
-.vp-stat-field dd,
-.vp-rpg-field dd,
-.vp-admin-comment-block dd{
-  float:none!important;
-  width:auto!important;
-  margin:0!important;
-  padding:0!important;
-  color:var(--vp-text);
-  font-size:13px;
-  font-weight:800;
-  line-height:1.3;
+.vp-rank::before{
+  content:"⛧";
+  color:var(--vp-cyan);
+  text-shadow:0 0 6px rgba(36,228,255,.52);
 }
 
-.vp-profile-field a,
-.vp-contact-field a,
-.vp-stat-field a,
-.vp-rpg-field a{
-  color:var(--vp-cyan-soft)!important;
-  font-weight:900;
-  text-decoration:none!important;
-}
-
-.vp-profile-field a:hover,
-.vp-contact-field a:hover,
-.vp-stat-field a:hover,
-.vp-rpg-field a:hover{
-  color:var(--vp-pink)!important;
-}
-
-/* ===================== ORGANISATION PROFIL COMME CANVAS ===================== */
-
-.vp-column-profile{
+.vp-presence{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:10px;
-  align-content:start;
+  gap:8px;
+  max-width:680px;
 }
 
-.vp-column-profile > .vp-section-title{
-  grid-column:1 / -1;
-  margin-bottom:4px!important;
-}
-
-.vp-profile-field{
-  display:grid;
-  grid-template-columns:1fr;
-  min-height:54px;
-}
-
-.vp-profile-field dt{
-  order:1;
-}
-
-.vp-profile-field dd{
-  order:2;
-}
-
-/* champs d’en-tête */
-.vp-profile-field[data-vp-field="genre"],
-.vp-profile-field[data-vp-field="sexualite"],
-.vp-profile-field[data-vp-field="emploi"],
-.vp-profile-field[data-vp-field="emploi-loisirs"]{
-  min-height:66px;
-  border-left-width:4px;
+.vp-presence-item{
+  padding:10px 12px;
+  border:1px solid rgba(255,79,134,.24);
+  border-left:4px solid var(--vp-cyan);
+  border-radius:14px;
   background:
-    radial-gradient(circle at top right,rgba(255,95,140,.12),transparent 34%),
-    rgba(4,6,20,.38);
+    radial-gradient(circle at top right,rgba(255,95,140,.10),transparent 34%),
+    rgba(4,6,20,.46);
+  box-shadow:0 0 0 1px rgba(255,255,255,.03) inset;
 }
 
-.vp-profile-field[data-vp-field="genre"]{order:1;}
-.vp-profile-field[data-vp-field="sexualite"]{order:2;}
-.vp-profile-field[data-vp-field="emploi"],
-.vp-profile-field[data-vp-field="emploi-loisirs"]{order:3;}
-
-/* gros blocs */
-.vp-profile-field[data-vp-field="ton-monde"],
-.vp-profile-field[data-vp-field="naccepte-pas"],
-.vp-profile-field[data-vp-field="warning"],
-.vp-profile-field[data-vp-field="warnings"]{
-  grid-column:1 / -1;
-}
-
-.vp-profile-field[data-vp-field="ton-monde"]{
-  order:20;
-}
-
-.vp-profile-field[data-vp-field="naccepte-pas"]{
-  order:30;
-  border-left-color:var(--vp-pink);
-}
-
-.vp-profile-field[data-vp-field="warning"],
-.vp-profile-field[data-vp-field="warnings"]{
-  order:31;
-  border-color:rgba(184,140,255,.30);
-  border-left-color:var(--vp-purple);
-  box-shadow:0 0 14px rgba(184,140,255,.08);
-}
-
-.vp-profile-field[data-vp-field="warning"] dt,
-.vp-profile-field[data-vp-field="warnings"] dt{
-  color:var(--vp-purple)!important;
-  text-shadow:0 0 8px rgba(184,140,255,.35);
-}
-
-.vp-profile-field[data-vp-field="ton-monde"] dd,
-.vp-profile-field[data-vp-field="naccepte-pas"] dd,
-.vp-profile-field[data-vp-field="warning"] dd,
-.vp-profile-field[data-vp-field="warnings"] dd{
-  max-height:150px;
-  overflow:auto;
-  padding-right:6px!important;
-  scrollbar-width:thin;
-}
-
-/* profil personnalisé */
-.vp-profile-field[data-vp-field="en-deal-avec"]{order:40;}
-.vp-profile-field[data-vp-field="attributs"]{order:41;}
-.vp-profile-field[data-vp-field="triggers"]{order:42;}
-.vp-profile-field[data-vp-field="intervention-pnj"]{order:43;}
-.vp-profile-field[data-vp-field="anglais-dans-le-rp"]{order:44;}
-.vp-profile-field[data-vp-field="multicomptes"]{order:45;}
-.vp-profile-field[data-vp-field="animaux"]{order:46;}
-.vp-profile-field[data-vp-field="credit"],
-.vp-profile-field[data-vp-field="credits"]{order:47;}
-
-/* identité / stats */
-.vp-profile-field[data-vp-field="humeur"]{order:10;}
-.vp-profile-field[data-vp-field="date-de-naissance"],
-.vp-profile-field[data-vp-field="naissance"]{order:11;}
-.vp-profile-field[data-vp-field="date-dinscription"],
-.vp-profile-field[data-vp-field="inscription"]{order:12;}
-.vp-profile-field[data-vp-field="messages"]{order:13;}
-.vp-profile-field[data-vp-field="points"]{order:14;}
-.vp-profile-field[data-vp-field="age"]{order:15;}
-
-/* images utilisées en background : cachées */
-.vp-hidden-field,
-.vp-profile-field[data-vp-field="fond-header"],
-.vp-profile-field[data-vp-field="banniere-profil"]{
-  display:none!important;
-}
-
-/* champs à éviter en doublon visuel si tu ne veux pas les revoir en liste */
-.vp-profile-field[data-vp-field="texte-alternatif"]{
-  display:none!important;
-}
-
-/* ===================== GROUPES / PRÉSENCE GAUCHE ===================== */
-
-.vp-group-list{
-  display:flex!important;
-  flex-wrap:wrap;
-  gap:6px;
-}
-
-.vp-group-item{
-  display:inline-flex;
-}
-
-.vp-group-item a{
-  display:inline-flex;
-  padding:4px 9px;
-  border:1px solid rgba(255,79,134,.26);
-  border-radius:999px;
-  background:rgba(4,6,20,.34);
-  color:var(--vp-pink)!important;
+.vp-presence-item b{
+  display:block;
+  margin-bottom:2px;
+  color:var(--vp-cyan);
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:11px;
   font-weight:900;
-  letter-spacing:.8px;
-  text-decoration:none!important;
+  letter-spacing:1px;
   text-transform:uppercase;
 }
 
-.vp-group-item a:hover{
-  border-color:rgba(36,228,255,.44);
-  color:var(--vp-cyan)!important;
-  box-shadow:0 0 10px rgba(36,228,255,.16);
+.vp-presence-item span{
+  color:var(--vp-white);
+  font-size:13px;
+  font-weight:800;
 }
 
-/* ===================== BANNIÈRE PROFIL ===================== */
+/* ===================== BANNIÈRE ===================== */
 
 .vp-banner{
   position:relative;
+  margin:0 0 16px;
   min-height:210px;
-  margin:0 0 18px;
   border:1px solid rgba(36,228,255,.18);
   border-radius:22px;
   background:
@@ -512,104 +329,202 @@
   text-shadow:0 0 10px rgba(36,228,255,.30);
 }
 
-/* ===================== CONTACT / STATS ===================== */
+/* ===================== LAYOUT ===================== */
 
-.vp-contact-stats-panel{
+.vp-layout{
   display:grid;
-  grid-template-columns:minmax(0,1fr) 330px;
-  gap:18px;
-  padding:18px!important;
+  grid-template-columns:330px minmax(0,1fr);
+  gap:16px;
+  align-items:start;
 }
 
-.vp-column-contact,
-.vp-column-stats{
-  display:grid;
-  align-content:start;
-  gap:9px;
+.vp-panel{
+  position:relative;
+  margin:0 0 16px;
+  border:1px solid rgba(36,228,255,.18);
+  border-top:2px solid rgba(42,233,255,.22);
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(36,228,255,.10),transparent 28%),
+    radial-gradient(circle at 88% 12%,rgba(254,3,124,.12),transparent 32%),
+    linear-gradient(135deg,rgba(4,6,20,.98) 0%,rgba(11,15,42,.98) 45%,rgba(32,27,61,.98) 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    0 0 26px rgba(0,0,0,.32);
+  overflow:hidden;
 }
 
-.vp-column-contact form{
-  display:grid;
-  gap:9px;
-}
-
-.vp-contact-field{
-  min-height:46px;
-}
-
-.vp-contact-field[data-vp-contact="fiche-presentation"],
-.vp-contact-field[data-vp-contact="pnj-dating"],
-.vp-contact-field[data-vp-contact="site-web"],
-.vp-contact-field[data-vp-contact="facebook"],
-.vp-contact-field[data-vp-contact="x-twitter"],
-.vp-contact-field[data-vp-contact="twitter"],
-.vp-contact-field[data-vp-contact="pinterest"],
-.vp-contact-field[data-vp-contact="skype"]{
-  padding:0!important;
-  border:0;
-  background:transparent;
-}
-
-.vp-contact-field[data-vp-contact="fiche-presentation"] dt,
-.vp-contact-field[data-vp-contact="pnj-dating"] dt,
-.vp-contact-field[data-vp-contact="site-web"] dt,
-.vp-contact-field[data-vp-contact="facebook"] dt,
-.vp-contact-field[data-vp-contact="x-twitter"] dt,
-.vp-contact-field[data-vp-contact="twitter"] dt,
-.vp-contact-field[data-vp-contact="pinterest"] dt,
-.vp-contact-field[data-vp-contact="skype"] dt{
-  display:none!important;
-}
-
-.vp-contact-field[data-vp-contact="fiche-presentation"] dd a,
-.vp-contact-field[data-vp-contact="pnj-dating"] dd a,
-.vp-contact-field[data-vp-contact="site-web"] dd a,
-.vp-contact-field[data-vp-contact="facebook"] dd a,
-.vp-contact-field[data-vp-contact="x-twitter"] dd a,
-.vp-contact-field[data-vp-contact="twitter"] dd a,
-.vp-contact-field[data-vp-contact="pinterest"] dd a,
-.vp-contact-field[data-vp-contact="skype"] dd a{
-  display:flex!important;
+.vp-panel-head{
+  position:relative;
+  display:flex;
   align-items:center;
-  justify-content:center;
-  min-height:42px;
-  padding:0 16px;
-  border:1px solid rgba(36,228,255,.26);
-  border-radius:14px;
-  background:
-    linear-gradient(135deg,rgba(12,20,54,.96) 0%,rgba(20,28,74,.96) 52%,rgba(39,28,86,.96) 100%);
-  color:#ecfbff!important;
+  justify-content:space-between;
+  gap:12px;
+  padding:16px 18px;
+  background:linear-gradient(90deg,rgba(10,18,45,.96) 0%,rgba(27,34,78,.98) 45%,rgba(54,42,92,.98) 100%);
+  border-bottom:1px solid rgba(36,228,255,.18);
+}
+
+.vp-panel-head::after{
+  content:attr(data-ghost);
+  position:absolute;
+  right:16px;
+  top:50%;
+  transform:translateY(-50%);
+  color:rgba(255,255,255,.045);
   font-family:"Barlow Condensed",Arial,sans-serif;
-  font-size:15px;
+  font-size:42px;
   font-weight:900;
-  letter-spacing:.7px;
+  letter-spacing:4px;
+  line-height:1;
+  pointer-events:none;
+}
+
+.vp-panel-title{
+  position:relative;
+  z-index:2;
+  color:var(--vp-cyan);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:1.6px;
   text-transform:uppercase;
-  text-shadow:0 0 6px rgba(36,228,255,.22);
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.03),
-    0 0 14px rgba(36,228,255,.08);
+  text-shadow:0 0 8px rgba(36,228,255,.35);
 }
 
-.vp-contact-field[data-vp-contact="fiche-presentation"] dd a:hover,
-.vp-contact-field[data-vp-contact="pnj-dating"] dd a:hover,
-.vp-contact-field[data-vp-contact="site-web"] dd a:hover,
-.vp-contact-field[data-vp-contact="facebook"] dd a:hover,
-.vp-contact-field[data-vp-contact="x-twitter"] dd a:hover,
-.vp-contact-field[data-vp-contact="twitter"] dd a:hover,
-.vp-contact-field[data-vp-contact="pinterest"] dd a:hover,
-.vp-contact-field[data-vp-contact="skype"] dd a:hover{
-  border-color:rgba(255,79,134,.65);
-  background:
-    linear-gradient(135deg,rgba(110,32,92,.96) 0%,rgba(164,38,106,.96) 48%,rgba(255,79,134,.96) 100%);
-  color:#fff!important;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.05),
-    0 0 18px rgba(255,79,134,.26),
-    0 0 26px rgba(254,3,124,.16);
+.vp-panel-title::before{
+  content:"⛧";
+  margin-right:7px;
+  color:var(--vp-pink);
+  text-shadow:0 0 6px rgba(255,79,134,.52);
 }
 
-/* ===================== BOUTONS ===================== */
+.vp-panel-body{
+  position:relative;
+  padding:14px;
+}
 
+.vp-panel-body::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:14px 14px;
+  opacity:.10;
+  pointer-events:none;
+}
+
+/* ===================== CHAMPS ===================== */
+
+.vp-fields{
+  position:relative;
+  z-index:2;
+  display:grid;
+  gap:9px;
+  margin:0;
+  padding:0;
+}
+
+.vp-field{
+  display:grid;
+  grid-template-columns:130px minmax(0,1fr);
+  gap:10px;
+  align-items:start;
+  min-height:42px;
+  margin:0;
+  padding:10px;
+  border:1px solid rgba(36,228,255,.14);
+  border-radius:14px;
+  background:rgba(4,6,20,.24);
+}
+
+.vp-field-large{
+  grid-template-columns:1fr;
+}
+
+.vp-about-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.vp-about-grid .vp-field{
+  grid-template-columns:1fr;
+}
+
+.vp-field dt,
+.vp-field dd{
+  margin:0;
+  padding:0;
+  min-width:0;
+}
+
+.vp-field dt{
+  color:var(--vp-cyan-soft);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.1;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+
+.vp-field dd{
+  color:var(--vp-text);
+  font-size:13px;
+  font-weight:800;
+  line-height:1.28;
+}
+
+.vp-scroll{
+  max-height:190px;
+  overflow:auto;
+  padding-right:6px;
+  scrollbar-width:thin;
+}
+
+.vp-field a{
+  color:var(--vp-cyan-soft)!important;
+  text-decoration:none!important;
+  font-weight:900;
+}
+
+.vp-field a:hover{
+  color:var(--vp-pink)!important;
+}
+
+/* ===================== GROUPES ===================== */
+
+.vp-group-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.vp-group-pill{
+  display:inline-flex;
+  padding:4px 9px;
+  border:1px solid rgba(255,79,134,.26);
+  border-radius:999px;
+  background:rgba(4,6,20,.30);
+  color:var(--vp-pink)!important;
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-decoration:none!important;
+  text-transform:uppercase;
+}
+
+/* ===================== CONTACT / BOUTONS ===================== */
+
+.vp-contact-grid{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.vp-contact,
 .vp-button,
 .vp-page .button1,
 .vp-page .button2,
@@ -640,6 +555,7 @@
   transition:.22s ease;
 }
 
+.vp-contact:hover,
 .vp-button:hover,
 .vp-page .button1:hover,
 .vp-page .button2:hover,
@@ -655,34 +571,132 @@
   transform:translateY(-1px);
 }
 
-/* ===================== AWARDS ===================== */
-
-.vp-awards-wrapper{
-  position:relative;
-  z-index:2;
-  margin-top:12px;
+.vp-contact.is-empty{
+  display:none!important;
 }
 
+/* ===================== STATS ===================== */
+
+.vp-stats{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:9px;
+}
+
+.vp-stat{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:70px;
+  padding:8px;
+  border:1px solid rgba(36,228,255,.24);
+  border-radius:14px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(36,228,255,.12),transparent 55%),
+    rgba(4,6,20,.34);
+  color:var(--vp-white);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:22px;
+  font-weight:900;
+  line-height:1;
+  text-align:center;
+  box-shadow:
+    inset 0 0 10px rgba(36,228,255,.06),
+    0 0 8px rgba(36,228,255,.08);
+}
+
+.vp-stat span{
+  display:block;
+  margin-top:5px;
+  color:var(--vp-muted);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+
+.vp-stats-extra{
+  margin-top:10px;
+}
+
+/* ===================== ALERTES ===================== */
+
+.vp-alerts{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.vp-alert{
+  position:relative;
+  padding:14px;
+  border:1px solid rgba(255,79,134,.24);
+  border-left:4px solid var(--vp-pink);
+  border-radius:16px;
+  background:rgba(4,6,20,.28);
+}
+
+.vp-alert.is-warning{
+  border-color:rgba(184,140,255,.30);
+  border-left-color:var(--vp-purple);
+  box-shadow:0 0 14px rgba(184,140,255,.08);
+}
+
+.vp-alert b{
+  display:block;
+  margin-bottom:8px;
+  color:var(--vp-pink);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.vp-alert.is-warning b{
+  color:var(--vp-purple);
+  text-shadow:0 0 8px rgba(184,140,255,.35);
+}
+
+.vp-alert div{
+  max-height:150px;
+  overflow:auto;
+  color:var(--vp-text);
+  font-size:13px;
+  font-weight:800;
+  line-height:1.28;
+}
+
+/* ===================== AWARDS / ADMIN ===================== */
+
 .vp-awards-list{
+  position:relative;
+  z-index:2;
   padding:12px;
   border:1px solid rgba(255,79,134,.22);
   border-radius:14px;
   background:rgba(4,6,20,.30);
 }
 
-/* ===================== ADMIN / RPG ===================== */
-
 .vp-admin-comment{
-  width:100%!important;
-  min-height:120px!important;
-  padding:10px!important;
-  border:1px solid rgba(36,228,255,.24)!important;
-  border-radius:12px!important;
-  background:rgba(4,6,20,.46)!important;
-  color:var(--vp-white)!important;
-  font-family:"Rajdhani",Arial,sans-serif!important;
-  font-size:13px!important;
-  font-weight:800!important;
+  position:relative;
+  z-index:2;
+  width:100%;
+  min-height:120px;
+  padding:10px;
+  border:1px solid rgba(36,228,255,.24);
+  border-radius:12px;
+  background:rgba(4,6,20,.46);
+  color:var(--vp-white);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:13px;
+  font-weight:800;
   resize:vertical;
 }
 
@@ -692,16 +706,28 @@
   display:flex;
   justify-content:center;
   gap:10px;
-  margin-top:12px!important;
+  margin-top:12px;
   padding:0!important;
   border:0!important;
 }
 
+/* ===================== SOURCES CACHÉES ===================== */
+
+.vp-source-fields,
+.vp-source-contacts{
+  display:none!important;
+}
+
+/* ===================== RPG ===================== */
+
 .vp-rpg-title{
-  margin-top:18px!important;
+  width:min(1080px,100%);
+  margin:18px auto!important;
 }
 
 .vp-rpg-panel{
+  width:min(1080px,100%);
+  margin:0 auto 18px!important;
   padding:18px!important;
 }
 
@@ -724,20 +750,43 @@
   background:linear-gradient(90deg,transparent,rgba(36,228,255,.34),transparent);
 }
 
+.vp-rpg-column{
+  position:relative;
+  z-index:2;
+  float:none!important;
+  width:auto!important;
+}
+
+.vp-rpg-field{
+  margin:0 0 9px!important;
+  padding:10px!important;
+  border:1px solid rgba(36,228,255,.14);
+  border-left:4px solid var(--vp-cyan);
+  border-radius:14px;
+  background:rgba(4,6,20,.30);
+}
+
+.vp-rpg-field dt,
+.vp-rpg-field dd{
+  float:none!important;
+  width:auto!important;
+  margin:0!important;
+  padding:0!important;
+}
+
 /* ===================== CLEANUP FORUMACTIF ===================== */
 
 .vp-page .panel,
 .vp-page .bg1,
 .vp-page .bg2{
+  background:transparent!important;
   box-shadow:none!important;
 }
 
-.vp-page .left-box{
-  float:none!important;
-}
-
+.vp-page .corners-top,
+.vp-page .corners-bottom,
 .vp-page .clear{
-  clear:both;
+  display:none!important;
 }
 
 .vp-page strong{
@@ -758,29 +807,22 @@
 
 /* ===================== RESPONSIVE ===================== */
 
-@media(max-width:900px){
-  .vp-main-panel,
-  .vp-contact-stats-panel{
+@media(max-width:920px){
+  .vp-hero-inner,
+  .vp-layout{
     grid-template-columns:1fr;
   }
 
-  .vp-column-profile{
-    grid-template-columns:1fr 1fr;
+  .vp-avatar-card{
+    width:230px;
   }
 
-  .vp-profile-field[data-vp-field="ton-monde"],
-  .vp-profile-field[data-vp-field="naccepte-pas"],
-  .vp-profile-field[data-vp-field="warning"],
-  .vp-profile-field[data-vp-field="warnings"]{
-    grid-column:1 / -1;
-  }
-
-  .vp-avatar{
-    height:340px;
+  .vp-presence{
+    grid-template-columns:1fr 1fr 1fr;
   }
 }
 
-@media(max-width:620px){
+@media(max-width:700px){
   .vp-title-main{
     font-size:34px;
   }
@@ -789,20 +831,43 @@
     font-size:44px;
   }
 
-  .vp-main-panel,
-  .vp-contact-stats-panel,
-  .vp-rpg-panel{
-    padding:14px!important;
+  .vp-name{
+    font-size:38px;
   }
 
-  .vp-column-profile{
+  .vp-hero-inner{
+    padding:16px;
+  }
+
+  .vp-presence,
+  .vp-stats,
+  .vp-alerts,
+  .vp-about-grid{
     grid-template-columns:1fr;
   }
 
-  .vp-banner{
-    min-height:160px;
+  .vp-field{
+    grid-template-columns:1fr;
   }
 
+  .vp-panel-head{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .vp-panel-head::after{
+    font-size:34px;
+  }
+
+  .vp-avatar-card{
+    width:100%;
+  }
+
+  .vp-avatar{
+    height:340px;
+  }
+
+  .vp-contact,
   .vp-button,
   .vp-page .button1,
   .vp-page .button2,

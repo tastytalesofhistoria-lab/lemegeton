@@ -50,13 +50,13 @@
   align-items: center;
   justify-content: space-between;
 
-  background:
-    linear-gradient(90deg,
-      #13244c 0%,
-      #192d5d 22%,
-      #223667 45%,
-      #3b2e61 72%,
-      #6e2d67 100%);
+background:
+  linear-gradient(180deg,
+    #6e2d67 0%,
+    #3b2e61 22%,
+    #223667 52%,
+    #192d5d 76%,
+    #13244c 100%);
   border-left: 1px solid var(--sw-cyan);
   box-shadow:
     -10px 0 26px rgba(0, 0, 0, .38),

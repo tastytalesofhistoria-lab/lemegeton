@@ -465,7 +465,57 @@
 --avp-oc:#b88cff;
 --avp-ia:#9aa4b2;
 --avp-pnj:#ffd36e;
-}
+
+/* ---------- BANNIÈRE / LB ---------- */
+
+--lb-bg:#040614;
+--lb-bg-deep:#0b0f2a;
+--lb-panel:#201b3d;
+--lb-panel-2:#3c3068;
+
+--lb-cyan:#24e4ff;
+--lb-cyan-soft:#b8f4ff;
+--lb-blue:#009dff;
+--lb-pink:#ff4f86;
+--lb-pink-hot:#FE037C;
+--lb-white:#ecfbff;
+--lb-text:#d8ecff;
+--lb-muted:#89abc1;
+
+--lb-red:#ff4d4d;
+--lb-ok:#00eaff;
+
+--lb-banner-img:url("https://media1.tenor.com/m/jirFFmhUAkIAAAAd/huskerdust-husk.gif");
+
+--lb-banner-bg:#040614;
+--lb-banner-border:rgba(42,233,255,.14);
+--lb-banner-overlay-side:rgba(11,15,42,.90);
+--lb-banner-overlay-mid:rgba(11,15,42,.08);
+--lb-banner-overlay-soft:rgba(11,15,42,.38);
+--lb-banner-overlay-bottom:rgba(3,5,16,.50);
+
+--lb-info-bg:
+  radial-gradient(circle at top right,rgba(255,95,140,.10),transparent 34%),
+  linear-gradient(135deg,rgba(60,48,104,.96) 0%,rgba(32,27,61,.98) 100%);
+
+--lb-info-border:#ff4f86;
+--lb-info-border-left:#19d9ff;
+--lb-info-dot:rgba(255,255,255,.08);
+--lb-info-ghost:rgba(255,255,255,.05);
+
+--lb-logo-glow-bg:rgba(2,5,17,.38);
+--lb-logo-main:#6fe9ff;
+--lb-logo-stroke:rgba(210,250,255,.75);
+--lb-logo-shadow:rgba(0,234,255,.55);
+
+--lb-player-bg:
+  radial-gradient(circle at 86% 20%,rgba(254,3,124,.18),transparent 34%),
+  linear-gradient(90deg,rgba(10,18,45,.96) 0%,rgba(27,34,78,.98) 42%,rgba(54,42,92,.98) 100%);
+
+--lb-player-border:rgba(255,255,255,.045);
+--lb-player-wave:#b8f4ff;
+--lb-player-wave-played:#24e4ff;
+--lb-player-wave-current:#FE037C;}
 
 /* =========================================================
 =========================================================
@@ -936,4 +986,54 @@
 --avp-oc:#6841a8;
 --avp-ia:#66717f;
 --avp-pnj:#9b6c00;
-}
+
+/* ---------- BANNIÈRE / LB ---------- */
+
+--lb-bg:#f4f8ff;
+--lb-bg-deep:#dce8ff;
+--lb-panel:#ffffff;
+--lb-panel-2:#d9e5f5;
+
+--lb-cyan:#007fa3;
+--lb-cyan-soft:#006f91;
+--lb-blue:#235fc8;
+--lb-pink:#c92662;
+--lb-pink-hot:#d31b6f;
+--lb-white:#07101f;
+--lb-text:#1b314b;
+--lb-muted:#526b86;
+
+--lb-red:#b8143e;
+--lb-ok:#007fa3;
+
+--lb-banner-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+
+--lb-banner-bg:#edf5ff;
+--lb-banner-border:rgba(0,127,163,.20);
+--lb-banner-overlay-side:rgba(244,248,255,.82);
+--lb-banner-overlay-mid:rgba(244,248,255,.08);
+--lb-banner-overlay-soft:rgba(244,248,255,.30);
+--lb-banner-overlay-bottom:rgba(220,232,255,.45);
+
+--lb-info-bg:
+  radial-gradient(circle at top right,rgba(201,38,98,.08),transparent 34%),
+  linear-gradient(135deg,rgba(255,255,255,.96) 0%,rgba(222,235,249,.98) 100%);
+
+--lb-info-border:#c92662;
+--lb-info-border-left:#007fa3;
+--lb-info-dot:rgba(7,16,31,.08);
+--lb-info-ghost:rgba(7,16,31,.05);
+
+--lb-logo-glow-bg:rgba(244,248,255,.50);
+--lb-logo-main:#007fa3;
+--lb-logo-stroke:rgba(0,80,110,.55);
+--lb-logo-shadow:rgba(0,127,163,.35);
+
+--lb-player-bg:
+  radial-gradient(circle at 86% 20%,rgba(201,38,98,.10),transparent 34%),
+  linear-gradient(90deg,rgba(247,251,255,.96) 0%,rgba(231,239,255,.98) 42%,rgba(220,232,255,.98) 100%);
+
+--lb-player-border:rgba(7,16,31,.10);
+--lb-player-wave:#006f91;
+--lb-player-wave-played:#007fa3;
+--lb-player-wave-current:#c92662;}

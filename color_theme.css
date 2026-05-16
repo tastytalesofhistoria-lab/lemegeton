@@ -1769,7 +1769,20 @@
 --idx-paradis-button-bg:linear-gradient(135deg,#e4d3b4,#7a6648);
 --idx-terre-button-bg:linear-gradient(135deg,#8cecff,#009dff);
 --idx-enfer-button-bg:linear-gradient(135deg,#ff2f5f,#fe037c);
-/* ---------- KARMA / ADMS COMPLÉMENT ---------- */
+/* ---------- INDEXBOX / FONDS INTERNES ---------- */
+
+--idx-forums-bg:
+  linear-gradient(180deg,rgba(7,11,24,.96),rgba(10,18,45,.94));
+
+--idx-row-bg:
+  linear-gradient(90deg,rgba(27,34,78,.90),rgba(7,11,24,.92));
+
+--idx-row-alt-bg:
+  linear-gradient(90deg,rgba(36,28,70,.88),rgba(7,11,24,.92));
+
+--idx-row-border:rgba(36,228,255,.14);
+   
+   /* ---------- KARMA / ADMS COMPLÉMENT ---------- */
 
 --adms-green:#ff8eaf;
 --adms-gold:#ffd36e;
@@ -3754,7 +3767,19 @@
 --idx-paradis-button-bg:linear-gradient(135deg,#fff8e7,#d8c088);
 --idx-terre-button-bg:linear-gradient(135deg,#e9fbff,#8ccfe8);
 --idx-enfer-button-bg:linear-gradient(135deg,#ffe8ee,#d93d78);
-/* ---------- KARMA / ADMS COMPLÉMENT ---------- */
+/* ---------- INDEXBOX / FONDS INTERNES ---------- */
+
+--idx-forums-bg:
+  linear-gradient(180deg,rgba(255,255,255,.96),rgba(232,242,253,.94));
+
+--idx-row-bg:
+  linear-gradient(90deg,rgba(247,251,255,.96),rgba(220,232,255,.92));
+
+--idx-row-alt-bg:
+  linear-gradient(90deg,rgba(255,255,255,.96),rgba(231,239,255,.94));
+
+--idx-row-border:rgba(0,127,163,.14);
+   /* ---------- KARMA / ADMS COMPLÉMENT ---------- */
 
 --adms-green:#c92662;
 --adms-gold:#9b6c00;

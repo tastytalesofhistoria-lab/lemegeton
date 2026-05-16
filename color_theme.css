@@ -2459,7 +2459,94 @@
   0 8px 22px rgba(0,0,0,.55),
   0 0 14px rgba(36,228,255,.35),
   0 0 14px rgba(255,79,134,.22);
+/* ---------- PROMESS / MESSAGE COMPLÉMENT ---------- */
 
+--pm-award-hover-border:rgba(255,79,134,.75);
+--pm-award-hover-shadow:
+  0 0 12px rgba(255,79,134,.28),
+  0 0 10px rgba(36,228,255,.28),
+  0 0 0 1px rgba(36,228,255,.42) inset;
+
+--pm-pm-award-hover-shadow:
+  0 0 12px rgba(255,79,134,.28),
+  0 0 10px rgba(36,228,255,.24);
+
+--pm-button-bg:
+  radial-gradient(circle at 86% 20%,rgba(254,3,124,.14),transparent 34%),
+  linear-gradient(90deg,rgba(10,18,45,.96) 0%,rgba(27,34,78,.98) 42%,rgba(54,42,92,.98) 100%);
+
+--pm-button-hover-bg:
+  radial-gradient(circle at center,rgba(255,79,134,.34),transparent 56%),
+  linear-gradient(135deg,#3c3068 0%,#54294d 46%,#ff4f86 140%);
+
+--pm-button-text:#dff8ff;
+--pm-button-hover-text:#ffffff;
+--pm-button-border:rgba(36,228,255,.24);
+--pm-button-hover-border:rgba(255,79,134,.82);
+
+--pm-button-shadow:
+  inset 0 0 0 1px rgba(255,255,255,.045),
+  0 0 12px rgba(0,234,255,.06),
+  0 0 12px rgba(255,64,120,.10);
+
+--pm-contact-button-bg:
+  radial-gradient(circle at top right,rgba(255,95,140,.13),transparent 38%),
+  linear-gradient(135deg,rgba(60,48,104,.96),rgba(32,27,61,.98));
+
+--pm-contact-button-hover-bg:
+  radial-gradient(circle at center,rgba(255,79,134,.34),transparent 56%),
+  linear-gradient(135deg,#3c3068 0%,#54294d 46%,#ff4f86 140%);
+
+--pm-btn-fiche:#ecfbff;
+--pm-btn-dating:#b8f4ff;
+--pm-btn-looking:#ffc5d8;
+
+--pm-post-separator:
+  linear-gradient(90deg,transparent,rgba(36,228,255,.58),rgba(254,3,124,.48),transparent);
+
+--pm-topic-date:#b8f4ff;
+
+--pm-menu-bg:
+  radial-gradient(circle at 35% 30%,rgba(255,255,255,.22),transparent 38%),
+  linear-gradient(135deg,#a53884 0%,#ff4f86 100%);
+
+--pm-menu-hover-bg:
+  radial-gradient(circle at 35% 30%,rgba(255,255,255,.28),transparent 38%),
+  linear-gradient(135deg,#24e4ff 0%,#ff4f86 100%);
+
+--pm-menu-border:rgba(255,150,200,.75);
+--pm-menu-hover-border:rgba(36,228,255,.85);
+
+--pm-menu-shadow:
+  0 0 10px rgba(255,79,134,.45),
+  0 0 18px rgba(255,79,134,.22),
+  inset 0 0 0 1px rgba(255,255,255,.10);
+
+--pm-menu-hover-shadow:
+  0 0 12px rgba(36,228,255,.45),
+  0 0 18px rgba(255,79,134,.32),
+  inset 0 0 0 1px rgba(255,255,255,.16);
+
+--pm-postbody-text:#dcddde;
+
+--pm-postbody-bg:
+  radial-gradient(circle at top right,rgba(255,95,140,.08),transparent 38%),
+  linear-gradient(135deg,rgba(11,15,42,.96),rgba(32,27,61,.96));
+
+--pm-postbody-border:rgba(36,228,255,.16);
+--pm-postbody-left:rgba(255,79,134,.85);
+
+--pm-postbody-shadow:
+  inset 0 0 0 1px rgba(255,255,255,.03),
+  0 0 16px rgba(0,234,255,.06),
+  0 0 16px rgba(255,64,120,.08);
+
+--pm-postbody-ghost:rgba(255,255,255,.035);
+
+--pm-message-strong:#ecfbff;
+--pm-blockquote-bg:rgba(4,6,20,.38);
+--pm-signature:#b8f4ff;
+--pm-signature-border:rgba(36,228,255,.16);
 
 }
 
@@ -4922,4 +5009,98 @@
   inset 0 0 0 9999px rgba(255,255,255,.92),
   0 8px 22px rgba(28,48,80,.14),
   0 0 14px rgba(0,127,163,.12),
-  0 0 14px rgba(201,38,98,.10);}
+  0 0 14px rgba(201,38,98,.10);
+/* ---------- PROMESS / MESSAGE COMPLÉMENT ---------- */
+
+--pm-award-hover-border:rgba(201,38,98,.44);
+--pm-award-hover-shadow:
+  0 0 12px rgba(201,38,98,.14),
+  0 0 10px rgba(0,127,163,.12),
+  0 0 0 1px rgba(0,127,163,.18) inset;
+
+--pm-pm-award-hover-shadow:
+  0 0 12px rgba(201,38,98,.14),
+  0 0 10px rgba(0,127,163,.12);
+
+--pm-button-bg:
+  radial-gradient(circle at 86% 20%,rgba(201,38,98,.08),transparent 34%),
+  linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(231,239,255,.98) 42%,rgba(220,232,255,.98) 100%);
+
+--pm-button-hover-bg:
+  radial-gradient(circle at center,rgba(201,38,98,.16),transparent 56%),
+  linear-gradient(135deg,#ffffff 0%,#f3d8eb 46%,#dce8ff 140%);
+
+--pm-button-text:#07101f;
+--pm-button-hover-text:#ffffff;
+--pm-button-border:rgba(0,127,163,.22);
+--pm-button-hover-border:rgba(201,38,98,.38);
+
+--pm-button-shadow:
+  inset 0 0 0 1px rgba(7,16,31,.05),
+  0 12px 22px rgba(28,48,80,.08);
+
+--pm-contact-button-bg:
+  radial-gradient(circle at top right,rgba(201,38,98,.08),transparent 38%),
+  linear-gradient(135deg,rgba(255,255,255,.94),rgba(231,239,255,.98));
+
+--pm-contact-button-hover-bg:
+  radial-gradient(circle at center,rgba(201,38,98,.16),transparent 56%),
+  linear-gradient(135deg,#ffffff 0%,#f3d8eb 46%,#dce8ff 140%);
+
+--pm-btn-fiche:#07101f;
+--pm-btn-dating:#006f91;
+--pm-btn-looking:#c92662;
+
+--pm-post-separator:
+  linear-gradient(90deg,transparent,rgba(0,127,163,.30),rgba(201,38,98,.24),transparent);
+
+--pm-topic-date:#526b86;
+
+--pm-menu-bg:
+  radial-gradient(circle at 35% 30%,rgba(255,255,255,.35),transparent 38%),
+  linear-gradient(135deg,#f3d8eb 0%,#d93d78 100%);
+
+--pm-menu-hover-bg:
+  radial-gradient(circle at 35% 30%,rgba(255,255,255,.42),transparent 38%),
+  linear-gradient(135deg,#e9fbff 0%,#c92662 100%);
+
+--pm-menu-border:rgba(201,38,98,.38);
+--pm-menu-hover-border:rgba(0,127,163,.38);
+
+--pm-menu-shadow:
+  0 0 10px rgba(201,38,98,.14),
+  inset 0 0 0 1px rgba(7,16,31,.06);
+
+--pm-menu-hover-shadow:
+  0 0 12px rgba(0,127,163,.14),
+  0 0 18px rgba(201,38,98,.12),
+  inset 0 0 0 1px rgba(7,16,31,.06);
+
+--pm-postbody-text:#1b314b;
+
+--pm-postbody-bg:
+  radial-gradient(circle at top right,rgba(201,38,98,.06),transparent 38%),
+  linear-gradient(135deg,rgba(255,255,255,.94),rgba(231,239,255,.96));
+
+--pm-postbody-border:rgba(0,127,163,.18);
+--pm-postbody-left:rgba(201,38,98,.42);
+
+--pm-postbody-shadow:
+  inset 0 0 0 1px rgba(7,16,31,.05),
+  0 12px 24px rgba(28,48,80,.10);
+
+--pm-postbody-ghost:rgba(7,16,31,.045);
+
+--pm-message-strong:#07101f;
+--pm-blockquote-bg:rgba(255,255,255,.70);
+--pm-signature:#526b86;
+--pm-signature-border:rgba(0,127,163,.16);
+
+
+
+
+
+
+
+
+}

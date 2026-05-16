@@ -1,7 +1,7 @@
 /* =========================================================
    LEMEGETON — BANNIÈRE FORUMACTIF MODERNBB
    CSS optimisé / préfixe unique : lb-
-   À placer dans banniere.css ou dans la feuille CSS Forumactif
+   Edison ready / variables dans color_theme.css
 ========================================================= */
 
 /* ===================== WIDGET DERNIERS SUJETS ===================== */
@@ -65,8 +65,8 @@
   height:390px;
   margin:0 auto;
   overflow:visible;
-  background:#040614;
-  border-top:2px solid rgba(42,233,255,.14);
+  background:var(--lb-banner-bg);
+  border-top:2px solid var(--lb-banner-border);
 }
 
 .lb-banner-bg{
@@ -77,13 +77,18 @@
   width:1000px;
   height:100%;
   transform:translateX(-50%);
-  background-image:url("https://media1.tenor.com/m/jirFFmhUAkIAAAAd/huskerdust-husk.gif");
+  background-image:var(--lb-banner-img);
   background-repeat:no-repeat;
   background-position:center center;
   background-size:auto 125%;
   opacity:.78;
   filter:saturate(.9) brightness(.72) contrast(1.08);
   pointer-events:none!important;
+}
+
+[data-color-scheme="light"] .lb-banner-bg{
+  opacity:.86;
+  filter:saturate(.95) brightness(.92) contrast(1.02);
 }
 
 .lb-banner-bg::after{
@@ -93,19 +98,37 @@
   background:
     linear-gradient(
       to right,
-      rgba(11,15,42,.9) 0%,
-      rgba(11,15,42,.38) 30%,
-      rgba(11,15,42,.08) 50%,
-      rgba(11,15,42,.38) 70%,
-      rgba(11,15,42,.9) 100%
+      var(--lb-banner-overlay-side) 0%,
+      var(--lb-banner-overlay-soft) 30%,
+      var(--lb-banner-overlay-mid) 50%,
+      var(--lb-banner-overlay-soft) 70%,
+      var(--lb-banner-overlay-side) 100%
     ),
     linear-gradient(
       to bottom,
       rgba(3,5,16,.18) 0%,
       rgba(3,5,16,.06) 54%,
-      rgba(3,5,16,.5) 100%
+      var(--lb-banner-overlay-bottom) 100%
     );
   pointer-events:none;
+}
+
+[data-color-scheme="light"] .lb-banner-bg::after{
+  background:
+    linear-gradient(
+      to right,
+      var(--lb-banner-overlay-side) 0%,
+      var(--lb-banner-overlay-soft) 30%,
+      var(--lb-banner-overlay-mid) 50%,
+      var(--lb-banner-overlay-soft) 70%,
+      var(--lb-banner-overlay-side) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(244,248,255,.08) 0%,
+      rgba(244,248,255,.04) 54%,
+      var(--lb-banner-overlay-bottom) 100%
+    );
 }
 
 .lb-banner-content{
@@ -135,16 +158,14 @@
   margin-left:-85px!important;
   padding:16px 18px;
   text-align:left;
-  color:#d8ecff;
+  color:var(--lb-text);
   opacity:1;
-  background:
-    radial-gradient(circle at top right,rgba(255,95,140,.10),transparent 34%),
-    linear-gradient(135deg,rgba(60,48,104,.96) 0%,rgba(32,27,61,.98) 100%);
-  border:1px solid #ff4f86;
-  border-left:4px solid #19d9ff;
+  background:var(--lb-info-bg);
+  border:1px solid var(--lb-info-border);
+  border-left:4px solid var(--lb-info-border-left);
   border-radius:16px;
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.03) inset,
+    0 0 0 1px var(--lb-info-ghost) inset,
     0 0 16px rgba(255,64,120,.14);
   text-shadow:none;
   overflow:hidden;
@@ -154,7 +175,7 @@
   content:"";
   position:absolute;
   inset:0;
-  background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);
+  background-image:radial-gradient(var(--lb-info-dot) 1px,transparent 1px);
   background-size:14px 14px;
   opacity:.18;
   pointer-events:none;
@@ -170,7 +191,7 @@
   font-weight:900;
   line-height:1;
   letter-spacing:2px;
-  color:rgba(255,255,255,.05);
+  color:var(--lb-info-ghost);
   text-transform:uppercase;
   pointer-events:none;
 }
@@ -180,7 +201,7 @@
   z-index:2;
   display:block;
   margin:0 0 10px;
-  color:#24e4ff;
+  color:var(--lb-cyan);
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:15px;
   font-weight:900;
@@ -205,7 +226,7 @@
   display:flex;
   align-items:center;
   gap:5px;
-  color:#d8ecff;
+  color:var(--lb-text);
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:14px;
   font-weight:700;
@@ -215,7 +236,7 @@
 .lb-info-list li::before{
   content:"⛧";
   flex:0 0 auto;
-  color:#a9f4ff;
+  color:var(--lb-cyan-soft);
   text-shadow:0 0 6px rgba(36,228,255,.55);
 }
 
@@ -231,21 +252,21 @@
   justify-content:center;
   margin-right:5px;
   padding:2px 6px;
-  border:1px solid #ff4d4d;
-  color:#ff4d4d;
+  border:1px solid var(--lb-red);
+  color:var(--lb-red);
   font:700 12px/1 Arial,sans-serif;
   text-shadow:
-    0 0 5px #ff0000,
-    0 0 10px #ff0000;
+    0 0 5px var(--lb-red),
+    0 0 10px var(--lb-red);
 }
 
 .lb-ok::before{
   content:"✔";
-  color:#00eaff;
+  color:var(--lb-ok);
   font:900 14px/1 Arial,sans-serif;
   text-shadow:
-    0 0 5px #00eaff,
-    0 0 10px #009dff;
+    0 0 5px var(--lb-ok),
+    0 0 10px var(--lb-blue);
 }
 
 /* ===================== LOGO ===================== */
@@ -274,11 +295,20 @@
   background:linear-gradient(
     90deg,
     rgba(2,5,17,.08),
-    rgba(2,5,17,.38),
+    var(--lb-logo-glow-bg),
     rgba(2,5,17,.08)
   );
   box-shadow:0 0 28px rgba(0,0,0,.18);
   pointer-events:none;
+}
+
+[data-color-scheme="light"] .lb-logo-zone::before{
+  background:linear-gradient(
+    90deg,
+    rgba(244,248,255,.08),
+    var(--lb-logo-glow-bg),
+    rgba(244,248,255,.08)
+  );
 }
 
 .lb-logo-link{
@@ -303,12 +333,12 @@
 
 .lb-logo-main span{
   display:inline-block;
-  color:#6fe9ff;
+  color:var(--lb-logo-main);
   opacity:.95;
-  -webkit-text-stroke:.45px rgba(210,250,255,.75);
+  -webkit-text-stroke:.45px var(--lb-logo-stroke);
   text-shadow:
     0 0 2px rgba(255,255,255,.85),
-    0 0 7px rgba(0,234,255,.55),
+    0 0 7px var(--lb-logo-shadow),
     0 0 16px rgba(0,157,255,.30),
     0 0 28px rgba(0,102,255,.20);
   animation:none!important;
@@ -329,14 +359,14 @@
   width:6px;
   height:6px;
   border-radius:50%;
-  background:#fff;
+  background:var(--lb-white);
   opacity:0;
   transform:translateX(-50%);
   box-shadow:
-    0 0 6px #fff,
-    0 0 12px #00eaff,
-    0 0 20px #00eaff,
-    0 0 30px #009dff;
+    0 0 6px var(--lb-white),
+    0 0 12px var(--lb-ok),
+    0 0 20px var(--lb-ok),
+    0 0 30px var(--lb-blue);
   animation:lbSparkSnap 3s infinite;
 }
 
@@ -354,11 +384,9 @@
   max-height:50px;
   margin:0;
   padding:0 10px;
-  background:
-    radial-gradient(circle at 86% 20%,rgba(254,3,124,.18),transparent 34%),
-    linear-gradient(90deg,rgba(10,18,45,.96) 0%,rgba(27,34,78,.98) 42%,rgba(54,42,92,.98) 100%);
+  background:var(--lb-player-bg);
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.045),
+    inset 0 0 0 1px var(--lb-player-border),
     inset 0 0 18px rgba(36,228,255,.05),
     0 0 14px rgba(255,64,120,.14),
     0 0 22px rgba(0,234,255,.06);
@@ -414,7 +442,7 @@
   height:0;
   border-top:8px solid transparent;
   border-bottom:8px solid transparent;
-  border-left:14px solid #24e4ff;
+  border-left:14px solid var(--lb-cyan);
   filter:drop-shadow(0 0 6px rgba(36,228,255,.50));
 }
 
@@ -429,7 +457,7 @@
   width:4px;
   height:14px;
   border-radius:2px;
-  background:#24e4ff;
+  background:var(--lb-cyan);
   box-shadow:0 0 6px rgba(36,228,255,.42);
 }
 
@@ -458,7 +486,7 @@
   max-width:none;
   justify-self:stretch;
   border-radius:999px;
-  background:#b8f4ff;
+  background:var(--lb-player-wave);
   opacity:.52;
   transform-origin:center;
   box-shadow:0 0 5px rgba(0,234,255,.22);
@@ -475,13 +503,13 @@
 
 .lb-wave span.is-played{
   opacity:1;
-  background:#24e4ff;
+  background:var(--lb-player-wave-played);
   box-shadow:0 0 6px rgba(36,228,255,.42);
 }
 
 .lb-wave span.is-current{
   opacity:1;
-  background:#FE037C;
+  background:var(--lb-player-wave-current);
   transform:scaleY(1.25);
   box-shadow:0 0 8px rgba(254,3,124,.50);
 }
@@ -523,7 +551,7 @@
   justify-content:flex-end;
   width:52px;
   min-width:52px;
-  color:#b8f4ff;
+  color:var(--lb-cyan-soft);
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:15px;
   font-weight:800;
@@ -540,18 +568,22 @@
     opacity:0;
     transform:translateX(-50%) scale(.5);
   }
+
   40%{
     opacity:1;
     transform:translateX(-50%) scale(1.5);
   }
+
   42%{
     opacity:1;
     transform:translateX(-50%) scale(2);
   }
+
   44%{
     opacity:.8;
     transform:translateX(-50%) scale(2.5);
   }
+
   46%,100%{
     opacity:0;
     transform:translateX(-50%) scale(.5);
@@ -581,6 +613,7 @@
   0%,100%{
     transform:scaleY(.72);
   }
+
   50%{
     transform:scaleY(1.16);
   }

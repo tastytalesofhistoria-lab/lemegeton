@@ -573,6 +573,113 @@
 
 --pnjang-avatar-bg:
   radial-gradient(circle at 50% 18%,rgba(var(--pnj-rgb),.36),rgba(var(--pnj-rgb),.12) 42%,rgba(9,11,24,.92) 100%);
+
+/* ---------- PNJ DÉMONS / PNJDEM ---------- */
+
+--pnjdem-bg:#314d77;
+--pnjdem-panel:#183861;
+--pnjdem-panel-2:#132d53;
+--pnjdem-panel-3:#0c1b35;
+
+--pnjdem-white:#ecfbff;
+--pnjdem-text:#c8efff;
+
+--pnjdem-cyan:#19d9ff;
+--pnjdem-cyan-soft:#8cecff;
+--pnjdem-pink:#ff4f7c;
+--pnjdem-pink-soft:#ffb0c3;
+--pnjdem-red:#d64066;
+
+--pnjdem-lime:#a7ff3f;
+--pnjdem-lime-soft:#cfff9a;
+--pnjdem-gold:#ffd36e;
+--pnjdem-gold-soft:#ffe39a;
+
+--pnjdem-purple:#b88cff;
+--pnjdem-purple-soft:#d7b4ff;
+--pnjdem-blue:#2f6bff;
+--pnjdem-blue-soft:#8ec5ff;
+--pnjdem-heart:#ff8de1;
+
+--pnjdem-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--pnjdem-border-cyan:rgba(140,236,255,.22);
+--pnjdem-border-cyan-soft:rgba(25,217,255,.18);
+--pnjdem-border-pink:rgba(214,64,102,.45);
+--pnjdem-border-soft:rgba(255,255,255,.03);
+--pnjdem-border-dark:rgba(5,10,25,.80);
+
+--pnjdem-dot:rgba(140,236,255,.65);
+--pnjdem-soft-bg:rgba(255,255,255,.04);
+--pnjdem-card-soft:rgba(255,255,255,.025);
+
+--pnjdem-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 34%),
+  linear-gradient(180deg,var(--pnjdem-panel) 0%,var(--pnjdem-panel-2) 42%,var(--pnjdem-panel-3) 100%);
+
+--pnjdem-head-bg:
+  linear-gradient(90deg,rgba(15,2,18,.94),rgba(7,16,39,.74)),
+  var(--pnjdem-head-img) center/cover;
+
+--pnjdem-card-bg:
+  linear-gradient(180deg,rgba(14,29,55,.96),rgba(13,16,36,.78));
+
+--pnjdem-avatar-bg:
+  radial-gradient(circle at 50% 18%,rgba(var(--pnj-rgb),.36),rgba(var(--pnj-rgb),.12) 42%,rgba(9,11,24,.92) 100%);
+
+/* ---------- PNJ DATING / PNJD ---------- */
+
+--pnjd-bg:#314d77;
+--pnjd-panel:#183861;
+--pnjd-panel-2:#132d53;
+--pnjd-panel-3:#0c1b35;
+--pnjd-panel-soft:rgba(14,29,55,.94);
+
+--pnjd-black:#0d1024;
+--pnjd-white:#ecfbff;
+--pnjd-text:#c8efff;
+--pnjd-muted:#7ec7e5;
+
+--pnjd-cyan:#19d9ff;
+--pnjd-cyan-soft:#8cecff;
+--pnjd-pink:#ff4f7c;
+--pnjd-pink-soft:#ffb0c3;
+--pnjd-red:#d64066;
+--pnjd-red-soft:#ff8eaf;
+--pnjd-lime:#a7ff3f;
+--pnjd-lime-soft:#cfff9a;
+--pnjd-gold:#ffd36e;
+--pnjd-gold-soft:#ffe39a;
+--pnjd-purple:#b88cff;
+--pnjd-purple-soft:#d7b4ff;
+--pnjd-heart:#ff8de1;
+--pnjd-blue:#2f6bff;
+--pnjd-blue-soft:#8ec5ff;
+
+--pnjd-glow-blue:44,196,255;
+--pnjd-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--pnjd-border-cyan:rgba(140,236,255,.22);
+--pnjd-border-cyan-soft:rgba(25,217,255,.18);
+--pnjd-border-pink:rgba(255,79,124,.40);
+--pnjd-border-soft:rgba(255,255,255,.03);
+--pnjd-border-dark:rgba(5,10,25,.80);
+
+--pnjd-dot:rgba(140,236,255,.65);
+--pnjd-card-soft:rgba(255,255,255,.025);
+--pnjd-soft-bg:rgba(255,255,255,.04);
+
+--pnjd-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 34%),
+  linear-gradient(180deg,var(--pnjd-panel) 0%,var(--pnjd-panel-2) 42%,var(--pnjd-panel-3) 100%);
+
+--pnjd-head-bg:
+  linear-gradient(90deg,rgba(15,2,18,.94),rgba(7,16,39,.74)),
+  var(--pnjd-head-img) center/cover;
+
+--pnjd-card-bg:
+  radial-gradient(circle at top left,rgba(var(--card-rgb),.18),transparent 36%),
+  linear-gradient(90deg,rgba(var(--card-rgb),.09),var(--pnjd-card-soft));
 }
 
 /* =========================================================
@@ -1154,4 +1261,109 @@
 --pnjang-avatar-bg:
   radial-gradient(circle at 50% 18%,rgba(var(--pnj-rgb),.20),rgba(var(--pnj-rgb),.08) 42%,rgba(247,251,255,.92) 100%);
 
+/* ---------- PNJ DÉMONS / PNJDEM ---------- */
+
+--pnjdem-bg:#dce8ff;
+--pnjdem-panel:#f6fbff;
+--pnjdem-panel-2:#e7efff;
+--pnjdem-panel-3:#d8e6f5;
+
+--pnjdem-white:#07101f;
+--pnjdem-text:#1b314b;
+
+--pnjdem-cyan:#007fa3;
+--pnjdem-cyan-soft:#006f91;
+--pnjdem-pink:#c92662;
+--pnjdem-pink-soft:#d93d78;
+--pnjdem-red:#b8143e;
+
+--pnjdem-lime:#477a00;
+--pnjdem-lime-soft:#5c8f00;
+--pnjdem-gold:#9b6c00;
+--pnjdem-gold-soft:#8a6200;
+
+--pnjdem-purple:#6841a8;
+--pnjdem-purple-soft:#8a25bf;
+--pnjdem-blue:#244fc4;
+--pnjdem-blue-soft:#235fc8;
+--pnjdem-heart:#c92692;
+
+--pnjdem-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--pnjdem-border-cyan:rgba(0,127,163,.22);
+--pnjdem-border-cyan-soft:rgba(0,127,163,.18);
+--pnjdem-border-pink:rgba(184,20,62,.35);
+--pnjdem-border-soft:rgba(7,16,31,.10);
+--pnjdem-border-dark:rgba(28,48,80,.16);
+
+--pnjdem-dot:rgba(0,127,163,.30);
+--pnjdem-soft-bg:rgba(7,16,31,.04);
+--pnjdem-card-soft:rgba(7,16,31,.035);
+
+--pnjdem-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 34%),
+  linear-gradient(180deg,var(--pnjdem-panel) 0%,var(--pnjdem-panel-2) 42%,var(--pnjdem-panel-3) 100%);
+
+--pnjdem-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--pnjdem-head-img) center/cover;
+
+--pnjdem-card-bg:
+  linear-gradient(180deg,rgba(255,255,255,.92),rgba(232,242,253,.82));
+
+--pnjdem-avatar-bg:
+  radial-gradient(circle at 50% 18%,rgba(var(--pnj-rgb),.20),rgba(var(--pnj-rgb),.08) 42%,rgba(247,251,255,.92) 100%);
+/* ---------- PNJ DATING / PNJD ---------- */
+
+--pnjd-bg:#dce8ff;
+--pnjd-panel:#f6fbff;
+--pnjd-panel-2:#e7efff;
+--pnjd-panel-3:#d8e6f5;
+--pnjd-panel-soft:rgba(255,255,255,.88);
+
+--pnjd-black:#edf5ff;
+--pnjd-white:#07101f;
+--pnjd-text:#1b314b;
+--pnjd-muted:#526b86;
+
+--pnjd-cyan:#007fa3;
+--pnjd-cyan-soft:#006f91;
+--pnjd-pink:#c92662;
+--pnjd-pink-soft:#d93d78;
+--pnjd-red:#b8143e;
+--pnjd-red-soft:#c92662;
+--pnjd-lime:#477a00;
+--pnjd-lime-soft:#5c8f00;
+--pnjd-gold:#9b6c00;
+--pnjd-gold-soft:#8a6200;
+--pnjd-purple:#6841a8;
+--pnjd-purple-soft:#8a25bf;
+--pnjd-heart:#c92692;
+--pnjd-blue:#244fc4;
+--pnjd-blue-soft:#235fc8;
+
+--pnjd-glow-blue:0,127,163;
+--pnjd-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--pnjd-border-cyan:rgba(0,127,163,.22);
+--pnjd-border-cyan-soft:rgba(0,127,163,.18);
+--pnjd-border-pink:rgba(201,38,98,.28);
+--pnjd-border-soft:rgba(7,16,31,.10);
+--pnjd-border-dark:rgba(28,48,80,.16);
+
+--pnjd-dot:rgba(0,127,163,.30);
+--pnjd-card-soft:rgba(7,16,31,.035);
+--pnjd-soft-bg:rgba(7,16,31,.04);
+
+--pnjd-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 34%),
+  linear-gradient(180deg,var(--pnjd-panel) 0%,var(--pnjd-panel-2) 42%,var(--pnjd-panel-3) 100%);
+
+--pnjd-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--pnjd-head-img) center/cover;
+
+--pnjd-card-bg:
+  radial-gradient(circle at top left,rgba(var(--card-rgb),.12),transparent 36%),
+  linear-gradient(90deg,rgba(var(--card-rgb),.07),var(--pnjd-card-soft));
 }

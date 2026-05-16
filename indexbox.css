@@ -534,9 +534,11 @@ a.forumtitle:hover{
   align-self:stretch;
   flex-shrink:0;
   border-radius:14px;
-  background:
-    var(--idx-special-img-overlay),
-    url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6cbac2bf-5b55-4b94-b999-50ff3b1019d7/dj6v48q-0c4bdc62-e341-4635-aef5-a417c371e52e.png/v1/fit/w_828,h_1172/elohim_by_lemegeton_rpg_dj6v48q-414w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyNjQzNzNhYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTU1MyIsInBhdGgiOiIvZi82Y2JhYzJiZi01YjU1LTRiOTQtYjk5OS01MGZmM2IxMDE5ZDcvZGo2djQ4cS0wYzRiZGM2Mi1lMzQxLTQ2MzUtYWVmNS1hNDE3YzM3MWU1MmUucG5nIiwid2lkdGgiOiI8PTEwOTcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.VD-BtWHSt3SHuzgXlOl8uE5zImtaKXP9QrXVe2Rpwqc") center/cover no-repeat;
+  background-color:var(--idx-bg-soft);
+  background-image:var(--idx-special-img-overlay),var(--idx-special-img);
+  background-position:center,center;
+  background-size:auto,cover;
+  background-repeat:no-repeat,no-repeat;
   box-shadow:
     inset 0 0 42px rgba(0,0,0,.50),
     0 0 16px rgba(36,228,255,.12);

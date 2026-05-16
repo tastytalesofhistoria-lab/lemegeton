@@ -648,3 +648,34 @@
     font-size:38px;
   }
 }
+/* =====================
+   FIX FOND FORUMACTIF ACTIVITÉ
+===================== */
+
+.ac-page .activity-feed,
+.ac-page ol.activity-feed,
+.ac-page .activity-feed.ac-feed{
+  background:transparent!important;
+  background-color:transparent!important;
+}
+
+.ac-page .activity-date-group,
+.ac-page .ac-group{
+  background:var(--ac-feed-bg)!important;
+}
+
+.ac-page .activity-feed.ac-feed{
+  padding:0 0 0 42px!important;
+  margin:0!important;
+}
+
+.ac-page .activity-feed.ac-feed::before{
+  background:var(--ac-line-gradient)!important;
+}
+
+.ac-page .activity-feed.ac-feed .feed-item,
+.ac-page .activity-feed.ac-feed .ac-item{
+  background:
+    radial-gradient(circle at top right,var(--ac-shadow-pink),transparent 34%),
+    linear-gradient(135deg,var(--ac-item-bg-1) 0%,var(--ac-item-bg-2) 100%)!important;
+}

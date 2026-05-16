@@ -1099,6 +1099,7 @@ iframe.pa-frame,
 
 /* =========================================================
    RUMEURS / ZONES
+   Edison ready / variables dans color_theme.css
 ========================================================= */
 
 .zone{
@@ -1109,12 +1110,8 @@ iframe.pa-frame,
   overflow:hidden;
   border:1px solid var(--lem-line);
   border-radius:14px;
-  background:
-    radial-gradient(circle at top left,rgba(36,228,255,.08),transparent 38%),
-    rgba(7,11,24,.88);
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.025),
-    0 0 14px rgba(36,228,255,.10);
+  background:var(--qeel-zone-bg);
+  box-shadow:var(--qeel-zone-shadow);
 }
 
 .label{
@@ -1125,7 +1122,7 @@ iframe.pa-frame,
   justify-content:center;
   width:40px;
   padding:10px;
-  background:linear-gradient(180deg,rgba(0,157,255,.88),rgba(10,18,45,.96));
+  background:var(--qeel-zone-label-bg);
   color:var(--lem-cyan-soft);
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:14px;
@@ -1133,6 +1130,10 @@ iframe.pa-frame,
   letter-spacing:2px;
   text-transform:uppercase;
   text-shadow:0 0 10px rgba(36,228,255,.70);
+}
+
+[data-color-scheme="light"] .label{
+  text-shadow:0 0 8px rgba(0,127,163,.20);
 }
 
 .rumeur-box{
@@ -1160,10 +1161,8 @@ iframe.pa-frame,
   display:flex;
   align-items:center;
   justify-content:center;
-  background:
-    radial-gradient(circle at center,rgba(255,47,95,.14),transparent 45%),
-    #070b18;
-  color:#ff2f5f;
+  background:var(--qeel-enfer-bg);
+  color:var(--qeel-enfer-text);
   font-family:"Courier New",monospace;
 }
 
@@ -1179,8 +1178,13 @@ iframe.pa-frame,
   pointer-events:none;
 }
 
-#rumeur-enfer::before{color:#ff2f5f;}
-#rumeur-enfer::after{color:#24e4ff;}
+#rumeur-enfer::before{
+  color:var(--qeel-enfer-glitch-a);
+}
+
+#rumeur-enfer::after{
+  color:var(--qeel-enfer-glitch-b);
+}
 
 #rumeur-enfer.glitch::before{
   opacity:.7;
@@ -1194,11 +1198,11 @@ iframe.pa-frame,
 
 #rumeur-enfer.alastor,
 .alastor-word{
-  color:#caff2e;
+  color:var(--qeel-alastor-rumeur);
   text-shadow:
-    0 0 5px #a7ff3f,
-    0 0 10px #a7ff3f,
-    0 0 20px #00ff66;
+    0 0 5px var(--qeel-alastor-rumeur-2),
+    0 0 10px var(--qeel-alastor-rumeur-2),
+    0 0 20px var(--qeel-alastor-rumeur-3);
 }
 
 .alastor-word{
@@ -1206,28 +1210,28 @@ iframe.pa-frame,
 }
 
 #rumeur-enfer.alastor.glitch::before{
-  color:#00ff66;
+  color:var(--qeel-alastor-rumeur-3);
   opacity:.9;
   transform:translate(2px,-2px);
 }
 
 #rumeur-enfer.alastor.glitch::after{
-  color:#66ffcc;
+  color:var(--qeel-alastor-rumeur-5);
   opacity:.7;
   transform:translate(-2px,2px);
 }
 
 #rumeur-enfer.glitch .alastor-word{
   text-shadow:
-    0 0 5px #00ff66,
-    2px -2px 0 #00ffcc,
-    -2px 2px 0 #66ffcc;
+    0 0 5px var(--qeel-alastor-rumeur-3),
+    2px -2px 0 var(--qeel-alastor-rumeur-4),
+    -2px 2px 0 var(--qeel-alastor-rumeur-5);
 }
 
 #rumeur-terre{
   position:relative;
-  background:#0a122d;
-  color:#d8ecff;
+  background:var(--qeel-terre-bg);
+  color:var(--qeel-terre-text);
   font-family:Arial,sans-serif;
 }
 
@@ -1236,12 +1240,12 @@ iframe.pa-frame,
   position:absolute;
   inset:0;
   background:url("https://www.transparenttextures.com/patterns/noise.png");
-  opacity:.2;
+  opacity:var(--qeel-terre-noise-opacity);
 }
 
 #rumeur-terre .pseudo{
   margin-right:6px;
-  color:#24e4ff;
+  color:var(--qeel-terre-pseudo);
   font-weight:bold;
 }
 
@@ -1251,7 +1255,7 @@ iframe.pa-frame,
 
 .meta{
   margin-left:8px;
-  color:#818db8;
+  color:var(--qeel-terre-meta);
   font-size:12px;
 }
 
@@ -1261,17 +1265,13 @@ iframe.pa-frame,
   box-sizing:border-box;
   padding:10px;
   border:4px solid;
-  border-image:linear-gradient(135deg,#f4efe4,#e4d3b4,#7a6648,#e4d3b4,#f4efe4) 1;
+  border-image:var(--qeel-paradis-border);
   border-radius:12px;
-  background:
-    linear-gradient(135deg,#8cecff,#ff4f86),
-    linear-gradient(90deg,rgba(255,255,255,.20),transparent);
+  background:var(--qeel-paradis-bg);
   background-blend-mode:overlay;
-  color:#7a6648;
+  color:var(--qeel-paradis-text);
   font-weight:bold;
-  box-shadow:
-    0 0 8px rgba(228,211,180,.60),
-    0 0 20px rgba(228,211,180,.30);
+  box-shadow:var(--qeel-paradis-shadow);
 }
 
 /* =========================================================
@@ -1279,95 +1279,219 @@ iframe.pa-frame,
 ========================================================= */
 
 @keyframes lemQeelSweep{
-  0%,45%{transform:translateX(-100%);}
-  65%{transform:translateX(100%);}
-  100%{transform:translateX(100%);}
+  0%,45%{
+    transform:translateX(-100%);
+  }
+
+  65%{
+    transform:translateX(100%);
+  }
+
+  100%{
+    transform:translateX(100%);
+  }
 }
 
 @keyframes flickerText{
-  0%,18%,22%,25%,53%,57%,100%{opacity:1;}
-  20%,24%,55%{opacity:.55;}
+  0%,18%,22%,25%,53%,57%,100%{
+    opacity:1;
+  }
+
+  20%,24%,55%{
+    opacity:.55;
+  }
 }
 
 @keyframes qeelLedSweep{
-  0%,45%{transform:translateX(-120%);}
-  70%,100%{transform:translateX(120%);}
+  0%,45%{
+    transform:translateX(-120%);
+  }
+
+  70%,100%{
+    transform:translateX(120%);
+  }
 }
 
 @keyframes voxBoxGlitch{
-  0%{transform:translate(0);}
-  20%{transform:translate(-3px,1px) skewX(-2deg);}
-  40%{transform:translate(3px,-1px) skewX(2deg);}
-  60%{transform:translate(-2px,2px);}
-  80%{transform:translate(2px,-2px);}
-  100%{transform:translate(0);}
+  0%{
+    transform:translate(0);
+  }
+
+  20%{
+    transform:translate(-3px,1px) skewX(-2deg);
+  }
+
+  40%{
+    transform:translate(3px,-1px) skewX(2deg);
+  }
+
+  60%{
+    transform:translate(-2px,2px);
+  }
+
+  80%{
+    transform:translate(2px,-2px);
+  }
+
+  100%{
+    transform:translate(0);
+  }
 }
 
 @keyframes voxTextGlitch{
   0%{
     transform:translate(0);
-    text-shadow:2px 0 #24e4ff,-2px 0 #ff2f5f,0 0 10px #24e4ff;
+    text-shadow:
+      2px 0 var(--lem-cyan),
+      -2px 0 var(--lem-red),
+      0 0 10px var(--lem-cyan);
   }
+
   35%{
     transform:translate(-4px,1px);
-    text-shadow:5px 0 #24e4ff,-5px 0 #ff2f5f,0 0 14px #24e4ff;
+    text-shadow:
+      5px 0 var(--lem-cyan),
+      -5px 0 var(--lem-red),
+      0 0 14px var(--lem-cyan);
   }
+
   70%{
     transform:translate(4px,-1px);
-    text-shadow:-5px 0 #24e4ff,5px 0 #ff2f5f,0 0 18px #ff2f5f;
+    text-shadow:
+      -5px 0 var(--lem-cyan),
+      5px 0 var(--lem-red),
+      0 0 18px var(--lem-red);
   }
-  100%{transform:translate(0);}
+
+  100%{
+    transform:translate(0);
+  }
 }
 
 @keyframes voxScanA{
-  0%{transform:translateX(-8px);}
-  50%{transform:translateX(8px);}
-  100%{transform:translateX(0);}
+  0%{
+    transform:translateX(-8px);
+  }
+
+  50%{
+    transform:translateX(8px);
+  }
+
+  100%{
+    transform:translateX(0);
+  }
 }
 
 @keyframes voxScanB{
-  0%{transform:translateX(8px);}
-  50%{transform:translateX(-8px);}
-  100%{transform:translateX(0);}
+  0%{
+    transform:translateX(8px);
+  }
+
+  50%{
+    transform:translateX(-8px);
+  }
+
+  100%{
+    transform:translateX(0);
+  }
 }
 
 @keyframes radioNoise{
-  0%{opacity:1;}
-  50%{opacity:.85;}
-  100%{opacity:1;}
+  0%{
+    opacity:1;
+  }
+
+  50%{
+    opacity:.85;
+  }
+
+  100%{
+    opacity:1;
+  }
 }
 
 @keyframes alastorBoxSignal{
-  0%,100%{transform:translate(0,0);filter:brightness(1) contrast(1.05);}
-  8%{transform:translate(-1px,1px);filter:brightness(1.25) contrast(1.25);}
-  10%{transform:translate(2px,-1px);}
-  12%{transform:translate(0,0);}
-  46%{filter:brightness(.85) contrast(1.4) saturate(1.4);}
-  48%{transform:translate(-2px,0);}
-  50%{transform:translate(1px,1px);filter:brightness(1.35) contrast(1.2);}
-  52%{transform:translate(0,0);}
-  76%{filter:brightness(.95) contrast(1.7);}
-  78%{transform:translate(2px,0);}
-  80%{transform:translate(0,0);}
+  0%,100%{
+    transform:translate(0,0);
+    filter:brightness(1) contrast(1.05);
+  }
+
+  8%{
+    transform:translate(-1px,1px);
+    filter:brightness(1.25) contrast(1.25);
+  }
+
+  10%{
+    transform:translate(2px,-1px);
+  }
+
+  12%{
+    transform:translate(0,0);
+  }
+
+  46%{
+    filter:brightness(.85) contrast(1.4) saturate(1.4);
+  }
+
+  48%{
+    transform:translate(-2px,0);
+  }
+
+  50%{
+    transform:translate(1px,1px);
+    filter:brightness(1.35) contrast(1.2);
+  }
+
+  52%{
+    transform:translate(0,0);
+  }
+
+  76%{
+    filter:brightness(.95) contrast(1.7);
+  }
+
+  78%{
+    transform:translate(2px,0);
+  }
+
+  80%{
+    transform:translate(0,0);
+  }
 }
 
 @keyframes alastorScan{
-  0%{transform:translateY(-12px);}
-  100%{transform:translateY(12px);}
+  0%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(12px);
+  }
 }
 
 @keyframes alastorTextTwitch{
-  0%,100%{transform:translate(0,0);}
-  25%{transform:translate(1px,0);}
-  50%{transform:translate(-1px,1px);}
-  75%{transform:translate(0,-1px);}
+  0%,100%{
+    transform:translate(0,0);
+  }
+
+  25%{
+    transform:translate(1px,0);
+  }
+
+  50%{
+    transform:translate(-1px,1px);
+  }
+
+  75%{
+    transform:translate(0,-1px);
+  }
 }
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media (max-width:980px){
+@media(max-width:980px){
   .pa-chrono-layout{
     height:auto;
     min-height:0;
@@ -1463,7 +1587,7 @@ iframe.pa-frame,
   }
 }
 
-@media (max-width:620px){
+@media(max-width:620px){
   .pa-frame-wrap,
   #main-content .pa-frame-wrap,
   #container .pa-frame-wrap,

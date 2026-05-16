@@ -1237,7 +1237,119 @@
 --pl-head-bg:
   linear-gradient(90deg,rgba(15,2,18,.94),rgba(7,16,39,.74)),
   var(--pl-head-img) center/cover;
+/* ---------- DOSSIER PNJ / DOSPNJ ---------- */
 
+--dospnj-bg:#314d77;
+--dospnj-bg-page:
+  radial-gradient(circle at top,rgba(25,217,255,.13),transparent 34%),
+  linear-gradient(180deg,#344c70,#1b2038);
+
+--dospnj-deep:#080d20;
+--dospnj-panel:#10172e;
+--dospnj-panel-2:#17264a;
+--dospnj-card:rgba(12,16,36,.88);
+--dospnj-paper:rgba(236,251,255,.055);
+
+--dospnj-white:#ecfbff;
+--dospnj-text:#c8efff;
+--dospnj-muted:#7ec7e5;
+
+--dospnj-cyan:#19d9ff;
+--dospnj-cyan-2:#8cecff;
+--dospnj-gold:#ffd36e;
+--dospnj-gold-2:#ffe8a6;
+--dospnj-purple:#b88cff;
+--dospnj-purple-2:#d7b4ff;
+--dospnj-pink:#ff4f7c;
+--dospnj-pink-2:#ffb0c3;
+--dospnj-lime:#a7ff3f;
+--dospnj-lime-2:#d7ffad;
+--dospnj-red:#d64066;
+--dospnj-orange:#ff9c3a;
+--dospnj-orange-2:#ffcc8a;
+--dospnj-blue-dark:#162a5c;
+--dospnj-blue-soft:#8fb0ff;
+
+--dospnj-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--dospnj-border-gold:rgba(255,211,110,.24);
+--dospnj-border-gold-strong:rgba(255,211,110,.34);
+--dospnj-border-cyan:rgba(25,217,255,.20);
+--dospnj-border-soft:rgba(255,255,255,.035);
+--dospnj-border-dark:rgba(5,10,25,.85);
+
+--dospnj-dot:rgba(255,232,166,.65);
+--dospnj-grid-line:rgba(25,217,255,.07);
+--dospnj-soft-bg:rgba(255,255,255,.035);
+--dospnj-soft-bg-2:rgba(255,255,255,.025);
+--dospnj-img-bg:#080d20;
+
+--dospnj-shadow:0 28px 80px rgba(0,0,0,.52);
+
+--dospnj-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(255,211,110,.12),transparent 34%),
+  radial-gradient(circle at 15% 75%,rgba(25,217,255,.10),transparent 36%),
+  linear-gradient(180deg,var(--dospnj-panel) 0%,var(--dospnj-panel-2) 46%,var(--dospnj-deep) 100%);
+
+--dospnj-head-bg:
+  linear-gradient(90deg,rgba(3,8,20,.96),rgba(8,18,40,.76),rgba(6,10,26,.96)),
+  var(--dospnj-head-img) center/cover;
+
+/* ---------- MINI EVENT 1 / MEV1 ---------- */
+
+--mev1-bg:#314d77;
+--mev1-bg-page:
+  radial-gradient(circle at top,rgba(25,217,255,.14),transparent 34%),
+  linear-gradient(180deg,#344c70,#1b2038);
+
+--mev1-deep:#080d20;
+--mev1-panel:#10172e;
+--mev1-panel-2:#17264a;
+--mev1-card:rgba(12,16,36,.88);
+
+--mev1-white:#ecfbff;
+--mev1-text:#c8efff;
+--mev1-muted:#7ec7e5;
+
+--mev1-cyan:#19d9ff;
+--mev1-cyan-2:#8cecff;
+--mev1-gold:#ffd36e;
+--mev1-gold-2:#ffe8a6;
+--mev1-purple:#b88cff;
+--mev1-purple-2:#d7b4ff;
+--mev1-pink:#ff4f7c;
+--mev1-pink-2:#ffb0c3;
+--mev1-blue:#2f6bff;
+--mev1-blue-2:#8ec5ff;
+--mev1-grape:#b51f6a;
+--mev1-lime:#a7ff3f;
+--mev1-orange:#ff9b54;
+
+--mev1-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--mev1-border-gold:rgba(255,211,110,.24);
+--mev1-border-gold-strong:rgba(255,211,110,.38);
+--mev1-border-cyan:rgba(25,217,255,.20);
+--mev1-border-soft:rgba(255,255,255,.035);
+--mev1-border-dark:rgba(5,10,25,.85);
+
+--mev1-dot:rgba(255,232,166,.65);
+--mev1-grid-line:rgba(25,217,255,.07);
+--mev1-soft-bg:rgba(255,255,255,.035);
+--mev1-soft-bg-2:rgba(255,255,255,.025);
+--mev1-img-bg:#070a18;
+
+--mev1-shadow:0 28px 80px rgba(0,0,0,.52);
+
+--mev1-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(255,211,110,.13),transparent 34%),
+  radial-gradient(circle at 10% 72%,rgba(25,217,255,.11),transparent 34%),
+  radial-gradient(circle at 92% 90%,rgba(255,79,124,.09),transparent 30%),
+  linear-gradient(180deg,var(--mev1-panel) 0%,var(--mev1-panel-2) 46%,var(--mev1-deep) 100%);
+
+--mev1-hero-bg:
+  linear-gradient(90deg,rgba(3,8,20,.92),rgba(8,18,40,.70),rgba(6,10,26,.94)),
+  var(--mev1-head-img) center/cover;
    
    
 }
@@ -2481,5 +2593,117 @@
 --pl-head-bg:
   linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
   var(--pl-head-img) center/cover;
+/* ---------- DOSSIER PNJ / DOSPNJ ---------- */
 
+--dospnj-bg:#dce8ff;
+--dospnj-bg-page:
+  radial-gradient(circle at top,rgba(0,127,163,.08),transparent 34%),
+  linear-gradient(180deg,#f7fbff,#dce8ff);
+
+--dospnj-deep:#d8e6f5;
+--dospnj-panel:#f6fbff;
+--dospnj-panel-2:#e7efff;
+--dospnj-card:rgba(255,255,255,.88);
+--dospnj-paper:rgba(7,16,31,.045);
+
+--dospnj-white:#07101f;
+--dospnj-text:#1b314b;
+--dospnj-muted:#526b86;
+
+--dospnj-cyan:#007fa3;
+--dospnj-cyan-2:#006f91;
+--dospnj-gold:#9b6c00;
+--dospnj-gold-2:#8a6200;
+--dospnj-purple:#6841a8;
+--dospnj-purple-2:#8a25bf;
+--dospnj-pink:#c92662;
+--dospnj-pink-2:#d93d78;
+--dospnj-lime:#477a00;
+--dospnj-lime-2:#5c8f00;
+--dospnj-red:#b8143e;
+--dospnj-orange:#b65e00;
+--dospnj-orange-2:#9f5200;
+--dospnj-blue-dark:#244fc4;
+--dospnj-blue-soft:#235fc8;
+
+--dospnj-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--dospnj-border-gold:rgba(155,108,0,.24);
+--dospnj-border-gold-strong:rgba(155,108,0,.30);
+--dospnj-border-cyan:rgba(0,127,163,.20);
+--dospnj-border-soft:rgba(7,16,31,.10);
+--dospnj-border-dark:rgba(28,48,80,.16);
+
+--dospnj-dot:rgba(155,108,0,.30);
+--dospnj-grid-line:rgba(0,127,163,.08);
+--dospnj-soft-bg:rgba(7,16,31,.04);
+--dospnj-soft-bg-2:rgba(7,16,31,.035);
+--dospnj-img-bg:#edf5ff;
+
+--dospnj-shadow:0 18px 50px rgba(28,48,80,.16);
+
+--dospnj-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(155,108,0,.08),transparent 34%),
+  radial-gradient(circle at 15% 75%,rgba(0,127,163,.07),transparent 36%),
+  linear-gradient(180deg,var(--dospnj-panel) 0%,var(--dospnj-panel-2) 46%,var(--dospnj-deep) 100%);
+
+--dospnj-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.90),rgba(220,232,255,.72),rgba(247,251,255,.90)),
+  var(--dospnj-head-img) center/cover;
+
+/* ---------- MINI EVENT 1 / MEV1 ---------- */
+
+--mev1-bg:#dce8ff;
+--mev1-bg-page:
+  radial-gradient(circle at top,rgba(0,127,163,.08),transparent 34%),
+  linear-gradient(180deg,#f7fbff,#dce8ff);
+
+--mev1-deep:#d8e6f5;
+--mev1-panel:#f6fbff;
+--mev1-panel-2:#e7efff;
+--mev1-card:rgba(255,255,255,.88);
+
+--mev1-white:#07101f;
+--mev1-text:#1b314b;
+--mev1-muted:#526b86;
+
+--mev1-cyan:#007fa3;
+--mev1-cyan-2:#006f91;
+--mev1-gold:#9b6c00;
+--mev1-gold-2:#8a6200;
+--mev1-purple:#6841a8;
+--mev1-purple-2:#8a25bf;
+--mev1-pink:#c92662;
+--mev1-pink-2:#d93d78;
+--mev1-blue:#244fc4;
+--mev1-blue-2:#235fc8;
+--mev1-grape:#9f1d5f;
+--mev1-lime:#477a00;
+--mev1-orange:#b65e00;
+
+--mev1-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--mev1-border-gold:rgba(155,108,0,.24);
+--mev1-border-gold-strong:rgba(155,108,0,.30);
+--mev1-border-cyan:rgba(0,127,163,.20);
+--mev1-border-soft:rgba(7,16,31,.10);
+--mev1-border-dark:rgba(28,48,80,.16);
+
+--mev1-dot:rgba(155,108,0,.30);
+--mev1-grid-line:rgba(0,127,163,.08);
+--mev1-soft-bg:rgba(7,16,31,.04);
+--mev1-soft-bg-2:rgba(7,16,31,.035);
+--mev1-img-bg:#edf5ff;
+
+--mev1-shadow:0 18px 50px rgba(28,48,80,.16);
+
+--mev1-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(155,108,0,.08),transparent 34%),
+  radial-gradient(circle at 10% 72%,rgba(0,127,163,.07),transparent 34%),
+  radial-gradient(circle at 92% 90%,rgba(201,38,98,.06),transparent 30%),
+  linear-gradient(180deg,var(--mev1-panel) 0%,var(--mev1-panel-2) 46%,var(--mev1-deep) 100%);
+
+--mev1-hero-bg:
+  linear-gradient(90deg,rgba(247,251,255,.90),rgba(220,232,255,.72),rgba(247,251,255,.90)),
+  var(--mev1-head-img) center/cover;
 }

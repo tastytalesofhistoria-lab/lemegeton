@@ -2547,7 +2547,24 @@
 --pm-blockquote-bg:rgba(4,6,20,.38);
 --pm-signature:#b8f4ff;
 --pm-signature-border:rgba(36,228,255,.16);
+/* ---------- PROMESS / LIKES + ACTIONS BAS ---------- */
 
+--pm-like-bg:
+  radial-gradient(circle at 86% 20%,rgba(254,3,124,.14),transparent 34%),
+  linear-gradient(90deg,rgba(10,18,45,.96) 0%,rgba(27,34,78,.98) 42%,rgba(54,42,92,.98) 100%);
+
+--pm-like-border:rgba(36,228,255,.14);
+
+--pm-like-shadow:
+  inset 0 0 0 1px rgba(255,255,255,.045),
+  0 0 14px rgba(255,64,120,.10),
+  0 0 18px rgba(0,234,255,.04);
+
+--pm-like-pattern:
+  linear-gradient(90deg,transparent 0%,rgba(36,228,255,.18) 24%,transparent 25%,transparent 48%,rgba(254,3,124,.18) 50%,transparent 51%,transparent 100%);
+
+--pm-form-bg:rgba(4,6,20,.38);
+--pm-form-border:rgba(36,228,255,.14);
 }
 
 /* =========================================================
@@ -5095,7 +5112,23 @@
 --pm-blockquote-bg:rgba(255,255,255,.70);
 --pm-signature:#526b86;
 --pm-signature-border:rgba(0,127,163,.16);
+/* ---------- PROMESS / LIKES + ACTIONS BAS ---------- */
 
+--pm-like-bg:
+  radial-gradient(circle at 86% 20%,rgba(201,38,98,.08),transparent 34%),
+  linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(231,239,255,.98) 42%,rgba(220,232,255,.98) 100%);
+
+--pm-like-border:rgba(0,127,163,.18);
+
+--pm-like-shadow:
+  inset 0 0 0 1px rgba(7,16,31,.05),
+  0 12px 22px rgba(28,48,80,.08);
+
+--pm-like-pattern:
+  linear-gradient(90deg,transparent 0%,rgba(0,127,163,.14) 24%,transparent 25%,transparent 48%,rgba(201,38,98,.12) 50%,transparent 51%,transparent 100%);
+
+--pm-form-bg:rgba(255,255,255,.70);
+--pm-form-border:rgba(0,127,163,.18);
 
 
 

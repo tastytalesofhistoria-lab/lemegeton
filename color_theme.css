@@ -253,3 +253,352 @@
 --ac-line-gradient:linear-gradient(to bottom,rgba(0,127,163,.65),rgba(201,38,98,.45),rgba(104,65,168,.35));
 --ac-feed-bg:#dce8ff;
 }
+/* =========================================================
+   LEMEGETON — FAQ / OVERLORD / GROUPES
+   Variables Edison clair / sombre
+========================================================= */
+
+/* ===================== MODE SOMBRE ===================== */
+
+:root,
+[data-color-scheme="dark"]{
+
+  /* ---------- FAQ / faq-mgl ---------- */
+
+  --faq-bg:#344c70;
+  --faq-panel:#16132d;
+  --faq-panel-dark:#111026;
+
+  --faq-cyan:#19d9ff;
+  --faq-cyan-soft:#8cecff;
+  --faq-pink:#ff8eaf;
+  --faq-white:#ecfbff;
+  --faq-text:#c8efff;
+  --faq-muted:#7ec7e5;
+
+  --faq-gold:#ffd36e;
+  --faq-green:#57c785;
+  --faq-carmin:#d64066;
+  --faq-blue:#2f6bff;
+  --faq-purple:#b88cff;
+  --faq-lime:#a7ff3f;
+  --faq-grey:#9aa3ad;
+
+  --faq-pnj:#ff4fd8;
+  --faq-pnjdating:#ff2f8e;
+
+  --faq-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+  --faq-shadow-cyan:0 0 12px rgba(25,217,255,.65),0 0 30px rgba(25,217,255,.22);
+  --faq-shadow-pink:0 0 14px rgba(255,142,175,.60),0 0 28px rgba(255,79,124,.18);
+
+  --faq-border-cyan:rgba(140,236,255,.22);
+  --faq-border-cyan-strong:rgba(25,217,255,.32);
+  --faq-border-soft:rgba(255,255,255,.03);
+  --faq-border-dark:rgba(5,10,25,.80);
+
+  --faq-box-bg:
+    radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
+    linear-gradient(180deg,#15122e 0%,var(--faq-panel) 55%,var(--faq-panel-dark) 100%);
+
+  --faq-head-bg:
+    linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+    var(--faq-head-img) center/cover;
+
+  --faq-panel-glass:rgba(22,19,45,.92);
+  --faq-input-bg:rgba(5,8,22,.72);
+  --faq-nav-bg:rgba(255,255,255,.04);
+  --faq-card-soft:rgba(255,255,255,.025);
+  --faq-dot:rgba(140,236,255,.65);
+
+  /* ---------- OVERLORD / ovld ---------- */
+
+  --ovld-bg:#314d77;
+  --ovld-panel:#183861;
+  --ovld-panel-2:#132d53;
+  --ovld-panel-3:#0c1b35;
+  --ovld-panel-soft:rgba(14,29,55,.94);
+
+  --ovld-black:#0d1024;
+  --ovld-white:#ecfbff;
+  --ovld-text:#c8efff;
+  --ovld-muted:#7ec7e5;
+
+  --ovld-red:#d64066;
+  --ovld-red-soft:#ff8eaf;
+  --ovld-red-bright:#ff244e;
+  --ovld-red-deep:#8b001f;
+
+  --ovld-cyan:#19d9ff;
+  --ovld-cyan-soft:#8cecff;
+  --ovld-glow-blue:44,196,255;
+
+  --ovld-blue:#2f6bff;
+  --ovld-blue-soft:#8ec5ff;
+
+  --ovld-gold:#ffd36e;
+  --ovld-lime:#a7ff3f;
+  --ovld-lime-soft:#cfff9a;
+  --ovld-pink:#ff4f7c;
+  --ovld-pink-soft:#ffb0c3;
+
+  --ovld-pride:#ff2a2a;
+  --ovld-pride-rgb:255,42,42;
+  --ovld-wrath:#ff9a1f;
+  --ovld-wrath-rgb:255,154,31;
+  --ovld-gluttony:#e8ff3a;
+  --ovld-gluttony-rgb:232,255,58;
+  --ovld-greed:#31ff63;
+  --ovld-greed-rgb:49,255,99;
+  --ovld-lust:#3f5dff;
+  --ovld-lust-rgb:63,93,255;
+  --ovld-envy:#c43cff;
+  --ovld-envy-rgb:196,60,255;
+  --ovld-sloth:#ff8de1;
+  --ovld-sloth-rgb:255,141,225;
+
+  --ovld-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+  --ovld-box-bg:
+    radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 34%),
+    linear-gradient(180deg,var(--ovld-panel) 0%,var(--ovld-panel-2) 42%,var(--ovld-panel-3) 100%);
+
+  --ovld-head-bg:
+    linear-gradient(90deg,rgba(15,2,12,.94),rgba(35,6,28,.70)),
+    var(--ovld-head-img) center/cover;
+
+  --ovld-border-cyan:rgba(140,236,255,.22);
+  --ovld-border-red:rgba(214,64,102,.45);
+  --ovld-border-soft:rgba(255,255,255,.03);
+  --ovld-border-dark:rgba(5,10,25,.80);
+  --ovld-dot:rgba(140,236,255,.65);
+
+  --ovld-card-soft:rgba(255,255,255,.025);
+  --ovld-soft-white:rgba(255,255,255,.045);
+
+  /* ---------- GROUPES / grpm ---------- */
+
+  --grpm-bg:#344c70;
+  --grpm-panel:#16132d;
+  --grpm-panel-dark:#111026;
+
+  --grpm-cyan:#19d9ff;
+  --grpm-cyan-soft:#8cecff;
+  --grpm-pink:#ff8eaf;
+  --grpm-white:#ecfbff;
+  --grpm-text:#c8efff;
+  --grpm-muted:#7ec7e5;
+
+  --grpm-gold:#ffd36e;
+  --grpm-purple:#b88cff;
+  --grpm-green:#57c785;
+  --grpm-carmin:#d64066;
+  --grpm-open:#73ff4d;
+  --grpm-closed:#8b001f;
+
+  --grpm-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+  --grpm-hellborn:#a7ff3f;
+  --grpm-sinner:#ff8eaf;
+  --grpm-overlord:#d64066;
+  --grpm-deadly-sin:#b88cff;
+  --grpm-fallen:#9aa3ad;
+  --grpm-heavenborn:#d8f7ff;
+  --grpm-winner:#ffd36e;
+  --grpm-vertue:#8cecff;
+  --grpm-seraphin:#c77dff;
+  --grpm-lamb:#ffc982;
+  --grpm-humain-innocent:#1f5b43;
+  --grpm-humain-initie:#1f9c8a;
+  --grpm-creature:#ff4fd8;
+  --grpm-fausse-divinite:#ff7f6e;
+
+  --grpm-box-bg:
+    radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
+    linear-gradient(180deg,#15122e 0%,var(--grpm-panel) 55%,var(--grpm-panel-dark) 100%);
+
+  --grpm-head-bg:
+    linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+    var(--grpm-head-img) center/cover;
+
+  --grpm-zone-bg:rgba(22,19,45,.92);
+  --grpm-border-cyan:rgba(140,236,255,.22);
+  --grpm-border-cyan-soft:rgba(140,236,255,.20);
+  --grpm-border-soft:rgba(255,255,255,.03);
+  --grpm-border-dark:rgba(5,10,25,.80);
+  --grpm-dot:rgba(140,236,255,.65);
+  --grpm-card-soft:rgba(255,255,255,.025);
+  --grpm-tag-bg:rgba(255,255,255,.055);
+}
+
+/* ===================== MODE CLAIR ===================== */
+
+[data-color-scheme="light"]{
+
+  /* ---------- FAQ / faq-mgl ---------- */
+
+  --faq-bg:#dce8ff;
+  --faq-panel:#f6fbff;
+  --faq-panel-dark:#d8e6f5;
+
+  --faq-cyan:#007fa3;
+  --faq-cyan-soft:#006f91;
+  --faq-pink:#c92662;
+  --faq-white:#07101f;
+  --faq-text:#1b314b;
+  --faq-muted:#526b86;
+
+  --faq-gold:#9b6c00;
+  --faq-green:#237a4c;
+  --faq-carmin:#b8143e;
+  --faq-blue:#244fc4;
+  --faq-purple:#6841a8;
+  --faq-lime:#477a00;
+  --faq-grey:#66717f;
+
+  --faq-pnj:#b9239f;
+  --faq-pnjdating:#c51c67;
+
+  --faq-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+  --faq-shadow-cyan:0 0 12px rgba(0,127,163,.26),0 0 28px rgba(0,127,163,.12);
+  --faq-shadow-pink:0 0 14px rgba(201,38,98,.22),0 0 28px rgba(201,38,98,.12);
+
+  --faq-border-cyan:rgba(0,127,163,.22);
+  --faq-border-cyan-strong:rgba(0,127,163,.34);
+  --faq-border-soft:rgba(7,16,31,.10);
+  --faq-border-dark:rgba(28,48,80,.16);
+
+  --faq-box-bg:
+    radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 36%),
+    linear-gradient(180deg,#f7fbff 0%,var(--faq-panel) 55%,var(--faq-panel-dark) 100%);
+
+  --faq-head-bg:
+    linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+    var(--faq-head-img) center/cover;
+
+  --faq-panel-glass:rgba(255,255,255,.82);
+  --faq-input-bg:rgba(255,255,255,.82);
+  --faq-nav-bg:rgba(7,16,31,.04);
+  --faq-card-soft:rgba(7,16,31,.035);
+  --faq-dot:rgba(0,127,163,.30);
+
+  /* ---------- OVERLORD / ovld ---------- */
+
+  --ovld-bg:#dce8ff;
+  --ovld-panel:#f6fbff;
+  --ovld-panel-2:#e7efff;
+  --ovld-panel-3:#d8e6f5;
+  --ovld-panel-soft:rgba(255,255,255,.88);
+
+  --ovld-black:#edf5ff;
+  --ovld-white:#07101f;
+  --ovld-text:#1b314b;
+  --ovld-muted:#526b86;
+
+  --ovld-red:#b8143e;
+  --ovld-red-soft:#c92662;
+  --ovld-red-bright:#d31b46;
+  --ovld-red-deep:#7d0a25;
+
+  --ovld-cyan:#007fa3;
+  --ovld-cyan-soft:#006f91;
+  --ovld-glow-blue:0,127,163;
+
+  --ovld-blue:#244fc4;
+  --ovld-blue-soft:#235fc8;
+
+  --ovld-gold:#9b6c00;
+  --ovld-lime:#477a00;
+  --ovld-lime-soft:#5c8f00;
+  --ovld-pink:#c92662;
+  --ovld-pink-soft:#d93d78;
+
+  --ovld-pride:#c21a1a;
+  --ovld-pride-rgb:194,26,26;
+  --ovld-wrath:#b65e00;
+  --ovld-wrath-rgb:182,94,0;
+  --ovld-gluttony:#7a8b00;
+  --ovld-gluttony-rgb:122,139,0;
+  --ovld-greed:#20883d;
+  --ovld-greed-rgb:32,136,61;
+  --ovld-lust:#244fc4;
+  --ovld-lust-rgb:36,79,196;
+  --ovld-envy:#8a25bf;
+  --ovld-envy-rgb:138,37,191;
+  --ovld-sloth:#c92692;
+  --ovld-sloth-rgb:201,38,146;
+
+  --ovld-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+  --ovld-box-bg:
+    radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 34%),
+    linear-gradient(180deg,var(--ovld-panel) 0%,var(--ovld-panel-2) 42%,var(--ovld-panel-3) 100%);
+
+  --ovld-head-bg:
+    linear-gradient(90deg,rgba(255,255,255,.86),rgba(232,242,253,.70)),
+    var(--ovld-head-img) center/cover;
+
+  --ovld-border-cyan:rgba(0,127,163,.22);
+  --ovld-border-red:rgba(184,20,62,.30);
+  --ovld-border-soft:rgba(7,16,31,.10);
+  --ovld-border-dark:rgba(28,48,80,.14);
+  --ovld-dot:rgba(0,127,163,.30);
+
+  --ovld-card-soft:rgba(7,16,31,.035);
+  --ovld-soft-white:rgba(7,16,31,.045);
+
+  /* ---------- GROUPES / grpm ---------- */
+
+  --grpm-bg:#dce8ff;
+  --grpm-panel:#f6fbff;
+  --grpm-panel-dark:#d8e6f5;
+
+  --grpm-cyan:#007fa3;
+  --grpm-cyan-soft:#006f91;
+  --grpm-pink:#c92662;
+  --grpm-white:#07101f;
+  --grpm-text:#1b314b;
+  --grpm-muted:#526b86;
+
+  --grpm-gold:#9b6c00;
+  --grpm-purple:#6841a8;
+  --grpm-green:#237a4c;
+  --grpm-carmin:#b8143e;
+  --grpm-open:#237a4c;
+  --grpm-closed:#8b001f;
+
+  --grpm-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+  --grpm-hellborn:#477a00;
+  --grpm-sinner:#c92662;
+  --grpm-overlord:#b8143e;
+  --grpm-deadly-sin:#6841a8;
+  --grpm-fallen:#66717f;
+  --grpm-heavenborn:#007fa3;
+  --grpm-winner:#9b6c00;
+  --grpm-vertue:#006f91;
+  --grpm-seraphin:#8a25bf;
+  --grpm-lamb:#b56b00;
+  --grpm-humain-innocent:#1f5b43;
+  --grpm-humain-initie:#1f776c;
+  --grpm-creature:#b9239f;
+  --grpm-fausse-divinite:#c75648;
+
+  --grpm-box-bg:
+    radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 36%),
+    linear-gradient(180deg,#f7fbff 0%,var(--grpm-panel) 55%,var(--grpm-panel-dark) 100%);
+
+  --grpm-head-bg:
+    linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+    var(--grpm-head-img) center/cover;
+
+  --grpm-zone-bg:rgba(255,255,255,.86);
+  --grpm-border-cyan:rgba(0,127,163,.22);
+  --grpm-border-cyan-soft:rgba(0,127,163,.20);
+  --grpm-border-soft:rgba(7,16,31,.10);
+  --grpm-border-dark:rgba(28,48,80,.14);
+  --grpm-dot:rgba(0,127,163,.30);
+  --grpm-card-soft:rgba(7,16,31,.035);
+  --grpm-tag-bg:rgba(7,16,31,.055);
+}

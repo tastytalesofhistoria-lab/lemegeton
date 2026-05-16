@@ -2088,7 +2088,73 @@
 
 --vp-shadow-cyan:0 0 8px rgba(36,228,255,.35);
 --vp-shadow-pink:0 0 8px rgba(255,79,134,.35);
+/* ---------- RÈGLEMENT / RGL MGLA ADMIN ---------- */
 
+--mgla-bg-main:#344c70;
+--mgla-bg-deep:#17142f;
+--mgla-bg-card:#16132d;
+--mgla-bg-card-deep:#111026;
+
+--mgla-cyan:#19d9ff;
+--mgla-cyan-soft:#8cecff;
+--mgla-pink:#ff8eaf;
+--mgla-pink-strong:#ff4f7c;
+--mgla-white:#ecfbff;
+--mgla-text:#c8efff;
+--mgla-muted:#7ec7e5;
+
+--mgla-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--mgla-border-cyan:rgba(140,236,255,.22);
+--mgla-border-cyan-soft:rgba(140,236,255,.20);
+--mgla-border-cyan-strong:rgba(25,217,255,.32);
+--mgla-border-panel:rgba(25,217,255,.22);
+--mgla-border-soft:rgba(255,255,255,.03);
+--mgla-border-soft-2:rgba(255,255,255,.025);
+--mgla-border-dark:rgba(5,10,25,.80);
+
+--mgla-dot:rgba(140,236,255,.65);
+--mgla-scanline:rgba(255,255,255,.035);
+--mgla-soft-bg:rgba(255,255,255,.035);
+
+--mgla-shadow-main:0 28px 80px rgba(0,0,0,.50);
+
+--mgla-shadow-cyan:
+  0 0 12px rgba(25,217,255,.65),
+  0 0 30px rgba(25,217,255,.22);
+
+--mgla-shadow-pink:
+  0 0 14px rgba(255,142,175,.60),
+  0 0 28px rgba(255,79,124,.18);
+
+--mgla-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
+  linear-gradient(180deg,#15122e 0%,var(--mgla-bg-card) 55%,var(--mgla-bg-card-deep) 100%);
+
+--mgla-box-after-bg:
+  linear-gradient(90deg,transparent,rgba(25,217,255,.08),transparent),
+  repeating-linear-gradient(
+    180deg,
+    var(--mgla-scanline) 0,
+    var(--mgla-scanline) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+
+--mgla-hero-bg:
+  linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+  var(--mgla-head-img) center/cover;
+
+--mgla-panel-bg:rgba(22,19,45,.92);
+
+--mgla-panel-title-bg:
+  linear-gradient(90deg,rgba(14,99,185,.82),rgba(14,99,185,.22));
+
+--mgla-rule-before-bg:
+  linear-gradient(90deg,rgba(14,99,185,.10),rgba(255,79,124,.06));
+
+--mgla-alert-bg:
+  linear-gradient(90deg,rgba(255,79,124,.12),rgba(25,217,255,.05));
 
 }
 
@@ -4182,7 +4248,73 @@
 
 --vp-shadow-cyan:0 0 8px rgba(0,127,163,.18);
 --vp-shadow-pink:0 0 8px rgba(201,38,98,.18);
+/* ---------- RÈGLEMENT / RGL MGLA ADMIN ---------- */
 
+--mgla-bg-main:#dce8ff;
+--mgla-bg-deep:#ffffff;
+--mgla-bg-card:#f6fbff;
+--mgla-bg-card-deep:#d8e6f5;
+
+--mgla-cyan:#007fa3;
+--mgla-cyan-soft:#006f91;
+--mgla-pink:#c92662;
+--mgla-pink-strong:#d93d78;
+--mgla-white:#07101f;
+--mgla-text:#1b314b;
+--mgla-muted:#526b86;
+
+--mgla-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--mgla-border-cyan:rgba(0,127,163,.22);
+--mgla-border-cyan-soft:rgba(0,127,163,.20);
+--mgla-border-cyan-strong:rgba(0,127,163,.34);
+--mgla-border-panel:rgba(0,127,163,.22);
+--mgla-border-soft:rgba(7,16,31,.10);
+--mgla-border-soft-2:rgba(7,16,31,.08);
+--mgla-border-dark:rgba(28,48,80,.16);
+
+--mgla-dot:rgba(0,127,163,.30);
+--mgla-scanline:rgba(7,16,31,.035);
+--mgla-soft-bg:rgba(7,16,31,.04);
+
+--mgla-shadow-main:0 18px 50px rgba(28,48,80,.16);
+
+--mgla-shadow-cyan:
+  0 0 12px rgba(0,127,163,.26),
+  0 0 28px rgba(0,127,163,.12);
+
+--mgla-shadow-pink:
+  0 0 14px rgba(201,38,98,.22),
+  0 0 28px rgba(201,38,98,.12);
+
+--mgla-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 36%),
+  linear-gradient(180deg,#f7fbff 0%,var(--mgla-bg-card) 55%,var(--mgla-bg-card-deep) 100%);
+
+--mgla-box-after-bg:
+  linear-gradient(90deg,transparent,rgba(0,127,163,.08),transparent),
+  repeating-linear-gradient(
+    180deg,
+    var(--mgla-scanline) 0,
+    var(--mgla-scanline) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+
+--mgla-hero-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--mgla-head-img) center/cover;
+
+--mgla-panel-bg:rgba(255,255,255,.88);
+
+--mgla-panel-title-bg:
+  linear-gradient(90deg,rgba(0,127,163,.14),rgba(0,127,163,.045));
+
+--mgla-rule-before-bg:
+  linear-gradient(90deg,rgba(0,127,163,.08),rgba(201,38,98,.045));
+
+--mgla-alert-bg:
+  linear-gradient(90deg,rgba(201,38,98,.10),rgba(0,127,163,.05));
 
 
 }

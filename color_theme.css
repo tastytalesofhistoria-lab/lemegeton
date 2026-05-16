@@ -1663,7 +1663,46 @@
 
 --qeel-lucifer-bg:linear-gradient(135deg,#332200,#070b18);
 --qeel-lucifer-text:#f4efe4;
+/* ---------- QEEL RUMEURS / ZONES ---------- */
 
+--qeel-zone-bg:
+  radial-gradient(circle at top left,rgba(36,228,255,.08),transparent 38%),
+  rgba(7,11,24,.88);
+
+--qeel-zone-label-bg:
+  linear-gradient(180deg,rgba(0,157,255,.88),rgba(10,18,45,.96));
+
+--qeel-enfer-bg:
+  radial-gradient(circle at center,rgba(255,47,95,.14),transparent 45%),
+  #070b18;
+--qeel-enfer-text:#ff2f5f;
+--qeel-enfer-glitch-a:#ff2f5f;
+--qeel-enfer-glitch-b:#24e4ff;
+
+--qeel-alastor-rumeur:#caff2e;
+--qeel-alastor-rumeur-2:#a7ff3f;
+--qeel-alastor-rumeur-3:#00ff66;
+--qeel-alastor-rumeur-4:#00ffcc;
+--qeel-alastor-rumeur-5:#66ffcc;
+
+--qeel-terre-bg:#0a122d;
+--qeel-terre-text:#d8ecff;
+--qeel-terre-pseudo:#24e4ff;
+--qeel-terre-meta:#818db8;
+--qeel-terre-noise-opacity:.20;
+
+--qeel-paradis-border:linear-gradient(135deg,#f4efe4,#e4d3b4,#7a6648,#e4d3b4,#f4efe4) 1;
+--qeel-paradis-bg:
+  linear-gradient(135deg,#8cecff,#ff4f86),
+  linear-gradient(90deg,rgba(255,255,255,.20),transparent);
+--qeel-paradis-text:#7a6648;
+--qeel-paradis-shadow:
+  0 0 8px rgba(228,211,180,.60),
+  0 0 20px rgba(228,211,180,.30);
+
+--qeel-zone-shadow:
+  inset 0 0 0 1px rgba(255,255,255,.025),
+  0 0 14px rgba(36,228,255,.10);
 
 }
 
@@ -3332,5 +3371,44 @@
 
 --qeel-lucifer-bg:linear-gradient(135deg,#fff8e7,#edf5ff);
 --qeel-lucifer-text:#8a6200;
+/* ---------- QEEL RUMEURS / ZONES ---------- */
 
+--qeel-zone-bg:
+  radial-gradient(circle at top left,rgba(0,127,163,.08),transparent 38%),
+  rgba(255,255,255,.88);
+
+--qeel-zone-label-bg:
+  linear-gradient(180deg,rgba(0,127,163,.20),rgba(232,242,253,.96));
+
+--qeel-enfer-bg:
+  radial-gradient(circle at center,rgba(184,20,62,.10),transparent 45%),
+  #fff4f6;
+--qeel-enfer-text:#b8143e;
+--qeel-enfer-glitch-a:#b8143e;
+--qeel-enfer-glitch-b:#007fa3;
+
+--qeel-alastor-rumeur:#477a00;
+--qeel-alastor-rumeur-2:#477a00;
+--qeel-alastor-rumeur-3:#237a4c;
+--qeel-alastor-rumeur-4:#007fa3;
+--qeel-alastor-rumeur-5:#237a4c;
+
+--qeel-terre-bg:#edf5ff;
+--qeel-terre-text:#1b314b;
+--qeel-terre-pseudo:#007fa3;
+--qeel-terre-meta:#526b86;
+--qeel-terre-noise-opacity:.10;
+
+--qeel-paradis-border:linear-gradient(135deg,#ffffff,#dce8ff,#9b6c00,#dce8ff,#ffffff) 1;
+--qeel-paradis-bg:
+  linear-gradient(135deg,#e9fbff,#fff0fa),
+  linear-gradient(90deg,rgba(255,255,255,.36),transparent);
+--qeel-paradis-text:#8a6200;
+--qeel-paradis-shadow:
+  0 0 8px rgba(155,108,0,.16),
+  0 0 20px rgba(0,127,163,.08);
+
+--qeel-zone-shadow:
+  inset 0 0 0 1px rgba(7,16,31,.06),
+  0 0 14px rgba(0,127,163,.08);
 }

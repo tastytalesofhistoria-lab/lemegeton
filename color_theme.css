@@ -812,7 +812,82 @@
 
 --intrm-omen-bg:
   radial-gradient(circle at 50% 50%,rgba(214,64,102,.28),transparent 55%),
-  linear-gradient(90deg,rgba(214,64,102,.24),rgba(8,8,22,.92),rgba(214,64,102,.24));}
+  linear-gradient(90deg,rgba(214,64,102,.24),rgba(8,8,22,.92),rgba(214,64,102,.24));
+/* ---------- INTRIGUE CARTES / INTRM SUITE ---------- */
+
+--intrm-card-bg-colored:
+  radial-gradient(circle at 0% 0%,rgba(var(--intrm-card-rgb),.10),transparent 38%),
+  var(--intrm-card-bg);
+
+--intrm-warning-card-bg:
+  linear-gradient(90deg,rgba(var(--intrm-card-rgb),.15),rgba(255,255,255,.035));
+
+--intrm-question-bg:
+  radial-gradient(circle at 50% 0%,rgba(41,216,255,.16),transparent 42%),
+  linear-gradient(90deg,rgba(41,216,255,.16),rgba(184,140,255,.10),rgba(214,64,102,.10));
+
+--intrm-tag-bg:rgba(255,255,255,.045);
+--intrm-tag-shadow:rgba(255,255,255,.025);
+
+/* ---------- CONTEXTE / CTXM ---------- */
+
+--ctxm-bg:#344c70;
+--ctxm-panel:#16132d;
+--ctxm-panel-dark:#111026;
+
+--ctxm-white:#ecfbff;
+--ctxm-text:#c8efff;
+--ctxm-muted:#7ec7e5;
+--ctxm-ink:#0d1022;
+
+--ctxm-creation:#29d8ff;
+--ctxm-creation-soft:#9ceeff;
+--ctxm-vie:#ffd36e;
+--ctxm-vie-soft:#ffe8a8;
+--ctxm-erreur:#b88cff;
+--ctxm-erreur-soft:#dcc6ff;
+--ctxm-eden:#ff8eaf;
+--ctxm-eden-soft:#ffc2d3;
+--ctxm-serpent:#62d6b3;
+--ctxm-serpent-soft:#b9f3e2;
+--ctxm-punition:#d64066;
+--ctxm-punition-soft:#ff9ab4;
+--ctxm-royaumes:#ffae57;
+--ctxm-royaumes-soft:#ffd19d;
+--ctxm-aujourdhui:#9ea8ff;
+--ctxm-aujourdhui-soft:#d2d7ff;
+
+--ctxm-cyan:var(--ctxm-creation);
+--ctxm-cyan-soft:var(--ctxm-creation-soft);
+--ctxm-pink:var(--ctxm-eden);
+--ctxm-gold:var(--ctxm-vie);
+--ctxm-purple:var(--ctxm-erreur);
+--ctxm-green:var(--ctxm-serpent);
+--ctxm-red:var(--ctxm-punition);
+
+--ctxm-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--ctxm-shadow-cyan:0 0 12px rgba(41,216,255,.52),0 0 30px rgba(41,216,255,.18);
+--ctxm-shadow-pink:0 0 14px rgba(255,142,175,.45),0 0 28px rgba(255,79,124,.14);
+
+--ctxm-border-cyan:rgba(156,238,255,.22);
+--ctxm-border-cyan-strong:rgba(41,216,255,.32);
+--ctxm-border-soft:rgba(255,255,255,.03);
+--ctxm-border-dark:rgba(5,10,25,.80);
+
+--ctxm-dot:rgba(156,238,255,.65);
+--ctxm-soft-bg:rgba(255,255,255,.04);
+--ctxm-soft-bg-2:rgba(255,255,255,.035);
+--ctxm-card-bg:rgba(22,19,45,.92);
+
+--ctxm-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(41,216,255,.14),transparent 36%),
+  linear-gradient(180deg,#15122e 0%,var(--ctxm-panel) 55%,var(--ctxm-panel-dark) 100%);
+
+--ctxm-head-bg:
+  linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+  var(--ctxm-head-img) center/cover;
+}
 
 /* =========================================================
 =========================================================
@@ -1628,5 +1703,78 @@
 --intrm-omen-bg:
   radial-gradient(circle at 50% 50%,rgba(184,20,62,.12),transparent 55%),
   linear-gradient(90deg,rgba(184,20,62,.12),rgba(247,251,255,.92),rgba(184,20,62,.12));
+/* ---------- INTRIGUE CARTES / INTRM SUITE ---------- */
 
+--intrm-card-bg-colored:
+  radial-gradient(circle at 0% 0%,rgba(var(--intrm-card-rgb),.08),transparent 38%),
+  var(--intrm-card-bg);
+
+--intrm-warning-card-bg:
+  linear-gradient(90deg,rgba(var(--intrm-card-rgb),.10),rgba(7,16,31,.035));
+
+--intrm-question-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.10),transparent 42%),
+  linear-gradient(90deg,rgba(0,127,163,.10),rgba(104,65,168,.07),rgba(184,20,62,.07));
+
+--intrm-tag-bg:rgba(7,16,31,.045);
+--intrm-tag-shadow:rgba(7,16,31,.025);
+
+/* ---------- CONTEXTE / CTXM ---------- */
+
+--ctxm-bg:#dce8ff;
+--ctxm-panel:#f6fbff;
+--ctxm-panel-dark:#d8e6f5;
+
+--ctxm-white:#07101f;
+--ctxm-text:#1b314b;
+--ctxm-muted:#526b86;
+--ctxm-ink:#edf5ff;
+
+--ctxm-creation:#007fa3;
+--ctxm-creation-soft:#006f91;
+--ctxm-vie:#9b6c00;
+--ctxm-vie-soft:#8a6200;
+--ctxm-erreur:#6841a8;
+--ctxm-erreur-soft:#8a25bf;
+--ctxm-eden:#c92662;
+--ctxm-eden-soft:#d93d78;
+--ctxm-serpent:#237a4c;
+--ctxm-serpent-soft:#237a4c;
+--ctxm-punition:#b8143e;
+--ctxm-punition-soft:#c92662;
+--ctxm-royaumes:#b65e00;
+--ctxm-royaumes-soft:#9f5200;
+--ctxm-aujourdhui:#244fc4;
+--ctxm-aujourdhui-soft:#235fc8;
+
+--ctxm-cyan:var(--ctxm-creation);
+--ctxm-cyan-soft:var(--ctxm-creation-soft);
+--ctxm-pink:var(--ctxm-eden);
+--ctxm-gold:var(--ctxm-vie);
+--ctxm-purple:var(--ctxm-erreur);
+--ctxm-green:var(--ctxm-serpent);
+--ctxm-red:var(--ctxm-punition);
+
+--ctxm-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--ctxm-shadow-cyan:0 0 12px rgba(0,127,163,.26),0 0 28px rgba(0,127,163,.12);
+--ctxm-shadow-pink:0 0 14px rgba(201,38,98,.22),0 0 28px rgba(201,38,98,.12);
+
+--ctxm-border-cyan:rgba(0,127,163,.22);
+--ctxm-border-cyan-strong:rgba(0,127,163,.34);
+--ctxm-border-soft:rgba(7,16,31,.10);
+--ctxm-border-dark:rgba(28,48,80,.16);
+
+--ctxm-dot:rgba(0,127,163,.30);
+--ctxm-soft-bg:rgba(7,16,31,.04);
+--ctxm-soft-bg-2:rgba(7,16,31,.035);
+--ctxm-card-bg:rgba(255,255,255,.86);
+
+--ctxm-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 36%),
+  linear-gradient(180deg,#f7fbff 0%,var(--ctxm-panel) 55%,var(--ctxm-panel-dark) 100%);
+
+--ctxm-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--ctxm-head-img) center/cover;
 }

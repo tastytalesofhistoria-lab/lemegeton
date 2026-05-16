@@ -1350,7 +1350,107 @@
 --mev1-hero-bg:
   linear-gradient(90deg,rgba(3,8,20,.92),rgba(8,18,40,.70),rgba(6,10,26,.94)),
   var(--mev1-head-img) center/cover;
-   
+   /* ---------- MINI EVENT 2 / MEV2 ---------- */
+
+--mev2-bg:#2e405f;
+--mev2-bg-page:
+  radial-gradient(circle at top,rgba(255,51,51,.18),transparent 34%),
+  linear-gradient(180deg,#344c70,#1b2038);
+
+--mev2-panel:#111326;
+--mev2-panel-2:#1a1024;
+--mev2-panel-3:#260810;
+--mev2-card:rgba(12,16,36,.86);
+
+--mev2-white:#fff3ed;
+--mev2-text:#ffd5c5;
+--mev2-muted:#d79b8b;
+
+--mev2-red:#ff3333;
+--mev2-red-soft:#ff9a8f;
+--mev2-orange:#ff8a2a;
+--mev2-orange-soft:#ffc08a;
+--mev2-gold:#ffd36e;
+--mev2-gold-soft:#ffe39a;
+--mev2-cyan:#19d9ff;
+--mev2-cyan-soft:#8cecff;
+--mev2-pink:#ff4f7c;
+--mev2-pink-soft:#ffb0c3;
+--mev2-lime:#a7ff3f;
+--mev2-purple:#b88cff;
+--mev2-purple-soft:#d7b4ff;
+
+--mev2-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--mev2-border-orange:rgba(255,138,42,.28);
+--mev2-border-orange-soft:rgba(255,138,42,.18);
+--mev2-border-red:rgba(255,51,51,.44);
+--mev2-border-soft:rgba(255,255,255,.035);
+--mev2-border-dark:rgba(5,10,25,.85);
+
+--mev2-dot:rgba(255,154,143,.65);
+--mev2-grid-line:rgba(255,51,51,.09);
+--mev2-soft-bg:rgba(255,255,255,.045);
+--mev2-soft-bg-2:rgba(255,255,255,.035);
+--mev2-soft-bg-3:rgba(255,255,255,.025);
+
+--mev2-shadow:0 28px 80px rgba(0,0,0,.55);
+
+--mev2-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(255,51,51,.20),transparent 34%),
+  radial-gradient(circle at 15% 80%,rgba(255,138,42,.16),transparent 32%),
+  linear-gradient(180deg,var(--mev2-panel) 0%,var(--mev2-panel-2) 48%,var(--mev2-panel-3) 100%);
+
+--mev2-head-bg:
+  linear-gradient(90deg,rgba(14,2,8,.95),rgba(14,8,26,.76)),
+  var(--mev2-head-img) center/cover;
+
+/* ---------- QUÊTES / QST ---------- */
+
+--qst-bg:#314d77;
+--qst-panel:#183861;
+--qst-panel-2:#132d53;
+--qst-panel-3:#0c1b35;
+--qst-soft:rgba(14,29,55,.94);
+
+--qst-white:#ecfbff;
+--qst-text:#c8efff;
+--qst-muted:#7ec7e5;
+
+--qst-cyan:#19d9ff;
+--qst-cyan-soft:#8cecff;
+--qst-pink:#ff4f7c;
+--qst-pink-soft:#ffb0c3;
+--qst-lime:#a7ff3f;
+--qst-lime-soft:#cfff9a;
+--qst-gold:#ffd36e;
+--qst-gold-soft:#ffe39a;
+--qst-purple:#b88cff;
+--qst-purple-soft:#d7b4ff;
+
+--qst-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--qst-border-cyan:rgba(140,236,255,.22);
+--qst-border-cyan-soft:rgba(25,217,255,.18);
+--qst-border-gold:rgba(255,211,110,.42);
+--qst-border-soft:rgba(255,255,255,.03);
+--qst-border-dark:rgba(5,10,25,.80);
+
+--qst-dot:rgba(140,236,255,.65);
+--qst-soft-bg:rgba(255,255,255,.04);
+--qst-soft-bg-2:rgba(255,255,255,.035);
+--qst-soft-bg-3:rgba(255,255,255,.025);
+--qst-img-bg:rgba(9,11,24,.88);
+
+--qst-shadow:0 28px 80px rgba(0,0,0,.50);
+
+--qst-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 34%),
+  linear-gradient(180deg,var(--qst-panel) 0%,var(--qst-panel-2) 42%,var(--qst-panel-3) 100%);
+
+--qst-head-bg:
+  linear-gradient(90deg,rgba(15,2,18,.94),rgba(7,16,39,.74)),
+  var(--qst-head-img) center/cover;
    
 }
 
@@ -2706,4 +2806,106 @@
 --mev1-hero-bg:
   linear-gradient(90deg,rgba(247,251,255,.90),rgba(220,232,255,.72),rgba(247,251,255,.90)),
   var(--mev1-head-img) center/cover;
+/* ---------- MINI EVENT 2 / MEV2 ---------- */
+
+--mev2-bg:#dce8ff;
+--mev2-bg-page:
+  radial-gradient(circle at top,rgba(184,20,62,.08),transparent 34%),
+  linear-gradient(180deg,#f7fbff,#dce8ff);
+
+--mev2-panel:#f6fbff;
+--mev2-panel-2:#e7efff;
+--mev2-panel-3:#d8e6f5;
+--mev2-card:rgba(255,255,255,.88);
+
+--mev2-white:#07101f;
+--mev2-text:#1b314b;
+--mev2-muted:#526b86;
+
+--mev2-red:#b8143e;
+--mev2-red-soft:#c92662;
+--mev2-orange:#b65e00;
+--mev2-orange-soft:#9f5200;
+--mev2-gold:#9b6c00;
+--mev2-gold-soft:#8a6200;
+--mev2-cyan:#007fa3;
+--mev2-cyan-soft:#006f91;
+--mev2-pink:#c92662;
+--mev2-pink-soft:#d93d78;
+--mev2-lime:#477a00;
+--mev2-purple:#6841a8;
+--mev2-purple-soft:#8a25bf;
+
+--mev2-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--mev2-border-orange:rgba(182,94,0,.24);
+--mev2-border-orange-soft:rgba(182,94,0,.18);
+--mev2-border-red:rgba(184,20,62,.30);
+--mev2-border-soft:rgba(7,16,31,.10);
+--mev2-border-dark:rgba(28,48,80,.16);
+
+--mev2-dot:rgba(184,20,62,.28);
+--mev2-grid-line:rgba(184,20,62,.08);
+--mev2-soft-bg:rgba(7,16,31,.045);
+--mev2-soft-bg-2:rgba(7,16,31,.035);
+--mev2-soft-bg-3:rgba(7,16,31,.025);
+
+--mev2-shadow:0 18px 50px rgba(28,48,80,.16);
+
+--mev2-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(184,20,62,.10),transparent 34%),
+  radial-gradient(circle at 15% 80%,rgba(182,94,0,.09),transparent 32%),
+  linear-gradient(180deg,var(--mev2-panel) 0%,var(--mev2-panel-2) 48%,var(--mev2-panel-3) 100%);
+
+--mev2-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.90),rgba(220,232,255,.72)),
+  var(--mev2-head-img) center/cover;
+
+/* ---------- QUÊTES / QST ---------- */
+
+--qst-bg:#dce8ff;
+--qst-panel:#f6fbff;
+--qst-panel-2:#e7efff;
+--qst-panel-3:#d8e6f5;
+--qst-soft:rgba(255,255,255,.88);
+
+--qst-white:#07101f;
+--qst-text:#1b314b;
+--qst-muted:#526b86;
+
+--qst-cyan:#007fa3;
+--qst-cyan-soft:#006f91;
+--qst-pink:#c92662;
+--qst-pink-soft:#d93d78;
+--qst-lime:#477a00;
+--qst-lime-soft:#5c8f00;
+--qst-gold:#9b6c00;
+--qst-gold-soft:#8a6200;
+--qst-purple:#6841a8;
+--qst-purple-soft:#8a25bf;
+
+--qst-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--qst-border-cyan:rgba(0,127,163,.22);
+--qst-border-cyan-soft:rgba(0,127,163,.18);
+--qst-border-gold:rgba(155,108,0,.32);
+--qst-border-soft:rgba(7,16,31,.10);
+--qst-border-dark:rgba(28,48,80,.16);
+
+--qst-dot:rgba(0,127,163,.30);
+--qst-soft-bg:rgba(7,16,31,.04);
+--qst-soft-bg-2:rgba(7,16,31,.035);
+--qst-soft-bg-3:rgba(7,16,31,.025);
+--qst-img-bg:rgba(247,251,255,.92);
+
+--qst-shadow:0 18px 50px rgba(28,48,80,.16);
+
+--qst-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 34%),
+  linear-gradient(180deg,var(--qst-panel) 0%,var(--qst-panel-2) 42%,var(--qst-panel-3) 100%);
+
+--qst-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--qst-head-img) center/cover;
+
 }

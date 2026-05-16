@@ -5,6 +5,7 @@
    FAQ — LEMEGETON
    Optimisé Forumactif ModernBB
    Préfixe unique : faq-mgl
+   Edison ready / variables dans color_theme.css
 ========================================================= */
 
 .faq-mgl,
@@ -13,33 +14,6 @@
 }
 
 .faq-mgl{
-  --faq-bg:#344c70;
-  --faq-panel:#16132d;
-  --faq-panel-dark:#111026;
-
-  --faq-cyan:#19d9ff;
-  --faq-cyan-soft:#8cecff;
-  --faq-pink:#ff8eaf;
-  --faq-white:#ecfbff;
-  --faq-text:#c8efff;
-  --faq-muted:#7ec7e5;
-
-  --faq-gold:#ffd36e;
-  --faq-green:#57c785;
-  --faq-carmin:#d64066;
-  --faq-blue:#2f6bff;
-  --faq-purple:#b88cff;
-  --faq-lime:#a7ff3f;
-  --faq-grey:#9aa3ad;
-
-  --faq-pnj:#ff4fd8;
-  --faq-pnjdating:#ff2f8e;
-
-  --faq-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
-
-  --faq-shadow-cyan:0 0 12px rgba(25,217,255,.65),0 0 30px rgba(25,217,255,.22);
-  --faq-shadow-pink:0 0 14px rgba(255,142,175,.60),0 0 28px rgba(255,79,124,.18);
-
   width:900px;
   max-width:100%;
   margin:30px auto;
@@ -47,7 +21,7 @@
   color:var(--faq-text);
   background:var(--faq-bg);
   font-family:"Rajdhani",Arial,sans-serif;
-  box-shadow:0 28px 80px rgba(0,0,0,.50);
+  box-shadow:0 28px 80px var(--faq-border-dark);
 }
 
 .faq-mgl a{
@@ -65,14 +39,12 @@
   position:relative;
   overflow:hidden;
   padding:20px;
-  border:1px solid rgba(140,236,255,.22);
+  border:1px solid var(--faq-border-cyan);
   border-radius:20px;
-  background:
-    radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
-    linear-gradient(180deg,#15122e 0%,var(--faq-panel) 55%,var(--faq-panel-dark) 100%);
+  background:var(--faq-box-bg);
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.03),
-    0 0 0 1px rgba(5,10,25,.80),
+    inset 0 0 0 1px var(--faq-border-soft),
+    0 0 0 1px var(--faq-border-dark),
     var(--faq-shadow-cyan);
 }
 
@@ -82,7 +54,7 @@
   inset:0;
   pointer-events:none;
   opacity:.20;
-  background-image:radial-gradient(circle,rgba(140,236,255,.65) 1px,transparent 1.4px);
+  background-image:radial-gradient(circle,var(--faq-dot) 1px,transparent 1.4px);
   background-size:18px 18px;
 }
 
@@ -94,12 +66,10 @@
 .faq-head{
   margin:0 0 14px;
   padding:22px 24px;
-  border:1px solid rgba(25,217,255,.32);
+  border:1px solid var(--faq-border-cyan-strong);
   border-radius:16px;
-  background:
-    linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
-    var(--faq-head-img) center/cover;
-  box-shadow:inset 0 0 42px rgba(0,0,0,.65);
+  background:var(--faq-head-bg);
+  box-shadow:inset 0 0 42px var(--faq-border-dark);
 }
 
 .faq-kicker{
@@ -133,10 +103,10 @@
   white-space:nowrap;
   letter-spacing:1px;
   text-shadow:
-    0 0 6px rgba(25,217,255,.95),
-    0 0 18px rgba(25,217,255,.65),
-    0 0 34px rgba(25,217,255,.35),
-    3px 3px 0 rgba(255,79,124,.22);
+    0 0 6px var(--faq-cyan-soft),
+    0 0 18px var(--faq-cyan),
+    0 0 34px var(--faq-cyan),
+    3px 3px 0 var(--faq-pink);
 }
 
 .faq-sub{
@@ -169,11 +139,11 @@
   align-items:center;
   margin:14px 0;
   padding:12px;
-  border:1px solid rgba(140,236,255,.22);
+  border:1px solid var(--faq-border-cyan);
   border-left:3px solid var(--faq-cyan);
   border-radius:14px;
   background:linear-gradient(90deg,rgba(25,217,255,.12),rgba(255,79,124,.05));
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 0 18px rgba(25,217,255,.10);
+  box-shadow:inset 0 0 0 1px var(--faq-card-soft),0 0 18px var(--faq-border-cyan);
 }
 
 .faq-search:before{
@@ -195,24 +165,24 @@
   width:100%;
   min-height:42px;
   padding:10px 14px 10px 42px;
-  border:1px solid rgba(25,217,255,.28);
+  border:1px solid var(--faq-border-cyan-strong);
   border-radius:999px;
   outline:none;
-  background:rgba(5,8,22,.72);
+  background:var(--faq-input-bg);
   color:var(--faq-white);
   font:800 14px/1.2 "Rajdhani",Arial,sans-serif;
   letter-spacing:.5px;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 0 12px rgba(25,217,255,.08);
+  box-shadow:inset 0 0 0 1px var(--faq-card-soft),0 0 12px var(--faq-border-cyan);
 }
 
 .faq-search-input::placeholder{
-  color:rgba(200,239,255,.62);
+  color:var(--faq-muted);
   text-transform:uppercase;
 }
 
 .faq-search-input:focus{
-  border-color:rgba(255,142,175,.55);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 0 14px rgba(255,142,175,.20),0 0 24px rgba(25,217,255,.10);
+  border-color:var(--faq-pink);
+  box-shadow:inset 0 0 0 1px var(--faq-card-soft),0 0 14px var(--faq-pink),0 0 24px var(--faq-cyan);
 }
 
 .faq-search-count{
@@ -221,7 +191,7 @@
   justify-content:center;
   min-height:34px;
   padding:7px 11px;
-  border:1px solid rgba(255,142,175,.25);
+  border:1px solid var(--faq-pink);
   border-radius:999px;
   background:rgba(255,142,175,.10);
   color:var(--faq-pink);
@@ -276,15 +246,15 @@
   justify-content:center;
   min-height:32px;
   padding:7px 12px;
-  border:1px solid rgba(255,255,255,.08);
+  border:1px solid var(--faq-border-soft);
   border-left:3px solid var(--nav,var(--faq-cyan));
   border-radius:999px;
-  background:rgba(255,255,255,.04);
+  background:var(--faq-nav-bg);
   color:var(--faq-white)!important;
   font:900 12px/1 "Rajdhani",Arial,sans-serif;
   text-transform:uppercase;
   letter-spacing:.5px;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+  box-shadow:inset 0 0 0 1px var(--faq-card-soft);
 }
 
 .faq-nav a:before{
@@ -297,7 +267,7 @@
 .faq-nav a:hover{
   color:var(--nav,var(--faq-cyan))!important;
   transform:translateY(-1px);
-  box-shadow:0 0 12px rgba(25,217,255,.22);
+  box-shadow:0 0 12px var(--faq-border-cyan);
 }
 
 .faq-nav a:nth-child(1){--nav:var(--faq-blue);}
@@ -316,7 +286,7 @@
   overflow:hidden;
   border:1px solid rgba(var(--sect-rgb),.22);
   border-radius:16px;
-  background:rgba(22,19,45,.92);
+  background:var(--faq-panel-glass);
 }
 
 #faq-creation{--sect:var(--faq-blue);--sect-rgb:47,107,255;}
@@ -358,8 +328,8 @@
   border:1px solid rgba(var(--item-rgb),.18);
   border-left:3px solid var(--item);
   border-radius:13px;
-  background:linear-gradient(90deg,rgba(var(--item-rgb),.13) 0%,rgba(var(--item-rgb),.05) 32%,rgba(255,255,255,.025) 100%);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.02),0 10px 22px rgba(0,0,0,.15);
+  background:linear-gradient(90deg,rgba(var(--item-rgb),.13) 0%,rgba(var(--item-rgb),.05) 32%,var(--faq-card-soft) 100%);
+  box-shadow:inset 0 0 0 1px var(--faq-card-soft),0 10px 22px var(--faq-border-dark);
 }
 
 .faq-item:before{
@@ -437,9 +407,9 @@
 .faq-item.faq-tous{
   --item:var(--faq-blue);
   --item-rgb:47,107,255;
-  background:linear-gradient(90deg,rgba(47,107,255,.16) 0%,rgba(47,107,255,.07) 46%,rgba(255,255,255,.025) 100%);
+  background:linear-gradient(90deg,rgba(47,107,255,.16) 0%,rgba(47,107,255,.07) 46%,var(--faq-card-soft) 100%);
   border-left-color:var(--faq-blue);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.02),0 10px 22px rgba(0,0,0,.15),0 0 14px rgba(47,107,255,.10);
+  box-shadow:inset 0 0 0 1px var(--faq-card-soft),0 10px 22px var(--faq-border-dark),0 0 14px rgba(47,107,255,.10);
 }
 
 .faq-item.faq-ange{--item:var(--faq-gold);--item-rgb:255,211,110;}
@@ -451,7 +421,7 @@
   --item-rgb:255,211,110;
   background:linear-gradient(90deg,rgba(255,211,110,.18) 0%,rgba(255,211,110,.12) 48%,rgba(214,64,102,.15) 100%);
   border-left-color:transparent;
-  box-shadow:inset 3px 0 0 var(--faq-gold),inset 6px 0 0 var(--faq-carmin),inset 0 0 0 1px rgba(255,255,255,.02),0 10px 22px rgba(0,0,0,.15);
+  box-shadow:inset 3px 0 0 var(--faq-gold),inset 6px 0 0 var(--faq-carmin),inset 0 0 0 1px var(--faq-card-soft),0 10px 22px var(--faq-border-dark);
 }
 
 .faq-item.faq-ange.faq-humain:not(.faq-tous){
@@ -459,7 +429,7 @@
   --item-rgb:255,211,110;
   background:linear-gradient(90deg,rgba(255,211,110,.18) 0%,rgba(255,211,110,.12) 48%,rgba(87,199,133,.15) 100%);
   border-left-color:transparent;
-  box-shadow:inset 3px 0 0 var(--faq-gold),inset 6px 0 0 var(--faq-green),inset 0 0 0 1px rgba(255,255,255,.02),0 10px 22px rgba(0,0,0,.15);
+  box-shadow:inset 3px 0 0 var(--faq-gold),inset 6px 0 0 var(--faq-green),inset 0 0 0 1px var(--faq-card-soft),0 10px 22px var(--faq-border-dark);
 }
 
 .faq-item.faq-demon.faq-humain:not(.faq-tous){
@@ -467,48 +437,48 @@
   --item-rgb:87,199,133;
   background:linear-gradient(90deg,rgba(87,199,133,.16) 0%,rgba(87,199,133,.11) 48%,rgba(214,64,102,.15) 100%);
   border-left-color:transparent;
-  box-shadow:inset 3px 0 0 var(--faq-green),inset 6px 0 0 var(--faq-carmin),inset 0 0 0 1px rgba(255,255,255,.02),0 10px 22px rgba(0,0,0,.15);
+  box-shadow:inset 3px 0 0 var(--faq-green),inset 6px 0 0 var(--faq-carmin),inset 0 0 0 1px var(--faq-card-soft),0 10px 22px var(--faq-border-dark);
 }
 
 #faq-predefinis .faq-item.faq-tous{
   --item:var(--faq-pink);
   --item-rgb:255,142,175;
-  background:linear-gradient(90deg,rgba(255,142,175,.16) 0%,rgba(255,142,175,.07) 46%,rgba(255,255,255,.025) 100%);
+  background:linear-gradient(90deg,rgba(255,142,175,.16) 0%,rgba(255,142,175,.07) 46%,var(--faq-card-soft) 100%);
   border-left-color:var(--faq-pink);
 }
 
 #faq-groupes .faq-item.faq-tous{
   --item:var(--faq-cyan);
   --item-rgb:25,217,255;
-  background:linear-gradient(90deg,rgba(25,217,255,.16) 0%,rgba(25,217,255,.07) 46%,rgba(255,255,255,.025) 100%);
+  background:linear-gradient(90deg,rgba(25,217,255,.16) 0%,rgba(25,217,255,.07) 46%,var(--faq-card-soft) 100%);
   border-left-color:var(--faq-cyan);
 }
 
 #faq-pnjs .faq-item.faq-tous{
   --item:var(--faq-pnj);
   --item-rgb:255,79,216;
-  background:linear-gradient(90deg,rgba(255,79,216,.16) 0%,rgba(255,79,216,.07) 46%,rgba(255,255,255,.025) 100%);
+  background:linear-gradient(90deg,rgba(255,79,216,.16) 0%,rgba(255,79,216,.07) 46%,var(--faq-card-soft) 100%);
   border-left-color:var(--faq-pnj);
 }
 
 #faq-pnjdating .faq-item{
   --item:var(--faq-pnjdating);
   --item-rgb:255,47,142;
-  background:linear-gradient(90deg,rgba(255,47,142,.20) 0%,rgba(255,47,142,.09) 46%,rgba(255,255,255,.025) 100%);
+  background:linear-gradient(90deg,rgba(255,47,142,.20) 0%,rgba(255,47,142,.09) 46%,var(--faq-card-soft) 100%);
   border-left-color:var(--faq-pnjdating);
 }
 
 #faq-rp .faq-item.faq-tous{
   --item:var(--faq-lime);
   --item-rgb:167,255,63;
-  background:linear-gradient(90deg,rgba(167,255,63,.16) 0%,rgba(167,255,63,.07) 46%,rgba(255,255,255,.025) 100%);
+  background:linear-gradient(90deg,rgba(167,255,63,.16) 0%,rgba(167,255,63,.07) 46%,var(--faq-card-soft) 100%);
   border-left-color:var(--faq-lime);
 }
 
 #faq-quetes .faq-item.faq-tous{
   --item:var(--faq-purple);
   --item-rgb:184,140,255;
-  background:linear-gradient(90deg,rgba(184,140,255,.16) 0%,rgba(184,140,255,.07) 46%,rgba(255,255,255,.025) 100%);
+  background:linear-gradient(90deg,rgba(184,140,255,.16) 0%,rgba(184,140,255,.07) 46%,var(--faq-card-soft) 100%);
   border-left-color:var(--faq-purple);
 }
 
@@ -545,7 +515,7 @@
 .faq-item.faq-ange.faq-demon:not(.faq-humain):not(.faq-tous) .faq-q:after{
   content:"ange · démon";
   color:var(--faq-white);
-  border-color:rgba(255,255,255,.18);
+  border-color:var(--faq-border-soft);
   background:linear-gradient(90deg,rgba(255,211,110,.24) 0%,rgba(255,211,110,.18) 48%,rgba(214,64,102,.24) 100%);
   box-shadow:0 0 10px rgba(255,211,110,.16),0 0 18px rgba(214,64,102,.12);
 }
@@ -553,14 +523,14 @@
 .faq-item.faq-ange.faq-humain:not(.faq-demon):not(.faq-tous) .faq-q:after{
   content:"ange · humain";
   color:var(--faq-white);
-  border-color:rgba(255,255,255,.18);
+  border-color:var(--faq-border-soft);
   background:linear-gradient(90deg,rgba(255,211,110,.24) 0%,rgba(255,211,110,.18) 48%,rgba(87,199,133,.24) 100%);
 }
 
 .faq-item.faq-demon.faq-humain:not(.faq-ange):not(.faq-tous) .faq-q:after{
   content:"humain · démon";
   color:var(--faq-white);
-  border-color:rgba(255,255,255,.18);
+  border-color:var(--faq-border-soft);
   background:linear-gradient(90deg,rgba(87,199,133,.24) 0%,rgba(87,199,133,.18) 48%,rgba(214,64,102,.24) 100%);
 }
 
@@ -587,15 +557,43 @@
 }
 
 @media(max-width:760px){
-  .faq-mgl{padding:16px;}
-  .faq-box{padding:14px;}
-  .faq-head{padding:18px;}
-  .faq-title{font-size:42px;white-space:normal;}
-  .faq-sub{margin-top:-4px;font-size:13px;}
-  .faq-search{grid-template-columns:1fr;}
-  .faq-search-count{justify-self:start;}
-  .faq-section-title{font-size:26px;}
-  .faq-q{font-size:20px;}
+  .faq-mgl{
+    padding:16px;
+  }
+
+  .faq-box{
+    padding:14px;
+  }
+
+  .faq-head{
+    padding:18px;
+  }
+
+  .faq-title{
+    font-size:42px;
+    white-space:normal;
+  }
+
+  .faq-sub{
+    margin-top:-4px;
+    font-size:13px;
+  }
+
+  .faq-search{
+    grid-template-columns:1fr;
+  }
+
+  .faq-search-count{
+    justify-self:start;
+  }
+
+  .faq-section-title{
+    font-size:26px;
+  }
+
+  .faq-q{
+    font-size:20px;
+  }
 }
 
 

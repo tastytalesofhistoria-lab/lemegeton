@@ -2652,7 +2652,91 @@
 --notiffi-scroll-track:rgba(255,255,255,.05);
 --notiffi-scroll-thumb:linear-gradient(180deg,#19d9ff,#ff4f7c);
 
+/* ---------- NOTIFFI / CARTES + ACTIONS ---------- */
 
+--notif-card-bg:
+  linear-gradient(135deg,rgba(25,217,255,.08),transparent 45%),
+  rgba(16,25,54,.82);
+
+--notif-card-hover-bg:
+  linear-gradient(135deg,rgba(25,217,255,.16),rgba(255,79,124,.08)),
+  rgba(18,26,56,.95);
+
+--notif-card-unread-bg:
+  linear-gradient(135deg,rgba(255,79,124,.18),rgba(25,217,255,.08)),
+  rgba(23,18,53,.96);
+
+--notif-card-border:rgba(25,217,255,.14);
+--notif-card-hover-border:rgba(25,217,255,.55);
+--notif-card-unread-border:rgba(255,79,124,.55);
+
+--notif-card-shadow:0 8px 20px rgba(0,0,0,.25);
+--notif-card-hover-shadow:
+  0 10px 24px rgba(0,0,0,.35),
+  0 0 18px rgba(25,217,255,.15);
+
+--notif-unread-line:linear-gradient(180deg,#ff4f7c,#19d9ff);
+--notif-unread-line-shadow:0 0 12px rgba(255,79,124,.60);
+
+--notif-avatar-bg:#07101f;
+--notif-avatar-border:rgba(25,217,255,.45);
+--notif-avatar-shadow:
+  0 0 14px rgba(25,217,255,.16),
+  0 0 0 1px rgba(255,255,255,.04) inset;
+
+--notif-icon-bg:#0b0f2a;
+--notif-icon-text:#24e4ff;
+--notif-icon-shadow:0 0 10px rgba(25,217,255,.30);
+
+--notif-icon-unread-bg:#ff2f57;
+--notif-icon-unread-text:#ffffff;
+--notif-icon-unread-border:rgba(255,255,255,.35);
+--notif-icon-unread-shadow:0 0 12px rgba(255,79,124,.55);
+
+--notif-text:#d8ecff;
+--notif-text-strong:#ecfbff;
+--notif-link:#24e4ff;
+--notif-link-hover:#ff8eaf;
+--notif-time:#89abc1;
+
+--notif-close-bg:rgba(255,255,255,.04);
+--notif-close-border:rgba(255,255,255,.08);
+--notif-close-text:#89abc1;
+--notif-close-hover-bg:#ff2f57;
+--notif-close-hover-text:#ffffff;
+
+--notif-see-all-bg:rgba(25,217,255,.08);
+--notif-see-all-border:rgba(25,217,255,.35);
+--notif-see-all-text:#24e4ff;
+
+--notif-see-all-hover-bg:rgba(255,79,124,.12);
+--notif-see-all-hover-border:rgba(255,79,124,.65);
+--notif-see-all-hover-text:#ff8eaf;
+
+--notif-action-bg:rgba(255,255,255,.05);
+--notif-action-border:rgba(255,255,255,.08);
+--notif-action-text:#c8efff;
+
+--notif-action-hover-bg:rgba(25,217,255,.12);
+--notif-action-hover-border:rgba(25,217,255,.55);
+--notif-action-hover-text:#24e4ff;
+
+--notif-close-panel-bg:rgba(255,79,124,.12);
+--notif-close-panel-border:rgba(255,79,124,.35);
+--notif-close-panel-text:#ff8eaf;
+
+--notif-close-panel-hover-bg:#ff2f57;
+--notif-close-panel-hover-border:rgba(255,79,124,.80);
+--notif-close-panel-hover-text:#ffffff;
+
+--notif-alert-bg:
+  radial-gradient(circle at 0% 0%,rgba(255,79,124,.22),transparent 40%),
+  linear-gradient(145deg,#07101f,#161136);
+
+--notif-alert-border:rgba(255,79,124,.55);
+--notif-alert-shadow:
+  0 14px 35px rgba(0,0,0,.55),
+  0 0 24px rgba(255,79,124,.25);
 
 
 }
@@ -5306,7 +5390,91 @@
 --notiffi-scroll-thumb:linear-gradient(180deg,#007fa3,#c92662);
 
 
+/* ---------- NOTIFFI / CARTES + ACTIONS ---------- */
 
+--notif-card-bg:
+  linear-gradient(135deg,rgba(0,127,163,.08),transparent 45%),
+  rgba(255,255,255,.82);
+
+--notif-card-hover-bg:
+  linear-gradient(135deg,rgba(0,127,163,.12),rgba(201,38,98,.08)),
+  rgba(247,251,255,.95);
+
+--notif-card-unread-bg:
+  linear-gradient(135deg,rgba(201,38,98,.12),rgba(0,127,163,.08)),
+  rgba(255,255,255,.96);
+
+--notif-card-border:rgba(0,127,163,.16);
+--notif-card-hover-border:rgba(0,127,163,.36);
+--notif-card-unread-border:rgba(201,38,98,.38);
+
+--notif-card-shadow:0 8px 20px rgba(28,48,80,.10);
+--notif-card-hover-shadow:
+  0 10px 24px rgba(28,48,80,.14),
+  0 0 18px rgba(0,127,163,.10);
+
+--notif-unread-line:linear-gradient(180deg,#c92662,#007fa3);
+--notif-unread-line-shadow:0 0 12px rgba(201,38,98,.22);
+
+--notif-avatar-bg:#ffffff;
+--notif-avatar-border:rgba(0,127,163,.28);
+--notif-avatar-shadow:
+  0 0 14px rgba(0,127,163,.10),
+  0 0 0 1px rgba(7,16,31,.05) inset;
+
+--notif-icon-bg:#ffffff;
+--notif-icon-text:#007fa3;
+--notif-icon-shadow:0 0 10px rgba(0,127,163,.12);
+
+--notif-icon-unread-bg:#d93d78;
+--notif-icon-unread-text:#ffffff;
+--notif-icon-unread-border:rgba(255,255,255,.60);
+--notif-icon-unread-shadow:0 0 12px rgba(201,38,98,.22);
+
+--notif-text:#1b314b;
+--notif-text-strong:#07101f;
+--notif-link:#007fa3;
+--notif-link-hover:#c92662;
+--notif-time:#526b86;
+
+--notif-close-bg:rgba(7,16,31,.04);
+--notif-close-border:rgba(7,16,31,.08);
+--notif-close-text:#526b86;
+--notif-close-hover-bg:#d93d78;
+--notif-close-hover-text:#ffffff;
+
+--notif-see-all-bg:rgba(0,127,163,.08);
+--notif-see-all-border:rgba(0,127,163,.24);
+--notif-see-all-text:#007fa3;
+
+--notif-see-all-hover-bg:rgba(201,38,98,.10);
+--notif-see-all-hover-border:rgba(201,38,98,.34);
+--notif-see-all-hover-text:#c92662;
+
+--notif-action-bg:rgba(255,255,255,.64);
+--notif-action-border:rgba(7,16,31,.08);
+--notif-action-text:#1b314b;
+
+--notif-action-hover-bg:rgba(0,127,163,.08);
+--notif-action-hover-border:rgba(0,127,163,.30);
+--notif-action-hover-text:#007fa3;
+
+--notif-close-panel-bg:rgba(201,38,98,.10);
+--notif-close-panel-border:rgba(201,38,98,.24);
+--notif-close-panel-text:#c92662;
+
+--notif-close-panel-hover-bg:#d93d78;
+--notif-close-panel-hover-border:rgba(201,38,98,.44);
+--notif-close-panel-hover-text:#ffffff;
+
+--notif-alert-bg:
+  radial-gradient(circle at 0% 0%,rgba(201,38,98,.12),transparent 40%),
+  linear-gradient(145deg,#ffffff,#e7efff);
+
+--notif-alert-border:rgba(201,38,98,.38);
+--notif-alert-shadow:
+  0 14px 35px rgba(28,48,80,.16),
+  0 0 24px rgba(201,38,98,.12);
 
 
 }

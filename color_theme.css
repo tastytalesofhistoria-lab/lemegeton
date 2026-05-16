@@ -515,7 +515,65 @@
 --lb-player-border:rgba(255,255,255,.045);
 --lb-player-wave:#b8f4ff;
 --lb-player-wave-played:#24e4ff;
---lb-player-wave-current:#FE037C;}
+--lb-player-wave-current:#FE037C;
+/* ---------- PNJ ANGES / PNJANG ---------- */
+
+--pnjang-bg:#314d77;
+--pnjang-panel:#183861;
+--pnjang-panel-2:#132d53;
+--pnjang-panel-3:#0c1b35;
+
+--pnjang-white:#ecfbff;
+--pnjang-text:#c8efff;
+
+--pnjang-cyan:#19d9ff;
+--pnjang-cyan-soft:#8cecff;
+--pnjang-pink:#ff4f7c;
+--pnjang-pink-soft:#ffb0c3;
+--pnjang-red:#d64066;
+
+--pnjang-lime:#a7ff3f;
+--pnjang-lime-soft:#cfff9a;
+--pnjang-gold:#ffd36e;
+--pnjang-gold-soft:#ffe39a;
+
+--pnjang-orange:#ff9b45;
+--pnjang-orange-soft:#ffc18a;
+--pnjang-purple:#b88cff;
+--pnjang-purple-soft:#d7b4ff;
+--pnjang-blue:#2f6bff;
+--pnjang-blue-soft:#8ec5ff;
+--pnjang-heart:#ff8de1;
+
+--pnjang-brown:#b8894f;
+--pnjang-brown-soft:#ffd2a0;
+
+--pnjang-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--pnjang-border-cyan:rgba(140,236,255,.22);
+--pnjang-border-cyan-soft:rgba(25,217,255,.18);
+--pnjang-border-gold:rgba(255,211,110,.45);
+--pnjang-border-soft:rgba(255,255,255,.03);
+--pnjang-border-dark:rgba(5,10,25,.80);
+
+--pnjang-dot:rgba(140,236,255,.65);
+--pnjang-soft-bg:rgba(255,255,255,.04);
+--pnjang-card-soft:rgba(255,255,255,.025);
+
+--pnjang-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 34%),
+  linear-gradient(180deg,var(--pnjang-panel) 0%,var(--pnjang-panel-2) 42%,var(--pnjang-panel-3) 100%);
+
+--pnjang-head-bg:
+  linear-gradient(90deg,rgba(15,2,18,.94),rgba(7,16,39,.74)),
+  var(--pnjang-head-img) center/cover;
+
+--pnjang-card-bg:
+  linear-gradient(180deg,rgba(14,29,55,.96),rgba(13,16,36,.78));
+
+--pnjang-avatar-bg:
+  radial-gradient(circle at 50% 18%,rgba(var(--pnj-rgb),.36),rgba(var(--pnj-rgb),.12) 42%,rgba(9,11,24,.92) 100%);
+}
 
 /* =========================================================
 =========================================================
@@ -1036,4 +1094,64 @@
 --lb-player-border:rgba(7,16,31,.10);
 --lb-player-wave:#006f91;
 --lb-player-wave-played:#007fa3;
---lb-player-wave-current:#c92662;}
+--lb-player-wave-current:#c92662;
+
+/* ---------- PNJ ANGES / PNJANG ---------- */
+
+--pnjang-bg:#dce8ff;
+--pnjang-panel:#f6fbff;
+--pnjang-panel-2:#e7efff;
+--pnjang-panel-3:#d8e6f5;
+
+--pnjang-white:#07101f;
+--pnjang-text:#1b314b;
+
+--pnjang-cyan:#007fa3;
+--pnjang-cyan-soft:#006f91;
+--pnjang-pink:#c92662;
+--pnjang-pink-soft:#d93d78;
+--pnjang-red:#b8143e;
+
+--pnjang-lime:#477a00;
+--pnjang-lime-soft:#5c8f00;
+--pnjang-gold:#9b6c00;
+--pnjang-gold-soft:#8a6200;
+
+--pnjang-orange:#b65e00;
+--pnjang-orange-soft:#9f5200;
+--pnjang-purple:#6841a8;
+--pnjang-purple-soft:#8a25bf;
+--pnjang-blue:#244fc4;
+--pnjang-blue-soft:#235fc8;
+--pnjang-heart:#c92692;
+
+--pnjang-brown:#8a5c2b;
+--pnjang-brown-soft:#a36a32;
+
+--pnjang-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--pnjang-border-cyan:rgba(0,127,163,.22);
+--pnjang-border-cyan-soft:rgba(0,127,163,.18);
+--pnjang-border-gold:rgba(155,108,0,.35);
+--pnjang-border-soft:rgba(7,16,31,.10);
+--pnjang-border-dark:rgba(28,48,80,.16);
+
+--pnjang-dot:rgba(0,127,163,.30);
+--pnjang-soft-bg:rgba(7,16,31,.04);
+--pnjang-card-soft:rgba(7,16,31,.035);
+
+--pnjang-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 34%),
+  linear-gradient(180deg,var(--pnjang-panel) 0%,var(--pnjang-panel-2) 42%,var(--pnjang-panel-3) 100%);
+
+--pnjang-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--pnjang-head-img) center/cover;
+
+--pnjang-card-bg:
+  linear-gradient(180deg,rgba(255,255,255,.92),rgba(232,242,253,.82));
+
+--pnjang-avatar-bg:
+  radial-gradient(circle at 50% 18%,rgba(var(--pnj-rgb),.20),rgba(var(--pnj-rgb),.08) 42%,rgba(247,251,255,.92) 100%);
+
+}

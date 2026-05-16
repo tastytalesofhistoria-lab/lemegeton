@@ -10,7 +10,8 @@
 :root,
 [data-color-scheme="dark"]{
   color-scheme:dark;
-
+/*image cat2*/
+   --idx-special-img:url("https://media.tenor.com/2S_LeYz4mu8AAAAM/abel-hazbin-hotel.gif");
   /* ===================== GLOBAL LEMEGETON ===================== */
 
   --lem-bg:#040614;
@@ -2011,6 +2012,8 @@
 [data-color-scheme="light"]{
   color-scheme:light;
 
+   /*image cat2*/
+   --idx-special-img:url("https://i.pinimg.com/originals/6a/e5/9b/6ae59b444b48f68f64bc730afde2ba6b.gif");
   /* ===================== GLOBAL LEMEGETON ===================== */
 
   --lem-bg:#f4f8ff;

@@ -2155,7 +2155,80 @@
 
 --mgla-alert-bg:
   linear-gradient(90deg,rgba(255,79,124,.12),rgba(25,217,255,.05));
+/* ---------- SUJETS / FORUM / LT ---------- */
 
+--lt-bg:#040614;
+--lt-deep:#0b0f2a;
+--lt-panel:#201b3d;
+--lt-panel-soft:#3c3068;
+
+--lt-cyan:#24e4ff;
+--lt-cyan-soft:#b8f4ff;
+--lt-pink:#ff4f86;
+--lt-pink-hot:#FE037C;
+--lt-purple:#b88cff;
+
+--lt-text:#d8ecff;
+--lt-white:#ecfbff;
+--lt-muted:#89abc1;
+
+--lt-border-cyan:rgba(36,228,255,.18);
+--lt-border-cyan-soft:rgba(42,233,255,.22);
+--lt-border-cyan-mid:rgba(36,228,255,.28);
+--lt-border-cyan-strong:rgba(36,228,255,.58);
+--lt-border-pink:rgba(255,79,134,.30);
+--lt-border-pink-mid:rgba(255,79,134,.28);
+--lt-border-white:rgba(255,255,255,.035);
+--lt-border-white-soft:rgba(255,255,255,.03);
+
+--lt-ghost:rgba(255,255,255,.045);
+--lt-dot:rgba(255,255,255,.07);
+
+--lt-soft-bg:rgba(4,6,20,.30);
+--lt-soft-bg-2:rgba(4,6,20,.34);
+--lt-avatar-ring:rgba(4,6,20,.85);
+
+--lt-board-bg:
+  radial-gradient(circle at 12% 0%,rgba(36,228,255,.14),transparent 28%),
+  radial-gradient(circle at 88% 12%,rgba(254,3,124,.15),transparent 32%),
+  linear-gradient(135deg,rgba(4,6,20,.98) 0%,rgba(11,15,42,.98) 45%,rgba(32,27,61,.98) 100%);
+
+--lt-head-bg:
+  linear-gradient(90deg,rgba(10,18,45,.96) 0%,rgba(27,34,78,.98) 45%,rgba(54,42,92,.98) 100%);
+
+--lt-row-bg:
+  radial-gradient(circle at top right,rgba(255,95,140,.11),transparent 34%),
+  linear-gradient(135deg,rgba(60,48,104,.93) 0%,rgba(32,27,61,.98) 100%);
+
+--lt-status-bg:
+  radial-gradient(circle at 50% 20%,rgba(36,228,255,.18),rgba(4,6,20,.42));
+
+--lt-stat-bg:
+  radial-gradient(circle at 50% 0%,rgba(36,228,255,.12),transparent 55%),
+  rgba(4,6,20,.34);
+
+--lt-section-bg:rgba(4,6,20,.34);
+
+--lt-shadow-board:
+  inset 0 0 0 1px rgba(255,255,255,.035),
+  0 0 26px rgba(0,0,0,.38),
+  0 0 24px rgba(36,228,255,.06);
+
+--lt-shadow-row:
+  0 0 0 1px rgba(255,255,255,.03) inset,
+  0 0 16px rgba(255,64,120,.12);
+
+--lt-shadow-row-hover:
+  0 0 0 1px rgba(255,255,255,.05) inset,
+  0 0 20px rgba(36,228,255,.13),
+  0 0 22px rgba(255,64,120,.12);
+
+--lt-shadow-avatar:
+  0 0 0 2px rgba(4,6,20,.85),
+  0 0 12px rgba(36,228,255,.22);
+
+--lt-shadow-cyan:0 0 8px rgba(36,228,255,.35);
+--lt-shadow-pink:0 0 6px rgba(255,79,134,.52);
 }
 
 /* =========================================================
@@ -4315,6 +4388,78 @@
 
 --mgla-alert-bg:
   linear-gradient(90deg,rgba(201,38,98,.10),rgba(0,127,163,.05));
+/* ---------- SUJETS / FORUM / LT ---------- */
 
+--lt-bg:#f4f8ff;
+--lt-deep:#dce8ff;
+--lt-panel:#ffffff;
+--lt-panel-soft:#e7efff;
+
+--lt-cyan:#007fa3;
+--lt-cyan-soft:#006f91;
+--lt-pink:#c92662;
+--lt-pink-hot:#d31b6f;
+--lt-purple:#6841a8;
+
+--lt-text:#1b314b;
+--lt-white:#07101f;
+--lt-muted:#526b86;
+
+--lt-border-cyan:rgba(0,127,163,.20);
+--lt-border-cyan-soft:rgba(0,127,163,.22);
+--lt-border-cyan-mid:rgba(0,127,163,.24);
+--lt-border-cyan-strong:rgba(0,127,163,.42);
+--lt-border-pink:rgba(201,38,98,.26);
+--lt-border-pink-mid:rgba(201,38,98,.24);
+--lt-border-white:rgba(7,16,31,.06);
+--lt-border-white-soft:rgba(7,16,31,.05);
+
+--lt-ghost:rgba(7,16,31,.055);
+--lt-dot:rgba(7,16,31,.06);
+
+--lt-soft-bg:rgba(255,255,255,.62);
+--lt-soft-bg-2:rgba(255,255,255,.68);
+--lt-avatar-ring:rgba(255,255,255,.85);
+
+--lt-board-bg:
+  radial-gradient(circle at 12% 0%,rgba(0,127,163,.08),transparent 28%),
+  radial-gradient(circle at 88% 12%,rgba(201,38,98,.08),transparent 32%),
+  linear-gradient(135deg,rgba(247,251,255,.98) 0%,rgba(231,239,255,.98) 45%,rgba(255,255,255,.98) 100%);
+
+--lt-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.96) 0%,rgba(231,239,255,.98) 45%,rgba(220,232,255,.98) 100%);
+
+--lt-row-bg:
+  radial-gradient(circle at top right,rgba(201,38,98,.08),transparent 34%),
+  linear-gradient(135deg,rgba(255,255,255,.94) 0%,rgba(231,239,255,.98) 100%);
+
+--lt-status-bg:
+  radial-gradient(circle at 50% 20%,rgba(0,127,163,.12),rgba(255,255,255,.72));
+
+--lt-stat-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 55%),
+  rgba(255,255,255,.68);
+
+--lt-section-bg:rgba(255,255,255,.68);
+
+--lt-shadow-board:
+  inset 0 0 0 1px rgba(7,16,31,.06),
+  0 12px 32px rgba(28,48,80,.14),
+  0 0 18px rgba(0,127,163,.06);
+
+--lt-shadow-row:
+  0 0 0 1px rgba(7,16,31,.05) inset,
+  0 0 16px rgba(201,38,98,.08);
+
+--lt-shadow-row-hover:
+  0 0 0 1px rgba(7,16,31,.05) inset,
+  0 12px 24px rgba(28,48,80,.14);
+
+--lt-shadow-avatar:
+  0 0 0 2px rgba(255,255,255,.85),
+  0 0 12px rgba(0,127,163,.12);
+
+--lt-shadow-cyan:0 0 8px rgba(0,127,163,.18);
+--lt-shadow-pink:0 0 6px rgba(201,38,98,.18);
 
 }

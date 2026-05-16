@@ -2412,6 +2412,55 @@
 --pm-shadow-hero:
   inset 0 0 0 1px rgba(255,255,255,.045),
   0 0 18px rgba(36,228,255,.06);
+/* ---------- PROMESS / PROFIL POST COMPLÉMENT ---------- */
+
+--pm-info-bg:rgba(4,6,20,.34);
+--pm-info-border:rgba(36,228,255,.12);
+--pm-info-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+
+--pm-contact-bg:rgba(4,6,20,.48);
+--pm-contact-hover-bg:rgba(255,79,134,.24);
+--pm-contact-hover-border:rgba(255,79,134,.55);
+
+--pm-location-bg:rgba(4,6,20,.34);
+--pm-scrollbar-track:rgba(255,255,255,.06);
+
+--pm-avatar-bg:#040614;
+--pm-avatar-border:rgba(255,79,134,.32);
+--pm-avatar-shadow:0 0 16px rgba(255,64,120,.10);
+--pm-avatar-overlay:linear-gradient(to bottom,transparent 58%,rgba(4,6,20,.42));
+
+--pm-profile-extra-bg:rgba(4,6,20,.90);
+--pm-profile-extra-field-bg:rgba(4,6,20,.34);
+--pm-profile-extra-text:#d9ecff;
+
+--pm-profile-line:
+  linear-gradient(90deg,transparent 0%,rgba(36,228,255,.95) 25%,rgba(254,3,124,.85) 50%,rgba(36,228,255,.95) 75%,transparent 100%);
+
+--pm-awards-bg:
+  radial-gradient(circle at top,rgba(36,228,255,.08),transparent 46%),
+  rgba(4,6,20,.32);
+
+--pm-award-border:rgba(36,228,255,.55);
+--pm-award-shadow:
+  0 0 8px rgba(36,228,255,.18),
+  0 0 0 1px rgba(255,255,255,.05) inset;
+
+--pm-award-tooltip-bg:#0b0f2a;
+--pm-award-tooltip-img:
+  radial-gradient(circle at top right,rgba(255,79,134,.28),transparent 46%),
+  linear-gradient(135deg,#0b0f2a 0%,#201b3d 100%);
+
+--pm-award-tooltip-inset:rgba(11,15,42,.96);
+--pm-award-tooltip-border:rgba(36,228,255,.75);
+
+--pm-award-tooltip-shadow:
+  inset 0 0 0 9999px rgba(11,15,42,.96),
+  0 8px 22px rgba(0,0,0,.55),
+  0 0 14px rgba(36,228,255,.35),
+  0 0 14px rgba(255,79,134,.22);
+
+
 }
 
 /* =========================================================
@@ -4826,4 +4875,51 @@
 --pm-shadow-hero:
   inset 0 0 0 1px rgba(7,16,31,.06),
   0 12px 24px rgba(28,48,80,.10);
-}
+
+/* ---------- PROMESS / PROFIL POST COMPLÉMENT ---------- */
+
+--pm-info-bg:rgba(255,255,255,.66);
+--pm-info-border:rgba(0,127,163,.16);
+--pm-info-shadow:inset 0 0 0 1px rgba(7,16,31,.05);
+
+--pm-contact-bg:rgba(255,255,255,.72);
+--pm-contact-hover-bg:rgba(201,38,98,.14);
+--pm-contact-hover-border:rgba(201,38,98,.36);
+
+--pm-location-bg:rgba(255,255,255,.66);
+--pm-scrollbar-track:rgba(7,16,31,.06);
+
+--pm-avatar-bg:#f4f8ff;
+--pm-avatar-border:rgba(201,38,98,.26);
+--pm-avatar-shadow:0 12px 24px rgba(28,48,80,.10);
+--pm-avatar-overlay:linear-gradient(to bottom,transparent 58%,rgba(220,232,255,.42));
+
+--pm-profile-extra-bg:rgba(247,251,255,.92);
+--pm-profile-extra-field-bg:rgba(255,255,255,.70);
+--pm-profile-extra-text:#1b314b;
+
+--pm-profile-line:
+  linear-gradient(90deg,transparent 0%,rgba(0,127,163,.70) 25%,rgba(201,38,98,.55) 50%,rgba(0,127,163,.70) 75%,transparent 100%);
+
+--pm-awards-bg:
+  radial-gradient(circle at top,rgba(0,127,163,.08),transparent 46%),
+  rgba(255,255,255,.66);
+
+--pm-award-border:rgba(0,127,163,.38);
+--pm-award-shadow:
+  0 0 8px rgba(0,127,163,.12),
+  0 0 0 1px rgba(7,16,31,.05) inset;
+
+--pm-award-tooltip-bg:#ffffff;
+--pm-award-tooltip-img:
+  radial-gradient(circle at top right,rgba(201,38,98,.10),transparent 46%),
+  linear-gradient(135deg,#ffffff 0%,#e7efff 100%);
+
+--pm-award-tooltip-inset:rgba(255,255,255,.92);
+--pm-award-tooltip-border:rgba(0,127,163,.38);
+
+--pm-award-tooltip-shadow:
+  inset 0 0 0 9999px rgba(255,255,255,.92),
+  0 8px 22px rgba(28,48,80,.14),
+  0 0 14px rgba(0,127,163,.12),
+  0 0 14px rgba(201,38,98,.10);}

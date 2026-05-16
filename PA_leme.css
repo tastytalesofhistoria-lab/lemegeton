@@ -29,27 +29,6 @@ body{
 }
 
 #lpa{
-  --lpa-bg:#0a122d;
-  --lpa-bg-deep:#070b18;
-  --lpa-white:#d8ecff;
-  --lpa-text:#b9cce8;
-  --lpa-muted:#818db8;
-
-  --lpa-cyan:#24e4ff;
-  --lpa-cyan-soft:#8cecff;
-  --lpa-blue:#009dff;
-  --lpa-blue-soft:#6bbfff;
-
-  --lpa-pink:#fe037c;
-  --lpa-pink-soft:#ff4f86;
-  --lpa-red:#ff2f5f;
-
-  --lpa-gold:#e4d3b4;
-  --lpa-sea:#1b224e;
-  --lpa-sea-soft:#362a5c;
-  --lpa-ink:#070b18;
-  --lpa-cream:#d8ecff;
-
   position:relative;
   width:100%!important;
   height:598px!important;
@@ -62,7 +41,6 @@ body{
   overflow:hidden!important;
   background:transparent!important;
 }
-
 #lpa .lpa-wrap{
   position:relative;
   width:100%!important;

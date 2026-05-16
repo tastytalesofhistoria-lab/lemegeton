@@ -973,6 +973,102 @@
   linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
   var(--cul-head-img) center/cover;
 
+/* ---------- LEXIQUE / LEXM ---------- */
+
+--lexm-bg:#344c70;
+--lexm-panel:#16132d;
+--lexm-panel-dark:#111026;
+
+--lexm-cyan:#19d9ff;
+--lexm-cyan-soft:#8cecff;
+--lexm-pink:#ff8eaf;
+--lexm-white:#ecfbff;
+--lexm-text:#c8efff;
+--lexm-muted:#7ec7e5;
+
+--lexm-gold:#ffd36e;
+--lexm-purple:#b88cff;
+--lexm-green:#57c785;
+--lexm-carmin:#d64066;
+--lexm-lime:#a7ff3f;
+
+--lexm-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--lexm-shadow-cyan:0 0 12px rgba(25,217,255,.65),0 0 30px rgba(25,217,255,.22);
+--lexm-shadow-pink:0 0 14px rgba(255,142,175,.60),0 0 28px rgba(255,79,124,.18);
+
+--lexm-border-cyan:rgba(140,236,255,.22);
+--lexm-border-cyan-soft:rgba(140,236,255,.20);
+--lexm-border-cyan-strong:rgba(25,217,255,.32);
+--lexm-border-soft:rgba(255,255,255,.03);
+--lexm-border-dark:rgba(5,10,25,.80);
+
+--lexm-dot:rgba(140,236,255,.65);
+--lexm-soft-bg:rgba(255,255,255,.04);
+--lexm-soft-bg-2:rgba(255,255,255,.035);
+--lexm-input-bg:rgba(255,255,255,.055);
+--lexm-placeholder:rgba(200,239,255,.62);
+--lexm-section-bg:rgba(22,19,45,.92);
+
+--lexm-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
+  linear-gradient(180deg,#15122e 0%,var(--lexm-panel) 55%,var(--lexm-panel-dark) 100%);
+
+--lexm-head-bg:
+  linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+  var(--lexm-head-img) center/cover;
+
+/* ---------- BESTIAIRE INTERACTIF / BSTP ---------- */
+
+--bstp-bg:#344c70;
+--bstp-deep:#15122e;
+--bstp-card:#17142f;
+--bstp-panel:#16132d;
+--bstp-panel-dark:#111026;
+
+--bstp-cyan:#19d9ff;
+--bstp-cyan-soft:#8cecff;
+--bstp-pink:#ff8eaf;
+--bstp-white:#ecfbff;
+--bstp-text:#c8efff;
+--bstp-muted:#7ec7e5;
+
+--bstp-gold:#ffd36e;
+--bstp-purple:#b88cff;
+--bstp-green:#57c785;
+--bstp-carmin:#d64066;
+--bstp-blue:#63a8ff;
+--bstp-orange:#ff9f43;
+
+--bstp-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--bstp-shadow-cyan:0 0 12px rgba(25,217,255,.65),0 0 30px rgba(25,217,255,.22);
+--bstp-shadow-pink:0 0 14px rgba(255,142,175,.60),0 0 28px rgba(255,79,124,.18);
+
+--bstp-border-cyan:rgba(140,236,255,.22);
+--bstp-border-cyan-soft:rgba(140,236,255,.20);
+--bstp-border-cyan-strong:rgba(25,217,255,.32);
+--bstp-border-soft:rgba(255,255,255,.03);
+--bstp-border-dark:rgba(5,10,25,.80);
+
+--bstp-dot:rgba(140,236,255,.65);
+--bstp-soft-bg:rgba(255,255,255,.04);
+--bstp-soft-bg-2:rgba(255,255,255,.035);
+--bstp-soft-bg-3:rgba(255,255,255,.025);
+--bstp-panel-bg:rgba(22,19,45,.92);
+--bstp-card-bg:linear-gradient(180deg,rgba(22,19,45,.94),rgba(12,13,34,.98));
+--bstp-top-bg:rgba(255,255,255,.025);
+--bstp-mini-bg:rgba(255,255,255,.075);
+--bstp-desc-bg:rgba(255,255,255,.095);
+
+--bstp-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
+  linear-gradient(180deg,#15122e 0%,var(--bstp-panel) 55%,var(--bstp-panel-dark) 100%);
+
+--bstp-head-bg:
+  linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+  var(--bstp-head-img) center/cover;
+
 }
 
 /* =========================================================
@@ -1948,4 +2044,102 @@
 
 --cul-head-bg:
   linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
-  var(--cul-head-img) center/cover;}
+  var(--cul-head-img) center/cover;
+
+/* ---------- LEXIQUE / LEXM ---------- */
+
+--lexm-bg:#dce8ff;
+--lexm-panel:#f6fbff;
+--lexm-panel-dark:#d8e6f5;
+
+--lexm-cyan:#007fa3;
+--lexm-cyan-soft:#006f91;
+--lexm-pink:#c92662;
+--lexm-white:#07101f;
+--lexm-text:#1b314b;
+--lexm-muted:#526b86;
+
+--lexm-gold:#9b6c00;
+--lexm-purple:#6841a8;
+--lexm-green:#237a4c;
+--lexm-carmin:#b8143e;
+--lexm-lime:#477a00;
+
+--lexm-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--lexm-shadow-cyan:0 0 12px rgba(0,127,163,.26),0 0 28px rgba(0,127,163,.12);
+--lexm-shadow-pink:0 0 14px rgba(201,38,98,.22),0 0 28px rgba(201,38,98,.12);
+
+--lexm-border-cyan:rgba(0,127,163,.22);
+--lexm-border-cyan-soft:rgba(0,127,163,.20);
+--lexm-border-cyan-strong:rgba(0,127,163,.34);
+--lexm-border-soft:rgba(7,16,31,.10);
+--lexm-border-dark:rgba(28,48,80,.16);
+
+--lexm-dot:rgba(0,127,163,.30);
+--lexm-soft-bg:rgba(7,16,31,.04);
+--lexm-soft-bg-2:rgba(7,16,31,.035);
+--lexm-input-bg:rgba(255,255,255,.78);
+--lexm-placeholder:rgba(27,49,75,.62);
+--lexm-section-bg:rgba(255,255,255,.86);
+
+--lexm-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 36%),
+  linear-gradient(180deg,#f7fbff 0%,var(--lexm-panel) 55%,var(--lexm-panel-dark) 100%);
+
+--lexm-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--lexm-head-img) center/cover;
+
+/* ---------- BESTIAIRE INTERACTIF / BSTP ---------- */
+
+--bstp-bg:#dce8ff;
+--bstp-deep:#f7fbff;
+--bstp-card:#ffffff;
+--bstp-panel:#f6fbff;
+--bstp-panel-dark:#d8e6f5;
+
+--bstp-cyan:#007fa3;
+--bstp-cyan-soft:#006f91;
+--bstp-pink:#c92662;
+--bstp-white:#07101f;
+--bstp-text:#1b314b;
+--bstp-muted:#526b86;
+
+--bstp-gold:#9b6c00;
+--bstp-purple:#6841a8;
+--bstp-green:#237a4c;
+--bstp-carmin:#b8143e;
+--bstp-blue:#235fc8;
+--bstp-orange:#b65e00;
+
+--bstp-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--bstp-shadow-cyan:0 0 12px rgba(0,127,163,.26),0 0 28px rgba(0,127,163,.12);
+--bstp-shadow-pink:0 0 14px rgba(201,38,98,.22),0 0 28px rgba(201,38,98,.12);
+
+--bstp-border-cyan:rgba(0,127,163,.22);
+--bstp-border-cyan-soft:rgba(0,127,163,.20);
+--bstp-border-cyan-strong:rgba(0,127,163,.34);
+--bstp-border-soft:rgba(7,16,31,.10);
+--bstp-border-dark:rgba(28,48,80,.16);
+
+--bstp-dot:rgba(0,127,163,.30);
+--bstp-soft-bg:rgba(7,16,31,.04);
+--bstp-soft-bg-2:rgba(7,16,31,.035);
+--bstp-soft-bg-3:rgba(7,16,31,.025);
+--bstp-panel-bg:rgba(255,255,255,.86);
+--bstp-card-bg:linear-gradient(180deg,rgba(255,255,255,.94),rgba(232,242,253,.98));
+--bstp-top-bg:rgba(7,16,31,.025);
+--bstp-mini-bg:rgba(255,255,255,.72);
+--bstp-desc-bg:rgba(255,255,255,.78);
+
+--bstp-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 36%),
+  linear-gradient(180deg,#f7fbff 0%,var(--bstp-panel) 55%,var(--bstp-panel-dark) 100%);
+
+--bstp-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--bstp-head-img) center/cover;
+
+}

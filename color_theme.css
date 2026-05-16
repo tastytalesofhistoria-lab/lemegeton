@@ -1769,6 +1769,62 @@
 --idx-paradis-button-bg:linear-gradient(135deg,#e4d3b4,#7a6648);
 --idx-terre-button-bg:linear-gradient(135deg,#8cecff,#009dff);
 --idx-enfer-button-bg:linear-gradient(135deg,#ff2f5f,#fe037c);
+/* ---------- KARMA / ADMS COMPLÉMENT ---------- */
+
+--adms-green:#ff8eaf;
+--adms-gold:#ffd36e;
+--adms-purple:#b88cff;
+--adms-carmin:#d64066;
+--adms-carmin-soft:#ffd7e1;
+
+--adms-karma-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
+  linear-gradient(180deg,#15122e 0%,var(--adms-panel) 55%,var(--adms-panel-dark) 100%);
+
+--adms-karma-head-bg:
+  linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+  var(--adms-head-img) center/cover;
+
+--adms-karma-soft-bg:rgba(255,255,255,.04);
+--adms-karma-soft-bg-2:rgba(255,255,255,.03);
+--adms-karma-soft-bg-3:rgba(255,255,255,.025);
+
+--adms-karma-card-bg:rgba(10,16,37,.45);
+
+--adms-karma-bloc-cyan:
+  linear-gradient(90deg,rgba(25,217,255,.12) 0%,rgba(25,217,255,.045) 28%,rgba(255,255,255,.025) 100%);
+
+--adms-karma-bloc-green:
+  linear-gradient(90deg,rgba(255,142,175,.14) 0%,rgba(255,142,175,.05) 28%,rgba(255,255,255,.025) 100%);
+
+--adms-karma-bloc-gold:
+  linear-gradient(90deg,rgba(255,211,110,.16) 0%,rgba(255,211,110,.055) 28%,rgba(255,255,255,.025) 100%);
+
+--adms-karma-bloc-purple:
+  linear-gradient(90deg,rgba(184,140,255,.14) 0%,rgba(184,140,255,.05) 28%,rgba(255,255,255,.025) 100%);
+
+--adms-karma-item-green:
+  linear-gradient(90deg,rgba(255,142,175,.16) 0%,rgba(255,142,175,.06) 30%,rgba(255,255,255,.035) 100%);
+
+--adms-karma-item-gold:
+  linear-gradient(90deg,rgba(255,211,110,.18) 0%,rgba(255,211,110,.07) 30%,rgba(255,255,255,.035) 100%);
+
+--adms-karma-item-purple:
+  linear-gradient(90deg,rgba(184,140,255,.16) 0%,rgba(184,140,255,.06) 30%,rgba(255,255,255,.035) 100%);
+
+--adms-karma-double-bg:
+  linear-gradient(90deg,rgba(255,211,110,.12) 0%,rgba(255,211,110,.05) 30%,rgba(255,255,255,.025) 100%);
+
+--adms-karma-double-free-bg:
+  linear-gradient(90deg,rgba(214,64,102,.18) 0%,rgba(214,64,102,.07) 35%,rgba(255,255,255,.025) 100%);
+
+--adms-karma-double-paid-bg:
+  linear-gradient(90deg,rgba(255,211,110,.16) 0%,rgba(255,211,110,.06) 35%,rgba(255,255,255,.025) 100%);
+
+
+
+
+
 }
 
 /* =========================================================
@@ -3542,7 +3598,57 @@
 --idx-paradis-button-bg:linear-gradient(135deg,#fff8e7,#d8c088);
 --idx-terre-button-bg:linear-gradient(135deg,#e9fbff,#8ccfe8);
 --idx-enfer-button-bg:linear-gradient(135deg,#ffe8ee,#d93d78);
+/* ---------- KARMA / ADMS COMPLÉMENT ---------- */
 
+--adms-green:#c92662;
+--adms-gold:#9b6c00;
+--adms-purple:#6841a8;
+--adms-carmin:#b8143e;
+--adms-carmin-soft:#c92662;
+
+--adms-karma-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 36%),
+  linear-gradient(180deg,#f7fbff 0%,var(--adms-panel) 55%,var(--adms-panel-dark) 100%);
+
+--adms-karma-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--adms-head-img) center/cover;
+
+--adms-karma-soft-bg:rgba(7,16,31,.04);
+--adms-karma-soft-bg-2:rgba(7,16,31,.035);
+--adms-karma-soft-bg-3:rgba(7,16,31,.025);
+
+--adms-karma-card-bg:rgba(255,255,255,.58);
+
+--adms-karma-bloc-cyan:
+  linear-gradient(90deg,rgba(0,127,163,.10) 0%,rgba(0,127,163,.045) 28%,rgba(7,16,31,.025) 100%);
+
+--adms-karma-bloc-green:
+  linear-gradient(90deg,rgba(201,38,98,.10) 0%,rgba(201,38,98,.045) 28%,rgba(7,16,31,.025) 100%);
+
+--adms-karma-bloc-gold:
+  linear-gradient(90deg,rgba(155,108,0,.12) 0%,rgba(155,108,0,.045) 28%,rgba(7,16,31,.025) 100%);
+
+--adms-karma-bloc-purple:
+  linear-gradient(90deg,rgba(104,65,168,.10) 0%,rgba(104,65,168,.045) 28%,rgba(7,16,31,.025) 100%);
+
+--adms-karma-item-green:
+  linear-gradient(90deg,rgba(201,38,98,.10) 0%,rgba(201,38,98,.045) 30%,rgba(7,16,31,.035) 100%);
+
+--adms-karma-item-gold:
+  linear-gradient(90deg,rgba(155,108,0,.12) 0%,rgba(155,108,0,.045) 30%,rgba(7,16,31,.035) 100%);
+
+--adms-karma-item-purple:
+  linear-gradient(90deg,rgba(104,65,168,.10) 0%,rgba(104,65,168,.045) 30%,rgba(7,16,31,.035) 100%);
+
+--adms-karma-double-bg:
+  linear-gradient(90deg,rgba(155,108,0,.10) 0%,rgba(155,108,0,.045) 30%,rgba(7,16,31,.025) 100%);
+
+--adms-karma-double-free-bg:
+  linear-gradient(90deg,rgba(184,20,62,.10) 0%,rgba(184,20,62,.045) 35%,rgba(7,16,31,.025) 100%);
+
+--adms-karma-double-paid-bg:
+  linear-gradient(90deg,rgba(155,108,0,.10) 0%,rgba(155,108,0,.045) 35%,rgba(7,16,31,.025) 100%);
 
 
 }

@@ -2818,19 +2818,17 @@
 .intrm-final-call{
   margin:16px 0 0;
   overflow:hidden;
-  border:1px solid rgba(214,64,102,.34);
+  border:1px solid var(--intrm-border-red-strong);
   border-radius:16px;
-  background:
-    radial-gradient(circle at 50% 0%,rgba(214,64,102,.20),transparent 44%),
-    linear-gradient(180deg,rgba(22,19,45,.98),rgba(8,8,22,.98));
+  background:var(--intrm-final-bg);
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.03),
+    inset 0 0 0 1px var(--intrm-border-soft),
     0 0 24px rgba(214,64,102,.18);
 }
 
 .intrm-final-top{
   padding:16px 18px;
-  border-bottom:1px solid rgba(214,64,102,.28);
+  border-bottom:1px solid var(--intrm-border-red);
   background:linear-gradient(90deg,rgba(214,64,102,.18),rgba(255,211,110,.07),rgba(41,216,255,.06));
   color:var(--intrm-white);
   font-family:"Barlow Condensed",Arial,sans-serif;
@@ -2860,12 +2858,12 @@
 
 .intrm-final-choice:nth-child(1){
   border-left:3px solid var(--intrm-red);
-  background:linear-gradient(90deg,rgba(214,64,102,.16),rgba(255,255,255,.035));
+  background:var(--intrm-final-choice-bg-red);
 }
 
 .intrm-final-choice:nth-child(2){
   border-left:3px solid var(--intrm-cyan);
-  background:linear-gradient(90deg,rgba(41,216,255,.14),rgba(255,255,255,.035));
+  background:var(--intrm-final-choice-bg-cyan);
 }
 
 .intrm-final-choice b{
@@ -2898,9 +2896,7 @@
   margin-top:12px;
   padding:16px 18px;
   border-radius:14px;
-  background:
-    radial-gradient(circle at 50% 50%,rgba(214,64,102,.28),transparent 55%),
-    linear-gradient(90deg,rgba(214,64,102,.24),rgba(8,8,22,.92),rgba(214,64,102,.24));
+  background:var(--intrm-omen-bg);
   color:var(--intrm-red-soft);
   font-family:"Monoton",Arial,sans-serif;
   font-size:clamp(32px,6vw,58px);
@@ -2913,6 +2909,12 @@
     0 0 22px rgba(214,64,102,.62),
     0 0 42px rgba(214,64,102,.32),
     3px 3px 0 rgba(0,0,0,.45);
+}
+
+[data-color-scheme="light"] .intrm-omen{
+  text-shadow:
+    0 0 8px rgba(184,20,62,.22),
+    0 0 18px rgba(184,20,62,.12);
 }
 
 .intrm-omen-sub{
@@ -2982,10 +2984,10 @@
   .intrm-final-top{
     font-size:23px;
   }
-}
-/* =========================================================
+}/* =========================================================
    INTRM — COULEURS PAR SECTION / CARTES
    À placer APRÈS le CSS intrigue existant
+   Edison ready / variables dans color_theme.css
 ========================================================= */
 
 /* Base couleur modulable */
@@ -2995,9 +2997,7 @@
   --intrm-card-rgb:214,64,102;
 
   border-color:rgba(var(--intrm-card-rgb),.28);
-  background:
-    radial-gradient(circle at 0% 0%,rgba(var(--intrm-card-rgb),.10),transparent 38%),
-    rgba(22,19,45,.92);
+  background:var(--intrm-card-bg-colored);
 }
 
 /* 1 — événement déclencheur */
@@ -3065,29 +3065,22 @@
 /* Warning dans une carte : suit la couleur de la carte */
 .intrm-card .intrm-warning{
   border-left-color:var(--intrm-card-color)!important;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(var(--intrm-card-rgb),.15),
-      rgba(255,255,255,.035)
-    )!important;
+  background:var(--intrm-warning-card-bg)!important;
   color:var(--intrm-white);
 }
 
 /* Question finale */
 .intrm-question{
   border-left-color:var(--intrm-cyan)!important;
-  background:
-    radial-gradient(circle at 50% 0%,rgba(41,216,255,.16),transparent 42%),
-    linear-gradient(90deg,rgba(41,216,255,.16),rgba(184,140,255,.10),rgba(214,64,102,.10))!important;
+  background:var(--intrm-question-bg)!important;
   color:var(--intrm-white);
   box-shadow:0 0 18px rgba(41,216,255,.14);
 }
 
 /* Tags plus lisibles */
 .intrm-tag{
-  background:rgba(255,255,255,.045);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+  background:var(--intrm-tag-bg);
+  box-shadow:inset 0 0 0 1px var(--intrm-tag-shadow);
 }
 
 .intrm-tag:nth-child(1){
@@ -3169,8 +3162,10 @@
     font-size:11px;
   }
 }
+
 /* =========================================================
    CTXM — CONTEXTE LEMEGETON
+   Edison ready / variables dans color_theme.css
 ========================================================= */
 
 .ctxm,
@@ -3179,40 +3174,6 @@
 }
 
 .ctxm{
-  --ctxm-bg:#344c70;
-  --ctxm-white:#ecfbff;
-  --ctxm-text:#c8efff;
-  --ctxm-muted:#7ec7e5;
-  --ctxm-ink:#0d1022;
-
-  --ctxm-creation:#29d8ff;
-  --ctxm-creation-soft:#9ceeff;
-  --ctxm-vie:#ffd36e;
-  --ctxm-vie-soft:#ffe8a8;
-  --ctxm-erreur:#b88cff;
-  --ctxm-erreur-soft:#dcc6ff;
-  --ctxm-eden:#ff8eaf;
-  --ctxm-eden-soft:#ffc2d3;
-  --ctxm-serpent:#62d6b3;
-  --ctxm-serpent-soft:#b9f3e2;
-  --ctxm-punition:#d64066;
-  --ctxm-punition-soft:#ff9ab4;
-  --ctxm-royaumes:#ffae57;
-  --ctxm-royaumes-soft:#ffd19d;
-  --ctxm-aujourdhui:#9ea8ff;
-  --ctxm-aujourdhui-soft:#d2d7ff;
-
-  --ctxm-cyan:var(--ctxm-creation);
-  --ctxm-cyan-soft:var(--ctxm-creation-soft);
-  --ctxm-pink:var(--ctxm-eden);
-  --ctxm-gold:var(--ctxm-vie);
-  --ctxm-purple:var(--ctxm-erreur);
-  --ctxm-green:var(--ctxm-serpent);
-  --ctxm-red:var(--ctxm-punition);
-
-  --ctxm-shadow-cyan:0 0 12px rgba(41,216,255,.52),0 0 30px rgba(41,216,255,.18);
-  --ctxm-shadow-pink:0 0 14px rgba(255,142,175,.45),0 0 28px rgba(255,79,124,.14);
-
   width:920px;
   max-width:100%;
   margin:30px auto;
@@ -3220,7 +3181,7 @@
   color:var(--ctxm-text);
   background:var(--ctxm-bg);
   font-family:"Rajdhani",Arial,sans-serif;
-  box-shadow:0 28px 80px rgba(0,0,0,.5);
+  box-shadow:0 28px 80px var(--ctxm-border-dark);
 }
 
 .ctxm a{
@@ -3237,10 +3198,13 @@
   position:relative;
   overflow:hidden;
   padding:20px;
-  border:1px solid rgba(156,238,255,.22);
+  border:1px solid var(--ctxm-border-cyan);
   border-radius:20px;
-  background:radial-gradient(circle at 50% 0%,rgba(41,216,255,.14),transparent 36%),linear-gradient(180deg,#15122e 0%,#16132d 55%,#111026 100%);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.03),0 0 0 1px rgba(5,10,25,.8),var(--ctxm-shadow-cyan);
+  background:var(--ctxm-box-bg);
+  box-shadow:
+    inset 0 0 0 1px var(--ctxm-border-soft),
+    0 0 0 1px var(--ctxm-border-dark),
+    var(--ctxm-shadow-cyan);
 }
 
 .ctxm-box:before{
@@ -3249,7 +3213,7 @@
   inset:0;
   pointer-events:none;
   opacity:.20;
-  background-image:radial-gradient(circle,rgba(156,238,255,.65) 1px,transparent 1.4px);
+  background-image:radial-gradient(circle,var(--ctxm-dot) 1px,transparent 1.4px);
   background-size:18px 18px;
 }
 
@@ -3261,10 +3225,10 @@
 .ctxm-head{
   margin:0 0 14px;
   padding:22px 24px;
-  border:1px solid rgba(41,216,255,.32);
+  border:1px solid var(--ctxm-border-cyan-strong);
   border-radius:16px;
-  background:linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif") center/cover;
-  box-shadow:inset 0 0 42px rgba(0,0,0,.65);
+  background:var(--ctxm-head-bg);
+  box-shadow:inset 0 0 42px var(--ctxm-border-dark);
 }
 
 .ctxm-kicker{
@@ -3297,7 +3261,11 @@
   text-transform:uppercase;
   white-space:nowrap;
   letter-spacing:1px;
-  text-shadow:0 0 6px rgba(41,216,255,.85),0 0 18px rgba(41,216,255,.46),0 0 34px rgba(41,216,255,.22),3px 3px 0 rgba(255,142,175,.18);
+  text-shadow:
+    0 0 6px var(--ctxm-creation-soft),
+    0 0 18px var(--ctxm-creation),
+    0 0 34px rgba(41,216,255,.22),
+    3px 3px 0 rgba(255,142,175,.18);
 }
 
 .ctxm-sub{
@@ -3336,9 +3304,9 @@
   justify-content:center;
   min-height:34px;
   padding:7px 12px;
-  border:1px solid rgba(255,255,255,.08);
+  border:1px solid var(--ctxm-border-soft);
   border-radius:999px;
-  background:rgba(255,255,255,.04);
+  background:var(--ctxm-soft-bg);
   color:var(--ctxm-white);
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:13px;
@@ -3346,7 +3314,7 @@
   line-height:1;
   text-transform:uppercase;
   letter-spacing:1px;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+  box-shadow:inset 0 0 0 1px var(--ctxm-soft-bg-2);
   transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,color .2s ease;
 }
 
@@ -3405,18 +3373,21 @@
 .ctxm-nav a[class*="ctxm-tag-"]{
   color:var(--tag-soft)!important;
   border-color:rgba(var(--tag-rgb),.45)!important;
-  box-shadow:inset 3px 0 0 var(--tag),0 0 10px rgba(var(--tag-rgb),.14);
+  box-shadow:
+    inset 3px 0 0 var(--tag),
+    0 0 10px rgba(var(--tag-rgb),.14);
 }
 
 .ctxm-chapter{
   --chap:var(--ctxm-creation);
   --chap-soft:var(--ctxm-creation-soft);
   --chap-rgb:41,216,255;
+
   margin:16px 0;
   overflow:hidden;
-  border:1px solid rgba(156,238,255,.20);
+  border:1px solid var(--ctxm-border-cyan);
   border-radius:16px;
-  background:rgba(22,19,45,.92);
+  background:var(--ctxm-card-bg);
 }
 
 #ctxm-creation{
@@ -3626,7 +3597,7 @@
   padding:14px 15px;
   border-radius:14px;
   border-left:3px solid var(--ctxm-vie);
-  background:linear-gradient(90deg,rgba(255,211,110,.12),rgba(255,255,255,.035));
+  background:linear-gradient(90deg,rgba(255,211,110,.12),var(--ctxm-soft-bg-2));
   color:var(--ctxm-text);
   font-size:15.5px;
   font-weight:600;
@@ -3636,7 +3607,7 @@
 
 .ctxm-duo-card:nth-child(2){
   border-left-color:var(--ctxm-punition);
-  background:linear-gradient(90deg,rgba(214,64,102,.14),rgba(255,255,255,.035));
+  background:linear-gradient(90deg,rgba(214,64,102,.14),var(--ctxm-soft-bg-2));
 }
 
 .ctxm-duo-card b{
@@ -3715,7 +3686,7 @@
   .ctxm-quote{
     font-size:22px;
   }
-} 
+}
 /* =========================================================
    CHRO — CHRONOLOGIE LEMEGETON
 ========================================================= */

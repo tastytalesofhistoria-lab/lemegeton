@@ -1488,6 +1488,70 @@
 --adms-head-bg:
   linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
   var(--adms-head-img) center/cover;  
+
+/* ---------- FOOTER GLOBAL / LF ---------- */
+
+--lf-bg:#040614;
+--lf-deep:#0b0f2a;
+--lf-panel:#201b3d;
+--lf-panel-soft:#3c3068;
+
+--lf-cyan:#24e4ff;
+--lf-cyan-soft:#b8f4ff;
+--lf-pink:#ff4f86;
+--lf-pink-hot:#FE037C;
+--lf-purple:#b88cff;
+
+--lf-text:#d8ecff;
+--lf-white:#ecfbff;
+--lf-muted:#89abc1;
+
+--lf-border-cyan:rgba(36,228,255,.18);
+--lf-border-cyan-soft:rgba(36,228,255,.22);
+--lf-border-cyan-strong:rgba(36,228,255,.55);
+--lf-border-white:rgba(255,255,255,.055);
+--lf-border-white-soft:rgba(255,255,255,.035);
+--lf-border-white-light:rgba(255,255,255,.025);
+--lf-border-pink:rgba(255,79,134,.42);
+
+--lf-bg-pill:rgba(4,6,20,.28);
+--lf-bg-pill-hover:rgba(4,6,20,.45);
+--lf-bg-admin-pill:rgba(4,6,20,.32);
+--lf-bg-admin-pill-hover:rgba(4,6,20,.48);
+--lf-bg-push:rgba(4,6,20,.35);
+
+--lf-separator:rgba(236,251,255,.55);
+--lf-ghost:rgba(255,255,255,.035);
+
+--lf-shadow-main:
+  inset 0 0 0 1px rgba(255,255,255,.035),
+  0 0 26px rgba(0,0,0,.30),
+  0 0 24px rgba(36,228,255,.06);
+
+--lf-shadow-user:
+  inset 0 0 0 1px rgba(255,255,255,.025),
+  inset 0 0 18px rgba(36,228,255,.035);
+
+--lf-shadow-admin:
+  inset 0 0 0 1px rgba(255,255,255,.025),
+  0 0 22px rgba(0,0,0,.22);
+
+--lf-footer-bg:
+  radial-gradient(circle at 12% 0%,rgba(36,228,255,.13),transparent 32%),
+  radial-gradient(circle at 88% 0%,rgba(254,3,124,.12),transparent 30%),
+  linear-gradient(135deg,rgba(4,6,20,.98) 0%,rgba(11,15,42,.98) 45%,rgba(32,27,61,.96) 100%);
+
+--lf-user-bg:
+  radial-gradient(circle at 50% 0%,rgba(36,228,255,.07),transparent 45%),
+  linear-gradient(90deg,rgba(10,18,45,.94),rgba(32,27,61,.96));
+
+--lf-admin-bg:
+  radial-gradient(circle at 50% 100%,rgba(255,79,134,.08),transparent 48%),
+  linear-gradient(135deg,rgba(4,6,20,.98),rgba(11,15,42,.98));
+
+
+
+
 }
 
 /* =========================================================
@@ -2980,4 +3044,64 @@
 --adms-head-bg:
   linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
   var(--adms-head-img) center/cover;
+
+   /* ---------- FOOTER GLOBAL / LF ---------- */
+
+--lf-bg:#f4f8ff;
+--lf-deep:#dce8ff;
+--lf-panel:#ffffff;
+--lf-panel-soft:#d9e5f5;
+
+--lf-cyan:#007fa3;
+--lf-cyan-soft:#006f91;
+--lf-pink:#c92662;
+--lf-pink-hot:#d31b6f;
+--lf-purple:#6841a8;
+
+--lf-text:#1b314b;
+--lf-white:#07101f;
+--lf-muted:#526b86;
+
+--lf-border-cyan:rgba(0,127,163,.20);
+--lf-border-cyan-soft:rgba(0,127,163,.24);
+--lf-border-cyan-strong:rgba(0,127,163,.42);
+--lf-border-white:rgba(7,16,31,.10);
+--lf-border-white-soft:rgba(7,16,31,.08);
+--lf-border-white-light:rgba(7,16,31,.06);
+--lf-border-pink:rgba(201,38,98,.36);
+
+--lf-bg-pill:rgba(255,255,255,.58);
+--lf-bg-pill-hover:rgba(255,255,255,.82);
+--lf-bg-admin-pill:rgba(255,255,255,.62);
+--lf-bg-admin-pill-hover:rgba(255,255,255,.88);
+--lf-bg-push:rgba(255,255,255,.70);
+
+--lf-separator:rgba(7,16,31,.32);
+--lf-ghost:rgba(7,16,31,.045);
+
+--lf-shadow-main:
+  inset 0 0 0 1px rgba(7,16,31,.06),
+  0 12px 32px rgba(28,48,80,.14),
+  0 0 18px rgba(0,127,163,.06);
+
+--lf-shadow-user:
+  inset 0 0 0 1px rgba(7,16,31,.06),
+  inset 0 0 18px rgba(0,127,163,.035);
+
+--lf-shadow-admin:
+  inset 0 0 0 1px rgba(7,16,31,.06),
+  0 12px 28px rgba(28,48,80,.12);
+
+--lf-footer-bg:
+  radial-gradient(circle at 12% 0%,rgba(0,127,163,.08),transparent 32%),
+  radial-gradient(circle at 88% 0%,rgba(201,38,98,.08),transparent 30%),
+  linear-gradient(135deg,rgba(247,251,255,.98) 0%,rgba(231,239,255,.98) 45%,rgba(220,232,255,.96) 100%);
+
+--lf-user-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.06),transparent 45%),
+  linear-gradient(90deg,rgba(247,251,255,.94),rgba(220,232,255,.96));
+
+--lf-admin-bg:
+  radial-gradient(circle at 50% 100%,rgba(201,38,98,.06),transparent 48%),
+  linear-gradient(135deg,rgba(247,251,255,.98),rgba(231,239,255,.98));
 }

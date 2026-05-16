@@ -128,7 +128,36 @@
   padding:0;
   list-style:none;
 }
+/* =====================
+   PATCH FONDS INTERNES FORUMACTIF
+   Empêche le fond natif ModernBB de ressortir
+===================== */
 
+.forabg > .topiclist.forums,
+.forabg .topiclist.forums{
+  background:var(--idx-forums-bg)!important;
+  background-color:transparent!important;
+}
+
+.topiclist.forums .row{
+  background:var(--idx-row-bg)!important;
+  border-bottom:1px solid var(--idx-row-border);
+}
+
+.topiclist.forums .row:nth-child(even){
+  background:var(--idx-row-alt-bg)!important;
+}
+
+.topiclist.forums .row:last-child{
+  border-bottom:0;
+}
+
+.topiclist.forums dl.icon,
+.topiclist.forums dd.dterm,
+.topiclist.forums dd.dterm > div,
+.topiclist.forums .forum-content{
+  background:transparent!important;
+}
 .topiclist.forums .row{
   display:flex;
   width:100%;

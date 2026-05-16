@@ -1703,7 +1703,72 @@
 --qeel-zone-shadow:
   inset 0 0 0 1px rgba(255,255,255,.025),
   0 0 14px rgba(36,228,255,.10);
+/* ---------- INDEXBOX / CATÉGORIES ---------- */
 
+--idx-text:#b9cce8;
+--idx-white:#d8ecff;
+--idx-cyan:#24e4ff;
+--idx-cyan-soft:#8cecff;
+--idx-blue:#009dff;
+--idx-pink:#fe037c;
+--idx-pink-soft:#ff4f86;
+--idx-purple:#b88cff;
+--idx-gold:#e4d3b4;
+--idx-gold-soft:#f4efe4;
+--idx-gold-deep:#7a6648;
+--idx-red:#ff2f5f;
+--idx-lime:#a7ff3f;
+
+--idx-bg:#070b18;
+--idx-bg-soft:#0a122d;
+--idx-panel:#1b224e;
+--idx-panel-soft:#362a5c;
+
+--idx-border-cyan:rgba(36,228,255,.22);
+--idx-border-cyan-soft:rgba(36,228,255,.18);
+--idx-border-cyan-strong:rgba(140,236,255,.34);
+--idx-border-pink:rgba(255,79,134,.52);
+--idx-border-soft:rgba(255,255,255,.025);
+
+--idx-shadow-cyan:rgba(36,228,255,.55);
+--idx-shadow-pink:rgba(254,3,124,.58);
+
+--idx-forabg-bg:
+  radial-gradient(circle at top left,rgba(36,228,255,.12),transparent 32%),
+  radial-gradient(circle at top right,rgba(254,3,124,.10),transparent 30%),
+  linear-gradient(180deg,#0a122d 0%,#1b224e 52%,#070b18 100%);
+
+--idx-avatar-bg:
+  radial-gradient(circle at 40% 35%,rgba(140,236,255,.45),rgba(27,34,78,.88) 62%,rgba(7,11,24,.96));
+
+--idx-desc-bg:
+  radial-gradient(circle at top left,rgba(36,228,255,.08),transparent 40%),
+  rgba(27,34,78,.90);
+
+--idx-subforum-bg:rgba(7,11,24,.96);
+--idx-subforum-link-bg:rgba(27,34,78,.88);
+--idx-subforum-link-hover-bg:rgba(54,42,92,.90);
+
+--idx-title-glow:radial-gradient(circle,rgba(36,228,255,.24),transparent 70%);
+
+--idx-special-img-overlay:
+  linear-gradient(180deg,rgba(7,11,24,.05),rgba(7,11,24,.55));
+
+--idx-paradis-topic-bg:radial-gradient(circle,#e4d3b4 0%,#7a6648 100%);
+--idx-terre-topic-bg:radial-gradient(circle,#8cecff 0%,#009dff 100%);
+--idx-enfer-topic-bg:radial-gradient(circle,#ff2f5f 0%,#070b18 100%);
+
+--idx-paradis-desc-bg:rgba(26,20,10,.82);
+--idx-terre-desc-bg:rgba(10,18,45,.82);
+--idx-enfer-desc-bg:rgba(45,0,18,.82);
+
+--idx-card-text:#ffffff;
+
+--idx-card-overlay-bg:rgba(7,11,24,.96);
+
+--idx-paradis-button-bg:linear-gradient(135deg,#e4d3b4,#7a6648);
+--idx-terre-button-bg:linear-gradient(135deg,#8cecff,#009dff);
+--idx-enfer-button-bg:linear-gradient(135deg,#ff2f5f,#fe037c);
 }
 
 /* =========================================================
@@ -3411,4 +3476,73 @@
 --qeel-zone-shadow:
   inset 0 0 0 1px rgba(7,16,31,.06),
   0 0 14px rgba(0,127,163,.08);
+/* ---------- INDEXBOX / CATÉGORIES ---------- */
+
+--idx-text:#1b314b;
+--idx-white:#07101f;
+--idx-cyan:#007fa3;
+--idx-cyan-soft:#006f91;
+--idx-blue:#235fc8;
+--idx-pink:#c92662;
+--idx-pink-soft:#d93d78;
+--idx-purple:#6841a8;
+--idx-gold:#9b6c00;
+--idx-gold-soft:#8a6200;
+--idx-gold-deep:#6d4b00;
+--idx-red:#b8143e;
+--idx-lime:#477a00;
+
+--idx-bg:#f7fbff;
+--idx-bg-soft:#dce8ff;
+--idx-panel:#ffffff;
+--idx-panel-soft:#e7efff;
+
+--idx-border-cyan:rgba(0,127,163,.22);
+--idx-border-cyan-soft:rgba(0,127,163,.16);
+--idx-border-cyan-strong:rgba(0,127,163,.30);
+--idx-border-pink:rgba(201,38,98,.34);
+--idx-border-soft:rgba(7,16,31,.06);
+
+--idx-shadow-cyan:rgba(0,127,163,.20);
+--idx-shadow-pink:rgba(201,38,98,.22);
+
+--idx-forabg-bg:
+  radial-gradient(circle at top left,rgba(0,127,163,.08),transparent 32%),
+  radial-gradient(circle at top right,rgba(201,38,98,.08),transparent 30%),
+  linear-gradient(180deg,#f7fbff 0%,#ffffff 52%,#dce8ff 100%);
+
+--idx-avatar-bg:
+  radial-gradient(circle at 40% 35%,rgba(0,127,163,.20),rgba(231,239,255,.88) 62%,rgba(255,255,255,.96));
+
+--idx-desc-bg:
+  radial-gradient(circle at top left,rgba(0,127,163,.08),transparent 40%),
+  rgba(255,255,255,.90);
+
+--idx-subforum-bg:rgba(247,251,255,.96);
+--idx-subforum-link-bg:rgba(255,255,255,.88);
+--idx-subforum-link-hover-bg:rgba(231,239,255,.95);
+
+--idx-title-glow:radial-gradient(circle,rgba(0,127,163,.13),transparent 70%);
+
+--idx-special-img-overlay:
+  linear-gradient(180deg,rgba(247,251,255,.08),rgba(247,251,255,.42));
+
+--idx-paradis-topic-bg:radial-gradient(circle,#fff8e7 0%,#d8c088 100%);
+--idx-terre-topic-bg:radial-gradient(circle,#e9fbff 0%,#9fd8ef 100%);
+--idx-enfer-topic-bg:radial-gradient(circle,#ffe8ee 0%,#d93d78 100%);
+
+--idx-paradis-desc-bg:rgba(255,248,231,.86);
+--idx-terre-desc-bg:rgba(233,251,255,.86);
+--idx-enfer-desc-bg:rgba(255,232,238,.86);
+
+--idx-card-text:#07101f;
+
+--idx-card-overlay-bg:rgba(247,251,255,.96);
+
+--idx-paradis-button-bg:linear-gradient(135deg,#fff8e7,#d8c088);
+--idx-terre-button-bg:linear-gradient(135deg,#e9fbff,#8ccfe8);
+--idx-enfer-button-bg:linear-gradient(135deg,#ffe8ee,#d93d78);
+
+
+
 }

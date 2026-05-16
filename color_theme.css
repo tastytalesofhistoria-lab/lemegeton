@@ -73,3 +73,68 @@
   --lem-shadow:0 10px 35px rgba(28,48,80,.16);
   --lem-shadow-pink:0 10px 28px rgba(201,38,98,.20);
 }
+/* =========================================================
+   LEMEGETON — PA ISOLÉE / VARIABLES
+   Préfixe : lpa-
+========================================================= */
+
+:root,
+[data-color-scheme="dark"]{
+  --lpa-bg:#0a122d;
+  --lpa-bg-deep:#070b18;
+  --lpa-white:#d8ecff;
+  --lpa-text:#b9cce8;
+  --lpa-muted:#818db8;
+
+  --lpa-cyan:#24e4ff;
+  --lpa-cyan-soft:#8cecff;
+  --lpa-blue:#009dff;
+  --lpa-blue-soft:#6bbfff;
+
+  --lpa-pink:#fe037c;
+  --lpa-pink-soft:#ff4f86;
+  --lpa-red:#ff2f5f;
+
+  --lpa-gold:#e4d3b4;
+  --lpa-sea:#1b224e;
+  --lpa-sea-soft:#362a5c;
+  --lpa-ink:#070b18;
+  --lpa-cream:#d8ecff;
+
+  --lpa-border-cyan:rgba(36,228,255,.22);
+  --lpa-border-cyan-strong:rgba(36,228,255,.28);
+  --lpa-border-soft:rgba(255,255,255,.035);
+  --lpa-panel:rgba(11,20,48,.92);
+  --lpa-panel-deep:rgba(7,11,24,.96);
+  --lpa-panel-solid:#070b18;
+}
+
+[data-color-scheme="light"]{
+  --lpa-bg:#f3f8ff;
+  --lpa-bg-deep:#dce9ff;
+  --lpa-white:#10203f;
+  --lpa-text:#29405f;
+  --lpa-muted:#647b9c;
+
+  --lpa-cyan:#007fa3;
+  --lpa-cyan-soft:#006c8c;
+  --lpa-blue:#245fc8;
+  --lpa-blue-soft:#3f78d8;
+
+  --lpa-pink:#c92662;
+  --lpa-pink-soft:#d93d78;
+  --lpa-red:#b8143e;
+
+  --lpa-gold:#9b6c00;
+  --lpa-sea:#d8e5ff;
+  --lpa-sea-soft:#b8c9ef;
+  --lpa-ink:#f7fbff;
+  --lpa-cream:#10203f;
+
+  --lpa-border-cyan:rgba(0,127,163,.22);
+  --lpa-border-cyan-strong:rgba(0,127,163,.34);
+  --lpa-border-soft:rgba(16,32,63,.08);
+  --lpa-panel:rgba(255,255,255,.92);
+  --lpa-panel-deep:rgba(238,246,255,.96);
+  --lpa-panel-solid:#ffffff;
+}

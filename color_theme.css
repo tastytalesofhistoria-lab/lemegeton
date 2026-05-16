@@ -2565,6 +2565,96 @@
 
 --pm-form-bg:rgba(4,6,20,.38);
 --pm-form-border:rgba(36,228,255,.14);
+/* ---------- GLOBAL SELECTION ---------- */
+
+--sel-bg:#a7ff3f;
+--sel-text:#05070f;
+--sel-shadow:0 0 10px rgba(167,255,63,.35),0 0 18px rgba(167,255,63,.16);
+
+/* ---------- NAVBAR + NOTIFFI ---------- */
+
+--nav-bg:
+  radial-gradient(circle at 86% 20%,rgba(254,3,124,.18),transparent 34%),
+  linear-gradient(90deg,rgba(10,18,45,.96) 0%,rgba(27,34,78,.98) 42%,rgba(54,42,92,.98) 100%);
+
+--nav-text:#d8ecff;
+--nav-cyan:#24e4ff;
+--nav-cyan-soft:#8cecff;
+--nav-blue:#009dff;
+--nav-pink:#ff4f86;
+--nav-pink-hot:#fe037c;
+--nav-dark:#101936;
+--nav-muted:#89abc1;
+
+--nav-border:rgba(255,79,134,.35);
+--nav-border-cyan:rgba(25,217,255,.35);
+--nav-border-cyan-strong:rgba(25,217,255,.85);
+--nav-border-dropdown:rgba(255,79,134,.38);
+--nav-border-soft:rgba(255,255,255,.035);
+
+--nav-shadow:
+  inset 0 0 0 1px rgba(255,255,255,.035),
+  inset 0 0 18px rgba(36,228,255,.05),
+  0 0 14px rgba(255,64,120,.12),
+  0 0 22px rgba(0,234,255,.05);
+
+--nav-dropdown-bg:
+  radial-gradient(circle at top right,rgba(254,3,124,.16),transparent 36%),
+  linear-gradient(135deg,rgba(10,18,45,.98) 0%,rgba(27,34,78,.98) 45%,rgba(54,42,92,.98) 100%);
+
+--nav-dropdown-shadow:
+  inset 0 0 0 1px rgba(255,255,255,.035),
+  0 8px 18px rgba(0,0,0,.35),
+  0 0 14px rgba(255,64,120,.12);
+
+--nav-dropdown-hover-bg:rgba(36,228,255,.07);
+
+--notiffi-button-bg:
+  radial-gradient(circle at 35% 25%,rgba(255,100,135,.55),transparent 42%),
+  linear-gradient(135deg,#ff2f57 0%,#d71f54 58%,#611b75 100%);
+
+--notiffi-button-shadow:
+  0 0 18px rgba(255,47,87,.55),
+  0 0 30px rgba(25,217,255,.14);
+
+--notiffi-button-shadow-hover:
+  0 0 24px rgba(255,47,87,.70),
+  0 0 36px rgba(25,217,255,.30);
+
+--notiffi-button-filter:
+  drop-shadow(0 0 8px rgba(254,3,124,.35))
+  drop-shadow(0 0 10px rgba(36,228,255,.12));
+
+--notiffi-count-bg:#07101f;
+--notiffi-count-text:#24e4ff;
+--notiffi-count-border:rgba(25,217,255,.80);
+--notiffi-count-shadow:
+  0 0 8px rgba(25,217,255,.55),
+  0 0 0 2px rgba(7,16,31,.95);
+
+--notiffi-panel-bg:
+  radial-gradient(circle at 0% 0%,rgba(25,217,255,.18),transparent 35%),
+  radial-gradient(circle at 100% 0%,rgba(255,79,124,.16),transparent 38%),
+  linear-gradient(145deg,rgba(7,10,29,.98),rgba(22,17,54,.96) 55%,rgba(47,24,76,.96));
+
+--notiffi-panel-text:#d8ecff;
+--notiffi-panel-border:rgba(25,217,255,.45);
+--notiffi-panel-shadow:
+  0 0 0 1px rgba(255,255,255,.04) inset,
+  0 18px 45px rgba(0,0,0,.55),
+  0 0 36px rgba(25,217,255,.18);
+
+--notiffi-title-border:rgba(25,217,255,.25);
+
+--notiffi-list-bg:rgba(3,7,20,.55);
+--notiffi-list-border:rgba(255,255,255,.06);
+--notiffi-list-shadow:0 0 18px rgba(0,0,0,.25) inset;
+--notiffi-scroll-track:rgba(255,255,255,.05);
+--notiffi-scroll-thumb:linear-gradient(180deg,#19d9ff,#ff4f7c);
+
+
+
+
 }
 
 /* =========================================================
@@ -5130,7 +5220,90 @@
 --pm-form-bg:rgba(255,255,255,.70);
 --pm-form-border:rgba(0,127,163,.18);
 
+/* ---------- GLOBAL SELECTION ---------- */
 
+--sel-bg:#a7ff3f;
+--sel-text:#05070f;
+--sel-shadow:0 0 10px rgba(167,255,63,.22),0 0 18px rgba(167,255,63,.10);
+
+/* ---------- NAVBAR + NOTIFFI ---------- */
+
+--nav-bg:
+  radial-gradient(circle at 86% 20%,rgba(201,38,98,.08),transparent 34%),
+  linear-gradient(90deg,rgba(247,251,255,.98) 0%,rgba(231,239,255,.98) 42%,rgba(220,232,255,.98) 100%);
+
+--nav-text:#1b314b;
+--nav-cyan:#007fa3;
+--nav-cyan-soft:#006f91;
+--nav-blue:#235fc8;
+--nav-pink:#c92662;
+--nav-pink-hot:#d31b6f;
+--nav-dark:#07101f;
+--nav-muted:#526b86;
+
+--nav-border:rgba(201,38,98,.24);
+--nav-border-cyan:rgba(0,127,163,.26);
+--nav-border-cyan-strong:rgba(0,127,163,.42);
+--nav-border-dropdown:rgba(201,38,98,.26);
+--nav-border-soft:rgba(7,16,31,.06);
+
+--nav-shadow:
+  inset 0 0 0 1px rgba(7,16,31,.06),
+  0 8px 22px rgba(28,48,80,.10);
+
+--nav-dropdown-bg:
+  radial-gradient(circle at top right,rgba(201,38,98,.08),transparent 36%),
+  linear-gradient(135deg,rgba(255,255,255,.98) 0%,rgba(231,239,255,.98) 45%,rgba(220,232,255,.98) 100%);
+
+--nav-dropdown-shadow:
+  inset 0 0 0 1px rgba(7,16,31,.05),
+  0 8px 18px rgba(28,48,80,.14),
+  0 0 14px rgba(201,38,98,.08);
+
+--nav-dropdown-hover-bg:rgba(0,127,163,.08);
+
+--notiffi-button-bg:
+  radial-gradient(circle at 35% 25%,rgba(255,255,255,.45),transparent 42%),
+  linear-gradient(135deg,#ffe8ee 0%,#d93d78 58%,#6841a8 100%);
+
+--notiffi-button-shadow:
+  0 0 18px rgba(201,38,98,.18),
+  0 0 30px rgba(0,127,163,.10);
+
+--notiffi-button-shadow-hover:
+  0 0 24px rgba(201,38,98,.26),
+  0 0 36px rgba(0,127,163,.16);
+
+--notiffi-button-filter:
+  drop-shadow(0 0 8px rgba(201,38,98,.16))
+  drop-shadow(0 0 10px rgba(0,127,163,.10));
+
+--notiffi-count-bg:#ffffff;
+--notiffi-count-text:#007fa3;
+--notiffi-count-border:rgba(0,127,163,.42);
+--notiffi-count-shadow:
+  0 0 8px rgba(0,127,163,.16),
+  0 0 0 2px rgba(255,255,255,.95);
+
+--notiffi-panel-bg:
+  radial-gradient(circle at 0% 0%,rgba(0,127,163,.10),transparent 35%),
+  radial-gradient(circle at 100% 0%,rgba(201,38,98,.10),transparent 38%),
+  linear-gradient(145deg,rgba(255,255,255,.98),rgba(231,239,255,.96) 55%,rgba(220,232,255,.96));
+
+--notiffi-panel-text:#1b314b;
+--notiffi-panel-border:rgba(0,127,163,.28);
+--notiffi-panel-shadow:
+  0 0 0 1px rgba(7,16,31,.05) inset,
+  0 18px 45px rgba(28,48,80,.16),
+  0 0 26px rgba(0,127,163,.08);
+
+--notiffi-title-border:rgba(0,127,163,.18);
+
+--notiffi-list-bg:rgba(255,255,255,.62);
+--notiffi-list-border:rgba(7,16,31,.08);
+--notiffi-list-shadow:0 0 18px rgba(28,48,80,.08) inset;
+--notiffi-scroll-track:rgba(7,16,31,.06);
+--notiffi-scroll-thumb:linear-gradient(180deg,#007fa3,#c92662);
 
 
 

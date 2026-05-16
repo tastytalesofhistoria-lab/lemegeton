@@ -96,14 +96,14 @@ body{
 #lpa .lpa-card{
   position:relative;
   overflow:hidden;
-  border:1px solid rgba(36,228,255,.22);
+  border:1px solid var(--lpa-border-cyan);
   border-radius:16px;
   background:
     radial-gradient(circle at top left,rgba(36,228,255,.10),transparent 38%),
     radial-gradient(circle at bottom right,rgba(254,3,124,.08),transparent 42%),
-    linear-gradient(180deg,rgba(11,20,48,.92),rgba(7,11,24,.96));
+    linear-gradient(180deg,var(--lpa-panel),var(--lpa-panel-deep));
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.035),
+    inset 0 0 0 1px var(--lpa-border-soft),
     0 0 16px rgba(36,228,255,.12);
 }
 
@@ -113,8 +113,7 @@ body{
   justify-content:center;
   height:20px;
   margin:0 0 6px;
-  border:1px solid rgba(36,228,255,.28);
-  border-radius:999px;
+border:1px solid var(--lpa-border-cyan-strong);  border-radius:999px;
   background:rgba(7,11,24,.68);
   color:var(--lpa-cyan-soft);
   font-family:"Barlow Condensed",Arial,sans-serif;
@@ -206,8 +205,7 @@ body{
   grid-row:2;
   display:block;
   padding:0;
-  background:#070b18;
-  color:var(--lpa-cyan-soft);
+background:var(--lpa-panel-solid);  color:var(--lpa-cyan-soft);
   text-decoration:none;
   isolation:isolate;
 }
@@ -507,8 +505,7 @@ body{
   margin:0;
   padding:8px 6px;
   background:linear-gradient(to right,transparent,rgba(7,11,24,.84),transparent);
-  color:#ffffff;
-  text-align:center;
+color:var(--lpa-white);  text-align:center;
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:13px;
   font-weight:900;
@@ -535,7 +532,7 @@ body{
   pointer-events:none;
   border:1px solid rgba(254,3,124,.54);
   border-radius:14px;
-  background:#070b18;
+background:var(--lpa-panel-solid);
   transform:translateY(12px);
   transition:max-height .28s ease,opacity .28s ease,transform .28s ease;
   box-shadow:0 -2px 14px rgba(254,3,124,.24),0 0 12px rgba(36,228,255,.12);
@@ -658,7 +655,7 @@ body{
   padding:0 3px 5px;
   border:1px solid rgba(36,228,255,.26);
   border-radius:10px;
-  background:#070b18;
+background:var(--lpa-panel-solid);
   color:var(--lpa-cyan-soft);
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:8px;
@@ -692,8 +689,7 @@ body{
 }
 
 #lpa .lpa-wanted-card:hover{
-  color:#ffffff;
-  border-color:rgba(255,79,134,.46);
+color:var(--lpa-white);  border-color:rgba(255,79,134,.46);
   transform:translateY(-1px);
 }
 
@@ -745,8 +741,7 @@ body{
   height:32px;
   padding:0;
   background:transparent;
-  color:#ffffff;
-  font-family:"Tilt Neon",sans-serif;
+color:var(--lpa-white);  font-family:"Tilt Neon",sans-serif;
   font-size:40px;
   font-weight:400;
   line-height:1;
@@ -809,7 +804,7 @@ body{
   overflow:hidden;
   border:1px solid rgba(36,228,255,.24);
   border-radius:14px;
-  background:#070b18;
+background:var(--lpa-panel-solid);
   cursor:pointer;
 }
 
@@ -872,8 +867,7 @@ body{
 }
 
 #lpa .lpa-staff-name{
-  color:#ffffff;
-  font-family:"Barlow Condensed",Arial,sans-serif;
+color:var(--lpa-white);  font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:19px;
   line-height:1;
   font-weight:900;
@@ -912,8 +906,7 @@ body{
   border:1px solid rgba(255,255,255,.28);
   border-radius:999px;
   background:rgba(7,11,24,.80);
-  color:#ffffff;
-  font-family:"Barlow Condensed",Arial,sans-serif;
+color:var(--lpa-white);  font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:9.5px;
   font-weight:900;
   letter-spacing:.8px;
@@ -966,7 +959,7 @@ body{
   overflow:hidden;
   border:1px solid rgba(254,3,124,.34);
   border-radius:16px;
-  background:#070b18;
+background:var(--lpa-panel-solid);
   text-decoration:none;
 }
 
@@ -1006,8 +999,7 @@ body{
 }
 
 #lpa .lpa-deal-main{
-  color:#ffffff;
-  font-family:Georgia,"Times New Roman",serif;
+color:var(--lpa-white);  font-family:Georgia,"Times New Roman",serif;
   font-size:10.5px;
   font-weight:900;
   line-height:1;
@@ -1107,8 +1099,7 @@ body{
 }
 
 #lpa .lpa-deal-subtitle{
-  color:#ffffff;
-  font-family:"Barlow Condensed",Arial,sans-serif;
+color:var(--lpa-white);  font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:12px;
   font-weight:900;
   line-height:1;

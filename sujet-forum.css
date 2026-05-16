@@ -3,6 +3,7 @@
    Fichier : sujet+forum.css
    Préfixe unique : lt-
    CSS corrigé / conflits ModernBB neutralisés
+   Edison ready / variables dans color_theme.css
 ========================================================= */
 
 /* ===================== BASE ===================== */
@@ -15,34 +16,15 @@
 }
 
 .forumbg.lt-topics-board{
-  --lt-bg:#040614;
-  --lt-deep:#0b0f2a;
-  --lt-panel:#201b3d;
-  --lt-panel-soft:#3c3068;
-  --lt-cyan:#24e4ff;
-  --lt-cyan-soft:#b8f4ff;
-  --lt-pink:#ff4f86;
-  --lt-pink-hot:#FE037C;
-  --lt-purple:#b88cff;
-  --lt-text:#d8ecff;
-  --lt-white:#ecfbff;
-  --lt-muted:#89abc1;
-
   width:100%;
   max-width:1000px;
   margin:18px auto;
   padding:0;
-  border:1px solid rgba(36,228,255,.18);
-  border-top:2px solid rgba(42,233,255,.22);
+  border:1px solid var(--lt-border-cyan);
+  border-top:2px solid var(--lt-border-cyan-soft);
   border-radius:22px;
-  background:
-    radial-gradient(circle at 12% 0%,rgba(36,228,255,.14),transparent 28%),
-    radial-gradient(circle at 88% 12%,rgba(254,3,124,.15),transparent 32%),
-    linear-gradient(135deg,rgba(4,6,20,.98) 0%,rgba(11,15,42,.98) 45%,rgba(32,27,61,.98) 100%);
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.035),
-    0 0 26px rgba(0,0,0,.38),
-    0 0 24px rgba(36,228,255,.06);
+  background:var(--lt-board-bg);
+  box-shadow:var(--lt-shadow-board);
   overflow:hidden;
 }
 
@@ -114,10 +96,13 @@
   position:relative;
   overflow:hidden;
   padding:16px 20px!important;
-  background:
-    linear-gradient(90deg,rgba(10,18,45,.96) 0%,rgba(27,34,78,.98) 45%,rgba(54,42,92,.98) 100%);
-  border-bottom:1px solid rgba(36,228,255,.18);
+  border-bottom:1px solid var(--lt-border-cyan);
+  background:var(--lt-head-bg);
   box-shadow:inset 0 0 18px rgba(36,228,255,.06);
+}
+
+[data-color-scheme="light"] .lt-topic-head{
+  box-shadow:inset 0 0 18px rgba(0,127,163,.05);
 }
 
 .lt-topic-head::after{
@@ -126,7 +111,7 @@
   top:50%;
   right:18px;
   transform:translateY(-50%);
-  color:rgba(255,255,255,.045);
+  color:var(--lt-ghost);
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:48px;
   font-weight:900;
@@ -164,14 +149,14 @@
   line-height:1!important;
   letter-spacing:1.8px;
   text-transform:uppercase;
-  text-shadow:0 0 8px rgba(36,228,255,.35);
+  text-shadow:var(--lt-shadow-cyan);
 }
 
 .lt-topic-head dd{
   color:var(--lt-cyan-soft)!important;
   text-align:center!important;
   font-size:18px!important;
-  text-shadow:0 0 8px rgba(36,228,255,.24);
+  text-shadow:var(--lt-shadow-cyan);
 }
 
 /* ===================== CARTE SUJET ===================== */
@@ -180,33 +165,26 @@
   position:relative;
   margin:0!important;
   padding:0!important;
-  border:1px solid rgba(255,79,134,.30);
+  border:1px solid var(--lt-border-pink);
   border-left:4px solid var(--lt-cyan);
   border-radius:18px;
-  background:
-    radial-gradient(circle at top right,rgba(255,95,140,.11),transparent 34%),
-    linear-gradient(135deg,rgba(60,48,104,.93) 0%,rgba(32,27,61,.98) 100%)!important;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.03) inset,
-    0 0 16px rgba(255,64,120,.12);
+  background:var(--lt-row-bg)!important;
+  box-shadow:var(--lt-shadow-row);
   overflow:hidden;
   transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
 }
 
 .lt-topic-row:hover{
   transform:translateY(-2px);
-  border-color:rgba(36,228,255,.58);
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.05) inset,
-    0 0 20px rgba(36,228,255,.13),
-    0 0 22px rgba(255,64,120,.12);
+  border-color:var(--lt-border-cyan-strong);
+  box-shadow:var(--lt-shadow-row-hover);
 }
 
 .lt-topic-row::before{
   content:"";
   position:absolute;
   inset:0;
-  background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);
+  background-image:radial-gradient(var(--lt-dot) 1px,transparent 1px);
   background-size:14px 14px;
   opacity:.14;
   pointer-events:none;
@@ -250,13 +228,18 @@
   justify-content:center!important;
   width:40px!important;
   height:40px!important;
-  border:1px solid rgba(36,228,255,.35);
+  border:1px solid var(--lt-border-cyan-strong);
   border-radius:50%;
-  background:
-    radial-gradient(circle at 50% 20%,rgba(36,228,255,.18),rgba(4,6,20,.42));
+  background:var(--lt-status-bg);
   box-shadow:
     inset 0 0 12px rgba(36,228,255,.06),
     0 0 10px rgba(36,228,255,.10);
+}
+
+[data-color-scheme="light"] .lt-topic-status-icon{
+  box-shadow:
+    inset 0 0 12px rgba(0,127,163,.05),
+    0 0 10px rgba(0,127,163,.06);
 }
 
 .lt-topic-status-icon img{
@@ -266,6 +249,10 @@
   width:auto!important;
   height:auto!important;
   filter:drop-shadow(0 0 5px rgba(36,228,255,.42));
+}
+
+[data-color-scheme="light"] .lt-topic-status-icon img{
+  filter:drop-shadow(0 0 5px rgba(0,127,163,.18));
 }
 
 .lt-topic-title-wrap{
@@ -293,11 +280,19 @@
   transition:color .18s ease,text-shadow .18s ease;
 }
 
+[data-color-scheme="light"] .lt-topic-title a.topictitle{
+  text-shadow:none;
+}
+
 .lt-topic-row:hover .lt-topic-title a.topictitle{
   color:var(--lt-cyan)!important;
   text-shadow:
     0 0 6px rgba(36,228,255,.55),
     0 0 14px rgba(0,157,255,.30);
+}
+
+[data-color-scheme="light"] .lt-topic-row:hover .lt-topic-title a.topictitle{
+  text-shadow:0 0 8px rgba(0,127,163,.16);
 }
 
 /* Petites icônes nouveau / participation */
@@ -340,7 +335,7 @@
   content:"⛧";
   margin-right:5px;
   color:var(--lt-pink);
-  text-shadow:0 0 6px rgba(255,79,134,.52);
+  text-shadow:var(--lt-shadow-pink);
 }
 
 .lt-topic-author a{
@@ -376,12 +371,10 @@
   height:48px!important;
   margin:0!important;
   padding:8px 6px!important;
-  color:var(--lt-white)!important;
-  border:1px solid rgba(36,228,255,.28)!important;
+  border:1px solid var(--lt-border-cyan-mid)!important;
   border-radius:12px!important;
-  background:
-    radial-gradient(circle at 50% 0%,rgba(36,228,255,.12),transparent 55%),
-    rgba(4,6,20,.34)!important;
+  background:var(--lt-stat-bg)!important;
+  color:var(--lt-white)!important;
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:18px!important;
   font-weight:900!important;
@@ -390,6 +383,12 @@
   box-shadow:
     inset 0 0 10px rgba(36,228,255,.06),
     0 0 8px rgba(36,228,255,.08)!important;
+}
+
+[data-color-scheme="light"] .lt-topic-stat{
+  box-shadow:
+    inset 0 0 10px rgba(0,127,163,.05),
+    0 0 8px rgba(0,127,163,.06)!important;
 }
 
 .lt-topic-stat dfn{
@@ -416,9 +415,9 @@
   min-height:64px!important;
   margin:0!important;
   padding:9px 10px!important;
-  border:1px solid rgba(255,79,134,.28)!important;
+  border:1px solid var(--lt-border-pink-mid)!important;
   border-radius:16px!important;
-  background:rgba(4,6,20,.30)!important;
+  background:var(--lt-soft-bg)!important;
   overflow:hidden!important;
 }
 
@@ -434,12 +433,10 @@
   margin:0!important;
   padding:0!important;
   overflow:hidden!important;
-  border:1px solid rgba(36,228,255,.55)!important;
+  border:1px solid var(--lt-border-cyan-strong)!important;
   border-radius:50%!important;
   background:var(--lt-deep)!important;
-  box-shadow:
-    0 0 0 2px rgba(4,6,20,.85),
-    0 0 12px rgba(36,228,255,.22)!important;
+  box-shadow:var(--lt-shadow-avatar)!important;
 }
 
 .lt-topic-lastpost .lastpost-avatar a{
@@ -495,15 +492,16 @@
 .lt-topic-lastpost .lastpost-infos br{
   display:block!important;
 }
+
 /* ===================== SECTIONS / AUCUN SUJET ===================== */
 
 .lt-section-title,
 .lt-no-topic{
   margin:0!important;
   padding:20px!important;
-  border:1px solid rgba(36,228,255,.20);
+  border:1px solid var(--lt-border-cyan-soft);
   border-radius:18px;
-  background:rgba(4,6,20,.34)!important;
+  background:var(--lt-section-bg)!important;
   color:var(--lt-cyan-soft)!important;
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:18px!important;

@@ -887,6 +887,92 @@
 --ctxm-head-bg:
   linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
   var(--ctxm-head-img) center/cover;
+/* ---------- CHRONOLOGIE / CHRO ---------- */
+
+--chro-bg:#344c70;
+--chro-panel:#16132d;
+--chro-panel-dark:#111026;
+
+--chro-cyan:#19d9ff;
+--chro-cyan-soft:#8cecff;
+--chro-pink:#ff8eaf;
+--chro-white:#ecfbff;
+--chro-text:#c8efff;
+--chro-muted:#7ec7e5;
+
+--chro-gold:#ffd36e;
+--chro-purple:#b88cff;
+--chro-green:#57c785;
+--chro-carmin:#d64066;
+
+--chro-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--chro-shadow-cyan:0 0 12px rgba(25,217,255,.65),0 0 30px rgba(25,217,255,.22);
+--chro-shadow-pink:0 0 14px rgba(255,142,175,.60),0 0 28px rgba(255,79,124,.18);
+
+--chro-border-cyan:rgba(140,236,255,.22);
+--chro-border-cyan-soft:rgba(140,236,255,.20);
+--chro-border-cyan-title:rgba(25,217,255,.22);
+--chro-border-cyan-strong:rgba(25,217,255,.32);
+--chro-border-soft:rgba(255,255,255,.03);
+--chro-border-dark:rgba(5,10,25,.80);
+
+--chro-dot:rgba(140,236,255,.65);
+--chro-soft-bg:rgba(255,255,255,.04);
+--chro-soft-bg-2:rgba(255,255,255,.035);
+--chro-era-bg:rgba(22,19,45,.92);
+
+--chro-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
+  linear-gradient(180deg,#15122e 0%,var(--chro-panel) 55%,var(--chro-panel-dark) 100%);
+
+--chro-head-bg:
+  linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+  var(--chro-head-img) center/cover;
+
+/* ---------- CULTURES / CUL ---------- */
+
+--cul-bg:#344c70;
+--cul-panel:#16132d;
+--cul-panel-dark:#111026;
+
+--cul-cyan:#19d9ff;
+--cul-cyan-soft:#8cecff;
+--cul-pink:#ff8eaf;
+--cul-white:#ecfbff;
+--cul-text:#c8efff;
+--cul-muted:#7ec7e5;
+
+--cul-gold:#ffd36e;
+--cul-green:#57c785;
+--cul-carmin:#d64066;
+--cul-hell:#d64066;
+--cul-heaven:#ffd36e;
+
+--cul-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--cul-shadow-cyan:0 0 12px rgba(25,217,255,.65),0 0 30px rgba(25,217,255,.22);
+--cul-shadow-pink:0 0 14px rgba(255,142,175,.60),0 0 28px rgba(255,79,124,.18);
+
+--cul-border-cyan:rgba(140,236,255,.22);
+--cul-border-cyan-soft:rgba(140,236,255,.20);
+--cul-border-cyan-strong:rgba(25,217,255,.32);
+--cul-border-soft:rgba(255,255,255,.03);
+--cul-border-dark:rgba(5,10,25,.80);
+
+--cul-dot:rgba(140,236,255,.65);
+--cul-soft-bg:rgba(255,255,255,.04);
+--cul-soft-bg-2:rgba(255,255,255,.035);
+--cul-card-bg:rgba(22,19,45,.92);
+
+--cul-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
+  linear-gradient(180deg,#15122e 0%,var(--cul-panel) 55%,var(--cul-panel-dark) 100%);
+
+--cul-head-bg:
+  linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+  var(--cul-head-img) center/cover;
+
 }
 
 /* =========================================================
@@ -1777,4 +1863,89 @@
 --ctxm-head-bg:
   linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
   var(--ctxm-head-img) center/cover;
-}
+
+/* ---------- CHRONOLOGIE / CHRO ---------- */
+
+--chro-bg:#dce8ff;
+--chro-panel:#f6fbff;
+--chro-panel-dark:#d8e6f5;
+
+--chro-cyan:#007fa3;
+--chro-cyan-soft:#006f91;
+--chro-pink:#c92662;
+--chro-white:#07101f;
+--chro-text:#1b314b;
+--chro-muted:#526b86;
+
+--chro-gold:#9b6c00;
+--chro-purple:#6841a8;
+--chro-green:#237a4c;
+--chro-carmin:#b8143e;
+
+--chro-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--chro-shadow-cyan:0 0 12px rgba(0,127,163,.26),0 0 28px rgba(0,127,163,.12);
+--chro-shadow-pink:0 0 14px rgba(201,38,98,.22),0 0 28px rgba(201,38,98,.12);
+
+--chro-border-cyan:rgba(0,127,163,.22);
+--chro-border-cyan-soft:rgba(0,127,163,.20);
+--chro-border-cyan-title:rgba(0,127,163,.24);
+--chro-border-cyan-strong:rgba(0,127,163,.34);
+--chro-border-soft:rgba(7,16,31,.10);
+--chro-border-dark:rgba(28,48,80,.16);
+
+--chro-dot:rgba(0,127,163,.30);
+--chro-soft-bg:rgba(7,16,31,.04);
+--chro-soft-bg-2:rgba(7,16,31,.035);
+--chro-era-bg:rgba(255,255,255,.86);
+
+--chro-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 36%),
+  linear-gradient(180deg,#f7fbff 0%,var(--chro-panel) 55%,var(--chro-panel-dark) 100%);
+
+--chro-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--chro-head-img) center/cover;
+
+/* ---------- CULTURES / CUL ---------- */
+
+--cul-bg:#dce8ff;
+--cul-panel:#f6fbff;
+--cul-panel-dark:#d8e6f5;
+
+--cul-cyan:#007fa3;
+--cul-cyan-soft:#006f91;
+--cul-pink:#c92662;
+--cul-white:#07101f;
+--cul-text:#1b314b;
+--cul-muted:#526b86;
+
+--cul-gold:#9b6c00;
+--cul-green:#237a4c;
+--cul-carmin:#b8143e;
+--cul-hell:#b8143e;
+--cul-heaven:#9b6c00;
+
+--cul-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--cul-shadow-cyan:0 0 12px rgba(0,127,163,.26),0 0 28px rgba(0,127,163,.12);
+--cul-shadow-pink:0 0 14px rgba(201,38,98,.22),0 0 28px rgba(201,38,98,.12);
+
+--cul-border-cyan:rgba(0,127,163,.22);
+--cul-border-cyan-soft:rgba(0,127,163,.20);
+--cul-border-cyan-strong:rgba(0,127,163,.34);
+--cul-border-soft:rgba(7,16,31,.10);
+--cul-border-dark:rgba(28,48,80,.16);
+
+--cul-dot:rgba(0,127,163,.30);
+--cul-soft-bg:rgba(7,16,31,.04);
+--cul-soft-bg-2:rgba(7,16,31,.035);
+--cul-card-bg:rgba(255,255,255,.86);
+
+--cul-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 36%),
+  linear-gradient(180deg,#f7fbff 0%,var(--cul-panel) 55%,var(--cul-panel-dark) 100%);
+
+--cul-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--cul-head-img) center/cover;}

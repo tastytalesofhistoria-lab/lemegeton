@@ -422,6 +422,49 @@
 --stf-dot:rgba(140,236,255,.65);
 --stf-scanline:rgba(255,255,255,.035);
 
+/* ---------- AVATARS PRIS / AVP ---------- */
+
+--avp-bg:#344c70;
+--avp-panel:#16132d;
+--avp-panel-dark:#111026;
+
+--avp-cyan:#19d9ff;
+--avp-cyan-soft:#8cecff;
+--avp-pink:#ff8eaf;
+--avp-white:#ecfbff;
+--avp-text:#c8efff;
+--avp-muted:#7ec7e5;
+
+--avp-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--avp-shadow-cyan:0 0 12px rgba(25,217,255,.65),0 0 30px rgba(25,217,255,.22);
+--avp-shadow-pink:0 0 14px rgba(255,142,175,.60),0 0 28px rgba(255,79,124,.18);
+
+--avp-border-cyan:rgba(140,236,255,.22);
+--avp-border-cyan-strong:rgba(25,217,255,.32);
+--avp-border-soft:rgba(255,255,255,.03);
+--avp-border-dark:rgba(5,10,25,.80);
+
+--avp-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(25,217,255,.14),transparent 36%),
+  linear-gradient(180deg,#15122e 0%,var(--avp-panel) 55%,var(--avp-panel-dark) 100%);
+
+--avp-head-bg:
+  linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
+  var(--avp-head-img) center/cover;
+
+--avp-card-bg:rgba(22,19,45,.92);
+--avp-soft-bg:rgba(255,255,255,.04);
+--avp-soft-bg-2:rgba(255,255,255,.035);
+--avp-line-bg-1:rgba(255,255,255,.055);
+--avp-line-bg-2:rgba(255,255,255,.025);
+--avp-line-bg-3:rgba(255,255,255,.015);
+--avp-dot:rgba(140,236,255,.65);
+
+--avp-pris:#82ff9e;
+--avp-oc:#b88cff;
+--avp-ia:#9aa4b2;
+--avp-pnj:#ffd36e;
 }
 
 /* =========================================================
@@ -849,4 +892,48 @@
 --stf-avatar-bg:rgba(255,255,255,.75);
 --stf-dot:rgba(0,127,163,.30);
 --stf-scanline:rgba(7,16,31,.035);
+
+/* ---------- AVATARS PRIS / AVP ---------- */
+
+--avp-bg:#dce8ff;
+--avp-panel:#f6fbff;
+--avp-panel-dark:#d8e6f5;
+
+--avp-cyan:#007fa3;
+--avp-cyan-soft:#006f91;
+--avp-pink:#c92662;
+--avp-white:#07101f;
+--avp-text:#1b314b;
+--avp-muted:#526b86;
+
+--avp-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
+
+--avp-shadow-cyan:0 0 12px rgba(0,127,163,.26),0 0 28px rgba(0,127,163,.12);
+--avp-shadow-pink:0 0 14px rgba(201,38,98,.22),0 0 28px rgba(201,38,98,.12);
+
+--avp-border-cyan:rgba(0,127,163,.22);
+--avp-border-cyan-strong:rgba(0,127,163,.34);
+--avp-border-soft:rgba(7,16,31,.10);
+--avp-border-dark:rgba(28,48,80,.16);
+
+--avp-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 36%),
+  linear-gradient(180deg,#f7fbff 0%,var(--avp-panel) 55%,var(--avp-panel-dark) 100%);
+
+--avp-head-bg:
+  linear-gradient(90deg,rgba(247,251,255,.88),rgba(220,232,255,.70)),
+  var(--avp-head-img) center/cover;
+
+--avp-card-bg:rgba(255,255,255,.86);
+--avp-soft-bg:rgba(7,16,31,.04);
+--avp-soft-bg-2:rgba(7,16,31,.035);
+--avp-line-bg-1:rgba(7,16,31,.055);
+--avp-line-bg-2:rgba(7,16,31,.025);
+--avp-line-bg-3:rgba(7,16,31,.015);
+--avp-dot:rgba(0,127,163,.30);
+
+--avp-pris:#237a4c;
+--avp-oc:#6841a8;
+--avp-ia:#66717f;
+--avp-pnj:#9b6c00;
 }

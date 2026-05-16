@@ -127,7 +127,7 @@
 --ac-title-ghost:rgba(255,255,255,.045);
 --ac-dot:rgba(255,255,255,.07);
 --ac-line-gradient:linear-gradient(to bottom,rgba(36,228,255,.75),rgba(254,3,124,.55),rgba(184,140,255,.35));
-}
+--ac-feed-bg:#090b22;}
 
 /* ===================== MODE CLAIR ===================== */
 
@@ -250,4 +250,6 @@
 
 --ac-title-ghost:rgba(7,16,31,.055);
 --ac-dot:rgba(7,16,31,.08);
---ac-line-gradient:linear-gradient(to bottom,rgba(0,127,163,.65),rgba(201,38,98,.45),rgba(104,65,168,.35));}
+--ac-line-gradient:linear-gradient(to bottom,rgba(0,127,163,.65),rgba(201,38,98,.45),rgba(104,65,168,.35));
+--ac-feed-bg:#dce8ff;
+}

@@ -1,1 +1,75 @@
+/* =========================================================
+   LEMEGETON — COLOR THEME / EDISON
+   Variables globales clair / sombre
+========================================================= */
 
+:root,
+[data-color-scheme="dark"]{
+  color-scheme:dark;
+
+  --lem-bg:#040614;
+  --lem-bg-deep:#070a1d;
+  --lem-bg-soft:#0b0f2a;
+
+  --lem-panel:#101936;
+  --lem-panel-2:#15264b;
+  --lem-card:#131733;
+  --lem-card-soft:rgba(18,24,60,.92);
+
+  --lem-white:#ecfbff;
+  --lem-text:#c8efff;
+  --lem-muted:#7ec7e5;
+  --lem-muted-2:#89abc1;
+
+  --lem-cyan:#19d9ff;
+  --lem-cyan-soft:#8cecff;
+  --lem-blue:#2668ff;
+
+  --lem-pink:#ff4f7c;
+  --lem-pink-soft:#ffb0c3;
+  --lem-purple:#b88cff;
+  --lem-gold:#ffd36e;
+  --lem-gold-soft:#ffe7a8;
+  --lem-lime:#a7ff3f;
+  --lem-red:#ff335c;
+
+  --lem-border:rgba(25,217,255,.28);
+  --lem-border-soft:rgba(255,255,255,.12);
+  --lem-shadow:0 0 30px rgba(25,217,255,.16);
+  --lem-shadow-pink:0 0 25px rgba(255,79,124,.28);
+}
+
+[data-color-scheme="light"]{
+  color-scheme:light;
+
+  --lem-bg:#f4f8ff;
+  --lem-bg-deep:#dce8ff;
+  --lem-bg-soft:#edf4ff;
+
+  --lem-panel:#ffffff;
+  --lem-panel-2:#e7efff;
+  --lem-card:#ffffff;
+  --lem-card-soft:rgba(255,255,255,.94);
+
+  --lem-white:#07101f;
+  --lem-text:#15264b;
+  --lem-muted:#526b86;
+  --lem-muted-2:#637b95;
+
+  --lem-cyan:#006c8c;
+  --lem-cyan-soft:#008db8;
+  --lem-blue:#244fc4;
+
+  --lem-pink:#c92662;
+  --lem-pink-soft:#ef6b99;
+  --lem-purple:#6841a8;
+  --lem-gold:#9b6c00;
+  --lem-gold-soft:#c58c16;
+  --lem-lime:#477a00;
+  --lem-red:#b8143e;
+
+  --lem-border:rgba(0,108,140,.22);
+  --lem-border-soft:rgba(7,16,31,.14);
+  --lem-shadow:0 10px 35px rgba(28,48,80,.16);
+  --lem-shadow-pink:0 10px 28px rgba(201,38,98,.20);
+}

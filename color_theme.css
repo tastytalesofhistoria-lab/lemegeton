@@ -2,7 +2,530 @@
    LEMEGETON — COLOR THEME / EDISON
    Variables globales clair / sombre
 ========================================================= */
+/* =========================================================
+   PATCH EDISON — FOND GLOBAL FORUMACTIF
+   Fond extérieur ≠ fond forum ≠ fond page
+   Version safe light/dark
+========================================================= */
 
+html,
+body{
+  background:var(--fa-body-bg)!important;
+  background-color:var(--fa-body-color,#040614)!important;
+}
+
+body{
+  color:var(--lem-text,var(--nav-text,#d8ecff));
+}
+
+/* Grand wrapper Forumactif */
+#wrap{
+  background:var(--fa-wrap-bg)!important;
+  background-color:var(--fa-wrap-color,#101936)!important;
+  border:1px solid var(--fa-border-main)!important;
+  box-shadow:var(--fa-shadow-main);
+}
+
+/* Conteneurs principaux */
+#content-container,
+#container,
+.conteneur_minwidth_IE,
+.conteneur_layout_IE,
+.conteneur_container_IE{
+  background:var(--fa-container-bg)!important;
+  background-color:var(--fa-container-color,#111d3d)!important;
+}
+
+/* Zone de contenu réelle */
+#page-body,
+#main,
+#main-content{
+  background:transparent!important;
+  background-color:transparent!important;
+  border-color:var(--fa-border-soft)!important;
+}
+
+/* Empêche ModernBB de remettre certains fonds natifs */
+.module,
+.block{
+  background-color:transparent!important;
+  border-color:var(--fa-border-main);
+}
+
+/* Panels natifs Forumactif seulement */
+#cp-main .panel,
+#ucp .panel,
+#profile-advanced-layout .panel,
+.panel.row1,
+.panel.row2{
+  background-color:transparent!important;
+  border-color:var(--fa-border-main)!important;
+}
+
+/* Ne pas écraser les designs des cartes / posts / catégories */
+.forabg,
+.forumbg,
+.post,
+.row{
+  border-color:var(--fa-border-main);
+}
+
+/* PA iframe : elle garde son propre design */
+.pa-frame-wrap,
+.pa-frame-wrap iframe,
+iframe.pa-frame{
+  background:transparent!important;
+  background-color:transparent!important;
+}
+/* =========================================================
+   PATCH EDISON LIGHT — TABLEAUX UCP / PROFIL
+   Corrige favoris, brouillons, sujets surveillés, notifications
+========================================================= */
+
+/* Wrapper interne des pages UCP */
+[data-color-scheme="light"] #cp-main,
+[data-color-scheme="light"] .ucp-main,
+[data-color-scheme="light"] #main-content #cp-main{
+  background:
+    radial-gradient(circle at top right,rgba(192,24,53,.04),transparent 42%),
+    linear-gradient(180deg,rgba(255,250,240,.96),rgba(255,226,173,.88))!important;
+  color:var(--fa-text-main,#4a2812)!important;
+}
+
+/* Tables Forumactif natives */
+[data-color-scheme="light"] #cp-main table.table1,
+[data-color-scheme="light"] #ucp table.table1,
+[data-color-scheme="light"] #main-content table.table1{
+  width:100%!important;
+  overflow:hidden!important;
+  border:1px solid rgba(145,65,12,.14)!important;
+  border-radius:12px!important;
+  border-collapse:separate!important;
+  border-spacing:0!important;
+  background:
+    linear-gradient(180deg,rgba(255,250,240,.96),rgba(255,226,173,.90))!important;
+  color:var(--fa-text-main,#4a2812)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(70,28,8,.04),
+    0 10px 24px rgba(145,65,12,.08)!important;
+}
+
+/* En-têtes de tables */
+[data-color-scheme="light"] #cp-main table.table1 thead,
+[data-color-scheme="light"] #ucp table.table1 thead,
+[data-color-scheme="light"] #main-content table.table1 thead,
+[data-color-scheme="light"] #cp-main table.table1 thead tr,
+[data-color-scheme="light"] #ucp table.table1 thead tr,
+[data-color-scheme="light"] #main-content table.table1 thead tr{
+  background:
+    radial-gradient(circle at top left,rgba(215,106,0,.12),transparent 40%),
+    linear-gradient(90deg,rgba(255,244,207,.98),rgba(255,210,137,.92))!important;
+  color:var(--fa-title-strong,#7a2e10)!important;
+}
+
+/* Cellules d'en-tête */
+[data-color-scheme="light"] #cp-main table.table1 th,
+[data-color-scheme="light"] #ucp table.table1 th,
+[data-color-scheme="light"] #main-content table.table1 th{
+  padding:12px 14px!important;
+  border:0!important;
+  border-bottom:1px solid rgba(145,65,12,.16)!important;
+  background:transparent!important;
+  color:var(--fa-title-strong,#7a2e10)!important;
+  font-weight:800!important;
+  text-shadow:none!important;
+}
+
+/* Corps des tableaux */
+[data-color-scheme="light"] #cp-main table.table1 tbody,
+[data-color-scheme="light"] #ucp table.table1 tbody,
+[data-color-scheme="light"] #main-content table.table1 tbody{
+  background:
+    linear-gradient(180deg,rgba(255,250,240,.94),rgba(255,226,173,.86))!important;
+}
+
+/* Lignes */
+[data-color-scheme="light"] #cp-main table.table1 tbody tr,
+[data-color-scheme="light"] #ucp table.table1 tbody tr,
+[data-color-scheme="light"] #main-content table.table1 tbody tr,
+[data-color-scheme="light"] #cp-main table.table1 .row1,
+[data-color-scheme="light"] #cp-main table.table1 .row2,
+[data-color-scheme="light"] #cp-main table.table1 .row3,
+[data-color-scheme="light"] #ucp table.table1 .row1,
+[data-color-scheme="light"] #ucp table.table1 .row2,
+[data-color-scheme="light"] #ucp table.table1 .row3{
+  background:rgba(255,250,240,.42)!important;
+  color:var(--fa-text-main,#4a2812)!important;
+}
+
+/* Alternance légère */
+[data-color-scheme="light"] #cp-main table.table1 tbody tr:nth-child(even),
+[data-color-scheme="light"] #ucp table.table1 tbody tr:nth-child(even),
+[data-color-scheme="light"] #main-content table.table1 tbody tr:nth-child(even){
+  background:rgba(255,226,173,.34)!important;
+}
+
+/* Cellules */
+[data-color-scheme="light"] #cp-main table.table1 td,
+[data-color-scheme="light"] #ucp table.table1 td,
+[data-color-scheme="light"] #main-content table.table1 td,
+[data-color-scheme="light"] #cp-main table.table1 .posts,
+[data-color-scheme="light"] #ucp table.table1 .posts,
+[data-color-scheme="light"] #main-content table.table1 .posts,
+[data-color-scheme="light"] #cp-main table.table1 .mobile-hidden,
+[data-color-scheme="light"] #ucp table.table1 .mobile-hidden,
+[data-color-scheme="light"] #main-content table.table1 .mobile-hidden{
+  padding:8px 12px!important;
+  border-color:rgba(145,65,12,.10)!important;
+  background:transparent!important;
+  color:var(--fa-text-main,#4a2812)!important;
+}
+
+/* Hover des lignes */
+[data-color-scheme="light"] #cp-main table.table1 tbody tr:hover,
+[data-color-scheme="light"] #ucp table.table1 tbody tr:hover,
+[data-color-scheme="light"] #main-content table.table1 tbody tr:hover{
+  background:rgba(255,184,51,.18)!important;
+}
+
+/* Liens dans tableaux */
+[data-color-scheme="light"] #cp-main table.table1 a,
+[data-color-scheme="light"] #ucp table.table1 a,
+[data-color-scheme="light"] #main-content table.table1 a{
+  color:var(--fa-link,#c35a14)!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] #cp-main table.table1 a:hover,
+[data-color-scheme="light"] #ucp table.table1 a:hover,
+[data-color-scheme="light"] #main-content table.table1 a:hover{
+  color:var(--fa-link-hover,#c01835)!important;
+}
+
+/* Icônes de sujets / documents dans les tableaux */
+[data-color-scheme="light"] #cp-main table.table1 .icon,
+[data-color-scheme="light"] #ucp table.table1 .icon,
+[data-color-scheme="light"] #main-content table.table1 .icon{
+  color:var(--fa-link,#c35a14)!important;
+}
+
+/* Checkboxes */
+[data-color-scheme="light"] #cp-main table.table1 input[type="checkbox"],
+[data-color-scheme="light"] #ucp table.table1 input[type="checkbox"],
+[data-color-scheme="light"] #main-content table.table1 input[type="checkbox"]{
+  accent-color:var(--fa-link-hover,#c01835)!important;
+}
+
+/* Texte vide : aucun favori / aucun brouillon */
+[data-color-scheme="light"] #cp-main table.table1 td[colspan],
+[data-color-scheme="light"] #ucp table.table1 td[colspan],
+[data-color-scheme="light"] #main-content table.table1 td[colspan]{
+  color:var(--fa-text-soft,#8a5a32)!important;
+  font-style:italic;
+}
+
+/* Boutons sous les tableaux */
+[data-color-scheme="light"] #cp-main .right-box,
+[data-color-scheme="light"] #ucp .right-box,
+[data-color-scheme="light"] #main-content .right-box,
+[data-color-scheme="light"] #cp-main .pagination,
+[data-color-scheme="light"] #ucp .pagination,
+[data-color-scheme="light"] #main-content .pagination{
+  color:var(--fa-text-soft,#8a5a32)!important;
+}
+
+/* Jumpbox sous favoris / brouillons */
+[data-color-scheme="light"] #cp-main form[name="jumpbox"],
+[data-color-scheme="light"] #ucp form[name="jumpbox"],
+[data-color-scheme="light"] #main-content form[name="jumpbox"]{
+  background:transparent!important;
+  color:var(--fa-text-main,#4a2812)!important;
+}
+
+[data-color-scheme="light"] #cp-main select,
+[data-color-scheme="light"] #ucp select,
+[data-color-scheme="light"] #main-content select{
+  background:rgba(255,250,240,.86)!important;
+  color:var(--fa-input-text,#4a2812)!important;
+  border:1px solid rgba(145,65,12,.20)!important;
+}
+/* =========================================================
+   PATCH EDISON LIGHT — TABS UCP / PROFIL
+   Corrige la barre d’onglets au-dessus des panels
+========================================================= */
+
+[data-color-scheme="light"] #tabs{
+  background:
+    radial-gradient(circle at top left,rgba(215,106,0,.10),transparent 34%),
+    linear-gradient(90deg,rgba(255,250,240,.90),rgba(255,226,173,.82))!important;
+  border-bottom:1px solid rgba(145,65,12,.14)!important;
+}
+
+[data-color-scheme="light"] #tabs ul{
+  background:transparent!important;
+  border:0!important;
+}
+
+[data-color-scheme="light"] #tabs ul li{
+  background:transparent!important;
+  border:0!important;
+}
+
+[data-color-scheme="light"] #tabs ul a,
+[data-color-scheme="light"] #tabs ul a:link,
+[data-color-scheme="light"] #tabs ul a:visited{
+  color:var(--fa-link,#c35a14)!important;
+  background:transparent!important;
+  border:0!important;
+  text-decoration:none!important;
+}
+
+[data-color-scheme="light"] #tabs ul a span{
+  color:var(--fa-link,#c35a14)!important;
+  background:transparent!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] #tabs ul a:hover span,
+[data-color-scheme="light"] #tabs ul a:focus span{
+  color:var(--fa-link-hover,#c01835)!important;
+  text-shadow:0 0 8px rgba(192,24,53,.14)!important;
+}
+
+/* Onglet actif */
+[data-color-scheme="light"] #tabs ul .activetab a,
+[data-color-scheme="light"] #tabs ul .activetab a:link,
+[data-color-scheme="light"] #tabs ul .activetab a:visited{
+  background:
+    linear-gradient(180deg,rgba(255,250,240,.98),rgba(255,226,173,.90))!important;
+  border:1px solid rgba(215,106,0,.24)!important;
+  border-bottom-color:rgba(255,250,240,.98)!important;
+  border-radius:10px 10px 0 0!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(70,28,8,.04),
+    0 -4px 14px rgba(145,65,12,.08)!important;
+}
+
+[data-color-scheme="light"] #tabs ul .activetab a span{
+  color:var(--fa-title-main,#a94e12)!important;
+  font-weight:800!important;
+}
+
+/* Séparateurs / bordures parasites */
+[data-color-scheme="light"] #tabs ul::before,
+[data-color-scheme="light"] #tabs ul::after,
+[data-color-scheme="light"] #tabs li::before,
+[data-color-scheme="light"] #tabs li::after{
+  border-color:rgba(145,65,12,.14)!important;
+}
+/* =========================================================
+   PATCH EDISON LIGHT — TEXTE GLOBAL FORUMACTIF
+   Version safe : évite d'écraser navbar / fiches / modules custom
+========================================================= */
+
+[data-color-scheme="light"] body,
+[data-color-scheme="light"] #wrap,
+[data-color-scheme="light"] #content-container,
+[data-color-scheme="light"] #container,
+[data-color-scheme="light"] #main,
+[data-color-scheme="light"] #main-content,
+[data-color-scheme="light"] #cp-main,
+[data-color-scheme="light"] #cp-main .panel,
+[data-color-scheme="light"] #ucp,
+[data-color-scheme="light"] #ucp .panel,
+[data-color-scheme="light"] .panel.row1,
+[data-color-scheme="light"] .panel.row2,
+[data-color-scheme="light"] .postbody,
+[data-color-scheme="light"] .content,
+[data-color-scheme="light"] .entry-content,
+[data-color-scheme="light"] td,
+[data-color-scheme="light"] th,
+[data-color-scheme="light"] p,
+[data-color-scheme="light"] li,
+[data-color-scheme="light"] label,
+[data-color-scheme="light"] .small,
+[data-color-scheme="light"] .gen,
+[data-color-scheme="light"] .genmed,
+[data-color-scheme="light"] .gensmall{
+  color:var(--fa-text-main)!important;
+}
+
+/* Textes secondaires natifs */
+[data-color-scheme="light"] .meta,
+[data-color-scheme="light"] .author,
+[data-color-scheme="light"] .date,
+[data-color-scheme="light"] .details,
+[data-color-scheme="light"] .statistics,
+[data-color-scheme="light"] .lastpost,
+[data-color-scheme="light"] .forum_lastpost,
+[data-color-scheme="light"] .desc,
+[data-color-scheme="light"] .mod-text,
+[data-color-scheme="light"] .italic,
+[data-color-scheme="light"] .legend{
+  color:var(--fa-text-soft)!important;
+}
+
+/* Liens natifs seulement : évite navbar/sidebar/fiches custom */
+[data-color-scheme="light"] #cp-main a,
+[data-color-scheme="light"] #ucp a,
+[data-color-scheme="light"] .panel a,
+[data-color-scheme="light"] .postbody .content a,
+[data-color-scheme="light"] .forumline a,
+[data-color-scheme="light"] .linklist a{
+  color:var(--fa-link)!important;
+}
+
+[data-color-scheme="light"] #cp-main a:hover,
+[data-color-scheme="light"] #ucp a:hover,
+[data-color-scheme="light"] .panel a:hover,
+[data-color-scheme="light"] .postbody .content a:hover,
+[data-color-scheme="light"] .forumline a:hover,
+[data-color-scheme="light"] .linklist a:hover{
+  color:var(--fa-link-hover)!important;
+}
+
+/* Ne pas écraser les couleurs de la navbar custom */
+[data-color-scheme="light"] #custom-navbar a,
+[data-color-scheme="light"] #custom-navbar a:link,
+[data-color-scheme="light"] #custom-navbar a:visited{
+  color:var(--nav-text)!important;
+}
+
+[data-color-scheme="light"] #custom-navbar a:hover{
+  color:var(--nav-cyan)!important;
+}
+
+/* Titres généraux natifs */
+[data-color-scheme="light"] h1,
+[data-color-scheme="light"] h2,
+[data-color-scheme="light"] h3,
+[data-color-scheme="light"] h4,
+[data-color-scheme="light"] h5,
+[data-color-scheme="light"] h6,
+[data-color-scheme="light"] .page-title,
+[data-color-scheme="light"] .forum-title,
+[data-color-scheme="light"] .table-title{
+  color:var(--fa-title-main)!important;
+}
+
+/* Cas précis visibles sur le profil / panneaux Forumactif */
+[data-color-scheme="light"] #cp-main h1,
+[data-color-scheme="light"] #ucp h1,
+[data-color-scheme="light"] .panel h1,
+[data-color-scheme="light"] h1.page-title{
+  color:var(--fa-title-main)!important;
+  border-bottom:1px solid var(--fa-panel-border)!important;
+}
+
+/* Formulaires natifs */
+[data-color-scheme="light"] input,
+[data-color-scheme="light"] select,
+[data-color-scheme="light"] textarea{
+  color:var(--fa-input-text)!important;
+}
+
+[data-color-scheme="light"] input::placeholder,
+[data-color-scheme="light"] textarea::placeholder{
+  color:var(--fa-input-placeholder)!important;
+  opacity:1;
+}
+
+[data-color-scheme="light"] fieldset,
+[data-color-scheme="light"] #cp-main .panel,
+[data-color-scheme="light"] #ucp .panel{
+  color:var(--fa-panel-text)!important;
+  border-color:var(--fa-panel-border)!important;
+}
+
+/* Boutons Forumactif par défaut */
+[data-color-scheme="light"] input[type="submit"],
+[data-color-scheme="light"] input[type="button"],
+[data-color-scheme="light"] input[type="reset"],
+[data-color-scheme="light"] .button1,
+[data-color-scheme="light"] .button2{
+  color:var(--fa-title-strong)!important;
+}
+/* =========================================================
+   PATCH EDISON LIGHT — PANELS UCP / PROFIL / FORMULAIRES
+   Corrige les fonds bleus/violets restants
+========================================================= */
+
+[data-color-scheme="light"] #cp-main .panel,
+[data-color-scheme="light"] #ucp .panel,
+[data-color-scheme="light"] #main-content .panel,
+[data-color-scheme="light"] #profile-advanced-layout .panel,
+[data-color-scheme="light"] .panel.row1,
+[data-color-scheme="light"] .panel.row2,
+[data-color-scheme="light"] .panel.row3{
+  background:
+    radial-gradient(circle at top right,rgba(192,24,53,.06),transparent 38%),
+    linear-gradient(180deg,rgba(255,250,240,.96),rgba(255,226,173,.92))!important;
+  background-color:#fff0cf!important;
+  color:var(--fa-text-main,#4a2812)!important;
+  border-color:rgba(145,65,12,.14)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(70,28,8,.05),
+    0 10px 24px rgba(145,65,12,.08)!important;
+}
+
+/* Titres dans ces panneaux */
+[data-color-scheme="light"] #cp-main .panel h1,
+[data-color-scheme="light"] #cp-main .panel h2,
+[data-color-scheme="light"] #cp-main .panel h3,
+[data-color-scheme="light"] #ucp .panel h1,
+[data-color-scheme="light"] #ucp .panel h2,
+[data-color-scheme="light"] #ucp .panel h3,
+[data-color-scheme="light"] #main-content .panel h1,
+[data-color-scheme="light"] #main-content .panel h2,
+[data-color-scheme="light"] #main-content .panel h3{
+  color:var(--fa-title-main,#a94e12)!important;
+  border-color:rgba(145,65,12,.14)!important;
+}
+
+/* Texte, labels et infos dans ces panneaux */
+[data-color-scheme="light"] #cp-main .panel,
+[data-color-scheme="light"] #cp-main .panel *,
+[data-color-scheme="light"] #ucp .panel,
+[data-color-scheme="light"] #ucp .panel *,
+[data-color-scheme="light"] #main-content .panel,
+[data-color-scheme="light"] #main-content .panel *{
+  color:var(--fa-text-main,#4a2812);
+}
+
+/* Liens dans les panneaux */
+[data-color-scheme="light"] #cp-main .panel a,
+[data-color-scheme="light"] #ucp .panel a,
+[data-color-scheme="light"] #main-content .panel a{
+  color:var(--fa-link,#c35a14)!important;
+}
+
+[data-color-scheme="light"] #cp-main .panel a:hover,
+[data-color-scheme="light"] #ucp .panel a:hover,
+[data-color-scheme="light"] #main-content .panel a:hover{
+  color:var(--fa-link-hover,#c01835)!important;
+}
+
+/* Champs de formulaire dans les panneaux */
+[data-color-scheme="light"] #cp-main .panel input,
+[data-color-scheme="light"] #cp-main .panel textarea,
+[data-color-scheme="light"] #cp-main .panel select,
+[data-color-scheme="light"] #ucp .panel input,
+[data-color-scheme="light"] #ucp .panel textarea,
+[data-color-scheme="light"] #ucp .panel select,
+[data-color-scheme="light"] #main-content .panel input,
+[data-color-scheme="light"] #main-content .panel textarea,
+[data-color-scheme="light"] #main-content .panel select{
+  background-color:rgba(255,250,240,.78)!important;
+  color:var(--fa-input-text,#4a2812)!important;
+  border-color:rgba(145,65,12,.22)!important;
+}
+
+/* Lignes de séparation visibles dans les formulaires */
+[data-color-scheme="light"] #cp-main .panel hr,
+[data-color-scheme="light"] #ucp .panel hr,
+[data-color-scheme="light"] #main-content .panel hr{
+  border-color:rgba(145,65,12,.14)!important;
+}
 /* =========================================================
    MODE SOMBRE
 ========================================================= */

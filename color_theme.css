@@ -757,7 +757,20 @@ iframe.pa-frame{
   --ovld-pink:#ff4f7c;
   --ovld-pink-soft:#ffb0c3;
 
-
+  --ovld-pride:#ff2a2a;
+  --ovld-pride-rgb:255,42,42;
+  --ovld-wrath:#ff9a1f;
+  --ovld-wrath-rgb:255,154,31;
+  --ovld-gluttony:#e8ff3a;
+  --ovld-gluttony-rgb:232,255,58;
+  --ovld-greed:#31ff63;
+  --ovld-greed-rgb:49,255,99;
+  --ovld-lust:#3f5dff;
+  --ovld-lust-rgb:63,93,255;
+  --ovld-envy:#c43cff;
+  --ovld-envy-rgb:196,60,255;
+  --ovld-sloth:#ff8de1;
+  --ovld-sloth-rgb:255,141,225;
 
   --ovld-head-img:url("https://images2.imgbox.com/82/07/4CR2Uh1m_o.gif");
 

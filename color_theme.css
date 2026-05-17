@@ -8762,433 +8762,307 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
 ========================================================= */
 
 /* =========================================================
-   PATCH FINAL LIGHT — TEXTES VERTS > VIOLET/FUCHSIA + CASES SUJETS BLANCHES
-   - Remplace les accents verts du mode clair par violet/fuchsia
-   - Exception : Avarice / Greed conserve son vert
-   - Passe les fonds de cases dans les sujets en blanc chaud
+   PATCH FINAL LIGHT — CODAGES CHAUDS V2 / HEADER CORRIGÉ
+   Objectifs :
+   - ne pas toucher au viewtopicbody natif (.postbody / profils / likes)
+   - forcer les cases internes des codages en blanc chaud + gradients chauds/violets
+   - supprimer les restes visuels bleu / cyan / vert dans ces codages en mode clair
+   - header LEMEGETON rouge, sans contour blanc
+   - étincelles blanches
 ========================================================= */
 
 [data-color-scheme="light"]{
-  --edison-fuchsia:#b9236e;
-  --edison-fuchsia-hot:#d21b7a;
-  --edison-violet:#7d2e59;
-  --edison-violet-soft:#a83b73;
-  --edison-card-white:#fffdf8;
-  --edison-card-white-2:#fffaf0;
-  --edison-card-border:rgba(171,14,14,.16);
+  --lem-final-red:#ab0e0e;
+  --lem-final-carmin:#c01835;
+  --lem-final-orange:#d76a00;
+  --lem-final-orange-soft:#ff9f1c;
+  --lem-final-gold:#d88a00;
+  --lem-final-plum:#7d2e59;
+  --lem-final-violet:#8a2f63;
+  --lem-final-fuchsia:#b9236e;
+  --lem-final-ink:#4a2812;
+  --lem-final-ink-soft:#7b4a25;
+  --lem-final-paper:#fffdf8;
+  --lem-final-paper-2:#fff8ec;
+  --lem-final-paper-3:#ffedcf;
+  --lem-final-border:rgba(215,106,0,.24);
+  --lem-final-border-soft:rgba(145,65,12,.13);
+  --lem-final-shadow:0 14px 30px rgba(145,65,12,.10);
 
-  /* Accents anciennement verts : on les bascule en violet/fuchsia */
-  --faq-green:var(--edison-fuchsia);
-  --faq-lime:var(--edison-fuchsia-hot);
-  --grpm-green:var(--edison-fuchsia);
-  --grpm-open:var(--edison-fuchsia-hot);
-  --grpm-humain-innocent:var(--edison-violet);
-  --grpm-humain-initie:var(--edison-fuchsia);
-  --bst-earth:var(--edison-fuchsia);
-  --ent-earth:var(--edison-fuchsia);
-  --ent-lime:var(--edison-fuchsia-hot);
-  --pwrm-green:var(--edison-fuchsia);
-  --pwrm-lime:var(--edison-fuchsia-hot);
+  /* Noms historiques conservés, valeurs light forcées hors bleu/cyan/vert. */
+  --adms-cyan:var(--lem-final-orange);
+  --adms-cyan-soft:var(--lem-final-orange-soft);
+  --adms-green:var(--lem-final-fuchsia);
+  --adms-gold:var(--lem-final-gold);
+  --adms-purple:var(--lem-final-violet);
+
+  --ovld-cyan:var(--lem-final-orange);
+  --ovld-cyan-soft:var(--lem-final-orange-soft);
+  --ovld-blue:var(--lem-final-carmin);
+  --ovld-blue-soft:#f3b08f;
+  --ovld-lime:var(--lem-final-fuchsia);
+  --ovld-lime-soft:#f4b6d8;
+  --ovld-greed:var(--lem-final-fuchsia);
+  --ovld-greed-rgb:185,35,110;
+  --ovld-lust:var(--lem-final-violet);
+  --ovld-lust-rgb:138,47,99;
+  --ovld-glow-blue:215,106,0;
+
+  --stf-cyan:var(--lem-final-orange);
+  --stf-cyan-soft:var(--lem-final-orange-soft);
+  --stf-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --stf-border-cyan:rgba(215,106,0,.22);
+  --stf-border-cyan-strong:rgba(215,106,0,.34);
+  --stf-dot:rgba(215,106,0,.30);
+
+  --grpm-cyan:var(--lem-final-orange);
+  --grpm-cyan-soft:var(--lem-final-orange-soft);
+  --grpm-green:var(--lem-final-fuchsia);
+  --grpm-open:var(--lem-final-fuchsia);
+  --grpm-hellborn:var(--lem-final-orange);
+  --grpm-humain-innocent:var(--lem-final-plum);
+  --grpm-humain-initie:var(--lem-final-fuchsia);
+  --grpm-border-cyan:rgba(215,106,0,.22);
+  --grpm-border-cyan-soft:rgba(215,106,0,.16);
+  --grpm-dot:rgba(215,106,0,.30);
+
+  --bst-cyan:var(--lem-final-orange);
+  --bst-cyan-soft:var(--lem-final-orange-soft);
+  --bst-earth:var(--lem-final-fuchsia);
+  --bst-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --bst-border-cyan:rgba(215,106,0,.22);
+  --bst-border-cyan-strong:rgba(215,106,0,.34);
+  --bst-dot:rgba(215,106,0,.30);
+
+  --bstp-cyan:var(--lem-final-orange);
+  --bstp-cyan-soft:var(--lem-final-orange-soft);
+  --bstp-green:var(--lem-final-fuchsia);
+  --bstp-blue:var(--lem-final-carmin);
+  --bstp-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --bstp-border-cyan:rgba(215,106,0,.22);
+  --bstp-border-cyan-soft:rgba(215,106,0,.16);
+  --bstp-border-cyan-strong:rgba(215,106,0,.34);
+  --bstp-dot:rgba(215,106,0,.30);
+
+  --ent-cyan:var(--lem-final-orange);
+  --ent-cyan-soft:var(--lem-final-orange-soft);
+  --ent-earth:var(--lem-final-fuchsia);
+  --ent-lime:var(--lem-final-fuchsia);
+  --ent-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --ent-border-cyan:rgba(215,106,0,.22);
+  --ent-border-cyan-strong:rgba(215,106,0,.34);
+  --ent-dot:rgba(215,106,0,.30);
+
+  --pwrm-cyan:var(--lem-final-orange);
+  --pwrm-cyan-soft:var(--lem-final-orange-soft);
+  --pwrm-green:var(--lem-final-fuchsia);
   --pwrm-green-soft:#f4b6d8;
+  --pwrm-lime:var(--lem-final-fuchsia);
   --pwrm-lime-soft:#f7c7e2;
-  --intrm-green:var(--edison-fuchsia);
-  --intrm-green-soft:#f4b6d8;
-  --ctxm-serpent:var(--edison-fuchsia);
+  --pwrm-blue:var(--lem-final-carmin);
+  --pwrm-blue-soft:#f3b08f;
+  --pwrm-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --pwrm-border-cyan:rgba(215,106,0,.22);
+  --pwrm-border-cyan-soft:rgba(215,106,0,.16);
+  --pwrm-border-cyan-strong:rgba(215,106,0,.34);
+  --pwrm-dot:rgba(215,106,0,.30);
+
+  --ctxm-cyan:var(--lem-final-orange);
+  --ctxm-cyan-soft:var(--lem-final-orange-soft);
+  --ctxm-creation:var(--lem-final-orange);
+  --ctxm-creation-soft:var(--lem-final-orange-soft);
+  --ctxm-serpent:var(--lem-final-fuchsia);
   --ctxm-serpent-soft:#f4b6d8;
-  --ctxm-green:var(--edison-fuchsia);
-  --chro-green:var(--edison-fuchsia);
-  --cul-green:var(--edison-fuchsia);
-  --lexm-green:var(--edison-fuchsia);
-  --lexm-lime:var(--edison-fuchsia-hot);
-  --bstp-green:var(--edison-fuchsia);
-  --pnjang-lime:var(--edison-fuchsia-hot);
-  --pnjang-lime-soft:#f7c7e2;
-  --pnjdem-lime:var(--edison-fuchsia-hot);
-  --pnjdem-lime-soft:#f7c7e2;
-  --pnjd-lime:var(--edison-fuchsia-hot);
-  --pnjd-lime-soft:#f7c7e2;
-  --pnjd-positive:var(--edison-fuchsia-hot);
-  --predef-lime:var(--edison-fuchsia-hot);
-  --predef-lime-soft:#f7c7e2;
-  --pl-green:var(--edison-fuchsia-hot);
-  --pl-green-soft:#f7c7e2;
-  --dospnj-lime:var(--edison-fuchsia-hot);
-  --dospnj-lime-2:#f7c7e2;
-  --mev1-lime:var(--edison-fuchsia-hot);
-  --mev2-lime:var(--edison-fuchsia-hot);
-  --qst-lime:var(--edison-fuchsia-hot);
-  --qst-lime-soft:#f7c7e2;
-  --adms-green:var(--edison-fuchsia);
-  --lem-lime:var(--edison-fuchsia-hot);
-  --idx-lime:var(--edison-fuchsia-hot);
+  --ctxm-green:var(--lem-final-fuchsia);
+  --ctxm-aujourdhui:var(--lem-final-violet);
+  --ctxm-aujourdhui-soft:#d9a4c1;
+  --ctxm-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --ctxm-border-cyan:rgba(215,106,0,.22);
+  --ctxm-border-cyan-strong:rgba(215,106,0,.34);
+  --ctxm-dot:rgba(215,106,0,.30);
 
-  /* Exception volontaire : Avarice / Greed reste vert */
-  --ovld-greed:#31ff63;
-  --ovld-greed-rgb:49,255,99;
+  --chro-cyan:var(--lem-final-orange);
+  --chro-cyan-soft:var(--lem-final-orange-soft);
+  --chro-green:var(--lem-final-fuchsia);
+  --chro-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --chro-border-cyan:rgba(215,106,0,.22);
+  --chro-border-cyan-soft:rgba(215,106,0,.16);
+  --chro-border-cyan-title:rgba(215,106,0,.20);
+  --chro-border-cyan-strong:rgba(215,106,0,.34);
+  --chro-dot:rgba(215,106,0,.30);
+
+  --intrm-cyan:var(--lem-final-orange);
+  --intrm-cyan-soft:var(--lem-final-orange-soft);
+  --intrm-green:var(--lem-final-fuchsia);
+  --intrm-green-soft:#f4b6d8;
+  --intrm-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --intrm-border-cyan:rgba(215,106,0,.22);
+  --intrm-border-cyan-soft:rgba(215,106,0,.16);
+  --intrm-dot:rgba(215,106,0,.30);
+  --intrm-final-choice-bg-cyan:linear-gradient(90deg,rgba(138,47,99,.12),rgba(255,253,248,.92));
+  --intrm-question-bg:radial-gradient(circle at top right,rgba(185,35,110,.12),transparent 42%),linear-gradient(135deg,#fffdf8,#fff4ec 56%,#fbe1ed);
+
+  --cul-cyan:var(--lem-final-orange);
+  --cul-cyan-soft:var(--lem-final-orange-soft);
+  --cul-green:var(--lem-final-fuchsia);
+  --cul-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --cul-border-cyan:rgba(215,106,0,.22);
+  --cul-border-cyan-soft:rgba(215,106,0,.16);
+  --cul-border-cyan-strong:rgba(215,106,0,.34);
+  --cul-dot:rgba(215,106,0,.30);
+
+  --lexm-cyan:var(--lem-final-orange);
+  --lexm-cyan-soft:var(--lem-final-orange-soft);
+  --lexm-green:var(--lem-final-fuchsia);
+  --lexm-lime:var(--lem-final-fuchsia);
+  --lexm-placeholder:rgba(74,40,18,.58);
+  --lexm-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --lexm-border-cyan:rgba(215,106,0,.22);
+  --lexm-border-cyan-soft:rgba(215,106,0,.16);
+  --lexm-border-cyan-strong:rgba(215,106,0,.34);
+  --lexm-dot:rgba(215,106,0,.30);
+
+  --faq-cyan:var(--lem-final-orange);
+  --faq-cyan-soft:var(--lem-final-orange-soft);
+  --faq-green:var(--lem-final-fuchsia);
+  --faq-lime:var(--lem-final-fuchsia);
+  --faq-blue:var(--lem-final-violet);
+  --faq-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --faq-border-cyan:rgba(215,106,0,.22);
+  --faq-border-cyan-strong:rgba(215,106,0,.34);
+  --faq-dot:rgba(215,106,0,.30);
+
+  --predef-cyan:var(--lem-final-orange);
+  --predef-cyan-soft:var(--lem-final-orange-soft);
+  --predef-lime:var(--lem-final-fuchsia);
+  --predef-lime-soft:#f4b6d8;
+  --predef-blue:var(--lem-final-carmin);
+  --predef-blue-soft:#f3b08f;
+  --predef-border-cyan:rgba(215,106,0,.22);
+  --predef-border-cyan-soft:rgba(215,106,0,.16);
+  --predef-dot:rgba(215,106,0,.30);
+
+  --prel-cyan:var(--lem-final-orange);
+  --prel-cyan-soft:var(--lem-final-orange-soft);
+  --prel-border-cyan:rgba(215,106,0,.22);
+  --prel-border-cyan-soft:rgba(215,106,0,.16);
+  --prel-dot:rgba(215,106,0,.30);
+
+  --pl-cyan:var(--lem-final-orange);
+  --pl-cyan-soft:var(--lem-final-orange-soft);
+  --pl-green:var(--lem-final-fuchsia);
+  --pl-green-soft:#f4b6d8;
+  --pl-border-cyan:rgba(215,106,0,.22);
+
+  --pnjang-cyan:var(--lem-final-orange);
+  --pnjang-cyan-soft:var(--lem-final-orange-soft);
+  --pnjang-lime:var(--lem-final-fuchsia);
+  --pnjang-lime-soft:#f4b6d8;
+  --pnjang-blue:var(--lem-final-carmin);
+  --pnjang-blue-soft:#f3b08f;
+  --pnjang-border-cyan:rgba(215,106,0,.22);
+  --pnjang-border-cyan-soft:rgba(215,106,0,.16);
+  --pnjang-dot:rgba(215,106,0,.30);
+
+  --pnjdem-cyan:var(--lem-final-orange);
+  --pnjdem-cyan-soft:var(--lem-final-orange-soft);
+  --pnjdem-lime:var(--lem-final-fuchsia);
+  --pnjdem-lime-soft:#f4b6d8;
+  --pnjdem-blue:var(--lem-final-carmin);
+  --pnjdem-blue-soft:#f3b08f;
+  --pnjdem-border-cyan:rgba(215,106,0,.22);
+  --pnjdem-border-cyan-soft:rgba(215,106,0,.16);
+  --pnjdem-dot:rgba(215,106,0,.30);
+
+  --pnjd-cyan:var(--lem-final-orange);
+  --pnjd-cyan-soft:var(--lem-final-orange-soft);
+  --pnjd-lime:var(--lem-final-fuchsia);
+  --pnjd-lime-soft:#f4b6d8;
+  --pnjd-blue:var(--lem-final-carmin);
+  --pnjd-blue-soft:#f3b08f;
+  --pnjd-glow-blue:215,106,0;
+  --pnjd-border-cyan:rgba(215,106,0,.22);
+  --pnjd-border-cyan-soft:rgba(215,106,0,.16);
+  --pnjd-dot:rgba(215,106,0,.30);
+
+  --dospnj-cyan:var(--lem-final-orange);
+  --dospnj-cyan-2:var(--lem-final-orange-soft);
+  --dospnj-lime:var(--lem-final-fuchsia);
+  --dospnj-lime-2:#f4b6d8;
+  --dospnj-blue-dark:var(--lem-final-violet);
+  --dospnj-blue-soft:#d9a4c1;
+  --dospnj-border-cyan:rgba(215,106,0,.20);
+  --dospnj-grid-line:rgba(215,106,0,.07);
+
+  --mev1-cyan:var(--lem-final-orange);
+  --mev1-cyan-2:var(--lem-final-orange-soft);
+  --mev1-lime:var(--lem-final-fuchsia);
+  --mev1-blue:var(--lem-final-violet);
+  --mev1-blue-2:#d9a4c1;
+  --mev1-border-cyan:rgba(215,106,0,.20);
+  --mev1-grid-line:rgba(215,106,0,.07);
+
+  --mev2-cyan:var(--lem-final-orange);
+  --mev2-cyan-soft:var(--lem-final-orange-soft);
+  --mev2-lime:var(--lem-final-fuchsia);
+
+  --qst-cyan:var(--lem-final-orange);
+  --qst-cyan-soft:var(--lem-final-orange-soft);
+  --qst-lime:var(--lem-final-fuchsia);
+  --qst-lime-soft:#f4b6d8;
+  --qst-border-cyan:rgba(215,106,0,.22);
+  --qst-border-cyan-soft:rgba(215,106,0,.16);
+  --qst-dot:rgba(215,106,0,.30);
+
+  --mgl-cyan:var(--lem-final-orange);
+  --mgl-cyan-soft:var(--lem-final-orange-soft);
+  --mgl-shadow-cyan:0 10px 24px rgba(215,106,0,.12);
+  --mgl-border-cyan:rgba(215,106,0,.22);
+  --mgl-border-cyan-soft:rgba(215,106,0,.16);
+  --mgl-border-cyan-strong:rgba(215,106,0,.34);
+  --mgl-dot:rgba(215,106,0,.30);
+  --mgl-scroll-thumb:rgba(215,106,0,.65);
+
+  --vp-cyan:var(--lem-final-orange);
+  --vp-cyan-soft:var(--lem-final-orange-soft);
+  --vp-border-cyan:rgba(215,106,0,.22);
+  --vp-border-cyan-soft:rgba(215,106,0,.16);
+  --vp-border-cyan-mid:rgba(215,106,0,.20);
+  --vp-border-cyan-strong:rgba(215,106,0,.34);
+  --vp-shadow-cyan:0 0 8px rgba(215,106,0,.18);
+
+  --ml-cyan:var(--lem-final-orange);
+  --ml-cyan-soft:var(--lem-final-orange-soft);
+  --ml-border-cyan:rgba(215,106,0,.22);
+  --ml-border-cyan-soft:rgba(215,106,0,.16);
+  --ml-border-cyan-strong:rgba(215,106,0,.34);
 }
 
-/* =========================================================
-   TEXTES / ACCENTS VERTS EN MODE CLAIR -> VIOLET/FUCHSIA
-   Exception : classes avarice/greed
-========================================================= */
-
-[data-color-scheme="light"] .green:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] .lime:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] .vert:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] .open:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] .ouvert:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [class*="green"]:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [class*="lime"]:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [class*="vert"]:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [class*="open"]:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [class*="ouvert"]:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [style*="green"]:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [style*="#8f6b00"]:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [style*="#57c785"]:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [style*="#a7ff3f"]:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [style*="#31ff63"]:not([class*="greed"]):not([class*="avarice"]){
-  color:var(--edison-fuchsia)!important;
-  -webkit-text-fill-color:var(--edison-fuchsia)!important;
-  border-color:rgba(185,35,110,.38)!important;
-  text-shadow:none!important;
-}
-
-/* Badges / statuts verts -> fond fuchsia doux, sauf Avarice */
-[data-color-scheme="light"] .grpm-open:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] .grpm-status-open:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] .bst-open:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] .bstp-open:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] .status-open:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] .tag-open:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [class*="status"][class*="open"]:not([class*="greed"]):not([class*="avarice"]),
-[data-color-scheme="light"] [class*="tag"][class*="open"]:not([class*="greed"]):not([class*="avarice"]){
-  background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,235,246,.92))!important;
-  color:var(--edison-fuchsia)!important;
-  border-color:rgba(185,35,110,.34)!important;
-  box-shadow:0 8px 18px rgba(185,35,110,.12)!important;
-}
-
-/* Exception Avarice / Greed : garde le vert */
-[data-color-scheme="light"] .greed,
-[data-color-scheme="light"] .avarice,
-[data-color-scheme="light"] [class*="greed"],
-[data-color-scheme="light"] [class*="avarice"]{
-  color:#16833a!important;
-  -webkit-text-fill-color:#16833a!important;
-}
-
-/* =========================================================
-   PATCH FINAL LIGHT — TEXTES VERTS > VIOLET/FUCHSIA
-   Note : la tentative "cases sujets blanches" sur viewtopicbody a été retirée.
-   Les messages/profils/posts Forumactif conservent leur design précédent.
-========================================================= */
-
-/* =========================================================
-   PATCH FINAL LIGHT — CODAGES MESSAGES BLANCS CHAUDS
-   Cible uniquement les codages internes postés : admin, staff,
-   overlord, groupes, bestiaire, entités, pouvoirs, contexte,
-   chronologie, intrigue, quêtes, FAQ, prédéfinis, PNJ, etc.
-   Ne touche pas au viewtopicbody natif : .post, .postbody,
-   .postprofile, .fa_like_div et boutons Forumactif.
-========================================================= */
-
-[data-color-scheme="light"]{
-  --edison-paper:#fffdf8;
-  --edison-paper-2:#fff8ea;
-  --edison-paper-3:#ffefd0;
-  --edison-warm-line:rgba(215,106,0,.24);
-  --edison-warm-line-soft:rgba(145,65,12,.13);
-  --edison-warm-shadow:0 14px 30px rgba(145,65,12,.10);
-  --edison-inner-shadow:inset 0 0 0 1px rgba(255,255,255,.52);
-
-  --edison-accent-red:#ab0e0e;
-  --edison-accent-carmin:#c01835;
-  --edison-accent-orange:#d76a00;
-  --edison-accent-gold:#d88a00;
-  --edison-accent-plum:#7d2e59;
-  --edison-accent-fuchsia:#b9236e;
-  --edison-accent-violet:#8a2f63;
-
-  --edison-card-warm-bg:
-    radial-gradient(circle at top right,rgba(255,196,86,.20),transparent 42%),
-    linear-gradient(135deg,var(--edison-paper) 0%,var(--edison-paper-2) 54%,var(--edison-paper-3) 100%);
-
-  --edison-card-red-bg:
-    radial-gradient(circle at top right,rgba(192,24,53,.12),transparent 42%),
-    linear-gradient(135deg,#fffdf8 0%,#fff4e2 56%,#ffe7d1 100%);
-
-  --edison-card-gold-bg:
-    radial-gradient(circle at top right,rgba(216,138,0,.16),transparent 42%),
-    linear-gradient(135deg,#fffdf8 0%,#fff7df 56%,#ffedc6 100%);
-
-  --edison-card-plum-bg:
-    radial-gradient(circle at top right,rgba(138,47,99,.13),transparent 42%),
-    linear-gradient(135deg,#fffdf8 0%,#fff4ed 54%,#f8e1e9 100%);
-
-  --edison-card-fuchsia-bg:
-    radial-gradient(circle at top right,rgba(185,35,110,.12),transparent 42%),
-    linear-gradient(135deg,#fffdf8 0%,#fff3ec 54%,#fbe1ed 100%);
-
-  /* Variables internes utilisées par les codages : noms conservés, valeurs chaudes/violettes. */
-  --adms-bloc-bg:var(--edison-card-warm-bg);
-  --adms-note-bg:var(--edison-card-gold-bg);
-  --adms-important-bg:var(--edison-card-red-bg);
-  --adms-tag-bg:rgba(255,253,248,.92);
-
-  --ovld-card-soft:rgba(255,253,248,.82);
-  --ovld-soft-white:rgba(255,253,248,.66);
-  --grpm-zone-bg:rgba(255,253,248,.88);
-  --grpm-card-soft:rgba(255,253,248,.72);
-  --bst-card-bg:rgba(255,253,248,.90);
-  --bst-soft-bg:rgba(255,246,232,.72);
-  --bstp-panel-bg:rgba(255,253,248,.90);
-  --bstp-card-bg:var(--edison-card-warm-bg);
-  --bstp-desc-bg:rgba(255,253,248,.86);
-  --ent-section-bg:rgba(255,253,248,.90);
-  --ent-card-soft:rgba(255,253,248,.72);
-  --pwrm-section-bg:rgba(255,253,248,.90);
-  --intrm-card-bg:rgba(255,253,248,.90);
-  --intrm-card-bg-colored:var(--edison-card-warm-bg);
-  --intrm-warning-card-bg:var(--edison-card-red-bg);
-  --intrm-question-bg:var(--edison-card-plum-bg);
-  --ctxm-card-bg:rgba(255,253,248,.90);
-  --chro-era-bg:rgba(255,253,248,.90);
-  --cul-card-bg:rgba(255,253,248,.90);
-  --lexm-section-bg:rgba(255,253,248,.90);
-  --faq-panel-glass:rgba(255,253,248,.90);
-  --faq-card-soft:rgba(255,246,232,.72);
-  --stf-card-bg:rgba(255,253,248,.90);
-  --stf-soft-bg:rgba(255,246,232,.72);
-  --avp-card-bg:rgba(255,253,248,.90);
-  --predef-soft:rgba(255,253,248,.88);
-  --prel-soft:rgba(255,253,248,.88);
-  --pl-card-bg:rgba(255,253,248,.88);
-  --pnjang-card-bg:var(--edison-card-warm-bg);
-  --pnjdem-card-bg:var(--edison-card-red-bg);
-  --pnjd-card-bg:var(--edison-card-plum-bg);
-  --qst-soft:rgba(255,253,248,.88);
-}
-
-/* ===================== BASE DES CASES INTERNES ===================== */
-
-[data-color-scheme="light"] .adms-bloc,
-[data-color-scheme="light"] .adms-note,
-[data-color-scheme="light"] .adms-important,
-[data-color-scheme="light"] .adms-tag,
-[data-color-scheme="light"] .adms-karma-card,
-[data-color-scheme="light"] .adms-karma-bloc,
-[data-color-scheme="light"] .adms-karma-item,
-[data-color-scheme="light"] .ovld-card,
-[data-color-scheme="light"] .ovld-section,
-[data-color-scheme="light"] .ovld-block,
-[data-color-scheme="light"] .stf-card,
-[data-color-scheme="light"] .stf-mgl-card,
-[data-color-scheme="light"] .stf-mgl-pnj,
-[data-color-scheme="light"] .stf-mgl-pnj-inner,
-[data-color-scheme="light"] .grpm-card,
-[data-color-scheme="light"] .grpm-zone,
-[data-color-scheme="light"] .grpm-item,
-[data-color-scheme="light"] .bst-card,
-[data-color-scheme="light"] .bst-section,
-[data-color-scheme="light"] .bst-block,
-[data-color-scheme="light"] .bstp-card,
-[data-color-scheme="light"] .bstp-panel,
-[data-color-scheme="light"] .bstp-desc,
-[data-color-scheme="light"] .ent-card,
-[data-color-scheme="light"] .ent-section,
-[data-color-scheme="light"] .ent-block,
-[data-color-scheme="light"] .pwrm-card,
-[data-color-scheme="light"] .pwrm-section,
-[data-color-scheme="light"] .pwrm-block,
-[data-color-scheme="light"] .ctxm-card,
-[data-color-scheme="light"] .ctxm-section,
-[data-color-scheme="light"] .ctxm-block,
-[data-color-scheme="light"] .ctxm-intro,
-[data-color-scheme="light"] .ctxm-note,
-[data-color-scheme="light"] .chro-era,
-[data-color-scheme="light"] .chro-content,
-[data-color-scheme="light"] .chro-item,
-[data-color-scheme="light"] .chro-event,
-[data-color-scheme="light"] .chro-card,
-[data-color-scheme="light"] .intrm-card,
-[data-color-scheme="light"] .intrm-section,
-[data-color-scheme="light"] .intrm-block,
-[data-color-scheme="light"] .intrm-warning,
-[data-color-scheme="light"] .intrm-question,
-[data-color-scheme="light"] .intrm-note,
-[data-color-scheme="light"] .qst-card,
-[data-color-scheme="light"] .qst-meta,
-[data-color-scheme="light"] .qst-block,
-[data-color-scheme="light"] .qst-section,
-[data-color-scheme="light"] .faq-card,
-[data-color-scheme="light"] .faq-block,
-[data-color-scheme="light"] .faq-section,
-[data-color-scheme="light"] .predef-card,
-[data-color-scheme="light"] .predef-block,
-[data-color-scheme="light"] .predef-section,
-[data-color-scheme="light"] .prel-card,
-[data-color-scheme="light"] .prel-block,
-[data-color-scheme="light"] .prel-section,
-[data-color-scheme="light"] .pl-card,
-[data-color-scheme="light"] .pnjang-card,
-[data-color-scheme="light"] .pnjang-block,
-[data-color-scheme="light"] .pnjdem-card,
-[data-color-scheme="light"] .pnjdem-block,
-[data-color-scheme="light"] .pnjd-card,
-[data-color-scheme="light"] .pnjd-block,
-[data-color-scheme="light"] .dospnj-card,
-[data-color-scheme="light"] .dospnj-paper,
-[data-color-scheme="light"] .mev1-card,
-[data-color-scheme="light"] .mev2-card,
-[data-color-scheme="light"] .mgl-card,
-[data-color-scheme="light"] .mgl-panel,
-[data-color-scheme="light"] .mgl-quote,
-[data-color-scheme="light"] .mgl-behind,
-[data-color-scheme="light"] .vp-card,
-[data-color-scheme="light"] .vp-identity,
-[data-color-scheme="light"] .ml-card{
-  background:var(--edison-card-warm-bg)!important;
-  background-color:var(--edison-paper)!important;
-  color:var(--edison-brown,#4a2812)!important;
-  border-color:var(--edison-warm-line)!important;
-  box-shadow:var(--edison-inner-shadow),var(--edison-warm-shadow)!important;
-  text-shadow:none!important;
-  filter:none!important;
-}
-
-/* ===================== VARIATIONS CHAUDES / VIOLETTES PAR TYPE ===================== */
-
-[data-color-scheme="light"] .adms-important,
-[data-color-scheme="light"] .intrm-warning,
-[data-color-scheme="light"] .intrm-final-call,
-[data-color-scheme="light"] .pnjdem-card,
-[data-color-scheme="light"] .predef-card:nth-of-type(3n+1),
-[data-color-scheme="light"] .qst-card:nth-of-type(3n+1){
-  background:var(--edison-card-red-bg)!important;
-  border-left:4px solid var(--edison-accent-carmin)!important;
-}
-
-[data-color-scheme="light"] .adms-note,
-[data-color-scheme="light"] .chro-content,
-[data-color-scheme="light"] .chro-card,
-[data-color-scheme="light"] .dospnj-paper,
-[data-color-scheme="light"] .mev1-card,
-[data-color-scheme="light"] .bst-card:nth-of-type(3n+1),
-[data-color-scheme="light"] .grpm-card:nth-of-type(3n+1){
-  background:var(--edison-card-gold-bg)!important;
-  border-left:4px solid var(--edison-accent-gold)!important;
-}
-
-[data-color-scheme="light"] .ovld-card,
-[data-color-scheme="light"] .stf-card,
-[data-color-scheme="light"] .stf-mgl-card,
-[data-color-scheme="light"] .stf-mgl-pnj,
-[data-color-scheme="light"] .pnjd-card,
-[data-color-scheme="light"] .ent-card:nth-of-type(3n+2),
-[data-color-scheme="light"] .pwrm-card:nth-of-type(3n+2),
-[data-color-scheme="light"] .prel-card:nth-of-type(3n+2){
-  background:var(--edison-card-plum-bg)!important;
-  border-left:4px solid var(--edison-accent-plum)!important;
-}
-
-[data-color-scheme="light"] .ctxm-card,
-[data-color-scheme="light"] .ctxm-section,
-[data-color-scheme="light"] .ctxm-block,
-[data-color-scheme="light"] .intrm-question,
-[data-color-scheme="light"] .faq-card,
-[data-color-scheme="light"] .bstp-card:nth-of-type(3n+3),
-[data-color-scheme="light"] .grpm-card:nth-of-type(3n+3){
-  background:var(--edison-card-fuchsia-bg)!important;
-  border-left:4px solid var(--edison-accent-fuchsia)!important;
-}
-
-[data-color-scheme="light"] .adms-bloc,
-[data-color-scheme="light"] .grpm-zone,
-[data-color-scheme="light"] .bstp-panel,
-[data-color-scheme="light"] .ent-section,
-[data-color-scheme="light"] .pwrm-section,
-[data-color-scheme="light"] .qst-meta,
-[data-color-scheme="light"] .mgl-card,
-[data-color-scheme="light"] .vp-identity,
-[data-color-scheme="light"] .ml-card{
-  border-left:4px solid var(--edison-accent-orange)!important;
-}
-
-/* Titres internes : rouges/oranges/violets, jamais bleu/cyan/vert. */
-[data-color-scheme="light"] .adms-bloc-titre,
-[data-color-scheme="light"] .ovld-card-title,
-[data-color-scheme="light"] .stf-card-title,
-[data-color-scheme="light"] .stf-mgl-title,
-[data-color-scheme="light"] .grpm-card-title,
-[data-color-scheme="light"] .bst-card-title,
-[data-color-scheme="light"] .bstp-card-title,
-[data-color-scheme="light"] .ent-card-title,
-[data-color-scheme="light"] .pwrm-card-title,
-[data-color-scheme="light"] .ctxm-card-title,
-[data-color-scheme="light"] .chro-event-title,
-[data-color-scheme="light"] .intrm-card-title,
-[data-color-scheme="light"] .qst-card-title,
-[data-color-scheme="light"] .faq-card-title,
-[data-color-scheme="light"] .predef-card-title,
-[data-color-scheme="light"] .prel-card-title,
-[data-color-scheme="light"] .pnjang-card-title,
-[data-color-scheme="light"] .pnjdem-card-title,
-[data-color-scheme="light"] .pnjd-card-title,
-[data-color-scheme="light"] .mgl-panel-title{
-  color:var(--edison-accent-carmin)!important;
-  -webkit-text-fill-color:var(--edison-accent-carmin)!important;
-  text-shadow:none!important;
-  filter:none!important;
-}
-
-/* Neutralisation ciblée des bleus/cyans/verts restants dans les cases internes light. */
-[data-color-scheme="light"] .adms-bloc [style*="cyan"],
-[data-color-scheme="light"] .adms-bloc [style*="blue"],
-[data-color-scheme="light"] .adms-bloc [style*="green"],
-[data-color-scheme="light"] .ovld-card [style*="cyan"],
-[data-color-scheme="light"] .ovld-card [style*="blue"],
-[data-color-scheme="light"] .ovld-card [style*="green"],
-[data-color-scheme="light"] .stf-card [style*="cyan"],
-[data-color-scheme="light"] .stf-card [style*="blue"],
-[data-color-scheme="light"] .stf-card [style*="green"],
-[data-color-scheme="light"] .grpm-card [style*="cyan"],
-[data-color-scheme="light"] .grpm-card [style*="blue"],
-[data-color-scheme="light"] .grpm-card [style*="green"],
-[data-color-scheme="light"] .bst-card [style*="cyan"],
-[data-color-scheme="light"] .bst-card [style*="blue"],
-[data-color-scheme="light"] .bst-card [style*="green"],
-[data-color-scheme="light"] .ctxm-card [style*="cyan"],
-[data-color-scheme="light"] .ctxm-card [style*="blue"],
-[data-color-scheme="light"] .ctxm-card [style*="green"],
-[data-color-scheme="light"] .intrm-card [style*="cyan"],
-[data-color-scheme="light"] .intrm-card [style*="blue"],
-[data-color-scheme="light"] .intrm-card [style*="green"]{
-  color:var(--edison-accent-fuchsia)!important;
-  -webkit-text-fill-color:var(--edison-accent-fuchsia)!important;
-  text-shadow:none!important;
-}
-
-/* =========================================================
-   HEADER LEMEGETON LIGHT : rouge sans contour blanc + étincelles blanches
-========================================================= */
+/* ===================== HEADER : LEMEGETON ROUGE, SANS CONTOUR BLANC ===================== */
 
 [data-color-scheme="light"] .lb-logo,
 [data-color-scheme="light"] .lb-title,
 [data-color-scheme="light"] .lb-banner .lb-logo,
 [data-color-scheme="light"] .lb-banner .lb-title,
 [data-color-scheme="light"] .lb-banner [class*="logo"],
-[data-color-scheme="light"] .lb-banner [class*="title"]{
-  color:var(--edison-accent-red)!important;
-  -webkit-text-fill-color:transparent!important;
-  -webkit-text-stroke:1px var(--edison-accent-red)!important;
-  text-shadow:0 0 8px rgba(171,14,14,.18)!important;
+[data-color-scheme="light"] .lb-banner [class*="title"],
+[data-color-scheme="light"] #lpa .lpa-logo,
+[data-color-scheme="light"] #lpa .lpa-title-main,
+[data-color-scheme="light"] #lpa [class*="logo-main"]{
+  color:var(--lem-final-red)!important;
+  -webkit-text-fill-color:var(--lem-final-red)!important;
+  -webkit-text-stroke:0!important;
+  text-stroke:0!important;
+  text-shadow:0 0 8px rgba(171,14,14,.20)!important;
   filter:none!important;
 }
 
+/* Étincelles / étoiles blanches, sans toucher aux coches validées. */
 [data-color-scheme="light"] .lb-info-title::before,
 [data-color-scheme="light"] .lb-info-title::after,
 [data-color-scheme="light"] .lb-kys::before,
 [data-color-scheme="light"] .lb-kys::after,
+[data-color-scheme="light"] .lb-info li::before,
 [data-color-scheme="light"] .lb-info [class*="spark"],
 [data-color-scheme="light"] .lb-info [class*="star"],
 [data-color-scheme="light"] .lb-info [class*="etoile"],
@@ -9199,11 +9073,10 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
 [data-color-scheme="light"] .lb-banner [class*="étincelle"]{
   color:#fffdf8!important;
   -webkit-text-fill-color:#fffdf8!important;
-  text-shadow:0 0 6px rgba(255,255,255,.55),0 0 10px rgba(255,184,51,.18)!important;
+  text-shadow:0 0 6px rgba(255,255,255,.65),0 0 10px rgba(255,184,51,.20)!important;
   filter:none!important;
 }
 
-/* Les coches restent bien vertes, elles ne sont pas l'étincelle. */
 [data-color-scheme="light"] .lb-info .ok,
 [data-color-scheme="light"] .lb-info [class*="check"],
 [data-color-scheme="light"] .lb-info .ion-checkmark,
@@ -9214,6 +9087,131 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
   -webkit-text-fill-color:var(--lem-ok-green,#168326)!important;
 }
 
-/* =========================================================
-   FIN PATCH FINAL LIGHT — CODAGES MESSAGES BLANCS CHAUDS
-========================================================= */
+/* ===================== CASES INTERNES DES CODAGES : BLANC CHAUD + GRADIENT ===================== */
+
+[data-color-scheme="light"] :is(
+  .adms,.ovld,.stf,.stf-mgl,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.chro,.intrm,.cul,.lexm,.faq,.predef,.prel,.pl,.pnjang,.pnjdem,.pnjd,.dospnj,.mev1,.mev2,.qst,.scenguide
+) :is(
+  .adms-bloc,.adms-note,.adms-important,.adms-tag,.adms-texte,
+  .ovld-card,.ovld-section,.ovld-block,.ovld-item,.ovld-note,.ovld-info,
+  .stf-card,.stf-block,.stf-section,.stf-mgl-card,.stf-mgl-pnj,.stf-mgl-pnj-inner,.stf-mgl-intro,
+  .grpm-card,.grpm-zone,.grpm-item,.grpm-desc,.grpm-info,.grpm-tag,
+  .bst-card,.bst-section,.bst-block,.bst-item,.bst-note,.bst-desc,
+  .bstp-card,.bstp-panel,.bstp-desc,.bstp-top,.bstp-mini,.bstp-info,
+  .ent-card,.ent-section,.ent-block,.ent-item,.ent-note,
+  .pwrm-card,.pwrm-section,.pwrm-block,.pwrm-item,.pwrm-note,
+  .ctxm-card,.ctxm-section,.ctxm-block,.ctxm-intro,.ctxm-note,.ctxm-panel,
+  .chro-era,.chro-content,.chro-item,.chro-event,.chro-card,.chro-intro,.chro-note,
+  .intrm-card,.intrm-section,.intrm-block,.intrm-warning,.intrm-question,.intrm-note,.intrm-final-call,.intrm-final-choice,
+  .cul-card,.cul-section,.cul-block,.cul-item,.cul-note,
+  .lexm-card,.lexm-section,.lexm-block,.lexm-item,.lexm-note,
+  .faq-card,.faq-block,.faq-section,.faq-item,.faq-note,
+  .predef-card,.predef-block,.predef-section,.predef-item,.predef-note,
+  .prel-card,.prel-block,.prel-section,.prel-item,.prel-note,
+  .pl-card,.pl-block,.pl-section,.pl-item,
+  .pnjang-card,.pnjang-block,.pnjang-section,.pnjang-item,
+  .pnjdem-card,.pnjdem-block,.pnjdem-section,.pnjdem-item,
+  .pnjd-card,.pnjd-block,.pnjd-section,.pnjd-item,.pnjd-example,.pnjd-favo,.pnjd-code,
+  .dospnj-card,.dospnj-paper,.dospnj-block,.dospnj-section,
+  .mev1-card,.mev1-block,.mev1-section,
+  .mev2-card,.mev2-block,.mev2-section,
+  .qst-card,.qst-meta,.qst-block,.qst-section,.qst-item,.qst-note,
+  .scenguide-card,.scenguide-block,.scenguide-section,.scenguide-warning,.scenguide-cta
+){
+  background:
+    radial-gradient(circle at top right,rgba(255,196,86,.20),transparent 42%),
+    linear-gradient(135deg,var(--lem-final-paper) 0%,var(--lem-final-paper-2) 56%,var(--lem-final-paper-3) 100%)!important;
+  background-color:var(--lem-final-paper)!important;
+  color:var(--lem-final-ink)!important;
+  border-color:var(--lem-final-border)!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.52),var(--lem-final-shadow)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Variations uniquement chaudes / violettes. */
+[data-color-scheme="light"] :is(.adms-important,.intrm-warning,.intrm-final-call,.pnjdem-card,.mev2-card,.faq-warning,.scenguide-warning){
+  background:
+    radial-gradient(circle at top right,rgba(192,24,53,.12),transparent 42%),
+    linear-gradient(135deg,#fffdf8 0%,#fff4e2 56%,#ffe3d1 100%)!important;
+  border-left:4px solid var(--lem-final-carmin)!important;
+}
+
+[data-color-scheme="light"] :is(.adms-note,.chro-content,.chro-card,.dospnj-paper,.mev1-card,.cul-card,.lexm-card){
+  background:
+    radial-gradient(circle at top right,rgba(216,138,0,.16),transparent 42%),
+    linear-gradient(135deg,#fffdf8 0%,#fff7df 56%,#ffedc6 100%)!important;
+  border-left:4px solid var(--lem-final-gold)!important;
+}
+
+[data-color-scheme="light"] :is(.ovld-card,.stf-card,.stf-mgl-card,.stf-mgl-pnj,.pnjd-card,.ent-card,.pwrm-card,.prel-card){
+  background:
+    radial-gradient(circle at top right,rgba(138,47,99,.13),transparent 42%),
+    linear-gradient(135deg,#fffdf8 0%,#fff4ed 54%,#f8e1e9 100%)!important;
+  border-left:4px solid var(--lem-final-plum)!important;
+}
+
+[data-color-scheme="light"] :is(.ctxm-card,.ctxm-section,.ctxm-block,.intrm-question,.faq-card,.grpm-card,.bstp-card){
+  background:
+    radial-gradient(circle at top right,rgba(185,35,110,.12),transparent 42%),
+    linear-gradient(135deg,#fffdf8 0%,#fff3ec 54%,#fbe1ed 100%)!important;
+  border-left:4px solid var(--lem-final-fuchsia)!important;
+}
+
+[data-color-scheme="light"] :is(.adms-bloc,.grpm-zone,.bstp-panel,.ent-section,.pwrm-section,.qst-meta,.predef-card,.predef-block,.pl-card){
+  border-left:4px solid var(--lem-final-orange)!important;
+}
+
+/* Textes et accents dans les codages : aucun bleu/cyan/vert visible. */
+[data-color-scheme="light"] :is(
+  .adms,.ovld,.stf,.stf-mgl,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.chro,.intrm,.cul,.lexm,.faq,.predef,.prel,.pl,.pnjang,.pnjdem,.pnjd,.dospnj,.mev1,.mev2,.qst,.scenguide
+) :is(
+  [class*="cyan"],[class*="blue"],[class*="bleu"],[class*="aqua"],[class*="teal"],[class*="green"],[class*="vert"],[class*="lime"],[class*="open"],
+  .tag,.pill,.badge,.label,.status,.state,.open,.ouvert,.is-open
+){
+  color:var(--lem-final-fuchsia)!important;
+  -webkit-text-fill-color:var(--lem-final-fuchsia)!important;
+  border-color:rgba(185,35,110,.28)!important;
+  text-shadow:none!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] :is(
+  .adms,.ovld,.stf,.stf-mgl,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.chro,.intrm,.cul,.lexm,.faq,.predef,.prel,.pl,.pnjang,.pnjdem,.pnjd,.dospnj,.mev1,.mev2,.qst,.scenguide
+) :is(
+  [class*="cyan"],[class*="blue"],[class*="bleu"],[class*="aqua"],[class*="teal"],[class*="green"],[class*="vert"],[class*="lime"],[class*="open"],
+  .tag,.pill,.badge,.label,.status,.state,.open,.ouvert,.is-open
+):not(img):not(svg):not(path){
+  background:
+    radial-gradient(circle at top right,rgba(185,35,110,.10),transparent 42%),
+    linear-gradient(135deg,#fffdf8 0%,#fff3ec 60%,#fbe1ed 100%)!important;
+  background-color:#fffdf8!important;
+}
+
+/* Les titres de cartes restent lisibles et colorés chaud/violet. */
+[data-color-scheme="light"] :is(
+  .adms,.ovld,.stf,.stf-mgl,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.chro,.intrm,.cul,.lexm,.faq,.predef,.prel,.pl,.pnjang,.pnjdem,.pnjd,.dospnj,.mev1,.mev2,.qst,.scenguide
+) :is(h1,h2,h3,h4,.title,.titre,[class*="title"],[class*="titre"]){
+  color:var(--lem-final-carmin)!important;
+  -webkit-text-fill-color:var(--lem-final-carmin)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Liens dans les codages : cuivre > fuchsia au hover. */
+[data-color-scheme="light"] :is(
+  .adms,.ovld,.stf,.stf-mgl,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.chro,.intrm,.cul,.lexm,.faq,.predef,.prel,.pl,.pnjang,.pnjdem,.pnjd,.dospnj,.mev1,.mev2,.qst,.scenguide
+) a:not(.button):not(.button1):not(.button2){
+  color:var(--lem-final-orange)!important;
+  -webkit-text-fill-color:var(--lem-final-orange)!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] :is(
+  .adms,.ovld,.stf,.stf-mgl,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.chro,.intrm,.cul,.lexm,.faq,.predef,.prel,.pl,.pnjang,.pnjdem,.pnjd,.dospnj,.mev1,.mev2,.qst,.scenguide
+) a:not(.button):not(.button1):not(.button2):hover{
+  color:var(--lem-final-fuchsia)!important;
+  -webkit-text-fill-color:var(--lem-final-fuchsia)!important;
+}
+

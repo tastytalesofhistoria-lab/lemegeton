@@ -7843,71 +7843,6 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
   -webkit-text-fill-color:var(--lem-final-orange)!important;
 }
 
-/* Chronologie light : version claire moderne, sans halo froid. */
-[data-color-scheme="light"] .chro-box{
-  background:
-    radial-gradient(circle at 50% 0%,rgba(255,212,0,.10),transparent 38%),
-    linear-gradient(180deg,#fffaf0 0%,#fff4e2 54%,#ffedcf 100%)!important;
-  border-color:rgba(215,106,0,.22)!important;
-  box-shadow:0 18px 42px rgba(145,65,12,.12)!important;
-}
-
-[data-color-scheme="light"] .chro-line{
-  position:relative!important;
-  display:grid!important;
-  grid-template-columns:130px minmax(0,1fr)!important;
-  gap:18px!important;
-  background:transparent!important;
-  border:0!important;
-  box-shadow:none!important;
-  color:var(--lem-final-ink)!important;
-}
-
-[data-color-scheme="light"] .chro-line::before{
-  content:""!important;
-  position:absolute!important;
-  left:24px!important;
-  top:0!important;
-  bottom:0!important;
-  width:2px!important;
-  border-radius:999px!important;
-  background:linear-gradient(180deg,var(--lem-final-orange),var(--lem-final-carmin),var(--lem-final-violet))!important;
-  box-shadow:none!important;
-}
-
-[data-color-scheme="light"] .chro-item{
-  position:relative!important;
-  display:grid!important;
-  grid-template-columns:130px minmax(0,1fr)!important;
-  gap:18px!important;
-  padding:16px 18px!important;
-  background:transparent!important;
-  border:0!important;
-  box-shadow:none!important;
-}
-
-[data-color-scheme="light"] .chro-item::before,
-[data-color-scheme="light"] .chro-dot,
-[data-color-scheme="light"] .chro-marker,
-[data-color-scheme="light"] .timeline-dot{
-  background:
-    radial-gradient(circle,#fffdf8 0 32%,var(--lem-final-yellow) 34% 52%,var(--lem-final-orange) 54% 100%)!important;
-  border:2px solid #fff8ec!important;
-  box-shadow:0 0 0 3px rgba(215,106,0,.16),0 6px 12px rgba(145,65,12,.12)!important;
-  filter:none!important;
-}
-
-[data-color-scheme="light"] .chro-content{
-  background:
-    radial-gradient(circle at top right,rgba(255,212,0,.10),transparent 36%),
-    linear-gradient(135deg,#fffdf8 0%,#fff7ea 56%,#ffedcf 100%)!important;
-  border:1px solid rgba(215,106,0,.20)!important;
-  border-left:4px solid var(--lem-final-orange)!important;
-  border-radius:18px!important;
-  color:var(--lem-final-ink)!important;
-  box-shadow:0 12px 28px rgba(145,65,12,.10)!important;
-}
-
 /* Sécurité : tout shadow froid hérité dans les codages light est neutralisé. */
 [data-color-scheme="light"] :is(
   .adms,.ovld,.stf,.stf-mgl,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.chro,.intrm,.cul,.lexm,.faq,.predef,.prel,.pl,.pnjang,.pnjdem,.pnjd,.dospnj,.mev1,.mev2,.qst,.scenguide,.mgl,.mgla
@@ -7928,3 +7863,270 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
 }
 
 /* Fin du patch final light V3. */
+
+
+
+/* =========================================================
+   PATCH FINAL LIGHT — CHRONOLOGIE V5 STABLE
+   Répare les textes verticaux et les grandes cases cassées.
+   Structure volontairement simple : axe à gauche + cartes en bloc.
+   Aucun bleu/cyan/vert hors Avarice ailleurs.
+========================================================= */
+
+[data-color-scheme="light"]{
+  --chro-v5-line:linear-gradient(180deg,#d76a00 0%,#c01835 52%,#8a2f63 100%);
+  --chro-v5-paper:#fffdf8;
+  --chro-v5-paper-soft:#fff7ea;
+  --chro-v5-paper-warm:#ffedcf;
+  --chro-v5-ink:#4a2812;
+  --chro-v5-muted:#8a5a32;
+  --chro-v5-title:#ab0e0e;
+  --chro-v5-orange:#d76a00;
+  --chro-v5-fuchsia:#b9236e;
+  --chro-v5-violet:#8a2f63;
+  --chro-v5-yellow:#ffd400;
+}
+
+[data-color-scheme="light"] .chro,
+[data-color-scheme="light"] .chro *{
+  writing-mode:horizontal-tb!important;
+  text-orientation:mixed!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro,
+[data-color-scheme="light"] .chro-box{
+  color:var(--chro-v5-ink)!important;
+}
+
+[data-color-scheme="light"] .chro-box{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,212,0,.10),transparent 38%),
+    linear-gradient(180deg,#fffaf0 0%,#fff4e2 54%,#ffedcf 100%)!important;
+  border:1px solid rgba(215,106,0,.22)!important;
+  box-shadow:0 18px 42px rgba(145,65,12,.12)!important;
+}
+
+[data-color-scheme="light"] .chro-era{
+  overflow:hidden!important;
+  margin:22px 0!important;
+  padding:0!important;
+  background:
+    radial-gradient(circle at top right,rgba(255,212,0,.10),transparent 38%),
+    linear-gradient(135deg,#fffdf8 0%,#fff7ea 58%,#ffedcf 100%)!important;
+  border:1px solid rgba(215,106,0,.20)!important;
+  border-radius:20px!important;
+  box-shadow:0 14px 30px rgba(145,65,12,.10)!important;
+}
+
+[data-color-scheme="light"] .chro-era-title{
+  display:block!important;
+  margin:0!important;
+  padding:18px 22px!important;
+  background:linear-gradient(90deg,rgba(255,253,248,.98),rgba(255,237,207,.86))!important;
+  border:0!important;
+  border-bottom:1px solid rgba(215,106,0,.18)!important;
+  color:var(--chro-v5-title)!important;
+  -webkit-text-fill-color:var(--chro-v5-title)!important;
+  -webkit-text-stroke:0!important;
+  text-stroke:0!important;
+  white-space:normal!important;
+}
+
+[data-color-scheme="light"] .chro-line{
+  position:relative!important;
+  display:block!important;
+  grid-template-columns:none!important;
+  gap:0!important;
+  min-height:0!important;
+  height:auto!important;
+  margin:0!important;
+  padding:20px 22px 20px 54px!important;
+  background:transparent!important;
+  background-color:transparent!important;
+  border:0!important;
+  border-left:0!important;
+  box-shadow:none!important;
+  color:var(--chro-v5-ink)!important;
+}
+
+[data-color-scheme="light"] .chro-line::before{
+  content:""!important;
+  position:absolute!important;
+  left:30px!important;
+  top:24px!important;
+  bottom:24px!important;
+  width:2px!important;
+  min-height:20px!important;
+  border-radius:999px!important;
+  background:var(--chro-v5-line)!important;
+  box-shadow:none!important;
+}
+
+[data-color-scheme="light"] .chro-line::after{
+  display:none!important;
+  content:none!important;
+}
+
+[data-color-scheme="light"] .chro-item,
+[data-color-scheme="light"] .chro-event{
+  position:relative!important;
+  display:block!important;
+  grid-template-columns:none!important;
+  gap:0!important;
+  align-items:initial!important;
+  min-height:0!important;
+  height:auto!important;
+  margin:0 0 18px!important;
+  padding:0!important;
+  background:transparent!important;
+  background-color:transparent!important;
+  border:0!important;
+  border-left:0!important;
+  box-shadow:none!important;
+  color:var(--chro-v5-ink)!important;
+}
+
+[data-color-scheme="light"] .chro-item:last-child,
+[data-color-scheme="light"] .chro-event:last-child{
+  margin-bottom:0!important;
+}
+
+[data-color-scheme="light"] .chro-item::before,
+[data-color-scheme="light"] .chro-event::before{
+  content:""!important;
+  position:absolute!important;
+  z-index:3!important;
+  left:-30px!important;
+  top:10px!important;
+  width:12px!important;
+  height:12px!important;
+  border-radius:50%!important;
+  background:
+    radial-gradient(circle,#fffdf8 0 28%,var(--chro-v5-yellow) 30% 48%,var(--chro-v5-orange) 50% 100%)!important;
+  border:2px solid #fff8ec!important;
+  box-shadow:0 0 0 4px rgba(215,106,0,.15),0 6px 12px rgba(145,65,12,.12)!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-dot,
+[data-color-scheme="light"] .chro-marker,
+[data-color-scheme="light"] .timeline-dot{
+  background:
+    radial-gradient(circle,#fffdf8 0 28%,var(--chro-v5-yellow) 30% 48%,var(--chro-v5-orange) 50% 100%)!important;
+  border:2px solid #fff8ec!important;
+  box-shadow:0 0 0 4px rgba(215,106,0,.15),0 6px 12px rgba(145,65,12,.12)!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-date{
+  display:block!important;
+  width:auto!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin:0 0 8px!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  border-left:0!important;
+  box-shadow:none!important;
+  color:var(--chro-v5-title)!important;
+  -webkit-text-fill-color:var(--chro-v5-title)!important;
+  font-weight:900!important;
+  line-height:1.15!important;
+  letter-spacing:.03em!important;
+  white-space:normal!important;
+}
+
+[data-color-scheme="light"] .chro-content,
+[data-color-scheme="light"] .chro-card{
+  display:block!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:18px 20px!important;
+  background:
+    radial-gradient(circle at top right,rgba(255,212,0,.10),transparent 36%),
+    linear-gradient(135deg,var(--chro-v5-paper) 0%,var(--chro-v5-paper-soft) 56%,var(--chro-v5-paper-warm) 100%)!important;
+  background-color:var(--chro-v5-paper)!important;
+  border:1px solid rgba(215,106,0,.20)!important;
+  border-left:4px solid var(--chro-v5-orange)!important;
+  border-radius:18px!important;
+  box-shadow:0 12px 28px rgba(145,65,12,.10)!important;
+  color:var(--chro-v5-ink)!important;
+}
+
+[data-color-scheme="light"] .chro-item:nth-of-type(3n+2) .chro-content,
+[data-color-scheme="light"] .chro-event:nth-of-type(3n+2) .chro-content{
+  border-left-color:var(--chro-v5-fuchsia)!important;
+  background:
+    radial-gradient(circle at top right,rgba(185,35,110,.09),transparent 36%),
+    linear-gradient(135deg,#fffdf8 0%,#fff3ec 56%,#fbe1ed 100%)!important;
+}
+
+[data-color-scheme="light"] .chro-item:nth-of-type(3n+3) .chro-content,
+[data-color-scheme="light"] .chro-event:nth-of-type(3n+3) .chro-content{
+  border-left-color:var(--chro-v5-violet)!important;
+  background:
+    radial-gradient(circle at top right,rgba(138,47,99,.08),transparent 36%),
+    linear-gradient(135deg,#fffdf8 0%,#fff3e8 56%,#f7dfeb 100%)!important;
+}
+
+[data-color-scheme="light"] .chro-content :is(h1,h2,h3,h4,.chro-event-title,.title,.titre,[class*="title"],[class*="titre"]){
+  color:var(--chro-v5-orange)!important;
+  -webkit-text-fill-color:var(--chro-v5-orange)!important;
+  -webkit-text-stroke:0!important;
+  text-stroke:0!important;
+  white-space:normal!important;
+}
+
+[data-color-scheme="light"] .chro-content :is(p,li,span,div){
+  color:var(--chro-v5-ink)!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+
+[data-color-scheme="light"] .chro-list span::before,
+[data-color-scheme="light"] .chro-content li::marker{
+  color:var(--chro-v5-yellow)!important;
+}
+
+/* =========================================================
+   PATCH REPAIR LIGHT — HEADER LEMEGETON / ÉTINCELLE V4
+   Rouge plein, aucun contour blanc. L'étincelle du M reste blanche.
+========================================================= */
+
+[data-color-scheme="light"] :is(
+  .lb-logo,.lb-title,.lb-banner .lb-logo,.lb-banner .lb-title,
+  .lb-banner [class*="logo"],.lb-banner [class*="title"],
+  #lpa .lpa-logo,#lpa .lpa-title-main,#lpa [class*="logo-main"]
+){
+  color:#ab0e0e!important;
+  -webkit-text-fill-color:#ab0e0e!important;
+  -webkit-text-stroke:0!important;
+  text-stroke:0!important;
+  text-shadow:0 0 8px rgba(171,14,14,.20)!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] :is(
+  .lb-logo,.lb-title,.lb-banner .lb-logo,.lb-banner .lb-title,
+  #lpa .lpa-logo,#lpa .lpa-title-main
+)::before,
+[data-color-scheme="light"] :is(
+  .lb-logo,.lb-title,.lb-banner .lb-logo,.lb-banner .lb-title,
+  #lpa .lpa-logo,#lpa .lpa-title-main
+)::after,
+[data-color-scheme="light"] :is(
+  .lb-logo,.lb-title,.lb-banner,#lpa .lpa-logo,#lpa .lpa-title-main
+) :is([class*="spark"],[class*="shine"],[class*="star"],[class*="etoile"],[class*="étincelle"],[class*="twinkle"],[class*="glint"]){
+  color:#fffdf8!important;
+  -webkit-text-fill-color:#fffdf8!important;
+  -webkit-text-stroke:0!important;
+  text-stroke:0!important;
+  text-shadow:0 0 5px rgba(255,255,255,.82),0 0 10px rgba(255,212,0,.26)!important;
+  filter:none!important;
+}

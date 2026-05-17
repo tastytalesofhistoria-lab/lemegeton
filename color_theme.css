@@ -8130,3 +8130,63 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
   text-shadow:0 0 5px rgba(255,255,255,.82),0 0 10px rgba(255,212,0,.26)!important;
   filter:none!important;
 }
+/* =========================================================
+   PATCH LIGHT — BADGE OUVERT EN FUCHSIA / VIOLET
+   Remplace le vert fluo des statuts ouverts
+========================================================= */
+
+[data-color-scheme="light"]{
+  --lem-open:#c0188f;
+  --lem-open-soft:#ff8adf;
+  --lem-open-bg:
+    radial-gradient(circle at top left,rgba(255,138,223,.28),transparent 42%),
+    linear-gradient(180deg,#fff1fb 0%,#ffd4ef 100%);
+  --lem-open-border:rgba(192,24,143,.42);
+  --lem-open-shadow:
+    0 0 12px rgba(192,24,143,.22),
+    0 0 24px rgba(138,47,99,.16);
+
+  --grpm-open:#c0188f;
+  --bstp-open:#c0188f;
+  --predef-open:#c0188f;
+  --qst-open:#c0188f;
+  --pwrm-open:#c0188f;
+}
+
+/* Badges / pills OUVERT */
+[data-color-scheme="light"] .open,
+[data-color-scheme="light"] .ouvert,
+[data-color-scheme="light"] .is-open,
+[data-color-scheme="light"] .status-open,
+[data-color-scheme="light"] [class*="open"],
+[data-color-scheme="light"] [class*="ouvert"]{
+  background:var(--lem-open-bg)!important;
+  border-color:var(--lem-open-border)!important;
+  color:var(--lem-open)!important;
+  box-shadow:var(--lem-open-shadow)!important;
+  text-shadow:none!important;
+}
+
+/* Texte interne du badge */
+[data-color-scheme="light"] .open *,
+[data-color-scheme="light"] .ouvert *,
+[data-color-scheme="light"] .is-open *,
+[data-color-scheme="light"] .status-open *,
+[data-color-scheme="light"] [class*="open"] *,
+[data-color-scheme="light"] [class*="ouvert"] *{
+  color:var(--lem-open)!important;
+  -webkit-text-fill-color:var(--lem-open)!important;
+  text-shadow:none!important;
+}
+
+/* Si le + est séparé */
+[data-color-scheme="light"] .open::before,
+[data-color-scheme="light"] .ouvert::before,
+[data-color-scheme="light"] .is-open::before,
+[data-color-scheme="light"] .status-open::before,
+[data-color-scheme="light"] [class*="open"]::before,
+[data-color-scheme="light"] [class*="ouvert"]::before{
+  color:var(--lem-open)!important;
+  -webkit-text-fill-color:var(--lem-open)!important;
+  text-shadow:none!important;
+}

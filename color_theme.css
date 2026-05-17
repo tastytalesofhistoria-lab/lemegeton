@@ -8360,3 +8360,143 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
 }
 
 /* Fin du patch final sins/open. */
+
+/* =========================================================
+   PATCH LIGHT — TEXTES CYAN NATIFS FORUMACTIF
+   Corrige les restes cyan/turquoise sur :
+   - description de forum (#page-desc.block)
+   - liens surveiller / marquer lus / plus
+   - jumpbox / tri / permissions / modérateurs
+   Ne touche pas les boutons rouges ni le dark.
+========================================================= */
+
+[data-color-scheme="light"]{
+  --forum-native-text:#4a2812;
+  --forum-native-soft:#8a5a32;
+  --forum-native-title:#ab0e0e;
+  --forum-native-link:#c35a14;
+  --forum-native-link-hover:#8a2f63;
+  --forum-native-line:rgba(198,84,14,.22);
+  --forum-native-card-bg:
+    radial-gradient(circle at top right,rgba(255,184,51,.08),transparent 38%),
+    linear-gradient(180deg,rgba(255,250,240,.96),rgba(255,226,173,.72));
+}
+
+/* Description / encadrés natifs qui sortaient en cyan */
+[data-color-scheme="light"] #page-desc,
+[data-color-scheme="light"] #page-desc.block,
+[data-color-scheme="light"] .forum-desc,
+[data-color-scheme="light"] .forum-description,
+[data-color-scheme="light"] .page-desc,
+[data-color-scheme="light"] .block:not(.post):not(.postbody):not(.forabg):not(.forumbg){
+  background:var(--forum-native-card-bg)!important;
+  background-color:#fff1d2!important;
+  color:var(--forum-native-text)!important;
+  border-color:var(--forum-native-line)!important;
+  box-shadow:0 10px 24px rgba(145,65,12,.08)!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] #page-desc *,
+[data-color-scheme="light"] .forum-desc *,
+[data-color-scheme="light"] .forum-description *,
+[data-color-scheme="light"] .page-desc *{
+  color:var(--forum-native-text)!important;
+  text-shadow:none!important;
+}
+
+/* Liens natifs de bas/haut de forum : plus de cyan */
+[data-color-scheme="light"] .topic-actions a:not(.button1):not(.button2),
+[data-color-scheme="light"] .topic-actions.bottom a:not(.button1):not(.button2),
+[data-color-scheme="light"] .topic-actions.top a:not(.button1):not(.button2),
+[data-color-scheme="light"] .quick-nav-topics a:not(.button1):not(.button2),
+[data-color-scheme="light"] .right-box a:not(.button1):not(.button2),
+[data-color-scheme="light"] .left-box a:not(.button1):not(.button2),
+[data-color-scheme="light"] .pagination a:not(.button1):not(.button2),
+[data-color-scheme="light"] #main-content > a:not(.button1):not(.button2),
+[data-color-scheme="light"] #main-content > p a:not(.button1):not(.button2),
+[data-color-scheme="light"] #main-content .gensmall a:not(.button1):not(.button2),
+[data-color-scheme="light"] #main-content .genmed a:not(.button1):not(.button2){
+  color:var(--forum-native-link)!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  border-color:transparent!important;
+}
+
+[data-color-scheme="light"] .topic-actions a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .topic-actions.bottom a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .topic-actions.top a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .quick-nav-topics a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .right-box a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .left-box a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .pagination a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] #main-content > a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] #main-content > p a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] #main-content .gensmall a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] #main-content .genmed a:not(.button1):not(.button2):hover{
+  color:var(--forum-native-link-hover)!important;
+  background:rgba(255,212,0,.18)!important;
+}
+
+/* Modérateurs / permissions / infos natives */
+[data-color-scheme="light"] .permissions,
+[data-color-scheme="light"] .moderators,
+[data-color-scheme="light"] .forum-permissions,
+[data-color-scheme="light"] .topic-actions,
+[data-color-scheme="light"] .topic-actions.bottom,
+[data-color-scheme="light"] .jumpbox,
+[data-color-scheme="light"] form[name="jumpbox"],
+[data-color-scheme="light"] form[action*="jumpbox"]{
+  color:var(--forum-native-text)!important;
+  border-color:var(--forum-native-line)!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] .permissions h3,
+[data-color-scheme="light"] .moderators h3,
+[data-color-scheme="light"] .forum-permissions h3,
+[data-color-scheme="light"] .permissions .h3,
+[data-color-scheme="light"] .moderators .h3,
+[data-color-scheme="light"] .forum-permissions .h3,
+[data-color-scheme="light"] #main-content h3{
+  color:var(--forum-native-title)!important;
+  border-color:var(--forum-native-line)!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] .permissions a,
+[data-color-scheme="light"] .moderators a,
+[data-color-scheme="light"] .forum-permissions a,
+[data-color-scheme="light"] form[name="jumpbox"] a,
+[data-color-scheme="light"] form[action*="jumpbox"] a{
+  color:var(--forum-native-link)!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] .permissions a:hover,
+[data-color-scheme="light"] .moderators a:hover,
+[data-color-scheme="light"] .forum-permissions a:hover,
+[data-color-scheme="light"] form[name="jumpbox"] a:hover,
+[data-color-scheme="light"] form[action*="jumpbox"] a:hover{
+  color:var(--forum-native-link-hover)!important;
+}
+
+/* Select / bouton jumpbox en chaud */
+[data-color-scheme="light"] .jumpbox select,
+[data-color-scheme="light"] form[name="jumpbox"] select,
+[data-color-scheme="light"] form[action*="jumpbox"] select{
+  background:#fffaf0!important;
+  color:var(--forum-native-text)!important;
+  border:1px solid rgba(198,84,14,.24)!important;
+}
+
+/* Neutralisation des anciens restes cyan inline/natifs dans les zones forum, sans toucher PA ni codages custom */
+[data-color-scheme="light"] #main-content [style*="cyan"],
+[data-color-scheme="light"] #main-content [style*="aqua"],
+[data-color-scheme="light"] #main-content [style*="turquoise"],
+[data-color-scheme="light"] #main-content [style*="#adf2ef"],
+[data-color-scheme="light"] #main-content [style*="#47ffff"]{
+  color:var(--forum-native-link)!important;
+  text-shadow:none!important;
+}

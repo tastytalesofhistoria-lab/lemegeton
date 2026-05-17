@@ -46,17 +46,28 @@
   --lem-shadow-pink:0 0 25px rgba(255,79,124,.28);
 /* ---------- STRUCTURE FORUMACTIF / FOND GLOBAL ---------- */
 
---fa-body-bg:#0b0f2a;
---fa-wrap-bg:#304262;
---fa-container-bg:#304262;
---fa-page-bg:#101936;
+--fa-body-bg:
+  radial-gradient(circle at 18% 0%,rgba(36,228,255,.08),transparent 34%),
+  radial-gradient(circle at 82% 0%,rgba(254,3,124,.08),transparent 32%),
+  linear-gradient(180deg,#070b18 0%,#050711 48%,#040614 100%);
 
---fa-border-main:rgba(36,228,255,.18);
+--fa-wrap-bg:
+  radial-gradient(circle at 50% 0%,rgba(36,228,255,.08),transparent 42%),
+  linear-gradient(180deg,#14244a 0%,#101936 48%,#0b122a 100%);
+
+--fa-container-bg:
+  radial-gradient(circle at 50% 0%,rgba(36,228,255,.06),transparent 38%),
+  linear-gradient(180deg,#172850 0%,#111d3d 52%,#0b122a 100%);
+
+--fa-page-bg:
+  linear-gradient(180deg,#101936 0%,#0b122a 100%);
+
+--fa-border-main:rgba(36,228,255,.20);
 --fa-border-soft:rgba(255,255,255,.06);
 
 --fa-shadow-main:
-  0 0 30px rgba(0,0,0,.28),
-  0 0 22px rgba(36,228,255,.06);
+  0 0 36px rgba(0,0,0,.42),
+  0 0 26px rgba(36,228,255,.08);
   /* ===================== PA ISOLÉE / LPA ===================== */
 
   --lpa-bg:#0a122d;
@@ -2804,12 +2815,23 @@
   --lem-shadow-pink:0 10px 28px rgba(201,38,98,.20);
 /* ---------- STRUCTURE FORUMACTIF / FOND GLOBAL ---------- */
 
---fa-body-bg:#f4f8ff;
---fa-wrap-bg:#dce8ff;
---fa-container-bg:#dce8ff;
---fa-page-bg:#ffffff;
+--fa-body-bg:
+  radial-gradient(circle at 18% 0%,rgba(0,127,163,.10),transparent 34%),
+  radial-gradient(circle at 82% 0%,rgba(201,38,98,.08),transparent 32%),
+  linear-gradient(180deg,#eef5ff 0%,#f7fbff 52%,#e5efff 100%);
 
---fa-border-main:rgba(0,127,163,.16);
+--fa-wrap-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.08),transparent 42%),
+  linear-gradient(180deg,#dce8ff 0%,#eef5ff 48%,#d5e4fa 100%);
+
+--fa-container-bg:
+  radial-gradient(circle at 50% 0%,rgba(0,127,163,.06),transparent 38%),
+  linear-gradient(180deg,#eef5ff 0%,#ffffff 52%,#dce8ff 100%);
+
+--fa-page-bg:
+  linear-gradient(180deg,#ffffff 0%,#eef5ff 100%);
+
+--fa-border-main:rgba(0,127,163,.18);
 --fa-border-soft:rgba(7,16,31,.08);
 
 --fa-shadow-main:

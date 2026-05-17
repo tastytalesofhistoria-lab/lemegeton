@@ -6187,3 +6187,166 @@ iframe.pa-frame{
 [data-color-scheme="light"] .adms-footer{
   color:#8a5a32!important;
 }
+/* =========================================================
+   PATCH EDISON LIGHT — CHRONOLOGIE
+   Retire les restes bleus et diversifie les zones internes
+========================================================= */
+
+[data-color-scheme="light"] .chro,
+[data-color-scheme="light"] .chro-box{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,168,36,.14),transparent 36%),
+    linear-gradient(180deg,#fff7df 0%,#fffaf0 55%,#ffe0a3 100%)!important;
+  color:#3a1b0b!important;
+  border-color:rgba(216,138,0,.24)!important;
+}
+
+[data-color-scheme="light"] .chro-box::before{
+  opacity:.16!important;
+  background-image:radial-gradient(circle,rgba(216,138,0,.34) 1px,transparent 1.4px)!important;
+}
+
+[data-color-scheme="light"] .chro-head{
+  background:
+    radial-gradient(circle at top right,rgba(192,24,53,.10),transparent 36%),
+    linear-gradient(90deg,rgba(255,250,240,.94),rgba(255,226,173,.76))!important;
+  border-color:rgba(216,138,0,.30)!important;
+}
+
+[data-color-scheme="light"] .chro-intro,
+[data-color-scheme="light"] .chro-note{
+  background:
+    linear-gradient(90deg,rgba(216,138,0,.12),rgba(255,250,240,.72))!important;
+  color:#3a1b0b!important;
+  border-left-color:#d88a00!important;
+}
+
+/* Navigation / boutons */
+[data-color-scheme="light"] .chro-nav a,
+[data-color-scheme="light"] .chro-nav button,
+[data-color-scheme="light"] .chro-pill,
+[data-color-scheme="light"] .chro-tag{
+  background:rgba(255,250,240,.76)!important;
+  color:#a94e12!important;
+  border-color:rgba(216,138,0,.30)!important;
+  box-shadow:0 8px 18px rgba(145,65,12,.08)!important;
+}
+
+[data-color-scheme="light"] .chro-nav a:hover,
+[data-color-scheme="light"] .chro-nav button:hover,
+[data-color-scheme="light"] .chro-pill:hover,
+[data-color-scheme="light"] .chro-tag:hover{
+  background:rgba(255,226,173,.86)!important;
+  color:#c01835!important;
+  border-color:rgba(192,24,53,.34)!important;
+}
+
+/* Bloc principal des périodes */
+[data-color-scheme="light"] .chro-era{
+  background:
+    radial-gradient(circle at top left,rgba(216,138,0,.10),transparent 36%),
+    linear-gradient(180deg,rgba(255,250,240,.88),rgba(255,226,173,.74))!important;
+  border-color:rgba(216,138,0,.24)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(70,28,8,.04),
+    0 12px 28px rgba(145,65,12,.10)!important;
+}
+
+/* Titre de période : retire le bleu */
+[data-color-scheme="light"] .chro-era-title{
+  background:
+    linear-gradient(90deg,rgba(216,138,0,.18),rgba(255,250,240,.72))!important;
+  color:#d76a00!important;
+  border-bottom-color:rgba(216,138,0,.24)!important;
+  text-shadow:none!important;
+}
+
+/* Variante alternée pour diversifier les périodes */
+[data-color-scheme="light"] .chro-era:nth-of-type(2n) .chro-era-title{
+  background:
+    linear-gradient(90deg,rgba(192,24,53,.14),rgba(255,250,240,.72))!important;
+  color:#c01835!important;
+}
+
+[data-color-scheme="light"] .chro-era:nth-of-type(3n) .chro-era-title{
+  background:
+    linear-gradient(90deg,rgba(143,107,0,.14),rgba(255,250,240,.72))!important;
+  color:#8f6b00!important;
+}
+
+/* Ligne de chronologie */
+[data-color-scheme="light"] .chro-line{
+  border-left-color:#d76a00!important;
+}
+
+[data-color-scheme="light"] .chro-line::before,
+[data-color-scheme="light"] .chro-dot,
+[data-color-scheme="light"] .chro-marker{
+  background:#d76a00!important;
+  box-shadow:0 0 10px rgba(215,106,0,.24)!important;
+}
+
+/* Items internes */
+[data-color-scheme="light"] .chro-item,
+[data-color-scheme="light"] .chro-event,
+[data-color-scheme="light"] .chro-card{
+  background:
+    linear-gradient(90deg,rgba(255,250,240,.72),rgba(255,226,173,.42))!important;
+  color:#3a1b0b!important;
+  border-color:rgba(216,138,0,.16)!important;
+}
+
+/* Alternance des cases internes */
+[data-color-scheme="light"] .chro-item:nth-child(3n+1),
+[data-color-scheme="light"] .chro-event:nth-child(3n+1),
+[data-color-scheme="light"] .chro-card:nth-child(3n+1){
+  border-left-color:#d76a00!important;
+  background:
+    linear-gradient(90deg,rgba(215,106,0,.10),rgba(255,250,240,.68))!important;
+}
+
+[data-color-scheme="light"] .chro-item:nth-child(3n+2),
+[data-color-scheme="light"] .chro-event:nth-child(3n+2),
+[data-color-scheme="light"] .chro-card:nth-child(3n+2){
+  border-left-color:#c01835!important;
+  background:
+    linear-gradient(90deg,rgba(192,24,53,.10),rgba(255,250,240,.68))!important;
+}
+
+[data-color-scheme="light"] .chro-item:nth-child(3n+3),
+[data-color-scheme="light"] .chro-event:nth-child(3n+3),
+[data-color-scheme="light"] .chro-card:nth-child(3n+3){
+  border-left-color:#8f6b00!important;
+  background:
+    linear-gradient(90deg,rgba(143,107,0,.10),rgba(255,250,240,.68))!important;
+}
+
+/* Titres / textes internes */
+[data-color-scheme="light"] .chro h1,
+[data-color-scheme="light"] .chro h2,
+[data-color-scheme="light"] .chro h3,
+[data-color-scheme="light"] .chro-title,
+[data-color-scheme="light"] .chro-subtitle,
+[data-color-scheme="light"] .chro-event-title{
+  color:#a94e12!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] .chro b,
+[data-color-scheme="light"] .chro strong{
+  color:#c01835!important;
+}
+
+[data-color-scheme="light"] .chro p,
+[data-color-scheme="light"] .chro li,
+[data-color-scheme="light"] .chro span{
+  color:#3a1b0b;
+}
+
+[data-color-scheme="light"] .chro a{
+  color:#d76a00!important;
+}
+
+[data-color-scheme="light"] .chro a:hover{
+  color:#c01835!important;
+}

@@ -6762,25 +6762,26 @@ iframe.pa-frame{
 }
 
 /* =========================================================
-   PATCH FINAL LEMEGETON — COHÉRENCE ROUGE LIGHT
-   Objectif : uniquement les zones demandées.
+   PATCH UNIQUE LIGHT — COHÉRENCE ROUGE / BOUTONS / BANNIÈRE
    Rouge principal : #ab0e0e
-   Ne cible PAS les boutons globaux, la cloche Notiffi, ni le lecteur audio.
+   Objectif : remplacer les accents orange/verts illisibles par des
+   accents cohérents, sans casser Notiffi ni le lecteur audio.
 ========================================================= */
 
 [data-color-scheme="light"]{
   --lem-red-main:#ab0e0e;
   --lem-red-main-rgb:171,14,14;
-  --lem-red-dark:#780606;
-  --lem-red-soft:#c92618;
+  --lem-red-dark:#760606;
+  --lem-red-soft:#cf2418;
   --lem-orange-hover:#ff8a00;
-  --lem-yellow-button:#ffe44d;
-  --lem-yellow-hover:#fff06a;
-  --lem-icon-light:#fff7d7;
-  --lem-green-readable:#2f631f;
-  --lem-green-readable-hover:#1f4f16;
+  --lem-button-yellow:#ffe44d;
+  --lem-button-hover:#fff06a;
+  --lem-button-icon:#ffe44d;
+  --lem-banner-yellow:#fff1a8;
+  --lem-banner-yellow-strong:#ffe44d;
+  --lem-green-ok:#168326;
+  --lem-green-ok-hover:#0f681d;
 
-  /* Variables natives/titres seulement, pas les fonds de widgets */
   --fa-title-main:var(--lem-red-main);
   --fa-title-strong:var(--lem-red-main);
   --edison-title:var(--lem-red-main);
@@ -6791,19 +6792,29 @@ iframe.pa-frame{
   --qeel-enfer-text:var(--lem-red-main);
   --qeel-enfer-glitch-a:var(--lem-red-main);
   --qeel-enfer-glitch-b:var(--lem-orange-hover);
+
+  --lb-ok:var(--lem-green-ok);
+  --lb-logo-main:var(--lem-banner-yellow);
+  --lb-logo-stroke:var(--lem-banner-yellow-strong);
+  --lb-logo-shadow:transparent;
+
+  --edison-scroll-thumb:var(--lem-red-main);
+  --edison-scroll-thumb-hover:var(--lem-orange-hover);
+  --edison-scroll-track:#ffd48a;
+  --edison-scroll-track-soft:#fff0cf;
 }
 
-/* ===================== STRUCTURE / GUTTERS ROUGES ===================== */
+/* ===================== STRUCTURE : GUTTERS LATÉRAUX ROUGES ===================== */
 
 [data-color-scheme="light"] #wrap{
   border-left:4px solid var(--lem-red-main)!important;
   border-right:4px solid var(--lem-red-main)!important;
-  border-top-color:rgba(var(--lem-red-main-rgb),.38)!important;
-  border-bottom-color:rgba(var(--lem-red-main-rgb),.26)!important;
+  border-top-color:rgba(var(--lem-red-main-rgb),.30)!important;
+  border-bottom-color:rgba(var(--lem-red-main-rgb),.24)!important;
   box-shadow:
-    inset 6px 0 0 rgba(var(--lem-red-main-rgb),.16),
-    inset -6px 0 0 rgba(var(--lem-red-main-rgb),.16),
-    0 0 36px rgba(145,65,12,.16)!important;
+    inset 7px 0 0 rgba(var(--lem-red-main-rgb),.18),
+    inset -7px 0 0 rgba(var(--lem-red-main-rgb),.18),
+    0 0 36px rgba(145,65,12,.14)!important;
 }
 
 [data-color-scheme="light"] #content-container,
@@ -6814,19 +6825,18 @@ iframe.pa-frame{
 [data-color-scheme="light"] .forumbody,
 [data-color-scheme="light"] .forum-body,
 [data-color-scheme="light"] .categories-wrapper{
-  border-left-color:rgba(var(--lem-red-main-rgb),.42)!important;
-  border-right-color:rgba(var(--lem-red-main-rgb),.42)!important;
+  border-left-color:rgba(var(--lem-red-main-rgb),.38)!important;
+  border-right-color:rgba(var(--lem-red-main-rgb),.38)!important;
 }
 
-/* Les cartes/forums gardent leur fond clair : seulement bordures/accent. */
 [data-color-scheme="light"] .forabg,
 [data-color-scheme="light"] .forumbg,
 [data-color-scheme="light"] .forum-card,
 [data-color-scheme="light"] .row{
-  border-color:rgba(var(--lem-red-main-rgb),.28)!important;
+  border-color:rgba(var(--lem-red-main-rgb),.26)!important;
 }
 
-/* ===================== NAVBAR ===================== */
+/* ===================== NAVBAR : ROUGE + HOVER ORANGE ===================== */
 
 [data-color-scheme="light"] #custom-navbar a,
 [data-color-scheme="light"] #custom-navbar a:link,
@@ -6838,6 +6848,7 @@ iframe.pa-frame{
 [data-color-scheme="light"] .linklist.top a{
   color:var(--lem-red-main)!important;
   text-shadow:none!important;
+  filter:none!important;
 }
 
 [data-color-scheme="light"] #custom-navbar a:hover,
@@ -6850,7 +6861,7 @@ iframe.pa-frame{
   text-shadow:none!important;
 }
 
-/* ===================== TITRES ROUGES, SANS GLOW BLEU ===================== */
+/* ===================== TITRES : ROUGES, SANS SHADOW BLEU ===================== */
 
 [data-color-scheme="light"] h1,
 [data-color-scheme="light"] h2,
@@ -6887,7 +6898,6 @@ iframe.pa-frame{
 [data-color-scheme="light"] .mev2-title,
 [data-color-scheme="light"] .sg-title,
 [data-color-scheme="light"] .scenguide-title,
-[data-color-scheme="light"] .lb-title,
 [data-color-scheme="light"] .lpa-title,
 [data-color-scheme="light"] [class$="-title"],
 [data-color-scheme="light"] [class$="-titre"],
@@ -6922,7 +6932,75 @@ iframe.pa-frame{
 [data-color-scheme="light"] .font-monoton{
   color:var(--lem-red-main)!important;
   -webkit-text-stroke:1px var(--lem-red-main)!important;
-  -webkit-text-fill-color:transparent;
+  -webkit-text-fill-color:transparent!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* ===================== BANNIÈRE : PAS DE SHADOW, LEMEGETON JAUNE ===================== */
+
+[data-color-scheme="light"] .lb-banner,
+[data-color-scheme="light"] .lb-banner *,
+[data-color-scheme="light"] [class*="lb-banner"],
+[data-color-scheme="light"] [class*="lb-banner"] *,
+[data-color-scheme="light"] .lpa-banner,
+[data-color-scheme="light"] .lpa-banner *,
+[data-color-scheme="light"] [class*="banner"] .lb-title,
+[data-color-scheme="light"] [class*="banner"] [class*="star"],
+[data-color-scheme="light"] [class*="banner"] [class*="etoile"],
+[data-color-scheme="light"] [class*="banner"] [class*="étoile"]{
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .lb-banner .lb-title,
+[data-color-scheme="light"] .lb-banner [class*="logo"],
+[data-color-scheme="light"] .lb-banner [class*="title"],
+[data-color-scheme="light"] .lb-banner [class*="titre"],
+[data-color-scheme="light"] [class*="banner"] .lb-title,
+[data-color-scheme="light"] [class*="banner"] [class*="logo"]{
+  color:var(--lem-banner-yellow)!important;
+  -webkit-text-fill-color:transparent!important;
+  -webkit-text-stroke:1px var(--lem-banner-yellow)!important;
+  text-stroke:1px var(--lem-banner-yellow)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .lb-banner svg,
+[data-color-scheme="light"] .lb-banner svg *,
+[data-color-scheme="light"] [class*="banner"] .lb-title svg,
+[data-color-scheme="light"] [class*="banner"] .lb-title svg *{
+  fill:var(--lem-banner-yellow)!important;
+  stroke:var(--lem-banner-yellow)!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .lb-banner [class*="star"],
+[data-color-scheme="light"] .lb-banner [class*="etoile"],
+[data-color-scheme="light"] .lb-banner [class*="étoile"],
+[data-color-scheme="light"] [class*="banner"] [class*="star"],
+[data-color-scheme="light"] [class*="banner"] [class*="etoile"],
+[data-color-scheme="light"] [class*="banner"] [class*="étoile"],
+[data-color-scheme="light"] .lb-banner li::marker,
+[data-color-scheme="light"] [class*="banner"] li::marker{
+  color:var(--lem-orange-hover)!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] .lb-banner [class*="ok"],
+[data-color-scheme="light"] .lb-banner [class*="check"],
+[data-color-scheme="light"] .lb-banner [class*="valid"],
+[data-color-scheme="light"] .lb-banner .fa-check,
+[data-color-scheme="light"] .lb-banner .fa-check-circle,
+[data-color-scheme="light"] .lb-banner .ion-checkmark,
+[data-color-scheme="light"] .lb-banner .ion-checkmark-circled,
+[data-color-scheme="light"] [class*="banner"] [class*="ok"],
+[data-color-scheme="light"] [class*="banner"] [class*="check"],
+[data-color-scheme="light"] [class*="banner"] [class*="valid"]{
+  color:var(--lem-green-ok)!important;
+  fill:var(--lem-green-ok)!important;
+  border-color:rgba(22,131,38,.35)!important;
   text-shadow:none!important;
   filter:none!important;
 }
@@ -6976,266 +7054,10 @@ iframe.pa-frame{
   text-shadow:none!important;
 }
 
-/* ===================== BOUTONS DEMANDÉS UNIQUEMENT ===================== */
-
-/* Nouveau sujet / répondre */
-[data-color-scheme="light"] a[href*="mode=newtopic"],
-[data-color-scheme="light"] a[href*="mode=reply"],
-[data-color-scheme="light"] .buttons a[href*="mode=newtopic"],
-[data-color-scheme="light"] .buttons a[href*="mode=reply"],
-[data-color-scheme="light"] .topic-actions a[href*="mode=newtopic"],
-[data-color-scheme="light"] .topic-actions a[href*="mode=reply"],
-[data-color-scheme="light"] input[value*="NOUVEAU SUJET"],
-[data-color-scheme="light"] input[value*="Nouveau sujet"],
-[data-color-scheme="light"] input[value*="RÉPONDRE"],
-[data-color-scheme="light"] input[value*="Répondre"],
-[data-color-scheme="light"] input[value*="REPONDRE"]{
-  background:linear-gradient(180deg,var(--lem-red-soft),var(--lem-red-main))!important;
-  background-color:var(--lem-red-main)!important;
-  border-color:rgba(var(--lem-red-main-rgb),.62)!important;
-  color:var(--lem-yellow-button)!important;
-  text-shadow:none!important;
-  box-shadow:0 8px 18px rgba(var(--lem-red-main-rgb),.18)!important;
-}
-
-[data-color-scheme="light"] a[href*="mode=newtopic"] *,
-[data-color-scheme="light"] a[href*="mode=reply"] *,
-[data-color-scheme="light"] .buttons a[href*="mode=newtopic"] *,
-[data-color-scheme="light"] .buttons a[href*="mode=reply"] *,
-[data-color-scheme="light"] .topic-actions a[href*="mode=newtopic"] *,
-[data-color-scheme="light"] .topic-actions a[href*="mode=reply"] *{
-  color:var(--lem-icon-light)!important;
-  fill:var(--lem-icon-light)!important;
-  text-shadow:none!important;
-}
-
-[data-color-scheme="light"] a[href*="mode=newtopic"]:hover,
-[data-color-scheme="light"] a[href*="mode=reply"]:hover,
-[data-color-scheme="light"] .buttons a[href*="mode=newtopic"]:hover,
-[data-color-scheme="light"] .buttons a[href*="mode=reply"]:hover,
-[data-color-scheme="light"] .topic-actions a[href*="mode=newtopic"]:hover,
-[data-color-scheme="light"] .topic-actions a[href*="mode=reply"]:hover,
-[data-color-scheme="light"] input[value*="NOUVEAU SUJET"]:hover,
-[data-color-scheme="light"] input[value*="Nouveau sujet"]:hover,
-[data-color-scheme="light"] input[value*="RÉPONDRE"]:hover,
-[data-color-scheme="light"] input[value*="Répondre"]:hover,
-[data-color-scheme="light"] input[value*="REPONDRE"]:hover{
-  background:linear-gradient(180deg,#fff06a,#ffd21f)!important;
-  background-color:#fff06a!important;
-  border-color:#fff06a!important;
-  color:var(--lem-red-dark)!important;
-  text-shadow:none!important;
-}
-
-/* Édition / citation / suppression du message : ciblage post uniquement */
-[data-color-scheme="light"] .post-options a,
-[data-color-scheme="light"] .postprofile .profile-icons a,
-[data-color-scheme="light"] .post .profile-icons a,
-[data-color-scheme="light"] a[href*="mode=editpost"],
-[data-color-scheme="light"] a[href*="mode=quote"],
-[data-color-scheme="light"] a[href*="mode=delete"],
-[data-color-scheme="light"] a[href*="mode=report"],
-[data-color-scheme="light"] a[href*="mode=warn"]{
-  background:linear-gradient(180deg,var(--lem-red-soft),var(--lem-red-main))!important;
-  background-color:var(--lem-red-main)!important;
-  border-color:rgba(var(--lem-red-main-rgb),.54)!important;
-  color:var(--lem-icon-light)!important;
-  text-shadow:none!important;
-  box-shadow:0 8px 18px rgba(var(--lem-red-main-rgb),.16)!important;
-}
-
-[data-color-scheme="light"] .post-options a *,
-[data-color-scheme="light"] .postprofile .profile-icons a *,
-[data-color-scheme="light"] .post .profile-icons a *,
-[data-color-scheme="light"] a[href*="mode=editpost"] *,
-[data-color-scheme="light"] a[href*="mode=quote"] *,
-[data-color-scheme="light"] a[href*="mode=delete"] *,
-[data-color-scheme="light"] a[href*="mode=report"] *,
-[data-color-scheme="light"] a[href*="mode=warn"] *{
-  color:var(--lem-icon-light)!important;
-  fill:var(--lem-icon-light)!important;
-  text-shadow:none!important;
-}
-
-[data-color-scheme="light"] .post-options a:hover,
-[data-color-scheme="light"] .postprofile .profile-icons a:hover,
-[data-color-scheme="light"] .post .profile-icons a:hover,
-[data-color-scheme="light"] a[href*="mode=editpost"]:hover,
-[data-color-scheme="light"] a[href*="mode=quote"]:hover,
-[data-color-scheme="light"] a[href*="mode=delete"]:hover,
-[data-color-scheme="light"] a[href*="mode=report"]:hover,
-[data-color-scheme="light"] a[href*="mode=warn"]:hover{
-  background:linear-gradient(180deg,#fff06a,#ffd21f)!important;
-  background-color:#fff06a!important;
-  border-color:#fff06a!important;
-  color:var(--lem-red-dark)!important;
-}
-
-[data-color-scheme="light"] .post-options a:hover *,
-[data-color-scheme="light"] .postprofile .profile-icons a:hover *,
-[data-color-scheme="light"] .post .profile-icons a:hover *,
-[data-color-scheme="light"] a[href*="mode=editpost"]:hover *,
-[data-color-scheme="light"] a[href*="mode=quote"]:hover *,
-[data-color-scheme="light"] a[href*="mode=delete"]:hover *,
-[data-color-scheme="light"] a[href*="mode=report"]:hover *,
-[data-color-scheme="light"] a[href*="mode=warn"]:hover *{
-  color:var(--lem-red-dark)!important;
-  fill:var(--lem-red-dark)!important;
-}
-
-/* ===================== EXCLUSIONS : NOTIFFI + LECTEUR AUDIO ===================== */
-
-[data-color-scheme="light"] #notiffi-button,
-[data-color-scheme="light"] .notiffi-button,
-[data-color-scheme="light"] #notiffi-panel button,
-[data-color-scheme="light"] #notiffi-panel .button,
-[data-color-scheme="light"] [class*="notiffi"] button,
-[data-color-scheme="light"] [class*="notif"] button,
-[data-color-scheme="light"] [class*="notiffi"] [class*="btn"],
-[data-color-scheme="light"] [class*="notif"] [class*="btn"]{
-  background:var(--notiffi-button-bg)!important;
-  border-color:var(--notiffi-count-border)!important;
-  color:var(--notiffi-count-text)!important;
-  box-shadow:var(--notiffi-button-shadow)!important;
-}
-
-[data-color-scheme="light"] .lb-player button,
-[data-color-scheme="light"] .lb-player .button,
-[data-color-scheme="light"] .lb-player [class*="play"],
-[data-color-scheme="light"] .lb-player [class*="pause"],
-[data-color-scheme="light"] .lpa-player button,
-[data-color-scheme="light"] .lpa-player .button,
-[data-color-scheme="light"] .lpa-player [class*="play"],
-[data-color-scheme="light"] .lpa-player [class*="pause"],
-[data-color-scheme="light"] [class*="player"] button,
-[data-color-scheme="light"] [class*="player"] [class*="play"],
-[data-color-scheme="light"] [class*="audio"] button,
-[data-color-scheme="light"] [class*="audio"] [class*="play"]{
-  background:transparent!important;
-  border-color:transparent!important;
-  color:var(--lb-player-wave-current,var(--lem-orange-hover))!important;
-  box-shadow:none!important;
-}
-
-/* ===================== VERTS LISIBLES ===================== */
-
-[data-color-scheme="light"] [style*="#a7ff3f"],
-[data-color-scheme="light"] [style*="#73ff4d"],
-[data-color-scheme="light"] [style*="#31ff63"],
-[data-color-scheme="light"] [style*="rgb(49, 255, 99)"],
-[data-color-scheme="light"] [class*="green"],
-[data-color-scheme="light"] [class*="lime"],
-[data-color-scheme="light"] [class*="open"],
-[data-color-scheme="light"] [class*="adoptable"],
-[data-color-scheme="light"] [class*="earth"],
-[data-color-scheme="light"] [class*="commun"]{
-  color:var(--lem-green-readable)!important;
-  border-color:rgba(47,99,31,.38)!important;
-  text-shadow:none!important;
-}
-
-[data-color-scheme="light"] [class*="green"]:hover,
-[data-color-scheme="light"] [class*="lime"]:hover,
-[data-color-scheme="light"] [class*="open"]:hover,
-[data-color-scheme="light"] [class*="adoptable"]:hover{
-  color:var(--lem-green-readable-hover)!important;
-  border-color:rgba(31,79,22,.48)!important;
-}
-
-/* ===================== SCROLLBAR LIGHT : ROUGE / ORANGE ===================== */
-
-[data-color-scheme="light"]{
-  --edison-scroll-thumb:#ab0e0e;
-  --edison-scroll-thumb-hover:#e05a24;
-  --edison-scroll-track:#ffd48a;
-  --edison-scroll-track-soft:#fff0cf;
-}
-
-/* ===================== SÉLECTION TEXTE ===================== */
-
-[data-color-scheme="light"] ::selection{
-  background:rgba(var(--lem-red-main-rgb),.30);
-  color:#fff7d7;
-}
-
-
-
-/* =========================================================
-   PATCH FINAL — BOUTONS LIGHT COHÉRENTS + PLAYER RESTAURÉ
-   Demande : fond rouge pour les vrais boutons du forum en mode clair,
-   sans toucher au triangle du lecteur, ni à Notiffi.
+/* ===================== BOUTONS DU FORUM : COMME LE BOUTON LUNE =====================
+   On cible les vrais boutons cliquables. Pas les wrappers, pas Notiffi,
+   pas la barre du lecteur audio. Le texte et les icônes restent jaunes.
 ========================================================= */
-
-[data-color-scheme="light"]{
-  --lem-red-main:#ab0e0e;
-  --lem-red-main-rgb:171,14,14;
-  --lem-red-dark:#780606;
-  --lem-red-soft:#c92618;
-  --lem-orange-hover:#ff8a00;
-  --lem-yellow-button:#ffe44d;
-  --lem-yellow-hover:#fff06a;
-  --lem-icon-light:#fff7d7;
-}
-
-/* ===================== RESTAURATION LECTEUR AUDIO ===================== */
-
-[data-color-scheme="light"] .lb-player,
-[data-color-scheme="light"] .lpa-player,
-[data-color-scheme="light"] [class*="player"],
-[data-color-scheme="light"] [class*="audio"]{
-  --lb-player-wave-current:#ab0e0e;
-  --lb-player-wave-played:#d76a00;
-  --lb-player-wave:#d99a42;
-}
-
-/* On annule la règle trop agressive qui avait rendu les bordures transparentes. */
-[data-color-scheme="light"] .lb-player button,
-[data-color-scheme="light"] .lb-player .button,
-[data-color-scheme="light"] .lb-player [class*="play"],
-[data-color-scheme="light"] .lb-player [class*="pause"],
-[data-color-scheme="light"] .lpa-player button,
-[data-color-scheme="light"] .lpa-player .button,
-[data-color-scheme="light"] .lpa-player [class*="play"],
-[data-color-scheme="light"] .lpa-player [class*="pause"],
-[data-color-scheme="light"] [class*="player"] button,
-[data-color-scheme="light"] [class*="player"] [class*="play"],
-[data-color-scheme="light"] [class*="audio"] button,
-[data-color-scheme="light"] [class*="audio"] [class*="play"]{
-  background:transparent!important;
-  background-color:transparent!important;
-  color:var(--lem-red-main)!important;
-  fill:var(--lem-red-main)!important;
-  box-shadow:none!important;
-  opacity:1!important;
-  visibility:visible!important;
-}
-
-/* Si le bouton play est dessiné en triangle CSS, on restaure sa bordure gauche. */
-[data-color-scheme="light"] .lb-player [class*="play"],
-[data-color-scheme="light"] .lpa-player [class*="play"],
-[data-color-scheme="light"] [class*="player"] [class*="play"],
-[data-color-scheme="light"] [class*="audio"] [class*="play"]{
-  border-left-color:var(--lem-red-main)!important;
-  border-right-color:transparent!important;
-  border-top-color:transparent!important;
-  border-bottom-color:transparent!important;
-}
-
-[data-color-scheme="light"] .lb-player [class*="play"]::before,
-[data-color-scheme="light"] .lb-player [class*="play"]::after,
-[data-color-scheme="light"] .lpa-player [class*="play"]::before,
-[data-color-scheme="light"] .lpa-player [class*="play"]::after,
-[data-color-scheme="light"] [class*="player"] [class*="play"]::before,
-[data-color-scheme="light"] [class*="player"] [class*="play"]::after,
-[data-color-scheme="light"] [class*="audio"] [class*="play"]::before,
-[data-color-scheme="light"] [class*="audio"] [class*="play"]::after{
-  color:var(--lem-red-main)!important;
-  border-left-color:var(--lem-red-main)!important;
-  opacity:1!important;
-  visibility:visible!important;
-}
-
-/* ===================== BOUTONS FORUM LIGHT : FOND ROUGE ===================== */
 
 [data-color-scheme="light"] :is(
   a.button,
@@ -7248,6 +7070,7 @@ iframe.pa-frame{
   input[type="submit"],
   input[type="reset"],
   button,
+  [role="button"],
   .buttons a,
   .topic-actions a,
   .post-options a,
@@ -7287,9 +7110,10 @@ iframe.pa-frame{
 )){
   background:linear-gradient(180deg,var(--lem-red-soft),var(--lem-red-main))!important;
   background-color:var(--lem-red-main)!important;
-  border-color:rgba(var(--lem-red-main-rgb),.62)!important;
-  color:var(--lem-yellow-button)!important;
+  border:1px solid rgba(var(--lem-red-main-rgb),.62)!important;
+  color:var(--lem-button-yellow)!important;
   text-shadow:none!important;
+  filter:none!important;
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,.10),
     0 8px 18px rgba(var(--lem-red-main-rgb),.18)!important;
@@ -7303,6 +7127,7 @@ iframe.pa-frame{
   .button1,
   .button2,
   button,
+  [role="button"],
   .buttons a,
   .topic-actions a,
   .post-options a,
@@ -7340,26 +7165,11 @@ iframe.pa-frame{
   .fa_toolbar,
   .fa_toolbar *
 )) *{
-  color:var(--lem-icon-light)!important;
-  fill:var(--lem-icon-light)!important;
+  color:var(--lem-button-icon)!important;
+  fill:var(--lem-button-icon)!important;
+  stroke:var(--lem-button-icon)!important;
   text-shadow:none!important;
-}
-
-/* Les input boutons n'ont pas d'enfants : texte jaune direct. */
-[data-color-scheme="light"] :is(
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"]
-):not(:where(
-  #notiffi-panel *,
-  [class*="notiffi"] *,
-  [class*="notif"] *,
-  .lb-player *,
-  .lpa-player *,
-  [class*="player"] *,
-  [class*="audio"] *
-)){
-  color:var(--lem-yellow-button)!important;
+  filter:none!important;
 }
 
 [data-color-scheme="light"] :is(
@@ -7373,6 +7183,7 @@ iframe.pa-frame{
   input[type="submit"],
   input[type="reset"],
   button,
+  [role="button"],
   .buttons a,
   .topic-actions a,
   .post-options a,
@@ -7410,9 +7221,9 @@ iframe.pa-frame{
   .fa_toolbar,
   .fa_toolbar *
 )):hover{
-  background:linear-gradient(180deg,var(--lem-yellow-hover),#ffd21f)!important;
-  background-color:var(--lem-yellow-hover)!important;
-  border-color:var(--lem-yellow-hover)!important;
+  background:linear-gradient(180deg,var(--lem-button-hover),#ffd21f)!important;
+  background-color:var(--lem-button-hover)!important;
+  border-color:var(--lem-button-hover)!important;
   color:var(--lem-red-dark)!important;
   text-shadow:none!important;
   box-shadow:
@@ -7428,6 +7239,7 @@ iframe.pa-frame{
   .button1,
   .button2,
   button,
+  [role="button"],
   .buttons a,
   .topic-actions a,
   .post-options a,
@@ -7467,9 +7279,10 @@ iframe.pa-frame{
 )):hover *{
   color:var(--lem-red-dark)!important;
   fill:var(--lem-red-dark)!important;
+  stroke:var(--lem-red-dark)!important;
 }
 
-/* ===================== NOTIFFI : RESTE DANS SON DESIGN ===================== */
+/* ===================== NOTIFFI : EXCLUSION EXPLICITE ===================== */
 
 [data-color-scheme="light"] #notiffi-button,
 [data-color-scheme="light"] .notiffi-button,
@@ -7484,3 +7297,103 @@ iframe.pa-frame{
   color:var(--notiffi-count-text)!important;
   box-shadow:var(--notiffi-button-shadow)!important;
 }
+
+/* ===================== LECTEUR AUDIO : TRIANGLE PRÉSENT, PAS DE BOUTON ROUGE ===================== */
+
+[data-color-scheme="light"] .lb-player,
+[data-color-scheme="light"] .lpa-player,
+[data-color-scheme="light"] [class*="player"],
+[data-color-scheme="light"] [class*="audio"]{
+  --lb-player-wave-current:var(--lem-red-main);
+  --lb-player-wave-played:#d76a00;
+  --lb-player-wave:#d99a42;
+}
+
+[data-color-scheme="light"] .lb-player button,
+[data-color-scheme="light"] .lb-player .button,
+[data-color-scheme="light"] .lb-player [class*="play"],
+[data-color-scheme="light"] .lb-player [class*="pause"],
+[data-color-scheme="light"] .lpa-player button,
+[data-color-scheme="light"] .lpa-player .button,
+[data-color-scheme="light"] .lpa-player [class*="play"],
+[data-color-scheme="light"] .lpa-player [class*="pause"],
+[data-color-scheme="light"] [class*="player"] button,
+[data-color-scheme="light"] [class*="player"] [class*="play"],
+[data-color-scheme="light"] [class*="audio"] button,
+[data-color-scheme="light"] [class*="audio"] [class*="play"]{
+  background:transparent!important;
+  background-color:transparent!important;
+  box-shadow:none!important;
+  color:var(--lem-red-main)!important;
+  fill:var(--lem-red-main)!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+[data-color-scheme="light"] .lb-player [class*="play"],
+[data-color-scheme="light"] .lpa-player [class*="play"],
+[data-color-scheme="light"] [class*="player"] [class*="play"],
+[data-color-scheme="light"] [class*="audio"] [class*="play"]{
+  border-left-color:var(--lem-red-main)!important;
+  border-top-color:transparent!important;
+  border-right-color:transparent!important;
+  border-bottom-color:transparent!important;
+}
+
+[data-color-scheme="light"] .lb-player [class*="play"]::before,
+[data-color-scheme="light"] .lb-player [class*="play"]::after,
+[data-color-scheme="light"] .lpa-player [class*="play"]::before,
+[data-color-scheme="light"] .lpa-player [class*="play"]::after,
+[data-color-scheme="light"] [class*="player"] [class*="play"]::before,
+[data-color-scheme="light"] [class*="player"] [class*="play"]::after,
+[data-color-scheme="light"] [class*="audio"] [class*="play"]::before,
+[data-color-scheme="light"] [class*="audio"] [class*="play"]::after{
+  color:var(--lem-red-main)!important;
+  border-left-color:var(--lem-red-main)!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+/* ===================== VERTS LISIBLES ===================== */
+
+[data-color-scheme="light"] [style*="#a7ff3f"],
+[data-color-scheme="light"] [style*="#73ff4d"],
+[data-color-scheme="light"] [style*="#31ff63"],
+[data-color-scheme="light"] [style*="rgb(49, 255, 99)"],
+[data-color-scheme="light"] [class*="green"],
+[data-color-scheme="light"] [class*="lime"],
+[data-color-scheme="light"] [class*="open"],
+[data-color-scheme="light"] [class*="adoptable"],
+[data-color-scheme="light"] [class*="earth"],
+[data-color-scheme="light"] [class*="commun"]{
+  color:var(--lem-green-ok)!important;
+  border-color:rgba(22,131,38,.38)!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] [class*="green"]:hover,
+[data-color-scheme="light"] [class*="lime"]:hover,
+[data-color-scheme="light"] [class*="open"]:hover,
+[data-color-scheme="light"] [class*="adoptable"]:hover{
+  color:var(--lem-green-ok-hover)!important;
+  border-color:rgba(15,104,29,.48)!important;
+}
+
+/* ===================== SCROLLBAR LIGHT : ROUGE / ORANGE ===================== */
+
+[data-color-scheme="light"] html,
+[data-color-scheme="light"] body,
+[data-color-scheme="light"] #wrap,
+[data-color-scheme="light"] #content-container,
+[data-color-scheme="light"] #container,
+[data-color-scheme="light"] #main,
+[data-color-scheme="light"] #main-content{
+  scrollbar-width:thin;
+  scrollbar-color:var(--edison-scroll-thumb) var(--edison-scroll-track);
+}
+
+[data-color-scheme="light"] ::selection{
+  background:rgba(var(--lem-red-main-rgb),.30);
+  color:#fff7d7;
+}
+

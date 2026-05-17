@@ -3499,7 +3499,7 @@ iframe.pa-frame{
   --faq-pnj:#b9236e;
   --faq-pnjdating:#c01835;
 
-  --faq-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+  --faq-head-img:none;
 
   --faq-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
   --faq-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -3569,7 +3569,7 @@ iframe.pa-frame{
   --ovld-sloth:#b56b00;
   --ovld-sloth-rgb:181,107,0;
 
-  --ovld-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+  --ovld-head-img:none;
 
   --ovld-box-bg:
     radial-gradient(circle at 50% 0%,rgba(255,168,36,.16),transparent 34%),
@@ -3608,7 +3608,7 @@ iframe.pa-frame{
   --grpm-open:#8f6b00;
   --grpm-closed:#8b001f;
 
-  --grpm-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+  --grpm-head-img:none;
 
   --grpm-hellborn:#8f6b00;
   --grpm-sinner:#c01835;
@@ -3662,7 +3662,7 @@ iframe.pa-frame{
   --bst-hell:#b81424;
   --bst-heaven:#d88a00;
 
-  --bst-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+  --bst-head-img:none;
 
   --bst-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
   --bst-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -3705,7 +3705,7 @@ iframe.pa-frame{
   --ent-earth:#8f6b00;
   --ent-lime:#8f6b00;
 
-  --ent-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+  --ent-head-img:none;
 
   --ent-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
   --ent-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -3741,7 +3741,7 @@ iframe.pa-frame{
 --stf-text:#3a1b0b;
 --stf-muted:#8a4f25;
 
---stf-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--stf-head-img:none;
 
 --stf-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
 --stf-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -3779,7 +3779,7 @@ iframe.pa-frame{
 --avp-text:#3a1b0b;
 --avp-muted:#8a4f25;
 
---avp-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--avp-head-img:none;
 
 --avp-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
 --avp-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -3829,7 +3829,7 @@ iframe.pa-frame{
 --lb-red:#b81424;
 --lb-ok:#8f6b00;
 
---lb-banner-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--lb-banner-img:none;
 
 --lb-banner-bg:#fff3d3;
 --lb-banner-border:rgba(215,106,0,.24);
@@ -3893,7 +3893,7 @@ iframe.pa-frame{
 --pnjang-brown:#8a4f25;
 --pnjang-brown-soft:#a7642e;
 
---pnjang-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--pnjang-head-img:none;
 
 --pnjang-border-cyan:rgba(215,106,0,.24);
 --pnjang-border-cyan-soft:rgba(215,106,0,.18);
@@ -3946,7 +3946,7 @@ iframe.pa-frame{
 --pnjdem-blue-soft:#ff7a2f;
 --pnjdem-heart:#b9236e;
 
---pnjdem-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--pnjdem-head-img:none;
 
 --pnjdem-border-cyan:rgba(215,106,0,.24);
 --pnjdem-border-cyan-soft:rgba(215,106,0,.18);
@@ -4002,7 +4002,7 @@ iframe.pa-frame{
 --pnjd-blue-soft:#ff7a2f;
 
 --pnjd-glow-blue:215,106,0;
---pnjd-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--pnjd-head-img:none;
 
 --pnjd-border-cyan:rgba(215,106,0,.24);
 --pnjd-border-cyan-soft:rgba(215,106,0,.18);
@@ -4071,7 +4071,7 @@ iframe.pa-frame{
 --pwrm-lime-soft:#c09a00;
 --pwrm-blue-soft:#ff7a2f;
 
---pwrm-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--pwrm-head-img:none;
 
 --pwrm-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
 --pwrm-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -4113,7 +4113,7 @@ iframe.pa-frame{
 --chro-green:#8f6b00;
 --chro-carmin:#b81424;
 
---chro-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--chro-head-img:none;
 
 --chro-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
 --chro-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -4156,7 +4156,7 @@ iframe.pa-frame{
 --cul-hell:#b81424;
 --cul-heaven:#d88a00;
 
---cul-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--cul-head-img:none;
 
 --cul-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
 --cul-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -4199,7 +4199,7 @@ iframe.pa-frame{
 --lexm-carmin:#b81424;
 --lexm-lime:#9c7a00;
 
---lexm-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--lexm-head-img:none;
 
 --lexm-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
 --lexm-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -4247,7 +4247,7 @@ iframe.pa-frame{
 --bstp-blue:#c94b14;
 --bstp-orange:#d76a00;
 
---bstp-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--bstp-head-img:none;
 
 --bstp-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
 --bstp-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -4297,7 +4297,7 @@ iframe.pa-frame{
 --sg-red:#b81424;
 --sg-red-soft:#c01835;
 
---sg-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--sg-head-img:none;
 
 --sg-border-main:rgba(215,106,0,.26);
 --sg-border-soft:rgba(215,106,0,.16);
@@ -4345,7 +4345,7 @@ iframe.pa-frame{
 --predef-blue:#c94b14;
 --predef-blue-soft:#ff7a2f;
 
---predef-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--predef-head-img:none;
 
 --predef-border-cyan:rgba(215,106,0,.24);
 --predef-border-cyan-soft:rgba(215,106,0,.18);
@@ -4386,7 +4386,7 @@ iframe.pa-frame{
 --prel-red:#b81424;
 --prel-red-soft:#c01835;
 
---prel-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--prel-head-img:none;
 
 --prel-border-cyan:rgba(215,106,0,.24);
 --prel-border-cyan-soft:rgba(215,106,0,.18);
@@ -4428,7 +4428,7 @@ iframe.pa-frame{
 --pl-red:#b81424;
 --pl-red-soft:#c01835;
 
---pl-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--pl-head-img:none;
 
 --pl-border-cyan:rgba(215,106,0,.24);
 --pl-border-gold:rgba(216,138,0,.30);
@@ -4477,7 +4477,7 @@ iframe.pa-frame{
 --dospnj-blue-dark:#c94b14;
 --dospnj-blue-soft:#ff7a2f;
 
---dospnj-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--dospnj-head-img:none;
 
 --dospnj-border-gold:rgba(216,138,0,.26);
 --dospnj-border-gold-strong:rgba(216,138,0,.34);
@@ -4532,7 +4532,7 @@ iframe.pa-frame{
 --mev1-lime:#8f6b00;
 --mev1-orange:#d76a00;
 
---mev1-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--mev1-head-img:none;
 
 --mev1-border-gold:rgba(216,138,0,.26);
 --mev1-border-gold-strong:rgba(216,138,0,.34);
@@ -4587,7 +4587,7 @@ iframe.pa-frame{
 --mev2-purple:#8a2f63;
 --mev2-purple-soft:#a83b73;
 
---mev2-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--mev2-head-img:none;
 
 --mev2-border-orange:rgba(215,106,0,.26);
 --mev2-border-orange-soft:rgba(215,106,0,.18);
@@ -4635,7 +4635,7 @@ iframe.pa-frame{
 --qst-purple:#8a2f63;
 --qst-purple-soft:#a83b73;
 
---qst-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--qst-head-img:none;
 
 --qst-border-cyan:rgba(215,106,0,.24);
 --qst-border-cyan-soft:rgba(215,106,0,.18);
@@ -4671,7 +4671,7 @@ iframe.pa-frame{
 --adms-text:#3a1b0b;
 --adms-muted:#8a4f25;
 
---adms-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--adms-head-img:none;
 
 --adms-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
 --adms-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -5203,7 +5203,7 @@ iframe.pa-frame{
 --mgl-text:#3a1b0b;
 --mgl-muted:#8a4f25;
 
---mgl-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--mgl-head-img:none;
 
 --mgl-shadow-cyan:0 0 12px rgba(215,106,0,.26),0 0 28px rgba(255,168,36,.12);
 --mgl-shadow-pink:0 0 14px rgba(192,24,53,.22),0 0 28px rgba(192,24,53,.12);
@@ -5287,8 +5287,8 @@ iframe.pa-frame{
 --vp-text:#3a1b0b;
 --vp-muted:#8a4f25;
 
---vp-header:url("https://i.redd.it/betj7dpba3gc1.gif");
---vp-banner:url("https://i.redd.it/betj7dpba3gc1.gif");
+--vp-header:none;
+--vp-banner:none;
 
 --vp-border-cyan:rgba(215,106,0,.22);
 --vp-border-cyan-soft:rgba(215,106,0,.24);
@@ -5382,7 +5382,7 @@ iframe.pa-frame{
 --mgla-text:#3a1b0b;
 --mgla-muted:#8a4f25;
 
---mgla-head-img:url("https://i.redd.it/betj7dpba3gc1.gif");
+--mgla-head-img:none;
 
 --mgla-border-cyan:rgba(215,106,0,.24);
 --mgla-border-cyan-soft:rgba(215,106,0,.20);
@@ -5666,7 +5666,7 @@ iframe.pa-frame{
   radial-gradient(circle at top right,rgba(192,24,53,.10),transparent 34%),
   linear-gradient(135deg,rgba(255,250,240,.94) 0%,rgba(255,226,173,.98) 100%);
 
---pm-hero-cover:url("https://i.redd.it/betj7dpba3gc1.gif");
+--pm-hero-cover:none;
 
 --pm-hero-bg:
   linear-gradient(to right,rgba(255,247,223,.88) 0%,rgba(255,210,137,.42) 38%,rgba(255,210,137,.16) 62%,rgba(255,247,223,.88) 100%),

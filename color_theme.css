@@ -7865,3 +7865,330 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
    FIN PATCH FINAL LIGHT — CHRONOLOGIE PROPRE
 ========================================================= */
 
+/* =========================================================
+   PATCH FINAL LIGHT — CHRONOLOGIE MODERNE
+   Repart du rendu dark, adapté en clair chaud.
+   Objectif : plus de blocs années 2000, plus de halo bleu.
+========================================================= */
+
+[data-color-scheme="light"]{
+  --chro-modern-bg:#fff6df;
+  --chro-modern-panel:#fffaf0;
+  --chro-modern-panel-2:#ffe6b8;
+  --chro-modern-card:rgba(255,250,240,.92);
+  --chro-modern-card-2:rgba(255,231,190,.78);
+  --chro-modern-red:#ab0e0e;
+  --chro-modern-red-soft:#c01835;
+  --chro-modern-orange:#d76a00;
+  --chro-modern-gold:#ffb833;
+  --chro-modern-ink:#351707;
+  --chro-modern-muted:#8a4f25;
+  --chro-modern-line:linear-gradient(180deg,#ffb833 0%,#d76a00 45%,#ab0e0e 100%);
+  --chro-modern-shadow:0 18px 42px rgba(145,65,12,.13);
+  --chro-modern-shadow-soft:0 10px 24px rgba(145,65,12,.09);
+}
+
+/* Wrapper global : carte claire inspirée du dark */
+[data-color-scheme="light"] .chro,
+[data-color-scheme="light"] .chro-box{
+  background:
+    radial-gradient(circle at 12% 0%,rgba(255,184,51,.16),transparent 34%),
+    radial-gradient(circle at 90% 18%,rgba(171,14,14,.08),transparent 36%),
+    linear-gradient(180deg,var(--chro-modern-bg) 0%,#fffaf0 52%,#ffe2aa 100%)!important;
+  border:1px solid rgba(215,106,0,.22)!important;
+  border-radius:22px!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.55),
+    var(--chro-modern-shadow)!important;
+  color:var(--chro-modern-ink)!important;
+  overflow:hidden!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-box::before{
+  opacity:.42!important;
+  background-image:radial-gradient(circle,rgba(215,106,0,.16) 1px,transparent 1.4px)!important;
+  background-size:18px 18px!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+
+/* Header / intro : proche dark mais en crème */
+[data-color-scheme="light"] .chro-head{
+  background:
+    linear-gradient(90deg,rgba(255,250,240,.98),rgba(255,223,174,.86)),
+    radial-gradient(circle at right,rgba(171,14,14,.10),transparent 42%)!important;
+  border:1px solid rgba(215,106,0,.18)!important;
+  border-radius:18px!important;
+  box-shadow:var(--chro-modern-shadow-soft)!important;
+}
+
+[data-color-scheme="light"] .chro-title,
+[data-color-scheme="light"] .chro-head h1,
+[data-color-scheme="light"] .chro-head h2,
+[data-color-scheme="light"] .chro h1,
+[data-color-scheme="light"] .chro h2{
+  color:var(--chro-modern-red)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-intro,
+[data-color-scheme="light"] .chro-note{
+  background:rgba(255,250,240,.74)!important;
+  border:1px solid rgba(215,106,0,.16)!important;
+  border-left:4px solid var(--chro-modern-red-soft)!important;
+  border-radius:16px!important;
+  box-shadow:var(--chro-modern-shadow-soft)!important;
+  color:var(--chro-modern-ink)!important;
+}
+
+/* Nav */
+[data-color-scheme="light"] .chro-nav a,
+[data-color-scheme="light"] .chro-nav button,
+[data-color-scheme="light"] .chro-pill,
+[data-color-scheme="light"] .chro-tag{
+  background:linear-gradient(180deg,#fffaf0,#ffecc7)!important;
+  border:1px solid rgba(215,106,0,.25)!important;
+  border-radius:999px!important;
+  color:var(--chro-modern-orange)!important;
+  box-shadow:0 8px 18px rgba(145,65,12,.08)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-nav a:hover,
+[data-color-scheme="light"] .chro-nav button:hover,
+[data-color-scheme="light"] .chro-pill:hover,
+[data-color-scheme="light"] .chro-tag:hover{
+  background:linear-gradient(180deg,#ffd94d,#ffb833)!important;
+  border-color:var(--chro-modern-red)!important;
+  color:var(--chro-modern-red)!important;
+}
+
+/* Panneau de génération */
+[data-color-scheme="light"] .chro-era{
+  margin:22px 0!important;
+  background:
+    radial-gradient(circle at 0% 0%,rgba(255,184,51,.12),transparent 32%),
+    linear-gradient(180deg,rgba(255,250,240,.88),rgba(255,231,190,.62))!important;
+  border:1px solid rgba(215,106,0,.20)!important;
+  border-radius:20px!important;
+  box-shadow:var(--chro-modern-shadow)!important;
+  overflow:hidden!important;
+  color:var(--chro-modern-ink)!important;
+}
+
+[data-color-scheme="light"] .chro-era-title{
+  padding:18px 22px!important;
+  background:
+    linear-gradient(90deg,rgba(255,250,240,.98),rgba(255,224,178,.74)),
+    radial-gradient(circle at right,rgba(171,14,14,.10),transparent 40%)!important;
+  border:0!important;
+  border-bottom:1px solid rgba(215,106,0,.18)!important;
+  color:var(--chro-modern-red)!important;
+  font-weight:900!important;
+  letter-spacing:.04em!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* La ligne est un décor, pas un fond massif */
+[data-color-scheme="light"] .chro-line{
+  position:relative!important;
+  display:grid!important;
+  gap:16px!important;
+  padding:18px 18px 22px 52px!important;
+  background:
+    linear-gradient(90deg,rgba(255,246,224,.82),rgba(255,250,240,.72))!important;
+  border:0!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-line::before{
+  content:""!important;
+  position:absolute!important;
+  top:18px!important;
+  bottom:22px!important;
+  left:24px!important;
+  width:3px!important;
+  height:auto!important;
+  border:0!important;
+  border-radius:999px!important;
+  background:var(--chro-modern-line)!important;
+  box-shadow:0 0 0 1px rgba(255,250,240,.70)!important;
+  filter:none!important;
+  z-index:0!important;
+}
+
+[data-color-scheme="light"] .chro-line::after{
+  content:none!important;
+}
+
+/* Item : structure propre en deux colonnes */
+[data-color-scheme="light"] .chro-item,
+[data-color-scheme="light"] .chro-event,
+[data-color-scheme="light"] .chro-card{
+  position:relative!important;
+  z-index:1!important;
+  display:grid!important;
+  grid-template-columns:120px minmax(0,1fr)!important;
+  gap:18px!important;
+  align-items:start!important;
+  padding:0!important;
+  margin:0!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  color:var(--chro-modern-ink)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Points : plus de halo bleu, style bijou chaud */
+[data-color-scheme="light"] .chro-item::before,
+[data-color-scheme="light"] .chro-event::before,
+[data-color-scheme="light"] .chro-card::before{
+  content:""!important;
+  position:absolute!important;
+  left:-34px!important;
+  top:18px!important;
+  width:13px!important;
+  height:13px!important;
+  border-radius:50%!important;
+  background:radial-gradient(circle at 35% 35%,#fff7df 0 28%,#ffb833 30%,#d76a00 100%)!important;
+  border:2px solid #fff4cf!important;
+  box-shadow:
+    0 0 0 4px rgba(255,184,51,.18),
+    0 4px 10px rgba(145,65,12,.20)!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-item::after,
+[data-color-scheme="light"] .chro-event::after,
+[data-color-scheme="light"] .chro-card::after{
+  content:none!important;
+}
+
+/* Date/label gauche : typographie forte, sans grand pavé */
+[data-color-scheme="light"] .chro-date{
+  align-self:start!important;
+  padding:16px 0 0 0!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  color:var(--chro-modern-red)!important;
+  font-weight:900!important;
+  text-transform:uppercase!important;
+  letter-spacing:.035em!important;
+  line-height:1.08!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Carte contenu : glass cream moderne */
+[data-color-scheme="light"] .chro-content,
+[data-color-scheme="light"] .chro-item .chro-content,
+[data-color-scheme="light"] .chro-event .chro-content,
+[data-color-scheme="light"] .chro-card .chro-content{
+  position:relative!important;
+  padding:18px 20px!important;
+  background:
+    radial-gradient(circle at 100% 0%,rgba(255,184,51,.14),transparent 38%),
+    linear-gradient(135deg,var(--chro-modern-card),var(--chro-modern-card-2))!important;
+  border:1px solid rgba(215,106,0,.18)!important;
+  border-left:4px solid var(--chro-modern-orange)!important;
+  border-radius:16px!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.52),
+    var(--chro-modern-shadow-soft)!important;
+  color:var(--chro-modern-ink)!important;
+  text-shadow:none!important;
+  filter:none!important;
+  overflow:hidden!important;
+}
+
+[data-color-scheme="light"] .chro-item:nth-child(even) .chro-content{
+  border-left-color:var(--chro-modern-red-soft)!important;
+  background:
+    radial-gradient(circle at 100% 0%,rgba(171,14,14,.08),transparent 38%),
+    linear-gradient(135deg,rgba(255,250,240,.93),rgba(255,224,213,.58))!important;
+}
+
+/* Titre interne */
+[data-color-scheme="light"] .chro-event-title,
+[data-color-scheme="light"] .chro-content h3,
+[data-color-scheme="light"] .chro-content h4{
+  display:block!important;
+  margin:0 0 8px!important;
+  color:var(--chro-modern-orange)!important;
+  font-weight:900!important;
+  letter-spacing:.035em!important;
+  text-transform:uppercase!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-content p,
+[data-color-scheme="light"] .chro-content li,
+[data-color-scheme="light"] .chro-content span,
+[data-color-scheme="light"] .chro-text{
+  color:var(--chro-modern-ink)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-content b,
+[data-color-scheme="light"] .chro-content strong,
+[data-color-scheme="light"] .chro-content a{
+  color:var(--chro-modern-red-soft)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-content a:hover{
+  color:var(--chro-modern-orange)!important;
+}
+
+/* Etoiles / puces : dorées et lisibles */
+[data-color-scheme="light"] .chro-list span::before,
+[data-color-scheme="light"] .chro-content li::marker{
+  color:var(--chro-modern-gold)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Sécurité anti-ancien cyan/bleu sur Chronologie */
+[data-color-scheme="light"] .chro *{
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+@media (max-width:700px){
+  [data-color-scheme="light"] .chro-line{
+    padding-left:42px!important;
+  }
+  [data-color-scheme="light"] .chro-line::before{
+    left:20px!important;
+  }
+  [data-color-scheme="light"] .chro-item,
+  [data-color-scheme="light"] .chro-event,
+  [data-color-scheme="light"] .chro-card{
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+  }
+  [data-color-scheme="light"] .chro-item::before,
+  [data-color-scheme="light"] .chro-event::before,
+  [data-color-scheme="light"] .chro-card::before{
+    left:-28px!important;
+  }
+  [data-color-scheme="light"] .chro-date{
+    padding-top:0!important;
+  }
+}
+
+/* =========================================================
+   FIN PATCH FINAL LIGHT — CHRONOLOGIE MODERNE
+========================================================= */

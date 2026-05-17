@@ -6755,3 +6755,47 @@ iframe.pa-frame{
 [data-color-scheme="light"] .intrm a:hover{
   color:#c01835!important;
 }
+/* =========================================================
+   SCENGUIDE — PATCH LIGHT LISIBILITÉ BASSE
+   Bloc "Remplir une feuille de scénario"
+========================================================= */
+
+[data-color-scheme="light"] .scenguide-cta{
+  border:1px solid rgba(215,106,0,.22);
+  border-left:4px solid #d76a00;
+  background:
+    radial-gradient(circle at top right,rgba(192,24,53,.05),transparent 34%),
+    linear-gradient(90deg,rgba(255,248,232,.98),rgba(245,239,221,.96));
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.45),
+    0 8px 18px rgba(145,65,12,.08);
+}
+
+[data-color-scheme="light"] .scenguide-cta-title{
+  color:#d88a00;
+  text-shadow:none;
+}
+
+[data-color-scheme="light"] .scenguide-cta-text{
+  color:#4a2812;
+}
+
+[data-color-scheme="light"] .scenguide-button{
+  border:1px solid rgba(168,70,0,.28);
+  background:linear-gradient(180deg,#e38a14,#c76512);
+  color:#fff6e8!important;
+  box-shadow:
+    0 8px 18px rgba(168,70,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.20);
+}
+
+[data-color-scheme="light"] .scenguide-button:hover{
+  filter:brightness(1.06);
+  box-shadow:
+    0 10px 22px rgba(168,70,0,.24),
+    inset 0 1px 0 rgba(255,255,255,.24);
+}
+
+[data-color-scheme="light"] .scenguide-footer{
+  color:#8a5a32;
+}

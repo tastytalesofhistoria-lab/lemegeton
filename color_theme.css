@@ -44,7 +44,19 @@
   --lem-border-soft:rgba(255,255,255,.12);
   --lem-shadow:0 0 30px rgba(25,217,255,.16);
   --lem-shadow-pink:0 0 25px rgba(255,79,124,.28);
+/* ---------- STRUCTURE FORUMACTIF / FOND GLOBAL ---------- */
 
+--fa-body-bg:#0b0f2a;
+--fa-wrap-bg:#304262;
+--fa-container-bg:#304262;
+--fa-page-bg:#101936;
+
+--fa-border-main:rgba(36,228,255,.18);
+--fa-border-soft:rgba(255,255,255,.06);
+
+--fa-shadow-main:
+  0 0 30px rgba(0,0,0,.28),
+  0 0 22px rgba(36,228,255,.06);
   /* ===================== PA ISOLÉE / LPA ===================== */
 
   --lpa-bg:#0a122d;
@@ -2790,7 +2802,19 @@
   --lem-border-soft:rgba(7,16,31,.14);
   --lem-shadow:0 10px 35px rgba(28,48,80,.16);
   --lem-shadow-pink:0 10px 28px rgba(201,38,98,.20);
+/* ---------- STRUCTURE FORUMACTIF / FOND GLOBAL ---------- */
 
+--fa-body-bg:#f4f8ff;
+--fa-wrap-bg:#dce8ff;
+--fa-container-bg:#dce8ff;
+--fa-page-bg:#ffffff;
+
+--fa-border-main:rgba(0,127,163,.16);
+--fa-border-soft:rgba(7,16,31,.08);
+
+--fa-shadow-main:
+  0 12px 32px rgba(28,48,80,.12),
+  0 0 18px rgba(0,127,163,.05);
   /* ===================== PA ISOLÉE / LPA ===================== */
 
   --lpa-bg:#d9e8f7;

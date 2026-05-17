@@ -2814,17 +2814,17 @@
 --fa-text-soft:#8a5a32;
 --fa-text-muted:#a06c3d;
 
---fa-title-main:#a94e12;
---fa-title-strong:#7a2e10;
+--fa-title-main:#ab0e0e;
+--fa-title-strong:#ab0e0e;
 
---fa-link:#c35a14;
---fa-link-hover:#c01835;
+--fa-link:#ab0e0e;
+--fa-link-hover:#ff8a00;
 
 --fa-input-text:#4a2812;
 --fa-input-placeholder:#a06c3d;
 
 --fa-panel-text:#4a2812;
---fa-panel-title:#b65e00;
+--fa-panel-title:#ab0e0e;
 --fa-panel-border:rgba(145,65,12,.14);
   /* ===================== PA ISOLÉE / LPA ===================== */
 
@@ -4350,11 +4350,11 @@
   linear-gradient(180deg,var(--lem-bg-deep) 0%,var(--lem-panel) 48%,var(--lem-bg) 100%);
 
 --qeel-panel-title-bg:
-  radial-gradient(circle at top left,rgba(215,106,0,.10),transparent 42%),
+  radial-gradient(circle at top left,rgba(171,14,14,.12),transparent 42%),
   rgba(255,250,240,.72);
 
 --qeel-loser-bg:
-  radial-gradient(circle at top left,rgba(255,168,36,.16),transparent 36%),
+  radial-gradient(circle at top left,rgba(171,14,14,.16),transparent 36%),
   linear-gradient(135deg,#fff7df,#ffe0a3,#ffd08a);
 
 --qeel-box-bg:
@@ -4471,16 +4471,16 @@
 
 --idx-text:#3a1b0b;
 --idx-white:#241005;
---idx-cyan:#d76a00;
---idx-cyan-soft:#ff9f1c;
---idx-blue:#c94b14;
+--idx-cyan:#ab0e0e;
+--idx-cyan-soft:#ff8a00;
+--idx-blue:#ab0e0e;
 --idx-pink:#c01835;
 --idx-pink-soft:#ff4e57;
 --idx-purple:#8a2f63;
 --idx-gold:#d88a00;
 --idx-gold-soft:#ffb833;
 --idx-gold-deep:#8a4f00;
---idx-red:#b81424;
+--idx-red:#ab0e0e;
 --idx-lime:#8f6b00;
 
 --idx-bg:#fff7df;
@@ -4488,13 +4488,13 @@
 --idx-panel:#fffaf0;
 --idx-panel-soft:#ffdca1;
 
---idx-border-cyan:rgba(215,106,0,.24);
---idx-border-cyan-soft:rgba(215,106,0,.16);
---idx-border-cyan-strong:rgba(215,106,0,.34);
+--idx-border-cyan:rgba(171,14,14,.28);
+--idx-border-cyan-soft:rgba(171,14,14,.16);
+--idx-border-cyan-strong:rgba(171,14,14,.42);
 --idx-border-pink:rgba(192,24,53,.34);
 --idx-border-soft:rgba(70,28,8,.06);
 
---idx-shadow-cyan:rgba(215,106,0,.22);
+--idx-shadow-cyan:rgba(171,14,14,.22);
 --idx-shadow-pink:rgba(192,24,53,.22);
 
 --idx-forabg-bg:
@@ -4513,7 +4513,7 @@
 --idx-subforum-link-bg:rgba(255,250,240,.88);
 --idx-subforum-link-hover-bg:rgba(255,226,173,.95);
 
---idx-title-glow:radial-gradient(circle,rgba(215,106,0,.14),transparent 70%);
+--idx-title-glow:radial-gradient(circle,rgba(171,14,14,.18),transparent 70%);
 
 --idx-special-img-overlay:
   linear-gradient(180deg,rgba(255,247,223,.08),rgba(255,210,137,.42));
@@ -5130,19 +5130,19 @@
 --pm-dot-strong:rgba(70,28,8,.065);
 
 --pm-topic-title-bg:
-  radial-gradient(circle at 86% 20%,rgba(192,24,53,.10),transparent 34%),
+  radial-gradient(circle at 86% 20%,rgba(171,14,14,.13),transparent 34%),
   linear-gradient(90deg,rgba(255,247,223,.96) 0%,rgba(255,226,173,.98) 42%,rgba(255,210,137,.98) 100%);
 
 --pm-topic-title-after-bg:
-  linear-gradient(90deg,rgba(255,250,240,.08),rgba(255,210,137,.42),rgba(255,250,240,.08));
+  linear-gradient(90deg,rgba(255,250,240,.08),rgba(171,14,14,.36),rgba(255,250,240,.08));
 
---pm-page-title:#d76a00;
---pm-page-title-stroke:rgba(215,106,0,.20);
+--pm-page-title:#ab0e0e;
+--pm-page-title-stroke:rgba(171,14,14,.26);
 --pm-page-title-sub:rgba(70,28,8,.45);
---pm-page-title-hover:#c01835;
+--pm-page-title-hover:#ff8a00;
 
---pm-nav:#d76a00;
---pm-nav-hover:#c01835;
+--pm-nav:#ab0e0e;
+--pm-nav-hover:#ff8a00;
 
 --pm-quick-link-bg:
   radial-gradient(circle at 86% 20%,rgba(192,24,53,.10),transparent 34%),
@@ -5243,17 +5243,17 @@
   0 0 10px rgba(215,106,0,.12);
 
 --pm-button-bg:
-  radial-gradient(circle at 86% 20%,rgba(192,24,53,.10),transparent 34%),
+  radial-gradient(circle at 86% 20%,rgba(171,14,14,.10),transparent 34%),
   linear-gradient(90deg,rgba(255,250,240,.96) 0%,rgba(255,226,173,.98) 42%,rgba(255,210,137,.98) 100%);
 
 --pm-button-hover-bg:
-  radial-gradient(circle at center,rgba(192,24,53,.18),transparent 56%),
-  linear-gradient(135deg,#fffaf0 0%,#ffd08a 46%,#ffe0a3 140%);
+  radial-gradient(circle at center,rgba(255,230,0,.30),transparent 56%),
+  linear-gradient(135deg,#fffaf0 0%,#ffe600 46%,#fff176 140%);
 
 --pm-button-text:#241005;
---pm-button-hover-text:#ffffff;
---pm-button-border:rgba(215,106,0,.24);
---pm-button-hover-border:rgba(192,24,53,.40);
+--pm-button-hover-text:#241005;
+--pm-button-border:rgba(171,14,14,.34);
+--pm-button-hover-border:rgba(255,230,0,.72);
 
 --pm-button-shadow:
   inset 0 0 0 1px rgba(70,28,8,.05),
@@ -5281,11 +5281,11 @@
   linear-gradient(135deg,#ffd08a 0%,#e02a3f 100%);
 
 --pm-menu-hover-bg:
-  radial-gradient(circle at 35% 30%,rgba(255,250,240,.44),transparent 38%),
-  linear-gradient(135deg,#fff4cf 0%,#c01835 100%);
+  radial-gradient(circle at center,rgba(255,230,0,.18),transparent 56%),
+  linear-gradient(135deg,#fffaf0 0%,#ffe600 46%,#fff176 140%);
 
---pm-menu-border:rgba(192,24,53,.38);
---pm-menu-hover-border:rgba(215,106,0,.40);
+--pm-menu-border:rgba(171,14,14,.44);
+--pm-menu-hover-border:rgba(255,138,0,.48);
 
 --pm-menu-shadow:
   0 0 10px rgba(192,24,53,.14),
@@ -5346,12 +5346,12 @@
   radial-gradient(circle at 86% 20%,rgba(192,24,53,.10),transparent 34%),
   linear-gradient(90deg,rgba(255,247,223,.98) 0%,rgba(255,226,173,.98) 42%,rgba(255,210,137,.98) 100%);
 
---nav-text:#3a1b0b;
---nav-cyan:#d76a00;
---nav-cyan-soft:#ff9f1c;
---nav-blue:#c94b14;
---nav-pink:#c01835;
---nav-pink-hot:#e02a3f;
+--nav-text:#ab0e0e;
+--nav-cyan:#ff8a00;
+--nav-cyan-soft:#ffb347;
+--nav-blue:#ab0e0e;
+--nav-pink:#ab0e0e;
+--nav-pink-hot:#ab0e0e;
 --nav-dark:#241005;
 --nav-muted:#8a4f25;
 
@@ -5511,12 +5511,12 @@
 
   --edison-text:#3a1b0b;
   --edison-text-strong:#4a2812;
-  --edison-title:#a94e12;
+  --edison-title:#ab0e0e;
   --edison-muted:#8a5a32;
 
-  --edison-orange:#d76a00;
+  --edison-orange:#ff8a00;
   --edison-gold:#d88a00;
-  --edison-red:#c01835;
+  --edison-red:#ab0e0e;
   --edison-dark-red:#b81424;
   --edison-olive:#8f6b00;
   --edison-purple:#8a2f63;
@@ -6868,4 +6868,235 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] .scenguide-warning b{
   color:var(--edison-red);
   text-shadow:none;
+}
+
+
+/* =========================================================
+   PATCH LEMEGETON LIGHT — ROUGE #ab0e0e
+   Demande : cadres forum, titres, QEEL, navbar, partenaires,
+   infos deal, boutons réponses, sujets, boutons édition/suppression.
+========================================================= */
+
+[data-color-scheme="light"]{
+  --lem-red-main:#ab0e0e;
+  --lem-red-main-rgb:171,14,14;
+  --lem-orange-hover:#ff8a00;
+  --lem-orange-hover-rgb:255,138,0;
+  --lem-canary-hover:#ffe600;
+  --lem-canary-hover-rgb:255,230,0;
+
+  --fa-title-main:#ab0e0e;
+  --fa-title-strong:#ab0e0e;
+  --fa-link:#ab0e0e;
+  --fa-link-hover:#ff8a00;
+
+  --nav-text:#ab0e0e;
+  --nav-cyan:#ff8a00;
+  --nav-pink:#ab0e0e;
+
+  --idx-cyan:#ab0e0e;
+  --idx-cyan-soft:#ff8a00;
+  --idx-red:#ab0e0e;
+
+  --pm-page-title:#ab0e0e;
+  --pm-page-title-hover:#ff8a00;
+  --pm-nav:#ab0e0e;
+  --pm-nav-hover:#ff8a00;
+}
+
+/* 1. Intérieur du cadre forum */
+[data-color-scheme="light"] #wrap,
+[data-color-scheme="light"] #content-container,
+[data-color-scheme="light"] #container,
+[data-color-scheme="light"] #page-body,
+[data-color-scheme="light"] #main,
+[data-color-scheme="light"] #main-content,
+[data-color-scheme="light"] .forabg,
+[data-color-scheme="light"] .forumbg{
+  border-color:rgba(var(--lem-red-main-rgb),.32)!important;
+}
+
+[data-color-scheme="light"] .forabg,
+[data-color-scheme="light"] .forumbg,
+[data-color-scheme="light"] .forum-block,
+[data-color-scheme="light"] .forum-section,
+[data-color-scheme="light"] .cat-block{
+  box-shadow:
+    inset 0 0 0 1px rgba(var(--lem-red-main-rgb),.10),
+    0 12px 28px rgba(145,65,12,.12)!important;
+}
+
+/* 2. Titres catégories */
+[data-color-scheme="light"] .forabg .header h2,
+[data-color-scheme="light"] .forabg .header h2 a,
+[data-color-scheme="light"] .forabg .header .forumtitle,
+[data-color-scheme="light"] .forabg .header .forumtitle a,
+[data-color-scheme="light"] .cat-title,
+[data-color-scheme="light"] .category-title,
+[data-color-scheme="light"] .forum-category-title,
+[data-color-scheme="light"] .idx-title,
+[data-color-scheme="light"] .idx-cat-title,
+[data-color-scheme="light"] .idx-forum-title,
+[data-color-scheme="light"] h2.h3{
+  color:var(--lem-red-main)!important;
+  text-shadow:0 0 10px rgba(var(--lem-red-main-rgb),.16)!important;
+}
+
+/* 3. QEEL : WHO'S A LOSER ? */
+[data-color-scheme="light"] .qeel-loser,
+[data-color-scheme="light"] .qeel-loser-title,
+[data-color-scheme="light"] .qeel-title,
+[data-color-scheme="light"] .qeel-title-main,
+[data-color-scheme="light"] .qeel h2,
+[data-color-scheme="light"] #qeel h2{
+  color:var(--lem-red-main)!important;
+  -webkit-text-stroke-color:rgba(var(--lem-red-main-rgb),.44)!important;
+  text-shadow:0 0 12px rgba(var(--lem-red-main-rgb),.16)!important;
+}
+
+/* 4. Navbar : liens rouges, hover orange */
+[data-color-scheme="light"] #custom-navbar a,
+[data-color-scheme="light"] #custom-navbar a:link,
+[data-color-scheme="light"] #custom-navbar a:visited,
+[data-color-scheme="light"] .navbar a,
+[data-color-scheme="light"] .navlinks a,
+[data-color-scheme="light"] .linklist.navlinks a,
+[data-color-scheme="light"] .nav-main a,
+[data-color-scheme="light"] .nav-main button{
+  color:var(--lem-red-main)!important;
+}
+
+[data-color-scheme="light"] #custom-navbar a:hover,
+[data-color-scheme="light"] #custom-navbar a:focus,
+[data-color-scheme="light"] .navbar a:hover,
+[data-color-scheme="light"] .navlinks a:hover,
+[data-color-scheme="light"] .linklist.navlinks a:hover,
+[data-color-scheme="light"] .nav-main a:hover,
+[data-color-scheme="light"] .nav-main button:hover{
+  color:var(--lem-orange-hover)!important;
+  text-shadow:0 0 8px rgba(var(--lem-orange-hover-rgb),.20)!important;
+}
+
+/* 5. Top partenaires + border des infos deal */
+[data-color-scheme="light"] .top-partenaires,
+[data-color-scheme="light"] .top-partenaires-tag,
+[data-color-scheme="light"] .top-partenaire-tag,
+[data-color-scheme="light"] .top-partners,
+[data-color-scheme="light"] .top-partners-tag,
+[data-color-scheme="light"] .partenaires-top,
+[data-color-scheme="light"] .partenaires-title,
+[data-color-scheme="light"] .lpa-partners-title,
+[data-color-scheme="light"] .lpa-partners-tag{
+  background:rgba(var(--lem-red-main-rgb),.08)!important;
+  border-color:rgba(var(--lem-red-main-rgb),.40)!important;
+  color:var(--lem-red-main)!important;
+}
+
+[data-color-scheme="light"] .deal-info,
+[data-color-scheme="light"] .deal-infos,
+[data-color-scheme="light"] .deal-step,
+[data-color-scheme="light"] .deal-card,
+[data-color-scheme="light"] .lpa-deal,
+[data-color-scheme="light"] .lpa-deal-info,
+[data-color-scheme="light"] .lpa-deal-step{
+  border-color:rgba(var(--lem-red-main-rgb),.38)!important;
+}
+
+/* 6. Boutons réponse / nouveau sujet : rouge, hover jaune canari */
+[data-color-scheme="light"] .button1,
+[data-color-scheme="light"] .button2,
+[data-color-scheme="light"] input[type="submit"],
+[data-color-scheme="light"] input[type="button"],
+[data-color-scheme="light"] input[type="reset"],
+[data-color-scheme="light"] a[href*="mode=reply"],
+[data-color-scheme="light"] a[href*="mode=newtopic"],
+[data-color-scheme="light"] .buttons a,
+[data-color-scheme="light"] .topic-actions a,
+[data-color-scheme="light"] .posting-buttons a{
+  border-color:rgba(var(--lem-red-main-rgb),.42)!important;
+  color:var(--lem-red-main)!important;
+}
+
+[data-color-scheme="light"] .button1:hover,
+[data-color-scheme="light"] .button2:hover,
+[data-color-scheme="light"] input[type="submit"]:hover,
+[data-color-scheme="light"] input[type="button"]:hover,
+[data-color-scheme="light"] input[type="reset"]:hover,
+[data-color-scheme="light"] a[href*="mode=reply"]:hover,
+[data-color-scheme="light"] a[href*="mode=newtopic"]:hover,
+[data-color-scheme="light"] .buttons a:hover,
+[data-color-scheme="light"] .topic-actions a:hover,
+[data-color-scheme="light"] .posting-buttons a:hover{
+  background:
+    radial-gradient(circle at center,rgba(var(--lem-canary-hover-rgb),.34),transparent 58%),
+    linear-gradient(135deg,#fffaf0 0%,var(--lem-canary-hover) 52%,#fff176 140%)!important;
+  border-color:rgba(var(--lem-canary-hover-rgb),.86)!important;
+  color:#241005!important;
+  text-shadow:none!important;
+}
+
+/* 7. Titres de sujets */
+[data-color-scheme="light"] .topic-title,
+[data-color-scheme="light"] .topic-title a,
+[data-color-scheme="light"] .topictitle,
+[data-color-scheme="light"] a.topictitle,
+[data-color-scheme="light"] .post-title,
+[data-color-scheme="light"] .post-head h1,
+[data-color-scheme="light"] .post-head h2,
+[data-color-scheme="light"] .postbody h1,
+[data-color-scheme="light"] .postbody h2,
+[data-color-scheme="light"] .pm-topic-title,
+[data-color-scheme="light"] .page-title,
+[data-color-scheme="light"] h1.page-title{
+  color:var(--lem-red-main)!important;
+  -webkit-text-stroke-color:rgba(var(--lem-red-main-rgb),.34)!important;
+}
+
+/* 8. Boutons édition / suppression / citation / profil dans les sujets */
+[data-color-scheme="light"] .profile-icons a,
+[data-color-scheme="light"] .profile-icons span,
+[data-color-scheme="light"] .post-options a,
+[data-color-scheme="light"] .post-options button,
+[data-color-scheme="light"] .post-buttons a,
+[data-color-scheme="light"] .post-buttons button,
+[data-color-scheme="light"] a[href*="mode=editpost"],
+[data-color-scheme="light"] a[href*="mode=delete"],
+[data-color-scheme="light"] a[href*="mode=quote"],
+[data-color-scheme="light"] a[href*="mode=ip"],
+[data-color-scheme="light"] a[href*="mode=report"]{
+  background:rgba(var(--lem-red-main-rgb),.08)!important;
+  border-color:rgba(var(--lem-red-main-rgb),.34)!important;
+  color:var(--lem-red-main)!important;
+}
+
+[data-color-scheme="light"] .profile-icons a:hover,
+[data-color-scheme="light"] .profile-icons span:hover,
+[data-color-scheme="light"] .post-options a:hover,
+[data-color-scheme="light"] .post-options button:hover,
+[data-color-scheme="light"] .post-buttons a:hover,
+[data-color-scheme="light"] .post-buttons button:hover,
+[data-color-scheme="light"] a[href*="mode=editpost"]:hover,
+[data-color-scheme="light"] a[href*="mode=delete"]:hover,
+[data-color-scheme="light"] a[href*="mode=quote"]:hover,
+[data-color-scheme="light"] a[href*="mode=ip"]:hover,
+[data-color-scheme="light"] a[href*="mode=report"]:hover{
+  background:rgba(var(--lem-orange-hover-rgb),.18)!important;
+  border-color:rgba(var(--lem-orange-hover-rgb),.48)!important;
+  color:var(--lem-orange-hover)!important;
+}
+
+/* 9. Titres headers */
+[data-color-scheme="light"] .header-title,
+[data-color-scheme="light"] .hero-title,
+[data-color-scheme="light"] .main-title,
+[data-color-scheme="light"] .title-header,
+[data-color-scheme="light"] .lpa-title,
+[data-color-scheme="light"] .lb-title,
+[data-color-scheme="light"] .mgl-title,
+[data-color-scheme="light"] .pm-page-title,
+[data-color-scheme="light"] .pm-hero-title,
+[data-color-scheme="light"] .moc-title{
+  color:var(--lem-red-main)!important;
+  -webkit-text-stroke-color:rgba(var(--lem-red-main-rgb),.40)!important;
+  text-shadow:0 0 14px rgba(var(--lem-red-main-rgb),.16)!important;
 }

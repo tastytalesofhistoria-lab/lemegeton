@@ -6015,3 +6015,171 @@ iframe.pa-frame{
   0 14px 35px rgba(145,65,12,.16),
   0 0 24px rgba(192,24,53,.12);
 }
+/* =========================================================
+   PATCH EDISON LIGHT — POSTBODY PROMESS + ADMS
+   Retire le bleu restant et diversifie les cases internes
+========================================================= */
+
+/* Le cadre parent du message : enlève le bleu */
+[data-color-scheme="light"] .postbody.promess{
+  background:
+    radial-gradient(circle at top right,rgba(192,24,53,.05),transparent 38%),
+    linear-gradient(135deg,rgba(255,250,240,.96),rgba(255,226,173,.90))!important;
+  border-color:rgba(216,138,0,.22)!important;
+  border-left-color:rgba(192,24,53,.42)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(70,28,8,.04),
+    0 12px 28px rgba(145,65,12,.10)!important;
+}
+
+/* Le mot fantôme MESSAGE */
+[data-color-scheme="light"] .postbody.promess::after{
+  color:rgba(70,28,8,.04)!important;
+}
+
+/* Option spéciale : si le message contient une fiche ADMS, on retire presque tout le cadre parent */
+[data-color-scheme="light"] .postbody.promess:has(.adms){
+  background:transparent!important;
+  border-color:rgba(216,138,0,.20)!important;
+  border-left-color:rgba(216,138,0,.38)!important;
+  box-shadow:none!important;
+}
+
+/* Sécurité sur le contenu */
+[data-color-scheme="light"] .postbody.promess .content.post-content.promess{
+  background:transparent!important;
+  color:#3a1b0b!important;
+}
+
+/* =========================
+   ADMS — BASE PLUS CHAUDE
+========================= */
+
+[data-color-scheme="light"] .adms{
+  background:
+    radial-gradient(circle at top left,rgba(216,138,0,.12),transparent 34%),
+    linear-gradient(180deg,#fff7df 0%,#fff0cf 100%)!important;
+  color:#3a1b0b!important;
+  box-shadow:0 20px 45px rgba(145,65,12,.14)!important;
+}
+
+[data-color-scheme="light"] .adms-box{
+  border-color:rgba(216,138,0,.26)!important;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,184,51,.14),transparent 38%),
+    linear-gradient(180deg,#fffaf0 0%,#fff1ca 58%,#ffe0a3 100%)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(70,28,8,.05),
+    0 0 0 1px rgba(216,138,0,.14),
+    0 16px 34px rgba(145,65,12,.12)!important;
+}
+
+[data-color-scheme="light"] .adms-box::before{
+  opacity:.16!important;
+  background-image:radial-gradient(circle,rgba(216,138,0,.34) 1px,transparent 1.4px)!important;
+}
+
+/* Header : plus doré, sans bleu */
+[data-color-scheme="light"] .adms-head{
+  border-color:rgba(216,138,0,.30)!important;
+  background:
+    radial-gradient(circle at top right,rgba(192,24,53,.10),transparent 36%),
+    linear-gradient(90deg,rgba(255,250,240,.94),rgba(255,226,173,.76))!important;
+  box-shadow:
+    inset 0 0 30px rgba(255,184,51,.12),
+    0 10px 24px rgba(145,65,12,.10)!important;
+}
+
+[data-color-scheme="light"] .adms-kicker{
+  color:#c01835!important;
+  text-shadow:0 0 8px rgba(192,24,53,.16)!important;
+}
+
+[data-color-scheme="light"] .adms-kicker::before,
+[data-color-scheme="light"] .adms-kicker::after{
+  color:#d88a00!important;
+  text-shadow:0 0 8px rgba(216,138,0,.18)!important;
+}
+
+[data-color-scheme="light"] .adms-title{
+  color:#ff9f1c!important;
+  text-shadow:
+    0 0 4px rgba(216,138,0,.35),
+    0 0 12px rgba(255,184,51,.18),
+    2px 2px 0 rgba(192,24,53,.16)!important;
+}
+
+[data-color-scheme="light"] .adms-sub{
+  color:#a94e12!important;
+}
+
+/* =========================
+   ADMS — CASES INTERNES DIVERSIFIÉES
+========================= */
+
+/* Texte normal */
+[data-color-scheme="light"] .adms-texte{
+  color:#3a1b0b!important;
+}
+
+/* Bloc section : ivoire + bord orange */
+[data-color-scheme="light"] .adms-bloc{
+  border-left-color:#d76a00!important;
+  background:
+    linear-gradient(90deg,rgba(215,106,0,.10),rgba(255,250,240,.72))!important;
+  color:#3a1b0b!important;
+}
+
+/* Titre de section : rouge profond */
+[data-color-scheme="light"] .adms-bloc-titre{
+  color:#c01835!important;
+}
+
+/* Note : doré / jaune */
+[data-color-scheme="light"] .adms-note{
+  border-left-color:#d88a00!important;
+  background:
+    linear-gradient(90deg,rgba(216,138,0,.16),rgba(255,248,218,.72))!important;
+  color:#4a2812!important;
+}
+
+/* Important : rouge doux */
+[data-color-scheme="light"] .adms-important{
+  border-left-color:#c01835!important;
+  background:
+    linear-gradient(90deg,rgba(192,24,53,.12),rgba(255,232,190,.66))!important;
+  color:#4a2812!important;
+}
+
+/* Ligne séparatrice : or vers rouge */
+[data-color-scheme="light"] .adms-ligne{
+  background:
+    linear-gradient(90deg,transparent,rgba(216,138,0,.55),rgba(192,24,53,.28),transparent)!important;
+}
+
+/* Tags : alternance de couleurs */
+[data-color-scheme="light"] .adms-tag{
+  background:rgba(255,250,240,.72)!important;
+  color:#4a2812!important;
+  border-left-color:#d76a00!important;
+}
+
+[data-color-scheme="light"] .adms-tag:nth-child(3n+1){
+  border-left-color:#d76a00!important;
+  background:rgba(255,226,173,.72)!important;
+}
+
+[data-color-scheme="light"] .adms-tag:nth-child(3n+2){
+  border-left-color:#c01835!important;
+  background:rgba(255,224,213,.62)!important;
+}
+
+[data-color-scheme="light"] .adms-tag:nth-child(3n+3){
+  border-left-color:#8f6b00!important;
+  background:rgba(245,232,168,.58)!important;
+}
+
+/* Footer */
+[data-color-scheme="light"] .adms-footer{
+  color:#8a5a32!important;
+}

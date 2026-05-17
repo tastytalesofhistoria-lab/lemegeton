@@ -7596,3 +7596,264 @@ body::-webkit-scrollbar-corner,
   border-color:inherit;
   box-shadow:inherit;
 }
+/* =========================================================
+   PATCH FINAL LIGHT — AJUSTEMENTS VISU
+   - triangle lecteur
+   - logo LEMEGETON plus lisible
+   - dropdown rouge
+   - bloc BABY rouge + texte blanc
+   - liens utilitaires : texte rouge / hover jaune
+   Sans casser les boutons forum déjà corrigés
+========================================================= */
+
+[data-color-scheme="light"]{
+  --lem-logo-readable:#d24a00;
+  --lem-logo-outline:#fff1d4;
+  --lem-dropdown-bg:#fff4e2;
+  --lem-dropdown-hover:#ffd400;
+  --lem-dropdown-border:rgba(171,14,14,.26);
+  --lem-soft-link-bg:#fff4e2;
+  --lem-soft-link-border:rgba(171,14,14,.22);
+}
+
+/* =========================================================
+   1) TITRE LEMEGETON PLUS LISIBLE
+========================================================= */
+
+[data-color-scheme="light"] .lb-banner .lb-title,
+[data-color-scheme="light"] .lb-banner [class*="logo"],
+[data-color-scheme="light"] .lb-banner [class*="title"],
+[data-color-scheme="light"] .lb-banner [class*="titre"],
+[data-color-scheme="light"] [class*="banner"] .lb-title,
+[data-color-scheme="light"] [class*="banner"] [class*="logo"]{
+  color:var(--lem-logo-readable)!important;
+  -webkit-text-fill-color:var(--lem-logo-readable)!important;
+  -webkit-text-stroke:1px var(--lem-logo-outline)!important;
+  text-stroke:1px var(--lem-logo-outline)!important;
+  text-shadow:
+    0 1px 0 rgba(255,241,212,.85),
+    0 0 8px rgba(210,74,0,.10)!important;
+  filter:none!important;
+}
+
+/* =========================================================
+   2) TRIANGLE DE LECTURE — LE RESTAURER
+========================================================= */
+
+/* On neutralise le fond bouton sur le bouton play sans masquer son icône */
+[data-color-scheme="light"] .lb-player [class*="play"],
+[data-color-scheme="light"] .lb-player button[class*="play"],
+[data-color-scheme="light"] .lb-player a[class*="play"],
+[data-color-scheme="light"] [class*="player"] [class*="play"],
+[data-color-scheme="light"] [class*="audio"] [class*="play"]{
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  color:transparent!important;
+  position:relative!important;
+}
+
+/* On force le triangle visible */
+[data-color-scheme="light"] .lb-player [class*="play"]::before,
+[data-color-scheme="light"] .lb-player button[class*="play"]::before,
+[data-color-scheme="light"] .lb-player a[class*="play"]::before,
+[data-color-scheme="light"] [class*="player"] [class*="play"]::before,
+[data-color-scheme="light"] [class*="audio"] [class*="play"]::before{
+  content:""!important;
+  display:block!important;
+  width:0!important;
+  height:0!important;
+  border-style:solid!important;
+  border-width:9px 0 9px 15px!important;
+  border-color:transparent transparent transparent var(--lem-red-main)!important;
+  margin:auto!important;
+  position:relative!important;
+}
+
+/* Au cas où un ::after parasite le masque */
+[data-color-scheme="light"] .lb-player [class*="play"]::after,
+[data-color-scheme="light"] .lb-player button[class*="play"]::after,
+[data-color-scheme="light"] .lb-player a[class*="play"]::after,
+[data-color-scheme="light"] [class*="player"] [class*="play"]::after,
+[data-color-scheme="light"] [class*="audio"] [class*="play"]::after{
+  background:none!important;
+  box-shadow:none!important;
+  border:0!important;
+}
+
+/* =========================================================
+   3) MENU DÉROULANT — PLUS NOIR, MAIS ROUGE/CLAIR
+========================================================= */
+
+/* Variables si le menu custom les utilise */
+[data-color-scheme="light"]{
+  --pm-menu-bg:var(--lem-dropdown-bg);
+  --pm-menu-hover-bg:rgba(255,212,0,.20);
+  --pm-menu-border:var(--lem-dropdown-border);
+  --pm-menu-hover-border:rgba(171,14,14,.38);
+  --nav-dropdown-bg:var(--lem-dropdown-bg);
+  --nav-dropdown-hover-bg:rgba(255,212,0,.20);
+  --nav-border-dropdown:var(--lem-dropdown-border);
+}
+
+/* Fonds des sous-menus */
+[data-color-scheme="light"] #custom-navbar li ul,
+[data-color-scheme="light"] .custom-navbar li ul,
+[data-color-scheme="light"] #page-header .navbar li ul,
+[data-color-scheme="light"] .navbar li ul,
+[data-color-scheme="light"] .mainmenu li ul,
+[data-color-scheme="light"] li[class*="dropdown"] ul,
+[data-color-scheme="light"] li[class*="submenu"] ul{
+  background:var(--lem-dropdown-bg)!important;
+  border:1px solid var(--lem-dropdown-border)!important;
+  box-shadow:0 10px 22px rgba(122,40,8,.12)!important;
+}
+
+/* Liens du dropdown */
+[data-color-scheme="light"] #custom-navbar li ul a,
+[data-color-scheme="light"] .custom-navbar li ul a,
+[data-color-scheme="light"] #page-header .navbar li ul a,
+[data-color-scheme="light"] .navbar li ul a,
+[data-color-scheme="light"] .mainmenu li ul a,
+[data-color-scheme="light"] li[class*="dropdown"] ul a,
+[data-color-scheme="light"] li[class*="submenu"] ul a{
+  background:transparent!important;
+  color:var(--lem-red-main)!important;
+  border:0!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+}
+
+/* Hover dropdown */
+[data-color-scheme="light"] #custom-navbar li ul a:hover,
+[data-color-scheme="light"] .custom-navbar li ul a:hover,
+[data-color-scheme="light"] #page-header .navbar li ul a:hover,
+[data-color-scheme="light"] .navbar li ul a:hover,
+[data-color-scheme="light"] .mainmenu li ul a:hover,
+[data-color-scheme="light"] li[class*="dropdown"] ul a:hover,
+[data-color-scheme="light"] li[class*="submenu"] ul a:hover{
+  background:rgba(255,212,0,.20)!important;
+  color:var(--lem-orange-flash)!important;
+}
+
+/* Petite flèche / caret si présente */
+[data-color-scheme="light"] #custom-navbar .caret,
+[data-color-scheme="light"] .custom-navbar .caret,
+[data-color-scheme="light"] #page-header .navbar .caret,
+[data-color-scheme="light"] .navbar .caret{
+  color:var(--lem-red-main)!important;
+}
+
+/* =========================================================
+   4) CASE BABY — FOND ROUGE / TEXTE BLANC
+========================================================= */
+
+[data-color-scheme="light"] .baby,
+[data-color-scheme="light"] .baby-card,
+[data-color-scheme="light"] .baby-box,
+[data-color-scheme="light"] .babybloc,
+[data-color-scheme="light"] [class*="baby-card"],
+[data-color-scheme="light"] [class*="baby-box"],
+[data-color-scheme="light"] [class*="baby-bloc"],
+[data-color-scheme="light"] [class*="babybloc"]{
+  background:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%)!important;
+  border:1px solid #8d0909!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 10px 22px rgba(171,14,14,.18)!important;
+}
+
+[data-color-scheme="light"] .baby *,
+[data-color-scheme="light"] .baby-card *,
+[data-color-scheme="light"] .baby-box *,
+[data-color-scheme="light"] .babybloc *,
+[data-color-scheme="light"] [class*="baby-card"] *,
+[data-color-scheme="light"] [class*="baby-box"] *,
+[data-color-scheme="light"] [class*="baby-bloc"] *,
+[data-color-scheme="light"] [class*="babybloc"] *{
+  color:#fffdf7!important;
+  text-shadow:none!important;
+}
+
+/* =========================================================
+   5) LIENS ROUGE/JAUNE TROP AGRESSIFS
+   -> texte rouge, fond clair, hover jaune
+   Sans toucher les vrais boutons forum
+========================================================= */
+
+/* Liens utilitaires de bas de page / navigation secondaire */
+[data-color-scheme="light"] #page-footer .linklist a,
+[data-color-scheme="light"] .linklist.bottom a,
+[data-color-scheme="light"] .linklist.navlinks a,
+[data-color-scheme="light"] .navlinks a,
+[data-color-scheme="light"] .breadcrumbs a,
+[data-color-scheme="light"] .jumpbox a,
+[data-color-scheme="light"] .panel a.gen,
+[data-color-scheme="light"] .panel a.genmed{
+  background:var(--lem-soft-link-bg)!important;
+  background-image:none!important;
+  border:1px solid var(--lem-soft-link-border)!important;
+  color:var(--lem-red-main)!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+}
+
+/* Hover jaune */
+[data-color-scheme="light"] #page-footer .linklist a:hover,
+[data-color-scheme="light"] .linklist.bottom a:hover,
+[data-color-scheme="light"] .linklist.navlinks a:hover,
+[data-color-scheme="light"] .navlinks a:hover,
+[data-color-scheme="light"] .breadcrumbs a:hover,
+[data-color-scheme="light"] .jumpbox a:hover,
+[data-color-scheme="light"] .panel a.gen:hover,
+[data-color-scheme="light"] .panel a.genmed:hover{
+  background:var(--lem-yellow-hover)!important;
+  border-color:var(--lem-yellow-hover)!important;
+  color:var(--lem-red-dark)!important;
+}
+
+/* Sécurité : ne PAS casser les boutons forum refaits */
+[data-color-scheme="light"] a.button1,
+[data-color-scheme="light"] a.button2,
+[data-color-scheme="light"] button.button1,
+[data-color-scheme="light"] button.button2,
+[data-color-scheme="light"] input.button1,
+[data-color-scheme="light"] input.button2,
+[data-color-scheme="light"] .sub-header-buttons a,
+[data-color-scheme="light"] .topic-actions a,
+[data-color-scheme="light"] .post-options a,
+[data-color-scheme="light"] .post-buttons a,
+[data-color-scheme="light"] a[href*="mode=reply"],
+[data-color-scheme="light"] a[href*="mode=newtopic"],
+[data-color-scheme="light"] a[href*="mode=editpost"],
+[data-color-scheme="light"] a[href*="mode=quote"],
+[data-color-scheme="light"] a[href*="mode=delete"],
+[data-color-scheme="light"] a[href*="mode=ip"],
+[data-color-scheme="light"] a[href*="mode=report"]{
+  background:var(--lem-red-main)!important;
+  color:var(--lem-yellow-text)!important;
+  border-color:var(--lem-red-main)!important;
+}
+
+[data-color-scheme="light"] a.button1:hover,
+[data-color-scheme="light"] a.button2:hover,
+[data-color-scheme="light"] button.button1:hover,
+[data-color-scheme="light"] button.button2:hover,
+[data-color-scheme="light"] input.button1:hover,
+[data-color-scheme="light"] input.button2:hover,
+[data-color-scheme="light"] .sub-header-buttons a:hover,
+[data-color-scheme="light"] .topic-actions a:hover,
+[data-color-scheme="light"] .post-options a:hover,
+[data-color-scheme="light"] .post-buttons a:hover,
+[data-color-scheme="light"] a[href*="mode=reply"]:hover,
+[data-color-scheme="light"] a[href*="mode=newtopic"]:hover,
+[data-color-scheme="light"] a[href*="mode=editpost"]:hover,
+[data-color-scheme="light"] a[href*="mode=quote"]:hover,
+[data-color-scheme="light"] a[href*="mode=delete"]:hover,
+[data-color-scheme="light"] a[href*="mode=ip"]:hover,
+[data-color-scheme="light"] a[href*="mode=report"]:hover{
+  background:var(--lem-yellow-hover)!important;
+  color:var(--lem-red-dark)!important;
+  border-color:var(--lem-yellow-hover)!important;
+}

@@ -8760,3 +8760,242 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
 /* =========================================================
    FIN PATCH FINAL LIGHT — PALETTE TEXTE DIVERSIFIÉE
 ========================================================= */
+
+/* =========================================================
+   PATCH FINAL LIGHT — TEXTES VERTS > VIOLET/FUCHSIA + CASES SUJETS BLANCHES
+   - Remplace les accents verts du mode clair par violet/fuchsia
+   - Exception : Avarice / Greed conserve son vert
+   - Passe les fonds de cases dans les sujets en blanc chaud
+========================================================= */
+
+[data-color-scheme="light"]{
+  --edison-fuchsia:#b9236e;
+  --edison-fuchsia-hot:#d21b7a;
+  --edison-violet:#7d2e59;
+  --edison-violet-soft:#a83b73;
+  --edison-card-white:#fffdf8;
+  --edison-card-white-2:#fffaf0;
+  --edison-card-border:rgba(171,14,14,.16);
+
+  /* Accents anciennement verts : on les bascule en violet/fuchsia */
+  --faq-green:var(--edison-fuchsia);
+  --faq-lime:var(--edison-fuchsia-hot);
+  --grpm-green:var(--edison-fuchsia);
+  --grpm-open:var(--edison-fuchsia-hot);
+  --grpm-humain-innocent:var(--edison-violet);
+  --grpm-humain-initie:var(--edison-fuchsia);
+  --bst-earth:var(--edison-fuchsia);
+  --ent-earth:var(--edison-fuchsia);
+  --ent-lime:var(--edison-fuchsia-hot);
+  --pwrm-green:var(--edison-fuchsia);
+  --pwrm-lime:var(--edison-fuchsia-hot);
+  --pwrm-green-soft:#f4b6d8;
+  --pwrm-lime-soft:#f7c7e2;
+  --intrm-green:var(--edison-fuchsia);
+  --intrm-green-soft:#f4b6d8;
+  --ctxm-serpent:var(--edison-fuchsia);
+  --ctxm-serpent-soft:#f4b6d8;
+  --ctxm-green:var(--edison-fuchsia);
+  --chro-green:var(--edison-fuchsia);
+  --cul-green:var(--edison-fuchsia);
+  --lexm-green:var(--edison-fuchsia);
+  --lexm-lime:var(--edison-fuchsia-hot);
+  --bstp-green:var(--edison-fuchsia);
+  --pnjang-lime:var(--edison-fuchsia-hot);
+  --pnjang-lime-soft:#f7c7e2;
+  --pnjdem-lime:var(--edison-fuchsia-hot);
+  --pnjdem-lime-soft:#f7c7e2;
+  --pnjd-lime:var(--edison-fuchsia-hot);
+  --pnjd-lime-soft:#f7c7e2;
+  --pnjd-positive:var(--edison-fuchsia-hot);
+  --predef-lime:var(--edison-fuchsia-hot);
+  --predef-lime-soft:#f7c7e2;
+  --pl-green:var(--edison-fuchsia-hot);
+  --pl-green-soft:#f7c7e2;
+  --dospnj-lime:var(--edison-fuchsia-hot);
+  --dospnj-lime-2:#f7c7e2;
+  --mev1-lime:var(--edison-fuchsia-hot);
+  --mev2-lime:var(--edison-fuchsia-hot);
+  --qst-lime:var(--edison-fuchsia-hot);
+  --qst-lime-soft:#f7c7e2;
+  --adms-green:var(--edison-fuchsia);
+  --lem-lime:var(--edison-fuchsia-hot);
+  --idx-lime:var(--edison-fuchsia-hot);
+
+  /* Exception volontaire : Avarice / Greed reste vert */
+  --ovld-greed:#31ff63;
+  --ovld-greed-rgb:49,255,99;
+}
+
+/* =========================================================
+   TEXTES / ACCENTS VERTS EN MODE CLAIR -> VIOLET/FUCHSIA
+   Exception : classes avarice/greed
+========================================================= */
+
+[data-color-scheme="light"] .green:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] .lime:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] .vert:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] .open:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] .ouvert:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [class*="green"]:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [class*="lime"]:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [class*="vert"]:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [class*="open"]:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [class*="ouvert"]:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [style*="green"]:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [style*="#8f6b00"]:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [style*="#57c785"]:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [style*="#a7ff3f"]:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [style*="#31ff63"]:not([class*="greed"]):not([class*="avarice"]){
+  color:var(--edison-fuchsia)!important;
+  -webkit-text-fill-color:var(--edison-fuchsia)!important;
+  border-color:rgba(185,35,110,.38)!important;
+  text-shadow:none!important;
+}
+
+/* Badges / statuts verts -> fond fuchsia doux, sauf Avarice */
+[data-color-scheme="light"] .grpm-open:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] .grpm-status-open:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] .bst-open:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] .bstp-open:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] .status-open:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] .tag-open:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [class*="status"][class*="open"]:not([class*="greed"]):not([class*="avarice"]),
+[data-color-scheme="light"] [class*="tag"][class*="open"]:not([class*="greed"]):not([class*="avarice"]){
+  background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,235,246,.92))!important;
+  color:var(--edison-fuchsia)!important;
+  border-color:rgba(185,35,110,.34)!important;
+  box-shadow:0 8px 18px rgba(185,35,110,.12)!important;
+}
+
+/* Exception Avarice / Greed : garde le vert */
+[data-color-scheme="light"] .greed,
+[data-color-scheme="light"] .avarice,
+[data-color-scheme="light"] [class*="greed"],
+[data-color-scheme="light"] [class*="avarice"]{
+  color:#16833a!important;
+  -webkit-text-fill-color:#16833a!important;
+}
+
+/* =========================================================
+   SUJETS — FONDS DE CASES EN BLANC CHAUD
+========================================================= */
+
+[data-color-scheme="light"] .post,
+[data-color-scheme="light"] .post.row1,
+[data-color-scheme="light"] .post.row2,
+[data-color-scheme="light"] .postbody,
+[data-color-scheme="light"] .postbody.promess,
+[data-color-scheme="light"] .postbody .content,
+[data-color-scheme="light"] .postbody .content.post-content,
+[data-color-scheme="light"] .content.post-content.promess,
+[data-color-scheme="light"] .post-content.promess,
+[data-color-scheme="light"] .postprofile,
+[data-color-scheme="light"] .postprofile-top.promess,
+[data-color-scheme="light"] .postprofile-info,
+[data-color-scheme="light"] .post-head,
+[data-color-scheme="light"] .post-header,
+[data-color-scheme="light"] .fa_like_div.promess,
+[data-color-scheme="light"] .topic-actions.promess,
+[data-color-scheme="light"] .quick-nav-topics.promess,
+[data-color-scheme="light"] .topic-title-wrap.promess,
+[data-color-scheme="light"] .topic-title-wrapper,
+[data-color-scheme="light"] .signature,
+[data-color-scheme="light"] .sig,
+[data-color-scheme="light"] blockquote,
+[data-color-scheme="light"] .quote,
+[data-color-scheme="light"] .codebox,
+[data-color-scheme="light"] dl.codebox,
+[data-color-scheme="light"] .spoiler,
+[data-color-scheme="light"] .hidecode{
+  background:var(--edison-card-white)!important;
+  background-color:var(--edison-card-white)!important;
+  background-image:none!important;
+  border-color:var(--edison-card-border)!important;
+  color:#4a2812!important;
+  text-shadow:none!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.60),
+    0 10px 22px rgba(145,65,12,.06)!important;
+}
+
+/* Les champs/cartouches internes des profils post passent aussi en blanc */
+[data-color-scheme="light"] .postprofile-top.promess .pm-info,
+[data-color-scheme="light"] .postprofile-top.promess .pm-location,
+[data-color-scheme="light"] .postprofile-top.promess .pm-profile-extra,
+[data-color-scheme="light"] .postprofile-top.promess .pm-profile-extra-field,
+[data-color-scheme="light"] .postprofile-top.promess .profile-field,
+[data-color-scheme="light"] .postprofile-top.promess [class*="field"],
+[data-color-scheme="light"] .postprofile-top.promess [class*="info"],
+[data-color-scheme="light"] .postprofile-top.promess [class*="stat"],
+[data-color-scheme="light"] .postprofile-top.promess [class*="meta"]{
+  background:var(--edison-card-white-2)!important;
+  background-color:var(--edison-card-white-2)!important;
+  background-image:none!important;
+  border-color:rgba(216,138,0,.18)!important;
+  color:#4a2812!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.58)!important;
+}
+
+/* Sécurité : ne pas blanchir les vrais boutons rouges/jaunes */
+[data-color-scheme="light"] a.button1,
+[data-color-scheme="light"] a.button2,
+[data-color-scheme="light"] button.button1,
+[data-color-scheme="light"] button.button2,
+[data-color-scheme="light"] input.button1,
+[data-color-scheme="light"] input.button2,
+[data-color-scheme="light"] .sub-header-buttons a,
+[data-color-scheme="light"] .topic-actions a,
+[data-color-scheme="light"] .post-options a,
+[data-color-scheme="light"] .post-buttons a,
+[data-color-scheme="light"] .fa_like_div.promess .rep-button,
+[data-color-scheme="light"] .fa_like_right.promess a,
+[data-color-scheme="light"] a[href*="mode=reply"],
+[data-color-scheme="light"] a[href*="mode=newtopic"],
+[data-color-scheme="light"] a[href*="mode=editpost"],
+[data-color-scheme="light"] a[href*="mode=quote"],
+[data-color-scheme="light"] a[href*="mode=delete"],
+[data-color-scheme="light"] a[href*="mode=ip"],
+[data-color-scheme="light"] a[href*="mode=report"]{
+  background:var(--lem-red-main)!important;
+  background-color:var(--lem-red-main)!important;
+  color:var(--lem-yellow-text)!important;
+  border-color:var(--lem-red-main)!important;
+  box-shadow:var(--btn-forum-shadow,0 8px 18px rgba(171,14,14,.22))!important;
+}
+
+[data-color-scheme="light"] a.button1:hover,
+[data-color-scheme="light"] a.button2:hover,
+[data-color-scheme="light"] button.button1:hover,
+[data-color-scheme="light"] button.button2:hover,
+[data-color-scheme="light"] input.button1:hover,
+[data-color-scheme="light"] input.button2:hover,
+[data-color-scheme="light"] .sub-header-buttons a:hover,
+[data-color-scheme="light"] .topic-actions a:hover,
+[data-color-scheme="light"] .post-options a:hover,
+[data-color-scheme="light"] .post-buttons a:hover,
+[data-color-scheme="light"] .fa_like_div.promess .rep-button:hover,
+[data-color-scheme="light"] .fa_like_right.promess a:hover,
+[data-color-scheme="light"] a[href*="mode=reply"]:hover,
+[data-color-scheme="light"] a[href*="mode=newtopic"]:hover,
+[data-color-scheme="light"] a[href*="mode=editpost"]:hover,
+[data-color-scheme="light"] a[href*="mode=quote"]:hover,
+[data-color-scheme="light"] a[href*="mode=delete"]:hover,
+[data-color-scheme="light"] a[href*="mode=ip"]:hover,
+[data-color-scheme="light"] a[href*="mode=report"]:hover{
+  background:var(--lem-yellow-hover)!important;
+  background-color:var(--lem-yellow-hover)!important;
+  color:var(--lem-red-dark)!important;
+  border-color:var(--lem-yellow-hover)!important;
+}
+
+/* Les vrais fonds de contenu des fiches post gardent le blanc, même si une ancienne règle remet un gradient */
+[data-color-scheme="light"] .postbody.promess::after,
+[data-color-scheme="light"] .content.post-content.promess::after{
+  color:rgba(171,14,14,.035)!important;
+  text-shadow:none!important;
+}
+
+/* =========================================================
+   FIN PATCH FINAL LIGHT — VERTS EN FUCHSIA + CASES SUJETS BLANCHES
+========================================================= */

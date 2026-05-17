@@ -7517,3 +7517,233 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
   border-radius:999px;
 }
 
+
+/* =========================================================
+   PATCH FINAL LIGHT — ANTI-BLEU/CYAN
+   Objectif : aucune ombre, bordure ou couleur texte bleue/cyan
+   ne reste active en mode clair. Les variables gardent leur nom
+   pour compatibilité, mais leurs valeurs deviennent chaudes.
+========================================================= */
+
+[data-color-scheme="light"]{
+  /* Variables oubliées qui héritaient encore du :root dark */
+  --ctxm-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --intrm-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --chro-border-cyan-title:rgba(216,138,0,.24);
+  --intrm-final-choice-bg-cyan:linear-gradient(90deg,rgba(215,106,0,.12),rgba(255,250,240,.68));
+
+  /* Aliases bleus/cyans conservés pour compatibilité, mais réchauffés */
+  --ctxm-cyan:#d76a00;
+  --ctxm-cyan-soft:#ff9f1c;
+  --intrm-cyan:#d76a00;
+  --intrm-cyan-soft:#ff9f1c;
+  --chro-cyan:#d76a00;
+  --chro-cyan-soft:#ff9f1c;
+  --faq-cyan:#d76a00;
+  --faq-cyan-soft:#ff9f1c;
+  --grpm-cyan:#d76a00;
+  --grpm-cyan-soft:#ff9f1c;
+  --bst-cyan:#d76a00;
+  --bst-cyan-soft:#ff9f1c;
+  --bstp-cyan:#d76a00;
+  --bstp-cyan-soft:#ff9f1c;
+  --ent-cyan:#d76a00;
+  --ent-cyan-soft:#ff9f1c;
+  --cul-cyan:#d76a00;
+  --cul-cyan-soft:#ff9f1c;
+  --lexm-cyan:#d76a00;
+  --lexm-cyan-soft:#ff9f1c;
+  --pwrm-cyan:#d76a00;
+  --pwrm-cyan-soft:#ff9f1c;
+  --adms-cyan:#d76a00;
+  --adms-cyan-soft:#ff9f1c;
+  --mgl-cyan:#d76a00;
+  --mgl-cyan-soft:#ff9f1c;
+  --mgla-cyan:#d76a00;
+  --mgla-cyan-soft:#ff9f1c;
+  --lt-cyan:#d76a00;
+  --lt-cyan-soft:#ff9f1c;
+  --pm-cyan:#d76a00;
+  --pm-cyan-soft:#ff9f1c;
+  --lpa-cyan:#d76a00;
+  --lpa-cyan-soft:#ff9f1c;
+  --lb-cyan:#d76a00;
+  --lb-cyan-soft:#ff9f1c;
+  --nav-cyan:#d76a00;
+  --nav-cyan-soft:#ff9f1c;
+
+  --ovld-glow-blue:215,106,0;
+  --pnjd-glow-blue:215,106,0;
+
+  /* Sécurité : variables de shadows/borders cyans utilisées par les fiches */
+  --faq-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --grpm-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --bst-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --bstp-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --ent-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --cul-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --lexm-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --chro-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --pwrm-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --adms-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --mgl-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --mgla-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+  --lt-shadow-cyan:0 0 8px rgba(216,138,0,.18);
+  --vp-shadow-cyan:0 0 8px rgba(216,138,0,.18);
+  --lem-shadow-cyan:0 0 12px rgba(216,138,0,.22),0 0 28px rgba(255,168,36,.10);
+
+  --faq-border-cyan:rgba(216,138,0,.24);
+  --faq-border-cyan-strong:rgba(216,138,0,.34);
+  --grpm-border-cyan:rgba(216,138,0,.24);
+  --grpm-border-cyan-soft:rgba(216,138,0,.18);
+  --bst-border-cyan:rgba(216,138,0,.24);
+  --bst-border-cyan-strong:rgba(216,138,0,.34);
+  --bstp-border-cyan:rgba(216,138,0,.24);
+  --bstp-border-cyan-soft:rgba(216,138,0,.18);
+  --bstp-border-cyan-strong:rgba(216,138,0,.34);
+  --ent-border-cyan:rgba(216,138,0,.24);
+  --ent-border-cyan-strong:rgba(216,138,0,.34);
+  --cul-border-cyan:rgba(216,138,0,.24);
+  --cul-border-cyan-soft:rgba(216,138,0,.18);
+  --cul-border-cyan-strong:rgba(216,138,0,.34);
+  --lexm-border-cyan:rgba(216,138,0,.24);
+  --lexm-border-cyan-soft:rgba(216,138,0,.18);
+  --lexm-border-cyan-strong:rgba(216,138,0,.34);
+  --chro-border-cyan:rgba(216,138,0,.24);
+  --chro-border-cyan-soft:rgba(216,138,0,.18);
+  --chro-border-cyan-strong:rgba(216,138,0,.34);
+  --pwrm-border-cyan:rgba(216,138,0,.24);
+  --pwrm-border-cyan-soft:rgba(216,138,0,.18);
+  --pwrm-border-cyan-strong:rgba(216,138,0,.34);
+  --adms-border-cyan:rgba(216,138,0,.24);
+  --adms-border-cyan-strong:rgba(216,138,0,.34);
+  --mgl-border-cyan:rgba(216,138,0,.24);
+  --mgl-border-cyan-soft:rgba(216,138,0,.18);
+  --mgl-border-cyan-strong:rgba(216,138,0,.34);
+  --mgla-border-cyan:rgba(216,138,0,.24);
+  --mgla-border-cyan-soft:rgba(216,138,0,.18);
+  --mgla-border-cyan-strong:rgba(216,138,0,.34);
+  --lt-border-cyan:rgba(216,138,0,.22);
+  --lt-border-cyan-soft:rgba(216,138,0,.18);
+  --lt-border-cyan-mid:rgba(216,138,0,.24);
+  --lt-border-cyan-strong:rgba(216,138,0,.34);
+  --vp-border-cyan:rgba(216,138,0,.22);
+  --vp-border-cyan-soft:rgba(216,138,0,.18);
+  --vp-border-cyan-mid:rgba(216,138,0,.24);
+  --vp-border-cyan-strong:rgba(216,138,0,.34);
+  --pm-border-cyan:rgba(216,138,0,.22);
+  --pm-border-cyan-soft:rgba(216,138,0,.18);
+  --pm-border-cyan-mid:rgba(216,138,0,.24);
+  --pm-border-cyan-strong:rgba(216,138,0,.30);
+  --lpa-border-cyan:rgba(216,138,0,.24);
+  --lpa-border-cyan-soft:rgba(216,138,0,.18);
+  --lpa-border-cyan-strong:rgba(216,138,0,.34);
+  --lb-banner-border:rgba(216,138,0,.24);
+  --nav-border-cyan:rgba(216,138,0,.26);
+  --nav-border-cyan-strong:rgba(216,138,0,.38);
+}
+
+/* Sécurité visuelle : composants annexes en mode clair */
+[data-color-scheme="light"] .ctxm,
+[data-color-scheme="light"] .ctxm-box,
+[data-color-scheme="light"] .ctxm-head,
+[data-color-scheme="light"] .ctxm-card,
+[data-color-scheme="light"] .ctxm-section,
+[data-color-scheme="light"] .ctxm-block,
+[data-color-scheme="light"] .ctxm-intro,
+[data-color-scheme="light"] .intrm,
+[data-color-scheme="light"] .intrm-box,
+[data-color-scheme="light"] .intrm-head,
+[data-color-scheme="light"] .intrm-card,
+[data-color-scheme="light"] .intrm-section,
+[data-color-scheme="light"] .intrm-block,
+[data-color-scheme="light"] .chro,
+[data-color-scheme="light"] .chro-box,
+[data-color-scheme="light"] .faq,
+[data-color-scheme="light"] .faq-box,
+[data-color-scheme="light"] .grpm,
+[data-color-scheme="light"] .grpm-box,
+[data-color-scheme="light"] .bst,
+[data-color-scheme="light"] .bst-box,
+[data-color-scheme="light"] .bstp,
+[data-color-scheme="light"] .bstp-box,
+[data-color-scheme="light"] .ent,
+[data-color-scheme="light"] .ent-box,
+[data-color-scheme="light"] .cul,
+[data-color-scheme="light"] .cul-box,
+[data-color-scheme="light"] .lexm,
+[data-color-scheme="light"] .lexm-box,
+[data-color-scheme="light"] .pwrm,
+[data-color-scheme="light"] .pwrm-box,
+[data-color-scheme="light"] .adms,
+[data-color-scheme="light"] .adms-box,
+[data-color-scheme="light"] .mgl,
+[data-color-scheme="light"] .mgl-box,
+[data-color-scheme="light"] .mgla,
+[data-color-scheme="light"] .mgla-box{
+  border-color:rgba(216,138,0,.24)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(70,28,8,.045),
+    0 12px 28px rgba(145,65,12,.10)!important;
+}
+
+/* Les titres des annexes restent rouges/orangés, jamais bleus */
+[data-color-scheme="light"] .ctxm-title,
+[data-color-scheme="light"] .intrm-title,
+[data-color-scheme="light"] .chro-title,
+[data-color-scheme="light"] .faq-title,
+[data-color-scheme="light"] .grpm-title,
+[data-color-scheme="light"] .bst-title,
+[data-color-scheme="light"] .bstp-title,
+[data-color-scheme="light"] .ent-title,
+[data-color-scheme="light"] .cul-title,
+[data-color-scheme="light"] .lexm-title,
+[data-color-scheme="light"] .pwrm-title,
+[data-color-scheme="light"] .adms-title,
+[data-color-scheme="light"] .mgl-title,
+[data-color-scheme="light"] .mgla-title{
+  color:#ab0e0e!important;
+  -webkit-text-fill-color:#ab0e0e!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Les textes ou liens qui auraient encore un vieux var cyan/blue sont forcés en palette chaude */
+[data-color-scheme="light"] .ctxm a,
+[data-color-scheme="light"] .intrm a,
+[data-color-scheme="light"] .chro a,
+[data-color-scheme="light"] .faq a,
+[data-color-scheme="light"] .grpm a,
+[data-color-scheme="light"] .bst a,
+[data-color-scheme="light"] .bstp a,
+[data-color-scheme="light"] .ent a,
+[data-color-scheme="light"] .cul a,
+[data-color-scheme="light"] .lexm a,
+[data-color-scheme="light"] .pwrm a,
+[data-color-scheme="light"] .adms a,
+[data-color-scheme="light"] .mgl a,
+[data-color-scheme="light"] .mgla a{
+  color:#d76a00!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] .ctxm a:hover,
+[data-color-scheme="light"] .intrm a:hover,
+[data-color-scheme="light"] .chro a:hover,
+[data-color-scheme="light"] .faq a:hover,
+[data-color-scheme="light"] .grpm a:hover,
+[data-color-scheme="light"] .bst a:hover,
+[data-color-scheme="light"] .bstp a:hover,
+[data-color-scheme="light"] .ent a:hover,
+[data-color-scheme="light"] .cul a:hover,
+[data-color-scheme="light"] .lexm a:hover,
+[data-color-scheme="light"] .pwrm a:hover,
+[data-color-scheme="light"] .adms a:hover,
+[data-color-scheme="light"] .mgl a:hover,
+[data-color-scheme="light"] .mgla a:hover{
+  color:#ab0e0e!important;
+}
+
+/* =========================================================
+   FIN PATCH FINAL LIGHT — ANTI-BLEU/CYAN
+========================================================= */

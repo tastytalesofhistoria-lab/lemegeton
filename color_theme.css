@@ -2844,7 +2844,24 @@
   --fa-shadow-main:
     0 12px 32px rgba(145,65,12,.14),
     0 0 18px rgba(255,168,36,.12);
+/* ---------- TYPOGRAPHIE GLOBALE LIGHT ---------- */
 
+--fa-text-main:#4a2812;
+--fa-text-soft:#8a5a32;
+--fa-text-muted:#a06c3d;
+
+--fa-title-main:#a94e12;
+--fa-title-strong:#7a2e10;
+
+--fa-link:#c35a14;
+--fa-link-hover:#c01835;
+
+--fa-input-text:#4a2812;
+--fa-input-placeholder:#a06c3d;
+
+--fa-panel-text:#4a2812;
+--fa-panel-title:#b65e00;
+--fa-panel-border:rgba(145,65,12,.14);
   /* ===================== PA ISOLÉE / LPA ===================== */
 
   --lpa-bg:#fff0cf;

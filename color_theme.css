@@ -7284,29 +7284,6 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
   color:var(--lem-red-dark)!important;
 }
 
-/* ===================== 10. VERTS LIGHT PLUS LISIBLES ===================== */
-
-[data-color-scheme="light"] .bst [style*="green"],
-[data-color-scheme="light"] .bstp [style*="green"],
-[data-color-scheme="light"] .grpm [style*="green"],
-[data-color-scheme="light"] .ent [style*="green"],
-[data-color-scheme="light"] .pwrm [style*="green"],
-[data-color-scheme="light"] .ctxm [style*="green"],
-[data-color-scheme="light"] .intrm [style*="green"],
-[data-color-scheme="light"] .is-open,
-[data-color-scheme="light"] .open,
-[data-color-scheme="light"] .adoptable,
-[data-color-scheme="light"] [class*="green"],
-[data-color-scheme="light"] [class*="open"]{
-  color:var(--lem-readable-green)!important;
-}
-
-[data-color-scheme="light"] .adoptable,
-[data-color-scheme="light"] .is-open{
-  background:var(--lem-readable-green-bg)!important;
-  border-color:rgba(47,99,31,.30)!important;
-}
-
 /* ===================== 11. SCROLLBARS LIGHT ===================== */
 
 [data-color-scheme="light"] html,
@@ -8130,63 +8107,256 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
   text-shadow:0 0 5px rgba(255,255,255,.82),0 0 10px rgba(255,212,0,.26)!important;
   filter:none!important;
 }
+
+
+
 /* =========================================================
-   PATCH LIGHT — BADGE OUVERT EN FUCHSIA / VIOLET
-   Remplace le vert fluo des statuts ouverts
+   PATCH FINAL LIGHT — SINS DARK COLORS + OUVERT FUCHSIA
+   - Les couleurs des Sins reprennent celles du dark.
+   - Les badges OUVERT ne sont plus verts en light, y compris le pulse.
+   - Avarice / Greed reste la seule exception verte.
 ========================================================= */
 
 [data-color-scheme="light"]{
+  /* Couleurs officielles des Sins, identiques au dark */
+  --ovld-pride:#ff2a2a;
+  --ovld-pride-rgb:255,42,42;
+  --ovld-wrath:#ff9a1f;
+  --ovld-wrath-rgb:255,154,31;
+  --ovld-gluttony:#e8ff3a;
+  --ovld-gluttony-rgb:232,255,58;
+  --ovld-greed:#31ff63;
+  --ovld-greed-rgb:49,255,99;
+  --ovld-lust:#3f5dff;
+  --ovld-lust-rgb:63,93,255;
+  --ovld-envy:#c43cff;
+  --ovld-envy-rgb:196,60,255;
+  --ovld-sloth:#ff8de1;
+  --ovld-sloth-rgb:255,141,225;
+
+  /* Version générique utilisable par les cartes / textes */
+  --sin-pride:#ff2a2a;
+  --sin-wrath:#ff9a1f;
+  --sin-gluttony:#e8ff3a;
+  --sin-greed:#31ff63;
+  --sin-lust:#3f5dff;
+  --sin-envy:#c43cff;
+  --sin-sloth:#ff8de1;
+
+  /* OUVERT : fuchsia/violet, plus aucun vert fluo */
   --lem-open:#c0188f;
   --lem-open-soft:#ff8adf;
+  --lem-open-deep:#8a2f63;
   --lem-open-bg:
-    radial-gradient(circle at top left,rgba(255,138,223,.28),transparent 42%),
+    radial-gradient(circle at top left,rgba(255,138,223,.30),transparent 42%),
     linear-gradient(180deg,#fff1fb 0%,#ffd4ef 100%);
-  --lem-open-border:rgba(192,24,143,.42);
+  --lem-open-border:rgba(192,24,143,.46);
   --lem-open-shadow:
-    0 0 12px rgba(192,24,143,.22),
-    0 0 24px rgba(138,47,99,.16);
+    0 0 10px rgba(192,24,143,.28),
+    0 0 22px rgba(138,47,99,.18),
+    inset 0 0 14px rgba(255,138,223,.20);
 
-  --grpm-open:#c0188f;
-  --bstp-open:#c0188f;
-  --predef-open:#c0188f;
-  --qst-open:#c0188f;
-  --pwrm-open:#c0188f;
+  --grpm-open:var(--lem-open);
+  --bstp-open:var(--lem-open);
+  --predef-open:var(--lem-open);
+  --qst-open:var(--lem-open);
+  --pwrm-open:var(--lem-open);
 }
 
-/* Badges / pills OUVERT */
-[data-color-scheme="light"] .open,
-[data-color-scheme="light"] .ouvert,
-[data-color-scheme="light"] .is-open,
-[data-color-scheme="light"] .status-open,
-[data-color-scheme="light"] [class*="open"],
-[data-color-scheme="light"] [class*="ouvert"]{
+/* ===================== SINS — COULEURS DARK EN LIGHT ===================== */
+
+[data-color-scheme="light"] :is(.ovld,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.intrm,.predef,.pnjdem,.pnjd) :is(
+  .pride,.sin-pride,.ovld-pride,.grpm-pride,[class*="pride"],[class*="orgueil"]
+){
+  color:var(--sin-pride)!important;
+  border-color:rgba(255,42,42,.46)!important;
+  border-left-color:var(--sin-pride)!important;
+}
+
+[data-color-scheme="light"] :is(.ovld,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.intrm,.predef,.pnjdem,.pnjd) :is(
+  .wrath,.sin-wrath,.ovld-wrath,.grpm-wrath,[class*="wrath"],[class*="colere"],[class*="colère"]
+){
+  color:var(--sin-wrath)!important;
+  border-color:rgba(255,154,31,.50)!important;
+  border-left-color:var(--sin-wrath)!important;
+}
+
+[data-color-scheme="light"] :is(.ovld,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.intrm,.predef,.pnjdem,.pnjd) :is(
+  .gluttony,.sin-gluttony,.ovld-gluttony,.grpm-gluttony,[class*="gluttony"],[class*="gourmandise"]
+){
+  color:#b99100!important;
+  border-color:rgba(232,255,58,.55)!important;
+  border-left-color:var(--sin-gluttony)!important;
+}
+
+/* Avarice / Greed reste verte, volontairement */
+[data-color-scheme="light"] :is(.ovld,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.intrm,.predef,.pnjdem,.pnjd) :is(
+  .greed,.sin-greed,.ovld-greed,.grpm-greed,[class*="greed"],[class*="avarice"],[class*="avare"]
+){
+  color:var(--sin-greed)!important;
+  -webkit-text-fill-color:var(--sin-greed)!important;
+  border-color:rgba(49,255,99,.48)!important;
+  border-left-color:var(--sin-greed)!important;
+}
+
+[data-color-scheme="light"] :is(.ovld,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.intrm,.predef,.pnjdem,.pnjd) :is(
+  .lust,.sin-lust,.ovld-lust,.grpm-lust,[class*="lust"],[class*="luxure"]
+){
+  color:var(--sin-lust)!important;
+  -webkit-text-fill-color:var(--sin-lust)!important;
+  border-color:rgba(63,93,255,.45)!important;
+  border-left-color:var(--sin-lust)!important;
+}
+
+[data-color-scheme="light"] :is(.ovld,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.intrm,.predef,.pnjdem,.pnjd) :is(
+  .envy,.sin-envy,.ovld-envy,.grpm-envy,[class*="envy"],[class*="envie"]
+){
+  color:var(--sin-envy)!important;
+  -webkit-text-fill-color:var(--sin-envy)!important;
+  border-color:rgba(196,60,255,.46)!important;
+  border-left-color:var(--sin-envy)!important;
+}
+
+[data-color-scheme="light"] :is(.ovld,.grpm,.bst,.bstp,.ent,.pwrm,.ctxm,.intrm,.predef,.pnjdem,.pnjd) :is(
+  .sloth,.sin-sloth,.ovld-sloth,.grpm-sloth,[class*="sloth"],[class*="paresse"]
+){
+  color:var(--sin-sloth)!important;
+  -webkit-text-fill-color:var(--sin-sloth)!important;
+  border-color:rgba(255,141,225,.50)!important;
+  border-left-color:var(--sin-sloth)!important;
+}
+
+/* Dégradés doux sur les cartes des Sins, fond clair conservé */
+[data-color-scheme="light"] :is(.ovld,.grpm) :is([class*="lust"],[class*="luxure"]){
+  background:
+    radial-gradient(circle at top right,rgba(63,93,255,.12),transparent 36%),
+    linear-gradient(135deg,#fffdf8 0%,#fff6ea 56%,#f0edff 100%)!important;
+}
+
+[data-color-scheme="light"] :is(.ovld,.grpm) :is([class*="envy"],[class*="envie"]){
+  background:
+    radial-gradient(circle at top right,rgba(196,60,255,.12),transparent 36%),
+    linear-gradient(135deg,#fffdf8 0%,#fff2ec 56%,#f7e5ff 100%)!important;
+}
+
+[data-color-scheme="light"] :is(.ovld,.grpm) :is([class*="sloth"],[class*="paresse"]){
+  background:
+    radial-gradient(circle at top right,rgba(255,141,225,.16),transparent 36%),
+    linear-gradient(135deg,#fffdf8 0%,#fff4ec 56%,#ffe6f7 100%)!important;
+}
+
+/* ===================== OUVERT — FUCHSIA/VIOLET, PULSE COMPRIS ===================== */
+
+[data-color-scheme="light"] :is(
+  .grpm,.bstp,.predef,.qst,.pwrm,.bst,.ent,.ctxm,.intrm,.ovld
+) :is(
+  .grpm-status,
+  .grpm-status-open,
+  .grpm-status-open-pulse-animation,
+  .status-open,
+  .badge-open,
+  .tag-open,
+  .is-open,
+  .ouvert,
+  .open,
+  [class*="status-open"],
+  [class*="open-pulse"],
+  [class*="ouvert"]
+):not([class*="greed"]):not([class*="avarice"]):not([class*="avare"]){
   background:var(--lem-open-bg)!important;
-  border-color:var(--lem-open-border)!important;
+  background-color:#ffd4ef!important;
   color:var(--lem-open)!important;
+  -webkit-text-fill-color:var(--lem-open)!important;
+  border-color:var(--lem-open-border)!important;
+  border-top-color:var(--lem-open-border)!important;
+  border-right-color:var(--lem-open-border)!important;
+  border-bottom-color:var(--lem-open-border)!important;
+  border-left-color:var(--lem-open-border)!important;
   box-shadow:var(--lem-open-shadow)!important;
   text-shadow:none!important;
+  filter:none!important;
 }
 
-/* Texte interne du badge */
-[data-color-scheme="light"] .open *,
-[data-color-scheme="light"] .ouvert *,
-[data-color-scheme="light"] .is-open *,
-[data-color-scheme="light"] .status-open *,
-[data-color-scheme="light"] [class*="open"] *,
-[data-color-scheme="light"] [class*="ouvert"] *{
+[data-color-scheme="light"] :is(
+  .grpm,.bstp,.predef,.qst,.pwrm,.bst,.ent,.ctxm,.intrm,.ovld
+) :is(
+  .grpm-status,
+  .grpm-status-open,
+  .grpm-status-open-pulse-animation,
+  .status-open,
+  .badge-open,
+  .tag-open,
+  .is-open,
+  .ouvert,
+  .open,
+  [class*="status-open"],
+  [class*="open-pulse"],
+  [class*="ouvert"]
+):not([class*="greed"]):not([class*="avarice"]):not([class*="avare"]) *{
   color:var(--lem-open)!important;
   -webkit-text-fill-color:var(--lem-open)!important;
   text-shadow:none!important;
+  filter:none!important;
 }
 
-/* Si le + est séparé */
-[data-color-scheme="light"] .open::before,
-[data-color-scheme="light"] .ouvert::before,
-[data-color-scheme="light"] .is-open::before,
-[data-color-scheme="light"] .status-open::before,
-[data-color-scheme="light"] [class*="open"]::before,
-[data-color-scheme="light"] [class*="ouvert"]::before{
+[data-color-scheme="light"] :is(
+  .grpm,.bstp,.predef,.qst,.pwrm,.bst,.ent,.ctxm,.intrm,.ovld
+) :is(
+  .grpm-status,
+  .grpm-status-open,
+  .grpm-status-open-pulse-animation,
+  .status-open,
+  .badge-open,
+  .tag-open,
+  .is-open,
+  .ouvert,
+  .open,
+  [class*="status-open"],
+  [class*="open-pulse"],
+  [class*="ouvert"]
+):not([class*="greed"]):not([class*="avarice"]):not([class*="avare"])::before,
+[data-color-scheme="light"] :is(
+  .grpm,.bstp,.predef,.qst,.pwrm,.bst,.ent,.ctxm,.intrm,.ovld
+) :is(
+  .grpm-status,
+  .grpm-status-open,
+  .grpm-status-open-pulse-animation,
+  .status-open,
+  .badge-open,
+  .tag-open,
+  .is-open,
+  .ouvert,
+  .open,
+  [class*="status-open"],
+  [class*="open-pulse"],
+  [class*="ouvert"]
+):not([class*="greed"]):not([class*="avarice"]):not([class*="avare"])::after{
   color:var(--lem-open)!important;
   -webkit-text-fill-color:var(--lem-open)!important;
+  background:transparent!important;
+  border-color:var(--lem-open-border)!important;
+  box-shadow:none!important;
   text-shadow:none!important;
+  filter:none!important;
 }
+
+@keyframes grpm-open-fuchsia-pulse{
+  0%,100%{
+    box-shadow:
+      0 0 10px rgba(192,24,143,.22),
+      0 0 22px rgba(138,47,99,.14),
+      inset 0 0 12px rgba(255,138,223,.18);
+  }
+  50%{
+    box-shadow:
+      0 0 16px rgba(192,24,143,.34),
+      0 0 32px rgba(138,47,99,.24),
+      inset 0 0 18px rgba(255,138,223,.24);
+  }
+}
+
+[data-color-scheme="light"] :is(.grpm,.bstp,.predef,.qst,.pwrm) :is(.grpm-status-open-pulse-animation,[class*="open-pulse"]):not([class*="greed"]):not([class*="avarice"]):not([class*="avare"]){
+  animation:grpm-open-fuchsia-pulse 1.8s ease-in-out infinite!important;
+}
+
+/* Fin du patch final sins/open. */

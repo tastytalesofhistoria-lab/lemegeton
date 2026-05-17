@@ -3301,7 +3301,9 @@ iframe.pa-frame{
 
 [data-color-scheme="light"]{
   color-scheme:light;
+/* ---------- BANNIÈRE / LB ---------- */
 
+--lb-banner-img:url("https://i.redd.it/betj7dpba3gc1.gif");
   /* image cat2 */
   --idx-special-img:url("https://i.pinimg.com/originals/6a/e5/9b/6ae59b444b48f68f64bc730afde2ba6b.gif");
 
@@ -3829,8 +3831,7 @@ iframe.pa-frame{
 --lb-red:#b81424;
 --lb-ok:#8f6b00;
 
---lb-banner-img:none;
-
+ 
 --lb-banner-bg:#fff3d3;
 --lb-banner-border:rgba(215,106,0,.24);
 --lb-banner-overlay-side:rgba(255,240,207,.62);

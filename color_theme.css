@@ -6870,11 +6870,18 @@ body::-webkit-scrollbar-corner,
   color:var(--edison-red);
   text-shadow:none;
 }
-
 /* =========================================================
-   PATCH UNIQUE LIGHT — MODIFS DEMANDÉES / COHÉRENCE ROUGE
-   Base reprise proprement, sans empiler les anciens essais.
-   Rouge principal : #ab0e0e
+   PATCH FINAL CONSOLIDÉ — LIGHT ROUGE / COHÉRENCE
+   Reprise propre depuis la base : un seul patch final.
+   Objectifs :
+   - titres principaux rouges, sans glow bleu ;
+   - bannière : LEMEGETON orange lisible, KNOW YOUR STUFF rouge ;
+   - boutons forum : fond rouge, texte jaune, hover jaune ;
+   - lecteur audio : triangle restauré sans création de triangles multiples ;
+   - menu déroulant : fond clair, texte rouge, hover jaune/orange ;
+   - BABY : fond rouge, texte blanc ;
+   - liens utilitaires : fond clair, texte rouge, hover jaune ;
+   - verts du light plus lisibles.
 ========================================================= */
 
 [data-color-scheme="light"]{
@@ -6882,15 +6889,21 @@ body::-webkit-scrollbar-corner,
   --lem-red-main-rgb:171,14,14;
   --lem-red-dark:#690303;
   --lem-red-soft:#c51616;
-  --lem-orange-flash:#ff6a00;
-  --lem-orange-hover:#ff8a00;
+
+  --lem-orange-flash:#ff7a00;
+  --lem-orange-hover:#ff9f1c;
+  --lem-orange-deep:#9b3100;
+
   --lem-yellow-text:#ffe44d;
   --lem-yellow-hover:#ffd400;
   --lem-icon-light:#fff7d7;
+
   --lem-ok-green:#168326;
-  --lem-ok-green-dark:#0f681d;
   --lem-readable-green:#2f631f;
-  --lem-readable-green-soft:#e6f0dc;
+  --lem-readable-green-bg:#e6f0dc;
+
+  --lem-link-soft-bg:#fff4e2;
+  --lem-link-soft-border:rgba(171,14,14,.22);
 
   --fa-title-main:var(--lem-red-main);
   --fa-title-strong:var(--lem-red-main);
@@ -6904,7 +6917,7 @@ body::-webkit-scrollbar-corner,
   --pm-nav-hover:var(--lem-orange-hover);
 
   --lb-logo-main:var(--lem-orange-flash);
-  --lb-logo-stroke:var(--lem-orange-flash);
+  --lb-logo-stroke:var(--lem-orange-deep);
   --lb-logo-shadow:transparent;
   --lb-ok:var(--lem-ok-green);
 
@@ -6926,6 +6939,25 @@ body::-webkit-scrollbar-corner,
   --edison-scroll-thumb-hover:var(--lem-orange-hover);
   --edison-scroll-track:#ffd48a;
   --edison-scroll-track-soft:#fff0cf;
+
+  --pm-button-bg:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%);
+  --pm-button-hover-bg:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%);
+  --pm-button-text:var(--lem-yellow-text);
+  --pm-button-hover-text:var(--lem-red-dark);
+  --pm-button-border:var(--lem-red-main);
+  --pm-button-hover-border:var(--lem-yellow-hover);
+  --pm-button-shadow:0 8px 18px rgba(171,14,14,.22),inset 0 1px 0 rgba(255,255,255,.18);
+
+  --pm-contact-button-bg:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%);
+  --pm-contact-button-hover-bg:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%);
+
+  --pm-like-bg:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%);
+  --pm-like-border:var(--lem-red-main);
+  --pm-like-shadow:0 8px 18px rgba(171,14,14,.22),inset 0 1px 0 rgba(255,255,255,.18);
+
+  --nav-dropdown-bg:#fff4e2;
+  --nav-dropdown-hover-bg:rgba(255,212,0,.22);
+  --nav-border-dropdown:rgba(171,14,14,.26);
 }
 
 /* ===================== STRUCTURE / GUTTERS ROUGES ===================== */
@@ -6953,14 +6985,7 @@ body::-webkit-scrollbar-corner,
   border-right-color:rgba(var(--lem-red-main-rgb),.38)!important;
 }
 
-[data-color-scheme="light"] .forabg,
-[data-color-scheme="light"] .forumbg,
-[data-color-scheme="light"] .forum-card,
-[data-color-scheme="light"] .row{
-  border-color:rgba(var(--lem-red-main-rgb),.26)!important;
-}
-
-/* ===================== NAVBAR ROUGE / HOVER ORANGE ===================== */
+/* ===================== NAVBAR / DROPDOWN ===================== */
 
 [data-color-scheme="light"] #custom-navbar a,
 [data-color-scheme="light"] #custom-navbar a:link,
@@ -6984,6 +7009,43 @@ body::-webkit-scrollbar-corner,
   color:var(--lem-orange-hover)!important;
   text-shadow:none!important;
   filter:none!important;
+}
+
+[data-color-scheme="light"] #custom-navbar li ul,
+[data-color-scheme="light"] .custom-navbar li ul,
+[data-color-scheme="light"] #page-header .navbar li ul,
+[data-color-scheme="light"] .navbar li ul,
+[data-color-scheme="light"] .mainmenu li ul,
+[data-color-scheme="light"] li[class*="dropdown"] ul,
+[data-color-scheme="light"] li[class*="submenu"] ul{
+  background:#fff4e2!important;
+  border:1px solid rgba(var(--lem-red-main-rgb),.26)!important;
+  box-shadow:0 10px 22px rgba(122,40,8,.12)!important;
+}
+
+[data-color-scheme="light"] #custom-navbar li ul a,
+[data-color-scheme="light"] .custom-navbar li ul a,
+[data-color-scheme="light"] #page-header .navbar li ul a,
+[data-color-scheme="light"] .navbar li ul a,
+[data-color-scheme="light"] .mainmenu li ul a,
+[data-color-scheme="light"] li[class*="dropdown"] ul a,
+[data-color-scheme="light"] li[class*="submenu"] ul a{
+  background:transparent!important;
+  color:var(--lem-red-main)!important;
+  border:0!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] #custom-navbar li ul a:hover,
+[data-color-scheme="light"] .custom-navbar li ul a:hover,
+[data-color-scheme="light"] #page-header .navbar li ul a:hover,
+[data-color-scheme="light"] .navbar li ul a:hover,
+[data-color-scheme="light"] .mainmenu li ul a:hover,
+[data-color-scheme="light"] li[class*="dropdown"] ul a:hover,
+[data-color-scheme="light"] li[class*="submenu"] ul a:hover{
+  background:rgba(255,212,0,.22)!important;
+  color:var(--lem-red-dark)!important;
 }
 
 /* ===================== TITRES ROUGES SANS SHADOW BLEU ===================== */
@@ -7023,16 +7085,11 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] .mev2-title,
 [data-color-scheme="light"] .sg-title,
 [data-color-scheme="light"] .scenguide-title,
-[data-color-scheme="light"] .lpa-title,
 [data-color-scheme="light"] [class$="-title"],
-[data-color-scheme="light"] [class$="-titre"],
-[data-color-scheme="light"] [class*="head-title"],
-[data-color-scheme="light"] [class*="hero-title"]{
+[data-color-scheme="light"] [class$="-titre"]{
   color:var(--lem-red-main)!important;
   text-shadow:none!important;
   filter:none!important;
-  -webkit-text-stroke-color:var(--lem-red-main)!important;
-  text-stroke-color:var(--lem-red-main)!important;
 }
 
 [data-color-scheme="light"] h1 *,
@@ -7051,6 +7108,7 @@ body::-webkit-scrollbar-corner,
   filter:none!important;
 }
 
+/* Monoton général : rouge, sans ombre bleue */
 [data-color-scheme="light"] [style*="Monoton"],
 [data-color-scheme="light"] [style*="monoton"],
 [data-color-scheme="light"] .monoton,
@@ -7062,22 +7120,19 @@ body::-webkit-scrollbar-corner,
   filter:none!important;
 }
 
-/* ===================== BANNIÈRE : LEMEGETON ORANGE FLASH / KNOW YOUR STUFF ROUGE ===================== */
+/* ===================== BANNIÈRE : LEMEGETON + KNOW YOUR STUFF ===================== */
 
 [data-color-scheme="light"] .lb-banner,
 [data-color-scheme="light"] .lb-banner *,
 [data-color-scheme="light"] [class*="lb-banner"],
 [data-color-scheme="light"] [class*="lb-banner"] *,
 [data-color-scheme="light"] .lpa-banner,
-[data-color-scheme="light"] .lpa-banner *,
-[data-color-scheme="light"] [class*="banner"] .lb-title,
-[data-color-scheme="light"] [class*="banner"] [class*="star"],
-[data-color-scheme="light"] [class*="banner"] [class*="etoile"],
-[data-color-scheme="light"] [class*="banner"] [class*="étoile"]{
+[data-color-scheme="light"] .lpa-banner *{
   text-shadow:none!important;
   filter:none!important;
 }
 
+/* LEMEGETON : orange lisible, non bleu */
 [data-color-scheme="light"] .lb-banner .lb-title,
 [data-color-scheme="light"] .lb-banner [class*="logo"],
 [data-color-scheme="light"] .lb-banner [class*="title"],
@@ -7085,22 +7140,24 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] [class*="banner"] .lb-title,
 [data-color-scheme="light"] [class*="banner"] [class*="logo"]{
   color:var(--lem-orange-flash)!important;
-  -webkit-text-fill-color:transparent!important;
-  -webkit-text-stroke:1px var(--lem-orange-flash)!important;
-  text-stroke:1px var(--lem-orange-flash)!important;
-  text-shadow:none!important;
+  -webkit-text-fill-color:var(--lem-orange-flash)!important;
+  -webkit-text-stroke:.75px var(--lem-orange-deep)!important;
+  text-stroke:.75px var(--lem-orange-deep)!important;
+  text-shadow:0 1px 0 rgba(255,241,212,.55)!important;
   filter:none!important;
 }
 
+/* KNOW YOUR STUFF / étoiles / texte info : rouge */
 [data-color-scheme="light"] .lb-banner .lb-info-title,
 [data-color-scheme="light"] .lb-banner .lb-kicker,
 [data-color-scheme="light"] .lb-banner .lb-info-kicker,
 [data-color-scheme="light"] .lb-banner [class*="info-title"],
 [data-color-scheme="light"] .lb-banner [class*="kicker"],
-[data-color-scheme="light"] .lb-banner [class*="staff"] [class*="title"],
-[data-color-scheme="light"] .lb-banner [class*="staff"] [class*="titre"],
 [data-color-scheme="light"] .lb-info-title,
-[data-color-scheme="light"] .lb-info-kicker{
+[data-color-scheme="light"] .lb-info-kicker,
+[data-color-scheme="light"] .lb-banner [class*="star"],
+[data-color-scheme="light"] .lb-banner [class*="etoile"],
+[data-color-scheme="light"] .lb-banner [class*="étoile"]{
   color:var(--lem-red-main)!important;
   -webkit-text-fill-color:var(--lem-red-main)!important;
   -webkit-text-stroke:0!important;
@@ -7108,7 +7165,7 @@ body::-webkit-scrollbar-corner,
   filter:none!important;
 }
 
-/* Coches / OK visibles en vrai vert, pas brun */
+/* Coches vertes */
 [data-color-scheme="light"] .lb-banner .lb-ok,
 [data-color-scheme="light"] .lb-banner .ok,
 [data-color-scheme="light"] .lb-banner .check,
@@ -7126,7 +7183,50 @@ body::-webkit-scrollbar-corner,
   text-shadow:0 0 4px rgba(22,131,38,.18)!important;
 }
 
-/* ===================== BOUTONS FORUM : FOND ROUGE, TEXTE JAUNE ===================== */
+/* ===================== LECTEUR AUDIO : NE PLUS CRÉER DE TRIANGLES MULTIPLES ===================== */
+
+[data-color-scheme="light"] .lb-player,
+[data-color-scheme="light"] [class*="lb-player"]{
+  --lb-player-wave:#d76a00;
+  --lb-player-wave-played:#ab0e0e;
+  --lb-player-wave-current:#ab0e0e;
+}
+
+/* On se limite aux vrais contrôles play connus/nommés, pas à tous les [class*="play"] */
+[data-color-scheme="light"] .lb-play,
+[data-color-scheme="light"] .lb-player-play,
+[data-color-scheme="light"] .lb-audio-play,
+[data-color-scheme="light"] .lpa-play,
+[data-color-scheme="light"] .lpa-player-play{
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  color:var(--lem-red-main)!important;
+}
+
+/* Triangle seulement sur classes exactes probables */
+[data-color-scheme="light"] .lb-play::before,
+[data-color-scheme="light"] .lb-player-play::before,
+[data-color-scheme="light"] .lb-audio-play::before,
+[data-color-scheme="light"] .lpa-play::before,
+[data-color-scheme="light"] .lpa-player-play::before{
+  border-left-color:var(--lem-red-main)!important;
+  color:var(--lem-red-main)!important;
+}
+
+/* Supprime uniquement les triangles ajoutés par les anciens patchs trop larges s'ils restent en cache */
+[data-color-scheme="light"] .lb-player [class*="wave"]::before,
+[data-color-scheme="light"] .lb-player [class*="bar"]::before,
+[data-color-scheme="light"] .lb-player [class*="time"]::before,
+[data-color-scheme="light"] .lb-player [class*="wave"]::after,
+[data-color-scheme="light"] .lb-player [class*="bar"]::after,
+[data-color-scheme="light"] .lb-player [class*="time"]::after{
+  content:none!important;
+  border:0!important;
+}
+
+/* ===================== BOUTONS FORUM : ROUGE / TEXTE JAUNE ===================== */
 
 [data-color-scheme="light"] a.button1,
 [data-color-scheme="light"] a.button2,
@@ -7137,22 +7237,21 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] input[type="submit"],
 [data-color-scheme="light"] input[type="button"],
 [data-color-scheme="light"] input[type="reset"],
-[data-color-scheme="light"] .sub-header-buttons a,
-[data-color-scheme="light"] .sub-header-buttons button,
-[data-color-scheme="light"] .topic-actions a,
-[data-color-scheme="light"] .topic-actions button,
+[data-color-scheme="light"] .sub-header-buttons a.button1,
+[data-color-scheme="light"] .sub-header-buttons a.button2,
+[data-color-scheme="light"] .sub-header-buttons.promess a.button1,
+[data-color-scheme="light"] .sub-header-buttons.promess a.button2,
+[data-color-scheme="light"] .topic-actions a.button1,
+[data-color-scheme="light"] .topic-actions a.button2,
+[data-color-scheme="light"] .topic-actions.promess a.button1,
+[data-color-scheme="light"] .topic-actions.promess a.button2,
 [data-color-scheme="light"] .post-options a,
-[data-color-scheme="light"] .post-options button,
 [data-color-scheme="light"] .post-buttons a,
-[data-color-scheme="light"] .post-buttons button,
-[data-color-scheme="light"] .profile-contact a,
-[data-color-scheme="light"] .contact-icons a,
-[data-color-scheme="light"] .quick-nav-topics a,
-[data-color-scheme="light"] .pagination a,
-[data-color-scheme="light"] .pagination span strong,
-[data-color-scheme="light"] .pagination span.page-sep + strong,
-[data-color-scheme="light"] .page-number,
-[data-color-scheme="light"] .page-number-current,
+[data-color-scheme="light"] .fa_like_div.promess .rep-button,
+[data-color-scheme="light"] .fa_like_left.promess .rep-button,
+[data-color-scheme="light"] .fa_like_right.promess .rep-button,
+[data-color-scheme="light"] .profile-icons a,
+[data-color-scheme="light"] .profile-icons span,
 [data-color-scheme="light"] a[href*="mode=reply"],
 [data-color-scheme="light"] a[href*="mode=newtopic"],
 [data-color-scheme="light"] a[href*="mode=editpost"],
@@ -7160,8 +7259,8 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] a[href*="mode=delete"],
 [data-color-scheme="light"] a[href*="mode=ip"],
 [data-color-scheme="light"] a[href*="mode=report"]{
-  background:var(--lem-red-main)!important;
-  background-image:none!important;
+  background:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%)!important;
+  background-color:var(--lem-red-main)!important;
   border:1px solid var(--lem-red-main)!important;
   color:var(--lem-yellow-text)!important;
   text-shadow:none!important;
@@ -7174,23 +7273,19 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] a.button2 *,
 [data-color-scheme="light"] button.button1 *,
 [data-color-scheme="light"] button.button2 *,
-[data-color-scheme="light"] .sub-header-buttons a *,
-[data-color-scheme="light"] .topic-actions a *,
+[data-color-scheme="light"] .sub-header-buttons a.button1 *,
+[data-color-scheme="light"] .sub-header-buttons a.button2 *,
+[data-color-scheme="light"] .topic-actions a.button1 *,
+[data-color-scheme="light"] .topic-actions a.button2 *,
 [data-color-scheme="light"] .post-options a *,
 [data-color-scheme="light"] .post-buttons a *,
-[data-color-scheme="light"] .profile-contact a *,
-[data-color-scheme="light"] .contact-icons a *,
-[data-color-scheme="light"] .quick-nav-topics a *,
-[data-color-scheme="light"] a[href*="mode=reply"] *,
-[data-color-scheme="light"] a[href*="mode=newtopic"] *,
-[data-color-scheme="light"] a[href*="mode=editpost"] *,
-[data-color-scheme="light"] a[href*="mode=quote"] *,
-[data-color-scheme="light"] a[href*="mode=delete"] *,
-[data-color-scheme="light"] a[href*="mode=ip"] *,
-[data-color-scheme="light"] a[href*="mode=report"] *{
-  color:var(--lem-icon-light)!important;
+[data-color-scheme="light"] .fa_like_div.promess .rep-button *,
+[data-color-scheme="light"] .fa_like_left.promess .rep-button *,
+[data-color-scheme="light"] .fa_like_right.promess .rep-button *,
+[data-color-scheme="light"] .profile-icons a *,
+[data-color-scheme="light"] .profile-icons span *{
+  color:var(--lem-yellow-text)!important;
   text-shadow:none!important;
-  filter:none!important;
 }
 
 [data-color-scheme="light"] a.button1:hover,
@@ -7202,18 +7297,17 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] input[type="submit"]:hover,
 [data-color-scheme="light"] input[type="button"]:hover,
 [data-color-scheme="light"] input[type="reset"]:hover,
-[data-color-scheme="light"] .sub-header-buttons a:hover,
-[data-color-scheme="light"] .sub-header-buttons button:hover,
-[data-color-scheme="light"] .topic-actions a:hover,
-[data-color-scheme="light"] .topic-actions button:hover,
+[data-color-scheme="light"] .sub-header-buttons a.button1:hover,
+[data-color-scheme="light"] .sub-header-buttons a.button2:hover,
+[data-color-scheme="light"] .topic-actions a.button1:hover,
+[data-color-scheme="light"] .topic-actions a.button2:hover,
 [data-color-scheme="light"] .post-options a:hover,
-[data-color-scheme="light"] .post-options button:hover,
 [data-color-scheme="light"] .post-buttons a:hover,
-[data-color-scheme="light"] .post-buttons button:hover,
-[data-color-scheme="light"] .profile-contact a:hover,
-[data-color-scheme="light"] .contact-icons a:hover,
-[data-color-scheme="light"] .quick-nav-topics a:hover,
-[data-color-scheme="light"] .pagination a:hover,
+[data-color-scheme="light"] .fa_like_div.promess .rep-button:hover,
+[data-color-scheme="light"] .fa_like_left.promess .rep-button:hover,
+[data-color-scheme="light"] .fa_like_right.promess .rep-button:hover,
+[data-color-scheme="light"] .profile-icons a:hover,
+[data-color-scheme="light"] .profile-icons span:hover,
 [data-color-scheme="light"] a[href*="mode=reply"]:hover,
 [data-color-scheme="light"] a[href*="mode=newtopic"]:hover,
 [data-color-scheme="light"] a[href*="mode=editpost"]:hover,
@@ -7221,27 +7315,44 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] a[href*="mode=delete"]:hover,
 [data-color-scheme="light"] a[href*="mode=ip"]:hover,
 [data-color-scheme="light"] a[href*="mode=report"]:hover{
-  background:var(--lem-yellow-hover)!important;
-  background-image:none!important;
+  background:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%)!important;
+  background-color:var(--lem-yellow-hover)!important;
   border-color:var(--lem-yellow-hover)!important;
   color:var(--lem-red-dark)!important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.22),
-    0 10px 20px rgba(255,212,0,.20)!important;
 }
 
 [data-color-scheme="light"] a.button1:hover *,
 [data-color-scheme="light"] a.button2:hover *,
 [data-color-scheme="light"] button.button1:hover *,
 [data-color-scheme="light"] button.button2:hover *,
-[data-color-scheme="light"] .sub-header-buttons a:hover *,
-[data-color-scheme="light"] .topic-actions a:hover *,
+[data-color-scheme="light"] .sub-header-buttons a.button1:hover *,
+[data-color-scheme="light"] .sub-header-buttons a.button2:hover *,
+[data-color-scheme="light"] .topic-actions a.button1:hover *,
+[data-color-scheme="light"] .topic-actions a.button2:hover *,
 [data-color-scheme="light"] .post-options a:hover *,
 [data-color-scheme="light"] .post-buttons a:hover *,
-[data-color-scheme="light"] .profile-contact a:hover *,
-[data-color-scheme="light"] .contact-icons a:hover *,
-[data-color-scheme="light"] .quick-nav-topics a:hover *{
+[data-color-scheme="light"] .fa_like_div.promess .rep-button:hover *,
+[data-color-scheme="light"] .fa_like_left.promess .rep-button:hover *,
+[data-color-scheme="light"] .fa_like_right.promess .rep-button:hover *,
+[data-color-scheme="light"] .profile-icons a:hover *,
+[data-color-scheme="light"] .profile-icons span:hover *{
   color:var(--lem-red-dark)!important;
+}
+
+/* Icônes dans les boutons d'action : claires sur rouge */
+[data-color-scheme="light"] .profile-icons img,
+[data-color-scheme="light"] .fa_like_right.promess img,
+[data-color-scheme="light"] .post-options img,
+[data-color-scheme="light"] .post-buttons img{
+  filter:brightness(0) invert(1) sepia(.18) saturate(1.6) hue-rotate(340deg)!important;
+  opacity:1!important;
+}
+
+[data-color-scheme="light"] .profile-icons a:hover img,
+[data-color-scheme="light"] .fa_like_right.promess a:hover img,
+[data-color-scheme="light"] .post-options a:hover img,
+[data-color-scheme="light"] .post-buttons a:hover img{
+  filter:none!important;
 }
 
 /* Exclusions : Notiffi et lecteur audio ne sont PAS des boutons forum */
@@ -7253,90 +7364,105 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] [class*="notiffi"] button,
 [data-color-scheme="light"] .lb-player a,
 [data-color-scheme="light"] .lb-player button,
-[data-color-scheme="light"] [class*="player"] a,
-[data-color-scheme="light"] [class*="player"] button,
-[data-color-scheme="light"] [class*="audio"] a,
-[data-color-scheme="light"] [class*="audio"] button{
+[data-color-scheme="light"] [class*="lb-player"] a,
+[data-color-scheme="light"] [class*="lb-player"] button{
   text-shadow:none!important;
 }
 
-/* Lecteur : garde le triangle visible sans lui donner un fond bouton */
-[data-color-scheme="light"] .lb-player [class*="play"],
-[data-color-scheme="light"] [class*="player"] [class*="play"],
-[data-color-scheme="light"] [class*="audio"] [class*="play"]{
-  background:transparent!important;
+/* ===================== LIENS UTILITAIRES : TEXTE ROUGE / HOVER JAUNE ===================== */
+
+[data-color-scheme="light"] #page-footer .linklist a:not(.button1):not(.button2),
+[data-color-scheme="light"] .linklist.bottom a:not(.button1):not(.button2),
+[data-color-scheme="light"] .linklist.navlinks a:not(.button1):not(.button2),
+[data-color-scheme="light"] .navlinks a:not(.button1):not(.button2),
+[data-color-scheme="light"] .breadcrumbs a:not(.button1):not(.button2),
+[data-color-scheme="light"] .jumpbox a:not(.button1):not(.button2),
+[data-color-scheme="light"] .panel a.gen:not(.button1):not(.button2),
+[data-color-scheme="light"] .panel a.genmed:not(.button1):not(.button2),
+[data-color-scheme="light"] a[href*="delete_cookies"],
+[data-color-scheme="light"] a[href*="cookies"]{
+  background:var(--lem-link-soft-bg)!important;
+  background-image:none!important;
+  border:1px solid var(--lem-link-soft-border)!important;
+  color:var(--lem-red-main)!important;
   box-shadow:none!important;
-  border-color:transparent!important;
-  color:var(--lem-red-main)!important;
-}
-
-[data-color-scheme="light"] .lb-player [class*="play"]::before,
-[data-color-scheme="light"] .lb-player [class*="play"]::after,
-[data-color-scheme="light"] [class*="player"] [class*="play"]::before,
-[data-color-scheme="light"] [class*="player"] [class*="play"]::after,
-[data-color-scheme="light"] [class*="audio"] [class*="play"]::before,
-[data-color-scheme="light"] [class*="audio"] [class*="play"]::after{
-  border-left-color:var(--lem-red-main)!important;
-  color:var(--lem-red-main)!important;
-}
-
-/* ===================== TOP PARTENAIRES / DEAL / QEEL ===================== */
-
-[data-color-scheme="light"] .lpa-partners-title,
-[data-color-scheme="light"] .lpa-partners-label,
-[data-color-scheme="light"] .top-partners,
-[data-color-scheme="light"] .top-partenaires,
-[data-color-scheme="light"] [class*="partner"] [class*="tag"],
-[data-color-scheme="light"] [class*="partenaire"] [class*="tag"]{
-  background:rgba(var(--lem-red-main-rgb),.10)!important;
-  border-color:rgba(var(--lem-red-main-rgb),.36)!important;
-  color:var(--lem-red-main)!important;
   text-shadow:none!important;
 }
 
-[data-color-scheme="light"] .lpa-deal-step,
-[data-color-scheme="light"] .lpa-deal-info,
-[data-color-scheme="light"] [class*="deal"] [class*="info"],
-[data-color-scheme="light"] [class*="deal"] [class*="step"]{
-  border-color:rgba(var(--lem-red-main-rgb),.34)!important;
+[data-color-scheme="light"] #page-footer .linklist a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .linklist.bottom a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .linklist.navlinks a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .navlinks a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .breadcrumbs a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .jumpbox a:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .panel a.gen:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] .panel a.genmed:not(.button1):not(.button2):hover,
+[data-color-scheme="light"] a[href*="delete_cookies"]:hover,
+[data-color-scheme="light"] a[href*="cookies"]:hover{
+  background:var(--lem-yellow-hover)!important;
+  border-color:var(--lem-yellow-hover)!important;
+  color:var(--lem-red-dark)!important;
 }
 
-[data-color-scheme="light"] .qeel-title,
-[data-color-scheme="light"] .qeel-loser,
-[data-color-scheme="light"] [class*="qeel"] [class*="loser"]{
-  color:var(--lem-red-main)!important;
+/* ===================== BABY : FOND ROUGE / TEXTE BLANC ===================== */
+
+[data-color-scheme="light"] .baby,
+[data-color-scheme="light"] .baby-card,
+[data-color-scheme="light"] .baby-box,
+[data-color-scheme="light"] .babybloc,
+[data-color-scheme="light"] .lpa-baby,
+[data-color-scheme="light"] [class*="baby-card"],
+[data-color-scheme="light"] [class*="baby-box"],
+[data-color-scheme="light"] [class*="baby-bloc"],
+[data-color-scheme="light"] [class*="babybloc"],
+[data-color-scheme="light"] [class*="lpa-baby"]{
+  background:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%)!important;
+  border:1px solid #8d0909!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 10px 22px rgba(171,14,14,.18)!important;
+}
+
+[data-color-scheme="light"] .baby *,
+[data-color-scheme="light"] .baby-card *,
+[data-color-scheme="light"] .baby-box *,
+[data-color-scheme="light"] .babybloc *,
+[data-color-scheme="light"] .lpa-baby *,
+[data-color-scheme="light"] [class*="baby-card"] *,
+[data-color-scheme="light"] [class*="baby-box"] *,
+[data-color-scheme="light"] [class*="baby-bloc"] *,
+[data-color-scheme="light"] [class*="babybloc"] *,
+[data-color-scheme="light"] [class*="lpa-baby"] *{
+  color:#fffdf7!important;
+  -webkit-text-fill-color:#fffdf7!important;
   text-shadow:none!important;
-  filter:none!important;
 }
 
-/* ===================== VERTS PLUS LISIBLES ===================== */
+/* ===================== BESTIAIRE / VERTS LISIBLES ===================== */
 
+[data-color-scheme="light"] [class*="green"],
+[data-color-scheme="light"] [class*="earth"],
+[data-color-scheme="light"] [class*="open"],
+[data-color-scheme="light"] [class*="adopt"],
+[data-color-scheme="light"] [class*="serpent"]{
+  --local-green:var(--lem-readable-green);
+}
+
+[data-color-scheme="light"] .bstp [class*="green"],
+[data-color-scheme="light"] .bstp [class*="earth"],
 [data-color-scheme="light"] .bst [class*="green"],
 [data-color-scheme="light"] .bst [class*="earth"],
-[data-color-scheme="light"] .bstp [class*="green"],
-[data-color-scheme="light"] .grpm [class*="open"],
 [data-color-scheme="light"] .grpm [class*="green"],
+[data-color-scheme="light"] .grpm [class*="open"],
 [data-color-scheme="light"] .ent [class*="earth"],
-[data-color-scheme="light"] .ent [class*="lime"],
-[data-color-scheme="light"] .pwrm [class*="green"],
-[data-color-scheme="light"] .pwrm [class*="lime"],
 [data-color-scheme="light"] .ctxm [class*="serpent"],
-[data-color-scheme="light"] .intrm [class*="green"],
-[data-color-scheme="light"] .qst [class*="lime"]{
+[data-color-scheme="light"] .intrm [class*="green"]{
   color:var(--lem-readable-green)!important;
-  border-color:rgba(47,99,31,.32)!important;
+  border-color:rgba(47,99,31,.35)!important;
   text-shadow:none!important;
 }
 
-[data-color-scheme="light"] .bst [class*="green"]:hover,
-[data-color-scheme="light"] .bst [class*="earth"]:hover,
-[data-color-scheme="light"] .bstp [class*="green"]:hover,
-[data-color-scheme="light"] .grpm [class*="open"]:hover,
-[data-color-scheme="light"] .grpm [class*="green"]:hover{
-  color:var(--lem-ok-green-dark)!important;
-}
-
-/* ===================== SCROLLBAR LIGHT ROUGE / ORANGE ===================== */
+/* ===================== SCROLLBAR THEME ===================== */
 
 [data-color-scheme="light"] html,
 [data-color-scheme="light"] body,
@@ -7381,479 +7507,4 @@ body::-webkit-scrollbar-corner,
   background:linear-gradient(180deg,var(--edison-scroll-thumb-hover),var(--edison-scroll-thumb));
   border:2px solid var(--edison-scroll-track);
   border-radius:999px;
-}
-/* =========================================================
-   PATCH FINAL LIGHT — BOUTONS FORUM ROUGES
-   Corrige :
-   - Nouveau sujet / Répondre au sujet
-   - J'aime / Je n'aime pas
-   - Actions post : citer, éditer, supprimer, IP, etc.
-   - Boutons profil post : fiche / dating / looking / réseaux
-   Sans toucher Notiffi ni le lecteur audio
-========================================================= */
-
-[data-color-scheme="light"]{
-  --btn-forum-bg:#ab0e0e;
-  --btn-forum-bg-hover:#ffe44d;
-  --btn-forum-text:#ffe44d;
-  --btn-forum-text-hover:#7a0707;
-  --btn-forum-icon:#fff7d7;
-  --btn-forum-border:#ffb833;
-  --btn-forum-shadow:
-    0 8px 18px rgba(171,14,14,.22),
-    inset 0 1px 0 rgba(255,255,255,.18);
-
-  /* Variables Promess réellement utilisées par les boutons */
-  --pm-button-bg:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%);
-  --pm-button-hover-bg:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%);
-  --pm-button-text:#ffe44d;
-  --pm-button-hover-text:#7a0707;
-  --pm-button-border:#ffb833;
-  --pm-button-hover-border:#ab0e0e;
-  --pm-button-shadow:
-    0 8px 18px rgba(171,14,14,.22),
-    inset 0 1px 0 rgba(255,255,255,.18);
-
-  --pm-contact-button-bg:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%);
-  --pm-contact-button-hover-bg:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%);
-
-  --pm-like-bg:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%);
-  --pm-like-border:#ffb833;
-  --pm-like-shadow:
-    0 8px 18px rgba(171,14,14,.22),
-    inset 0 1px 0 rgba(255,255,255,.18);
-}
-
-/* ===================== NOUVEAU SUJET / RÉPONDRE ===================== */
-
-[data-color-scheme="light"] .sub-header-buttons.promess a.button1,
-[data-color-scheme="light"] .sub-header-buttons.promess a.button2,
-[data-color-scheme="light"] .sub-header-buttons.promess .button1,
-[data-color-scheme="light"] .sub-header-buttons.promess .button2,
-[data-color-scheme="light"] .topic-actions.promess a.button1,
-[data-color-scheme="light"] .topic-actions.promess a.button2,
-[data-color-scheme="light"] .topic-actions.promess .button1,
-[data-color-scheme="light"] .topic-actions.promess .button2,
-[data-color-scheme="light"] a[href*="mode=newtopic"].button1,
-[data-color-scheme="light"] a[href*="mode=reply"].button1,
-[data-color-scheme="light"] a[href*="mode=newtopic"].button2,
-[data-color-scheme="light"] a[href*="mode=reply"].button2{
-  background:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%)!important;
-  background-color:#ab0e0e!important;
-  color:#ffe44d!important;
-  border:1px solid #ffb833!important;
-  box-shadow:
-    0 8px 18px rgba(171,14,14,.22),
-    inset 0 1px 0 rgba(255,255,255,.18)!important;
-  text-shadow:none!important;
-}
-
-[data-color-scheme="light"] .sub-header-buttons.promess a.button1:hover,
-[data-color-scheme="light"] .sub-header-buttons.promess a.button2:hover,
-[data-color-scheme="light"] .topic-actions.promess a.button1:hover,
-[data-color-scheme="light"] .topic-actions.promess a.button2:hover,
-[data-color-scheme="light"] a[href*="mode=newtopic"].button1:hover,
-[data-color-scheme="light"] a[href*="mode=reply"].button1:hover,
-[data-color-scheme="light"] a[href*="mode=newtopic"].button2:hover,
-[data-color-scheme="light"] a[href*="mode=reply"].button2:hover{
-  background:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%)!important;
-  background-color:#ffe44d!important;
-  color:#7a0707!important;
-  border-color:#ab0e0e!important;
-}
-
-/* ===================== BOUTONS J'AIME / JE N'AIME PAS ===================== */
-
-[data-color-scheme="light"] .fa_like_div.promess .rep-button,
-[data-color-scheme="light"] .fa_like_div.promess .rep-button.fa_like,
-[data-color-scheme="light"] .fa_like_div.promess .rep-button.fa_dislike,
-[data-color-scheme="light"] .fa_like_left.promess .rep-button,
-[data-color-scheme="light"] .fa_like_right.promess .rep-button{
-  background:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%)!important;
-  background-color:#ab0e0e!important;
-  color:#ffe44d!important;
-  border:1px solid #ffb833!important;
-  box-shadow:
-    0 8px 18px rgba(171,14,14,.22),
-    inset 0 1px 0 rgba(255,255,255,.18)!important;
-  text-shadow:none!important;
-}
-
-[data-color-scheme="light"] .fa_like_div.promess .rep-button span,
-[data-color-scheme="light"] .fa_like_left.promess .rep-button span,
-[data-color-scheme="light"] .fa_like_right.promess .rep-button span{
-  color:#ffe44d!important;
-}
-
-[data-color-scheme="light"] .fa_like_div.promess .rep-button:hover,
-[data-color-scheme="light"] .fa_like_left.promess .rep-button:hover,
-[data-color-scheme="light"] .fa_like_right.promess .rep-button:hover{
-  background:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%)!important;
-  background-color:#ffe44d!important;
-  color:#7a0707!important;
-  border-color:#ab0e0e!important;
-}
-
-[data-color-scheme="light"] .fa_like_div.promess .rep-button:hover span,
-[data-color-scheme="light"] .fa_like_left.promess .rep-button:hover span,
-[data-color-scheme="light"] .fa_like_right.promess .rep-button:hover span{
-  color:#7a0707!important;
-}
-
-/* ===================== BOUTONS ÉDITION / CITATION / SUPPRESSION / IP ===================== */
-
-[data-color-scheme="light"] .fa_like_right.promess a,
-[data-color-scheme="light"] .fa_like_right.promess span,
-[data-color-scheme="light"] .profile-icons a,
-[data-color-scheme="light"] .profile-icons span,
-[data-color-scheme="light"] .postprofile-top.promess .profile-icons a,
-[data-color-scheme="light"] .postprofile-top.promess .profile-icons span{
-  background:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%)!important;
-  background-color:#ab0e0e!important;
-  color:#fff7d7!important;
-  border:1px solid #ffb833!important;
-  box-shadow:
-    0 8px 18px rgba(171,14,14,.20),
-    inset 0 1px 0 rgba(255,255,255,.18)!important;
-  text-shadow:none!important;
-}
-
-[data-color-scheme="light"] .fa_like_right.promess a:hover,
-[data-color-scheme="light"] .fa_like_right.promess span:hover,
-[data-color-scheme="light"] .profile-icons a:hover,
-[data-color-scheme="light"] .profile-icons span:hover{
-  background:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%)!important;
-  background-color:#ffe44d!important;
-  color:#7a0707!important;
-  border-color:#ab0e0e!important;
-}
-
-/* Icônes images blanches/claires dans les boutons */
-[data-color-scheme="light"] .fa_like_right.promess img,
-[data-color-scheme="light"] .profile-icons img,
-[data-color-scheme="light"] .postprofile-top.promess .profile-icons img{
-  filter:brightness(0) invert(1) sepia(.18) saturate(1.6) hue-rotate(340deg)!important;
-  opacity:1!important;
-}
-
-[data-color-scheme="light"] .fa_like_right.promess a:hover img,
-[data-color-scheme="light"] .profile-icons a:hover img,
-[data-color-scheme="light"] .postprofile-top.promess .profile-icons a:hover img{
-  filter:none!important;
-}
-
-/* ===================== BOUTONS PROFIL POST : FICHE / DATING / LOOKING ===================== */
-
-[data-color-scheme="light"] .postprofile-top.promess a.button,
-[data-color-scheme="light"] .postprofile-top.promess a.button1,
-[data-color-scheme="light"] .postprofile-top.promess a.button2,
-[data-color-scheme="light"] .postprofile-top.promess .button,
-[data-color-scheme="light"] .postprofile-top.promess .button1,
-[data-color-scheme="light"] .postprofile-top.promess .button2,
-[data-color-scheme="light"] .postprofile-top.promess a[class*="btn"],
-[data-color-scheme="light"] .postprofile-top.promess a[class*="button"]{
-  background:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%)!important;
-  background-color:#ab0e0e!important;
-  color:#ffe44d!important;
-  border:1px solid #ffb833!important;
-  box-shadow:
-    0 8px 18px rgba(171,14,14,.22),
-    inset 0 1px 0 rgba(255,255,255,.18)!important;
-  text-shadow:none!important;
-}
-
-[data-color-scheme="light"] .postprofile-top.promess a.button:hover,
-[data-color-scheme="light"] .postprofile-top.promess a.button1:hover,
-[data-color-scheme="light"] .postprofile-top.promess a.button2:hover,
-[data-color-scheme="light"] .postprofile-top.promess a[class*="btn"]:hover,
-[data-color-scheme="light"] .postprofile-top.promess a[class*="button"]:hover{
-  background:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%)!important;
-  background-color:#ffe44d!important;
-  color:#7a0707!important;
-  border-color:#ab0e0e!important;
-}
-
-/* ===================== EXCLUSIONS IMPORTANTES ===================== */
-
-/* Notiffi ne doit pas être écrasé */
-[data-color-scheme="light"] #notiffi-panel button,
-[data-color-scheme="light"] #notiffi-panel a,
-[data-color-scheme="light"] .notiffi button,
-[data-color-scheme="light"] .notiffi a,
-[data-color-scheme="light"] [class*="notiffi"] button,
-[data-color-scheme="light"] [class*="notiffi"] a{
-  background:revert-layer;
-}
-
-/* Lecteur audio : garde son triangle et ses contrôles */
-[data-color-scheme="light"] .lb-player button,
-[data-color-scheme="light"] .lb-player a,
-[data-color-scheme="light"] .lb-player [class*="play"],
-[data-color-scheme="light"] .lb-player [class*="pause"],
-[data-color-scheme="light"] .lb-player [class*="audio"]{
-  background:revert-layer;
-  color:inherit;
-  border-color:inherit;
-  box-shadow:inherit;
-}
-/* =========================================================
-   PATCH FINAL LIGHT — AJUSTEMENTS VISU
-   - triangle lecteur
-   - logo LEMEGETON plus lisible
-   - dropdown rouge
-   - bloc BABY rouge + texte blanc
-   - liens utilitaires : texte rouge / hover jaune
-   Sans casser les boutons forum déjà corrigés
-========================================================= */
-
-[data-color-scheme="light"]{
-  --lem-logo-readable:#d24a00;
-  --lem-logo-outline:#fff1d4;
-  --lem-dropdown-bg:#fff4e2;
-  --lem-dropdown-hover:#ffd400;
-  --lem-dropdown-border:rgba(171,14,14,.26);
-  --lem-soft-link-bg:#fff4e2;
-  --lem-soft-link-border:rgba(171,14,14,.22);
-}
-
-/* =========================================================
-   1) TITRE LEMEGETON PLUS LISIBLE
-========================================================= */
-
-[data-color-scheme="light"] .lb-banner .lb-title,
-[data-color-scheme="light"] .lb-banner [class*="logo"],
-[data-color-scheme="light"] .lb-banner [class*="title"],
-[data-color-scheme="light"] .lb-banner [class*="titre"],
-[data-color-scheme="light"] [class*="banner"] .lb-title,
-[data-color-scheme="light"] [class*="banner"] [class*="logo"]{
-  color:var(--lem-logo-readable)!important;
-  -webkit-text-fill-color:var(--lem-logo-readable)!important;
-  -webkit-text-stroke:1px var(--lem-logo-outline)!important;
-  text-stroke:1px var(--lem-logo-outline)!important;
-  text-shadow:
-    0 1px 0 rgba(255,241,212,.85),
-    0 0 8px rgba(210,74,0,.10)!important;
-  filter:none!important;
-}
-
-/* =========================================================
-   2) TRIANGLE DE LECTURE — LE RESTAURER
-========================================================= */
-
-/* On neutralise le fond bouton sur le bouton play sans masquer son icône */
-[data-color-scheme="light"] .lb-player [class*="play"],
-[data-color-scheme="light"] .lb-player button[class*="play"],
-[data-color-scheme="light"] .lb-player a[class*="play"],
-[data-color-scheme="light"] [class*="player"] [class*="play"],
-[data-color-scheme="light"] [class*="audio"] [class*="play"]{
-  background:transparent!important;
-  background-image:none!important;
-  border:0!important;
-  box-shadow:none!important;
-  color:transparent!important;
-  position:relative!important;
-}
-
-/* On force le triangle visible */
-[data-color-scheme="light"] .lb-player [class*="play"]::before,
-[data-color-scheme="light"] .lb-player button[class*="play"]::before,
-[data-color-scheme="light"] .lb-player a[class*="play"]::before,
-[data-color-scheme="light"] [class*="player"] [class*="play"]::before,
-[data-color-scheme="light"] [class*="audio"] [class*="play"]::before{
-  content:""!important;
-  display:block!important;
-  width:0!important;
-  height:0!important;
-  border-style:solid!important;
-  border-width:9px 0 9px 15px!important;
-  border-color:transparent transparent transparent var(--lem-red-main)!important;
-  margin:auto!important;
-  position:relative!important;
-}
-
-/* Au cas où un ::after parasite le masque */
-[data-color-scheme="light"] .lb-player [class*="play"]::after,
-[data-color-scheme="light"] .lb-player button[class*="play"]::after,
-[data-color-scheme="light"] .lb-player a[class*="play"]::after,
-[data-color-scheme="light"] [class*="player"] [class*="play"]::after,
-[data-color-scheme="light"] [class*="audio"] [class*="play"]::after{
-  background:none!important;
-  box-shadow:none!important;
-  border:0!important;
-}
-
-/* =========================================================
-   3) MENU DÉROULANT — PLUS NOIR, MAIS ROUGE/CLAIR
-========================================================= */
-
-/* Variables si le menu custom les utilise */
-[data-color-scheme="light"]{
-  --pm-menu-bg:var(--lem-dropdown-bg);
-  --pm-menu-hover-bg:rgba(255,212,0,.20);
-  --pm-menu-border:var(--lem-dropdown-border);
-  --pm-menu-hover-border:rgba(171,14,14,.38);
-  --nav-dropdown-bg:var(--lem-dropdown-bg);
-  --nav-dropdown-hover-bg:rgba(255,212,0,.20);
-  --nav-border-dropdown:var(--lem-dropdown-border);
-}
-
-/* Fonds des sous-menus */
-[data-color-scheme="light"] #custom-navbar li ul,
-[data-color-scheme="light"] .custom-navbar li ul,
-[data-color-scheme="light"] #page-header .navbar li ul,
-[data-color-scheme="light"] .navbar li ul,
-[data-color-scheme="light"] .mainmenu li ul,
-[data-color-scheme="light"] li[class*="dropdown"] ul,
-[data-color-scheme="light"] li[class*="submenu"] ul{
-  background:var(--lem-dropdown-bg)!important;
-  border:1px solid var(--lem-dropdown-border)!important;
-  box-shadow:0 10px 22px rgba(122,40,8,.12)!important;
-}
-
-/* Liens du dropdown */
-[data-color-scheme="light"] #custom-navbar li ul a,
-[data-color-scheme="light"] .custom-navbar li ul a,
-[data-color-scheme="light"] #page-header .navbar li ul a,
-[data-color-scheme="light"] .navbar li ul a,
-[data-color-scheme="light"] .mainmenu li ul a,
-[data-color-scheme="light"] li[class*="dropdown"] ul a,
-[data-color-scheme="light"] li[class*="submenu"] ul a{
-  background:transparent!important;
-  color:var(--lem-red-main)!important;
-  border:0!important;
-  box-shadow:none!important;
-  text-shadow:none!important;
-}
-
-/* Hover dropdown */
-[data-color-scheme="light"] #custom-navbar li ul a:hover,
-[data-color-scheme="light"] .custom-navbar li ul a:hover,
-[data-color-scheme="light"] #page-header .navbar li ul a:hover,
-[data-color-scheme="light"] .navbar li ul a:hover,
-[data-color-scheme="light"] .mainmenu li ul a:hover,
-[data-color-scheme="light"] li[class*="dropdown"] ul a:hover,
-[data-color-scheme="light"] li[class*="submenu"] ul a:hover{
-  background:rgba(255,212,0,.20)!important;
-  color:var(--lem-orange-flash)!important;
-}
-
-/* Petite flèche / caret si présente */
-[data-color-scheme="light"] #custom-navbar .caret,
-[data-color-scheme="light"] .custom-navbar .caret,
-[data-color-scheme="light"] #page-header .navbar .caret,
-[data-color-scheme="light"] .navbar .caret{
-  color:var(--lem-red-main)!important;
-}
-
-/* =========================================================
-   4) CASE BABY — FOND ROUGE / TEXTE BLANC
-========================================================= */
-
-[data-color-scheme="light"] .baby,
-[data-color-scheme="light"] .baby-card,
-[data-color-scheme="light"] .baby-box,
-[data-color-scheme="light"] .babybloc,
-[data-color-scheme="light"] [class*="baby-card"],
-[data-color-scheme="light"] [class*="baby-box"],
-[data-color-scheme="light"] [class*="baby-bloc"],
-[data-color-scheme="light"] [class*="babybloc"]{
-  background:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%)!important;
-  border:1px solid #8d0909!important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.10),
-    0 10px 22px rgba(171,14,14,.18)!important;
-}
-
-[data-color-scheme="light"] .baby *,
-[data-color-scheme="light"] .baby-card *,
-[data-color-scheme="light"] .baby-box *,
-[data-color-scheme="light"] .babybloc *,
-[data-color-scheme="light"] [class*="baby-card"] *,
-[data-color-scheme="light"] [class*="baby-box"] *,
-[data-color-scheme="light"] [class*="baby-bloc"] *,
-[data-color-scheme="light"] [class*="babybloc"] *{
-  color:#fffdf7!important;
-  text-shadow:none!important;
-}
-
-/* =========================================================
-   5) LIENS ROUGE/JAUNE TROP AGRESSIFS
-   -> texte rouge, fond clair, hover jaune
-   Sans toucher les vrais boutons forum
-========================================================= */
-
-/* Liens utilitaires de bas de page / navigation secondaire */
-[data-color-scheme="light"] #page-footer .linklist a,
-[data-color-scheme="light"] .linklist.bottom a,
-[data-color-scheme="light"] .linklist.navlinks a,
-[data-color-scheme="light"] .navlinks a,
-[data-color-scheme="light"] .breadcrumbs a,
-[data-color-scheme="light"] .jumpbox a,
-[data-color-scheme="light"] .panel a.gen,
-[data-color-scheme="light"] .panel a.genmed{
-  background:var(--lem-soft-link-bg)!important;
-  background-image:none!important;
-  border:1px solid var(--lem-soft-link-border)!important;
-  color:var(--lem-red-main)!important;
-  box-shadow:none!important;
-  text-shadow:none!important;
-}
-
-/* Hover jaune */
-[data-color-scheme="light"] #page-footer .linklist a:hover,
-[data-color-scheme="light"] .linklist.bottom a:hover,
-[data-color-scheme="light"] .linklist.navlinks a:hover,
-[data-color-scheme="light"] .navlinks a:hover,
-[data-color-scheme="light"] .breadcrumbs a:hover,
-[data-color-scheme="light"] .jumpbox a:hover,
-[data-color-scheme="light"] .panel a.gen:hover,
-[data-color-scheme="light"] .panel a.genmed:hover{
-  background:var(--lem-yellow-hover)!important;
-  border-color:var(--lem-yellow-hover)!important;
-  color:var(--lem-red-dark)!important;
-}
-
-/* Sécurité : ne PAS casser les boutons forum refaits */
-[data-color-scheme="light"] a.button1,
-[data-color-scheme="light"] a.button2,
-[data-color-scheme="light"] button.button1,
-[data-color-scheme="light"] button.button2,
-[data-color-scheme="light"] input.button1,
-[data-color-scheme="light"] input.button2,
-[data-color-scheme="light"] .sub-header-buttons a,
-[data-color-scheme="light"] .topic-actions a,
-[data-color-scheme="light"] .post-options a,
-[data-color-scheme="light"] .post-buttons a,
-[data-color-scheme="light"] a[href*="mode=reply"],
-[data-color-scheme="light"] a[href*="mode=newtopic"],
-[data-color-scheme="light"] a[href*="mode=editpost"],
-[data-color-scheme="light"] a[href*="mode=quote"],
-[data-color-scheme="light"] a[href*="mode=delete"],
-[data-color-scheme="light"] a[href*="mode=ip"],
-[data-color-scheme="light"] a[href*="mode=report"]{
-  background:var(--lem-red-main)!important;
-  color:var(--lem-yellow-text)!important;
-  border-color:var(--lem-red-main)!important;
-}
-
-[data-color-scheme="light"] a.button1:hover,
-[data-color-scheme="light"] a.button2:hover,
-[data-color-scheme="light"] button.button1:hover,
-[data-color-scheme="light"] button.button2:hover,
-[data-color-scheme="light"] input.button1:hover,
-[data-color-scheme="light"] input.button2:hover,
-[data-color-scheme="light"] .sub-header-buttons a:hover,
-[data-color-scheme="light"] .topic-actions a:hover,
-[data-color-scheme="light"] .post-options a:hover,
-[data-color-scheme="light"] .post-buttons a:hover,
-[data-color-scheme="light"] a[href*="mode=reply"]:hover,
-[data-color-scheme="light"] a[href*="mode=newtopic"]:hover,
-[data-color-scheme="light"] a[href*="mode=editpost"]:hover,
-[data-color-scheme="light"] a[href*="mode=quote"]:hover,
-[data-color-scheme="light"] a[href*="mode=delete"]:hover,
-[data-color-scheme="light"] a[href*="mode=ip"]:hover,
-[data-color-scheme="light"] a[href*="mode=report"]:hover{
-  background:var(--lem-yellow-hover)!important;
-  color:var(--lem-red-dark)!important;
-  border-color:var(--lem-yellow-hover)!important;
 }

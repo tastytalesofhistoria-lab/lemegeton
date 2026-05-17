@@ -2844,6 +2844,9 @@
   --fa-shadow-main:
     0 12px 32px rgba(145,65,12,.14),
     0 0 18px rgba(255,168,36,.12);
+   --fa-body-color:#fff0cf;
+--fa-wrap-color:#ffe0a3;
+--fa-container-color:#fff7df;
 /* ---------- TYPOGRAPHIE GLOBALE LIGHT ---------- */
 
 --fa-text-main:#4a2812;

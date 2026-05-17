@@ -8192,3 +8192,571 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
 /* =========================================================
    FIN PATCH FINAL LIGHT — CHRONOLOGIE MODERNE
 ========================================================= */
+
+/* =========================================================
+   PATCH FINAL LIGHT — PALETTE TEXTE DIVERSIFIÉE
+   Objectif : éviter le tout rouge/noir en mode clair
+   - textes principaux brun chaud, pas noir pur
+   - titres de modules différenciés par ambiance
+   - header LEMEGETON remis en rouge
+   - aucun bleu/cyan ajouté
+========================================================= */
+
+[data-color-scheme="light"]{
+  /* Palette texte commune */
+  --edison-ink:#4a2812;
+  --edison-ink-strong:#30170a;
+  --edison-ink-soft:#7a4b2b;
+  --edison-muted:#9a6b3f;
+
+  --edison-red:#ab0e0e;
+  --edison-red-soft:#c01835;
+  --edison-copper:#c96512;
+  --edison-orange:#d76a00;
+  --edison-gold:#b97800;
+  --edison-olive:#5f6b1d;
+  --edison-plum:#7d2e59;
+  --edison-mauve:#8a2f63;
+  --edison-rust:#9a3f10;
+  --edison-cream:#fff4df;
+
+  /* Variables Forumactif globales */
+  --fa-text-main:var(--edison-ink);
+  --fa-text-soft:var(--edison-ink-soft);
+  --fa-text-muted:var(--edison-muted);
+  --fa-title-main:var(--edison-rust);
+  --fa-title-strong:var(--edison-red);
+  --fa-link:var(--edison-copper);
+  --fa-link-hover:var(--edison-red-soft);
+
+  /* Variables Promess / sujets */
+  --pm-text:var(--edison-ink);
+  --pm-white:var(--edison-ink-strong);
+  --pm-muted:var(--edison-ink-soft);
+  --pm-page-title:var(--edison-rust);
+  --pm-page-title-hover:var(--edison-red-soft);
+  --pm-nav:var(--edison-copper);
+  --pm-nav-hover:var(--edison-red-soft);
+  --pm-postbody-text:var(--edison-ink);
+  --pm-message-strong:var(--edison-ink-strong);
+
+  /* Variables par annexes / pages spéciales */
+  --adms-text:var(--edison-ink);
+  --adms-white:var(--edison-ink-strong);
+  --adms-muted:var(--edison-ink-soft);
+  --adms-cyan:var(--edison-copper);
+  --adms-cyan-soft:var(--edison-orange);
+  --adms-pink:var(--edison-red-soft);
+  --adms-green:var(--edison-olive);
+  --adms-purple:var(--edison-plum);
+  --adms-gold:var(--edison-gold);
+
+  --ovld-text:var(--edison-ink);
+  --ovld-white:var(--edison-ink-strong);
+  --ovld-muted:var(--edison-ink-soft);
+  --ovld-cyan:var(--edison-copper);
+  --ovld-cyan-soft:var(--edison-orange);
+  --ovld-gold:var(--edison-gold);
+  --ovld-red:var(--edison-red);
+  --ovld-pink:var(--edison-red-soft);
+
+  --stf-text:var(--edison-ink);
+  --stf-white:var(--edison-ink-strong);
+  --stf-muted:var(--edison-ink-soft);
+  --stf-cyan:var(--edison-copper);
+  --stf-pink:var(--edison-plum);
+
+  --grpm-text:var(--edison-ink);
+  --grpm-white:var(--edison-ink-strong);
+  --grpm-muted:var(--edison-ink-soft);
+  --grpm-cyan:var(--edison-copper);
+  --grpm-green:var(--edison-olive);
+  --grpm-purple:var(--edison-plum);
+  --grpm-gold:var(--edison-gold);
+
+  --bst-text:var(--edison-ink);
+  --bst-white:var(--edison-ink-strong);
+  --bst-muted:var(--edison-ink-soft);
+  --bst-cyan:var(--edison-copper);
+  --bst-earth:var(--edison-olive);
+  --bst-purple:var(--edison-plum);
+  --bst-gold:var(--edison-gold);
+
+  --bstp-text:var(--edison-ink);
+  --bstp-white:var(--edison-ink-strong);
+  --bstp-muted:var(--edison-ink-soft);
+  --bstp-cyan:var(--edison-copper);
+  --bstp-green:var(--edison-olive);
+  --bstp-purple:var(--edison-plum);
+  --bstp-gold:var(--edison-gold);
+
+  --ent-text:var(--edison-ink);
+  --ent-white:var(--edison-ink-strong);
+  --ent-muted:var(--edison-ink-soft);
+  --ent-cyan:var(--edison-copper);
+  --ent-earth:var(--edison-olive);
+  --ent-purple:var(--edison-plum);
+  --ent-gold:var(--edison-gold);
+
+  --pwrm-text:var(--edison-ink);
+  --pwrm-white:var(--edison-ink-strong);
+  --pwrm-muted:var(--edison-ink-soft);
+  --pwrm-cyan:var(--edison-copper);
+  --pwrm-green:var(--edison-olive);
+  --pwrm-purple:var(--edison-plum);
+  --pwrm-gold:var(--edison-gold);
+
+  --ctxm-text:var(--edison-ink);
+  --ctxm-white:var(--edison-ink-strong);
+  --ctxm-muted:var(--edison-ink-soft);
+  --ctxm-cyan:var(--edison-copper);
+  --ctxm-creation:var(--edison-copper);
+  --ctxm-vie:var(--edison-gold);
+  --ctxm-erreur:var(--edison-plum);
+  --ctxm-eden:var(--edison-red-soft);
+  --ctxm-serpent:var(--edison-olive);
+  --ctxm-punition:var(--edison-red);
+  --ctxm-royaumes:var(--edison-orange);
+  --ctxm-aujourdhui:var(--edison-rust);
+
+  --chro-text:var(--edison-ink);
+  --chro-white:var(--edison-ink-strong);
+  --chro-muted:var(--edison-ink-soft);
+  --chro-cyan:var(--edison-copper);
+  --chro-gold:var(--edison-gold);
+  --chro-green:var(--edison-olive);
+  --chro-purple:var(--edison-plum);
+  --chro-carmin:var(--edison-red-soft);
+
+  --intrm-text:var(--edison-ink);
+  --intrm-white:var(--edison-ink-strong);
+  --intrm-muted:var(--edison-ink-soft);
+  --intrm-cyan:var(--edison-copper);
+  --intrm-gold:var(--edison-gold);
+  --intrm-green:var(--edison-olive);
+  --intrm-purple:var(--edison-plum);
+  --intrm-red:var(--edison-red);
+
+  --qst-text:var(--edison-ink);
+  --qst-white:var(--edison-ink-strong);
+  --qst-muted:var(--edison-ink-soft);
+  --qst-cyan:var(--edison-copper);
+  --qst-gold:var(--edison-gold);
+  --qst-lime:var(--edison-olive);
+  --qst-purple:var(--edison-plum);
+
+  --faq-text:var(--edison-ink);
+  --faq-white:var(--edison-ink-strong);
+  --faq-muted:var(--edison-ink-soft);
+  --faq-cyan:var(--edison-copper);
+  --faq-gold:var(--edison-gold);
+  --faq-green:var(--edison-olive);
+  --faq-purple:var(--edison-plum);
+
+  --predef-text:var(--edison-ink);
+  --predef-white:var(--edison-ink-strong);
+  --predef-muted:var(--edison-ink-soft);
+  --predef-cyan:var(--edison-copper);
+  --predef-gold:var(--edison-gold);
+  --predef-lime:var(--edison-olive);
+  --predef-purple:var(--edison-plum);
+
+  --prel-text:var(--edison-ink);
+  --prel-white:var(--edison-ink-strong);
+  --prel-muted:var(--edison-ink-soft);
+  --prel-cyan:var(--edison-copper);
+  --prel-gold:var(--edison-gold);
+
+  --pnjang-text:var(--edison-ink);
+  --pnjang-white:var(--edison-ink-strong);
+  --pnjang-cyan:var(--edison-copper);
+  --pnjang-gold:var(--edison-gold);
+  --pnjang-lime:var(--edison-olive);
+  --pnjang-purple:var(--edison-plum);
+
+  --pnjdem-text:var(--edison-ink);
+  --pnjdem-white:var(--edison-ink-strong);
+  --pnjdem-cyan:var(--edison-copper);
+  --pnjdem-gold:var(--edison-gold);
+  --pnjdem-lime:var(--edison-olive);
+  --pnjdem-purple:var(--edison-plum);
+
+  --pnjd-text:var(--edison-ink);
+  --pnjd-white:var(--edison-ink-strong);
+  --pnjd-muted:var(--edison-ink-soft);
+  --pnjd-cyan:var(--edison-copper);
+  --pnjd-gold:var(--edison-gold);
+  --pnjd-lime:var(--edison-olive);
+  --pnjd-purple:var(--edison-plum);
+
+  --mgl-text:var(--edison-ink);
+  --mgl-white:var(--edison-ink-strong);
+  --mgl-muted:var(--edison-ink-soft);
+  --mgl-cyan:var(--edison-copper);
+  --mgl-pink:var(--edison-red-soft);
+
+  --vp-text:var(--edison-ink);
+  --vp-white:var(--edison-ink-strong);
+  --vp-muted:var(--edison-ink-soft);
+  --vp-cyan:var(--edison-copper);
+  --vp-purple:var(--edison-plum);
+
+  --ml-text:var(--edison-ink);
+  --ml-white:var(--edison-ink-strong);
+  --ml-muted:var(--edison-ink-soft);
+  --ml-cyan:var(--edison-copper);
+  --ml-purple:var(--edison-plum);
+
+  /* Header LEMEGETON : demandé en rouge */
+  --lb-logo-main:var(--edison-red);
+  --lb-logo-stroke:#fff0cf;
+  --lb-logo-shadow:rgba(171,14,14,.22);
+}
+
+/* Texte global light : brun chaud au lieu de noir pur */
+[data-color-scheme="light"] body,
+[data-color-scheme="light"] #wrap,
+[data-color-scheme="light"] #main-content,
+[data-color-scheme="light"] .postbody,
+[data-color-scheme="light"] .content,
+[data-color-scheme="light"] .post-content,
+[data-color-scheme="light"] p,
+[data-color-scheme="light"] li,
+[data-color-scheme="light"] td,
+[data-color-scheme="light"] th,
+[data-color-scheme="light"] label,
+[data-color-scheme="light"] .gen,
+[data-color-scheme="light"] .genmed,
+[data-color-scheme="light"] .gensmall{
+  color:var(--edison-ink)!important;
+}
+
+[data-color-scheme="light"] .small,
+[data-color-scheme="light"] .meta,
+[data-color-scheme="light"] .date,
+[data-color-scheme="light"] .author,
+[data-color-scheme="light"] .details,
+[data-color-scheme="light"] .desc,
+[data-color-scheme="light"] .legend,
+[data-color-scheme="light"] .lastpost,
+[data-color-scheme="light"] .forum_lastpost{
+  color:var(--edison-ink-soft)!important;
+}
+
+/* Header LEMEGETON en rouge, lisible sur le gif */
+[data-color-scheme="light"] .lb-title,
+[data-color-scheme="light"] .lb-logo,
+[data-color-scheme="light"] .lb-banner .lb-title,
+[data-color-scheme="light"] .lb-banner [class*="logo"],
+[data-color-scheme="light"] .lb-banner [class*="title"],
+[data-color-scheme="light"] #lpa .lpa-logo,
+[data-color-scheme="light"] #lpa .lpa-title-main,
+[data-color-scheme="light"] #lpa [class*="logo-main"]{
+  color:var(--edison-red)!important;
+  -webkit-text-fill-color:var(--edison-red)!important;
+  -webkit-text-stroke:1px #fff0cf!important;
+  text-shadow:
+    0 1px 0 rgba(255,240,207,.86),
+    0 0 8px rgba(171,14,14,.20)!important;
+  filter:none!important;
+}
+
+/* Titres par section : palette variée */
+[data-color-scheme="light"] .adms-title,
+[data-color-scheme="light"] .adms h1,
+[data-color-scheme="light"] .adms h2{color:var(--edison-red-soft)!important;}
+[data-color-scheme="light"] .adms-kicker,
+[data-color-scheme="light"] .adms-bloc-titre{color:var(--edison-copper)!important;}
+
+[data-color-scheme="light"] .ovld-title,
+[data-color-scheme="light"] .ovld h1,
+[data-color-scheme="light"] .ovld h2{color:var(--edison-red)!important;}
+[data-color-scheme="light"] .ovld-kicker,
+[data-color-scheme="light"] .ovld-subtitle{color:var(--edison-gold)!important;}
+
+[data-color-scheme="light"] .stf-title,
+[data-color-scheme="light"] .stf-mgl-title,
+[data-color-scheme="light"] .stf h1,
+[data-color-scheme="light"] .stf h2{color:var(--edison-plum)!important;}
+[data-color-scheme="light"] .stf-kicker,
+[data-color-scheme="light"] .stf-mgl-kicker,
+[data-color-scheme="light"] .stf-card-title{color:var(--edison-copper)!important;}
+
+[data-color-scheme="light"] .grpm-title,
+[data-color-scheme="light"] .grpm h1,
+[data-color-scheme="light"] .grpm h2{color:var(--edison-plum)!important;}
+[data-color-scheme="light"] .grpm-kicker,
+[data-color-scheme="light"] .grpm-zone-title,
+[data-color-scheme="light"] .grpm-card-title{color:var(--edison-olive)!important;}
+
+[data-color-scheme="light"] .bst-title,
+[data-color-scheme="light"] .bstp-title,
+[data-color-scheme="light"] .bst h1,
+[data-color-scheme="light"] .bst h2,
+[data-color-scheme="light"] .bstp h1,
+[data-color-scheme="light"] .bstp h2{color:var(--edison-olive)!important;}
+[data-color-scheme="light"] .bst-kicker,
+[data-color-scheme="light"] .bstp-kicker,
+[data-color-scheme="light"] .bst-card-title,
+[data-color-scheme="light"] .bstp-card-title{color:var(--edison-rust)!important;}
+
+[data-color-scheme="light"] .ent-title,
+[data-color-scheme="light"] .ent h1,
+[data-color-scheme="light"] .ent h2{color:var(--edison-plum)!important;}
+[data-color-scheme="light"] .ent-kicker,
+[data-color-scheme="light"] .ent-section-title{color:var(--edison-gold)!important;}
+
+[data-color-scheme="light"] .pwrm-title,
+[data-color-scheme="light"] .pwrm h1,
+[data-color-scheme="light"] .pwrm h2{color:var(--edison-mauve)!important;}
+[data-color-scheme="light"] .pwrm-kicker,
+[data-color-scheme="light"] .pwrm-section-title,
+[data-color-scheme="light"] .pwrm-card-title{color:var(--edison-copper)!important;}
+
+[data-color-scheme="light"] .ctxm-title,
+[data-color-scheme="light"] .ctxm h1,
+[data-color-scheme="light"] .ctxm h2{color:var(--edison-copper)!important;}
+[data-color-scheme="light"] .ctxm-kicker,
+[data-color-scheme="light"] .ctxm-card-title,
+[data-color-scheme="light"] .ctxm-section-title{color:var(--edison-plum)!important;}
+
+[data-color-scheme="light"] .chro-title,
+[data-color-scheme="light"] .chro h1,
+[data-color-scheme="light"] .chro h2,
+[data-color-scheme="light"] .chro-era-title{color:var(--edison-rust)!important;}
+[data-color-scheme="light"] .chro-date{color:var(--edison-red)!important;}
+[data-color-scheme="light"] .chro-event-title,
+[data-color-scheme="light"] .chro-content h3,
+[data-color-scheme="light"] .chro-content h4{color:var(--edison-copper)!important;}
+
+[data-color-scheme="light"] .intrm-title,
+[data-color-scheme="light"] .intrm h1,
+[data-color-scheme="light"] .intrm h2{color:var(--edison-red-soft)!important;}
+[data-color-scheme="light"] .intrm-kicker,
+[data-color-scheme="light"] .intrm-card-title,
+[data-color-scheme="light"] .intrm-section-title{color:var(--edison-gold)!important;}
+
+[data-color-scheme="light"] .qst-title,
+[data-color-scheme="light"] .qst h1,
+[data-color-scheme="light"] .qst h2{color:var(--edison-rust)!important;}
+[data-color-scheme="light"] .qst-kicker,
+[data-color-scheme="light"] .qst-meta-label{color:var(--edison-plum)!important;}
+
+[data-color-scheme="light"] .faq-title,
+[data-color-scheme="light"] .faq-mgl-title,
+[data-color-scheme="light"] .faq h1,
+[data-color-scheme="light"] .faq h2{color:var(--edison-copper)!important;}
+[data-color-scheme="light"] .faq-kicker,
+[data-color-scheme="light"] .faq-section-title{color:var(--edison-olive)!important;}
+
+[data-color-scheme="light"] .predef-title,
+[data-color-scheme="light"] .prel-title,
+[data-color-scheme="light"] .pl-title,
+[data-color-scheme="light"] .predef h1,
+[data-color-scheme="light"] .predef h2,
+[data-color-scheme="light"] .prel h1,
+[data-color-scheme="light"] .prel h2{color:var(--edison-gold)!important;}
+[data-color-scheme="light"] .predef-kicker,
+[data-color-scheme="light"] .prel-kicker,
+[data-color-scheme="light"] .pl-kicker{color:var(--edison-red-soft)!important;}
+
+[data-color-scheme="light"] .pnjang-title,
+[data-color-scheme="light"] .pnjdem-title,
+[data-color-scheme="light"] .pnjd-title,
+[data-color-scheme="light"] .pnjang h1,
+[data-color-scheme="light"] .pnjdem h1,
+[data-color-scheme="light"] .pnjd h1{color:var(--edison-mauve)!important;}
+[data-color-scheme="light"] .pnjang-kicker,
+[data-color-scheme="light"] .pnjdem-kicker,
+[data-color-scheme="light"] .pnjd-kicker{color:var(--edison-copper)!important;}
+
+[data-color-scheme="light"] .mgl-title,
+[data-color-scheme="light"] .mgl h1,
+[data-color-scheme="light"] .mgl h2{color:var(--edison-red-soft)!important;}
+[data-color-scheme="light"] .mgl-kicker,
+[data-color-scheme="light"] .mgl-panel-title{color:var(--edison-copper)!important;}
+
+[data-color-scheme="light"] .vp-title,
+[data-color-scheme="light"] .vp h1,
+[data-color-scheme="light"] .vp h2,
+[data-color-scheme="light"] .ml-title,
+[data-color-scheme="light"] .ml h1,
+[data-color-scheme="light"] .ml h2{color:var(--edison-rust)!important;}
+[data-color-scheme="light"] .vp-kicker,
+[data-color-scheme="light"] .ml-kicker{color:var(--edison-plum)!important;}
+
+/* Textes internes : éviter le rouge/noir systématique */
+[data-color-scheme="light"] .adms,
+[data-color-scheme="light"] .ovld,
+[data-color-scheme="light"] .stf,
+[data-color-scheme="light"] .stf-mgl,
+[data-color-scheme="light"] .grpm,
+[data-color-scheme="light"] .bst,
+[data-color-scheme="light"] .bstp,
+[data-color-scheme="light"] .ent,
+[data-color-scheme="light"] .pwrm,
+[data-color-scheme="light"] .ctxm,
+[data-color-scheme="light"] .chro,
+[data-color-scheme="light"] .intrm,
+[data-color-scheme="light"] .qst,
+[data-color-scheme="light"] .faq,
+[data-color-scheme="light"] .predef,
+[data-color-scheme="light"] .prel,
+[data-color-scheme="light"] .pnjang,
+[data-color-scheme="light"] .pnjdem,
+[data-color-scheme="light"] .pnjd,
+[data-color-scheme="light"] .mgl,
+[data-color-scheme="light"] .vp,
+[data-color-scheme="light"] .ml{
+  color:var(--edison-ink)!important;
+}
+
+[data-color-scheme="light"] .adms p,
+[data-color-scheme="light"] .ovld p,
+[data-color-scheme="light"] .stf p,
+[data-color-scheme="light"] .stf-mgl p,
+[data-color-scheme="light"] .grpm p,
+[data-color-scheme="light"] .bst p,
+[data-color-scheme="light"] .bstp p,
+[data-color-scheme="light"] .ent p,
+[data-color-scheme="light"] .pwrm p,
+[data-color-scheme="light"] .ctxm p,
+[data-color-scheme="light"] .chro p,
+[data-color-scheme="light"] .intrm p,
+[data-color-scheme="light"] .qst p,
+[data-color-scheme="light"] .faq p,
+[data-color-scheme="light"] .predef p,
+[data-color-scheme="light"] .prel p,
+[data-color-scheme="light"] .pnjang p,
+[data-color-scheme="light"] .pnjdem p,
+[data-color-scheme="light"] .pnjd p,
+[data-color-scheme="light"] .mgl p,
+[data-color-scheme="light"] .vp p,
+[data-color-scheme="light"] .ml p,
+[data-color-scheme="light"] .adms li,
+[data-color-scheme="light"] .ovld li,
+[data-color-scheme="light"] .stf li,
+[data-color-scheme="light"] .stf-mgl li,
+[data-color-scheme="light"] .grpm li,
+[data-color-scheme="light"] .bst li,
+[data-color-scheme="light"] .bstp li,
+[data-color-scheme="light"] .ent li,
+[data-color-scheme="light"] .pwrm li,
+[data-color-scheme="light"] .ctxm li,
+[data-color-scheme="light"] .chro li,
+[data-color-scheme="light"] .intrm li,
+[data-color-scheme="light"] .qst li,
+[data-color-scheme="light"] .faq li,
+[data-color-scheme="light"] .predef li,
+[data-color-scheme="light"] .prel li,
+[data-color-scheme="light"] .pnjang li,
+[data-color-scheme="light"] .pnjdem li,
+[data-color-scheme="light"] .pnjd li,
+[data-color-scheme="light"] .mgl li,
+[data-color-scheme="light"] .vp li,
+[data-color-scheme="light"] .ml li{
+  color:var(--edison-ink)!important;
+}
+
+/* Accents sans tout passer rouge */
+[data-color-scheme="light"] strong,
+[data-color-scheme="light"] b{
+  color:var(--edison-ink-strong)!important;
+}
+
+[data-color-scheme="light"] .adms a,
+[data-color-scheme="light"] .ovld a,
+[data-color-scheme="light"] .stf a,
+[data-color-scheme="light"] .stf-mgl a,
+[data-color-scheme="light"] .grpm a,
+[data-color-scheme="light"] .bst a,
+[data-color-scheme="light"] .bstp a,
+[data-color-scheme="light"] .ent a,
+[data-color-scheme="light"] .pwrm a,
+[data-color-scheme="light"] .ctxm a,
+[data-color-scheme="light"] .chro a,
+[data-color-scheme="light"] .intrm a,
+[data-color-scheme="light"] .qst a,
+[data-color-scheme="light"] .faq a,
+[data-color-scheme="light"] .predef a,
+[data-color-scheme="light"] .prel a,
+[data-color-scheme="light"] .pnjang a,
+[data-color-scheme="light"] .pnjdem a,
+[data-color-scheme="light"] .pnjd a,
+[data-color-scheme="light"] .mgl a,
+[data-color-scheme="light"] .vp a,
+[data-color-scheme="light"] .ml a{
+  color:var(--edison-copper)!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] .adms a:hover,
+[data-color-scheme="light"] .ovld a:hover,
+[data-color-scheme="light"] .stf a:hover,
+[data-color-scheme="light"] .stf-mgl a:hover,
+[data-color-scheme="light"] .grpm a:hover,
+[data-color-scheme="light"] .bst a:hover,
+[data-color-scheme="light"] .bstp a:hover,
+[data-color-scheme="light"] .ent a:hover,
+[data-color-scheme="light"] .pwrm a:hover,
+[data-color-scheme="light"] .ctxm a:hover,
+[data-color-scheme="light"] .chro a:hover,
+[data-color-scheme="light"] .intrm a:hover,
+[data-color-scheme="light"] .qst a:hover,
+[data-color-scheme="light"] .faq a:hover,
+[data-color-scheme="light"] .predef a:hover,
+[data-color-scheme="light"] .prel a:hover,
+[data-color-scheme="light"] .pnjang a:hover,
+[data-color-scheme="light"] .pnjdem a:hover,
+[data-color-scheme="light"] .pnjd a:hover,
+[data-color-scheme="light"] .mgl a:hover,
+[data-color-scheme="light"] .vp a:hover,
+[data-color-scheme="light"] .ml a:hover{
+  color:var(--edison-plum)!important;
+}
+
+/* Sécurité : pas de shadow bleu/cyan sur ces textes */
+[data-color-scheme="light"] .adms *,
+[data-color-scheme="light"] .ovld *,
+[data-color-scheme="light"] .stf *,
+[data-color-scheme="light"] .stf-mgl *,
+[data-color-scheme="light"] .grpm *,
+[data-color-scheme="light"] .bst *,
+[data-color-scheme="light"] .bstp *,
+[data-color-scheme="light"] .ent *,
+[data-color-scheme="light"] .pwrm *,
+[data-color-scheme="light"] .ctxm *,
+[data-color-scheme="light"] .chro *,
+[data-color-scheme="light"] .intrm *,
+[data-color-scheme="light"] .qst *,
+[data-color-scheme="light"] .faq *,
+[data-color-scheme="light"] .predef *,
+[data-color-scheme="light"] .prel *,
+[data-color-scheme="light"] .pnjang *,
+[data-color-scheme="light"] .pnjdem *,
+[data-color-scheme="light"] .pnjd *,
+[data-color-scheme="light"] .mgl *,
+[data-color-scheme="light"] .vp *,
+[data-color-scheme="light"] .ml *{
+  filter:none!important;
+}
+
+/* On ne touche pas aux boutons rouges/jaunes validés */
+[data-color-scheme="light"] a.button1,
+[data-color-scheme="light"] a.button2,
+[data-color-scheme="light"] button.button1,
+[data-color-scheme="light"] button.button2,
+[data-color-scheme="light"] input.button1,
+[data-color-scheme="light"] input.button2,
+[data-color-scheme="light"] .sub-header-buttons a,
+[data-color-scheme="light"] .topic-actions a,
+[data-color-scheme="light"] .post-options a,
+[data-color-scheme="light"] .post-buttons a,
+[data-color-scheme="light"] .fa_like_div.promess .rep-button,
+[data-color-scheme="light"] .fa_like_right.promess a{
+  color:var(--lem-yellow-text)!important;
+}
+
+/* =========================================================
+   FIN PATCH FINAL LIGHT — PALETTE TEXTE DIVERSIFIÉE
+========================================================= */

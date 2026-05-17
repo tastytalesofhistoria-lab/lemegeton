@@ -7247,4 +7247,384 @@ body::-webkit-scrollbar-corner,
   color:var(--lem-green-readable-hover)!important;
   border-color:rgba(var(--lem-green-readable-rgb),.62)!important;
 }
+/* =========================================================
+   PATCH LEMEGETON LIGHT — TITRES MONOTON + BARRES CATÉGORIES
+   Demande : gros titres Monoton en #ab0e0e + barres latérales rouges
+========================================================= */
 
+[data-color-scheme="light"]{
+  --lem-red-main:#ab0e0e;
+  --lem-red-main-rgb:171,14,14;
+  --lem-red-soft:rgba(171,14,14,.18);
+  --lem-red-border:rgba(171,14,14,.38);
+  --lem-red-border-strong:rgba(171,14,14,.62);
+
+  /* Index / catégories */
+  --idx-cyan:#ab0e0e;
+  --idx-cyan-soft:#ab0e0e;
+  --idx-blue:#ab0e0e;
+  --idx-gold:#ab0e0e;
+  --idx-gold-soft:#ab0e0e;
+  --idx-red:#ab0e0e;
+  --idx-border-cyan:rgba(171,14,14,.30);
+  --idx-border-cyan-soft:rgba(171,14,14,.18);
+  --idx-border-cyan-strong:rgba(171,14,14,.52);
+  --idx-shadow-cyan:rgba(171,14,14,.24);
+  --idx-title-glow:radial-gradient(circle,rgba(171,14,14,.20),transparent 70%);
+
+  /* Headers / PA / fiches qui utilisent le même gros lettrage */
+  --lpa-cyan:#ab0e0e;
+  --lpa-cyan-soft:#ab0e0e;
+  --lb-cyan:#ab0e0e;
+  --lb-cyan-soft:#ab0e0e;
+  --faq-cyan:#ab0e0e;
+  --faq-cyan-soft:#ab0e0e;
+  --grpm-cyan:#ab0e0e;
+  --grpm-cyan-soft:#ab0e0e;
+  --bst-cyan:#ab0e0e;
+  --bst-cyan-soft:#ab0e0e;
+  --ent-cyan:#ab0e0e;
+  --ent-cyan-soft:#ab0e0e;
+  --stf-cyan:#ab0e0e;
+  --stf-cyan-soft:#ab0e0e;
+  --avp-cyan:#ab0e0e;
+  --avp-cyan-soft:#ab0e0e;
+  --pwrm-cyan:#ab0e0e;
+  --pwrm-cyan-soft:#ab0e0e;
+  --intrm-cyan:#ab0e0e;
+  --intrm-cyan-soft:#ab0e0e;
+  --ctxm-cyan:#ab0e0e;
+  --ctxm-cyan-soft:#ab0e0e;
+  --chro-cyan:#ab0e0e;
+  --chro-cyan-soft:#ab0e0e;
+  --cul-cyan:#ab0e0e;
+  --cul-cyan-soft:#ab0e0e;
+  --lexm-cyan:#ab0e0e;
+  --lexm-cyan-soft:#ab0e0e;
+  --bstp-cyan:#ab0e0e;
+  --bstp-cyan-soft:#ab0e0e;
+  --sg-cyan:#ab0e0e;
+  --sg-cyan-soft:#ab0e0e;
+  --predef-cyan:#ab0e0e;
+  --predef-cyan-soft:#ab0e0e;
+  --prel-cyan:#ab0e0e;
+  --prel-cyan-soft:#ab0e0e;
+  --pl-cyan:#ab0e0e;
+  --pl-cyan-soft:#ab0e0e;
+  --dospnj-cyan:#ab0e0e;
+  --dospnj-cyan-2:#ab0e0e;
+  --mev1-cyan:#ab0e0e;
+  --mev1-cyan-2:#ab0e0e;
+  --mev2-cyan:#ab0e0e;
+  --mev2-cyan-soft:#ab0e0e;
+  --qst-cyan:#ab0e0e;
+  --qst-cyan-soft:#ab0e0e;
+}
+
+/* Gros titres type Monoton : couleur pleine + contour rouge */
+[data-color-scheme="light"] .idx-title,
+[data-color-scheme="light"] .idx-cat-title,
+[data-color-scheme="light"] .idx-forum-title,
+[data-color-scheme="light"] .category-title,
+[data-color-scheme="light"] .cat-title,
+[data-color-scheme="light"] .forum-category-title,
+[data-color-scheme="light"] .forabg .header h2,
+[data-color-scheme="light"] .forabg .header h2 a,
+[data-color-scheme="light"] .forabg .header .forumtitle,
+[data-color-scheme="light"] .forabg .header .forumtitle a,
+[data-color-scheme="light"] .qeel-title,
+[data-color-scheme="light"] .qeel-title-main,
+[data-color-scheme="light"] .qeel-loser,
+[data-color-scheme="light"] .qeel-loser-title,
+[data-color-scheme="light"] .lpa-title,
+[data-color-scheme="light"] .lpa-logo,
+[data-color-scheme="light"] .lb-title,
+[data-color-scheme="light"] .lb-logo,
+[data-color-scheme="light"] .faq-title,
+[data-color-scheme="light"] .grpm-title,
+[data-color-scheme="light"] .bst-title,
+[data-color-scheme="light"] .ent-title,
+[data-color-scheme="light"] .stf-mgl-title,
+[data-color-scheme="light"] .avp-title,
+[data-color-scheme="light"] .pwrm-title,
+[data-color-scheme="light"] .intrm-title,
+[data-color-scheme="light"] .ctxm-title,
+[data-color-scheme="light"] .chro-title,
+[data-color-scheme="light"] .cul-title,
+[data-color-scheme="light"] .lexm-title,
+[data-color-scheme="light"] .bstp-title,
+[data-color-scheme="light"] .scenguide-title,
+[data-color-scheme="light"] .predef-title,
+[data-color-scheme="light"] .prel-title,
+[data-color-scheme="light"] .pl-title,
+[data-color-scheme="light"] .dospnj-title,
+[data-color-scheme="light"] .mev1-title,
+[data-color-scheme="light"] .mev2-title,
+[data-color-scheme="light"] .qst-title,
+[data-color-scheme="light"] [class*="title"][style*="Monoton"],
+[data-color-scheme="light"] [class*="titre"][style*="Monoton"],
+[data-color-scheme="light"] [style*="font-family:Monoton"],
+[data-color-scheme="light"] [style*="font-family: Monoton"],
+[data-color-scheme="light"] [style*="font-family:'Monoton'"],
+[data-color-scheme="light"] [style*='font-family:"Monoton"']{
+  color:#ab0e0e!important;
+  -webkit-text-fill-color:#ab0e0e!important;
+  -webkit-text-stroke-color:#ab0e0e!important;
+  text-shadow:
+    0 1px 0 rgba(255,250,240,.70),
+    0 0 12px rgba(171,14,14,.18)!important;
+  background-image:none!important;
+}
+
+/* Si un gros titre est construit avec des spans internes */
+[data-color-scheme="light"] .idx-title *,
+[data-color-scheme="light"] .qeel-title *,
+[data-color-scheme="light"] .qeel-title-main *,
+[data-color-scheme="light"] .lpa-title *,
+[data-color-scheme="light"] .lb-title *,
+[data-color-scheme="light"] .faq-title *,
+[data-color-scheme="light"] .grpm-title *,
+[data-color-scheme="light"] .bst-title *,
+[data-color-scheme="light"] .ent-title *,
+[data-color-scheme="light"] .stf-mgl-title *,
+[data-color-scheme="light"] .avp-title *,
+[data-color-scheme="light"] .pwrm-title *,
+[data-color-scheme="light"] .intrm-title *,
+[data-color-scheme="light"] .ctxm-title *,
+[data-color-scheme="light"] .chro-title *,
+[data-color-scheme="light"] .cul-title *,
+[data-color-scheme="light"] .lexm-title *,
+[data-color-scheme="light"] .bstp-title *,
+[data-color-scheme="light"] .scenguide-title *,
+[data-color-scheme="light"] .predef-title *,
+[data-color-scheme="light"] .prel-title *,
+[data-color-scheme="light"] .pl-title *,
+[data-color-scheme="light"] .dospnj-title *,
+[data-color-scheme="light"] .mev1-title *,
+[data-color-scheme="light"] .mev2-title *,
+[data-color-scheme="light"] .qst-title *{
+  color:inherit!important;
+  -webkit-text-fill-color:inherit!important;
+  -webkit-text-stroke-color:inherit!important;
+}
+
+/* Barres verticales oranges autour du corps des catégories : passage au rouge */
+[data-color-scheme="light"] #wrap,
+[data-color-scheme="light"] #content-container,
+[data-color-scheme="light"] #container,
+[data-color-scheme="light"] #page-body,
+[data-color-scheme="light"] #main,
+[data-color-scheme="light"] #main-content,
+[data-color-scheme="light"] .forum-body,
+[data-color-scheme="light"] .forumbody,
+[data-color-scheme="light"] .bodyline,
+[data-color-scheme="light"] .categories-wrapper,
+[data-color-scheme="light"] .forabg,
+[data-color-scheme="light"] .forumbg{
+  border-left-color:rgba(171,14,14,.48)!important;
+  border-right-color:rgba(171,14,14,.48)!important;
+}
+
+[data-color-scheme="light"] .categories-wrapper,
+[data-color-scheme="light"] .forabg,
+[data-color-scheme="light"] .forumbg,
+[data-color-scheme="light"] .forum-body,
+[data-color-scheme="light"] .forumbody{
+  box-shadow:
+    inset 4px 0 0 rgba(171,14,14,.26),
+    inset -4px 0 0 rgba(171,14,14,.26),
+    0 12px 28px rgba(145,65,12,.10)!important;
+}
+
+/* Sécurité pour les séparateurs/bords de catégories qui étaient encore orange */
+[data-color-scheme="light"] .forabg::before,
+[data-color-scheme="light"] .forabg::after,
+[data-color-scheme="light"] .forumbg::before,
+[data-color-scheme="light"] .forumbg::after,
+[data-color-scheme="light"] .category::before,
+[data-color-scheme="light"] .category::after,
+[data-color-scheme="light"] .category-header::before,
+[data-color-scheme="light"] .category-header::after{
+  border-color:rgba(171,14,14,.48)!important;
+  background-color:rgba(171,14,14,.24)!important;
+}
+
+/* =========================================================
+   PATCH EDISON LIGHT — BOUTONS ROUGES / ICÔNES CLAIRES
+   Cible : boutons contact, édition, suppression, nouveau sujet, répondre
+========================================================= */
+
+[data-color-scheme="light"]{
+  --edison-button-red:#ab0e0e;
+  --edison-button-red-dark:#7f0808;
+  --edison-button-orange-hover:#ff8a1f;
+  --edison-button-canary:#ffe44d;
+  --edison-button-icon:#fff7d7;
+  --edison-button-border:rgba(171,14,14,.46);
+  --edison-button-shadow:rgba(171,14,14,.26);
+}
+
+/* Boutons texte : Poster / Répondre / Actions Forumactif */
+[data-color-scheme="light"] .button1,
+[data-color-scheme="light"] .button2,
+[data-color-scheme="light"] input.button1,
+[data-color-scheme="light"] input.button2,
+[data-color-scheme="light"] input[type="submit"],
+[data-color-scheme="light"] input[type="button"],
+[data-color-scheme="light"] input[type="reset"],
+[data-color-scheme="light"] a.button1,
+[data-color-scheme="light"] a.button2,
+[data-color-scheme="light"] .buttons a,
+[data-color-scheme="light"] .buttons button,
+[data-color-scheme="light"] .topic-actions .buttons a,
+[data-color-scheme="light"] .posting a,
+[data-color-scheme="light"] .posting button,
+[data-color-scheme="light"] .post-buttons a,
+[data-color-scheme="light"] .post-buttons button,
+[data-color-scheme="light"] .quickmod a,
+[data-color-scheme="light"] .quickmod button{
+  background:
+    radial-gradient(circle at top left,rgba(255,255,255,.18),transparent 38%),
+    linear-gradient(180deg,var(--edison-button-red),var(--edison-button-red-dark))!important;
+  background-color:var(--edison-button-red)!important;
+  border:1px solid var(--edison-button-border)!important;
+  color:var(--edison-button-canary)!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.38)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.10),
+    0 8px 18px var(--edison-button-shadow)!important;
+}
+
+/* Hover : jaune/orange, en gardant le texte lisible */
+[data-color-scheme="light"] .button1:hover,
+[data-color-scheme="light"] .button2:hover,
+[data-color-scheme="light"] input.button1:hover,
+[data-color-scheme="light"] input.button2:hover,
+[data-color-scheme="light"] input[type="submit"]:hover,
+[data-color-scheme="light"] input[type="button"]:hover,
+[data-color-scheme="light"] input[type="reset"]:hover,
+[data-color-scheme="light"] a.button1:hover,
+[data-color-scheme="light"] a.button2:hover,
+[data-color-scheme="light"] .buttons a:hover,
+[data-color-scheme="light"] .buttons button:hover,
+[data-color-scheme="light"] .topic-actions .buttons a:hover,
+[data-color-scheme="light"] .posting a:hover,
+[data-color-scheme="light"] .posting button:hover,
+[data-color-scheme="light"] .post-buttons a:hover,
+[data-color-scheme="light"] .post-buttons button:hover,
+[data-color-scheme="light"] .quickmod a:hover,
+[data-color-scheme="light"] .quickmod button:hover{
+  background:
+    radial-gradient(circle at top left,rgba(255,255,255,.28),transparent 42%),
+    linear-gradient(180deg,var(--edison-button-canary),var(--edison-button-orange-hover))!important;
+  background-color:var(--edison-button-canary)!important;
+  border-color:rgba(171,14,14,.64)!important;
+  color:var(--edison-button-red-dark)!important;
+  text-shadow:none!important;
+}
+
+/* Boutons icônes : édition / suppression / citation / profil / contact */
+[data-color-scheme="light"] .profile-icons a,
+[data-color-scheme="light"] .profile-icons span,
+[data-color-scheme="light"] ul.profile-icons li a,
+[data-color-scheme="light"] ul.profile-icons li span,
+[data-color-scheme="light"] .postprofile-contact a,
+[data-color-scheme="light"] .postprofile-contact button,
+[data-color-scheme="light"] .contact-icons a,
+[data-color-scheme="light"] .contact-icons button,
+[data-color-scheme="light"] .post .profile-icons a,
+[data-color-scheme="light"] .post .post-buttons a,
+[data-color-scheme="light"] .post .post-buttons button,
+[data-color-scheme="light"] .post a[href*="mode=quote"],
+[data-color-scheme="light"] .post a[href*="mode=editpost"],
+[data-color-scheme="light"] .post a[href*="mode=delete"],
+[data-color-scheme="light"] .post a[href*="mode=ip"],
+[data-color-scheme="light"] .post a[href*="mode=report"]{
+  background:
+    radial-gradient(circle at top left,rgba(255,255,255,.18),transparent 40%),
+    linear-gradient(180deg,var(--edison-button-red),var(--edison-button-red-dark))!important;
+  background-color:var(--edison-button-red)!important;
+  border:1px solid var(--edison-button-border)!important;
+  color:var(--edison-button-icon)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.12),
+    0 8px 16px var(--edison-button-shadow)!important;
+}
+
+/* Icônes internes : Ionicons, FontAwesome, SVG, images claires */
+[data-color-scheme="light"] .profile-icons a i,
+[data-color-scheme="light"] .profile-icons span i,
+[data-color-scheme="light"] ul.profile-icons li a i,
+[data-color-scheme="light"] .postprofile-contact a i,
+[data-color-scheme="light"] .contact-icons a i,
+[data-color-scheme="light"] .post-buttons a i,
+[data-color-scheme="light"] .post-buttons button i,
+[data-color-scheme="light"] .profile-icons a::before,
+[data-color-scheme="light"] .profile-icons span::before,
+[data-color-scheme="light"] .postprofile-contact a::before,
+[data-color-scheme="light"] .contact-icons a::before,
+[data-color-scheme="light"] .post-buttons a::before,
+[data-color-scheme="light"] .post-buttons button::before,
+[data-color-scheme="light"] .profile-icons svg,
+[data-color-scheme="light"] .postprofile-contact svg,
+[data-color-scheme="light"] .contact-icons svg,
+[data-color-scheme="light"] .post-buttons svg{
+  color:var(--edison-button-icon)!important;
+  fill:var(--edison-button-icon)!important;
+  stroke:var(--edison-button-icon)!important;
+  text-shadow:0 0 7px rgba(255,247,215,.42)!important;
+}
+
+[data-color-scheme="light"] .profile-icons img,
+[data-color-scheme="light"] .postprofile-contact img,
+[data-color-scheme="light"] .contact-icons img,
+[data-color-scheme="light"] .post-buttons img{
+  filter:brightness(0) invert(1) sepia(.16) saturate(1.8) hue-rotate(345deg)!important;
+  opacity:.96!important;
+}
+
+/* Hover des boutons icônes */
+[data-color-scheme="light"] .profile-icons a:hover,
+[data-color-scheme="light"] .profile-icons span:hover,
+[data-color-scheme="light"] ul.profile-icons li a:hover,
+[data-color-scheme="light"] ul.profile-icons li span:hover,
+[data-color-scheme="light"] .postprofile-contact a:hover,
+[data-color-scheme="light"] .postprofile-contact button:hover,
+[data-color-scheme="light"] .contact-icons a:hover,
+[data-color-scheme="light"] .contact-icons button:hover,
+[data-color-scheme="light"] .post .profile-icons a:hover,
+[data-color-scheme="light"] .post .post-buttons a:hover,
+[data-color-scheme="light"] .post .post-buttons button:hover,
+[data-color-scheme="light"] .post a[href*="mode=quote"]:hover,
+[data-color-scheme="light"] .post a[href*="mode=editpost"]:hover,
+[data-color-scheme="light"] .post a[href*="mode=delete"]:hover,
+[data-color-scheme="light"] .post a[href*="mode=ip"]:hover,
+[data-color-scheme="light"] .post a[href*="mode=report"]:hover{
+  background:
+    radial-gradient(circle at top left,rgba(255,255,255,.28),transparent 42%),
+    linear-gradient(180deg,var(--edison-button-canary),var(--edison-button-orange-hover))!important;
+  background-color:var(--edison-button-canary)!important;
+  border-color:rgba(171,14,14,.64)!important;
+  color:var(--edison-button-red-dark)!important;
+  transform:translateY(-1px);
+}
+
+[data-color-scheme="light"] .profile-icons a:hover i,
+[data-color-scheme="light"] .postprofile-contact a:hover i,
+[data-color-scheme="light"] .contact-icons a:hover i,
+[data-color-scheme="light"] .post-buttons a:hover i,
+[data-color-scheme="light"] .post-buttons button:hover i,
+[data-color-scheme="light"] .profile-icons a:hover::before,
+[data-color-scheme="light"] .postprofile-contact a:hover::before,
+[data-color-scheme="light"] .contact-icons a:hover::before,
+[data-color-scheme="light"] .post-buttons a:hover::before,
+[data-color-scheme="light"] .post-buttons button:hover::before,
+[data-color-scheme="light"] .profile-icons a:hover svg,
+[data-color-scheme="light"] .postprofile-contact a:hover svg,
+[data-color-scheme="light"] .contact-icons a:hover svg,
+[data-color-scheme="light"] .post-buttons a:hover svg{
+  color:var(--edison-button-red-dark)!important;
+  fill:var(--edison-button-red-dark)!important;
+  stroke:var(--edison-button-red-dark)!important;
+  text-shadow:none!important;
+}

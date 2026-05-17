@@ -6799,3 +6799,14 @@ iframe.pa-frame{
 [data-color-scheme="light"] .scenguide-footer{
   color:#8a5a32;
 }
+[data-color-scheme="light"] .scenguide-warning{
+  color:#4a2812;
+  background:
+    radial-gradient(circle at top left,rgba(192,24,53,.08),transparent 34%),
+    linear-gradient(90deg,rgba(255,246,240,.96),rgba(255,238,219,.96));
+}
+
+[data-color-scheme="light"] .scenguide-warning b{
+  color:#c01835;
+  text-shadow:none;
+}

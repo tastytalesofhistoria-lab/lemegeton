@@ -8882,3 +8882,338 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
    Note : la tentative "cases sujets blanches" sur viewtopicbody a été retirée.
    Les messages/profils/posts Forumactif conservent leur design précédent.
 ========================================================= */
+
+/* =========================================================
+   PATCH FINAL LIGHT — CODAGES MESSAGES BLANCS CHAUDS
+   Cible uniquement les codages internes postés : admin, staff,
+   overlord, groupes, bestiaire, entités, pouvoirs, contexte,
+   chronologie, intrigue, quêtes, FAQ, prédéfinis, PNJ, etc.
+   Ne touche pas au viewtopicbody natif : .post, .postbody,
+   .postprofile, .fa_like_div et boutons Forumactif.
+========================================================= */
+
+[data-color-scheme="light"]{
+  --edison-paper:#fffdf8;
+  --edison-paper-2:#fff8ea;
+  --edison-paper-3:#ffefd0;
+  --edison-warm-line:rgba(215,106,0,.24);
+  --edison-warm-line-soft:rgba(145,65,12,.13);
+  --edison-warm-shadow:0 14px 30px rgba(145,65,12,.10);
+  --edison-inner-shadow:inset 0 0 0 1px rgba(255,255,255,.52);
+
+  --edison-accent-red:#ab0e0e;
+  --edison-accent-carmin:#c01835;
+  --edison-accent-orange:#d76a00;
+  --edison-accent-gold:#d88a00;
+  --edison-accent-plum:#7d2e59;
+  --edison-accent-fuchsia:#b9236e;
+  --edison-accent-violet:#8a2f63;
+
+  --edison-card-warm-bg:
+    radial-gradient(circle at top right,rgba(255,196,86,.20),transparent 42%),
+    linear-gradient(135deg,var(--edison-paper) 0%,var(--edison-paper-2) 54%,var(--edison-paper-3) 100%);
+
+  --edison-card-red-bg:
+    radial-gradient(circle at top right,rgba(192,24,53,.12),transparent 42%),
+    linear-gradient(135deg,#fffdf8 0%,#fff4e2 56%,#ffe7d1 100%);
+
+  --edison-card-gold-bg:
+    radial-gradient(circle at top right,rgba(216,138,0,.16),transparent 42%),
+    linear-gradient(135deg,#fffdf8 0%,#fff7df 56%,#ffedc6 100%);
+
+  --edison-card-plum-bg:
+    radial-gradient(circle at top right,rgba(138,47,99,.13),transparent 42%),
+    linear-gradient(135deg,#fffdf8 0%,#fff4ed 54%,#f8e1e9 100%);
+
+  --edison-card-fuchsia-bg:
+    radial-gradient(circle at top right,rgba(185,35,110,.12),transparent 42%),
+    linear-gradient(135deg,#fffdf8 0%,#fff3ec 54%,#fbe1ed 100%);
+
+  /* Variables internes utilisées par les codages : noms conservés, valeurs chaudes/violettes. */
+  --adms-bloc-bg:var(--edison-card-warm-bg);
+  --adms-note-bg:var(--edison-card-gold-bg);
+  --adms-important-bg:var(--edison-card-red-bg);
+  --adms-tag-bg:rgba(255,253,248,.92);
+
+  --ovld-card-soft:rgba(255,253,248,.82);
+  --ovld-soft-white:rgba(255,253,248,.66);
+  --grpm-zone-bg:rgba(255,253,248,.88);
+  --grpm-card-soft:rgba(255,253,248,.72);
+  --bst-card-bg:rgba(255,253,248,.90);
+  --bst-soft-bg:rgba(255,246,232,.72);
+  --bstp-panel-bg:rgba(255,253,248,.90);
+  --bstp-card-bg:var(--edison-card-warm-bg);
+  --bstp-desc-bg:rgba(255,253,248,.86);
+  --ent-section-bg:rgba(255,253,248,.90);
+  --ent-card-soft:rgba(255,253,248,.72);
+  --pwrm-section-bg:rgba(255,253,248,.90);
+  --intrm-card-bg:rgba(255,253,248,.90);
+  --intrm-card-bg-colored:var(--edison-card-warm-bg);
+  --intrm-warning-card-bg:var(--edison-card-red-bg);
+  --intrm-question-bg:var(--edison-card-plum-bg);
+  --ctxm-card-bg:rgba(255,253,248,.90);
+  --chro-era-bg:rgba(255,253,248,.90);
+  --cul-card-bg:rgba(255,253,248,.90);
+  --lexm-section-bg:rgba(255,253,248,.90);
+  --faq-panel-glass:rgba(255,253,248,.90);
+  --faq-card-soft:rgba(255,246,232,.72);
+  --stf-card-bg:rgba(255,253,248,.90);
+  --stf-soft-bg:rgba(255,246,232,.72);
+  --avp-card-bg:rgba(255,253,248,.90);
+  --predef-soft:rgba(255,253,248,.88);
+  --prel-soft:rgba(255,253,248,.88);
+  --pl-card-bg:rgba(255,253,248,.88);
+  --pnjang-card-bg:var(--edison-card-warm-bg);
+  --pnjdem-card-bg:var(--edison-card-red-bg);
+  --pnjd-card-bg:var(--edison-card-plum-bg);
+  --qst-soft:rgba(255,253,248,.88);
+}
+
+/* ===================== BASE DES CASES INTERNES ===================== */
+
+[data-color-scheme="light"] .adms-bloc,
+[data-color-scheme="light"] .adms-note,
+[data-color-scheme="light"] .adms-important,
+[data-color-scheme="light"] .adms-tag,
+[data-color-scheme="light"] .adms-karma-card,
+[data-color-scheme="light"] .adms-karma-bloc,
+[data-color-scheme="light"] .adms-karma-item,
+[data-color-scheme="light"] .ovld-card,
+[data-color-scheme="light"] .ovld-section,
+[data-color-scheme="light"] .ovld-block,
+[data-color-scheme="light"] .stf-card,
+[data-color-scheme="light"] .stf-mgl-card,
+[data-color-scheme="light"] .stf-mgl-pnj,
+[data-color-scheme="light"] .stf-mgl-pnj-inner,
+[data-color-scheme="light"] .grpm-card,
+[data-color-scheme="light"] .grpm-zone,
+[data-color-scheme="light"] .grpm-item,
+[data-color-scheme="light"] .bst-card,
+[data-color-scheme="light"] .bst-section,
+[data-color-scheme="light"] .bst-block,
+[data-color-scheme="light"] .bstp-card,
+[data-color-scheme="light"] .bstp-panel,
+[data-color-scheme="light"] .bstp-desc,
+[data-color-scheme="light"] .ent-card,
+[data-color-scheme="light"] .ent-section,
+[data-color-scheme="light"] .ent-block,
+[data-color-scheme="light"] .pwrm-card,
+[data-color-scheme="light"] .pwrm-section,
+[data-color-scheme="light"] .pwrm-block,
+[data-color-scheme="light"] .ctxm-card,
+[data-color-scheme="light"] .ctxm-section,
+[data-color-scheme="light"] .ctxm-block,
+[data-color-scheme="light"] .ctxm-intro,
+[data-color-scheme="light"] .ctxm-note,
+[data-color-scheme="light"] .chro-era,
+[data-color-scheme="light"] .chro-content,
+[data-color-scheme="light"] .chro-item,
+[data-color-scheme="light"] .chro-event,
+[data-color-scheme="light"] .chro-card,
+[data-color-scheme="light"] .intrm-card,
+[data-color-scheme="light"] .intrm-section,
+[data-color-scheme="light"] .intrm-block,
+[data-color-scheme="light"] .intrm-warning,
+[data-color-scheme="light"] .intrm-question,
+[data-color-scheme="light"] .intrm-note,
+[data-color-scheme="light"] .qst-card,
+[data-color-scheme="light"] .qst-meta,
+[data-color-scheme="light"] .qst-block,
+[data-color-scheme="light"] .qst-section,
+[data-color-scheme="light"] .faq-card,
+[data-color-scheme="light"] .faq-block,
+[data-color-scheme="light"] .faq-section,
+[data-color-scheme="light"] .predef-card,
+[data-color-scheme="light"] .predef-block,
+[data-color-scheme="light"] .predef-section,
+[data-color-scheme="light"] .prel-card,
+[data-color-scheme="light"] .prel-block,
+[data-color-scheme="light"] .prel-section,
+[data-color-scheme="light"] .pl-card,
+[data-color-scheme="light"] .pnjang-card,
+[data-color-scheme="light"] .pnjang-block,
+[data-color-scheme="light"] .pnjdem-card,
+[data-color-scheme="light"] .pnjdem-block,
+[data-color-scheme="light"] .pnjd-card,
+[data-color-scheme="light"] .pnjd-block,
+[data-color-scheme="light"] .dospnj-card,
+[data-color-scheme="light"] .dospnj-paper,
+[data-color-scheme="light"] .mev1-card,
+[data-color-scheme="light"] .mev2-card,
+[data-color-scheme="light"] .mgl-card,
+[data-color-scheme="light"] .mgl-panel,
+[data-color-scheme="light"] .mgl-quote,
+[data-color-scheme="light"] .mgl-behind,
+[data-color-scheme="light"] .vp-card,
+[data-color-scheme="light"] .vp-identity,
+[data-color-scheme="light"] .ml-card{
+  background:var(--edison-card-warm-bg)!important;
+  background-color:var(--edison-paper)!important;
+  color:var(--edison-brown,#4a2812)!important;
+  border-color:var(--edison-warm-line)!important;
+  box-shadow:var(--edison-inner-shadow),var(--edison-warm-shadow)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* ===================== VARIATIONS CHAUDES / VIOLETTES PAR TYPE ===================== */
+
+[data-color-scheme="light"] .adms-important,
+[data-color-scheme="light"] .intrm-warning,
+[data-color-scheme="light"] .intrm-final-call,
+[data-color-scheme="light"] .pnjdem-card,
+[data-color-scheme="light"] .predef-card:nth-of-type(3n+1),
+[data-color-scheme="light"] .qst-card:nth-of-type(3n+1){
+  background:var(--edison-card-red-bg)!important;
+  border-left:4px solid var(--edison-accent-carmin)!important;
+}
+
+[data-color-scheme="light"] .adms-note,
+[data-color-scheme="light"] .chro-content,
+[data-color-scheme="light"] .chro-card,
+[data-color-scheme="light"] .dospnj-paper,
+[data-color-scheme="light"] .mev1-card,
+[data-color-scheme="light"] .bst-card:nth-of-type(3n+1),
+[data-color-scheme="light"] .grpm-card:nth-of-type(3n+1){
+  background:var(--edison-card-gold-bg)!important;
+  border-left:4px solid var(--edison-accent-gold)!important;
+}
+
+[data-color-scheme="light"] .ovld-card,
+[data-color-scheme="light"] .stf-card,
+[data-color-scheme="light"] .stf-mgl-card,
+[data-color-scheme="light"] .stf-mgl-pnj,
+[data-color-scheme="light"] .pnjd-card,
+[data-color-scheme="light"] .ent-card:nth-of-type(3n+2),
+[data-color-scheme="light"] .pwrm-card:nth-of-type(3n+2),
+[data-color-scheme="light"] .prel-card:nth-of-type(3n+2){
+  background:var(--edison-card-plum-bg)!important;
+  border-left:4px solid var(--edison-accent-plum)!important;
+}
+
+[data-color-scheme="light"] .ctxm-card,
+[data-color-scheme="light"] .ctxm-section,
+[data-color-scheme="light"] .ctxm-block,
+[data-color-scheme="light"] .intrm-question,
+[data-color-scheme="light"] .faq-card,
+[data-color-scheme="light"] .bstp-card:nth-of-type(3n+3),
+[data-color-scheme="light"] .grpm-card:nth-of-type(3n+3){
+  background:var(--edison-card-fuchsia-bg)!important;
+  border-left:4px solid var(--edison-accent-fuchsia)!important;
+}
+
+[data-color-scheme="light"] .adms-bloc,
+[data-color-scheme="light"] .grpm-zone,
+[data-color-scheme="light"] .bstp-panel,
+[data-color-scheme="light"] .ent-section,
+[data-color-scheme="light"] .pwrm-section,
+[data-color-scheme="light"] .qst-meta,
+[data-color-scheme="light"] .mgl-card,
+[data-color-scheme="light"] .vp-identity,
+[data-color-scheme="light"] .ml-card{
+  border-left:4px solid var(--edison-accent-orange)!important;
+}
+
+/* Titres internes : rouges/oranges/violets, jamais bleu/cyan/vert. */
+[data-color-scheme="light"] .adms-bloc-titre,
+[data-color-scheme="light"] .ovld-card-title,
+[data-color-scheme="light"] .stf-card-title,
+[data-color-scheme="light"] .stf-mgl-title,
+[data-color-scheme="light"] .grpm-card-title,
+[data-color-scheme="light"] .bst-card-title,
+[data-color-scheme="light"] .bstp-card-title,
+[data-color-scheme="light"] .ent-card-title,
+[data-color-scheme="light"] .pwrm-card-title,
+[data-color-scheme="light"] .ctxm-card-title,
+[data-color-scheme="light"] .chro-event-title,
+[data-color-scheme="light"] .intrm-card-title,
+[data-color-scheme="light"] .qst-card-title,
+[data-color-scheme="light"] .faq-card-title,
+[data-color-scheme="light"] .predef-card-title,
+[data-color-scheme="light"] .prel-card-title,
+[data-color-scheme="light"] .pnjang-card-title,
+[data-color-scheme="light"] .pnjdem-card-title,
+[data-color-scheme="light"] .pnjd-card-title,
+[data-color-scheme="light"] .mgl-panel-title{
+  color:var(--edison-accent-carmin)!important;
+  -webkit-text-fill-color:var(--edison-accent-carmin)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Neutralisation ciblée des bleus/cyans/verts restants dans les cases internes light. */
+[data-color-scheme="light"] .adms-bloc [style*="cyan"],
+[data-color-scheme="light"] .adms-bloc [style*="blue"],
+[data-color-scheme="light"] .adms-bloc [style*="green"],
+[data-color-scheme="light"] .ovld-card [style*="cyan"],
+[data-color-scheme="light"] .ovld-card [style*="blue"],
+[data-color-scheme="light"] .ovld-card [style*="green"],
+[data-color-scheme="light"] .stf-card [style*="cyan"],
+[data-color-scheme="light"] .stf-card [style*="blue"],
+[data-color-scheme="light"] .stf-card [style*="green"],
+[data-color-scheme="light"] .grpm-card [style*="cyan"],
+[data-color-scheme="light"] .grpm-card [style*="blue"],
+[data-color-scheme="light"] .grpm-card [style*="green"],
+[data-color-scheme="light"] .bst-card [style*="cyan"],
+[data-color-scheme="light"] .bst-card [style*="blue"],
+[data-color-scheme="light"] .bst-card [style*="green"],
+[data-color-scheme="light"] .ctxm-card [style*="cyan"],
+[data-color-scheme="light"] .ctxm-card [style*="blue"],
+[data-color-scheme="light"] .ctxm-card [style*="green"],
+[data-color-scheme="light"] .intrm-card [style*="cyan"],
+[data-color-scheme="light"] .intrm-card [style*="blue"],
+[data-color-scheme="light"] .intrm-card [style*="green"]{
+  color:var(--edison-accent-fuchsia)!important;
+  -webkit-text-fill-color:var(--edison-accent-fuchsia)!important;
+  text-shadow:none!important;
+}
+
+/* =========================================================
+   HEADER LEMEGETON LIGHT : rouge sans contour blanc + étincelles blanches
+========================================================= */
+
+[data-color-scheme="light"] .lb-logo,
+[data-color-scheme="light"] .lb-title,
+[data-color-scheme="light"] .lb-banner .lb-logo,
+[data-color-scheme="light"] .lb-banner .lb-title,
+[data-color-scheme="light"] .lb-banner [class*="logo"],
+[data-color-scheme="light"] .lb-banner [class*="title"]{
+  color:var(--edison-accent-red)!important;
+  -webkit-text-fill-color:transparent!important;
+  -webkit-text-stroke:1px var(--edison-accent-red)!important;
+  text-shadow:0 0 8px rgba(171,14,14,.18)!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .lb-info-title::before,
+[data-color-scheme="light"] .lb-info-title::after,
+[data-color-scheme="light"] .lb-kys::before,
+[data-color-scheme="light"] .lb-kys::after,
+[data-color-scheme="light"] .lb-info [class*="spark"],
+[data-color-scheme="light"] .lb-info [class*="star"],
+[data-color-scheme="light"] .lb-info [class*="etoile"],
+[data-color-scheme="light"] .lb-info [class*="étincelle"],
+[data-color-scheme="light"] .lb-banner [class*="spark"],
+[data-color-scheme="light"] .lb-banner [class*="star"],
+[data-color-scheme="light"] .lb-banner [class*="etoile"],
+[data-color-scheme="light"] .lb-banner [class*="étincelle"]{
+  color:#fffdf8!important;
+  -webkit-text-fill-color:#fffdf8!important;
+  text-shadow:0 0 6px rgba(255,255,255,.55),0 0 10px rgba(255,184,51,.18)!important;
+  filter:none!important;
+}
+
+/* Les coches restent bien vertes, elles ne sont pas l'étincelle. */
+[data-color-scheme="light"] .lb-info .ok,
+[data-color-scheme="light"] .lb-info [class*="check"],
+[data-color-scheme="light"] .lb-info .ion-checkmark,
+[data-color-scheme="light"] .lb-info .fa-check,
+[data-color-scheme="light"] .lb-banner .ok,
+[data-color-scheme="light"] .lb-banner [class*="check"]{
+  color:var(--lem-ok-green,#168326)!important;
+  -webkit-text-fill-color:var(--lem-ok-green,#168326)!important;
+}
+
+/* =========================================================
+   FIN PATCH FINAL LIGHT — CODAGES MESSAGES BLANCS CHAUDS
+========================================================= */

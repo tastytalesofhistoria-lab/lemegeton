@@ -7628,3 +7628,283 @@ body::-webkit-scrollbar-corner,
   stroke:var(--edison-button-red-dark)!important;
   text-shadow:none!important;
 }
+
+
+/* =========================================================
+   PATCH EDISON LIGHT — TITRES SANS SHADOW BLEU
+   Supprime les ombres des gros titres Monoton / headers
+========================================================= */
+
+[data-color-scheme="light"]{
+  --edison-title-red:#ab0e0e;
+}
+
+/* Titres principaux index / catégories / sujets / QEEL */
+[data-color-scheme="light"] .idx-title,
+[data-color-scheme="light"] .idx-cat-title,
+[data-color-scheme="light"] .idx-forum-title,
+[data-color-scheme="light"] .category-title,
+[data-color-scheme="light"] .cat-title,
+[data-color-scheme="light"] .forum-category-title,
+[data-color-scheme="light"] .forabg .header h2,
+[data-color-scheme="light"] .forabg .header h2 a,
+[data-color-scheme="light"] .forabg .header .forumtitle,
+[data-color-scheme="light"] .forabg .header .forumtitle a,
+[data-color-scheme="light"] .page-title,
+[data-color-scheme="light"] .topic-title,
+[data-color-scheme="light"] .topic-title a,
+[data-color-scheme="light"] .postbody h1,
+[data-color-scheme="light"] .postbody h2,
+[data-color-scheme="light"] h1.page-title,
+[data-color-scheme="light"] h1.topic-title,
+[data-color-scheme="light"] .qeel-title,
+[data-color-scheme="light"] .qeel-title-main,
+[data-color-scheme="light"] .qeel-loser,
+[data-color-scheme="light"] .qeel-loser-title,
+[data-color-scheme="light"] .header-title,
+[data-color-scheme="light"] .hero-title,
+[data-color-scheme="light"] .title-header,
+[data-color-scheme="light"] .main-title{
+  color:var(--edison-title-red)!important;
+  -webkit-text-fill-color:var(--edison-title-red)!important;
+  -webkit-text-stroke-color:var(--edison-title-red)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Headers des fiches/annexes : admin, overlord, bestiaire, groupes, chronologie, etc. */
+[data-color-scheme="light"] .lpa-title,
+[data-color-scheme="light"] .lpa-logo,
+[data-color-scheme="light"] .lb-title,
+[data-color-scheme="light"] .lb-logo,
+[data-color-scheme="light"] .faq-title,
+[data-color-scheme="light"] .grpm-title,
+[data-color-scheme="light"] .bst-title,
+[data-color-scheme="light"] .ent-title,
+[data-color-scheme="light"] .stf-mgl-title,
+[data-color-scheme="light"] .avp-title,
+[data-color-scheme="light"] .pwrm-title,
+[data-color-scheme="light"] .intrm-title,
+[data-color-scheme="light"] .ctxm-title,
+[data-color-scheme="light"] .chro-title,
+[data-color-scheme="light"] .cul-title,
+[data-color-scheme="light"] .lexm-title,
+[data-color-scheme="light"] .bstp-title,
+[data-color-scheme="light"] .scenguide-title,
+[data-color-scheme="light"] .predef-title,
+[data-color-scheme="light"] .prel-title,
+[data-color-scheme="light"] .pl-title,
+[data-color-scheme="light"] .dospnj-title,
+[data-color-scheme="light"] .mev1-title,
+[data-color-scheme="light"] .mev2-title,
+[data-color-scheme="light"] .qst-title,
+[data-color-scheme="light"] .ovld-title,
+[data-color-scheme="light"] .pnjang-title,
+[data-color-scheme="light"] .pnjdem-title,
+[data-color-scheme="light"] .pnjd-title,
+[data-color-scheme="light"] .rgl-title,
+[data-color-scheme="light"] .rgl-mgla-title,
+[data-color-scheme="light"] .admin-title,
+[data-color-scheme="light"] [class*="title"][style*="Monoton"],
+[data-color-scheme="light"] [class*="titre"][style*="Monoton"],
+[data-color-scheme="light"] [style*="font-family:Monoton"],
+[data-color-scheme="light"] [style*="font-family: Monoton"],
+[data-color-scheme="light"] [style*="font-family:'Monoton'"],
+[data-color-scheme="light"] [style*='font-family:"Monoton"']{
+  color:var(--edison-title-red)!important;
+  -webkit-text-fill-color:var(--edison-title-red)!important;
+  -webkit-text-stroke-color:var(--edison-title-red)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Sécurité : les lettres internes et pseudo-éléments ne doivent plus garder d'ombre cyan/bleue */
+[data-color-scheme="light"] .idx-title *,
+[data-color-scheme="light"] .idx-cat-title *,
+[data-color-scheme="light"] .idx-forum-title *,
+[data-color-scheme="light"] .category-title *,
+[data-color-scheme="light"] .cat-title *,
+[data-color-scheme="light"] .forum-category-title *,
+[data-color-scheme="light"] .qeel-title *,
+[data-color-scheme="light"] .qeel-title-main *,
+[data-color-scheme="light"] .header-title *,
+[data-color-scheme="light"] .hero-title *,
+[data-color-scheme="light"] .title-header *,
+[data-color-scheme="light"] .main-title *,
+[data-color-scheme="light"] .lpa-title *,
+[data-color-scheme="light"] .lb-title *,
+[data-color-scheme="light"] .faq-title *,
+[data-color-scheme="light"] .grpm-title *,
+[data-color-scheme="light"] .bst-title *,
+[data-color-scheme="light"] .ent-title *,
+[data-color-scheme="light"] .stf-mgl-title *,
+[data-color-scheme="light"] .avp-title *,
+[data-color-scheme="light"] .pwrm-title *,
+[data-color-scheme="light"] .intrm-title *,
+[data-color-scheme="light"] .ctxm-title *,
+[data-color-scheme="light"] .chro-title *,
+[data-color-scheme="light"] .cul-title *,
+[data-color-scheme="light"] .lexm-title *,
+[data-color-scheme="light"] .bstp-title *,
+[data-color-scheme="light"] .scenguide-title *,
+[data-color-scheme="light"] .predef-title *,
+[data-color-scheme="light"] .prel-title *,
+[data-color-scheme="light"] .pl-title *,
+[data-color-scheme="light"] .dospnj-title *,
+[data-color-scheme="light"] .mev1-title *,
+[data-color-scheme="light"] .mev2-title *,
+[data-color-scheme="light"] .qst-title *,
+[data-color-scheme="light"] .ovld-title *,
+[data-color-scheme="light"] .admin-title *{
+  color:var(--edison-title-red)!important;
+  -webkit-text-fill-color:var(--edison-title-red)!important;
+  -webkit-text-stroke-color:var(--edison-title-red)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .idx-title::before,
+[data-color-scheme="light"] .idx-title::after,
+[data-color-scheme="light"] .category-title::before,
+[data-color-scheme="light"] .category-title::after,
+[data-color-scheme="light"] .cat-title::before,
+[data-color-scheme="light"] .cat-title::after,
+[data-color-scheme="light"] .forum-category-title::before,
+[data-color-scheme="light"] .forum-category-title::after,
+[data-color-scheme="light"] .qeel-title::before,
+[data-color-scheme="light"] .qeel-title::after,
+[data-color-scheme="light"] .header-title::before,
+[data-color-scheme="light"] .header-title::after,
+[data-color-scheme="light"] .hero-title::before,
+[data-color-scheme="light"] .hero-title::after,
+[data-color-scheme="light"] .title-header::before,
+[data-color-scheme="light"] .title-header::after,
+[data-color-scheme="light"] .main-title::before,
+[data-color-scheme="light"] .main-title::after,
+[data-color-scheme="light"] .lpa-title::before,
+[data-color-scheme="light"] .lpa-title::after,
+[data-color-scheme="light"] .lb-title::before,
+[data-color-scheme="light"] .lb-title::after,
+[data-color-scheme="light"] .faq-title::before,
+[data-color-scheme="light"] .faq-title::after,
+[data-color-scheme="light"] .grpm-title::before,
+[data-color-scheme="light"] .grpm-title::after,
+[data-color-scheme="light"] .bst-title::before,
+[data-color-scheme="light"] .bst-title::after,
+[data-color-scheme="light"] .ent-title::before,
+[data-color-scheme="light"] .ent-title::after,
+[data-color-scheme="light"] .stf-mgl-title::before,
+[data-color-scheme="light"] .stf-mgl-title::after,
+[data-color-scheme="light"] .avp-title::before,
+[data-color-scheme="light"] .avp-title::after,
+[data-color-scheme="light"] .pwrm-title::before,
+[data-color-scheme="light"] .pwrm-title::after,
+[data-color-scheme="light"] .intrm-title::before,
+[data-color-scheme="light"] .intrm-title::after,
+[data-color-scheme="light"] .ctxm-title::before,
+[data-color-scheme="light"] .ctxm-title::after,
+[data-color-scheme="light"] .chro-title::before,
+[data-color-scheme="light"] .chro-title::after,
+[data-color-scheme="light"] .cul-title::before,
+[data-color-scheme="light"] .cul-title::after,
+[data-color-scheme="light"] .lexm-title::before,
+[data-color-scheme="light"] .lexm-title::after,
+[data-color-scheme="light"] .bstp-title::before,
+[data-color-scheme="light"] .bstp-title::after,
+[data-color-scheme="light"] .scenguide-title::before,
+[data-color-scheme="light"] .scenguide-title::after,
+[data-color-scheme="light"] .predef-title::before,
+[data-color-scheme="light"] .predef-title::after,
+[data-color-scheme="light"] .prel-title::before,
+[data-color-scheme="light"] .prel-title::after,
+[data-color-scheme="light"] .pl-title::before,
+[data-color-scheme="light"] .pl-title::after,
+[data-color-scheme="light"] .dospnj-title::before,
+[data-color-scheme="light"] .dospnj-title::after,
+[data-color-scheme="light"] .mev1-title::before,
+[data-color-scheme="light"] .mev1-title::after,
+[data-color-scheme="light"] .mev2-title::before,
+[data-color-scheme="light"] .mev2-title::after,
+[data-color-scheme="light"] .qst-title::before,
+[data-color-scheme="light"] .qst-title::after,
+[data-color-scheme="light"] .ovld-title::before,
+[data-color-scheme="light"] .ovld-title::after,
+[data-color-scheme="light"] .admin-title::before,
+[data-color-scheme="light"] .admin-title::after{
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+
+/* =========================================================
+   PATCH EDISON LIGHT — WRAP / ZONE SÉLECTIONNÉE ROUGE
+   Cible la grande zone Forumactif sélectionnée dans DevTools (#wrap)
+   Remplace le rendu vert/jaune des côtés par le rouge principal.
+========================================================= */
+
+[data-color-scheme="light"]{
+  --fa-wrap-side-red:#ab0e0e;
+  --fa-wrap-side-red-rgb:171,14,14;
+  --fa-wrap-side-bg:
+    linear-gradient(180deg,
+      rgba(171,14,14,.34) 0%,
+      rgba(171,14,14,.24) 45%,
+      rgba(171,14,14,.38) 100%
+    );
+  --fa-wrap-side-glow:0 0 18px rgba(171,14,14,.14);
+}
+
+[data-color-scheme="light"] #wrap{
+  border-left:2px solid rgba(171,14,14,.58)!important;
+  border-right:2px solid rgba(171,14,14,.58)!important;
+  box-shadow:
+    inset 28px 0 34px rgba(171,14,14,.13),
+    inset -28px 0 34px rgba(171,14,14,.13),
+    0 0 22px rgba(171,14,14,.10)!important;
+}
+
+[data-color-scheme="light"] #wrap::before,
+[data-color-scheme="light"] #wrap::after{
+  background:var(--fa-wrap-side-bg)!important;
+  border-color:rgba(171,14,14,.42)!important;
+  box-shadow:var(--fa-wrap-side-glow)!important;
+}
+
+[data-color-scheme="light"] #content-container,
+[data-color-scheme="light"] #container,
+[data-color-scheme="light"] .conteneur_minwidth_IE,
+[data-color-scheme="light"] .conteneur_layout_IE,
+[data-color-scheme="light"] .conteneur_container_IE,
+[data-color-scheme="light"] #main,
+[data-color-scheme="light"] #main-content,
+[data-color-scheme="light"] #page-body,
+[data-color-scheme="light"] .forumbody,
+[data-color-scheme="light"] .forum-body,
+[data-color-scheme="light"] .categories-wrapper{
+  border-left-color:rgba(171,14,14,.48)!important;
+  border-right-color:rgba(171,14,14,.48)!important;
+}
+
+[data-color-scheme="light"] .forumbg,
+[data-color-scheme="light"] .forabg,
+[data-color-scheme="light"] .forum-category,
+[data-color-scheme="light"] .category,
+[data-color-scheme="light"] .topiclist,
+[data-color-scheme="light"] .forum-section{
+  border-color:rgba(171,14,14,.42)!important;
+}
+
+[data-color-scheme="light"] .forumbg::before,
+[data-color-scheme="light"] .forumbg::after,
+[data-color-scheme="light"] .forabg::before,
+[data-color-scheme="light"] .forabg::after,
+[data-color-scheme="light"] .categories-wrapper::before,
+[data-color-scheme="light"] .categories-wrapper::after,
+[data-color-scheme="light"] .forumbody::before,
+[data-color-scheme="light"] .forumbody::after,
+[data-color-scheme="light"] .forum-body::before,
+[data-color-scheme="light"] .forum-body::after{
+  background:var(--fa-wrap-side-bg)!important;
+  border-color:rgba(171,14,14,.38)!important;
+  box-shadow:var(--fa-wrap-side-glow)!important;
+}

@@ -4663,9 +4663,13 @@ iframe.pa-frame{
 --adms-card:#fffaf0;
 --adms-panel:#fffaf0;
 --adms-panel-dark:#ffdca1;
-
 --adms-cyan:#d76a00;
---adms-cyan-soft:#ff9f1c;
+--adms-pink:#c01835;
+--adms-gold:#d88a00;
+--adms-green:#8f6b00;
+--adms-purple:#8a2f63;
+--adms-carmin:#b81424;
+ --adms-cyan-soft:#ff9f1c;
 --adms-pink:#c01835;
 --adms-white:#241005;
 --adms-text:#3a1b0b;

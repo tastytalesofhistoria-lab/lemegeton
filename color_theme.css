@@ -4198,7 +4198,8 @@
 
 --qst-head-bg:
   linear-gradient(90deg,rgba(255,247,223,.88),rgba(255,210,137,.48)),
-  /* ---------- ADMIN SIMPLE / ADMS ---------- */
+  var(--qst-head-img) center/cover;
+/* ---------- ADMIN SIMPLE / ADMS ---------- */
 
 --adms-bg:#fff0cf;
 --adms-card:#fffaf0;
@@ -5625,6 +5626,115 @@ iframe.pa-frame{
   background:transparent!important;
   background-color:transparent!important;
 }
+
+/* =========================================================
+   PATCH EDISON — SCROLLBAR THEME
+   Dark : cyan sur bleu
+   Light : rouge sur orange
+========================================================= */
+
+/* ===================== VARIABLES SCROLLBAR ===================== */
+
+:root,
+[data-color-scheme="dark"]{
+  --edison-scroll-thumb:#24e4ff;
+  --edison-scroll-thumb-hover:#8cecff;
+  --edison-scroll-track:#071936;
+  --edison-scroll-track-soft:#0b244a;
+}
+
+[data-color-scheme="light"]{
+  --edison-scroll-thumb:#c01835;
+  --edison-scroll-thumb-hover:#e05a24;
+  --edison-scroll-track:#ffd48a;
+  --edison-scroll-track-soft:#fff0cf;
+}
+
+/* ===================== FIREFOX ===================== */
+
+html,
+body,
+#wrap,
+#content-container,
+#container,
+#main,
+#main-content{
+  scrollbar-width:thin;
+  scrollbar-color:var(--edison-scroll-thumb) var(--edison-scroll-track);
+}
+
+/* ===================== CHROME / EDGE / SAFARI ===================== */
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#wrap::-webkit-scrollbar,
+#content-container::-webkit-scrollbar,
+#container::-webkit-scrollbar,
+#main::-webkit-scrollbar,
+#main-content::-webkit-scrollbar{
+  width:10px;
+  height:10px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+#wrap::-webkit-scrollbar-track,
+#content-container::-webkit-scrollbar-track,
+#container::-webkit-scrollbar-track,
+#main::-webkit-scrollbar-track,
+#main-content::-webkit-scrollbar-track{
+  background:
+    linear-gradient(
+      180deg,
+      var(--edison-scroll-track-soft),
+      var(--edison-scroll-track)
+    );
+  border-radius:999px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+#wrap::-webkit-scrollbar-thumb,
+#content-container::-webkit-scrollbar-thumb,
+#container::-webkit-scrollbar-thumb,
+#main::-webkit-scrollbar-thumb,
+#main-content::-webkit-scrollbar-thumb{
+  background:
+    linear-gradient(
+      180deg,
+      var(--edison-scroll-thumb-hover),
+      var(--edison-scroll-thumb)
+    );
+  border:2px solid var(--edison-scroll-track);
+  border-radius:999px;
+  box-shadow:0 0 10px color-mix(in srgb, var(--edison-scroll-thumb) 45%, transparent);
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+#wrap::-webkit-scrollbar-thumb:hover,
+#content-container::-webkit-scrollbar-thumb:hover,
+#container::-webkit-scrollbar-thumb:hover,
+#main::-webkit-scrollbar-thumb:hover,
+#main-content::-webkit-scrollbar-thumb:hover{
+  background:
+    linear-gradient(
+      180deg,
+      var(--edison-scroll-thumb-hover),
+      var(--edison-scroll-thumb-hover)
+    );
+}
+
+/* Coin bas/droite si double scroll */
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner,
+#wrap::-webkit-scrollbar-corner,
+#content-container::-webkit-scrollbar-corner,
+#container::-webkit-scrollbar-corner,
+#main::-webkit-scrollbar-corner,
+#main-content::-webkit-scrollbar-corner{
+  background:var(--edison-scroll-track);
+}
 /* =========================================================
    PATCH EDISON LIGHT — TABLEAUX UCP / PROFIL
    Corrige favoris, brouillons, sujets surveillés, notifications
@@ -6762,41 +6872,55 @@ iframe.pa-frame{
 }
 
 /* =========================================================
-   PATCH UNIQUE LIGHT — COHÉRENCE ROUGE / BOUTONS / BANNIÈRE
+   PATCH UNIQUE LIGHT — MODIFS DEMANDÉES / COHÉRENCE ROUGE
+   Base reprise proprement, sans empiler les anciens essais.
    Rouge principal : #ab0e0e
-   Objectif : remplacer les accents orange/verts illisibles par des
-   accents cohérents, sans casser Notiffi ni le lecteur audio.
 ========================================================= */
 
 [data-color-scheme="light"]{
   --lem-red-main:#ab0e0e;
   --lem-red-main-rgb:171,14,14;
-  --lem-red-dark:#760606;
-  --lem-red-soft:#cf2418;
+  --lem-red-dark:#690303;
+  --lem-red-soft:#c51616;
+  --lem-orange-flash:#ff6a00;
   --lem-orange-hover:#ff8a00;
-  --lem-button-yellow:#ffe44d;
-  --lem-button-hover:#fff06a;
-  --lem-button-icon:#ffe44d;
-  --lem-banner-yellow:#fff1a8;
-  --lem-banner-yellow-strong:#ffe44d;
-  --lem-green-ok:#168326;
-  --lem-green-ok-hover:#0f681d;
+  --lem-yellow-text:#ffe44d;
+  --lem-yellow-hover:#ffd400;
+  --lem-icon-light:#fff7d7;
+  --lem-ok-green:#168326;
+  --lem-ok-green-dark:#0f681d;
+  --lem-readable-green:#2f631f;
+  --lem-readable-green-soft:#e6f0dc;
 
   --fa-title-main:var(--lem-red-main);
   --fa-title-strong:var(--lem-red-main);
-  --edison-title:var(--lem-red-main);
+  --fa-link:var(--lem-red-main);
+  --fa-link-hover:var(--lem-orange-hover);
+
   --pm-page-title:var(--lem-red-main);
   --pm-page-title-hover:var(--lem-orange-hover);
   --pm-page-title-stroke:var(--lem-red-main);
-  --qeel-loser-title:var(--lem-red-main);
-  --qeel-enfer-text:var(--lem-red-main);
-  --qeel-enfer-glitch-a:var(--lem-red-main);
-  --qeel-enfer-glitch-b:var(--lem-orange-hover);
+  --pm-nav:var(--lem-red-main);
+  --pm-nav-hover:var(--lem-orange-hover);
 
-  --lb-ok:var(--lem-green-ok);
-  --lb-logo-main:var(--lem-banner-yellow);
-  --lb-logo-stroke:var(--lem-banner-yellow-strong);
+  --lb-logo-main:var(--lem-orange-flash);
+  --lb-logo-stroke:var(--lem-orange-flash);
   --lb-logo-shadow:transparent;
+  --lb-ok:var(--lem-ok-green);
+
+  --grpm-open:var(--lem-readable-green);
+  --grpm-green:var(--lem-readable-green);
+  --grpm-hellborn:var(--lem-readable-green);
+  --grpm-humain-innocent:var(--lem-readable-green);
+  --bst-earth:var(--lem-readable-green);
+  --bstp-green:var(--lem-readable-green);
+  --ent-earth:var(--lem-readable-green);
+  --ent-lime:var(--lem-readable-green);
+  --pwrm-green:var(--lem-readable-green);
+  --pwrm-lime:var(--lem-readable-green);
+  --ctxm-serpent:var(--lem-readable-green);
+  --intrm-green:var(--lem-readable-green);
+  --qst-lime:var(--lem-readable-green);
 
   --edison-scroll-thumb:var(--lem-red-main);
   --edison-scroll-thumb-hover:var(--lem-orange-hover);
@@ -6804,7 +6928,7 @@ iframe.pa-frame{
   --edison-scroll-track-soft:#fff0cf;
 }
 
-/* ===================== STRUCTURE : GUTTERS LATÉRAUX ROUGES ===================== */
+/* ===================== STRUCTURE / GUTTERS ROUGES ===================== */
 
 [data-color-scheme="light"] #wrap{
   border-left:4px solid var(--lem-red-main)!important;
@@ -6836,7 +6960,7 @@ iframe.pa-frame{
   border-color:rgba(var(--lem-red-main-rgb),.26)!important;
 }
 
-/* ===================== NAVBAR : ROUGE + HOVER ORANGE ===================== */
+/* ===================== NAVBAR ROUGE / HOVER ORANGE ===================== */
 
 [data-color-scheme="light"] #custom-navbar a,
 [data-color-scheme="light"] #custom-navbar a:link,
@@ -6859,9 +6983,10 @@ iframe.pa-frame{
 [data-color-scheme="light"] .linklist.top a:hover{
   color:var(--lem-orange-hover)!important;
   text-shadow:none!important;
+  filter:none!important;
 }
 
-/* ===================== TITRES : ROUGES, SANS SHADOW BLEU ===================== */
+/* ===================== TITRES ROUGES SANS SHADOW BLEU ===================== */
 
 [data-color-scheme="light"] h1,
 [data-color-scheme="light"] h2,
@@ -6937,7 +7062,7 @@ iframe.pa-frame{
   filter:none!important;
 }
 
-/* ===================== BANNIÈRE : PAS DE SHADOW, LEMEGETON JAUNE ===================== */
+/* ===================== BANNIÈRE : LEMEGETON ORANGE FLASH / KNOW YOUR STUFF ROUGE ===================== */
 
 [data-color-scheme="light"] .lb-banner,
 [data-color-scheme="light"] .lb-banner *,
@@ -6959,427 +7084,259 @@ iframe.pa-frame{
 [data-color-scheme="light"] .lb-banner [class*="titre"],
 [data-color-scheme="light"] [class*="banner"] .lb-title,
 [data-color-scheme="light"] [class*="banner"] [class*="logo"]{
-  color:var(--lem-banner-yellow)!important;
+  color:var(--lem-orange-flash)!important;
   -webkit-text-fill-color:transparent!important;
-  -webkit-text-stroke:1px var(--lem-banner-yellow)!important;
-  text-stroke:1px var(--lem-banner-yellow)!important;
+  -webkit-text-stroke:1px var(--lem-orange-flash)!important;
+  text-stroke:1px var(--lem-orange-flash)!important;
   text-shadow:none!important;
   filter:none!important;
 }
 
-[data-color-scheme="light"] .lb-banner svg,
-[data-color-scheme="light"] .lb-banner svg *,
-[data-color-scheme="light"] [class*="banner"] .lb-title svg,
-[data-color-scheme="light"] [class*="banner"] .lb-title svg *{
-  fill:var(--lem-banner-yellow)!important;
-  stroke:var(--lem-banner-yellow)!important;
+[data-color-scheme="light"] .lb-banner .lb-info-title,
+[data-color-scheme="light"] .lb-banner .lb-kicker,
+[data-color-scheme="light"] .lb-banner .lb-info-kicker,
+[data-color-scheme="light"] .lb-banner [class*="info-title"],
+[data-color-scheme="light"] .lb-banner [class*="kicker"],
+[data-color-scheme="light"] .lb-banner [class*="staff"] [class*="title"],
+[data-color-scheme="light"] .lb-banner [class*="staff"] [class*="titre"],
+[data-color-scheme="light"] .lb-info-title,
+[data-color-scheme="light"] .lb-info-kicker{
+  color:var(--lem-red-main)!important;
+  -webkit-text-fill-color:var(--lem-red-main)!important;
+  -webkit-text-stroke:0!important;
+  text-shadow:none!important;
   filter:none!important;
 }
 
-[data-color-scheme="light"] .lb-banner [class*="star"],
-[data-color-scheme="light"] .lb-banner [class*="etoile"],
-[data-color-scheme="light"] .lb-banner [class*="étoile"],
-[data-color-scheme="light"] [class*="banner"] [class*="star"],
-[data-color-scheme="light"] [class*="banner"] [class*="etoile"],
-[data-color-scheme="light"] [class*="banner"] [class*="étoile"],
-[data-color-scheme="light"] .lb-banner li::marker,
-[data-color-scheme="light"] [class*="banner"] li::marker{
-  color:var(--lem-orange-hover)!important;
-  text-shadow:none!important;
-}
-
+/* Coches / OK visibles en vrai vert, pas brun */
+[data-color-scheme="light"] .lb-banner .lb-ok,
+[data-color-scheme="light"] .lb-banner .ok,
+[data-color-scheme="light"] .lb-banner .check,
 [data-color-scheme="light"] .lb-banner [class*="ok"],
 [data-color-scheme="light"] .lb-banner [class*="check"],
-[data-color-scheme="light"] .lb-banner [class*="valid"],
-[data-color-scheme="light"] .lb-banner .fa-check,
-[data-color-scheme="light"] .lb-banner .fa-check-circle,
 [data-color-scheme="light"] .lb-banner .ion-checkmark,
-[data-color-scheme="light"] .lb-banner .ion-checkmark-circled,
-[data-color-scheme="light"] [class*="banner"] [class*="ok"],
-[data-color-scheme="light"] [class*="banner"] [class*="check"],
-[data-color-scheme="light"] [class*="banner"] [class*="valid"]{
-  color:var(--lem-green-ok)!important;
-  fill:var(--lem-green-ok)!important;
-  border-color:rgba(22,131,38,.35)!important;
+[data-color-scheme="light"] .lb-banner .ion-checkmark-round,
+[data-color-scheme="light"] .lb-banner .fa-check,
+[data-color-scheme="light"] .lb-info .ok,
+[data-color-scheme="light"] .lb-info [class*="check"],
+[data-color-scheme="light"] .lb-info .ion-checkmark,
+[data-color-scheme="light"] .lb-info .fa-check{
+  color:var(--lem-ok-green)!important;
+  -webkit-text-fill-color:var(--lem-ok-green)!important;
+  text-shadow:0 0 4px rgba(22,131,38,.18)!important;
+}
+
+/* ===================== BOUTONS FORUM : FOND ROUGE, TEXTE JAUNE ===================== */
+
+[data-color-scheme="light"] a.button1,
+[data-color-scheme="light"] a.button2,
+[data-color-scheme="light"] input.button1,
+[data-color-scheme="light"] input.button2,
+[data-color-scheme="light"] button.button1,
+[data-color-scheme="light"] button.button2,
+[data-color-scheme="light"] input[type="submit"],
+[data-color-scheme="light"] input[type="button"],
+[data-color-scheme="light"] input[type="reset"],
+[data-color-scheme="light"] .sub-header-buttons a,
+[data-color-scheme="light"] .sub-header-buttons button,
+[data-color-scheme="light"] .topic-actions a,
+[data-color-scheme="light"] .topic-actions button,
+[data-color-scheme="light"] .post-options a,
+[data-color-scheme="light"] .post-options button,
+[data-color-scheme="light"] .post-buttons a,
+[data-color-scheme="light"] .post-buttons button,
+[data-color-scheme="light"] .profile-contact a,
+[data-color-scheme="light"] .contact-icons a,
+[data-color-scheme="light"] .quick-nav-topics a,
+[data-color-scheme="light"] .pagination a,
+[data-color-scheme="light"] .pagination span strong,
+[data-color-scheme="light"] .pagination span.page-sep + strong,
+[data-color-scheme="light"] .page-number,
+[data-color-scheme="light"] .page-number-current,
+[data-color-scheme="light"] a[href*="mode=reply"],
+[data-color-scheme="light"] a[href*="mode=newtopic"],
+[data-color-scheme="light"] a[href*="mode=editpost"],
+[data-color-scheme="light"] a[href*="mode=quote"],
+[data-color-scheme="light"] a[href*="mode=delete"],
+[data-color-scheme="light"] a[href*="mode=ip"],
+[data-color-scheme="light"] a[href*="mode=report"]{
+  background:var(--lem-red-main)!important;
+  background-image:none!important;
+  border:1px solid var(--lem-red-main)!important;
+  color:var(--lem-yellow-text)!important;
   text-shadow:none!important;
-  filter:none!important;
-}
-
-/* ===================== QEEL / WHO'S A LOSER ===================== */
-
-[data-color-scheme="light"] #qeel,
-[data-color-scheme="light"] .qeel,
-[data-color-scheme="light"] [class*="qeel"]{
-  --qeel-loser-title:var(--lem-red-main);
-  --qeel-enfer-text:var(--lem-red-main);
-  --qeel-enfer-glitch-a:var(--lem-red-main);
-  --qeel-enfer-glitch-b:var(--lem-orange-hover);
-}
-
-[data-color-scheme="light"] #qeel [class*="title"],
-[data-color-scheme="light"] #qeel [class*="loser"],
-[data-color-scheme="light"] .qeel [class*="title"],
-[data-color-scheme="light"] .qeel [class*="loser"],
-[data-color-scheme="light"] [class*="qeel"] [class*="title"],
-[data-color-scheme="light"] [class*="qeel"] [class*="loser"]{
-  color:var(--lem-red-main)!important;
-  -webkit-text-stroke-color:var(--lem-red-main)!important;
-  text-shadow:none!important;
-  filter:none!important;
-}
-
-/* ===================== PA : TOP PARTENAIRES + INFOS DEAL ===================== */
-
-[data-color-scheme="light"] .lpa-partners,
-[data-color-scheme="light"] .lpa-partner,
-[data-color-scheme="light"] .lpa-top-partners,
-[data-color-scheme="light"] .lpa-deal,
-[data-color-scheme="light"] .lpa-deal-step,
-[data-color-scheme="light"] [class*="partenaire"],
-[data-color-scheme="light"] [class*="partner"],
-[data-color-scheme="light"] [class*="deal"]{
-  border-color:rgba(var(--lem-red-main-rgb),.34)!important;
-}
-
-[data-color-scheme="light"] .lpa-partners-title,
-[data-color-scheme="light"] .lpa-partner-title,
-[data-color-scheme="light"] .lpa-top-title,
-[data-color-scheme="light"] [class*="partenaire"] [class*="tag"],
-[data-color-scheme="light"] [class*="partner"] [class*="tag"],
-[data-color-scheme="light"] [class*="top"] [class*="partenaire"],
-[data-color-scheme="light"] [class*="top"] [class*="partner"]{
-  background:rgba(var(--lem-red-main-rgb),.10)!important;
-  border-color:rgba(var(--lem-red-main-rgb),.42)!important;
-  color:var(--lem-red-main)!important;
-  text-shadow:none!important;
-}
-
-/* ===================== BOUTONS DU FORUM : COMME LE BOUTON LUNE =====================
-   On cible les vrais boutons cliquables. Pas les wrappers, pas Notiffi,
-   pas la barre du lecteur audio. Le texte et les icônes restent jaunes.
-========================================================= */
-
-[data-color-scheme="light"] :is(
-  a.button,
-  a.button1,
-  a.button2,
-  .button,
-  .button1,
-  .button2,
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"],
-  button,
-  [role="button"],
-  .buttons a,
-  .topic-actions a,
-  .post-options a,
-  .profile-icons a,
-  .pagination a,
-  .pagination span,
-  .chro-nav button,
-  .ctxm-nav button,
-  .scenguide-button,
-  a[href*="mode=newtopic"],
-  a[href*="mode=reply"],
-  a[href*="mode=editpost"],
-  a[href*="mode=quote"],
-  a[href*="mode=delete"],
-  a[href*="mode=report"],
-  a[href*="mode=warn"]
-):not(:where(
-  #notiffi-button,
-  #notiffi-button *,
-  #notiffi-panel *,
-  .notiffi-button,
-  .notiffi-button *,
-  [class*="notiffi"],
-  [class*="notiffi"] *,
-  [class*="notif"],
-  [class*="notif"] *,
-  .lb-player,
-  .lb-player *,
-  .lpa-player,
-  .lpa-player *,
-  [class*="player"],
-  [class*="player"] *,
-  [class*="audio"],
-  [class*="audio"] *,
-  .fa_toolbar,
-  .fa_toolbar *
-)){
-  background:linear-gradient(180deg,var(--lem-red-soft),var(--lem-red-main))!important;
-  background-color:var(--lem-red-main)!important;
-  border:1px solid rgba(var(--lem-red-main-rgb),.62)!important;
-  color:var(--lem-button-yellow)!important;
-  text-shadow:none!important;
-  filter:none!important;
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.10),
+    inset 0 1px 0 rgba(255,255,255,.16),
     0 8px 18px rgba(var(--lem-red-main-rgb),.18)!important;
 }
 
-[data-color-scheme="light"] :is(
-  a.button,
-  a.button1,
-  a.button2,
-  .button,
-  .button1,
-  .button2,
-  button,
-  [role="button"],
-  .buttons a,
-  .topic-actions a,
-  .post-options a,
-  .profile-icons a,
-  .pagination a,
-  .pagination span,
-  .chro-nav button,
-  .ctxm-nav button,
-  .scenguide-button,
-  a[href*="mode=newtopic"],
-  a[href*="mode=reply"],
-  a[href*="mode=editpost"],
-  a[href*="mode=quote"],
-  a[href*="mode=delete"],
-  a[href*="mode=report"],
-  a[href*="mode=warn"]
-):not(:where(
-  #notiffi-button,
-  #notiffi-button *,
-  #notiffi-panel *,
-  .notiffi-button,
-  .notiffi-button *,
-  [class*="notiffi"],
-  [class*="notiffi"] *,
-  [class*="notif"],
-  [class*="notif"] *,
-  .lb-player,
-  .lb-player *,
-  .lpa-player,
-  .lpa-player *,
-  [class*="player"],
-  [class*="player"] *,
-  [class*="audio"],
-  [class*="audio"] *,
-  .fa_toolbar,
-  .fa_toolbar *
-)) *{
-  color:var(--lem-button-icon)!important;
-  fill:var(--lem-button-icon)!important;
-  stroke:var(--lem-button-icon)!important;
+[data-color-scheme="light"] a.button1 *,
+[data-color-scheme="light"] a.button2 *,
+[data-color-scheme="light"] button.button1 *,
+[data-color-scheme="light"] button.button2 *,
+[data-color-scheme="light"] .sub-header-buttons a *,
+[data-color-scheme="light"] .topic-actions a *,
+[data-color-scheme="light"] .post-options a *,
+[data-color-scheme="light"] .post-buttons a *,
+[data-color-scheme="light"] .profile-contact a *,
+[data-color-scheme="light"] .contact-icons a *,
+[data-color-scheme="light"] .quick-nav-topics a *,
+[data-color-scheme="light"] a[href*="mode=reply"] *,
+[data-color-scheme="light"] a[href*="mode=newtopic"] *,
+[data-color-scheme="light"] a[href*="mode=editpost"] *,
+[data-color-scheme="light"] a[href*="mode=quote"] *,
+[data-color-scheme="light"] a[href*="mode=delete"] *,
+[data-color-scheme="light"] a[href*="mode=ip"] *,
+[data-color-scheme="light"] a[href*="mode=report"] *{
+  color:var(--lem-icon-light)!important;
   text-shadow:none!important;
   filter:none!important;
 }
 
-[data-color-scheme="light"] :is(
-  a.button,
-  a.button1,
-  a.button2,
-  .button,
-  .button1,
-  .button2,
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"],
-  button,
-  [role="button"],
-  .buttons a,
-  .topic-actions a,
-  .post-options a,
-  .profile-icons a,
-  .pagination a,
-  .pagination span,
-  .chro-nav button,
-  .ctxm-nav button,
-  .scenguide-button,
-  a[href*="mode=newtopic"],
-  a[href*="mode=reply"],
-  a[href*="mode=editpost"],
-  a[href*="mode=quote"],
-  a[href*="mode=delete"],
-  a[href*="mode=report"],
-  a[href*="mode=warn"]
-):not(:where(
-  #notiffi-button,
-  #notiffi-button *,
-  #notiffi-panel *,
-  .notiffi-button,
-  .notiffi-button *,
-  [class*="notiffi"],
-  [class*="notiffi"] *,
-  [class*="notif"],
-  [class*="notif"] *,
-  .lb-player,
-  .lb-player *,
-  .lpa-player,
-  .lpa-player *,
-  [class*="player"],
-  [class*="player"] *,
-  [class*="audio"],
-  [class*="audio"] *,
-  .fa_toolbar,
-  .fa_toolbar *
-)):hover{
-  background:linear-gradient(180deg,var(--lem-button-hover),#ffd21f)!important;
-  background-color:var(--lem-button-hover)!important;
-  border-color:var(--lem-button-hover)!important;
+[data-color-scheme="light"] a.button1:hover,
+[data-color-scheme="light"] a.button2:hover,
+[data-color-scheme="light"] input.button1:hover,
+[data-color-scheme="light"] input.button2:hover,
+[data-color-scheme="light"] button.button1:hover,
+[data-color-scheme="light"] button.button2:hover,
+[data-color-scheme="light"] input[type="submit"]:hover,
+[data-color-scheme="light"] input[type="button"]:hover,
+[data-color-scheme="light"] input[type="reset"]:hover,
+[data-color-scheme="light"] .sub-header-buttons a:hover,
+[data-color-scheme="light"] .sub-header-buttons button:hover,
+[data-color-scheme="light"] .topic-actions a:hover,
+[data-color-scheme="light"] .topic-actions button:hover,
+[data-color-scheme="light"] .post-options a:hover,
+[data-color-scheme="light"] .post-options button:hover,
+[data-color-scheme="light"] .post-buttons a:hover,
+[data-color-scheme="light"] .post-buttons button:hover,
+[data-color-scheme="light"] .profile-contact a:hover,
+[data-color-scheme="light"] .contact-icons a:hover,
+[data-color-scheme="light"] .quick-nav-topics a:hover,
+[data-color-scheme="light"] .pagination a:hover,
+[data-color-scheme="light"] a[href*="mode=reply"]:hover,
+[data-color-scheme="light"] a[href*="mode=newtopic"]:hover,
+[data-color-scheme="light"] a[href*="mode=editpost"]:hover,
+[data-color-scheme="light"] a[href*="mode=quote"]:hover,
+[data-color-scheme="light"] a[href*="mode=delete"]:hover,
+[data-color-scheme="light"] a[href*="mode=ip"]:hover,
+[data-color-scheme="light"] a[href*="mode=report"]:hover{
+  background:var(--lem-yellow-hover)!important;
+  background-image:none!important;
+  border-color:var(--lem-yellow-hover)!important;
   color:var(--lem-red-dark)!important;
-  text-shadow:none!important;
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.22),
-    0 10px 22px rgba(255,138,0,.18)!important;
+    inset 0 1px 0 rgba(255,255,255,.22),
+    0 10px 20px rgba(255,212,0,.20)!important;
 }
 
-[data-color-scheme="light"] :is(
-  a.button,
-  a.button1,
-  a.button2,
-  .button,
-  .button1,
-  .button2,
-  button,
-  [role="button"],
-  .buttons a,
-  .topic-actions a,
-  .post-options a,
-  .profile-icons a,
-  .pagination a,
-  .pagination span,
-  .chro-nav button,
-  .ctxm-nav button,
-  .scenguide-button,
-  a[href*="mode=newtopic"],
-  a[href*="mode=reply"],
-  a[href*="mode=editpost"],
-  a[href*="mode=quote"],
-  a[href*="mode=delete"],
-  a[href*="mode=report"],
-  a[href*="mode=warn"]
-):not(:where(
-  #notiffi-button,
-  #notiffi-button *,
-  #notiffi-panel *,
-  .notiffi-button,
-  .notiffi-button *,
-  [class*="notiffi"],
-  [class*="notiffi"] *,
-  [class*="notif"],
-  [class*="notif"] *,
-  .lb-player,
-  .lb-player *,
-  .lpa-player,
-  .lpa-player *,
-  [class*="player"],
-  [class*="player"] *,
-  [class*="audio"],
-  [class*="audio"] *,
-  .fa_toolbar,
-  .fa_toolbar *
-)):hover *{
+[data-color-scheme="light"] a.button1:hover *,
+[data-color-scheme="light"] a.button2:hover *,
+[data-color-scheme="light"] button.button1:hover *,
+[data-color-scheme="light"] button.button2:hover *,
+[data-color-scheme="light"] .sub-header-buttons a:hover *,
+[data-color-scheme="light"] .topic-actions a:hover *,
+[data-color-scheme="light"] .post-options a:hover *,
+[data-color-scheme="light"] .post-buttons a:hover *,
+[data-color-scheme="light"] .profile-contact a:hover *,
+[data-color-scheme="light"] .contact-icons a:hover *,
+[data-color-scheme="light"] .quick-nav-topics a:hover *{
   color:var(--lem-red-dark)!important;
-  fill:var(--lem-red-dark)!important;
-  stroke:var(--lem-red-dark)!important;
 }
 
-/* ===================== NOTIFFI : EXCLUSION EXPLICITE ===================== */
-
-[data-color-scheme="light"] #notiffi-button,
-[data-color-scheme="light"] .notiffi-button,
+/* Exclusions : Notiffi et lecteur audio ne sont PAS des boutons forum */
+[data-color-scheme="light"] #notiffi-panel a,
 [data-color-scheme="light"] #notiffi-panel button,
-[data-color-scheme="light"] #notiffi-panel .button,
+[data-color-scheme="light"] [id*="notiffi"] a,
+[data-color-scheme="light"] [id*="notiffi"] button,
+[data-color-scheme="light"] [class*="notiffi"] a,
 [data-color-scheme="light"] [class*="notiffi"] button,
-[data-color-scheme="light"] [class*="notif"] button,
-[data-color-scheme="light"] [class*="notiffi"] [class*="btn"],
-[data-color-scheme="light"] [class*="notif"] [class*="btn"]{
-  background:var(--notiffi-button-bg)!important;
-  border-color:var(--notiffi-count-border)!important;
-  color:var(--notiffi-count-text)!important;
-  box-shadow:var(--notiffi-button-shadow)!important;
-}
-
-/* ===================== LECTEUR AUDIO : TRIANGLE PRÉSENT, PAS DE BOUTON ROUGE ===================== */
-
-[data-color-scheme="light"] .lb-player,
-[data-color-scheme="light"] .lpa-player,
-[data-color-scheme="light"] [class*="player"],
-[data-color-scheme="light"] [class*="audio"]{
-  --lb-player-wave-current:var(--lem-red-main);
-  --lb-player-wave-played:#d76a00;
-  --lb-player-wave:#d99a42;
-}
-
+[data-color-scheme="light"] .lb-player a,
 [data-color-scheme="light"] .lb-player button,
-[data-color-scheme="light"] .lb-player .button,
-[data-color-scheme="light"] .lb-player [class*="play"],
-[data-color-scheme="light"] .lb-player [class*="pause"],
-[data-color-scheme="light"] .lpa-player button,
-[data-color-scheme="light"] .lpa-player .button,
-[data-color-scheme="light"] .lpa-player [class*="play"],
-[data-color-scheme="light"] .lpa-player [class*="pause"],
+[data-color-scheme="light"] [class*="player"] a,
 [data-color-scheme="light"] [class*="player"] button,
+[data-color-scheme="light"] [class*="audio"] a,
+[data-color-scheme="light"] [class*="audio"] button{
+  text-shadow:none!important;
+}
+
+/* Lecteur : garde le triangle visible sans lui donner un fond bouton */
+[data-color-scheme="light"] .lb-player [class*="play"],
 [data-color-scheme="light"] [class*="player"] [class*="play"],
-[data-color-scheme="light"] [class*="audio"] button,
 [data-color-scheme="light"] [class*="audio"] [class*="play"]{
   background:transparent!important;
-  background-color:transparent!important;
   box-shadow:none!important;
+  border-color:transparent!important;
   color:var(--lem-red-main)!important;
-  fill:var(--lem-red-main)!important;
-  opacity:1!important;
-  visibility:visible!important;
-}
-
-[data-color-scheme="light"] .lb-player [class*="play"],
-[data-color-scheme="light"] .lpa-player [class*="play"],
-[data-color-scheme="light"] [class*="player"] [class*="play"],
-[data-color-scheme="light"] [class*="audio"] [class*="play"]{
-  border-left-color:var(--lem-red-main)!important;
-  border-top-color:transparent!important;
-  border-right-color:transparent!important;
-  border-bottom-color:transparent!important;
 }
 
 [data-color-scheme="light"] .lb-player [class*="play"]::before,
 [data-color-scheme="light"] .lb-player [class*="play"]::after,
-[data-color-scheme="light"] .lpa-player [class*="play"]::before,
-[data-color-scheme="light"] .lpa-player [class*="play"]::after,
 [data-color-scheme="light"] [class*="player"] [class*="play"]::before,
 [data-color-scheme="light"] [class*="player"] [class*="play"]::after,
 [data-color-scheme="light"] [class*="audio"] [class*="play"]::before,
 [data-color-scheme="light"] [class*="audio"] [class*="play"]::after{
-  color:var(--lem-red-main)!important;
   border-left-color:var(--lem-red-main)!important;
-  opacity:1!important;
-  visibility:visible!important;
+  color:var(--lem-red-main)!important;
 }
 
-/* ===================== VERTS LISIBLES ===================== */
+/* ===================== TOP PARTENAIRES / DEAL / QEEL ===================== */
 
-[data-color-scheme="light"] [style*="#a7ff3f"],
-[data-color-scheme="light"] [style*="#73ff4d"],
-[data-color-scheme="light"] [style*="#31ff63"],
-[data-color-scheme="light"] [style*="rgb(49, 255, 99)"],
-[data-color-scheme="light"] [class*="green"],
-[data-color-scheme="light"] [class*="lime"],
-[data-color-scheme="light"] [class*="open"],
-[data-color-scheme="light"] [class*="adoptable"],
-[data-color-scheme="light"] [class*="earth"],
-[data-color-scheme="light"] [class*="commun"]{
-  color:var(--lem-green-ok)!important;
-  border-color:rgba(22,131,38,.38)!important;
+[data-color-scheme="light"] .lpa-partners-title,
+[data-color-scheme="light"] .lpa-partners-label,
+[data-color-scheme="light"] .top-partners,
+[data-color-scheme="light"] .top-partenaires,
+[data-color-scheme="light"] [class*="partner"] [class*="tag"],
+[data-color-scheme="light"] [class*="partenaire"] [class*="tag"]{
+  background:rgba(var(--lem-red-main-rgb),.10)!important;
+  border-color:rgba(var(--lem-red-main-rgb),.36)!important;
+  color:var(--lem-red-main)!important;
   text-shadow:none!important;
 }
 
-[data-color-scheme="light"] [class*="green"]:hover,
-[data-color-scheme="light"] [class*="lime"]:hover,
-[data-color-scheme="light"] [class*="open"]:hover,
-[data-color-scheme="light"] [class*="adoptable"]:hover{
-  color:var(--lem-green-ok-hover)!important;
-  border-color:rgba(15,104,29,.48)!important;
+[data-color-scheme="light"] .lpa-deal-step,
+[data-color-scheme="light"] .lpa-deal-info,
+[data-color-scheme="light"] [class*="deal"] [class*="info"],
+[data-color-scheme="light"] [class*="deal"] [class*="step"]{
+  border-color:rgba(var(--lem-red-main-rgb),.34)!important;
 }
 
-/* ===================== SCROLLBAR LIGHT : ROUGE / ORANGE ===================== */
+[data-color-scheme="light"] .qeel-title,
+[data-color-scheme="light"] .qeel-loser,
+[data-color-scheme="light"] [class*="qeel"] [class*="loser"]{
+  color:var(--lem-red-main)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* ===================== VERTS PLUS LISIBLES ===================== */
+
+[data-color-scheme="light"] .bst [class*="green"],
+[data-color-scheme="light"] .bst [class*="earth"],
+[data-color-scheme="light"] .bstp [class*="green"],
+[data-color-scheme="light"] .grpm [class*="open"],
+[data-color-scheme="light"] .grpm [class*="green"],
+[data-color-scheme="light"] .ent [class*="earth"],
+[data-color-scheme="light"] .ent [class*="lime"],
+[data-color-scheme="light"] .pwrm [class*="green"],
+[data-color-scheme="light"] .pwrm [class*="lime"],
+[data-color-scheme="light"] .ctxm [class*="serpent"],
+[data-color-scheme="light"] .intrm [class*="green"],
+[data-color-scheme="light"] .qst [class*="lime"]{
+  color:var(--lem-readable-green)!important;
+  border-color:rgba(47,99,31,.32)!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] .bst [class*="green"]:hover,
+[data-color-scheme="light"] .bst [class*="earth"]:hover,
+[data-color-scheme="light"] .bstp [class*="green"]:hover,
+[data-color-scheme="light"] .grpm [class*="open"]:hover,
+[data-color-scheme="light"] .grpm [class*="green"]:hover{
+  color:var(--lem-ok-green-dark)!important;
+}
+
+/* ===================== SCROLLBAR LIGHT ROUGE / ORANGE ===================== */
 
 [data-color-scheme="light"] html,
 [data-color-scheme="light"] body,
@@ -7392,8 +7349,37 @@ iframe.pa-frame{
   scrollbar-color:var(--edison-scroll-thumb) var(--edison-scroll-track);
 }
 
-[data-color-scheme="light"] ::selection{
-  background:rgba(var(--lem-red-main-rgb),.30);
-  color:#fff7d7;
+[data-color-scheme="light"] html::-webkit-scrollbar,
+[data-color-scheme="light"] body::-webkit-scrollbar,
+[data-color-scheme="light"] #wrap::-webkit-scrollbar,
+[data-color-scheme="light"] #content-container::-webkit-scrollbar,
+[data-color-scheme="light"] #container::-webkit-scrollbar,
+[data-color-scheme="light"] #main::-webkit-scrollbar,
+[data-color-scheme="light"] #main-content::-webkit-scrollbar{
+  width:10px;
+  height:10px;
+}
+
+[data-color-scheme="light"] html::-webkit-scrollbar-track,
+[data-color-scheme="light"] body::-webkit-scrollbar-track,
+[data-color-scheme="light"] #wrap::-webkit-scrollbar-track,
+[data-color-scheme="light"] #content-container::-webkit-scrollbar-track,
+[data-color-scheme="light"] #container::-webkit-scrollbar-track,
+[data-color-scheme="light"] #main::-webkit-scrollbar-track,
+[data-color-scheme="light"] #main-content::-webkit-scrollbar-track{
+  background:linear-gradient(180deg,var(--edison-scroll-track-soft),var(--edison-scroll-track));
+  border-radius:999px;
+}
+
+[data-color-scheme="light"] html::-webkit-scrollbar-thumb,
+[data-color-scheme="light"] body::-webkit-scrollbar-thumb,
+[data-color-scheme="light"] #wrap::-webkit-scrollbar-thumb,
+[data-color-scheme="light"] #content-container::-webkit-scrollbar-thumb,
+[data-color-scheme="light"] #container::-webkit-scrollbar-thumb,
+[data-color-scheme="light"] #main::-webkit-scrollbar-thumb,
+[data-color-scheme="light"] #main-content::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,var(--edison-scroll-thumb-hover),var(--edison-scroll-thumb));
+  border:2px solid var(--edison-scroll-track);
+  border-radius:999px;
 }
 

@@ -6353,169 +6353,6 @@ body::-webkit-scrollbar-corner,
   color:var(--edison-muted)!important;
 }
 /* =========================================================
-   PATCH EDISON LIGHT — CHRONOLOGIE
-   Retire les restes bleus et diversifie les zones internes
-========================================================= */
-
-[data-color-scheme="light"] .chro,
-[data-color-scheme="light"] .chro-box{
-  background:
-    radial-gradient(circle at 50% 0%,rgba(255,168,36,.14),transparent 36%),
-    var(--edison-bg-box-light)!important;
-  color:var(--edison-text)!important;
-  border-color:var(--edison-border-gold-mid)!important;
-}
-
-[data-color-scheme="light"] .chro-box::before{
-  opacity:.16!important;
-  background-image:var(--edison-dot-gold)!important;
-}
-
-[data-color-scheme="light"] .chro-head{
-  background:
-    radial-gradient(circle at top right,rgba(192,24,53,.10),transparent 36%),
-    var(--edison-bg-head-light)!important;
-  border-color:var(--edison-border-gold)!important;
-}
-
-[data-color-scheme="light"] .chro-intro,
-[data-color-scheme="light"] .chro-note{
-  background:
-    linear-gradient(90deg,rgba(216,138,0,.12),rgba(255,250,240,.72))!important;
-  color:var(--edison-text)!important;
-  border-left-color:var(--edison-gold)!important;
-}
-
-/* Navigation / boutons */
-[data-color-scheme="light"] .chro-nav a,
-[data-color-scheme="light"] .chro-nav button,
-[data-color-scheme="light"] .chro-pill,
-[data-color-scheme="light"] .chro-tag{
-  background:rgba(255,250,240,.76)!important;
-  color:var(--edison-title)!important;
-  border-color:var(--edison-border-gold)!important;
-  box-shadow:0 8px 18px rgba(145,65,12,.08)!important;
-}
-
-[data-color-scheme="light"] .chro-nav a:hover,
-[data-color-scheme="light"] .chro-nav button:hover,
-[data-color-scheme="light"] .chro-pill:hover,
-[data-color-scheme="light"] .chro-tag:hover{
-  background:rgba(255,226,173,.86)!important;
-  color:var(--edison-red)!important;
-  border-color:var(--edison-border-red)!important;
-}
-
-/* Bloc principal des périodes */
-[data-color-scheme="light"] .chro-era{
-  background:
-    radial-gradient(circle at top left,rgba(216,138,0,.10),transparent 36%),
-    linear-gradient(180deg,rgba(255,250,240,.88),rgba(255,226,173,.74))!important;
-  border-color:var(--edison-border-gold-mid)!important;
-  box-shadow:
-    inset 0 0 0 1px var(--edison-border-ink-soft),
-    0 12px 28px var(--edison-shadow-warm)!important;
-}
-
-/* Titre de période : retire le bleu */
-[data-color-scheme="light"] .chro-era-title{
-  background:
-    linear-gradient(90deg,rgba(216,138,0,.18),rgba(255,250,240,.72))!important;
-  color:var(--edison-orange)!important;
-  border-bottom-color:var(--edison-border-gold-mid)!important;
-  text-shadow:none!important;
-}
-
-/* Variante alternée pour diversifier les périodes */
-[data-color-scheme="light"] .chro-era:nth-of-type(2n) .chro-era-title{
-  background:
-    linear-gradient(90deg,rgba(192,24,53,.14),rgba(255,250,240,.72))!important;
-  color:var(--edison-red)!important;
-}
-
-[data-color-scheme="light"] .chro-era:nth-of-type(3n) .chro-era-title{
-  background:
-    linear-gradient(90deg,rgba(143,107,0,.14),rgba(255,250,240,.72))!important;
-  color:var(--edison-olive)!important;
-}
-
-/* Ligne de chronologie */
-[data-color-scheme="light"] .chro-line{
-  border-left-color:var(--edison-orange)!important;
-}
-
-[data-color-scheme="light"] .chro-line::before,
-[data-color-scheme="light"] .chro-dot,
-[data-color-scheme="light"] .chro-marker{
-  background:var(--edison-orange)!important;
-  box-shadow:0 0 10px rgba(215,106,0,.24)!important;
-}
-
-/* Items internes */
-[data-color-scheme="light"] .chro-item,
-[data-color-scheme="light"] .chro-event,
-[data-color-scheme="light"] .chro-card{
-  background:
-    linear-gradient(90deg,rgba(255,250,240,.72),rgba(255,226,173,.42))!important;
-  color:var(--edison-text)!important;
-  border-color:rgba(216,138,0,.16)!important;
-}
-
-/* Alternance des cases internes */
-[data-color-scheme="light"] .chro-item:nth-child(3n+1),
-[data-color-scheme="light"] .chro-event:nth-child(3n+1),
-[data-color-scheme="light"] .chro-card:nth-child(3n+1){
-  border-left-color:var(--edison-orange)!important;
-  background:
-    linear-gradient(90deg,rgba(215,106,0,.10),rgba(255,250,240,.68))!important;
-}
-
-[data-color-scheme="light"] .chro-item:nth-child(3n+2),
-[data-color-scheme="light"] .chro-event:nth-child(3n+2),
-[data-color-scheme="light"] .chro-card:nth-child(3n+2){
-  border-left-color:var(--edison-red)!important;
-  background:
-    var(--edison-bg-line-red)!important;
-}
-
-[data-color-scheme="light"] .chro-item:nth-child(3n+3),
-[data-color-scheme="light"] .chro-event:nth-child(3n+3),
-[data-color-scheme="light"] .chro-card:nth-child(3n+3){
-  border-left-color:var(--edison-olive)!important;
-  background:
-    linear-gradient(90deg,rgba(143,107,0,.10),rgba(255,250,240,.68))!important;
-}
-
-/* Titres / textes internes */
-[data-color-scheme="light"] .chro h1,
-[data-color-scheme="light"] .chro h2,
-[data-color-scheme="light"] .chro h3,
-[data-color-scheme="light"] .chro-title,
-[data-color-scheme="light"] .chro-subtitle,
-[data-color-scheme="light"] .chro-event-title{
-  color:var(--edison-title)!important;
-  text-shadow:none!important;
-}
-
-[data-color-scheme="light"] .chro b,
-[data-color-scheme="light"] .chro strong{
-  color:var(--edison-red)!important;
-}
-
-[data-color-scheme="light"] .chro p,
-[data-color-scheme="light"] .chro li,
-[data-color-scheme="light"] .chro span{
-  color:var(--edison-text);
-}
-
-[data-color-scheme="light"] .chro a{
-  color:var(--edison-orange)!important;
-}
-
-[data-color-scheme="light"] .chro a:hover{
-  color:var(--edison-red)!important;
-}
-/* =========================================================
    PATCH EDISON LIGHT — CONTEXTE + INTRIGUES
    Retire les fonds bleus restants en light
 ========================================================= */
@@ -7748,31 +7585,31 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
    FIN PATCH FINAL LIGHT — ANTI-BLEU/CYAN
 ========================================================= */
 
-
 /* =========================================================
-   PATCH FINAL LIGHT — CHRONOLOGIE RESTAURÉE
-   Objectif :
-   - ne plus toucher au fond général de Chronologie avec un patch anti-cyan global ;
-   - restaurer des cartes claires/lisibles ;
-   - supprimer précisément le halo cyan/bleu des points .chro-item::before.
+   PATCH FINAL LIGHT — CHRONOLOGIE PROPRE
+   Corrige le bug vu DevTools :
+   - .chro-line ne doit PAS avoir un fond plein ;
+   - .chro-item:nth-child(...) ne doit PAS colorer tout le bloc ;
+   - .chro-item::before ne doit plus avoir de shadow cyan/bleu.
 ========================================================= */
 
 [data-color-scheme="light"]{
-  --chro-fond-page:#fff7df;
-  --chro-fond-boite:#fffaf0;
-  --chro-fond-carte:rgba(255,250,240,.82);
-  --chro-fond-carte-soft:rgba(255,226,173,.56);
-  --chro-orange:#d76a00;
-  --chro-orange-rgb:215,106,0;
-  --chro-red:#ab0e0e;
-  --chro-red-rgb:171,14,14;
-  --chro-cream:#fff0cf;
-  --chro-ink:#3a1b0b;
-  --chro-warm-border:rgba(216,138,0,.22);
-  --chro-warm-shadow:0 10px 24px rgba(145,65,12,.10);
+  --chro-clean-bg:#fff7df;
+  --chro-clean-box:#fffaf0;
+  --chro-clean-card:rgba(255,250,240,.86);
+  --chro-clean-card-soft:rgba(255,226,173,.50);
+  --chro-clean-orange:#d76a00;
+  --chro-clean-red:#ab0e0e;
+  --chro-clean-gold:#d88a00;
+  --chro-clean-olive:#8f6b00;
+  --chro-clean-cream:#fff0cf;
+  --chro-clean-ink:#3a1b0b;
+  --chro-clean-muted:#8a4f25;
+  --chro-clean-border:rgba(216,138,0,.22);
+  --chro-clean-shadow:0 10px 24px rgba(145,65,12,.10);
 
-  /* Variables conservées pour compatibilité, mais sans valeur bleue en light */
-  --chro-shadow-cyan:0 0 0 1px rgba(216,138,0,.20),0 8px 18px rgba(145,65,12,.08);
+  /* Compat : les variables gardent leur nom mais ne contiennent plus de bleu en light */
+  --chro-shadow-cyan:0 8px 18px rgba(145,65,12,.08);
   --chro-border-cyan:rgba(216,138,0,.22);
   --chro-border-cyan-soft:rgba(216,138,0,.16);
   --chro-border-cyan-title:rgba(216,138,0,.22);
@@ -7781,106 +7618,160 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
   --chro-line-gradient:linear-gradient(180deg,#d76a00 0%,#ab0e0e 100%);
 }
 
-/* Wrapper : on garde le fond clair d'origine, pas de gros halo forcé */
+/* Wrapper général : clair, chaud, sans glow cyan */
 [data-color-scheme="light"] .chro,
 [data-color-scheme="light"] .chro-box{
   background:
     radial-gradient(circle at 50% 0%,rgba(255,168,36,.10),transparent 36%),
     linear-gradient(180deg,#fff7df 0%,#fffaf0 55%,#ffe0a3 100%)!important;
-  border-color:var(--chro-warm-border)!important;
+  border-color:var(--chro-clean-border)!important;
   box-shadow:
     inset 0 0 0 1px rgba(70,28,8,.04),
-    0 12px 28px rgba(145,65,12,.10)!important;
-  color:var(--chro-ink)!important;
+    var(--chro-clean-shadow)!important;
+  color:var(--chro-clean-ink)!important;
+  text-shadow:none!important;
   filter:none!important;
 }
 
-/* L'intérieur des générations redevient clair et respirant */
+[data-color-scheme="light"] .chro-box::before{
+  background-image:radial-gradient(circle,rgba(216,138,0,.30) 1px,transparent 1.4px)!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+
+/* En-têtes / intro */
+[data-color-scheme="light"] .chro-head,
+[data-color-scheme="light"] .chro-intro,
+[data-color-scheme="light"] .chro-note{
+  background:
+    radial-gradient(circle at top right,rgba(192,24,53,.07),transparent 36%),
+    linear-gradient(90deg,rgba(255,250,240,.94),rgba(255,226,173,.70))!important;
+  border-color:var(--chro-clean-border)!important;
+  color:var(--chro-clean-ink)!important;
+  box-shadow:0 8px 18px rgba(145,65,12,.07)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-title,
+[data-color-scheme="light"] .chro h1,
+[data-color-scheme="light"] .chro h2,
+[data-color-scheme="light"] .chro h3,
+[data-color-scheme="light"] .chro h4{
+  color:var(--chro-clean-red)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Nav chronologie */
+[data-color-scheme="light"] .chro-nav a,
+[data-color-scheme="light"] .chro-nav button,
+[data-color-scheme="light"] .chro-pill,
+[data-color-scheme="light"] .chro-tag{
+  background:rgba(255,250,240,.80)!important;
+  color:var(--chro-clean-orange)!important;
+  border-color:var(--chro-clean-border)!important;
+  box-shadow:0 8px 18px rgba(145,65,12,.07)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-nav a:hover,
+[data-color-scheme="light"] .chro-nav button:hover,
+[data-color-scheme="light"] .chro-pill:hover,
+[data-color-scheme="light"] .chro-tag:hover{
+  background:#ffd400!important;
+  color:var(--chro-clean-red)!important;
+  border-color:var(--chro-clean-red)!important;
+}
+
+/* Génération : on restaure un fond clair, pas d'aplat rouge */
 [data-color-scheme="light"] .chro-era{
   background:
     radial-gradient(circle at top left,rgba(216,138,0,.08),transparent 36%),
-    linear-gradient(180deg,rgba(255,250,240,.78),rgba(255,226,173,.46))!important;
+    linear-gradient(180deg,rgba(255,250,240,.82),rgba(255,226,173,.46))!important;
   border-color:rgba(216,138,0,.20)!important;
-  box-shadow:var(--chro-warm-shadow)!important;
+  box-shadow:var(--chro-clean-shadow)!important;
+  color:var(--chro-clean-ink)!important;
+  text-shadow:none!important;
   filter:none!important;
 }
 
 [data-color-scheme="light"] .chro-era-title{
   background:
     linear-gradient(90deg,rgba(255,250,240,.94),rgba(255,226,173,.58))!important;
-  color:var(--chro-red)!important;
-  border-bottom-color:rgba(216,138,0,.22)!important;
-  text-shadow:none!important;
+  color:var(--chro-clean-red)!important;
+  border-bottom-color:var(--chro-clean-border)!important;
   box-shadow:none!important;
+  text-shadow:none!important;
   filter:none!important;
 }
 
-/* La ligne reste chaude, mais sans glow cyan */
+/* IMPORTANT : .chro-line est un conteneur, donc fond transparent */
 [data-color-scheme="light"] .chro-line,
 [data-color-scheme="light"] .chro-timeline,
 [data-color-scheme="light"] .chro-axis,
 [data-color-scheme="light"] .chro-date-line{
-  background:linear-gradient(180deg,var(--chro-orange),var(--chro-red))!important;
-  background-color:var(--chro-orange)!important;
-  border-color:var(--chro-orange)!important;
-  border-left-color:var(--chro-orange)!important;
+  position:relative!important;
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
   box-shadow:none!important;
   filter:none!important;
 }
 
-/* IMPORTANT : le fond rouge/orange qui avait envahi les items est neutralisé */
+/* Vraie ligne verticale : via pseudo-élément uniquement */
+[data-color-scheme="light"] .chro-line::before,
+[data-color-scheme="light"] .chro-timeline::before,
+[data-color-scheme="light"] .chro-axis::before,
+[data-color-scheme="light"] .chro-date-line::before{
+  content:""!important;
+  position:absolute!important;
+  top:0!important;
+  bottom:0!important;
+  left:22px!important;
+  width:3px!important;
+  height:auto!important;
+  border:0!important;
+  border-radius:999px!important;
+  background:linear-gradient(180deg,var(--chro-clean-orange),var(--chro-clean-red))!important;
+  box-shadow:none!important;
+  filter:none!important;
+  z-index:0!important;
+}
+
+/* Aucun item ne doit recevoir l'ancien fond orange/rouge global */
+[data-color-scheme="light"] .chro-line > .chro-item,
+[data-color-scheme="light"] .chro-line > .chro-event,
+[data-color-scheme="light"] .chro-line > .chro-card,
 [data-color-scheme="light"] .chro-item,
 [data-color-scheme="light"] .chro-event,
-[data-color-scheme="light"] .chro-card{
+[data-color-scheme="light"] .chro-card,
+[data-color-scheme="light"] .chro-item:nth-child(3n+1),
+[data-color-scheme="light"] .chro-item:nth-child(3n+2),
+[data-color-scheme="light"] .chro-item:nth-child(3n+3),
+[data-color-scheme="light"] .chro-event:nth-child(3n+1),
+[data-color-scheme="light"] .chro-event:nth-child(3n+2),
+[data-color-scheme="light"] .chro-event:nth-child(3n+3),
+[data-color-scheme="light"] .chro-card:nth-child(3n+1),
+[data-color-scheme="light"] .chro-card:nth-child(3n+2),
+[data-color-scheme="light"] .chro-card:nth-child(3n+3){
+  position:relative!important;
+  z-index:1!important;
   background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
   border-color:transparent!important;
   box-shadow:none!important;
   filter:none!important;
-  color:var(--chro-ink)!important;
+  color:var(--chro-clean-ink)!important;
 }
 
-/* La vraie carte de contenu reprend un fond clair */
-[data-color-scheme="light"] .chro-content,
-[data-color-scheme="light"] .chro-item .chro-content,
-[data-color-scheme="light"] .chro-event .chro-content,
-[data-color-scheme="light"] .chro-card .chro-content{
-  background:
-    linear-gradient(90deg,var(--chro-fond-carte),var(--chro-fond-carte-soft))!important;
-  border:1px solid rgba(216,138,0,.18)!important;
-  border-left:4px solid var(--chro-orange)!important;
-  box-shadow:0 8px 18px rgba(145,65,12,.08)!important;
-  color:var(--chro-ink)!important;
-  filter:none!important;
-}
-
-/* Alternances légères, pas de gros aplat rouge */
-[data-color-scheme="light"] .chro-item:nth-child(3n+1) .chro-content,
-[data-color-scheme="light"] .chro-event:nth-child(3n+1) .chro-content,
-[data-color-scheme="light"] .chro-card:nth-child(3n+1) .chro-content{
-  border-left-color:var(--chro-orange)!important;
-  background:linear-gradient(90deg,rgba(255,250,240,.84),rgba(255,226,173,.54))!important;
-}
-
-[data-color-scheme="light"] .chro-item:nth-child(3n+2) .chro-content,
-[data-color-scheme="light"] .chro-event:nth-child(3n+2) .chro-content,
-[data-color-scheme="light"] .chro-card:nth-child(3n+2) .chro-content{
-  border-left-color:var(--chro-red)!important;
-  background:linear-gradient(90deg,rgba(255,250,240,.84),rgba(255,224,213,.48))!important;
-}
-
-[data-color-scheme="light"] .chro-item:nth-child(3n+3) .chro-content,
-[data-color-scheme="light"] .chro-event:nth-child(3n+3) .chro-content,
-[data-color-scheme="light"] .chro-card:nth-child(3n+3) .chro-content{
-  border-left-color:#8f6b00!important;
-  background:linear-gradient(90deg,rgba(255,250,240,.84),rgba(245,232,168,.42))!important;
-}
-
-/* Point fautif vu dans DevTools : .chro-item::before */
+/* Point de timeline : plus aucun halo cyan/bleu */
 [data-color-scheme="light"] .chro-item::before,
 [data-color-scheme="light"] .chro-event::before,
 [data-color-scheme="light"] .chro-card::before,
-[data-color-scheme="light"] .chro-line::before,
-[data-color-scheme="light"] .chro-line::after,
 [data-color-scheme="light"] .chro-dot,
 [data-color-scheme="light"] .chro-marker,
 [data-color-scheme="light"] .chro-point,
@@ -7888,43 +7779,89 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
 [data-color-scheme="light"] .chro-date-dot,
 [data-color-scheme="light"] .timeline-dot,
 [data-color-scheme="light"] .timeline-marker{
-  background:var(--chro-orange)!important;
-  background-color:var(--chro-orange)!important;
-  border-color:var(--chro-cream)!important;
-  color:var(--chro-red)!important;
+  content:""!important;
+  background:var(--chro-clean-orange)!important;
+  background-color:var(--chro-clean-orange)!important;
+  background-image:none!important;
+  border:2px solid var(--chro-clean-cream)!important;
+  color:var(--chro-clean-red)!important;
   box-shadow:
     0 0 0 3px rgba(255,240,207,.95),
-    0 0 0 5px rgba(var(--chro-orange-rgb),.22)!important;
+    0 0 0 5px rgba(215,106,0,.22)!important;
   text-shadow:none!important;
   filter:none!important;
 }
 
-/* Si certains points sont générés en ::after */
 [data-color-scheme="light"] .chro-item::after,
 [data-color-scheme="light"] .chro-event::after,
-[data-color-scheme="light"] .chro-card::after{
+[data-color-scheme="light"] .chro-card::after,
+[data-color-scheme="light"] .chro-line::after,
+[data-color-scheme="light"] .chro-timeline::after,
+[data-color-scheme="light"] .chro-axis::after{
+  background:transparent!important;
   box-shadow:none!important;
   text-shadow:none!important;
   filter:none!important;
+  border-color:transparent!important;
 }
 
-/* Textes de la chrono : aucun glow cyan */
+/* Carte de contenu : fond clair lisible */
+[data-color-scheme="light"] .chro-content,
+[data-color-scheme="light"] .chro-item .chro-content,
+[data-color-scheme="light"] .chro-event .chro-content,
+[data-color-scheme="light"] .chro-card .chro-content{
+  background:
+    linear-gradient(90deg,var(--chro-clean-card),var(--chro-clean-card-soft))!important;
+  border:1px solid rgba(216,138,0,.18)!important;
+  border-left:4px solid var(--chro-clean-orange)!important;
+  box-shadow:0 8px 18px rgba(145,65,12,.08)!important;
+  color:var(--chro-clean-ink)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] .chro-item:nth-child(3n+2) .chro-content,
+[data-color-scheme="light"] .chro-event:nth-child(3n+2) .chro-content,
+[data-color-scheme="light"] .chro-card:nth-child(3n+2) .chro-content{
+  border-left-color:var(--chro-clean-red)!important;
+  background:linear-gradient(90deg,rgba(255,250,240,.86),rgba(255,224,213,.48))!important;
+}
+
+[data-color-scheme="light"] .chro-item:nth-child(3n+3) .chro-content,
+[data-color-scheme="light"] .chro-event:nth-child(3n+3) .chro-content,
+[data-color-scheme="light"] .chro-card:nth-child(3n+3) .chro-content{
+  border-left-color:var(--chro-clean-olive)!important;
+  background:linear-gradient(90deg,rgba(255,250,240,.86),rgba(245,232,168,.42))!important;
+}
+
+/* Textes : pas d'ombre, pas de filtre cyan */
 [data-color-scheme="light"] .chro :is(h1,h2,h3,h4,h5,h6,.chro-title,.chro-subtitle,.chro-event-title,.chro-date,.chro-text,p,li,span,a,b,strong){
   text-shadow:none!important;
   filter:none!important;
 }
 
-[data-color-scheme="light"] .chro-date{
-  color:var(--chro-red)!important;
-}
-
+[data-color-scheme="light"] .chro-date,
 [data-color-scheme="light"] .chro-event-title,
 [data-color-scheme="light"] .chro-content b,
 [data-color-scheme="light"] .chro-content strong{
-  color:var(--chro-red)!important;
+  color:var(--chro-clean-red)!important;
+}
+
+[data-color-scheme="light"] .chro p,
+[data-color-scheme="light"] .chro li,
+[data-color-scheme="light"] .chro span{
+  color:var(--chro-clean-ink);
+}
+
+[data-color-scheme="light"] .chro a{
+  color:var(--chro-clean-orange)!important;
+}
+
+[data-color-scheme="light"] .chro a:hover{
+  color:var(--chro-clean-red)!important;
 }
 
 /* =========================================================
-   FIN PATCH FINAL LIGHT — CHRONOLOGIE RESTAURÉE
+   FIN PATCH FINAL LIGHT — CHRONOLOGIE PROPRE
 ========================================================= */
 

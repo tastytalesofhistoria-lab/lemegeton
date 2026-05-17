@@ -7561,3 +7561,131 @@ body[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites span,
   color:#fffaf0!important;
   -webkit-text-fill-color:#fffaf0!important;
 }
+/* =========================================================
+   PATCH FINAL LIGHT — MENUS DÉROULANTS NAVBAR ROUGES
+   À coller tout en bas du CSS global
+   Cible les dropdowns Forumactif + custom navbar sans toucher la PA iframe
+========================================================= */
+
+[data-color-scheme="light"]{
+  --nav-dropdown-bg:
+    radial-gradient(circle at top right,rgba(255,212,0,.12),transparent 38%),
+    linear-gradient(180deg,#fff4e2 0%,#ffe0a3 100%);
+  --nav-dropdown-text:#ab0e0e;
+  --nav-dropdown-hover-bg:#ffd400;
+  --nav-dropdown-hover-text:#690303;
+  --nav-dropdown-border:rgba(171,14,14,.38);
+}
+
+/* Le parent de menu ne doit pas couper le sous-menu */
+[data-color-scheme="light"] #custom-navbar,
+[data-color-scheme="light"] #custom-navbar ul,
+[data-color-scheme="light"] #custom-navbar li,
+[data-color-scheme="light"] .custom-navbar,
+[data-color-scheme="light"] .custom-navbar ul,
+[data-color-scheme="light"] .custom-navbar li,
+[data-color-scheme="light"] .mainmenu,
+[data-color-scheme="light"] .mainmenu ul,
+[data-color-scheme="light"] .mainmenu li,
+[data-color-scheme="light"] .navbar,
+[data-color-scheme="light"] .navbar ul,
+[data-color-scheme="light"] .navbar li{
+  overflow:visible!important;
+}
+
+/* Fonds des dropdowns : Forumactif natif + menus custom */
+[data-color-scheme="light"] #custom-navbar ul ul,
+[data-color-scheme="light"] #custom-navbar li:hover > ul,
+[data-color-scheme="light"] #custom-navbar li:focus-within > ul,
+[data-color-scheme="light"] .custom-navbar ul ul,
+[data-color-scheme="light"] .custom-navbar li:hover > ul,
+[data-color-scheme="light"] .custom-navbar li:focus-within > ul,
+[data-color-scheme="light"] .mainmenu ul ul,
+[data-color-scheme="light"] .mainmenu li:hover > ul,
+[data-color-scheme="light"] .mainmenu li:focus-within > ul,
+[data-color-scheme="light"] .navbar ul ul,
+[data-color-scheme="light"] .navbar li:hover > ul,
+[data-color-scheme="light"] .navbar li:focus-within > ul,
+[data-color-scheme="light"] .linklist.top ul,
+[data-color-scheme="light"] .linklist.top li:hover > ul,
+[data-color-scheme="light"] .linklist.top li:focus-within > ul,
+[data-color-scheme="light"] .dropdown,
+[data-color-scheme="light"] .dropdown-menu,
+[data-color-scheme="light"] .submenu,
+[data-color-scheme="light"] .sub-menu,
+[data-color-scheme="light"] [class*="dropdown"] ul,
+[data-color-scheme="light"] [class*="submenu"] ul{
+  background:var(--nav-dropdown-bg)!important;
+  background-color:#fff4e2!important;
+  border:1px solid var(--nav-dropdown-border)!important;
+  box-shadow:
+    0 12px 26px rgba(122,40,8,.18),
+    inset 0 0 0 1px rgba(255,255,255,.28)!important;
+  color:var(--nav-dropdown-text)!important;
+  text-shadow:none!important;
+  filter:none!important;
+  z-index:99999!important;
+}
+
+/* Liens internes du dropdown */
+[data-color-scheme="light"] #custom-navbar ul ul a,
+[data-color-scheme="light"] #custom-navbar li:hover > ul a,
+[data-color-scheme="light"] .custom-navbar ul ul a,
+[data-color-scheme="light"] .custom-navbar li:hover > ul a,
+[data-color-scheme="light"] .mainmenu ul ul a,
+[data-color-scheme="light"] .mainmenu li:hover > ul a,
+[data-color-scheme="light"] .navbar ul ul a,
+[data-color-scheme="light"] .navbar li:hover > ul a,
+[data-color-scheme="light"] .linklist.top ul a,
+[data-color-scheme="light"] .linklist.top li:hover > ul a,
+[data-color-scheme="light"] .dropdown a,
+[data-color-scheme="light"] .dropdown-menu a,
+[data-color-scheme="light"] .submenu a,
+[data-color-scheme="light"] .sub-menu a,
+[data-color-scheme="light"] [class*="dropdown"] ul a,
+[data-color-scheme="light"] [class*="submenu"] ul a{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  color:var(--nav-dropdown-text)!important;
+  border:0!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Hover : jaune canari, texte rouge sombre */
+[data-color-scheme="light"] #custom-navbar ul ul a:hover,
+[data-color-scheme="light"] #custom-navbar li:hover > ul a:hover,
+[data-color-scheme="light"] .custom-navbar ul ul a:hover,
+[data-color-scheme="light"] .custom-navbar li:hover > ul a:hover,
+[data-color-scheme="light"] .mainmenu ul ul a:hover,
+[data-color-scheme="light"] .mainmenu li:hover > ul a:hover,
+[data-color-scheme="light"] .navbar ul ul a:hover,
+[data-color-scheme="light"] .navbar li:hover > ul a:hover,
+[data-color-scheme="light"] .linklist.top ul a:hover,
+[data-color-scheme="light"] .linklist.top li:hover > ul a:hover,
+[data-color-scheme="light"] .dropdown a:hover,
+[data-color-scheme="light"] .dropdown-menu a:hover,
+[data-color-scheme="light"] .submenu a:hover,
+[data-color-scheme="light"] .sub-menu a:hover,
+[data-color-scheme="light"] [class*="dropdown"] ul a:hover,
+[data-color-scheme="light"] [class*="submenu"] ul a:hover{
+  background:var(--nav-dropdown-hover-bg)!important;
+  background-color:#ffd400!important;
+  color:var(--nav-dropdown-hover-text)!important;
+}
+
+/* Les caret/flèches restent rouges */
+[data-color-scheme="light"] #custom-navbar .caret,
+[data-color-scheme="light"] .custom-navbar .caret,
+[data-color-scheme="light"] .mainmenu .caret,
+[data-color-scheme="light"] .navbar .caret,
+[data-color-scheme="light"] .linklist.top .caret,
+[data-color-scheme="light"] #custom-navbar a::after,
+[data-color-scheme="light"] .custom-navbar a::after,
+[data-color-scheme="light"] .mainmenu a::after,
+[data-color-scheme="light"] .navbar a::after{
+  color:var(--nav-dropdown-text)!important;
+  border-top-color:var(--nav-dropdown-text)!important;
+}

@@ -3556,20 +3556,28 @@ iframe.pa-frame{
   --ovld-pink:#c01835;
   --ovld-pink-soft:#ff4e57;
 
-  --ovld-pride:#b81424;
-  --ovld-pride-rgb:184,20,36;
-  --ovld-wrath:#d76a00;
-  --ovld-wrath-rgb:215,106,0;
-  --ovld-gluttony:#d88a00;
-  --ovld-gluttony-rgb:216,138,0;
-  --ovld-greed:#8f6b00;
-  --ovld-greed-rgb:143,107,0;
-  --ovld-lust:#c01835;
-  --ovld-lust-rgb:192,24,53;
-  --ovld-envy:#8a2f63;
-  --ovld-envy-rgb:138,47,99;
-  --ovld-sloth:#b56b00;
-  --ovld-sloth-rgb:181,107,0;
+/* Couleurs des Sins — identiques dark/light */
+
+--ovld-pride:#ff2a2a;
+--ovld-pride-rgb:255,42,42;
+
+--ovld-wrath:#ff9a1f;
+--ovld-wrath-rgb:255,154,31;
+
+--ovld-gluttony:#e8ff3a;
+--ovld-gluttony-rgb:232,255,58;
+
+--ovld-greed:#31ff63;
+--ovld-greed-rgb:49,255,99;
+
+--ovld-lust:#3f5dff;
+--ovld-lust-rgb:63,93,255;
+
+--ovld-envy:#c43cff;
+--ovld-envy-rgb:196,60,255;
+
+--ovld-sloth:#ff8de1;
+--ovld-sloth-rgb:255,141,225;
 
   --ovld-head-img:none;
 

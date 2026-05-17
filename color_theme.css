@@ -1,531 +1,9 @@
 /* =========================================================
    LEMEGETON — COLOR THEME / EDISON
-   Variables globales clair / sombre
-========================================================= */
-/* =========================================================
-   PATCH EDISON — FOND GLOBAL FORUMACTIF
-   Fond extérieur ≠ fond forum ≠ fond page
-   Version safe light/dark
+   Version nettoyée : variables en tête, patchs centralisés,
+   doublons de custom properties supprimés en gardant la dernière valeur.
 ========================================================= */
 
-html,
-body{
-  background:var(--fa-body-bg)!important;
-  background-color:var(--fa-body-color,#040614)!important;
-}
-
-body{
-  color:var(--lem-text,var(--nav-text,#d8ecff));
-}
-
-/* Grand wrapper Forumactif */
-#wrap{
-  background:var(--fa-wrap-bg)!important;
-  background-color:var(--fa-wrap-color,#101936)!important;
-  border:1px solid var(--fa-border-main)!important;
-  box-shadow:var(--fa-shadow-main);
-}
-
-/* Conteneurs principaux */
-#content-container,
-#container,
-.conteneur_minwidth_IE,
-.conteneur_layout_IE,
-.conteneur_container_IE{
-  background:var(--fa-container-bg)!important;
-  background-color:var(--fa-container-color,#111d3d)!important;
-}
-
-/* Zone de contenu réelle */
-#page-body,
-#main,
-#main-content{
-  background:transparent!important;
-  background-color:transparent!important;
-  border-color:var(--fa-border-soft)!important;
-}
-
-/* Empêche ModernBB de remettre certains fonds natifs */
-.module,
-.block{
-  background-color:transparent!important;
-  border-color:var(--fa-border-main);
-}
-
-/* Panels natifs Forumactif seulement */
-#cp-main .panel,
-#ucp .panel,
-#profile-advanced-layout .panel,
-.panel.row1,
-.panel.row2{
-  background-color:transparent!important;
-  border-color:var(--fa-border-main)!important;
-}
-
-/* Ne pas écraser les designs des cartes / posts / catégories */
-.forabg,
-.forumbg,
-.post,
-.row{
-  border-color:var(--fa-border-main);
-}
-
-/* PA iframe : elle garde son propre design */
-.pa-frame-wrap,
-.pa-frame-wrap iframe,
-iframe.pa-frame{
-  background:transparent!important;
-  background-color:transparent!important;
-}
-/* =========================================================
-   PATCH EDISON LIGHT — TABLEAUX UCP / PROFIL
-   Corrige favoris, brouillons, sujets surveillés, notifications
-========================================================= */
-
-/* Wrapper interne des pages UCP */
-[data-color-scheme="light"] #cp-main,
-[data-color-scheme="light"] .ucp-main,
-[data-color-scheme="light"] #main-content #cp-main{
-  background:
-    radial-gradient(circle at top right,rgba(192,24,53,.04),transparent 42%),
-    linear-gradient(180deg,rgba(255,250,240,.96),rgba(255,226,173,.88))!important;
-  color:var(--fa-text-main,#4a2812)!important;
-}
-
-/* Tables Forumactif natives */
-[data-color-scheme="light"] #cp-main table.table1,
-[data-color-scheme="light"] #ucp table.table1,
-[data-color-scheme="light"] #main-content table.table1{
-  width:100%!important;
-  overflow:hidden!important;
-  border:1px solid rgba(145,65,12,.14)!important;
-  border-radius:12px!important;
-  border-collapse:separate!important;
-  border-spacing:0!important;
-  background:
-    linear-gradient(180deg,rgba(255,250,240,.96),rgba(255,226,173,.90))!important;
-  color:var(--fa-text-main,#4a2812)!important;
-  box-shadow:
-    inset 0 0 0 1px rgba(70,28,8,.04),
-    0 10px 24px rgba(145,65,12,.08)!important;
-}
-
-/* En-têtes de tables */
-[data-color-scheme="light"] #cp-main table.table1 thead,
-[data-color-scheme="light"] #ucp table.table1 thead,
-[data-color-scheme="light"] #main-content table.table1 thead,
-[data-color-scheme="light"] #cp-main table.table1 thead tr,
-[data-color-scheme="light"] #ucp table.table1 thead tr,
-[data-color-scheme="light"] #main-content table.table1 thead tr{
-  background:
-    radial-gradient(circle at top left,rgba(215,106,0,.12),transparent 40%),
-    linear-gradient(90deg,rgba(255,244,207,.98),rgba(255,210,137,.92))!important;
-  color:var(--fa-title-strong,#7a2e10)!important;
-}
-
-/* Cellules d'en-tête */
-[data-color-scheme="light"] #cp-main table.table1 th,
-[data-color-scheme="light"] #ucp table.table1 th,
-[data-color-scheme="light"] #main-content table.table1 th{
-  padding:12px 14px!important;
-  border:0!important;
-  border-bottom:1px solid rgba(145,65,12,.16)!important;
-  background:transparent!important;
-  color:var(--fa-title-strong,#7a2e10)!important;
-  font-weight:800!important;
-  text-shadow:none!important;
-}
-
-/* Corps des tableaux */
-[data-color-scheme="light"] #cp-main table.table1 tbody,
-[data-color-scheme="light"] #ucp table.table1 tbody,
-[data-color-scheme="light"] #main-content table.table1 tbody{
-  background:
-    linear-gradient(180deg,rgba(255,250,240,.94),rgba(255,226,173,.86))!important;
-}
-
-/* Lignes */
-[data-color-scheme="light"] #cp-main table.table1 tbody tr,
-[data-color-scheme="light"] #ucp table.table1 tbody tr,
-[data-color-scheme="light"] #main-content table.table1 tbody tr,
-[data-color-scheme="light"] #cp-main table.table1 .row1,
-[data-color-scheme="light"] #cp-main table.table1 .row2,
-[data-color-scheme="light"] #cp-main table.table1 .row3,
-[data-color-scheme="light"] #ucp table.table1 .row1,
-[data-color-scheme="light"] #ucp table.table1 .row2,
-[data-color-scheme="light"] #ucp table.table1 .row3{
-  background:rgba(255,250,240,.42)!important;
-  color:var(--fa-text-main,#4a2812)!important;
-}
-
-/* Alternance légère */
-[data-color-scheme="light"] #cp-main table.table1 tbody tr:nth-child(even),
-[data-color-scheme="light"] #ucp table.table1 tbody tr:nth-child(even),
-[data-color-scheme="light"] #main-content table.table1 tbody tr:nth-child(even){
-  background:rgba(255,226,173,.34)!important;
-}
-
-/* Cellules */
-[data-color-scheme="light"] #cp-main table.table1 td,
-[data-color-scheme="light"] #ucp table.table1 td,
-[data-color-scheme="light"] #main-content table.table1 td,
-[data-color-scheme="light"] #cp-main table.table1 .posts,
-[data-color-scheme="light"] #ucp table.table1 .posts,
-[data-color-scheme="light"] #main-content table.table1 .posts,
-[data-color-scheme="light"] #cp-main table.table1 .mobile-hidden,
-[data-color-scheme="light"] #ucp table.table1 .mobile-hidden,
-[data-color-scheme="light"] #main-content table.table1 .mobile-hidden{
-  padding:8px 12px!important;
-  border-color:rgba(145,65,12,.10)!important;
-  background:transparent!important;
-  color:var(--fa-text-main,#4a2812)!important;
-}
-
-/* Hover des lignes */
-[data-color-scheme="light"] #cp-main table.table1 tbody tr:hover,
-[data-color-scheme="light"] #ucp table.table1 tbody tr:hover,
-[data-color-scheme="light"] #main-content table.table1 tbody tr:hover{
-  background:rgba(255,184,51,.18)!important;
-}
-
-/* Liens dans tableaux */
-[data-color-scheme="light"] #cp-main table.table1 a,
-[data-color-scheme="light"] #ucp table.table1 a,
-[data-color-scheme="light"] #main-content table.table1 a{
-  color:var(--fa-link,#c35a14)!important;
-  text-shadow:none!important;
-}
-
-[data-color-scheme="light"] #cp-main table.table1 a:hover,
-[data-color-scheme="light"] #ucp table.table1 a:hover,
-[data-color-scheme="light"] #main-content table.table1 a:hover{
-  color:var(--fa-link-hover,#c01835)!important;
-}
-
-/* Icônes de sujets / documents dans les tableaux */
-[data-color-scheme="light"] #cp-main table.table1 .icon,
-[data-color-scheme="light"] #ucp table.table1 .icon,
-[data-color-scheme="light"] #main-content table.table1 .icon{
-  color:var(--fa-link,#c35a14)!important;
-}
-
-/* Checkboxes */
-[data-color-scheme="light"] #cp-main table.table1 input[type="checkbox"],
-[data-color-scheme="light"] #ucp table.table1 input[type="checkbox"],
-[data-color-scheme="light"] #main-content table.table1 input[type="checkbox"]{
-  accent-color:var(--fa-link-hover,#c01835)!important;
-}
-
-/* Texte vide : aucun favori / aucun brouillon */
-[data-color-scheme="light"] #cp-main table.table1 td[colspan],
-[data-color-scheme="light"] #ucp table.table1 td[colspan],
-[data-color-scheme="light"] #main-content table.table1 td[colspan]{
-  color:var(--fa-text-soft,#8a5a32)!important;
-  font-style:italic;
-}
-
-/* Boutons sous les tableaux */
-[data-color-scheme="light"] #cp-main .right-box,
-[data-color-scheme="light"] #ucp .right-box,
-[data-color-scheme="light"] #main-content .right-box,
-[data-color-scheme="light"] #cp-main .pagination,
-[data-color-scheme="light"] #ucp .pagination,
-[data-color-scheme="light"] #main-content .pagination{
-  color:var(--fa-text-soft,#8a5a32)!important;
-}
-
-/* Jumpbox sous favoris / brouillons */
-[data-color-scheme="light"] #cp-main form[name="jumpbox"],
-[data-color-scheme="light"] #ucp form[name="jumpbox"],
-[data-color-scheme="light"] #main-content form[name="jumpbox"]{
-  background:transparent!important;
-  color:var(--fa-text-main,#4a2812)!important;
-}
-
-[data-color-scheme="light"] #cp-main select,
-[data-color-scheme="light"] #ucp select,
-[data-color-scheme="light"] #main-content select{
-  background:rgba(255,250,240,.86)!important;
-  color:var(--fa-input-text,#4a2812)!important;
-  border:1px solid rgba(145,65,12,.20)!important;
-}
-/* =========================================================
-   PATCH EDISON LIGHT — TABS UCP / PROFIL
-   Corrige la barre d’onglets au-dessus des panels
-========================================================= */
-
-[data-color-scheme="light"] #tabs{
-  background:
-    radial-gradient(circle at top left,rgba(215,106,0,.10),transparent 34%),
-    linear-gradient(90deg,rgba(255,250,240,.90),rgba(255,226,173,.82))!important;
-  border-bottom:1px solid rgba(145,65,12,.14)!important;
-}
-
-[data-color-scheme="light"] #tabs ul{
-  background:transparent!important;
-  border:0!important;
-}
-
-[data-color-scheme="light"] #tabs ul li{
-  background:transparent!important;
-  border:0!important;
-}
-
-[data-color-scheme="light"] #tabs ul a,
-[data-color-scheme="light"] #tabs ul a:link,
-[data-color-scheme="light"] #tabs ul a:visited{
-  color:var(--fa-link,#c35a14)!important;
-  background:transparent!important;
-  border:0!important;
-  text-decoration:none!important;
-}
-
-[data-color-scheme="light"] #tabs ul a span{
-  color:var(--fa-link,#c35a14)!important;
-  background:transparent!important;
-  text-shadow:none!important;
-}
-
-[data-color-scheme="light"] #tabs ul a:hover span,
-[data-color-scheme="light"] #tabs ul a:focus span{
-  color:var(--fa-link-hover,#c01835)!important;
-  text-shadow:0 0 8px rgba(192,24,53,.14)!important;
-}
-
-/* Onglet actif */
-[data-color-scheme="light"] #tabs ul .activetab a,
-[data-color-scheme="light"] #tabs ul .activetab a:link,
-[data-color-scheme="light"] #tabs ul .activetab a:visited{
-  background:
-    linear-gradient(180deg,rgba(255,250,240,.98),rgba(255,226,173,.90))!important;
-  border:1px solid rgba(215,106,0,.24)!important;
-  border-bottom-color:rgba(255,250,240,.98)!important;
-  border-radius:10px 10px 0 0!important;
-  box-shadow:
-    inset 0 0 0 1px rgba(70,28,8,.04),
-    0 -4px 14px rgba(145,65,12,.08)!important;
-}
-
-[data-color-scheme="light"] #tabs ul .activetab a span{
-  color:var(--fa-title-main,#a94e12)!important;
-  font-weight:800!important;
-}
-
-/* Séparateurs / bordures parasites */
-[data-color-scheme="light"] #tabs ul::before,
-[data-color-scheme="light"] #tabs ul::after,
-[data-color-scheme="light"] #tabs li::before,
-[data-color-scheme="light"] #tabs li::after{
-  border-color:rgba(145,65,12,.14)!important;
-}
-/* =========================================================
-   PATCH EDISON LIGHT — TEXTE GLOBAL FORUMACTIF
-   Version safe : évite d'écraser navbar / fiches / modules custom
-========================================================= */
-
-[data-color-scheme="light"] body,
-[data-color-scheme="light"] #wrap,
-[data-color-scheme="light"] #content-container,
-[data-color-scheme="light"] #container,
-[data-color-scheme="light"] #main,
-[data-color-scheme="light"] #main-content,
-[data-color-scheme="light"] #cp-main,
-[data-color-scheme="light"] #cp-main .panel,
-[data-color-scheme="light"] #ucp,
-[data-color-scheme="light"] #ucp .panel,
-[data-color-scheme="light"] .panel.row1,
-[data-color-scheme="light"] .panel.row2,
-[data-color-scheme="light"] .postbody,
-[data-color-scheme="light"] .content,
-[data-color-scheme="light"] .entry-content,
-[data-color-scheme="light"] td,
-[data-color-scheme="light"] th,
-[data-color-scheme="light"] p,
-[data-color-scheme="light"] li,
-[data-color-scheme="light"] label,
-[data-color-scheme="light"] .small,
-[data-color-scheme="light"] .gen,
-[data-color-scheme="light"] .genmed,
-[data-color-scheme="light"] .gensmall{
-  color:var(--fa-text-main)!important;
-}
-
-/* Textes secondaires natifs */
-[data-color-scheme="light"] .meta,
-[data-color-scheme="light"] .author,
-[data-color-scheme="light"] .date,
-[data-color-scheme="light"] .details,
-[data-color-scheme="light"] .statistics,
-[data-color-scheme="light"] .lastpost,
-[data-color-scheme="light"] .forum_lastpost,
-[data-color-scheme="light"] .desc,
-[data-color-scheme="light"] .mod-text,
-[data-color-scheme="light"] .italic,
-[data-color-scheme="light"] .legend{
-  color:var(--fa-text-soft)!important;
-}
-
-/* Liens natifs seulement : évite navbar/sidebar/fiches custom */
-[data-color-scheme="light"] #cp-main a,
-[data-color-scheme="light"] #ucp a,
-[data-color-scheme="light"] .panel a,
-[data-color-scheme="light"] .postbody .content a,
-[data-color-scheme="light"] .forumline a,
-[data-color-scheme="light"] .linklist a{
-  color:var(--fa-link)!important;
-}
-
-[data-color-scheme="light"] #cp-main a:hover,
-[data-color-scheme="light"] #ucp a:hover,
-[data-color-scheme="light"] .panel a:hover,
-[data-color-scheme="light"] .postbody .content a:hover,
-[data-color-scheme="light"] .forumline a:hover,
-[data-color-scheme="light"] .linklist a:hover{
-  color:var(--fa-link-hover)!important;
-}
-
-/* Ne pas écraser les couleurs de la navbar custom */
-[data-color-scheme="light"] #custom-navbar a,
-[data-color-scheme="light"] #custom-navbar a:link,
-[data-color-scheme="light"] #custom-navbar a:visited{
-  color:var(--nav-text)!important;
-}
-
-[data-color-scheme="light"] #custom-navbar a:hover{
-  color:var(--nav-cyan)!important;
-}
-
-/* Titres généraux natifs */
-[data-color-scheme="light"] h1,
-[data-color-scheme="light"] h2,
-[data-color-scheme="light"] h3,
-[data-color-scheme="light"] h4,
-[data-color-scheme="light"] h5,
-[data-color-scheme="light"] h6,
-[data-color-scheme="light"] .page-title,
-[data-color-scheme="light"] .forum-title,
-[data-color-scheme="light"] .table-title{
-  color:var(--fa-title-main)!important;
-}
-
-/* Cas précis visibles sur le profil / panneaux Forumactif */
-[data-color-scheme="light"] #cp-main h1,
-[data-color-scheme="light"] #ucp h1,
-[data-color-scheme="light"] .panel h1,
-[data-color-scheme="light"] h1.page-title{
-  color:var(--fa-title-main)!important;
-  border-bottom:1px solid var(--fa-panel-border)!important;
-}
-
-/* Formulaires natifs */
-[data-color-scheme="light"] input,
-[data-color-scheme="light"] select,
-[data-color-scheme="light"] textarea{
-  color:var(--fa-input-text)!important;
-}
-
-[data-color-scheme="light"] input::placeholder,
-[data-color-scheme="light"] textarea::placeholder{
-  color:var(--fa-input-placeholder)!important;
-  opacity:1;
-}
-
-[data-color-scheme="light"] fieldset,
-[data-color-scheme="light"] #cp-main .panel,
-[data-color-scheme="light"] #ucp .panel{
-  color:var(--fa-panel-text)!important;
-  border-color:var(--fa-panel-border)!important;
-}
-
-/* Boutons Forumactif par défaut */
-[data-color-scheme="light"] input[type="submit"],
-[data-color-scheme="light"] input[type="button"],
-[data-color-scheme="light"] input[type="reset"],
-[data-color-scheme="light"] .button1,
-[data-color-scheme="light"] .button2{
-  color:var(--fa-title-strong)!important;
-}
-/* =========================================================
-   PATCH EDISON LIGHT — PANELS UCP / PROFIL / FORMULAIRES
-   Corrige les fonds bleus/violets restants
-========================================================= */
-
-[data-color-scheme="light"] #cp-main .panel,
-[data-color-scheme="light"] #ucp .panel,
-[data-color-scheme="light"] #main-content .panel,
-[data-color-scheme="light"] #profile-advanced-layout .panel,
-[data-color-scheme="light"] .panel.row1,
-[data-color-scheme="light"] .panel.row2,
-[data-color-scheme="light"] .panel.row3{
-  background:
-    radial-gradient(circle at top right,rgba(192,24,53,.06),transparent 38%),
-    linear-gradient(180deg,rgba(255,250,240,.96),rgba(255,226,173,.92))!important;
-  background-color:#fff0cf!important;
-  color:var(--fa-text-main,#4a2812)!important;
-  border-color:rgba(145,65,12,.14)!important;
-  box-shadow:
-    inset 0 0 0 1px rgba(70,28,8,.05),
-    0 10px 24px rgba(145,65,12,.08)!important;
-}
-
-/* Titres dans ces panneaux */
-[data-color-scheme="light"] #cp-main .panel h1,
-[data-color-scheme="light"] #cp-main .panel h2,
-[data-color-scheme="light"] #cp-main .panel h3,
-[data-color-scheme="light"] #ucp .panel h1,
-[data-color-scheme="light"] #ucp .panel h2,
-[data-color-scheme="light"] #ucp .panel h3,
-[data-color-scheme="light"] #main-content .panel h1,
-[data-color-scheme="light"] #main-content .panel h2,
-[data-color-scheme="light"] #main-content .panel h3{
-  color:var(--fa-title-main,#a94e12)!important;
-  border-color:rgba(145,65,12,.14)!important;
-}
-
-/* Texte, labels et infos dans ces panneaux */
-[data-color-scheme="light"] #cp-main .panel,
-[data-color-scheme="light"] #cp-main .panel *,
-[data-color-scheme="light"] #ucp .panel,
-[data-color-scheme="light"] #ucp .panel *,
-[data-color-scheme="light"] #main-content .panel,
-[data-color-scheme="light"] #main-content .panel *{
-  color:var(--fa-text-main,#4a2812);
-}
-
-/* Liens dans les panneaux */
-[data-color-scheme="light"] #cp-main .panel a,
-[data-color-scheme="light"] #ucp .panel a,
-[data-color-scheme="light"] #main-content .panel a{
-  color:var(--fa-link,#c35a14)!important;
-}
-
-[data-color-scheme="light"] #cp-main .panel a:hover,
-[data-color-scheme="light"] #ucp .panel a:hover,
-[data-color-scheme="light"] #main-content .panel a:hover{
-  color:var(--fa-link-hover,#c01835)!important;
-}
-
-/* Champs de formulaire dans les panneaux */
-[data-color-scheme="light"] #cp-main .panel input,
-[data-color-scheme="light"] #cp-main .panel textarea,
-[data-color-scheme="light"] #cp-main .panel select,
-[data-color-scheme="light"] #ucp .panel input,
-[data-color-scheme="light"] #ucp .panel textarea,
-[data-color-scheme="light"] #ucp .panel select,
-[data-color-scheme="light"] #main-content .panel input,
-[data-color-scheme="light"] #main-content .panel textarea,
-[data-color-scheme="light"] #main-content .panel select{
-  background-color:rgba(255,250,240,.78)!important;
-  color:var(--fa-input-text,#4a2812)!important;
-  border-color:rgba(145,65,12,.22)!important;
-}
-
-/* Lignes de séparation visibles dans les formulaires */
-[data-color-scheme="light"] #cp-main .panel hr,
-[data-color-scheme="light"] #ucp .panel hr,
-[data-color-scheme="light"] #main-content .panel hr{
-  border-color:rgba(145,65,12,.14)!important;
-}
 /* =========================================================
    MODE SOMBRE
 ========================================================= */
@@ -537,36 +15,15 @@ iframe.pa-frame{
    --idx-special-img:url("https://media.tenor.com/mBH40Bguxz0AAAAM/helluva-boss-stella.gif");
   /* ===================== GLOBAL LEMEGETON ===================== */
 
-  --lem-bg:#040614;
-  --lem-bg-deep:#070a1d;
   --lem-bg-soft:#0b0f2a;
 
-  --lem-panel:#101936;
-  --lem-panel-2:#15264b;
-  --lem-card:#131733;
-  --lem-card-soft:rgba(18,24,60,.92);
 
-  --lem-white:#ecfbff;
-  --lem-text:#c8efff;
-  --lem-muted:#7ec7e5;
   --lem-muted-2:#89abc1;
 
-  --lem-cyan:#19d9ff;
-  --lem-cyan-soft:#8cecff;
-  --lem-blue:#2668ff;
-
-  --lem-pink:#ff4f7c;
-  --lem-pink-soft:#ffb0c3;
-  --lem-purple:#b88cff;
-  --lem-gold:#ffd36e;
-  --lem-gold-soft:#ffe7a8;
-  --lem-lime:#a7ff3f;
-  --lem-red:#ff335c;
 
   --lem-border:rgba(25,217,255,.28);
   --lem-border-soft:rgba(255,255,255,.12);
   --lem-shadow:0 0 30px rgba(25,217,255,.16);
-  --lem-shadow-pink:0 0 25px rgba(255,79,124,.28);
 /* ---------- STRUCTURE FORUMACTIF / FOND GLOBAL ---------- */
 
 --fa-body-bg:
@@ -1228,7 +685,7 @@ iframe.pa-frame{
   radial-gradient(circle at top left,rgba(var(--card-rgb),.18),transparent 36%),
   linear-gradient(90deg,rgba(var(--card-rgb),.09),var(--pnjd-card-soft));
 
- 
+
 --pnjd-example-bg:
   linear-gradient(90deg,rgba(255,211,110,.10),rgba(255,141,225,.07));
 
@@ -1346,7 +803,7 @@ iframe.pa-frame{
   linear-gradient(90deg,rgba(5,8,22,.94),rgba(39,7,18,.72)),
   var(--intrm-head-img) center/cover;
 
- 
+
 --intrm-final-bg:
   radial-gradient(circle at 50% 0%,rgba(214,64,102,.20),transparent 44%),
   linear-gradient(180deg,rgba(22,19,45,.98),rgba(8,8,22,.98));
@@ -2034,7 +1491,7 @@ iframe.pa-frame{
 
 --adms-head-bg:
   linear-gradient(90deg,rgba(5,8,22,.92),rgba(7,16,39,.74)),
-  var(--adms-head-img) center/cover;  
+  var(--adms-head-img) center/cover;
 
 /* ---------- FOOTER GLOBAL / LF ---------- */
 
@@ -2328,7 +1785,7 @@ iframe.pa-frame{
   linear-gradient(90deg,rgba(36,28,70,.88),rgba(7,11,24,.92));
 
 --idx-row-border:rgba(36,228,255,.14);
-   
+
    /* ---------- KARMA / ADMS COMPLÉMENT ---------- */
 
 --adms-green:#ff8eaf;
@@ -3293,7 +2750,7 @@ iframe.pa-frame{
 =========================================================
 
    MODE CLAIR
-========================================================= 
+=========================================================
 =========================================================
 =========================================================
 =========================================================
@@ -3314,36 +2771,15 @@ iframe.pa-frame{
 
   /* ===================== GLOBAL LEMEGETON ===================== */
 
-  --lem-bg:#fff0cf;
-  --lem-bg-deep:#ffe0a3;
   --lem-bg-soft:#fff7df;
 
-  --lem-panel:#fffaf0;
-  --lem-panel-2:#ffdca1;
-  --lem-card:#fff7e6;
-  --lem-card-soft:rgba(255,250,240,.94);
 
-  --lem-white:#241005;
-  --lem-text:#3a1b0b;
-  --lem-muted:#8a4f25;
   --lem-muted-2:#a7642e;
 
-  --lem-cyan:#b65e00;
-  --lem-cyan-soft:#ff9f1c;
-  --lem-blue:#c94b14;
-
-  --lem-pink:#c01835;
-  --lem-pink-soft:#ff4e57;
-  --lem-purple:#8a2f63;
-  --lem-gold:#d88a00;
-  --lem-gold-soft:#ffc857;
-  --lem-lime:#8f6b00;
-  --lem-red:#b81424;
 
   --lem-border:rgba(198,84,14,.28);
   --lem-border-soft:rgba(70,28,8,.13);
   --lem-shadow:0 12px 34px rgba(145,65,12,.16);
-  --lem-shadow-pink:0 10px 28px rgba(192,24,53,.20);
 
   /* ---------- STRUCTURE FORUMACTIF / FOND GLOBAL ---------- */
 
@@ -3839,7 +3275,7 @@ iframe.pa-frame{
 --lb-red:#b81424;
 --lb-ok:#8f6b00;
 
- 
+
 --lb-banner-bg:#fff3d3;
 --lb-banner-border:rgba(215,106,0,.24);
 --lb-banner-overlay-side:rgba(255,240,207,.62);
@@ -4769,11 +4205,6 @@ iframe.pa-frame{
 --adms-panel:#fffaf0;
 --adms-panel-dark:#ffdca1;
 --adms-cyan:#d76a00;
---adms-pink:#c01835;
---adms-gold:#d88a00;
---adms-green:#8f6b00;
---adms-purple:#8a2f63;
---adms-carmin:#b81424;
  --adms-cyan-soft:#ff9f1c;
 --adms-pink:#c01835;
 --adms-white:#241005;
@@ -4819,55 +4250,6 @@ iframe.pa-frame{
 
 /* ---------- KARMA / ADMS COMPLÉMENT ---------- */
 
---adms-green:#8f6b00;
---adms-gold:#d88a00;
---adms-purple:#8a2f63;
---adms-carmin:#b81424;
---adms-carmin-soft:#c01835;
-
---adms-karma-box-bg:
-  radial-gradient(circle at 50% 0%,rgba(255,168,36,.14),transparent 36%),
-  linear-gradient(180deg,#fff7df 0%,var(--adms-panel) 55%,var(--adms-panel-dark) 100%);
-
---adms-karma-head-bg:
-  linear-gradient(90deg,rgba(255,247,223,.88),rgba(255,210,137,.48)),
-  var(--adms-head-img) center/cover;
-
---adms-karma-soft-bg:rgba(70,28,8,.04);
---adms-karma-soft-bg-2:rgba(70,28,8,.035);
---adms-karma-soft-bg-3:rgba(70,28,8,.025);
-
---adms-karma-card-bg:rgba(255,250,240,.58);
-
---adms-karma-bloc-cyan:
-  linear-gradient(90deg,rgba(215,106,0,.12) 0%,rgba(215,106,0,.045) 28%,rgba(70,28,8,.025) 100%);
-
---adms-karma-bloc-green:
-  linear-gradient(90deg,rgba(143,107,0,.12) 0%,rgba(143,107,0,.045) 28%,rgba(70,28,8,.025) 100%);
-
---adms-karma-bloc-gold:
-  linear-gradient(90deg,rgba(216,138,0,.14) 0%,rgba(216,138,0,.050) 28%,rgba(70,28,8,.025) 100%);
-
---adms-karma-bloc-purple:
-  linear-gradient(90deg,rgba(138,47,99,.11) 0%,rgba(138,47,99,.045) 28%,rgba(70,28,8,.025) 100%);
-
---adms-karma-item-green:
-  linear-gradient(90deg,rgba(143,107,0,.12) 0%,rgba(143,107,0,.045) 30%,rgba(70,28,8,.035) 100%);
-
---adms-karma-item-gold:
-  linear-gradient(90deg,rgba(216,138,0,.14) 0%,rgba(216,138,0,.050) 30%,rgba(70,28,8,.035) 100%);
-
---adms-karma-item-purple:
-  linear-gradient(90deg,rgba(138,47,99,.11) 0%,rgba(138,47,99,.045) 30%,rgba(70,28,8,.035) 100%);
-
---adms-karma-double-bg:
-  linear-gradient(90deg,rgba(216,138,0,.12) 0%,rgba(216,138,0,.045) 30%,rgba(70,28,8,.025) 100%);
-
---adms-karma-double-free-bg:
-  linear-gradient(90deg,rgba(184,20,36,.12) 0%,rgba(184,20,36,.045) 35%,rgba(70,28,8,.025) 100%);
-
---adms-karma-double-paid-bg:
-  linear-gradient(90deg,rgba(216,138,0,.12) 0%,rgba(216,138,0,.045) 35%,rgba(70,28,8,.025) 100%);
 
  /* ---------- FOOTER GLOBAL / LF ---------- */
 
@@ -5378,7 +4760,6 @@ iframe.pa-frame{
 --mgl-radius-md:10px;
 
 
- 
 /* ---------- PROFIL AFFICHÉ / VP ---------- */
 
 --vp-bg:#fff0cf;
@@ -6123,6 +5504,575 @@ iframe.pa-frame{
 --notif-alert-shadow:
   0 14px 35px rgba(145,65,12,.16),
   0 0 24px rgba(192,24,53,.12);
+
+  /* ---------- PATCH EDISON LIGHT / TOKENS PARTAGÉS ----------
+     Centralise les couleurs répétées dans les patchs placés plus bas.
+  ------------------------------------------------------------ */
+
+  --edison-text:#3a1b0b;
+  --edison-text-strong:#4a2812;
+  --edison-title:#a94e12;
+  --edison-muted:#8a5a32;
+
+  --edison-orange:#d76a00;
+  --edison-gold:#d88a00;
+  --edison-red:#c01835;
+  --edison-dark-red:#b81424;
+  --edison-olive:#8f6b00;
+  --edison-purple:#8a2f63;
+  --edison-glow:#ff9f1c;
+
+  --edison-surface:#fffaf0;
+  --edison-surface-soft:#fff7df;
+  --edison-surface-warm:#fff0cf;
+  --edison-surface-gold:#ffe0a3;
+  --edison-surface-cream:#fff1ca;
+  --edison-surface-peach:#ffe2ad;
+
+  --edison-border-warm:rgba(145,65,12,.14);
+  --edison-border-warm-soft:rgba(145,65,12,.10);
+  --edison-border-gold:rgba(216,138,0,.30);
+  --edison-border-gold-mid:rgba(216,138,0,.24);
+  --edison-border-gold-soft:rgba(216,138,0,.20);
+  --edison-border-red:rgba(192,24,53,.34);
+  --edison-border-ink-soft:rgba(70,28,8,.04);
+
+  --edison-shadow-warm:rgba(145,65,12,.10);
+  --edison-dot-gold:radial-gradient(circle,rgba(216,138,0,.34) 1px,transparent 1.4px);
+
+  --edison-bg-main-light:linear-gradient(180deg,rgba(255,250,240,.96),rgba(255,226,173,.88));
+  --edison-bg-panel-light:linear-gradient(180deg,rgba(255,250,240,.96),rgba(255,226,173,.92));
+  --edison-bg-head-light:linear-gradient(90deg,rgba(255,250,240,.94),rgba(255,226,173,.76));
+  --edison-bg-box-light:linear-gradient(180deg,var(--edison-surface-soft) 0%,var(--edison-surface) 55%,var(--edison-surface-gold) 100%);
+  --edison-bg-line-orange:linear-gradient(90deg,rgba(215,106,0,.10),rgba(255,250,240,.72));
+  --edison-bg-line-gold:linear-gradient(90deg,rgba(216,138,0,.10),rgba(255,250,240,.72));
+  --edison-bg-line-red:linear-gradient(90deg,rgba(192,24,53,.10),rgba(255,250,240,.68));
+
+}
+
+/* =========================================================
+   PATCH EDISON — FOND GLOBAL FORUMACTIF
+   Fond extérieur ≠ fond forum ≠ fond page
+   Version safe light/dark
+========================================================= */
+
+html,
+body{
+  background:var(--fa-body-bg)!important;
+  background-color:var(--fa-body-color,#040614)!important;
+}
+
+body{
+  color:var(--lem-text,var(--nav-text,#d8ecff));
+}
+
+/* Grand wrapper Forumactif */
+#wrap{
+  background:var(--fa-wrap-bg)!important;
+  background-color:var(--fa-wrap-color,#101936)!important;
+  border:1px solid var(--fa-border-main)!important;
+  box-shadow:var(--fa-shadow-main);
+}
+
+/* Conteneurs principaux */
+#content-container,
+#container,
+.conteneur_minwidth_IE,
+.conteneur_layout_IE,
+.conteneur_container_IE{
+  background:var(--fa-container-bg)!important;
+  background-color:var(--fa-container-color,#111d3d)!important;
+}
+
+/* Zone de contenu réelle */
+#page-body,
+#main,
+#main-content{
+  background:transparent!important;
+  background-color:transparent!important;
+  border-color:var(--fa-border-soft)!important;
+}
+
+/* Empêche ModernBB de remettre certains fonds natifs */
+.module,
+.block{
+  background-color:transparent!important;
+  border-color:var(--fa-border-main);
+}
+
+/* Panels natifs Forumactif seulement */
+#cp-main .panel,
+#ucp .panel,
+#profile-advanced-layout .panel,
+.panel.row1,
+.panel.row2{
+  background-color:transparent!important;
+  border-color:var(--fa-border-main)!important;
+}
+
+/* Ne pas écraser les designs des cartes / posts / catégories */
+.forabg,
+.forumbg,
+.post,
+.row{
+  border-color:var(--fa-border-main);
+}
+
+/* PA iframe : elle garde son propre design */
+.pa-frame-wrap,
+.pa-frame-wrap iframe,
+iframe.pa-frame{
+  background:transparent!important;
+  background-color:transparent!important;
+}
+/* =========================================================
+   PATCH EDISON LIGHT — TABLEAUX UCP / PROFIL
+   Corrige favoris, brouillons, sujets surveillés, notifications
+========================================================= */
+
+/* Wrapper interne des pages UCP */
+[data-color-scheme="light"] #cp-main,
+[data-color-scheme="light"] .ucp-main,
+[data-color-scheme="light"] #main-content #cp-main{
+  background:
+    radial-gradient(circle at top right,rgba(192,24,53,.04),transparent 42%),
+    var(--edison-bg-main-light)!important;
+  color:var(--fa-text-main,var(--edison-text-strong))!important;
+}
+
+/* Tables Forumactif natives */
+[data-color-scheme="light"] #cp-main table.table1,
+[data-color-scheme="light"] #ucp table.table1,
+[data-color-scheme="light"] #main-content table.table1{
+  width:100%!important;
+  overflow:hidden!important;
+  border:1px solid var(--edison-border-warm)!important;
+  border-radius:12px!important;
+  border-collapse:separate!important;
+  border-spacing:0!important;
+  background:
+    linear-gradient(180deg,rgba(255,250,240,.96),rgba(255,226,173,.90))!important;
+  color:var(--fa-text-main,var(--edison-text-strong))!important;
+  box-shadow:
+    inset 0 0 0 1px var(--edison-border-ink-soft),
+    0 10px 24px rgba(145,65,12,.08)!important;
+}
+
+/* En-têtes de tables */
+[data-color-scheme="light"] #cp-main table.table1 thead,
+[data-color-scheme="light"] #ucp table.table1 thead,
+[data-color-scheme="light"] #main-content table.table1 thead,
+[data-color-scheme="light"] #cp-main table.table1 thead tr,
+[data-color-scheme="light"] #ucp table.table1 thead tr,
+[data-color-scheme="light"] #main-content table.table1 thead tr{
+  background:
+    radial-gradient(circle at top left,rgba(215,106,0,.12),transparent 40%),
+    linear-gradient(90deg,rgba(255,244,207,.98),rgba(255,210,137,.92))!important;
+  color:var(--fa-title-strong,#7a2e10)!important;
+}
+
+/* Cellules d'en-tête */
+[data-color-scheme="light"] #cp-main table.table1 th,
+[data-color-scheme="light"] #ucp table.table1 th,
+[data-color-scheme="light"] #main-content table.table1 th{
+  padding:12px 14px!important;
+  border:0!important;
+  border-bottom:1px solid rgba(145,65,12,.16)!important;
+  background:transparent!important;
+  color:var(--fa-title-strong,#7a2e10)!important;
+  font-weight:800!important;
+  text-shadow:none!important;
+}
+
+/* Corps des tableaux */
+[data-color-scheme="light"] #cp-main table.table1 tbody,
+[data-color-scheme="light"] #ucp table.table1 tbody,
+[data-color-scheme="light"] #main-content table.table1 tbody{
+  background:
+    linear-gradient(180deg,rgba(255,250,240,.94),rgba(255,226,173,.86))!important;
+}
+
+/* Lignes */
+[data-color-scheme="light"] #cp-main table.table1 tbody tr,
+[data-color-scheme="light"] #ucp table.table1 tbody tr,
+[data-color-scheme="light"] #main-content table.table1 tbody tr,
+[data-color-scheme="light"] #cp-main table.table1 .row1,
+[data-color-scheme="light"] #cp-main table.table1 .row2,
+[data-color-scheme="light"] #cp-main table.table1 .row3,
+[data-color-scheme="light"] #ucp table.table1 .row1,
+[data-color-scheme="light"] #ucp table.table1 .row2,
+[data-color-scheme="light"] #ucp table.table1 .row3{
+  background:rgba(255,250,240,.42)!important;
+  color:var(--fa-text-main,var(--edison-text-strong))!important;
+}
+
+/* Alternance légère */
+[data-color-scheme="light"] #cp-main table.table1 tbody tr:nth-child(even),
+[data-color-scheme="light"] #ucp table.table1 tbody tr:nth-child(even),
+[data-color-scheme="light"] #main-content table.table1 tbody tr:nth-child(even){
+  background:rgba(255,226,173,.34)!important;
+}
+
+/* Cellules */
+[data-color-scheme="light"] #cp-main table.table1 td,
+[data-color-scheme="light"] #ucp table.table1 td,
+[data-color-scheme="light"] #main-content table.table1 td,
+[data-color-scheme="light"] #cp-main table.table1 .posts,
+[data-color-scheme="light"] #ucp table.table1 .posts,
+[data-color-scheme="light"] #main-content table.table1 .posts,
+[data-color-scheme="light"] #cp-main table.table1 .mobile-hidden,
+[data-color-scheme="light"] #ucp table.table1 .mobile-hidden,
+[data-color-scheme="light"] #main-content table.table1 .mobile-hidden{
+  padding:8px 12px!important;
+  border-color:var(--edison-shadow-warm)!important;
+  background:transparent!important;
+  color:var(--fa-text-main,var(--edison-text-strong))!important;
+}
+
+/* Hover des lignes */
+[data-color-scheme="light"] #cp-main table.table1 tbody tr:hover,
+[data-color-scheme="light"] #ucp table.table1 tbody tr:hover,
+[data-color-scheme="light"] #main-content table.table1 tbody tr:hover{
+  background:rgba(255,184,51,.18)!important;
+}
+
+/* Liens dans tableaux */
+[data-color-scheme="light"] #cp-main table.table1 a,
+[data-color-scheme="light"] #ucp table.table1 a,
+[data-color-scheme="light"] #main-content table.table1 a{
+  color:var(--fa-link,#c35a14)!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] #cp-main table.table1 a:hover,
+[data-color-scheme="light"] #ucp table.table1 a:hover,
+[data-color-scheme="light"] #main-content table.table1 a:hover{
+  color:var(--fa-link-hover,var(--edison-red))!important;
+}
+
+/* Icônes de sujets / documents dans les tableaux */
+[data-color-scheme="light"] #cp-main table.table1 .icon,
+[data-color-scheme="light"] #ucp table.table1 .icon,
+[data-color-scheme="light"] #main-content table.table1 .icon{
+  color:var(--fa-link,#c35a14)!important;
+}
+
+/* Checkboxes */
+[data-color-scheme="light"] #cp-main table.table1 input[type="checkbox"],
+[data-color-scheme="light"] #ucp table.table1 input[type="checkbox"],
+[data-color-scheme="light"] #main-content table.table1 input[type="checkbox"]{
+  accent-color:var(--fa-link-hover,var(--edison-red))!important;
+}
+
+/* Texte vide : aucun favori / aucun brouillon */
+[data-color-scheme="light"] #cp-main table.table1 td[colspan],
+[data-color-scheme="light"] #ucp table.table1 td[colspan],
+[data-color-scheme="light"] #main-content table.table1 td[colspan]{
+  color:var(--fa-text-soft,var(--edison-muted))!important;
+  font-style:italic;
+}
+
+/* Boutons sous les tableaux */
+[data-color-scheme="light"] #cp-main .right-box,
+[data-color-scheme="light"] #ucp .right-box,
+[data-color-scheme="light"] #main-content .right-box,
+[data-color-scheme="light"] #cp-main .pagination,
+[data-color-scheme="light"] #ucp .pagination,
+[data-color-scheme="light"] #main-content .pagination{
+  color:var(--fa-text-soft,var(--edison-muted))!important;
+}
+
+/* Jumpbox sous favoris / brouillons */
+[data-color-scheme="light"] #cp-main form[name="jumpbox"],
+[data-color-scheme="light"] #ucp form[name="jumpbox"],
+[data-color-scheme="light"] #main-content form[name="jumpbox"]{
+  background:transparent!important;
+  color:var(--fa-text-main,var(--edison-text-strong))!important;
+}
+
+[data-color-scheme="light"] #cp-main select,
+[data-color-scheme="light"] #ucp select,
+[data-color-scheme="light"] #main-content select{
+  background:rgba(255,250,240,.86)!important;
+  color:var(--fa-input-text,var(--edison-text-strong))!important;
+  border:1px solid rgba(145,65,12,.20)!important;
+}
+/* =========================================================
+   PATCH EDISON LIGHT — TABS UCP / PROFIL
+   Corrige la barre d’onglets au-dessus des panels
+========================================================= */
+
+[data-color-scheme="light"] #tabs{
+  background:
+    radial-gradient(circle at top left,rgba(215,106,0,.10),transparent 34%),
+    linear-gradient(90deg,rgba(255,250,240,.90),rgba(255,226,173,.82))!important;
+  border-bottom:1px solid var(--edison-border-warm)!important;
+}
+
+[data-color-scheme="light"] #tabs ul{
+  background:transparent!important;
+  border:0!important;
+}
+
+[data-color-scheme="light"] #tabs ul li{
+  background:transparent!important;
+  border:0!important;
+}
+
+[data-color-scheme="light"] #tabs ul a,
+[data-color-scheme="light"] #tabs ul a:link,
+[data-color-scheme="light"] #tabs ul a:visited{
+  color:var(--fa-link,#c35a14)!important;
+  background:transparent!important;
+  border:0!important;
+  text-decoration:none!important;
+}
+
+[data-color-scheme="light"] #tabs ul a span{
+  color:var(--fa-link,#c35a14)!important;
+  background:transparent!important;
+  text-shadow:none!important;
+}
+
+[data-color-scheme="light"] #tabs ul a:hover span,
+[data-color-scheme="light"] #tabs ul a:focus span{
+  color:var(--fa-link-hover,var(--edison-red))!important;
+  text-shadow:0 0 8px rgba(192,24,53,.14)!important;
+}
+
+/* Onglet actif */
+[data-color-scheme="light"] #tabs ul .activetab a,
+[data-color-scheme="light"] #tabs ul .activetab a:link,
+[data-color-scheme="light"] #tabs ul .activetab a:visited{
+  background:
+    linear-gradient(180deg,rgba(255,250,240,.98),rgba(255,226,173,.90))!important;
+  border:1px solid rgba(215,106,0,.24)!important;
+  border-bottom-color:rgba(255,250,240,.98)!important;
+  border-radius:10px 10px 0 0!important;
+  box-shadow:
+    inset 0 0 0 1px var(--edison-border-ink-soft),
+    0 -4px 14px rgba(145,65,12,.08)!important;
+}
+
+[data-color-scheme="light"] #tabs ul .activetab a span{
+  color:var(--fa-title-main,var(--edison-title))!important;
+  font-weight:800!important;
+}
+
+/* Séparateurs / bordures parasites */
+[data-color-scheme="light"] #tabs ul::before,
+[data-color-scheme="light"] #tabs ul::after,
+[data-color-scheme="light"] #tabs li::before,
+[data-color-scheme="light"] #tabs li::after{
+  border-color:var(--edison-border-warm)!important;
+}
+/* =========================================================
+   PATCH EDISON LIGHT — TEXTE GLOBAL FORUMACTIF
+   Version safe : évite d'écraser navbar / fiches / modules custom
+========================================================= */
+
+[data-color-scheme="light"] body,
+[data-color-scheme="light"] #wrap,
+[data-color-scheme="light"] #content-container,
+[data-color-scheme="light"] #container,
+[data-color-scheme="light"] #main,
+[data-color-scheme="light"] #main-content,
+[data-color-scheme="light"] #cp-main,
+[data-color-scheme="light"] #cp-main .panel,
+[data-color-scheme="light"] #ucp,
+[data-color-scheme="light"] #ucp .panel,
+[data-color-scheme="light"] .panel.row1,
+[data-color-scheme="light"] .panel.row2,
+[data-color-scheme="light"] .postbody,
+[data-color-scheme="light"] .content,
+[data-color-scheme="light"] .entry-content,
+[data-color-scheme="light"] td,
+[data-color-scheme="light"] th,
+[data-color-scheme="light"] p,
+[data-color-scheme="light"] li,
+[data-color-scheme="light"] label,
+[data-color-scheme="light"] .small,
+[data-color-scheme="light"] .gen,
+[data-color-scheme="light"] .genmed,
+[data-color-scheme="light"] .gensmall{
+  color:var(--fa-text-main)!important;
+}
+
+/* Textes secondaires natifs */
+[data-color-scheme="light"] .meta,
+[data-color-scheme="light"] .author,
+[data-color-scheme="light"] .date,
+[data-color-scheme="light"] .details,
+[data-color-scheme="light"] .statistics,
+[data-color-scheme="light"] .lastpost,
+[data-color-scheme="light"] .forum_lastpost,
+[data-color-scheme="light"] .desc,
+[data-color-scheme="light"] .mod-text,
+[data-color-scheme="light"] .italic,
+[data-color-scheme="light"] .legend{
+  color:var(--fa-text-soft)!important;
+}
+
+/* Liens natifs seulement : évite navbar/sidebar/fiches custom */
+[data-color-scheme="light"] #cp-main a,
+[data-color-scheme="light"] #ucp a,
+[data-color-scheme="light"] .panel a,
+[data-color-scheme="light"] .postbody .content a,
+[data-color-scheme="light"] .forumline a,
+[data-color-scheme="light"] .linklist a{
+  color:var(--fa-link)!important;
+}
+
+[data-color-scheme="light"] #cp-main a:hover,
+[data-color-scheme="light"] #ucp a:hover,
+[data-color-scheme="light"] .panel a:hover,
+[data-color-scheme="light"] .postbody .content a:hover,
+[data-color-scheme="light"] .forumline a:hover,
+[data-color-scheme="light"] .linklist a:hover{
+  color:var(--fa-link-hover)!important;
+}
+
+/* Ne pas écraser les couleurs de la navbar custom */
+[data-color-scheme="light"] #custom-navbar a,
+[data-color-scheme="light"] #custom-navbar a:link,
+[data-color-scheme="light"] #custom-navbar a:visited{
+  color:var(--nav-text)!important;
+}
+
+[data-color-scheme="light"] #custom-navbar a:hover{
+  color:var(--nav-cyan)!important;
+}
+
+/* Titres généraux natifs */
+[data-color-scheme="light"] h1,
+[data-color-scheme="light"] h2,
+[data-color-scheme="light"] h3,
+[data-color-scheme="light"] h4,
+[data-color-scheme="light"] h5,
+[data-color-scheme="light"] h6,
+[data-color-scheme="light"] .page-title,
+[data-color-scheme="light"] .forum-title,
+[data-color-scheme="light"] .table-title{
+  color:var(--fa-title-main)!important;
+}
+
+/* Cas précis visibles sur le profil / panneaux Forumactif */
+[data-color-scheme="light"] #cp-main h1,
+[data-color-scheme="light"] #ucp h1,
+[data-color-scheme="light"] .panel h1,
+[data-color-scheme="light"] h1.page-title{
+  color:var(--fa-title-main)!important;
+  border-bottom:1px solid var(--fa-panel-border)!important;
+}
+
+/* Formulaires natifs */
+[data-color-scheme="light"] input,
+[data-color-scheme="light"] select,
+[data-color-scheme="light"] textarea{
+  color:var(--fa-input-text)!important;
+}
+
+[data-color-scheme="light"] input::placeholder,
+[data-color-scheme="light"] textarea::placeholder{
+  color:var(--fa-input-placeholder)!important;
+  opacity:1;
+}
+
+[data-color-scheme="light"] fieldset,
+[data-color-scheme="light"] #cp-main .panel,
+[data-color-scheme="light"] #ucp .panel{
+  color:var(--fa-panel-text)!important;
+  border-color:var(--fa-panel-border)!important;
+}
+
+/* Boutons Forumactif par défaut */
+[data-color-scheme="light"] input[type="submit"],
+[data-color-scheme="light"] input[type="button"],
+[data-color-scheme="light"] input[type="reset"],
+[data-color-scheme="light"] .button1,
+[data-color-scheme="light"] .button2{
+  color:var(--fa-title-strong)!important;
+}
+/* =========================================================
+   PATCH EDISON LIGHT — PANELS UCP / PROFIL / FORMULAIRES
+   Corrige les fonds bleus/violets restants
+========================================================= */
+
+[data-color-scheme="light"] #cp-main .panel,
+[data-color-scheme="light"] #ucp .panel,
+[data-color-scheme="light"] #main-content .panel,
+[data-color-scheme="light"] #profile-advanced-layout .panel,
+[data-color-scheme="light"] .panel.row1,
+[data-color-scheme="light"] .panel.row2,
+[data-color-scheme="light"] .panel.row3{
+  background:
+    radial-gradient(circle at top right,rgba(192,24,53,.06),transparent 38%),
+    var(--edison-bg-panel-light)!important;
+  background-color:var(--edison-surface-warm)!important;
+  color:var(--fa-text-main,var(--edison-text-strong))!important;
+  border-color:var(--edison-border-warm)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(70,28,8,.05),
+    0 10px 24px rgba(145,65,12,.08)!important;
+}
+
+/* Titres dans ces panneaux */
+[data-color-scheme="light"] #cp-main .panel h1,
+[data-color-scheme="light"] #cp-main .panel h2,
+[data-color-scheme="light"] #cp-main .panel h3,
+[data-color-scheme="light"] #ucp .panel h1,
+[data-color-scheme="light"] #ucp .panel h2,
+[data-color-scheme="light"] #ucp .panel h3,
+[data-color-scheme="light"] #main-content .panel h1,
+[data-color-scheme="light"] #main-content .panel h2,
+[data-color-scheme="light"] #main-content .panel h3{
+  color:var(--fa-title-main,var(--edison-title))!important;
+  border-color:var(--edison-border-warm)!important;
+}
+
+/* Texte, labels et infos dans ces panneaux */
+[data-color-scheme="light"] #cp-main .panel,
+[data-color-scheme="light"] #cp-main .panel *,
+[data-color-scheme="light"] #ucp .panel,
+[data-color-scheme="light"] #ucp .panel *,
+[data-color-scheme="light"] #main-content .panel,
+[data-color-scheme="light"] #main-content .panel *{
+  color:var(--fa-text-main,var(--edison-text-strong));
+}
+
+/* Liens dans les panneaux */
+[data-color-scheme="light"] #cp-main .panel a,
+[data-color-scheme="light"] #ucp .panel a,
+[data-color-scheme="light"] #main-content .panel a{
+  color:var(--fa-link,#c35a14)!important;
+}
+
+[data-color-scheme="light"] #cp-main .panel a:hover,
+[data-color-scheme="light"] #ucp .panel a:hover,
+[data-color-scheme="light"] #main-content .panel a:hover{
+  color:var(--fa-link-hover,var(--edison-red))!important;
+}
+
+/* Champs de formulaire dans les panneaux */
+[data-color-scheme="light"] #cp-main .panel input,
+[data-color-scheme="light"] #cp-main .panel textarea,
+[data-color-scheme="light"] #cp-main .panel select,
+[data-color-scheme="light"] #ucp .panel input,
+[data-color-scheme="light"] #ucp .panel textarea,
+[data-color-scheme="light"] #ucp .panel select,
+[data-color-scheme="light"] #main-content .panel input,
+[data-color-scheme="light"] #main-content .panel textarea,
+[data-color-scheme="light"] #main-content .panel select{
+  background-color:rgba(255,250,240,.78)!important;
+  color:var(--fa-input-text,var(--edison-text-strong))!important;
+  border-color:rgba(145,65,12,.22)!important;
+}
+
+/* Lignes de séparation visibles dans les formulaires */
+[data-color-scheme="light"] #cp-main .panel hr,
+[data-color-scheme="light"] #ucp .panel hr,
+[data-color-scheme="light"] #main-content .panel hr{
+  border-color:var(--edison-border-warm)!important;
 }
 /* =========================================================
    PATCH EDISON LIGHT — POSTBODY PROMESS + ADMS
@@ -6137,19 +6087,19 @@ iframe.pa-frame{
   border-color:rgba(216,138,0,.22)!important;
   border-left-color:rgba(192,24,53,.42)!important;
   box-shadow:
-    inset 0 0 0 1px rgba(70,28,8,.04),
-    0 12px 28px rgba(145,65,12,.10)!important;
+    inset 0 0 0 1px var(--edison-border-ink-soft),
+    0 12px 28px var(--edison-shadow-warm)!important;
 }
 
 /* Le mot fantôme MESSAGE */
 [data-color-scheme="light"] .postbody.promess::after{
-  color:rgba(70,28,8,.04)!important;
+  color:var(--edison-border-ink-soft)!important;
 }
 
 /* Option spéciale : si le message contient une fiche ADMS, on retire presque tout le cadre parent */
 [data-color-scheme="light"] .postbody.promess:has(.adms){
   background:transparent!important;
-  border-color:rgba(216,138,0,.20)!important;
+  border-color:var(--edison-border-gold-soft)!important;
   border-left-color:rgba(216,138,0,.38)!important;
   box-shadow:none!important;
 }
@@ -6157,7 +6107,7 @@ iframe.pa-frame{
 /* Sécurité sur le contenu */
 [data-color-scheme="light"] .postbody.promess .content.post-content.promess{
   background:transparent!important;
-  color:#3a1b0b!important;
+  color:var(--edison-text)!important;
 }
 
 /* =========================
@@ -6167,16 +6117,16 @@ iframe.pa-frame{
 [data-color-scheme="light"] .adms{
   background:
     radial-gradient(circle at top left,rgba(216,138,0,.12),transparent 34%),
-    linear-gradient(180deg,#fff7df 0%,#fff0cf 100%)!important;
-  color:#3a1b0b!important;
-  box-shadow:0 20px 45px rgba(145,65,12,.14)!important;
+    linear-gradient(180deg,var(--edison-surface-soft) 0%,var(--edison-surface-warm) 100%)!important;
+  color:var(--edison-text)!important;
+  box-shadow:0 20px 45px var(--edison-border-warm)!important;
 }
 
 [data-color-scheme="light"] .adms-box{
   border-color:rgba(216,138,0,.26)!important;
   background:
     radial-gradient(circle at 50% 0%,rgba(255,184,51,.14),transparent 38%),
-    linear-gradient(180deg,#fffaf0 0%,#fff1ca 58%,#ffe0a3 100%)!important;
+    linear-gradient(180deg,var(--edison-surface) 0%,var(--edison-surface-cream) 58%,var(--edison-surface-gold) 100%)!important;
   box-shadow:
     inset 0 0 0 1px rgba(70,28,8,.05),
     0 0 0 1px rgba(216,138,0,.14),
@@ -6185,33 +6135,33 @@ iframe.pa-frame{
 
 [data-color-scheme="light"] .adms-box::before{
   opacity:.16!important;
-  background-image:radial-gradient(circle,rgba(216,138,0,.34) 1px,transparent 1.4px)!important;
+  background-image:var(--edison-dot-gold)!important;
 }
 
 /* Header : plus doré, sans bleu */
 [data-color-scheme="light"] .adms-head{
-  border-color:rgba(216,138,0,.30)!important;
+  border-color:var(--edison-border-gold)!important;
   background:
     radial-gradient(circle at top right,rgba(192,24,53,.10),transparent 36%),
-    linear-gradient(90deg,rgba(255,250,240,.94),rgba(255,226,173,.76))!important;
+    var(--edison-bg-head-light)!important;
   box-shadow:
     inset 0 0 30px rgba(255,184,51,.12),
-    0 10px 24px rgba(145,65,12,.10)!important;
+    0 10px 24px var(--edison-shadow-warm)!important;
 }
 
 [data-color-scheme="light"] .adms-kicker{
-  color:#c01835!important;
+  color:var(--edison-red)!important;
   text-shadow:0 0 8px rgba(192,24,53,.16)!important;
 }
 
 [data-color-scheme="light"] .adms-kicker::before,
 [data-color-scheme="light"] .adms-kicker::after{
-  color:#d88a00!important;
+  color:var(--edison-gold)!important;
   text-shadow:0 0 8px rgba(216,138,0,.18)!important;
 }
 
 [data-color-scheme="light"] .adms-title{
-  color:#ff9f1c!important;
+  color:var(--edison-glow)!important;
   text-shadow:
     0 0 4px rgba(216,138,0,.35),
     0 0 12px rgba(255,184,51,.18),
@@ -6219,7 +6169,7 @@ iframe.pa-frame{
 }
 
 [data-color-scheme="light"] .adms-sub{
-  color:#a94e12!important;
+  color:var(--edison-title)!important;
 }
 
 /* =========================
@@ -6228,36 +6178,36 @@ iframe.pa-frame{
 
 /* Texte normal */
 [data-color-scheme="light"] .adms-texte{
-  color:#3a1b0b!important;
+  color:var(--edison-text)!important;
 }
 
 /* Bloc section : ivoire + bord orange */
 [data-color-scheme="light"] .adms-bloc{
-  border-left-color:#d76a00!important;
+  border-left-color:var(--edison-orange)!important;
   background:
-    linear-gradient(90deg,rgba(215,106,0,.10),rgba(255,250,240,.72))!important;
-  color:#3a1b0b!important;
+    var(--edison-bg-line-orange)!important;
+  color:var(--edison-text)!important;
 }
 
 /* Titre de section : rouge profond */
 [data-color-scheme="light"] .adms-bloc-titre{
-  color:#c01835!important;
+  color:var(--edison-red)!important;
 }
 
 /* Note : doré / jaune */
 [data-color-scheme="light"] .adms-note{
-  border-left-color:#d88a00!important;
+  border-left-color:var(--edison-gold)!important;
   background:
     linear-gradient(90deg,rgba(216,138,0,.16),rgba(255,248,218,.72))!important;
-  color:#4a2812!important;
+  color:var(--edison-text-strong)!important;
 }
 
 /* Important : rouge doux */
 [data-color-scheme="light"] .adms-important{
-  border-left-color:#c01835!important;
+  border-left-color:var(--edison-red)!important;
   background:
     linear-gradient(90deg,rgba(192,24,53,.12),rgba(255,232,190,.66))!important;
-  color:#4a2812!important;
+  color:var(--edison-text-strong)!important;
 }
 
 /* Ligne séparatrice : or vers rouge */
@@ -6269,28 +6219,28 @@ iframe.pa-frame{
 /* Tags : alternance de couleurs */
 [data-color-scheme="light"] .adms-tag{
   background:rgba(255,250,240,.72)!important;
-  color:#4a2812!important;
-  border-left-color:#d76a00!important;
+  color:var(--edison-text-strong)!important;
+  border-left-color:var(--edison-orange)!important;
 }
 
 [data-color-scheme="light"] .adms-tag:nth-child(3n+1){
-  border-left-color:#d76a00!important;
+  border-left-color:var(--edison-orange)!important;
   background:rgba(255,226,173,.72)!important;
 }
 
 [data-color-scheme="light"] .adms-tag:nth-child(3n+2){
-  border-left-color:#c01835!important;
+  border-left-color:var(--edison-red)!important;
   background:rgba(255,224,213,.62)!important;
 }
 
 [data-color-scheme="light"] .adms-tag:nth-child(3n+3){
-  border-left-color:#8f6b00!important;
+  border-left-color:var(--edison-olive)!important;
   background:rgba(245,232,168,.58)!important;
 }
 
 /* Footer */
 [data-color-scheme="light"] .adms-footer{
-  color:#8a5a32!important;
+  color:var(--edison-muted)!important;
 }
 /* =========================================================
    PATCH EDISON LIGHT — CHRONOLOGIE
@@ -6301,29 +6251,29 @@ iframe.pa-frame{
 [data-color-scheme="light"] .chro-box{
   background:
     radial-gradient(circle at 50% 0%,rgba(255,168,36,.14),transparent 36%),
-    linear-gradient(180deg,#fff7df 0%,#fffaf0 55%,#ffe0a3 100%)!important;
-  color:#3a1b0b!important;
-  border-color:rgba(216,138,0,.24)!important;
+    var(--edison-bg-box-light)!important;
+  color:var(--edison-text)!important;
+  border-color:var(--edison-border-gold-mid)!important;
 }
 
 [data-color-scheme="light"] .chro-box::before{
   opacity:.16!important;
-  background-image:radial-gradient(circle,rgba(216,138,0,.34) 1px,transparent 1.4px)!important;
+  background-image:var(--edison-dot-gold)!important;
 }
 
 [data-color-scheme="light"] .chro-head{
   background:
     radial-gradient(circle at top right,rgba(192,24,53,.10),transparent 36%),
-    linear-gradient(90deg,rgba(255,250,240,.94),rgba(255,226,173,.76))!important;
-  border-color:rgba(216,138,0,.30)!important;
+    var(--edison-bg-head-light)!important;
+  border-color:var(--edison-border-gold)!important;
 }
 
 [data-color-scheme="light"] .chro-intro,
 [data-color-scheme="light"] .chro-note{
   background:
     linear-gradient(90deg,rgba(216,138,0,.12),rgba(255,250,240,.72))!important;
-  color:#3a1b0b!important;
-  border-left-color:#d88a00!important;
+  color:var(--edison-text)!important;
+  border-left-color:var(--edison-gold)!important;
 }
 
 /* Navigation / boutons */
@@ -6332,8 +6282,8 @@ iframe.pa-frame{
 [data-color-scheme="light"] .chro-pill,
 [data-color-scheme="light"] .chro-tag{
   background:rgba(255,250,240,.76)!important;
-  color:#a94e12!important;
-  border-color:rgba(216,138,0,.30)!important;
+  color:var(--edison-title)!important;
+  border-color:var(--edison-border-gold)!important;
   box-shadow:0 8px 18px rgba(145,65,12,.08)!important;
 }
 
@@ -6342,8 +6292,8 @@ iframe.pa-frame{
 [data-color-scheme="light"] .chro-pill:hover,
 [data-color-scheme="light"] .chro-tag:hover{
   background:rgba(255,226,173,.86)!important;
-  color:#c01835!important;
-  border-color:rgba(192,24,53,.34)!important;
+  color:var(--edison-red)!important;
+  border-color:var(--edison-border-red)!important;
 }
 
 /* Bloc principal des périodes */
@@ -6351,18 +6301,18 @@ iframe.pa-frame{
   background:
     radial-gradient(circle at top left,rgba(216,138,0,.10),transparent 36%),
     linear-gradient(180deg,rgba(255,250,240,.88),rgba(255,226,173,.74))!important;
-  border-color:rgba(216,138,0,.24)!important;
+  border-color:var(--edison-border-gold-mid)!important;
   box-shadow:
-    inset 0 0 0 1px rgba(70,28,8,.04),
-    0 12px 28px rgba(145,65,12,.10)!important;
+    inset 0 0 0 1px var(--edison-border-ink-soft),
+    0 12px 28px var(--edison-shadow-warm)!important;
 }
 
 /* Titre de période : retire le bleu */
 [data-color-scheme="light"] .chro-era-title{
   background:
     linear-gradient(90deg,rgba(216,138,0,.18),rgba(255,250,240,.72))!important;
-  color:#d76a00!important;
-  border-bottom-color:rgba(216,138,0,.24)!important;
+  color:var(--edison-orange)!important;
+  border-bottom-color:var(--edison-border-gold-mid)!important;
   text-shadow:none!important;
 }
 
@@ -6370,24 +6320,24 @@ iframe.pa-frame{
 [data-color-scheme="light"] .chro-era:nth-of-type(2n) .chro-era-title{
   background:
     linear-gradient(90deg,rgba(192,24,53,.14),rgba(255,250,240,.72))!important;
-  color:#c01835!important;
+  color:var(--edison-red)!important;
 }
 
 [data-color-scheme="light"] .chro-era:nth-of-type(3n) .chro-era-title{
   background:
     linear-gradient(90deg,rgba(143,107,0,.14),rgba(255,250,240,.72))!important;
-  color:#8f6b00!important;
+  color:var(--edison-olive)!important;
 }
 
 /* Ligne de chronologie */
 [data-color-scheme="light"] .chro-line{
-  border-left-color:#d76a00!important;
+  border-left-color:var(--edison-orange)!important;
 }
 
 [data-color-scheme="light"] .chro-line::before,
 [data-color-scheme="light"] .chro-dot,
 [data-color-scheme="light"] .chro-marker{
-  background:#d76a00!important;
+  background:var(--edison-orange)!important;
   box-shadow:0 0 10px rgba(215,106,0,.24)!important;
 }
 
@@ -6397,7 +6347,7 @@ iframe.pa-frame{
 [data-color-scheme="light"] .chro-card{
   background:
     linear-gradient(90deg,rgba(255,250,240,.72),rgba(255,226,173,.42))!important;
-  color:#3a1b0b!important;
+  color:var(--edison-text)!important;
   border-color:rgba(216,138,0,.16)!important;
 }
 
@@ -6405,7 +6355,7 @@ iframe.pa-frame{
 [data-color-scheme="light"] .chro-item:nth-child(3n+1),
 [data-color-scheme="light"] .chro-event:nth-child(3n+1),
 [data-color-scheme="light"] .chro-card:nth-child(3n+1){
-  border-left-color:#d76a00!important;
+  border-left-color:var(--edison-orange)!important;
   background:
     linear-gradient(90deg,rgba(215,106,0,.10),rgba(255,250,240,.68))!important;
 }
@@ -6413,15 +6363,15 @@ iframe.pa-frame{
 [data-color-scheme="light"] .chro-item:nth-child(3n+2),
 [data-color-scheme="light"] .chro-event:nth-child(3n+2),
 [data-color-scheme="light"] .chro-card:nth-child(3n+2){
-  border-left-color:#c01835!important;
+  border-left-color:var(--edison-red)!important;
   background:
-    linear-gradient(90deg,rgba(192,24,53,.10),rgba(255,250,240,.68))!important;
+    var(--edison-bg-line-red)!important;
 }
 
 [data-color-scheme="light"] .chro-item:nth-child(3n+3),
 [data-color-scheme="light"] .chro-event:nth-child(3n+3),
 [data-color-scheme="light"] .chro-card:nth-child(3n+3){
-  border-left-color:#8f6b00!important;
+  border-left-color:var(--edison-olive)!important;
   background:
     linear-gradient(90deg,rgba(143,107,0,.10),rgba(255,250,240,.68))!important;
 }
@@ -6433,27 +6383,27 @@ iframe.pa-frame{
 [data-color-scheme="light"] .chro-title,
 [data-color-scheme="light"] .chro-subtitle,
 [data-color-scheme="light"] .chro-event-title{
-  color:#a94e12!important;
+  color:var(--edison-title)!important;
   text-shadow:none!important;
 }
 
 [data-color-scheme="light"] .chro b,
 [data-color-scheme="light"] .chro strong{
-  color:#c01835!important;
+  color:var(--edison-red)!important;
 }
 
 [data-color-scheme="light"] .chro p,
 [data-color-scheme="light"] .chro li,
 [data-color-scheme="light"] .chro span{
-  color:#3a1b0b;
+  color:var(--edison-text);
 }
 
 [data-color-scheme="light"] .chro a{
-  color:#d76a00!important;
+  color:var(--edison-orange)!important;
 }
 
 [data-color-scheme="light"] .chro a:hover{
-  color:#c01835!important;
+  color:var(--edison-red)!important;
 }
 /* =========================================================
    PATCH EDISON LIGHT — CONTEXTE + INTRIGUES
@@ -6468,29 +6418,29 @@ iframe.pa-frame{
 [data-color-scheme="light"] .ctxm-box{
   background:
     radial-gradient(circle at 50% 0%,rgba(255,168,36,.14),transparent 36%),
-    linear-gradient(180deg,#fff7df 0%,#fffaf0 55%,#ffe0a3 100%)!important;
-  color:#3a1b0b!important;
-  border-color:rgba(216,138,0,.24)!important;
+    var(--edison-bg-box-light)!important;
+  color:var(--edison-text)!important;
+  border-color:var(--edison-border-gold-mid)!important;
 }
 
 [data-color-scheme="light"] .ctxm-box::before{
   opacity:.16!important;
-  background-image:radial-gradient(circle,rgba(216,138,0,.34) 1px,transparent 1.4px)!important;
+  background-image:var(--edison-dot-gold)!important;
 }
 
 [data-color-scheme="light"] .ctxm-head{
   background:
     radial-gradient(circle at top right,rgba(192,24,53,.10),transparent 36%),
-    linear-gradient(90deg,rgba(255,250,240,.94),rgba(255,226,173,.76))!important;
-  border-color:rgba(216,138,0,.30)!important;
+    var(--edison-bg-head-light)!important;
+  border-color:var(--edison-border-gold)!important;
 }
 
 [data-color-scheme="light"] .ctxm-kicker{
-  color:#c01835!important;
+  color:var(--edison-red)!important;
 }
 
 [data-color-scheme="light"] .ctxm-title{
-  color:#ff9f1c!important;
+  color:var(--edison-glow)!important;
   text-shadow:
     0 0 4px rgba(216,138,0,.35),
     0 0 12px rgba(255,184,51,.18),
@@ -6498,7 +6448,7 @@ iframe.pa-frame{
 }
 
 [data-color-scheme="light"] .ctxm-sub{
-  color:#a94e12!important;
+  color:var(--edison-title)!important;
 }
 
 [data-color-scheme="light"] .ctxm-intro,
@@ -6507,10 +6457,10 @@ iframe.pa-frame{
 [data-color-scheme="light"] .ctxm-section,
 [data-color-scheme="light"] .ctxm-block{
   background:
-    linear-gradient(90deg,rgba(216,138,0,.10),rgba(255,250,240,.72))!important;
-  color:#3a1b0b!important;
-  border-color:rgba(216,138,0,.20)!important;
-  border-left-color:#d88a00!important;
+    var(--edison-bg-line-gold)!important;
+  color:var(--edison-text)!important;
+  border-color:var(--edison-border-gold-soft)!important;
+  border-left-color:var(--edison-gold)!important;
 }
 
 /* Boutons / nav contexte */
@@ -6519,8 +6469,8 @@ iframe.pa-frame{
 [data-color-scheme="light"] .ctxm-pill,
 [data-color-scheme="light"] .ctxm-tag{
   background:rgba(255,250,240,.76)!important;
-  color:#a94e12!important;
-  border-color:rgba(216,138,0,.30)!important;
+  color:var(--edison-title)!important;
+  border-color:var(--edison-border-gold)!important;
   box-shadow:0 8px 18px rgba(145,65,12,.08)!important;
 }
 
@@ -6529,15 +6479,15 @@ iframe.pa-frame{
 [data-color-scheme="light"] .ctxm-pill:hover,
 [data-color-scheme="light"] .ctxm-tag:hover{
   background:rgba(255,226,173,.86)!important;
-  color:#c01835!important;
-  border-color:rgba(192,24,53,.34)!important;
+  color:var(--edison-red)!important;
+  border-color:var(--edison-border-red)!important;
 }
 
 /* Diversification par thèmes internes */
 [data-color-scheme="light"] .ctxm [class*="creation"],
 [data-color-scheme="light"] .ctxm .ctxm-creation{
   border-color:rgba(215,106,0,.26)!important;
-  border-left-color:#d76a00!important;
+  border-left-color:var(--edison-orange)!important;
   background:
     linear-gradient(90deg,rgba(215,106,0,.11),rgba(255,250,240,.68))!important;
 }
@@ -6545,7 +6495,7 @@ iframe.pa-frame{
 [data-color-scheme="light"] .ctxm [class*="vie"],
 [data-color-scheme="light"] .ctxm .ctxm-vie{
   border-color:rgba(216,138,0,.26)!important;
-  border-left-color:#d88a00!important;
+  border-left-color:var(--edison-gold)!important;
   background:
     linear-gradient(90deg,rgba(216,138,0,.13),rgba(255,250,240,.68))!important;
 }
@@ -6553,7 +6503,7 @@ iframe.pa-frame{
 [data-color-scheme="light"] .ctxm [class*="erreur"],
 [data-color-scheme="light"] .ctxm .ctxm-erreur{
   border-color:rgba(138,47,99,.22)!important;
-  border-left-color:#8a2f63!important;
+  border-left-color:var(--edison-purple)!important;
   background:
     linear-gradient(90deg,rgba(138,47,99,.10),rgba(255,250,240,.68))!important;
 }
@@ -6561,15 +6511,15 @@ iframe.pa-frame{
 [data-color-scheme="light"] .ctxm [class*="eden"],
 [data-color-scheme="light"] .ctxm .ctxm-eden{
   border-color:rgba(192,24,53,.22)!important;
-  border-left-color:#c01835!important;
+  border-left-color:var(--edison-red)!important;
   background:
-    linear-gradient(90deg,rgba(192,24,53,.10),rgba(255,250,240,.68))!important;
+    var(--edison-bg-line-red)!important;
 }
 
 [data-color-scheme="light"] .ctxm [class*="serpent"],
 [data-color-scheme="light"] .ctxm .ctxm-serpent{
   border-color:rgba(143,107,0,.22)!important;
-  border-left-color:#8f6b00!important;
+  border-left-color:var(--edison-olive)!important;
   background:
     linear-gradient(90deg,rgba(143,107,0,.10),rgba(255,250,240,.68))!important;
 }
@@ -6577,7 +6527,7 @@ iframe.pa-frame{
 [data-color-scheme="light"] .ctxm [class*="punition"],
 [data-color-scheme="light"] .ctxm .ctxm-punition{
   border-color:rgba(184,20,36,.24)!important;
-  border-left-color:#b81424!important;
+  border-left-color:var(--edison-dark-red)!important;
   background:
     linear-gradient(90deg,rgba(184,20,36,.10),rgba(255,250,240,.68))!important;
 }
@@ -6587,20 +6537,20 @@ iframe.pa-frame{
 [data-color-scheme="light"] .ctxm p,
 [data-color-scheme="light"] .ctxm li,
 [data-color-scheme="light"] .ctxm span{
-  color:#3a1b0b;
+  color:var(--edison-text);
 }
 
 [data-color-scheme="light"] .ctxm b,
 [data-color-scheme="light"] .ctxm strong{
-  color:#c01835!important;
+  color:var(--edison-red)!important;
 }
 
 [data-color-scheme="light"] .ctxm a{
-  color:#d76a00!important;
+  color:var(--edison-orange)!important;
 }
 
 [data-color-scheme="light"] .ctxm a:hover{
-  color:#c01835!important;
+  color:var(--edison-red)!important;
 }
 
 
@@ -6612,29 +6562,29 @@ iframe.pa-frame{
 [data-color-scheme="light"] .intrm-box{
   background:
     radial-gradient(circle at 50% 0%,rgba(192,24,53,.10),transparent 36%),
-    linear-gradient(180deg,#fff7df 0%,#fffaf0 55%,#ffe0a3 100%)!important;
-  color:#3a1b0b!important;
-  border-color:rgba(216,138,0,.24)!important;
+    var(--edison-bg-box-light)!important;
+  color:var(--edison-text)!important;
+  border-color:var(--edison-border-gold-mid)!important;
 }
 
 [data-color-scheme="light"] .intrm-box::before{
   opacity:.16!important;
-  background-image:radial-gradient(circle,rgba(216,138,0,.34) 1px,transparent 1.4px)!important;
+  background-image:var(--edison-dot-gold)!important;
 }
 
 [data-color-scheme="light"] .intrm-head{
   background:
     radial-gradient(circle at top right,rgba(192,24,53,.12),transparent 36%),
-    linear-gradient(90deg,rgba(255,250,240,.94),rgba(255,226,173,.76))!important;
-  border-color:rgba(216,138,0,.30)!important;
+    var(--edison-bg-head-light)!important;
+  border-color:var(--edison-border-gold)!important;
 }
 
 [data-color-scheme="light"] .intrm-kicker{
-  color:#c01835!important;
+  color:var(--edison-red)!important;
 }
 
 [data-color-scheme="light"] .intrm-title{
-  color:#ff9f1c!important;
+  color:var(--edison-glow)!important;
   text-shadow:
     0 0 4px rgba(216,138,0,.35),
     0 0 12px rgba(255,184,51,.18),
@@ -6642,7 +6592,7 @@ iframe.pa-frame{
 }
 
 [data-color-scheme="light"] .intrm-sub{
-  color:#a94e12!important;
+  color:var(--edison-title)!important;
 }
 
 /* Cartes / sections intrigue */
@@ -6653,17 +6603,17 @@ iframe.pa-frame{
 [data-color-scheme="light"] .intrm-question,
 [data-color-scheme="light"] .intrm-note{
   background:
-    linear-gradient(90deg,rgba(216,138,0,.10),rgba(255,250,240,.72))!important;
-  color:#3a1b0b!important;
-  border-color:rgba(216,138,0,.20)!important;
-  border-left-color:#d88a00!important;
+    var(--edison-bg-line-gold)!important;
+  color:var(--edison-text)!important;
+  border-color:var(--edison-border-gold-soft)!important;
+  border-left-color:var(--edison-gold)!important;
 }
 
 /* Diversification des cartes */
 [data-color-scheme="light"] .intrm-card:nth-of-type(3n+1),
 [data-color-scheme="light"] .intrm-section:nth-of-type(3n+1),
 [data-color-scheme="light"] .intrm-block:nth-of-type(3n+1){
-  border-left-color:#d76a00!important;
+  border-left-color:var(--edison-orange)!important;
   background:
     linear-gradient(90deg,rgba(215,106,0,.11),rgba(255,250,240,.68))!important;
 }
@@ -6671,15 +6621,15 @@ iframe.pa-frame{
 [data-color-scheme="light"] .intrm-card:nth-of-type(3n+2),
 [data-color-scheme="light"] .intrm-section:nth-of-type(3n+2),
 [data-color-scheme="light"] .intrm-block:nth-of-type(3n+2){
-  border-left-color:#c01835!important;
+  border-left-color:var(--edison-red)!important;
   background:
-    linear-gradient(90deg,rgba(192,24,53,.10),rgba(255,250,240,.68))!important;
+    var(--edison-bg-line-red)!important;
 }
 
 [data-color-scheme="light"] .intrm-card:nth-of-type(3n+3),
 [data-color-scheme="light"] .intrm-section:nth-of-type(3n+3),
 [data-color-scheme="light"] .intrm-block:nth-of-type(3n+3){
-  border-left-color:#8f6b00!important;
+  border-left-color:var(--edison-olive)!important;
   background:
     linear-gradient(90deg,rgba(143,107,0,.10),rgba(255,250,240,.68))!important;
 }
@@ -6688,36 +6638,36 @@ iframe.pa-frame{
 [data-color-scheme="light"] .intrm-final-call{
   background:
     radial-gradient(circle at 50% 0%,rgba(192,24,53,.12),transparent 44%),
-    linear-gradient(180deg,rgba(255,250,240,.96),rgba(255,226,173,.88))!important;
+    var(--edison-bg-main-light)!important;
   border-color:rgba(192,24,53,.28)!important;
 }
 
 [data-color-scheme="light"] .intrm-final-top{
   background:
     linear-gradient(90deg,rgba(192,24,53,.12),rgba(216,138,0,.10),rgba(255,250,240,.72))!important;
-  color:#c01835!important;
+  color:var(--edison-red)!important;
   border-bottom-color:rgba(192,24,53,.20)!important;
 }
 
 [data-color-scheme="light"] .intrm-final-choice:nth-child(1){
-  border-left-color:#b81424!important;
+  border-left-color:var(--edison-dark-red)!important;
   background:
     linear-gradient(90deg,rgba(184,20,36,.10),rgba(255,250,240,.68))!important;
 }
 
 [data-color-scheme="light"] .intrm-final-choice:nth-child(2){
-  border-left-color:#d76a00!important;
+  border-left-color:var(--edison-orange)!important;
   background:
     linear-gradient(90deg,rgba(215,106,0,.10),rgba(255,250,240,.68))!important;
 }
 
 [data-color-scheme="light"] .intrm-final-choice,
 [data-color-scheme="light"] .intrm-final-voice{
-  color:#3a1b0b!important;
+  color:var(--edison-text)!important;
 }
 
 [data-color-scheme="light"] .intrm-final-choice b{
-  color:#a94e12!important;
+  color:var(--edison-title)!important;
 }
 
 /* Omen */
@@ -6725,7 +6675,7 @@ iframe.pa-frame{
   background:
     radial-gradient(circle at 50% 50%,rgba(192,24,53,.16),transparent 55%),
     linear-gradient(90deg,rgba(192,24,53,.16),rgba(255,226,173,.86),rgba(216,138,0,.16))!important;
-  color:#c01835!important;
+  color:var(--edison-red)!important;
   text-shadow:
     0 0 6px rgba(192,24,53,.25),
     2px 2px 0 rgba(216,138,0,.12)!important;
@@ -6740,20 +6690,20 @@ iframe.pa-frame{
 [data-color-scheme="light"] .intrm p,
 [data-color-scheme="light"] .intrm li,
 [data-color-scheme="light"] .intrm span{
-  color:#3a1b0b;
+  color:var(--edison-text);
 }
 
 [data-color-scheme="light"] .intrm b,
 [data-color-scheme="light"] .intrm strong{
-  color:#c01835!important;
+  color:var(--edison-red)!important;
 }
 
 [data-color-scheme="light"] .intrm a{
-  color:#d76a00!important;
+  color:var(--edison-orange)!important;
 }
 
 [data-color-scheme="light"] .intrm a:hover{
-  color:#c01835!important;
+  color:var(--edison-red)!important;
 }
 /* =========================================================
    SCENGUIDE — PATCH LIGHT LISIBILITÉ BASSE
@@ -6762,7 +6712,7 @@ iframe.pa-frame{
 
 [data-color-scheme="light"] .scenguide-cta{
   border:1px solid rgba(215,106,0,.22);
-  border-left:4px solid #d76a00;
+  border-left:4px solid var(--edison-orange);
   background:
     radial-gradient(circle at top right,rgba(192,24,53,.05),transparent 34%),
     linear-gradient(90deg,rgba(255,248,232,.98),rgba(245,239,221,.96));
@@ -6772,12 +6722,12 @@ iframe.pa-frame{
 }
 
 [data-color-scheme="light"] .scenguide-cta-title{
-  color:#d88a00;
+  color:var(--edison-gold);
   text-shadow:none;
 }
 
 [data-color-scheme="light"] .scenguide-cta-text{
-  color:#4a2812;
+  color:var(--edison-text-strong);
 }
 
 [data-color-scheme="light"] .scenguide-button{
@@ -6797,16 +6747,16 @@ iframe.pa-frame{
 }
 
 [data-color-scheme="light"] .scenguide-footer{
-  color:#8a5a32;
+  color:var(--edison-muted);
 }
 [data-color-scheme="light"] .scenguide-warning{
-  color:#4a2812;
+  color:var(--edison-text-strong);
   background:
     radial-gradient(circle at top left,rgba(192,24,53,.08),transparent 34%),
     linear-gradient(90deg,rgba(255,246,240,.96),rgba(255,238,219,.96));
 }
 
 [data-color-scheme="light"] .scenguide-warning b{
-  color:#c01835;
+  color:var(--edison-red);
   text-shadow:none;
 }

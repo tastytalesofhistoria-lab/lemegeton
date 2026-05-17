@@ -4611,7 +4611,103 @@ iframe.pa-frame{
 --mev2-head-bg:
   linear-gradient(90deg,rgba(255,247,223,.90),rgba(255,190,94,.52)),
   var(--mev2-head-img) center/cover;
+/* ---------- CONTEXTE / CTXM ---------- */
 
+--ctxm-bg:#fff0cf;
+--ctxm-panel:#fffaf0;
+--ctxm-panel-dark:#ffdca1;
+
+--ctxm-white:#241005;
+--ctxm-text:#3a1b0b;
+--ctxm-muted:#8a4f25;
+--ctxm-ink:#241005;
+
+--ctxm-creation:#d76a00;
+--ctxm-creation-soft:#ff9f1c;
+--ctxm-vie:#d88a00;
+--ctxm-vie-soft:#ffb833;
+--ctxm-erreur:#8a2f63;
+--ctxm-erreur-soft:#a83b73;
+--ctxm-eden:#c01835;
+--ctxm-eden-soft:#ff4e57;
+--ctxm-serpent:#8f6b00;
+--ctxm-serpent-soft:#b99000;
+--ctxm-punition:#b81424;
+--ctxm-punition-soft:#c01835;
+--ctxm-royaumes:#d76a00;
+--ctxm-royaumes-soft:#ff9f1c;
+--ctxm-aujourdhui:#c94b14;
+--ctxm-aujourdhui-soft:#ff7a2f;
+
+--ctxm-cyan:var(--ctxm-creation);
+--ctxm-cyan-soft:var(--ctxm-creation-soft);
+--ctxm-pink:var(--ctxm-eden);
+--ctxm-gold:var(--ctxm-vie);
+--ctxm-purple:var(--ctxm-erreur);
+--ctxm-green:var(--ctxm-serpent);
+--ctxm-red:var(--ctxm-punition);
+
+--ctxm-head-img:none;
+
+--ctxm-border-cyan:rgba(215,106,0,.24);
+--ctxm-border-cyan-strong:rgba(215,106,0,.36);
+--ctxm-border-soft:rgba(70,28,8,.10);
+--ctxm-border-dark:rgba(145,65,12,.16);
+
+--ctxm-dot:rgba(215,106,0,.30);
+--ctxm-soft-bg:rgba(70,28,8,.04);
+--ctxm-soft-bg-2:rgba(70,28,8,.035);
+--ctxm-card-bg:rgba(255,250,240,.86);
+
+--ctxm-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(255,168,36,.14),transparent 36%),
+  linear-gradient(180deg,#fff7df 0%,var(--ctxm-panel) 55%,var(--ctxm-panel-dark) 100%);
+
+--ctxm-head-bg:
+  linear-gradient(90deg,rgba(255,247,223,.88),rgba(255,210,137,.48));
+
+/* ---------- INTRIGUE / INTRM ---------- */
+
+--intrm-bg:#fff0cf;
+--intrm-panel:#fffaf0;
+--intrm-panel-dark:#ffdca1;
+
+--intrm-white:#241005;
+--intrm-text:#3a1b0b;
+--intrm-muted:#8a4f25;
+
+--intrm-red:#b81424;
+--intrm-red-soft:#c01835;
+--intrm-gold:#d88a00;
+--intrm-gold-soft:#ffb833;
+--intrm-cyan:#d76a00;
+--intrm-cyan-soft:#ff9f1c;
+--intrm-purple:#8a2f63;
+--intrm-purple-soft:#a83b73;
+--intrm-green:#8f6b00;
+--intrm-green-soft:#b99000;
+
+--intrm-head-img:none;
+
+--intrm-border-cyan:rgba(215,106,0,.24);
+--intrm-border-cyan-soft:rgba(215,106,0,.20);
+--intrm-border-red:rgba(184,20,36,.30);
+--intrm-border-red-strong:rgba(184,20,36,.34);
+--intrm-border-gold:rgba(216,138,0,.26);
+--intrm-border-soft:rgba(70,28,8,.10);
+--intrm-border-dark:rgba(145,65,12,.16);
+
+--intrm-dot:rgba(215,106,0,.30);
+--intrm-soft-bg:rgba(70,28,8,.04);
+--intrm-card-bg:rgba(255,250,240,.86);
+--intrm-video-bg:#fff7df;
+
+--intrm-box-bg:
+  radial-gradient(circle at 50% 0%,rgba(192,24,53,.10),transparent 34%),
+  linear-gradient(180deg,#fff7df 0%,var(--intrm-panel) 55%,var(--intrm-panel-dark) 100%);
+
+--intrm-head-bg:
+  linear-gradient(90deg,rgba(255,247,223,.88),rgba(255,210,137,.48));
 /* ---------- QUÊTES / QST ---------- */
 
 --qst-bg:#fff0cf;

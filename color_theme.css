@@ -7158,3 +7158,329 @@ iframe.pa-frame{
   color:#fff7d7;
 }
 
+
+
+/* =========================================================
+   PATCH FINAL — BOUTONS LIGHT COHÉRENTS + PLAYER RESTAURÉ
+   Demande : fond rouge pour les vrais boutons du forum en mode clair,
+   sans toucher au triangle du lecteur, ni à Notiffi.
+========================================================= */
+
+[data-color-scheme="light"]{
+  --lem-red-main:#ab0e0e;
+  --lem-red-main-rgb:171,14,14;
+  --lem-red-dark:#780606;
+  --lem-red-soft:#c92618;
+  --lem-orange-hover:#ff8a00;
+  --lem-yellow-button:#ffe44d;
+  --lem-yellow-hover:#fff06a;
+  --lem-icon-light:#fff7d7;
+}
+
+/* ===================== RESTAURATION LECTEUR AUDIO ===================== */
+
+[data-color-scheme="light"] .lb-player,
+[data-color-scheme="light"] .lpa-player,
+[data-color-scheme="light"] [class*="player"],
+[data-color-scheme="light"] [class*="audio"]{
+  --lb-player-wave-current:#ab0e0e;
+  --lb-player-wave-played:#d76a00;
+  --lb-player-wave:#d99a42;
+}
+
+/* On annule la règle trop agressive qui avait rendu les bordures transparentes. */
+[data-color-scheme="light"] .lb-player button,
+[data-color-scheme="light"] .lb-player .button,
+[data-color-scheme="light"] .lb-player [class*="play"],
+[data-color-scheme="light"] .lb-player [class*="pause"],
+[data-color-scheme="light"] .lpa-player button,
+[data-color-scheme="light"] .lpa-player .button,
+[data-color-scheme="light"] .lpa-player [class*="play"],
+[data-color-scheme="light"] .lpa-player [class*="pause"],
+[data-color-scheme="light"] [class*="player"] button,
+[data-color-scheme="light"] [class*="player"] [class*="play"],
+[data-color-scheme="light"] [class*="audio"] button,
+[data-color-scheme="light"] [class*="audio"] [class*="play"]{
+  background:transparent!important;
+  background-color:transparent!important;
+  color:var(--lem-red-main)!important;
+  fill:var(--lem-red-main)!important;
+  box-shadow:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+/* Si le bouton play est dessiné en triangle CSS, on restaure sa bordure gauche. */
+[data-color-scheme="light"] .lb-player [class*="play"],
+[data-color-scheme="light"] .lpa-player [class*="play"],
+[data-color-scheme="light"] [class*="player"] [class*="play"],
+[data-color-scheme="light"] [class*="audio"] [class*="play"]{
+  border-left-color:var(--lem-red-main)!important;
+  border-right-color:transparent!important;
+  border-top-color:transparent!important;
+  border-bottom-color:transparent!important;
+}
+
+[data-color-scheme="light"] .lb-player [class*="play"]::before,
+[data-color-scheme="light"] .lb-player [class*="play"]::after,
+[data-color-scheme="light"] .lpa-player [class*="play"]::before,
+[data-color-scheme="light"] .lpa-player [class*="play"]::after,
+[data-color-scheme="light"] [class*="player"] [class*="play"]::before,
+[data-color-scheme="light"] [class*="player"] [class*="play"]::after,
+[data-color-scheme="light"] [class*="audio"] [class*="play"]::before,
+[data-color-scheme="light"] [class*="audio"] [class*="play"]::after{
+  color:var(--lem-red-main)!important;
+  border-left-color:var(--lem-red-main)!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+/* ===================== BOUTONS FORUM LIGHT : FOND ROUGE ===================== */
+
+[data-color-scheme="light"] :is(
+  a.button,
+  a.button1,
+  a.button2,
+  .button,
+  .button1,
+  .button2,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  button,
+  .buttons a,
+  .topic-actions a,
+  .post-options a,
+  .profile-icons a,
+  .pagination a,
+  .pagination span,
+  .chro-nav button,
+  .ctxm-nav button,
+  .scenguide-button,
+  a[href*="mode=newtopic"],
+  a[href*="mode=reply"],
+  a[href*="mode=editpost"],
+  a[href*="mode=quote"],
+  a[href*="mode=delete"],
+  a[href*="mode=report"],
+  a[href*="mode=warn"]
+):not(:where(
+  #notiffi-button,
+  #notiffi-button *,
+  #notiffi-panel *,
+  .notiffi-button,
+  .notiffi-button *,
+  [class*="notiffi"],
+  [class*="notiffi"] *,
+  [class*="notif"],
+  [class*="notif"] *,
+  .lb-player,
+  .lb-player *,
+  .lpa-player,
+  .lpa-player *,
+  [class*="player"],
+  [class*="player"] *,
+  [class*="audio"],
+  [class*="audio"] *,
+  .fa_toolbar,
+  .fa_toolbar *
+)){
+  background:linear-gradient(180deg,var(--lem-red-soft),var(--lem-red-main))!important;
+  background-color:var(--lem-red-main)!important;
+  border-color:rgba(var(--lem-red-main-rgb),.62)!important;
+  color:var(--lem-yellow-button)!important;
+  text-shadow:none!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.10),
+    0 8px 18px rgba(var(--lem-red-main-rgb),.18)!important;
+}
+
+[data-color-scheme="light"] :is(
+  a.button,
+  a.button1,
+  a.button2,
+  .button,
+  .button1,
+  .button2,
+  button,
+  .buttons a,
+  .topic-actions a,
+  .post-options a,
+  .profile-icons a,
+  .pagination a,
+  .pagination span,
+  .chro-nav button,
+  .ctxm-nav button,
+  .scenguide-button,
+  a[href*="mode=newtopic"],
+  a[href*="mode=reply"],
+  a[href*="mode=editpost"],
+  a[href*="mode=quote"],
+  a[href*="mode=delete"],
+  a[href*="mode=report"],
+  a[href*="mode=warn"]
+):not(:where(
+  #notiffi-button,
+  #notiffi-button *,
+  #notiffi-panel *,
+  .notiffi-button,
+  .notiffi-button *,
+  [class*="notiffi"],
+  [class*="notiffi"] *,
+  [class*="notif"],
+  [class*="notif"] *,
+  .lb-player,
+  .lb-player *,
+  .lpa-player,
+  .lpa-player *,
+  [class*="player"],
+  [class*="player"] *,
+  [class*="audio"],
+  [class*="audio"] *,
+  .fa_toolbar,
+  .fa_toolbar *
+)) *{
+  color:var(--lem-icon-light)!important;
+  fill:var(--lem-icon-light)!important;
+  text-shadow:none!important;
+}
+
+/* Les input boutons n'ont pas d'enfants : texte jaune direct. */
+[data-color-scheme="light"] :is(
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"]
+):not(:where(
+  #notiffi-panel *,
+  [class*="notiffi"] *,
+  [class*="notif"] *,
+  .lb-player *,
+  .lpa-player *,
+  [class*="player"] *,
+  [class*="audio"] *
+)){
+  color:var(--lem-yellow-button)!important;
+}
+
+[data-color-scheme="light"] :is(
+  a.button,
+  a.button1,
+  a.button2,
+  .button,
+  .button1,
+  .button2,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  button,
+  .buttons a,
+  .topic-actions a,
+  .post-options a,
+  .profile-icons a,
+  .pagination a,
+  .pagination span,
+  .chro-nav button,
+  .ctxm-nav button,
+  .scenguide-button,
+  a[href*="mode=newtopic"],
+  a[href*="mode=reply"],
+  a[href*="mode=editpost"],
+  a[href*="mode=quote"],
+  a[href*="mode=delete"],
+  a[href*="mode=report"],
+  a[href*="mode=warn"]
+):not(:where(
+  #notiffi-button,
+  #notiffi-button *,
+  #notiffi-panel *,
+  .notiffi-button,
+  .notiffi-button *,
+  [class*="notiffi"],
+  [class*="notiffi"] *,
+  [class*="notif"],
+  [class*="notif"] *,
+  .lb-player,
+  .lb-player *,
+  .lpa-player,
+  .lpa-player *,
+  [class*="player"],
+  [class*="player"] *,
+  [class*="audio"],
+  [class*="audio"] *,
+  .fa_toolbar,
+  .fa_toolbar *
+)):hover{
+  background:linear-gradient(180deg,var(--lem-yellow-hover),#ffd21f)!important;
+  background-color:var(--lem-yellow-hover)!important;
+  border-color:var(--lem-yellow-hover)!important;
+  color:var(--lem-red-dark)!important;
+  text-shadow:none!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.22),
+    0 10px 22px rgba(255,138,0,.18)!important;
+}
+
+[data-color-scheme="light"] :is(
+  a.button,
+  a.button1,
+  a.button2,
+  .button,
+  .button1,
+  .button2,
+  button,
+  .buttons a,
+  .topic-actions a,
+  .post-options a,
+  .profile-icons a,
+  .pagination a,
+  .pagination span,
+  .chro-nav button,
+  .ctxm-nav button,
+  .scenguide-button,
+  a[href*="mode=newtopic"],
+  a[href*="mode=reply"],
+  a[href*="mode=editpost"],
+  a[href*="mode=quote"],
+  a[href*="mode=delete"],
+  a[href*="mode=report"],
+  a[href*="mode=warn"]
+):not(:where(
+  #notiffi-button,
+  #notiffi-button *,
+  #notiffi-panel *,
+  .notiffi-button,
+  .notiffi-button *,
+  [class*="notiffi"],
+  [class*="notiffi"] *,
+  [class*="notif"],
+  [class*="notif"] *,
+  .lb-player,
+  .lb-player *,
+  .lpa-player,
+  .lpa-player *,
+  [class*="player"],
+  [class*="player"] *,
+  [class*="audio"],
+  [class*="audio"] *,
+  .fa_toolbar,
+  .fa_toolbar *
+)):hover *{
+  color:var(--lem-red-dark)!important;
+  fill:var(--lem-red-dark)!important;
+}
+
+/* ===================== NOTIFFI : RESTE DANS SON DESIGN ===================== */
+
+[data-color-scheme="light"] #notiffi-button,
+[data-color-scheme="light"] .notiffi-button,
+[data-color-scheme="light"] #notiffi-panel button,
+[data-color-scheme="light"] #notiffi-panel .button,
+[data-color-scheme="light"] [class*="notiffi"] button,
+[data-color-scheme="light"] [class*="notif"] button,
+[data-color-scheme="light"] [class*="notiffi"] [class*="btn"],
+[data-color-scheme="light"] [class*="notif"] [class*="btn"]{
+  background:var(--notiffi-button-bg)!important;
+  border-color:var(--notiffi-count-border)!important;
+  color:var(--notiffi-count-text)!important;
+  box-shadow:var(--notiffi-button-shadow)!important;
+}

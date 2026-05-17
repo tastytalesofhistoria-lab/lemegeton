@@ -6870,25 +6870,21 @@ body::-webkit-scrollbar-corner,
   color:var(--edison-red);
   text-shadow:none;
 }
+
 /* =========================================================
-   PATCH FINAL CONSOLIDÉ — LIGHT ROUGE / COHÉRENCE
-   Reprise propre depuis la base : un seul patch final.
-   Objectifs :
-   - titres principaux rouges, sans glow bleu ;
-   - bannière : LEMEGETON orange lisible, KNOW YOUR STUFF rouge ;
-   - boutons forum : fond rouge, texte jaune, hover jaune ;
-   - lecteur audio : triangle restauré sans création de triangles multiples ;
-   - menu déroulant : fond clair, texte rouge, hover jaune/orange ;
-   - BABY : fond rouge, texte blanc ;
-   - liens utilitaires : fond clair, texte rouge, hover jaune ;
-   - verts du light plus lisibles.
+   PATCH FINAL CONSOLIDÉ — EDISON LIGHT ROUGE
+   Rangement : variables > structure > navbar/dropdowns > titres
+               > bannière/PA > player > boutons > liens > scrollbars
+   Important : ce fichier peut aussi être lié dans l'iframe PA.
 ========================================================= */
+
+/* ===================== 1. VARIABLES LIGHT ===================== */
 
 [data-color-scheme="light"]{
   --lem-red-main:#ab0e0e;
   --lem-red-main-rgb:171,14,14;
-  --lem-red-dark:#690303;
   --lem-red-soft:#c51616;
+  --lem-red-dark:#690303;
 
   --lem-orange-flash:#ff7a00;
   --lem-orange-hover:#ff9f1c;
@@ -6905,6 +6901,23 @@ body::-webkit-scrollbar-corner,
   --lem-link-soft-bg:#fff4e2;
   --lem-link-soft-border:rgba(171,14,14,.22);
 
+  --nav-dropdown-bg:radial-gradient(circle at top right,rgba(255,212,0,.10),transparent 38%),linear-gradient(180deg,#fff4e2 0%,#ffe0a3 100%);
+  --nav-dropdown-text:#ab0e0e;
+  --nav-dropdown-hover-bg:rgba(255,212,0,.24);
+  --nav-dropdown-hover-text:#690303;
+  --nav-dropdown-border:rgba(171,14,14,.30);
+
+  --baby-light-bg:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%);
+  --baby-light-title:#fff6df;
+  --baby-light-shadow-red:rgba(171,14,14,.95);
+  --baby-light-shadow-pink:rgba(255,60,92,.70);
+  --baby-light-shadow-gold:rgba(255,212,0,.35);
+
+  --edison-scroll-thumb:var(--lem-red-main);
+  --edison-scroll-thumb-hover:var(--lem-orange-hover);
+  --edison-scroll-track:#ffd48a;
+  --edison-scroll-track-soft:#fff0cf;
+
   --fa-title-main:var(--lem-red-main);
   --fa-title-strong:var(--lem-red-main);
   --fa-link:var(--lem-red-main);
@@ -6915,6 +6928,20 @@ body::-webkit-scrollbar-corner,
   --pm-page-title-stroke:var(--lem-red-main);
   --pm-nav:var(--lem-red-main);
   --pm-nav-hover:var(--lem-orange-hover);
+
+  --pm-button-bg:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%);
+  --pm-button-hover-bg:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%);
+  --pm-button-text:var(--lem-yellow-text);
+  --pm-button-hover-text:var(--lem-red-dark);
+  --pm-button-border:var(--lem-red-main);
+  --pm-button-hover-border:var(--lem-yellow-hover);
+  --pm-button-shadow:0 8px 18px rgba(171,14,14,.22),inset 0 1px 0 rgba(255,255,255,.18);
+
+  --pm-contact-button-bg:var(--pm-button-bg);
+  --pm-contact-button-hover-bg:var(--pm-button-hover-bg);
+  --pm-like-bg:var(--pm-button-bg);
+  --pm-like-border:var(--lem-red-main);
+  --pm-like-shadow:var(--pm-button-shadow);
 
   --lb-logo-main:var(--lem-orange-flash);
   --lb-logo-stroke:var(--lem-orange-deep);
@@ -6934,43 +6961,16 @@ body::-webkit-scrollbar-corner,
   --ctxm-serpent:var(--lem-readable-green);
   --intrm-green:var(--lem-readable-green);
   --qst-lime:var(--lem-readable-green);
-
-  --edison-scroll-thumb:var(--lem-red-main);
-  --edison-scroll-thumb-hover:var(--lem-orange-hover);
-  --edison-scroll-track:#ffd48a;
-  --edison-scroll-track-soft:#fff0cf;
-
-  --pm-button-bg:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%);
-  --pm-button-hover-bg:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%);
-  --pm-button-text:var(--lem-yellow-text);
-  --pm-button-hover-text:var(--lem-red-dark);
-  --pm-button-border:var(--lem-red-main);
-  --pm-button-hover-border:var(--lem-yellow-hover);
-  --pm-button-shadow:0 8px 18px rgba(171,14,14,.22),inset 0 1px 0 rgba(255,255,255,.18);
-
-  --pm-contact-button-bg:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%);
-  --pm-contact-button-hover-bg:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%);
-
-  --pm-like-bg:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%);
-  --pm-like-border:var(--lem-red-main);
-  --pm-like-shadow:0 8px 18px rgba(171,14,14,.22),inset 0 1px 0 rgba(255,255,255,.18);
-
-  --nav-dropdown-bg:#fff4e2;
-  --nav-dropdown-hover-bg:rgba(255,212,0,.22);
-  --nav-border-dropdown:rgba(171,14,14,.26);
 }
 
-/* ===================== STRUCTURE / GUTTERS ROUGES ===================== */
+/* ===================== 2. STRUCTURE / GUTTERS ===================== */
 
 [data-color-scheme="light"] #wrap{
   border-left:4px solid var(--lem-red-main)!important;
   border-right:4px solid var(--lem-red-main)!important;
   border-top-color:rgba(var(--lem-red-main-rgb),.30)!important;
   border-bottom-color:rgba(var(--lem-red-main-rgb),.24)!important;
-  box-shadow:
-    inset 7px 0 0 rgba(var(--lem-red-main-rgb),.18),
-    inset -7px 0 0 rgba(var(--lem-red-main-rgb),.18),
-    0 0 36px rgba(145,65,12,.14)!important;
+  box-shadow:inset 7px 0 0 rgba(var(--lem-red-main-rgb),.18),inset -7px 0 0 rgba(var(--lem-red-main-rgb),.18),0 0 36px rgba(145,65,12,.14)!important;
 }
 
 [data-color-scheme="light"] #content-container,
@@ -6985,70 +6985,129 @@ body::-webkit-scrollbar-corner,
   border-right-color:rgba(var(--lem-red-main-rgb),.38)!important;
 }
 
-/* ===================== NAVBAR / DROPDOWN ===================== */
+/* ===================== 3. NAVBAR / DROPDOWNS SANS CASE PARENTE ===================== */
 
-[data-color-scheme="light"] #custom-navbar a,
-[data-color-scheme="light"] #custom-navbar a:link,
-[data-color-scheme="light"] #custom-navbar a:visited,
-[data-color-scheme="light"] .custom-navbar a,
-[data-color-scheme="light"] .custom-navbar a:link,
-[data-color-scheme="light"] .custom-navbar a:visited,
+[data-color-scheme="light"] #custom-navbar,
+[data-color-scheme="light"] #custom-navbar ul,
+[data-color-scheme="light"] #custom-navbar li,
+[data-color-scheme="light"] .custom-navbar,
+[data-color-scheme="light"] .custom-navbar ul,
+[data-color-scheme="light"] .custom-navbar li,
+[data-color-scheme="light"] .mainmenu,
+[data-color-scheme="light"] .mainmenu ul,
+[data-color-scheme="light"] .mainmenu li,
+[data-color-scheme="light"] .navbar,
+[data-color-scheme="light"] .navbar ul,
+[data-color-scheme="light"] .navbar li,
+[data-color-scheme="light"] .linklist.top,
+[data-color-scheme="light"] .linklist.top li{
+  overflow:visible!important;
+}
+
+/* Liens parents : texte seul, aucune case */
+[data-color-scheme="light"] #custom-navbar > ul > li > a,
+[data-color-scheme="light"] .custom-navbar > ul > li > a,
+[data-color-scheme="light"] .mainmenu > ul > li > a,
+[data-color-scheme="light"] .navbar > ul > li > a,
+[data-color-scheme="light"] .linklist.top > li > a,
+[data-color-scheme="light"] #custom-navbar li > a,
+[data-color-scheme="light"] .custom-navbar li > a,
 [data-color-scheme="light"] #page-header .navbar a,
 [data-color-scheme="light"] .linklist.top a{
-  color:var(--lem-red-main)!important;
-  text-shadow:none!important;
-  filter:none!important;
-}
-
-[data-color-scheme="light"] #custom-navbar a:hover,
-[data-color-scheme="light"] #custom-navbar a:focus,
-[data-color-scheme="light"] .custom-navbar a:hover,
-[data-color-scheme="light"] .custom-navbar a:focus,
-[data-color-scheme="light"] #page-header .navbar a:hover,
-[data-color-scheme="light"] .linklist.top a:hover{
-  color:var(--lem-orange-hover)!important;
-  text-shadow:none!important;
-  filter:none!important;
-}
-
-[data-color-scheme="light"] #custom-navbar li ul,
-[data-color-scheme="light"] .custom-navbar li ul,
-[data-color-scheme="light"] #page-header .navbar li ul,
-[data-color-scheme="light"] .navbar li ul,
-[data-color-scheme="light"] .mainmenu li ul,
-[data-color-scheme="light"] li[class*="dropdown"] ul,
-[data-color-scheme="light"] li[class*="submenu"] ul{
-  background:#fff4e2!important;
-  border:1px solid rgba(var(--lem-red-main-rgb),.26)!important;
-  box-shadow:0 10px 22px rgba(122,40,8,.12)!important;
-}
-
-[data-color-scheme="light"] #custom-navbar li ul a,
-[data-color-scheme="light"] .custom-navbar li ul a,
-[data-color-scheme="light"] #page-header .navbar li ul a,
-[data-color-scheme="light"] .navbar li ul a,
-[data-color-scheme="light"] .mainmenu li ul a,
-[data-color-scheme="light"] li[class*="dropdown"] ul a,
-[data-color-scheme="light"] li[class*="submenu"] ul a{
   background:transparent!important;
-  color:var(--lem-red-main)!important;
+  background-color:transparent!important;
+  background-image:none!important;
   border:0!important;
   box-shadow:none!important;
+  outline:0!important;
+  color:var(--nav-dropdown-text)!important;
   text-shadow:none!important;
+  filter:none!important;
 }
 
-[data-color-scheme="light"] #custom-navbar li ul a:hover,
-[data-color-scheme="light"] .custom-navbar li ul a:hover,
-[data-color-scheme="light"] #page-header .navbar li ul a:hover,
-[data-color-scheme="light"] .navbar li ul a:hover,
-[data-color-scheme="light"] .mainmenu li ul a:hover,
-[data-color-scheme="light"] li[class*="dropdown"] ul a:hover,
-[data-color-scheme="light"] li[class*="submenu"] ul a:hover{
-  background:rgba(255,212,0,.22)!important;
-  color:var(--lem-red-dark)!important;
+[data-color-scheme="light"] #custom-navbar > ul > li > a:hover,
+[data-color-scheme="light"] .custom-navbar > ul > li > a:hover,
+[data-color-scheme="light"] .mainmenu > ul > li > a:hover,
+[data-color-scheme="light"] .navbar > ul > li > a:hover,
+[data-color-scheme="light"] .linklist.top > li > a:hover,
+[data-color-scheme="light"] #custom-navbar li > a:hover,
+[data-color-scheme="light"] .custom-navbar li > a:hover,
+[data-color-scheme="light"] #page-header .navbar a:hover,
+[data-color-scheme="light"] .linklist.top a:hover{
+  background:transparent!important;
+  color:var(--lem-orange-hover)!important;
 }
 
-/* ===================== TITRES ROUGES SANS SHADOW BLEU ===================== */
+/* Panneaux déroulants uniquement */
+[data-color-scheme="light"] #custom-navbar ul ul,
+[data-color-scheme="light"] .custom-navbar ul ul,
+[data-color-scheme="light"] .mainmenu ul ul,
+[data-color-scheme="light"] .navbar ul ul,
+[data-color-scheme="light"] .linklist.top li ul,
+[data-color-scheme="light"] ul.dropdown-menu,
+[data-color-scheme="light"] ul.submenu,
+[data-color-scheme="light"] ul.sub-menu{
+  background:var(--nav-dropdown-bg)!important;
+  background-color:#fff4e2!important;
+  border:1px solid var(--nav-dropdown-border)!important;
+  border-radius:0 0 10px 10px!important;
+  box-shadow:0 12px 26px rgba(122,40,8,.16),inset 0 0 0 1px rgba(255,255,255,.22)!important;
+  color:var(--nav-dropdown-text)!important;
+  padding:6px!important;
+  text-shadow:none!important;
+  filter:none!important;
+  z-index:99999!important;
+}
+
+[data-color-scheme="light"] #custom-navbar ul ul a,
+[data-color-scheme="light"] .custom-navbar ul ul a,
+[data-color-scheme="light"] .mainmenu ul ul a,
+[data-color-scheme="light"] .navbar ul ul a,
+[data-color-scheme="light"] .linklist.top li ul a,
+[data-color-scheme="light"] ul.dropdown-menu a,
+[data-color-scheme="light"] ul.submenu a,
+[data-color-scheme="light"] ul.sub-menu a{
+  display:block!important;
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  color:var(--nav-dropdown-text)!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+[data-color-scheme="light"] #custom-navbar ul ul a:hover,
+[data-color-scheme="light"] .custom-navbar ul ul a:hover,
+[data-color-scheme="light"] .mainmenu ul ul a:hover,
+[data-color-scheme="light"] .navbar ul ul a:hover,
+[data-color-scheme="light"] .linklist.top li ul a:hover,
+[data-color-scheme="light"] ul.dropdown-menu a:hover,
+[data-color-scheme="light"] ul.submenu a:hover,
+[data-color-scheme="light"] ul.sub-menu a:hover{
+  background:var(--nav-dropdown-hover-bg)!important;
+  background-color:var(--nav-dropdown-hover-bg)!important;
+  color:var(--nav-dropdown-hover-text)!important;
+  border-radius:7px!important;
+}
+
+[data-color-scheme="light"] #custom-navbar .caret,
+[data-color-scheme="light"] .custom-navbar .caret,
+[data-color-scheme="light"] .mainmenu .caret,
+[data-color-scheme="light"] .navbar .caret,
+[data-color-scheme="light"] .linklist.top .caret,
+[data-color-scheme="light"] #custom-navbar a::after,
+[data-color-scheme="light"] .custom-navbar a::after,
+[data-color-scheme="light"] .mainmenu a::after,
+[data-color-scheme="light"] .navbar a::after{
+  color:var(--nav-dropdown-text)!important;
+  border-top-color:var(--nav-dropdown-text)!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* ===================== 4. TITRES ROUGES / PAS DE SHADOW BLEU ===================== */
 
 [data-color-scheme="light"] h1,
 [data-color-scheme="light"] h2,
@@ -7108,7 +7167,6 @@ body::-webkit-scrollbar-corner,
   filter:none!important;
 }
 
-/* Monoton général : rouge, sans ombre bleue */
 [data-color-scheme="light"] [style*="Monoton"],
 [data-color-scheme="light"] [style*="monoton"],
 [data-color-scheme="light"] .monoton,
@@ -7120,70 +7178,93 @@ body::-webkit-scrollbar-corner,
   filter:none!important;
 }
 
-/* ===================== BANNIÈRE : LEMEGETON + KNOW YOUR STUFF ===================== */
+/* ===================== 5. BANNIÈRE / LEMEGETON / KNOW YOUR STUFF ===================== */
 
-[data-color-scheme="light"] .lb-banner,
-[data-color-scheme="light"] .lb-banner *,
-[data-color-scheme="light"] [class*="lb-banner"],
-[data-color-scheme="light"] [class*="lb-banner"] *,
-[data-color-scheme="light"] .lpa-banner,
-[data-color-scheme="light"] .lpa-banner *{
-  text-shadow:none!important;
-  filter:none!important;
-}
-
-/* LEMEGETON : orange lisible, non bleu */
+[data-color-scheme="light"] .lb-logo,
+[data-color-scheme="light"] .lb-title,
+[data-color-scheme="light"] .lb-banner .lb-logo,
 [data-color-scheme="light"] .lb-banner .lb-title,
 [data-color-scheme="light"] .lb-banner [class*="logo"],
-[data-color-scheme="light"] .lb-banner [class*="title"],
-[data-color-scheme="light"] .lb-banner [class*="titre"],
-[data-color-scheme="light"] [class*="banner"] .lb-title,
-[data-color-scheme="light"] [class*="banner"] [class*="logo"]{
+[data-color-scheme="light"] .lb-banner [class*="title"]{
   color:var(--lem-orange-flash)!important;
-  -webkit-text-fill-color:var(--lem-orange-flash)!important;
-  -webkit-text-stroke:.75px var(--lem-orange-deep)!important;
-  text-stroke:.75px var(--lem-orange-deep)!important;
-  text-shadow:0 1px 0 rgba(255,241,212,.55)!important;
+  -webkit-text-fill-color:transparent!important;
+  -webkit-text-stroke:1px var(--lem-orange-flash)!important;
+  text-shadow:0 1px 0 rgba(255,241,212,.65),0 0 7px rgba(255,122,0,.18)!important;
   filter:none!important;
 }
 
-/* KNOW YOUR STUFF / étoiles / texte info : rouge */
-[data-color-scheme="light"] .lb-banner .lb-info-title,
-[data-color-scheme="light"] .lb-banner .lb-kicker,
-[data-color-scheme="light"] .lb-banner .lb-info-kicker,
-[data-color-scheme="light"] .lb-banner [class*="info-title"],
-[data-color-scheme="light"] .lb-banner [class*="kicker"],
-[data-color-scheme="light"] .lb-info-title,
-[data-color-scheme="light"] .lb-info-kicker,
-[data-color-scheme="light"] .lb-banner [class*="star"],
-[data-color-scheme="light"] .lb-banner [class*="etoile"],
-[data-color-scheme="light"] .lb-banner [class*="étoile"]{
-  color:var(--lem-red-main)!important;
-  -webkit-text-fill-color:var(--lem-red-main)!important;
-  -webkit-text-stroke:0!important;
+[data-color-scheme="light"] .lb-info,
+[data-color-scheme="light"] .lb-info *,
+[data-color-scheme="light"] .lb-kys,
+[data-color-scheme="light"] .lb-stuff,
+[data-color-scheme="light"] [class*="know"]{
   text-shadow:none!important;
   filter:none!important;
 }
 
-/* Coches vertes */
-[data-color-scheme="light"] .lb-banner .lb-ok,
-[data-color-scheme="light"] .lb-banner .ok,
-[data-color-scheme="light"] .lb-banner .check,
-[data-color-scheme="light"] .lb-banner [class*="ok"],
-[data-color-scheme="light"] .lb-banner [class*="check"],
-[data-color-scheme="light"] .lb-banner .ion-checkmark,
-[data-color-scheme="light"] .lb-banner .ion-checkmark-round,
-[data-color-scheme="light"] .lb-banner .fa-check,
+[data-color-scheme="light"] .lb-info-title,
+[data-color-scheme="light"] .lb-info strong,
+[data-color-scheme="light"] .lb-kys,
+[data-color-scheme="light"] [class*="know"]{
+  color:var(--lem-red-main)!important;
+  -webkit-text-fill-color:var(--lem-red-main)!important;
+}
+
 [data-color-scheme="light"] .lb-info .ok,
 [data-color-scheme="light"] .lb-info [class*="check"],
 [data-color-scheme="light"] .lb-info .ion-checkmark,
-[data-color-scheme="light"] .lb-info .fa-check{
+[data-color-scheme="light"] .lb-info .fa-check,
+[data-color-scheme="light"] .lb-banner .ok,
+[data-color-scheme="light"] .lb-banner [class*="check"]{
   color:var(--lem-ok-green)!important;
   -webkit-text-fill-color:var(--lem-ok-green)!important;
   text-shadow:0 0 4px rgba(22,131,38,.18)!important;
 }
 
-/* ===================== LECTEUR AUDIO : NE PLUS CRÉER DE TRIANGLES MULTIPLES ===================== */
+/* ===================== 6. PA IFRAME / LPA / BABY ===================== */
+
+html[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites,
+body[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites{
+  background:radial-gradient(circle at top right,rgba(255,255,255,.16),transparent 42%),var(--baby-light-bg)!important;
+  border:1px solid #8d0909!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 10px 22px rgba(171,14,14,.22)!important;
+}
+
+html[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites *,
+body[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites *{
+  color:#fffaf0!important;
+  -webkit-text-fill-color:#fffaf0!important;
+}
+
+html[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites .lpa-title,
+html[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites [class*="title"],
+html[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites [class*="titre"],
+body[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites .lpa-title,
+body[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites [class*="title"],
+body[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites [class*="titre"]{
+  color:var(--baby-light-title)!important;
+  -webkit-text-fill-color:var(--baby-light-title)!important;
+  -webkit-text-stroke:0!important;
+  text-shadow:0 0 4px var(--baby-light-shadow-gold),0 0 8px var(--baby-light-shadow-pink),2px 2px 0 var(--baby-light-shadow-red),-1px 1px 0 rgba(105,3,3,.75)!important;
+  filter:none!important;
+}
+
+html[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites,
+body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites,
+:root:not([data-color-scheme="light"]) #lpa .lpa-card.lpa-topsites{
+  background:radial-gradient(circle at top left,var(--lpa-shadow-cyan),transparent 38%),radial-gradient(circle at bottom right,var(--lpa-shadow-pink),transparent 42%),linear-gradient(180deg,var(--lpa-panel),var(--lpa-panel-deep))!important;
+  border:1px solid var(--lpa-border-cyan)!important;
+  box-shadow:inset 0 0 0 1px var(--lpa-border-soft),0 0 16px var(--lpa-shadow-cyan)!important;
+}
+
+html[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
+body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
+:root:not([data-color-scheme="light"]) #lpa .lpa-card.lpa-topsites *{
+  color:var(--lpa-white)!important;
+  -webkit-text-fill-color:initial!important;
+}
+
+/* ===================== 7. LECTEUR AUDIO : PAS DE TRIANGLES MULTIPLES ===================== */
 
 [data-color-scheme="light"] .lb-player,
 [data-color-scheme="light"] [class*="lb-player"]{
@@ -7192,7 +7273,6 @@ body::-webkit-scrollbar-corner,
   --lb-player-wave-current:#ab0e0e;
 }
 
-/* On se limite aux vrais contrôles play connus/nommés, pas à tous les [class*="play"] */
 [data-color-scheme="light"] .lb-play,
 [data-color-scheme="light"] .lb-player-play,
 [data-color-scheme="light"] .lb-audio-play,
@@ -7205,7 +7285,6 @@ body::-webkit-scrollbar-corner,
   color:var(--lem-red-main)!important;
 }
 
-/* Triangle seulement sur classes exactes probables */
 [data-color-scheme="light"] .lb-play::before,
 [data-color-scheme="light"] .lb-player-play::before,
 [data-color-scheme="light"] .lb-audio-play::before,
@@ -7215,7 +7294,6 @@ body::-webkit-scrollbar-corner,
   color:var(--lem-red-main)!important;
 }
 
-/* Supprime uniquement les triangles ajoutés par les anciens patchs trop larges s'ils restent en cache */
 [data-color-scheme="light"] .lb-player [class*="wave"]::before,
 [data-color-scheme="light"] .lb-player [class*="bar"]::before,
 [data-color-scheme="light"] .lb-player [class*="time"]::before,
@@ -7226,7 +7304,7 @@ body::-webkit-scrollbar-corner,
   border:0!important;
 }
 
-/* ===================== BOUTONS FORUM : ROUGE / TEXTE JAUNE ===================== */
+/* ===================== 8. BOUTONS FORUM ROUGES / TEXTE JAUNE ===================== */
 
 [data-color-scheme="light"] a.button1,
 [data-color-scheme="light"] a.button2,
@@ -7237,54 +7315,34 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] input[type="submit"],
 [data-color-scheme="light"] input[type="button"],
 [data-color-scheme="light"] input[type="reset"],
-[data-color-scheme="light"] .sub-header-buttons a.button1,
-[data-color-scheme="light"] .sub-header-buttons a.button2,
-[data-color-scheme="light"] .sub-header-buttons.promess a.button1,
-[data-color-scheme="light"] .sub-header-buttons.promess a.button2,
-[data-color-scheme="light"] .topic-actions a.button1,
-[data-color-scheme="light"] .topic-actions a.button2,
-[data-color-scheme="light"] .topic-actions.promess a.button1,
-[data-color-scheme="light"] .topic-actions.promess a.button2,
-[data-color-scheme="light"] .post-options a,
-[data-color-scheme="light"] .post-buttons a,
+[data-color-scheme="light"] .sub-header-buttons.promess a,
+[data-color-scheme="light"] .topic-actions.promess a,
 [data-color-scheme="light"] .fa_like_div.promess .rep-button,
 [data-color-scheme="light"] .fa_like_left.promess .rep-button,
 [data-color-scheme="light"] .fa_like_right.promess .rep-button,
+[data-color-scheme="light"] .fa_like_right.promess a,
+[data-color-scheme="light"] .fa_like_right.promess span,
 [data-color-scheme="light"] .profile-icons a,
 [data-color-scheme="light"] .profile-icons span,
-[data-color-scheme="light"] a[href*="mode=reply"],
+[data-color-scheme="light"] .postprofile-top.promess .profile-icons a,
+[data-color-scheme="light"] .postprofile-top.promess .profile-icons span,
+[data-color-scheme="light"] .postprofile-top.promess a.button,
+[data-color-scheme="light"] .postprofile-top.promess a.button1,
+[data-color-scheme="light"] .postprofile-top.promess a.button2,
+[data-color-scheme="light"] .postprofile-top.promess a[class*="btn"],
+[data-color-scheme="light"] .postprofile-top.promess a[class*="button"],
 [data-color-scheme="light"] a[href*="mode=newtopic"],
+[data-color-scheme="light"] a[href*="mode=reply"],
 [data-color-scheme="light"] a[href*="mode=editpost"],
 [data-color-scheme="light"] a[href*="mode=quote"],
 [data-color-scheme="light"] a[href*="mode=delete"],
 [data-color-scheme="light"] a[href*="mode=ip"],
 [data-color-scheme="light"] a[href*="mode=report"]{
-  background:linear-gradient(180deg,#c01818 0%,#ab0e0e 100%)!important;
+  background:var(--pm-button-bg)!important;
   background-color:var(--lem-red-main)!important;
+  color:var(--lem-yellow-text)!important;
   border:1px solid var(--lem-red-main)!important;
-  color:var(--lem-yellow-text)!important;
-  text-shadow:none!important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.16),
-    0 8px 18px rgba(var(--lem-red-main-rgb),.18)!important;
-}
-
-[data-color-scheme="light"] a.button1 *,
-[data-color-scheme="light"] a.button2 *,
-[data-color-scheme="light"] button.button1 *,
-[data-color-scheme="light"] button.button2 *,
-[data-color-scheme="light"] .sub-header-buttons a.button1 *,
-[data-color-scheme="light"] .sub-header-buttons a.button2 *,
-[data-color-scheme="light"] .topic-actions a.button1 *,
-[data-color-scheme="light"] .topic-actions a.button2 *,
-[data-color-scheme="light"] .post-options a *,
-[data-color-scheme="light"] .post-buttons a *,
-[data-color-scheme="light"] .fa_like_div.promess .rep-button *,
-[data-color-scheme="light"] .fa_like_left.promess .rep-button *,
-[data-color-scheme="light"] .fa_like_right.promess .rep-button *,
-[data-color-scheme="light"] .profile-icons a *,
-[data-color-scheme="light"] .profile-icons span *{
-  color:var(--lem-yellow-text)!important;
+  box-shadow:var(--pm-button-shadow)!important;
   text-shadow:none!important;
 }
 
@@ -7297,65 +7355,55 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] input[type="submit"]:hover,
 [data-color-scheme="light"] input[type="button"]:hover,
 [data-color-scheme="light"] input[type="reset"]:hover,
-[data-color-scheme="light"] .sub-header-buttons a.button1:hover,
-[data-color-scheme="light"] .sub-header-buttons a.button2:hover,
-[data-color-scheme="light"] .topic-actions a.button1:hover,
-[data-color-scheme="light"] .topic-actions a.button2:hover,
-[data-color-scheme="light"] .post-options a:hover,
-[data-color-scheme="light"] .post-buttons a:hover,
+[data-color-scheme="light"] .sub-header-buttons.promess a:hover,
+[data-color-scheme="light"] .topic-actions.promess a:hover,
 [data-color-scheme="light"] .fa_like_div.promess .rep-button:hover,
 [data-color-scheme="light"] .fa_like_left.promess .rep-button:hover,
 [data-color-scheme="light"] .fa_like_right.promess .rep-button:hover,
+[data-color-scheme="light"] .fa_like_right.promess a:hover,
+[data-color-scheme="light"] .fa_like_right.promess span:hover,
 [data-color-scheme="light"] .profile-icons a:hover,
 [data-color-scheme="light"] .profile-icons span:hover,
-[data-color-scheme="light"] a[href*="mode=reply"]:hover,
+[data-color-scheme="light"] .postprofile-top.promess .profile-icons a:hover,
+[data-color-scheme="light"] .postprofile-top.promess .profile-icons span:hover,
+[data-color-scheme="light"] .postprofile-top.promess a.button:hover,
+[data-color-scheme="light"] .postprofile-top.promess a.button1:hover,
+[data-color-scheme="light"] .postprofile-top.promess a.button2:hover,
+[data-color-scheme="light"] .postprofile-top.promess a[class*="btn"]:hover,
+[data-color-scheme="light"] .postprofile-top.promess a[class*="button"]:hover,
 [data-color-scheme="light"] a[href*="mode=newtopic"]:hover,
+[data-color-scheme="light"] a[href*="mode=reply"]:hover,
 [data-color-scheme="light"] a[href*="mode=editpost"]:hover,
 [data-color-scheme="light"] a[href*="mode=quote"]:hover,
 [data-color-scheme="light"] a[href*="mode=delete"]:hover,
 [data-color-scheme="light"] a[href*="mode=ip"]:hover,
 [data-color-scheme="light"] a[href*="mode=report"]:hover{
-  background:linear-gradient(180deg,#ffe44d 0%,#ffca2e 100%)!important;
+  background:var(--pm-button-hover-bg)!important;
   background-color:var(--lem-yellow-hover)!important;
+  color:var(--lem-red-dark)!important;
   border-color:var(--lem-yellow-hover)!important;
-  color:var(--lem-red-dark)!important;
 }
 
-[data-color-scheme="light"] a.button1:hover *,
-[data-color-scheme="light"] a.button2:hover *,
-[data-color-scheme="light"] button.button1:hover *,
-[data-color-scheme="light"] button.button2:hover *,
-[data-color-scheme="light"] .sub-header-buttons a.button1:hover *,
-[data-color-scheme="light"] .sub-header-buttons a.button2:hover *,
-[data-color-scheme="light"] .topic-actions a.button1:hover *,
-[data-color-scheme="light"] .topic-actions a.button2:hover *,
-[data-color-scheme="light"] .post-options a:hover *,
-[data-color-scheme="light"] .post-buttons a:hover *,
-[data-color-scheme="light"] .fa_like_div.promess .rep-button:hover *,
-[data-color-scheme="light"] .fa_like_left.promess .rep-button:hover *,
-[data-color-scheme="light"] .fa_like_right.promess .rep-button:hover *,
-[data-color-scheme="light"] .profile-icons a:hover *,
-[data-color-scheme="light"] .profile-icons span:hover *{
-  color:var(--lem-red-dark)!important;
+[data-color-scheme="light"] .fa_like_div.promess .rep-button span,
+[data-color-scheme="light"] .fa_like_left.promess .rep-button span,
+[data-color-scheme="light"] .fa_like_right.promess .rep-button span{
+  color:inherit!important;
 }
 
-/* Icônes dans les boutons d'action : claires sur rouge */
-[data-color-scheme="light"] .profile-icons img,
 [data-color-scheme="light"] .fa_like_right.promess img,
-[data-color-scheme="light"] .post-options img,
-[data-color-scheme="light"] .post-buttons img{
+[data-color-scheme="light"] .profile-icons img,
+[data-color-scheme="light"] .postprofile-top.promess .profile-icons img{
   filter:brightness(0) invert(1) sepia(.18) saturate(1.6) hue-rotate(340deg)!important;
   opacity:1!important;
 }
 
-[data-color-scheme="light"] .profile-icons a:hover img,
 [data-color-scheme="light"] .fa_like_right.promess a:hover img,
-[data-color-scheme="light"] .post-options a:hover img,
-[data-color-scheme="light"] .post-buttons a:hover img{
+[data-color-scheme="light"] .profile-icons a:hover img,
+[data-color-scheme="light"] .postprofile-top.promess .profile-icons a:hover img{
   filter:none!important;
 }
 
-/* Exclusions : Notiffi et lecteur audio ne sont PAS des boutons forum */
+/* Exclusions : Notiffi et lecteur audio */
 [data-color-scheme="light"] #notiffi-panel a,
 [data-color-scheme="light"] #notiffi-panel button,
 [data-color-scheme="light"] [id*="notiffi"] a,
@@ -7369,7 +7417,7 @@ body::-webkit-scrollbar-corner,
   text-shadow:none!important;
 }
 
-/* ===================== LIENS UTILITAIRES : TEXTE ROUGE / HOVER JAUNE ===================== */
+/* ===================== 9. LIENS UTILITAIRES : TEXTE ROUGE / HOVER JAUNE ===================== */
 
 [data-color-scheme="light"] #page-footer .linklist a:not(.button1):not(.button2),
 [data-color-scheme="light"] .linklist.bottom a:not(.button1):not(.button2),
@@ -7378,11 +7426,8 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] .breadcrumbs a:not(.button1):not(.button2),
 [data-color-scheme="light"] .jumpbox a:not(.button1):not(.button2),
 [data-color-scheme="light"] .panel a.gen:not(.button1):not(.button2),
-[data-color-scheme="light"] .panel a.genmed:not(.button1):not(.button2),
-[data-color-scheme="light"] a[href*="delete_cookies"],
-[data-color-scheme="light"] a[href*="cookies"]{
+[data-color-scheme="light"] .panel a.genmed:not(.button1):not(.button2){
   background:var(--lem-link-soft-bg)!important;
-  background-image:none!important;
   border:1px solid var(--lem-link-soft-border)!important;
   color:var(--lem-red-main)!important;
   box-shadow:none!important;
@@ -7396,41 +7441,36 @@ body::-webkit-scrollbar-corner,
 [data-color-scheme="light"] .breadcrumbs a:not(.button1):not(.button2):hover,
 [data-color-scheme="light"] .jumpbox a:not(.button1):not(.button2):hover,
 [data-color-scheme="light"] .panel a.gen:not(.button1):not(.button2):hover,
-[data-color-scheme="light"] .panel a.genmed:not(.button1):not(.button2):hover,
-[data-color-scheme="light"] a[href*="delete_cookies"]:hover,
-[data-color-scheme="light"] a[href*="cookies"]:hover{
+[data-color-scheme="light"] .panel a.genmed:not(.button1):not(.button2):hover{
   background:var(--lem-yellow-hover)!important;
   border-color:var(--lem-yellow-hover)!important;
   color:var(--lem-red-dark)!important;
 }
 
- 
+/* ===================== 10. VERTS LIGHT PLUS LISIBLES ===================== */
 
-/* ===================== BESTIAIRE / VERTS LISIBLES ===================== */
-
+[data-color-scheme="light"] .bst [style*="green"],
+[data-color-scheme="light"] .bstp [style*="green"],
+[data-color-scheme="light"] .grpm [style*="green"],
+[data-color-scheme="light"] .ent [style*="green"],
+[data-color-scheme="light"] .pwrm [style*="green"],
+[data-color-scheme="light"] .ctxm [style*="green"],
+[data-color-scheme="light"] .intrm [style*="green"],
+[data-color-scheme="light"] .is-open,
+[data-color-scheme="light"] .open,
+[data-color-scheme="light"] .adoptable,
 [data-color-scheme="light"] [class*="green"],
-[data-color-scheme="light"] [class*="earth"],
-[data-color-scheme="light"] [class*="open"],
-[data-color-scheme="light"] [class*="adopt"],
-[data-color-scheme="light"] [class*="serpent"]{
-  --local-green:var(--lem-readable-green);
-}
-
-[data-color-scheme="light"] .bstp [class*="green"],
-[data-color-scheme="light"] .bstp [class*="earth"],
-[data-color-scheme="light"] .bst [class*="green"],
-[data-color-scheme="light"] .bst [class*="earth"],
-[data-color-scheme="light"] .grpm [class*="green"],
-[data-color-scheme="light"] .grpm [class*="open"],
-[data-color-scheme="light"] .ent [class*="earth"],
-[data-color-scheme="light"] .ctxm [class*="serpent"],
-[data-color-scheme="light"] .intrm [class*="green"]{
+[data-color-scheme="light"] [class*="open"]{
   color:var(--lem-readable-green)!important;
-  border-color:rgba(47,99,31,.35)!important;
-  text-shadow:none!important;
 }
 
-/* ===================== SCROLLBAR THEME ===================== */
+[data-color-scheme="light"] .adoptable,
+[data-color-scheme="light"] .is-open{
+  background:var(--lem-readable-green-bg)!important;
+  border-color:rgba(47,99,31,.30)!important;
+}
+
+/* ===================== 11. SCROLLBARS LIGHT ===================== */
 
 [data-color-scheme="light"] html,
 [data-color-scheme="light"] body,
@@ -7476,190 +7516,4 @@ body::-webkit-scrollbar-corner,
   border:2px solid var(--edison-scroll-track);
   border-radius:999px;
 }
-/* =========================================================
-   PATCH PA — CASE BABY / TOPSITES
-   Rouge uniquement en mode clair
-========================================================= */
 
-/* ===================== LIGHT ONLY ===================== */
-
-html[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites,
-body[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites{
-  background:
-    radial-gradient(circle at top right, rgba(255,255,255,.16), transparent 42%),
-    linear-gradient(180deg, #c01818 0%, #ab0e0e 100%)!important;
-  border:1px solid #8d0909!important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.18),
-    0 10px 22px rgba(171,14,14,.22)!important;
-}
-
-html[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites *,
-body[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites *{
-  color:#fffaf0!important;
-  -webkit-text-fill-color:#fffaf0!important;
-  text-shadow:none!important;
-  filter:none!important;
-}
-
-html[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites .lpa-title,
-html[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites [class*="title"],
-html[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites [class*="titre"],
-body[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites .lpa-title,
-body[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites [class*="title"],
-body[data-color-scheme="light"] #lpa .lpa-card.lpa-topsites [class*="titre"]{
-  color:#fffaf0!important;
-  -webkit-text-fill-color:#fffaf0!important;
-  -webkit-text-stroke:0!important;
-  text-shadow:none!important;
-}
-
-/* ===================== DARK RESTORE ===================== */
-
-html[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites,
-body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites,
-:root:not([data-color-scheme="light"]) #lpa .lpa-card.lpa-topsites{
-  background:
-    radial-gradient(circle at top left, var(--lpa-shadow-cyan), transparent 38%),
-    radial-gradient(circle at bottom right, var(--lpa-shadow-pink), transparent 42%),
-    linear-gradient(180deg, var(--lpa-panel), var(--lpa-panel-deep))!important;
-  border:1px solid var(--lpa-border-cyan)!important;
-  box-shadow:
-    inset 0 0 0 1px var(--lpa-border-soft),
-    0 0 16px var(--lpa-shadow-cyan)!important;
-}
-
-html[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
-body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
-:root:not([data-color-scheme="light"]) #lpa .lpa-card.lpa-topsites *{
-  color:var(--lpa-white)!important;
-  -webkit-text-fill-color:initial!important;
-}
-/* =========================================================
-   PATCH FINAL LIGHT — MENUS DÉROULANTS NAVBAR ROUGES
-   À coller tout en bas du CSS global
-   Cible les dropdowns Forumactif + custom navbar sans toucher la PA iframe
-========================================================= */
-
-[data-color-scheme="light"]{
-  --nav-dropdown-bg:
-    radial-gradient(circle at top right,rgba(255,212,0,.12),transparent 38%),
-    linear-gradient(180deg,#fff4e2 0%,#ffe0a3 100%);
-  --nav-dropdown-text:#ab0e0e;
-  --nav-dropdown-hover-bg:#ffd400;
-  --nav-dropdown-hover-text:#690303;
-  --nav-dropdown-border:rgba(171,14,14,.38);
-}
-
-/* Le parent de menu ne doit pas couper le sous-menu */
-[data-color-scheme="light"] #custom-navbar,
-[data-color-scheme="light"] #custom-navbar ul,
-[data-color-scheme="light"] #custom-navbar li,
-[data-color-scheme="light"] .custom-navbar,
-[data-color-scheme="light"] .custom-navbar ul,
-[data-color-scheme="light"] .custom-navbar li,
-[data-color-scheme="light"] .mainmenu,
-[data-color-scheme="light"] .mainmenu ul,
-[data-color-scheme="light"] .mainmenu li,
-[data-color-scheme="light"] .navbar,
-[data-color-scheme="light"] .navbar ul,
-[data-color-scheme="light"] .navbar li{
-  overflow:visible!important;
-}
-
-/* Fonds des dropdowns : Forumactif natif + menus custom */
-[data-color-scheme="light"] #custom-navbar ul ul,
-[data-color-scheme="light"] #custom-navbar li:hover > ul,
-[data-color-scheme="light"] #custom-navbar li:focus-within > ul,
-[data-color-scheme="light"] .custom-navbar ul ul,
-[data-color-scheme="light"] .custom-navbar li:hover > ul,
-[data-color-scheme="light"] .custom-navbar li:focus-within > ul,
-[data-color-scheme="light"] .mainmenu ul ul,
-[data-color-scheme="light"] .mainmenu li:hover > ul,
-[data-color-scheme="light"] .mainmenu li:focus-within > ul,
-[data-color-scheme="light"] .navbar ul ul,
-[data-color-scheme="light"] .navbar li:hover > ul,
-[data-color-scheme="light"] .navbar li:focus-within > ul,
-[data-color-scheme="light"] .linklist.top ul,
-[data-color-scheme="light"] .linklist.top li:hover > ul,
-[data-color-scheme="light"] .linklist.top li:focus-within > ul,
-[data-color-scheme="light"] .dropdown,
-[data-color-scheme="light"] .dropdown-menu,
-[data-color-scheme="light"] .submenu,
-[data-color-scheme="light"] .sub-menu,
-[data-color-scheme="light"] [class*="dropdown"] ul,
-[data-color-scheme="light"] [class*="submenu"] ul{
-  background:var(--nav-dropdown-bg)!important;
-  background-color:#fff4e2!important;
-  border:1px solid var(--nav-dropdown-border)!important;
-  box-shadow:
-    0 12px 26px rgba(122,40,8,.18),
-    inset 0 0 0 1px rgba(255,255,255,.28)!important;
-  color:var(--nav-dropdown-text)!important;
-  text-shadow:none!important;
-  filter:none!important;
-  z-index:99999!important;
-}
-
-/* Liens internes du dropdown */
-[data-color-scheme="light"] #custom-navbar ul ul a,
-[data-color-scheme="light"] #custom-navbar li:hover > ul a,
-[data-color-scheme="light"] .custom-navbar ul ul a,
-[data-color-scheme="light"] .custom-navbar li:hover > ul a,
-[data-color-scheme="light"] .mainmenu ul ul a,
-[data-color-scheme="light"] .mainmenu li:hover > ul a,
-[data-color-scheme="light"] .navbar ul ul a,
-[data-color-scheme="light"] .navbar li:hover > ul a,
-[data-color-scheme="light"] .linklist.top ul a,
-[data-color-scheme="light"] .linklist.top li:hover > ul a,
-[data-color-scheme="light"] .dropdown a,
-[data-color-scheme="light"] .dropdown-menu a,
-[data-color-scheme="light"] .submenu a,
-[data-color-scheme="light"] .sub-menu a,
-[data-color-scheme="light"] [class*="dropdown"] ul a,
-[data-color-scheme="light"] [class*="submenu"] ul a{
-  background:transparent!important;
-  background-color:transparent!important;
-  background-image:none!important;
-  color:var(--nav-dropdown-text)!important;
-  border:0!important;
-  box-shadow:none!important;
-  text-shadow:none!important;
-  filter:none!important;
-}
-
-/* Hover : jaune canari, texte rouge sombre */
-[data-color-scheme="light"] #custom-navbar ul ul a:hover,
-[data-color-scheme="light"] #custom-navbar li:hover > ul a:hover,
-[data-color-scheme="light"] .custom-navbar ul ul a:hover,
-[data-color-scheme="light"] .custom-navbar li:hover > ul a:hover,
-[data-color-scheme="light"] .mainmenu ul ul a:hover,
-[data-color-scheme="light"] .mainmenu li:hover > ul a:hover,
-[data-color-scheme="light"] .navbar ul ul a:hover,
-[data-color-scheme="light"] .navbar li:hover > ul a:hover,
-[data-color-scheme="light"] .linklist.top ul a:hover,
-[data-color-scheme="light"] .linklist.top li:hover > ul a:hover,
-[data-color-scheme="light"] .dropdown a:hover,
-[data-color-scheme="light"] .dropdown-menu a:hover,
-[data-color-scheme="light"] .submenu a:hover,
-[data-color-scheme="light"] .sub-menu a:hover,
-[data-color-scheme="light"] [class*="dropdown"] ul a:hover,
-[data-color-scheme="light"] [class*="submenu"] ul a:hover{
-  background:var(--nav-dropdown-hover-bg)!important;
-  background-color:#ffd400!important;
-  color:var(--nav-dropdown-hover-text)!important;
-}
-
-/* Les caret/flèches restent rouges */
-[data-color-scheme="light"] #custom-navbar .caret,
-[data-color-scheme="light"] .custom-navbar .caret,
-[data-color-scheme="light"] .mainmenu .caret,
-[data-color-scheme="light"] .navbar .caret,
-[data-color-scheme="light"] .linklist.top .caret,
-[data-color-scheme="light"] #custom-navbar a::after,
-[data-color-scheme="light"] .custom-navbar a::after,
-[data-color-scheme="light"] .mainmenu a::after,
-[data-color-scheme="light"] .navbar a::after{
-  color:var(--nav-dropdown-text)!important;
-  border-top-color:var(--nav-dropdown-text)!important;
-}

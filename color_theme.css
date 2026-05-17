@@ -7100,3 +7100,151 @@ body::-webkit-scrollbar-corner,
   -webkit-text-stroke-color:rgba(var(--lem-red-main-rgb),.40)!important;
   text-shadow:0 0 14px rgba(var(--lem-red-main-rgb),.16)!important;
 }
+
+
+/* =========================================================
+   PATCH EDISON LIGHT — VERTS PLUS LISIBLES
+   Bestiaire + pages utilisant les variables green/lime/open
+   Remplace les verts trop pâles par un vert bouteille lisible.
+========================================================= */
+
+[data-color-scheme="light"]{
+  --lem-green-readable:#2f631f;
+  --lem-green-readable-rgb:47,99,31;
+  --lem-green-readable-hover:#1f4f16;
+  --lem-green-readable-soft:#dce9cf;
+  --lem-green-readable-bg:rgba(47,99,31,.12);
+  --lem-green-readable-bg-strong:rgba(47,99,31,.18);
+  --lem-green-readable-border:rgba(47,99,31,.42);
+
+  --faq-green:var(--lem-green-readable);
+  --faq-lime:var(--lem-green-readable);
+  --ovld-lime:var(--lem-green-readable);
+  --ovld-lime-soft:#4f7a28;
+  --ovld-greed:var(--lem-green-readable);
+  --ovld-greed-rgb:47,99,31;
+
+  --grpm-green:var(--lem-green-readable);
+  --grpm-open:var(--lem-green-readable);
+  --grpm-hellborn:var(--lem-green-readable);
+  --grpm-humain-innocent:#234f38;
+  --grpm-humain-initie:#1f6a5d;
+
+  --bst-earth:var(--lem-green-readable);
+  --ent-earth:var(--lem-green-readable);
+  --ent-lime:var(--lem-green-readable);
+
+  --pnjang-lime:var(--lem-green-readable);
+  --pnjang-lime-soft:#4f7a28;
+  --pnjdem-lime:var(--lem-green-readable);
+  --pnjdem-lime-soft:#4f7a28;
+  --pnjd-lime:var(--lem-green-readable);
+  --pnjd-lime-soft:#4f7a28;
+  --pnjd-positive:var(--lem-green-readable);
+
+  --pwrm-green:var(--lem-green-readable);
+  --pwrm-lime:var(--lem-green-readable);
+  --pwrm-green-soft:#4f7a28;
+  --pwrm-lime-soft:#5c812e;
+
+  --intrm-green:var(--lem-green-readable);
+  --intrm-green-soft:#4f7a28;
+  --ctxm-serpent:var(--lem-green-readable);
+  --ctxm-serpent-soft:#4f7a28;
+  --ctxm-green:var(--ctxm-serpent);
+
+  --chro-green:var(--lem-green-readable);
+  --cul-green:var(--lem-green-readable);
+  --lexm-green:var(--lem-green-readable);
+  --lexm-lime:var(--lem-green-readable);
+  --bstp-green:var(--lem-green-readable);
+
+  --predef-lime:var(--lem-green-readable);
+  --predef-lime-soft:#4f7a28;
+  --pl-green:var(--lem-green-readable);
+  --pl-green-soft:#4f7a28;
+
+  --dospnj-lime:var(--lem-green-readable);
+  --dospnj-lime-2:#4f7a28;
+  --mev1-lime:var(--lem-green-readable);
+  --mev2-lime:var(--lem-green-readable);
+  --qst-lime:var(--lem-green-readable);
+  --qst-lime-soft:#4f7a28;
+  --idx-lime:var(--lem-green-readable);
+  --adms-green:var(--lem-green-readable);
+}
+
+/* Badges / tags verts : plus de vert pâle illisible sur fond crème */
+[data-color-scheme="light"] [class*="bst"] [class*="green"],
+[data-color-scheme="light"] [class*="bst"] [class*="lime"],
+[data-color-scheme="light"] [class*="bst"] [class*="earth"],
+[data-color-scheme="light"] [class*="bst"] [class*="open"],
+[data-color-scheme="light"] [class*="bst"] [class*="adopt"],
+[data-color-scheme="light"] [class*="best"] [class*="green"],
+[data-color-scheme="light"] [class*="best"] [class*="lime"],
+[data-color-scheme="light"] [class*="best"] [class*="earth"],
+[data-color-scheme="light"] [class*="best"] [class*="open"],
+[data-color-scheme="light"] [class*="best"] [class*="adopt"],
+[data-color-scheme="light"] [class*="pwrm"] [class*="green"],
+[data-color-scheme="light"] [class*="pwrm"] [class*="lime"],
+[data-color-scheme="light"] [class*="grpm"] [class*="green"],
+[data-color-scheme="light"] [class*="grpm"] [class*="lime"],
+[data-color-scheme="light"] [class*="grpm"] [class*="open"],
+[data-color-scheme="light"] [class*="ent"] [class*="earth"],
+[data-color-scheme="light"] [class*="ent"] [class*="lime"],
+[data-color-scheme="light"] [class*="ctxm"] [class*="green"],
+[data-color-scheme="light"] [class*="ctxm"] [class*="serpent"],
+[data-color-scheme="light"] [class*="intrm"] [class*="green"],
+[data-color-scheme="light"] [class*="chro"] [class*="green"],
+[data-color-scheme="light"] [class*="cul"] [class*="green"],
+[data-color-scheme="light"] [class*="lexm"] [class*="green"],
+[data-color-scheme="light"] [class*="lexm"] [class*="lime"],
+[data-color-scheme="light"] [class*="qst"] [class*="lime"],
+[data-color-scheme="light"] [class*="predef"] [class*="lime"],
+[data-color-scheme="light"] [class*="prel"] [class*="green"],
+[data-color-scheme="light"] [class*="pl"] [class*="green"]{
+  color:var(--lem-green-readable)!important;
+  border-color:var(--lem-green-readable-border)!important;
+  text-shadow:none!important;
+}
+
+/* Pastilles de statut type "+ ADOPTABLE" */
+[data-color-scheme="light"] [class*="adopt"],
+[data-color-scheme="light"] [class*="adoptable"],
+[data-color-scheme="light"] [class*="available"],
+[data-color-scheme="light"] [class*="dispo"],
+[data-color-scheme="light"] [class*="open"]{
+  color:var(--lem-green-readable)!important;
+  border-color:var(--lem-green-readable-border)!important;
+}
+
+/* Si le vert est posé en fond, on garde un fond doux mais lisible */
+[data-color-scheme="light"] [class*="bst"] [class*="tag"][class*="green"],
+[data-color-scheme="light"] [class*="bst"] [class*="tag"][class*="lime"],
+[data-color-scheme="light"] [class*="bst"] [class*="pill"][class*="green"],
+[data-color-scheme="light"] [class*="bst"] [class*="pill"][class*="lime"],
+[data-color-scheme="light"] [class*="bst"] [class*="badge"][class*="green"],
+[data-color-scheme="light"] [class*="bst"] [class*="badge"][class*="lime"],
+[data-color-scheme="light"] [class*="best"] [class*="tag"][class*="green"],
+[data-color-scheme="light"] [class*="best"] [class*="pill"][class*="green"],
+[data-color-scheme="light"] [class*="best"] [class*="badge"][class*="green"],
+[data-color-scheme="light"] [class*="adopt"],
+[data-color-scheme="light"] [class*="adoptable"]{
+  background:
+    radial-gradient(circle at top left,rgba(var(--lem-green-readable-rgb),.16),transparent 52%),
+    linear-gradient(180deg,rgba(255,250,240,.92),var(--lem-green-readable-soft))!important;
+  color:var(--lem-green-readable)!important;
+  border-color:var(--lem-green-readable-border)!important;
+}
+
+/* Hover vert : assombri au lieu de devenir fluo */
+[data-color-scheme="light"] [class*="bst"] [class*="green"]:hover,
+[data-color-scheme="light"] [class*="bst"] [class*="lime"]:hover,
+[data-color-scheme="light"] [class*="best"] [class*="green"]:hover,
+[data-color-scheme="light"] [class*="best"] [class*="lime"]:hover,
+[data-color-scheme="light"] [class*="adopt"]:hover,
+[data-color-scheme="light"] [class*="open"]:hover{
+  color:var(--lem-green-readable-hover)!important;
+  border-color:rgba(var(--lem-green-readable-rgb),.62)!important;
+}
+

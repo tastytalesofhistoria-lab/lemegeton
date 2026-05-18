@@ -8590,3 +8590,87 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
     radial-gradient(circle at top right,rgba(216,138,0,.10),transparent 42%),
     linear-gradient(135deg,rgba(255,250,240,.96),rgba(255,238,218,.90))!important;
 }
+/* =========================================================
+   PATCH SCROLLBARS — DARK CYAN / LIGHT ROUGE-ORANGE
+   Corrige les scrollbars orange en dark
+========================================================= */
+
+/* ===================== DARK ===================== */
+
+[data-color-scheme="dark"]{
+  --lem-scroll-track:rgba(7,11,24,.88);
+  --lem-scroll-thumb:#24e4ff;
+  --lem-scroll-thumb-hover:#8cecff;
+  --lem-scroll-border:rgba(36,228,255,.25);
+}
+
+[data-color-scheme="dark"] *,
+[data-color-scheme="dark"] *::before,
+[data-color-scheme="dark"] *::after{
+  scrollbar-color:var(--lem-scroll-thumb) var(--lem-scroll-track)!important;
+}
+
+[data-color-scheme="dark"] *::-webkit-scrollbar{
+  width:10px;
+  height:10px;
+}
+
+[data-color-scheme="dark"] *::-webkit-scrollbar-track{
+  background:var(--lem-scroll-track)!important;
+  border-radius:999px;
+}
+
+[data-color-scheme="dark"] *::-webkit-scrollbar-thumb{
+  background:
+    linear-gradient(180deg,#24e4ff 0%,#009dff 100%)!important;
+  border:2px solid rgba(7,11,24,.92)!important;
+  border-radius:999px!important;
+  box-shadow:
+    0 0 8px rgba(36,228,255,.35),
+    0 0 14px rgba(36,228,255,.18)!important;
+}
+
+[data-color-scheme="dark"] *::-webkit-scrollbar-thumb:hover{
+  background:
+    linear-gradient(180deg,#8cecff 0%,#24e4ff 100%)!important;
+}
+
+/* ===================== LIGHT ===================== */
+
+[data-color-scheme="light"]{
+  --lem-scroll-track:rgba(255,240,207,.92);
+  --lem-scroll-thumb:#ab0e0e;
+  --lem-scroll-thumb-hover:#d76a00;
+  --lem-scroll-border:rgba(171,14,14,.25);
+}
+
+[data-color-scheme="light"] *,
+[data-color-scheme="light"] *::before,
+[data-color-scheme="light"] *::after{
+  scrollbar-color:var(--lem-scroll-thumb) var(--lem-scroll-track)!important;
+}
+
+[data-color-scheme="light"] *::-webkit-scrollbar{
+  width:10px;
+  height:10px;
+}
+
+[data-color-scheme="light"] *::-webkit-scrollbar-track{
+  background:var(--lem-scroll-track)!important;
+  border-radius:999px;
+}
+
+[data-color-scheme="light"] *::-webkit-scrollbar-thumb{
+  background:
+    linear-gradient(180deg,#ab0e0e 0%,#d76a00 100%)!important;
+  border:2px solid rgba(255,240,207,.92)!important;
+  border-radius:999px!important;
+  box-shadow:
+    0 0 8px rgba(171,14,14,.22),
+    0 0 14px rgba(215,106,0,.16)!important;
+}
+
+[data-color-scheme="light"] *::-webkit-scrollbar-thumb:hover{
+  background:
+    linear-gradient(180deg,#d76a00 0%,#ab0e0e 100%)!important;
+}

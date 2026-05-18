@@ -5244,3 +5244,75 @@ body[data-color-scheme="light"]::-webkit-scrollbar-thumb{
 .promess-hero-media.promess img{
   border-color:var(--pm-profile-group-color)!important;
 }
+/* =========================================================
+   PROMESS — ÉTAT ACTIF DES BOUTONS J'AIME / J'AIME PAS
+   J'aime cliqué = rose brûlant
+   J'aime pas cliqué = grisé
+========================================================= */
+
+:root{
+  --pm-like-active-bg:#ff2f8e;
+  --pm-like-active-bg-2:#c0188f;
+  --pm-like-active-text:#fff6fb;
+  --pm-like-active-border:rgba(255,120,210,.55);
+  --pm-like-active-shadow:
+    0 0 12px rgba(255,47,142,.42),
+    0 0 24px rgba(192,24,143,.24);
+
+  --pm-dislike-active-bg:#6f6a70;
+  --pm-dislike-active-bg-2:#3b363d;
+  --pm-dislike-active-text:#e8e1e7;
+  --pm-dislike-active-border:rgba(255,255,255,.18);
+  --pm-dislike-active-shadow:
+    0 0 10px rgba(0,0,0,.22);
+}
+
+/* J'AIME actif */
+.fa_like_div.promess .rep-button.fa_liked,
+.fa_like_div.promess .rep-button.liked,
+.fa_like_div.promess .rep-button.is-liked,
+.fa_like_div.promess .rep-button.active,
+.fa_like_div.promess .rep-button[data-vote="like"].active,
+.fa_like_div.promess .rep-button[data-vote="like"].is-active,
+.fa_like_div.promess .fa_like_list .rep-button,
+.fa_like_div.promess a[href*="eval=plus"].fa_liked,
+.fa_like_div.promess a[href*="eval=plus"].liked,
+.fa_like_div.promess a[href*="eval=plus"].is-active{
+  background:
+    radial-gradient(circle at top left,rgba(255,255,255,.24),transparent 42%),
+    linear-gradient(180deg,var(--pm-like-active-bg),var(--pm-like-active-bg-2))!important;
+  color:var(--pm-like-active-text)!important;
+  border-color:var(--pm-like-active-border)!important;
+  box-shadow:var(--pm-like-active-shadow)!important;
+  text-shadow:0 1px 2px rgba(80,0,45,.35)!important;
+}
+
+/* J'AIME PAS actif */
+.fa_like_div.promess .rep-button.fa_disliked,
+.fa_like_div.promess .rep-button.disliked,
+.fa_like_div.promess .rep-button.is-disliked,
+.fa_like_div.promess .rep-button[data-vote="dislike"].active,
+.fa_like_div.promess .rep-button[data-vote="dislike"].is-active,
+.fa_like_div.promess a[href*="eval=minus"].fa_disliked,
+.fa_like_div.promess a[href*="eval=minus"].disliked,
+.fa_like_div.promess a[href*="eval=minus"].is-active{
+  background:
+    linear-gradient(180deg,var(--pm-dislike-active-bg),var(--pm-dislike-active-bg-2))!important;
+  color:var(--pm-dislike-active-text)!important;
+  border-color:var(--pm-dislike-active-border)!important;
+  box-shadow:var(--pm-dislike-active-shadow)!important;
+  filter:saturate(.35)!important;
+  opacity:.88!important;
+  text-shadow:none!important;
+}
+
+/* Texte intérieur des états actifs */
+.fa_like_div.promess .rep-button.fa_liked *,
+.fa_like_div.promess .rep-button.liked *,
+.fa_like_div.promess .rep-button.is-liked *,
+.fa_like_div.promess .rep-button.fa_disliked *,
+.fa_like_div.promess .rep-button.disliked *,
+.fa_like_div.promess .rep-button.is-disliked *{
+  color:inherit!important;
+  -webkit-text-fill-color:currentColor!important;
+}

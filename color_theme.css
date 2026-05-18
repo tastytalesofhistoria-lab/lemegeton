@@ -8674,3 +8674,118 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
   background:
     linear-gradient(180deg,#d76a00 0%,#ab0e0e 100%)!important;
 }
+/* =========================================================
+   PATCH SCROLLBAR GÉNÉRALE — THEME AWARE
+   Dark = cyan / Light = rouge-orange
+========================================================= */
+
+/* ===================== DARK : scroll générale cyan ===================== */
+
+html[data-color-scheme="dark"],
+body[data-color-scheme="dark"],
+[data-color-scheme="dark"] html,
+[data-color-scheme="dark"] body{
+  scrollbar-color:#24e4ff rgba(7,11,24,.92)!important;
+  scrollbar-width:auto!important;
+}
+
+html[data-color-scheme="dark"]::-webkit-scrollbar,
+body[data-color-scheme="dark"]::-webkit-scrollbar,
+[data-color-scheme="dark"]::-webkit-scrollbar,
+[data-color-scheme="dark"] html::-webkit-scrollbar,
+[data-color-scheme="dark"] body::-webkit-scrollbar{
+  width:10px!important;
+  height:10px!important;
+}
+
+html[data-color-scheme="dark"]::-webkit-scrollbar-track,
+body[data-color-scheme="dark"]::-webkit-scrollbar-track,
+[data-color-scheme="dark"]::-webkit-scrollbar-track,
+[data-color-scheme="dark"] html::-webkit-scrollbar-track,
+[data-color-scheme="dark"] body::-webkit-scrollbar-track{
+  background:rgba(7,11,24,.92)!important;
+}
+
+html[data-color-scheme="dark"]::-webkit-scrollbar-thumb,
+body[data-color-scheme="dark"]::-webkit-scrollbar-thumb,
+[data-color-scheme="dark"]::-webkit-scrollbar-thumb,
+[data-color-scheme="dark"] html::-webkit-scrollbar-thumb,
+[data-color-scheme="dark"] body::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,#24e4ff 0%,#009dff 100%)!important;
+  border:2px solid rgba(7,11,24,.92)!important;
+  border-radius:999px!important;
+  box-shadow:
+    0 0 8px rgba(36,228,255,.38),
+    0 0 14px rgba(36,228,255,.18)!important;
+}
+
+html[data-color-scheme="dark"]::-webkit-scrollbar-thumb:hover,
+body[data-color-scheme="dark"]::-webkit-scrollbar-thumb:hover,
+[data-color-scheme="dark"]::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg,#8cecff 0%,#24e4ff 100%)!important;
+}
+
+/* Wrappers Forumactif qui peuvent avoir leur propre scroll */
+[data-color-scheme="dark"] #wrap,
+[data-color-scheme="dark"] #container,
+[data-color-scheme="dark"] #content-container,
+[data-color-scheme="dark"] #main,
+[data-color-scheme="dark"] #main-content,
+[data-color-scheme="dark"] .conteneur_container_IE{
+  scrollbar-color:#24e4ff rgba(7,11,24,.92)!important;
+}
+
+/* ===================== LIGHT : scroll générale rouge-orange ===================== */
+
+html[data-color-scheme="light"],
+body[data-color-scheme="light"],
+[data-color-scheme="light"] html,
+[data-color-scheme="light"] body{
+  scrollbar-color:#ab0e0e rgba(255,240,207,.92)!important;
+  scrollbar-width:auto!important;
+}
+
+html[data-color-scheme="light"]::-webkit-scrollbar,
+body[data-color-scheme="light"]::-webkit-scrollbar,
+[data-color-scheme="light"]::-webkit-scrollbar,
+[data-color-scheme="light"] html::-webkit-scrollbar,
+[data-color-scheme="light"] body::-webkit-scrollbar{
+  width:10px!important;
+  height:10px!important;
+}
+
+html[data-color-scheme="light"]::-webkit-scrollbar-track,
+body[data-color-scheme="light"]::-webkit-scrollbar-track,
+[data-color-scheme="light"]::-webkit-scrollbar-track,
+[data-color-scheme="light"] html::-webkit-scrollbar-track,
+[data-color-scheme="light"] body::-webkit-scrollbar-track{
+  background:rgba(255,240,207,.92)!important;
+}
+
+html[data-color-scheme="light"]::-webkit-scrollbar-thumb,
+body[data-color-scheme="light"]::-webkit-scrollbar-thumb,
+[data-color-scheme="light"]::-webkit-scrollbar-thumb,
+[data-color-scheme="light"] html::-webkit-scrollbar-thumb,
+[data-color-scheme="light"] body::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,#ab0e0e 0%,#d76a00 100%)!important;
+  border:2px solid rgba(255,240,207,.92)!important;
+  border-radius:999px!important;
+  box-shadow:
+    0 0 8px rgba(171,14,14,.22),
+    0 0 14px rgba(215,106,0,.16)!important;
+}
+
+html[data-color-scheme="light"]::-webkit-scrollbar-thumb:hover,
+body[data-color-scheme="light"]::-webkit-scrollbar-thumb:hover,
+[data-color-scheme="light"]::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg,#d76a00 0%,#ab0e0e 100%)!important;
+}
+
+[data-color-scheme="light"] #wrap,
+[data-color-scheme="light"] #container,
+[data-color-scheme="light"] #content-container,
+[data-color-scheme="light"] #main,
+[data-color-scheme="light"] #main-content,
+[data-color-scheme="light"] .conteneur_container_IE{
+  scrollbar-color:#ab0e0e rgba(255,240,207,.92)!important;
+}

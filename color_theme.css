@@ -5174,3 +5174,50 @@ body[data-color-scheme="light"]::-webkit-scrollbar-thumb{
   text-shadow:0 0 5px rgba(255,255,255,.82),0 0 10px rgba(255,212,0,.26)!important;
   filter:none!important;
 }
+/* =========================================================
+   PATCH LIGHT — BESTIAIRE TAGS ADOPTABLE BLANCS
+   Retire les fonds verts des badges adoptable / non adoptable
+========================================================= */
+
+[data-color-scheme="light"] .bstp-adopt,
+[data-color-scheme="light"] .bstp-adoptable,
+[data-color-scheme="light"] .bstp-non-adoptable,
+[data-color-scheme="light"] .bstp-status,
+[data-color-scheme="light"] .bstp .adoptable,
+[data-color-scheme="light"] .bstp .non-adoptable,
+[data-color-scheme="light"] .bstp [class*="adopt"]{
+  background:#fffaf0!important;
+  background-image:none!important;
+  background-color:#fffaf0!important;
+  border:1px solid rgba(192,24,143,.28)!important;
+  color:#c0188f!important;
+  box-shadow:
+    0 6px 14px rgba(145,65,12,.07)!important;
+  text-shadow:none!important;
+}
+
+/* Texte / symbole + à l'intérieur */
+[data-color-scheme="light"] .bstp-adopt *,
+[data-color-scheme="light"] .bstp-adoptable *,
+[data-color-scheme="light"] .bstp-non-adoptable *,
+[data-color-scheme="light"] .bstp-status *,
+[data-color-scheme="light"] .bstp .adoptable *,
+[data-color-scheme="light"] .bstp .non-adoptable *,
+[data-color-scheme="light"] .bstp [class*="adopt"] *{
+  color:#c0188f!important;
+  -webkit-text-fill-color:#c0188f!important;
+  text-shadow:none!important;
+}
+
+/* Si le + est généré en pseudo-élément */
+[data-color-scheme="light"] .bstp-adopt::before,
+[data-color-scheme="light"] .bstp-adoptable::before,
+[data-color-scheme="light"] .bstp-non-adoptable::before,
+[data-color-scheme="light"] .bstp-status::before,
+[data-color-scheme="light"] .bstp .adoptable::before,
+[data-color-scheme="light"] .bstp .non-adoptable::before,
+[data-color-scheme="light"] .bstp [class*="adopt"]::before{
+  color:#c0188f!important;
+  -webkit-text-fill-color:#c0188f!important;
+  text-shadow:none!important;
+}

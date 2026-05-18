@@ -5221,3 +5221,26 @@ body[data-color-scheme="light"]::-webkit-scrollbar-thumb{
   -webkit-text-fill-color:#c0188f!important;
   text-shadow:none!important;
 }
+/* =========================================================
+   PATCH PROMESS — CADRE GIF PROFIL = COULEUR DU GROUPE
+   Corrige le orange forcé autour du gif à droite
+========================================================= */
+
+/* Valeur par défaut : reprend la couleur de groupe Promess */
+.postprofile-header.promess{
+  --pm-profile-group-color:var(--pm-rank-color,var(--pm-hero-rank,var(--pm-cyan)));
+}
+
+/* Le cadre média ne doit plus prendre le orange inline */
+.promess-hero-media.promess{
+  background:var(--pm-profile-group-color)!important;
+  border-color:var(--pm-profile-group-color)!important;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb,var(--pm-profile-group-color) 70%,transparent) inset,
+    0 0 14px color-mix(in srgb,var(--pm-profile-group-color) 30%,transparent)!important;
+}
+
+/* Image interne : garde son arrondi, sans bord orange */
+.promess-hero-media.promess img{
+  border-color:var(--pm-profile-group-color)!important;
+}

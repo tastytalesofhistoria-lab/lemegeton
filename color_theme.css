@@ -5068,7 +5068,6 @@ html[data-color-scheme="light"]::-webkit-scrollbar-thumb:hover, body[data-color-
    - titre LEMEGETON sans contour blanc + étincelle blanche
 ========================================================= */
 
-
 html[data-color-scheme="dark"],
 body[data-color-scheme="dark"],
 [data-color-scheme="dark"] html,
@@ -5221,18 +5220,19 @@ body[data-color-scheme="light"]::-webkit-scrollbar-thumb{
   -webkit-text-fill-color:#c0188f!important;
   text-shadow:none!important;
 }
+
 /* =========================================================
-   PATCH PROMESS — CADRE GIF PROFIL = COULEUR DU GROUPE
-   Corrige le orange forcé autour du gif à droite
+   PATCH FINAL — PROMESS / GROUPES / LIKES
+   À conserver en toute fin de fichier.
 ========================================================= */
 
-/* Valeur par défaut : reprend la couleur de groupe Promess */
+/* Couleur de groupe dynamique : le JS ci-joint pose cette variable sur chaque post. */
 .postprofile-header.promess{
-  --pm-profile-group-color:var(--pm-rank-color,var(--pm-hero-rank,var(--pm-cyan)));
+  --pm-profile-group-color:var(--pm-rank-color,var(--pm-hero-rank,var(--pm-cyan,#24e4ff)));
 }
 
-/* Le cadre média ne doit plus prendre le orange inline */
-.promess-hero-media.promess{
+/* Le gif/media de profil ne doit plus prendre une couleur fixe ou inline. */
+.postprofile-header.promess .promess-hero-media.promess{
   background:var(--pm-profile-group-color)!important;
   border-color:var(--pm-profile-group-color)!important;
   box-shadow:
@@ -5240,64 +5240,34 @@ body[data-color-scheme="light"]::-webkit-scrollbar-thumb{
     0 0 14px color-mix(in srgb,var(--pm-profile-group-color) 30%,transparent)!important;
 }
 
-/* Image interne : garde son arrondi, sans bord orange */
-.promess-hero-media.promess img{
+.postprofile-header.promess .promess-hero-media.promess img{
   border-color:var(--pm-profile-group-color)!important;
 }
-/* =========================================================
-   PROMESS — ÉTAT ACTIF DES BOUTONS J'AIME / J'AIME PAS
-   J'aime cliqué = rose brûlant
-   J'aime pas cliqué = grisé
-========================================================= */
 
+/* État actif des boutons J'aime / Je n'aime pas. */
 :root{
   --pm-like-active-bg:#ff2f8e;
   --pm-like-active-bg-2:#c0188f;
   --pm-like-active-text:#fff6fb;
   --pm-like-active-border:rgba(255,120,210,.55);
-  --pm-like-active-shadow:
-    0 0 12px rgba(255,47,142,.42),
-    0 0 24px rgba(192,24,143,.24);
-
+  --pm-like-active-shadow:0 0 12px rgba(255,47,142,.42),0 0 24px rgba(192,24,143,.24);
   --pm-dislike-active-bg:#6f6a70;
   --pm-dislike-active-bg-2:#3b363d;
   --pm-dislike-active-text:#e8e1e7;
   --pm-dislike-active-border:rgba(255,255,255,.18);
-  --pm-dislike-active-shadow:
-    0 0 10px rgba(0,0,0,.22);
+  --pm-dislike-active-shadow:0 0 10px rgba(0,0,0,.22);
 }
 
-/* J'AIME actif */
-.fa_like_div.promess .rep-button.fa_liked,
-.fa_like_div.promess .rep-button.liked,
-.fa_like_div.promess .rep-button.is-liked,
-.fa_like_div.promess .rep-button.active,
-.fa_like_div.promess .rep-button[data-vote="like"].active,
-.fa_like_div.promess .rep-button[data-vote="like"].is-active,
-.fa_like_div.promess .fa_like_list .rep-button,
-.fa_like_div.promess a[href*="eval=plus"].fa_liked,
-.fa_like_div.promess a[href*="eval=plus"].liked,
-.fa_like_div.promess a[href*="eval=plus"].is-active{
-  background:
-    radial-gradient(circle at top left,rgba(255,255,255,.24),transparent 42%),
-    linear-gradient(180deg,var(--pm-like-active-bg),var(--pm-like-active-bg-2))!important;
+.fa_like_div.promess :is(.rep-button.fa_liked,.rep-button.liked,.rep-button.is-liked,.rep-button[data-vote="like"].active,.rep-button[data-vote="like"].is-active,a[href*="eval=plus"].fa_liked,a[href*="eval=plus"].liked,a[href*="eval=plus"].is-active){
+  background:radial-gradient(circle at top left,rgba(255,255,255,.24),transparent 42%),linear-gradient(180deg,var(--pm-like-active-bg),var(--pm-like-active-bg-2))!important;
   color:var(--pm-like-active-text)!important;
   border-color:var(--pm-like-active-border)!important;
   box-shadow:var(--pm-like-active-shadow)!important;
   text-shadow:0 1px 2px rgba(80,0,45,.35)!important;
 }
 
-/* J'AIME PAS actif */
-.fa_like_div.promess .rep-button.fa_disliked,
-.fa_like_div.promess .rep-button.disliked,
-.fa_like_div.promess .rep-button.is-disliked,
-.fa_like_div.promess .rep-button[data-vote="dislike"].active,
-.fa_like_div.promess .rep-button[data-vote="dislike"].is-active,
-.fa_like_div.promess a[href*="eval=minus"].fa_disliked,
-.fa_like_div.promess a[href*="eval=minus"].disliked,
-.fa_like_div.promess a[href*="eval=minus"].is-active{
-  background:
-    linear-gradient(180deg,var(--pm-dislike-active-bg),var(--pm-dislike-active-bg-2))!important;
+.fa_like_div.promess :is(.rep-button.fa_disliked,.rep-button.disliked,.rep-button.is-disliked,.rep-button[data-vote="dislike"].active,.rep-button[data-vote="dislike"].is-active,a[href*="eval=minus"].fa_disliked,a[href*="eval=minus"].disliked,a[href*="eval=minus"].is-active){
+  background:linear-gradient(180deg,var(--pm-dislike-active-bg),var(--pm-dislike-active-bg-2))!important;
   color:var(--pm-dislike-active-text)!important;
   border-color:var(--pm-dislike-active-border)!important;
   box-shadow:var(--pm-dislike-active-shadow)!important;
@@ -5306,13 +5276,7 @@ body[data-color-scheme="light"]::-webkit-scrollbar-thumb{
   text-shadow:none!important;
 }
 
-/* Texte intérieur des états actifs */
-.fa_like_div.promess .rep-button.fa_liked *,
-.fa_like_div.promess .rep-button.liked *,
-.fa_like_div.promess .rep-button.is-liked *,
-.fa_like_div.promess .rep-button.fa_disliked *,
-.fa_like_div.promess .rep-button.disliked *,
-.fa_like_div.promess .rep-button.is-disliked *{
+.fa_like_div.promess :is(.rep-button.fa_liked,.rep-button.liked,.rep-button.is-liked,.rep-button.fa_disliked,.rep-button.disliked,.rep-button.is-disliked) *{
   color:inherit!important;
   -webkit-text-fill-color:currentColor!important;
 }

@@ -8500,3 +8500,93 @@ body[data-color-scheme="dark"] #lpa .lpa-card.lpa-topsites *,
   color:var(--forum-native-link)!important;
   text-shadow:none!important;
 }
+/* =========================================================
+   PATCH LIGHT — RETIRE LES FAUSSES CASES BLANCHES
+   Tags + textes libres des codages messages
+========================================================= */
+
+/* Les lignes de tags ne doivent pas avoir une grande case blanche derrière */
+[data-color-scheme="light"] .adms-tags,
+[data-color-scheme="light"] .stf-tags,
+[data-color-scheme="light"] .ovld-tags,
+[data-color-scheme="light"] .grpm-tags,
+[data-color-scheme="light"] .bst-tags,
+[data-color-scheme="light"] .ent-tags,
+[data-color-scheme="light"] .pwrm-tags,
+[data-color-scheme="light"] .ctxm-tags,
+[data-color-scheme="light"] .chro-tags,
+[data-color-scheme="light"] .intrm-tags,
+[data-color-scheme="light"] .faq-tags,
+[data-color-scheme="light"] .predef-tags,
+[data-color-scheme="light"] [class$="-tags"]{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+/* Les tags restent des petits pills, pas une grande bande blanche */
+[data-color-scheme="light"] .adms-tag,
+[data-color-scheme="light"] .stf-tag,
+[data-color-scheme="light"] .ovld-tag,
+[data-color-scheme="light"] .grpm-tag,
+[data-color-scheme="light"] .bst-tag,
+[data-color-scheme="light"] .ent-tag,
+[data-color-scheme="light"] .pwrm-tag,
+[data-color-scheme="light"] .ctxm-tag,
+[data-color-scheme="light"] .chro-tag,
+[data-color-scheme="light"] .intrm-tag,
+[data-color-scheme="light"] .faq-tag,
+[data-color-scheme="light"] .predef-tag,
+[data-color-scheme="light"] [class$="-tag"]{
+  width:auto!important;
+  display:inline-flex!important;
+  background:
+    linear-gradient(180deg,rgba(255,250,240,.88),rgba(255,235,203,.72))!important;
+  border:1px solid rgba(215,106,0,.24)!important;
+  box-shadow:0 6px 14px rgba(145,65,12,.07)!important;
+  color:#c35a14!important;
+}
+
+/* Les zones de texte libres sans classe de bloc ne doivent pas devenir des encadrés */
+[data-color-scheme="light"] .adms-texte,
+[data-color-scheme="light"] .stf-texte,
+[data-color-scheme="light"] .ovld-texte,
+[data-color-scheme="light"] .grpm-texte,
+[data-color-scheme="light"] .bst-texte,
+[data-color-scheme="light"] .ent-texte,
+[data-color-scheme="light"] .pwrm-texte,
+[data-color-scheme="light"] .ctxm-texte,
+[data-color-scheme="light"] .intrm-texte,
+[data-color-scheme="light"] .faq-texte,
+[data-color-scheme="light"] .predef-texte,
+[data-color-scheme="light"] [class$="-texte"]{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+
+/* Garde le style blanc chaud uniquement sur les vraies cartes/blocs */
+[data-color-scheme="light"] .adms-bloc,
+[data-color-scheme="light"] .adms-note,
+[data-color-scheme="light"] .adms-important,
+[data-color-scheme="light"] .stf-card,
+[data-color-scheme="light"] .ovld-card,
+[data-color-scheme="light"] .grpm-card,
+[data-color-scheme="light"] .bst-card,
+[data-color-scheme="light"] .ent-card,
+[data-color-scheme="light"] .pwrm-card,
+[data-color-scheme="light"] .ctxm-card,
+[data-color-scheme="light"] .chro-content,
+[data-color-scheme="light"] .intrm-card,
+[data-color-scheme="light"] .faq-card,
+[data-color-scheme="light"] .predef-card{
+  background:
+    radial-gradient(circle at top right,rgba(216,138,0,.10),transparent 42%),
+    linear-gradient(135deg,rgba(255,250,240,.96),rgba(255,238,218,.90))!important;
+}

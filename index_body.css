@@ -578,7 +578,9 @@ iframe.pa-frame,
   color:inherit!important;
   text-shadow:none!important;
   -webkit-text-stroke:0!important;
-}/* =========================================================
+}
+
+/* =========================================================
    QEEL — SUITE INDEX BODY
    Présences / image / groupes / phrase connectés / bulles
    Edison ready / variables dans color_theme.css

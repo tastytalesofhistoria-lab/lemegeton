@@ -957,3 +957,126 @@ a.forumtitle:hover{
   padding:0!important;
   line-height:1.05!important;
 }
+/* =========================================================
+   PATCH CARTES 5 / 6 / 7 — SOUS-FORUMS EN OVERLAY
+   Paradis / Terre / Enfer
+========================================================= */
+
+.category-card .descrpfo{
+  position:relative!important;
+  display:block!important;
+  width:100%!important;
+  min-height:100px!important;
+  height:100px!important;
+  max-height:100px!important;
+  margin-top:0!important;
+  padding:12px 14px!important;
+  overflow:hidden!important;
+  border-radius:10px!important;
+  box-sizing:border-box!important;
+  color:var(--idx-white)!important;
+}
+
+.category-card .descrpfo-text{
+  position:relative!important;
+  z-index:1!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  overflow:auto!important;
+  color:rgba(216,236,255,.72)!important;
+  scrollbar-width:none!important;
+  -ms-overflow-style:none!important;
+}
+
+.category-card .descrpfo-text::-webkit-scrollbar{
+  display:none!important;
+}
+
+.category-card .subforum-buttons{
+  position:absolute!important;
+  inset:0!important;
+  z-index:30!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:6px!important;
+  align-content:flex-start!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+  max-height:none!important;
+  height:100%!important;
+  overflow:auto!important;
+  padding:8px!important;
+  box-sizing:border-box!important;
+  background:var(--idx-card-overlay-bg)!important;
+  font-size:0!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transition:.25s ease!important;
+  scrollbar-width:none!important;
+  -ms-overflow-style:none!important;
+}
+
+.category-card .subforum-buttons::-webkit-scrollbar{
+  display:none!important;
+}
+
+.category-card .descrpfo:hover .subforum-buttons,
+.category-card .descrpfo:focus-within .subforum-buttons{
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+}
+
+.category-card .subforum-buttons:empty{
+  display:none!important;
+}
+
+.category-card .subforum-buttons img,
+.category-card .subforum-buttons br{
+  display:none!important;
+}
+
+.category-card .subforum-buttons a{
+  flex:0 0 calc(50% - 3px)!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-width:0!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:6px 8px!important;
+  box-sizing:border-box!important;
+  border:0!important;
+  border-radius:999px!important;
+  color:var(--idx-card-text)!important;
+  font-family:"Barlow Condensed",Arial,sans-serif!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  line-height:1.1!important;
+  text-align:center!important;
+  text-decoration:none!important;
+  text-transform:uppercase!important;
+  letter-spacing:.4px!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  box-shadow:none!important;
+}
+
+.cat-paradis .subforum-buttons a{
+  background:var(--idx-paradis-button-bg)!important;
+}
+
+.cat-terre .subforum-buttons a{
+  background:var(--idx-terre-button-bg)!important;
+}
+
+.cat-enfer .subforum-buttons a{
+  background:var(--idx-enfer-button-bg)!important;
+}
+
+.category-card .subforum-buttons a:hover{
+  opacity:.9!important;
+}

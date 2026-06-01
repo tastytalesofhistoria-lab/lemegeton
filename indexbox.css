@@ -864,6 +864,7 @@ a.forumtitle:hover{
 
 /* =========================================================
    CARTES PARADIS / TERRE / ENFER — DESCRIPTION + OVERLAY
+   À garder tout en bas : ne modifie pas l’agencement des cartes.
 ========================================================= */
 
 .category-card .descrpfo{
@@ -878,27 +879,22 @@ a.forumtitle:hover{
   overflow:hidden!important;
   border-radius:10px!important;
   box-sizing:border-box!important;
-  color:var(--idx-white)!important;
+  color:rgba(216,236,255,.72)!important;
 }
 
-.category-card .descrpfo-text{
-  position:relative!important;
-  z-index:1!important;
-  display:block!important;
-  width:100%!important;
-  height:100%!important;
-  overflow:auto!important;
-  color:rgba(216,236,255,.72)!important;
+/* Compatible avec le template de base, où la description est du texte direct */
+.category-card .descrpfo{
   scrollbar-width:none!important;
   -ms-overflow-style:none!important;
 }
 
-.category-card .descrpfo-text::-webkit-scrollbar,
+.category-card .descrpfo::-webkit-scrollbar,
 .category-card .subforum-buttons::-webkit-scrollbar{
   display:none!important;
 }
 
-.category-card .subforum-buttons{
+/* Overlay des sous-forums : caché, puis visible au survol de la description */
+.category-card .descrpfo > .subforum-buttons{
   position:absolute!important;
   inset:0!important;
   z-index:30!important;
@@ -919,13 +915,13 @@ a.forumtitle:hover{
   opacity:0!important;
   visibility:hidden!important;
   pointer-events:none!important;
-  transition:.25s ease!important;
+  transition:opacity .25s ease,visibility .25s ease!important;
   scrollbar-width:none!important;
   -ms-overflow-style:none!important;
 }
 
-.category-card .descrpfo:hover .subforum-buttons,
-.category-card .descrpfo:focus-within .subforum-buttons{
+.category-card .descrpfo:hover > .subforum-buttons,
+.category-card .descrpfo:focus-within > .subforum-buttons{
   opacity:1!important;
   visibility:visible!important;
   pointer-events:auto!important;

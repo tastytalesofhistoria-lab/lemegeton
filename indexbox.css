@@ -1114,10 +1114,10 @@ a.forumtitle:hover{
 }
  
 /* =========================================================
-   AVATAR FORUM — GRIS NORMAL / COULEUR NOUVEAU MESSAGE
-   Sans transparence : on filtre le wrapper, pas l’image seule.
+   AVATAR FORUM — GRIS SI RIEN / COULEUR SI NOUVEAU MESSAGE
 ========================================================= */
 
+/* Reset : jamais de transparence sur l'avatar */
 .avatcat_icon,
 .avatcat_ava,
 .avatcat_ava_inside,
@@ -1126,37 +1126,42 @@ a.forumtitle:hover{
   opacity:1!important;
 }
 
+/* On neutralise le filtre de l'image elle-même */
+.avatcat_ava_inside img{
+  filter:none!important;
+}
+
+/* Par défaut : avatar gris */
 .avatcat_icon .avatcat_ava{
   filter:grayscale(100%) contrast(90%) brightness(.82)!important;
-  transition:filter .35s ease,transform .35s ease;
+  transition:filter .35s ease;
 }
 
-.avatcat_icon .avatcat_ava_inside img{
-  filter:none!important;
-  transition:none!important;
-}
-
+/* Pas de nouveau message : avatar gris */
 .avatcat_icon.no-new .avatcat_ava,
-.avatcat_icon:not(.has-new) .avatcat_ava{
+.avatcat_icon[data-new-status="none"] .avatcat_ava{
   filter:grayscale(100%) contrast(90%) brightness(.82)!important;
 }
 
-.avatcat_icon.has-new .avatcat_ava{
+/* Nouveau message : avatar couleur */
+.avatcat_icon.has-new .avatcat_ava,
+.avatcat_icon[data-new-status="new"] .avatcat_ava{
   filter:grayscale(0%) contrast(105%) brightness(1)!important;
 }
 
+/* Cercle normal */
 .avatcat_icon.no-new .avatcat_ava_inside,
-.avatcat_icon:not(.has-new) .avatcat_ava_inside{
-  opacity:1!important;
+.avatcat_icon[data-new-status="none"] .avatcat_ava_inside{
   border-color:var(--idx-border-cyan-strong)!important;
   box-shadow:
-    0 0 8px rgba(36,228,255,.35),
-    0 0 18px rgba(36,228,255,.18),
-    inset 0 0 10px rgba(36,228,255,.12)!important;
+    0 0 8px rgba(36,228,255,.45),
+    0 0 18px rgba(36,228,255,.22),
+    inset 0 0 10px rgba(36,228,255,.14)!important;
 }
 
-.avatcat_icon.has-new .avatcat_ava_inside{
-  opacity:1!important;
+/* Cercle nouveau message */
+.avatcat_icon.has-new .avatcat_ava_inside,
+.avatcat_icon[data-new-status="new"] .avatcat_ava_inside{
   border-color:var(--idx-border-pink)!important;
   box-shadow:
     0 0 12px var(--idx-shadow-pink),

@@ -1053,3 +1053,29 @@ a.forumtitle:hover{
   padding:0!important;
   line-height:1.05!important;
 }
+/* =========================================================
+   CARTES PARADIS / TERRE / ENFER — SOUS-FORUMS EN 100%
+========================================================= */
+
+.categories-wrapper>.forabg:nth-of-type(5) .subforum-buttons,
+.categories-wrapper>.forabg:nth-of-type(6) .subforum-buttons,
+.categories-wrapper>.forabg:nth-of-type(7) .subforum-buttons,
+.category-card .subforum-buttons{
+  gap:5px!important;
+  align-content:flex-start!important;
+}
+
+.categories-wrapper>.forabg:nth-of-type(5) .subforum-buttons a,
+.categories-wrapper>.forabg:nth-of-type(6) .subforum-buttons a,
+.categories-wrapper>.forabg:nth-of-type(7) .subforum-buttons a,
+.category-card .subforum-buttons a{
+  flex:0 0 100%!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-height:22px!important;
+  padding:6px 10px!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  line-height:1.05!important;
+}

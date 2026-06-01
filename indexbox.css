@@ -326,7 +326,7 @@
   color:var(--idx-white);
   scrollbar-width:none;
   -ms-overflow-style:none;
-       font-size: 14px;
+       font-size: 13px;
 }
 
 .descrpfo::-webkit-scrollbar,

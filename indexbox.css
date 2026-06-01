@@ -755,102 +755,6 @@ a.forumtitle:hover{
   content:"ENFER";
 }
 
-.category-card .descrpfo{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  width:100%!important;
-  min-height:100px;
-  height:100px;
-  max-height:100px;
-  margin-top:0;
-  padding:12px 14px;
-  overflow:hidden;
-  border-radius:10px;
-  box-sizing:border-box;
-  color:var(--idx-white);
-}
-
-.category-card .descrpfo-text{
-  flex:1 1 auto;
-  min-height:0;
-  overflow:auto;
-  color:rgba(216,236,255,.72);
-  scrollbar-width:none;
-  -ms-overflow-style:none;
-}
-
-.category-card .descrpfo-text::-webkit-scrollbar{
-  display:none;
-}
-
-.category-card .subforum-buttons{
-  position:relative!important;
-  inset:auto!important;
-  z-index:20;
-  flex:0 0 auto;
-  display:flex!important;
-  flex-wrap:wrap;
-  gap:6px;
-  align-content:flex-start;
-  align-items:flex-start;
-  justify-content:flex-start;
-  max-height:42px;
-  overflow:auto;
-  padding:0;
-  background:transparent!important;
-  font-size:0;
-  opacity:1!important;
-  visibility:visible!important;
-  pointer-events:auto;
-  scrollbar-width:none;
-  -ms-overflow-style:none;
-}
-
-.category-card .subforum-buttons:empty{
-  display:none!important;
-}
-
-.category-card .subforum-buttons img{
-  display:none!important;
-}
-
-.category-card .subforum-buttons a{
-  flex:0 0 auto;
-  max-width:100%;
-  margin:0;
-  padding:6px 18px;
-  border:0;
-  border-radius:999px;
-  color:var(--idx-card-text)!important;
-  font-family:"Barlow Condensed",Arial,sans-serif;
-  font-size:11px;
-  font-weight:900;
-  line-height:1.1;
-  text-align:center;
-  text-decoration:none!important;
-  text-transform:uppercase;
-  letter-spacing:.4px;
-  white-space:nowrap;
-  box-shadow:none;
-}
-
-.cat-paradis .subforum-buttons a{
-  background:var(--idx-paradis-button-bg);
-}
-
-.cat-terre .subforum-buttons a{
-  background:var(--idx-terre-button-bg);
-}
-
-.cat-enfer .subforum-buttons a{
-  background:var(--idx-enfer-button-bg);
-}
-
-.category-card .subforum-buttons a:hover{
-  opacity:.9;
-}
 
 /* ===================== RESPONSIVE ===================== */
 
@@ -957,9 +861,9 @@ a.forumtitle:hover{
   padding:0!important;
   line-height:1.05!important;
 }
+
 /* =========================================================
-   PATCH CARTES 5 / 6 / 7 — SOUS-FORUMS EN OVERLAY
-   Paradis / Terre / Enfer
+   CARTES PARADIS / TERRE / ENFER — DESCRIPTION + OVERLAY
 ========================================================= */
 
 .category-card .descrpfo{
@@ -989,7 +893,8 @@ a.forumtitle:hover{
   -ms-overflow-style:none!important;
 }
 
-.category-card .descrpfo-text::-webkit-scrollbar{
+.category-card .descrpfo-text::-webkit-scrollbar,
+.category-card .subforum-buttons::-webkit-scrollbar{
   display:none!important;
 }
 
@@ -1003,8 +908,9 @@ a.forumtitle:hover{
   align-content:flex-start!important;
   align-items:flex-start!important;
   justify-content:flex-start!important;
-  max-height:none!important;
+  width:100%!important;
   height:100%!important;
+  max-height:none!important;
   overflow:auto!important;
   padding:8px!important;
   box-sizing:border-box!important;
@@ -1016,10 +922,6 @@ a.forumtitle:hover{
   transition:.25s ease!important;
   scrollbar-width:none!important;
   -ms-overflow-style:none!important;
-}
-
-.category-card .subforum-buttons::-webkit-scrollbar{
-  display:none!important;
 }
 
 .category-card .descrpfo:hover .subforum-buttons,

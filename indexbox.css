@@ -1094,3 +1094,19 @@ a.forumtitle:hover{
   padding:0!important;
   line-height:1.05!important;
 }
+.categories-wrapper>.forabg:nth-of-type(5) .forum_lastpost,
+.categories-wrapper>.forabg:nth-of-type(6) .forum_lastpost,
+.categories-wrapper>.forabg:nth-of-type(7) .forum_lastpost,
+.category-card .forum_lastpost{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+  min-height:34px!important;
+  margin:7px 0 0!important;
+  padding:0!important;
+  overflow:visible!important;
+  opacity:1!important;
+  visibility:visible!important;
+}

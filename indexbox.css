@@ -604,57 +604,42 @@ a.forumtitle:hover{
 
 /* ===================== CARTES PARADIS / TERRE / ENFER ===================== */
 
-.cat-paradis .topiclist.forums{
-  background:var(--idx-paradis-topic-bg);
-}
+/* Fallback : si le script séparé tarde ou ne pose pas les classes,
+   les catégories 5/6/7 gardent quand même le rendu en cartes. */
 
-.cat-terre .topiclist.forums{
-  background:var(--idx-terre-topic-bg);
-}
-
-.cat-enfer .topiclist.forums{
-  background:var(--idx-enfer-topic-bg);
-}
-
-.cat-paradis .descrpfo{
-  border:1px solid rgba(228,211,180,.65);
-  background:var(--idx-paradis-desc-bg);
-}
-
-.cat-terre .descrpfo{
-  border:1px solid rgba(140,236,255,.65);
-  background:var(--idx-terre-desc-bg);
-}
-
-.cat-enfer .descrpfo{
-  border:1px solid rgba(255,47,95,.65);
-  background:var(--idx-enfer-desc-bg);
-}
-
-.cat-paradis .forum-content::before{
-  color:var(--idx-gold-soft);
-  text-shadow:0 0 5px var(--idx-gold),0 0 15px #c2a368,0 0 30px var(--idx-gold-deep);
-}
-
-.cat-terre .forum-content::before{
-  color:var(--idx-white);
-  text-shadow:0 0 5px var(--idx-cyan-soft),0 0 15px var(--idx-cyan),0 0 30px var(--idx-blue);
-}
-
-.cat-enfer .forum-content::before{
-  color:#ffd8e2;
-  text-shadow:0 0 5px var(--idx-red),0 0 15px var(--idx-pink),0 0 30px var(--idx-bg);
-}
-
+.categories-wrapper>.forabg:nth-of-type(5),
+.categories-wrapper>.forabg:nth-of-type(6),
+.categories-wrapper>.forabg:nth-of-type(7),
 .category-card{
   position:relative;
   overflow:hidden;
   width:calc(33.333% - 14px)!important;
   min-height:250px;
   height:250px;
+  border-radius:14px;
 }
 
-.category-card .topiclist.forums{
+/* Fonds colorés internes */
+.categories-wrapper>.forabg:nth-of-type(5) .topiclist.forums,
+.cat-paradis .topiclist.forums{
+  background:var(--idx-paradis-topic-bg);
+}
+
+.categories-wrapper>.forabg:nth-of-type(6) .topiclist.forums,
+.cat-terre .topiclist.forums{
+  background:var(--idx-terre-topic-bg);
+}
+
+.categories-wrapper>.forabg:nth-of-type(7) .topiclist.forums,
+.cat-enfer .topiclist.forums{
+  background:var(--idx-enfer-topic-bg);
+}
+
+/* Structure de la carte */
+.categories-wrapper>.forabg:nth-of-type(5)>.topiclist.forums,
+.categories-wrapper>.forabg:nth-of-type(6)>.topiclist.forums,
+.categories-wrapper>.forabg:nth-of-type(7)>.topiclist.forums,
+.category-card>.topiclist.forums{
   position:relative;
   z-index:1;
   min-height:250px;
@@ -663,7 +648,10 @@ a.forumtitle:hover{
   overflow:hidden;
 }
 
-.category-card .topiclist.forums::before{
+.categories-wrapper>.forabg:nth-of-type(5)>.topiclist.forums::before,
+.categories-wrapper>.forabg:nth-of-type(6)>.topiclist.forums::before,
+.categories-wrapper>.forabg:nth-of-type(7)>.topiclist.forums::before,
+.category-card>.topiclist.forums::before{
   content:"";
   position:absolute;
   inset:0;
@@ -676,23 +664,32 @@ a.forumtitle:hover{
   pointer-events:none;
 }
 
-.category-card:hover .topiclist.forums::before{
+.categories-wrapper>.forabg:nth-of-type(5):hover>.topiclist.forums::before,
+.categories-wrapper>.forabg:nth-of-type(6):hover>.topiclist.forums::before,
+.categories-wrapper>.forabg:nth-of-type(7):hover>.topiclist.forums::before,
+.category-card:hover>.topiclist.forums::before{
   opacity:0;
   transform:scale(1.05);
 }
 
-.cat-paradis .topiclist.forums::before{
+.categories-wrapper>.forabg:nth-of-type(5)>.topiclist.forums::before,
+.cat-paradis>.topiclist.forums::before{
   background-image:url("https://i.pinimg.com/736x/0d/42/03/0d4203c381a6965d9b725b6ac0467bb3.jpg");
 }
 
-.cat-terre .topiclist.forums::before{
+.categories-wrapper>.forabg:nth-of-type(6)>.topiclist.forums::before,
+.cat-terre>.topiclist.forums::before{
   background-image:url("https://i.pinimg.com/1200x/8e/95/29/8e9529fa82d3b2620e01839a4ea0e63e.jpg");
 }
 
-.cat-enfer .topiclist.forums::before{
+.categories-wrapper>.forabg:nth-of-type(7)>.topiclist.forums::before,
+.cat-enfer>.topiclist.forums::before{
   background-image:url("https://i.pinimg.com/736x/fb/73/a6/fb73a6d9a89ec497153f792473fd298f.jpg");
 }
 
+.categories-wrapper>.forabg:nth-of-type(5) .row,
+.categories-wrapper>.forabg:nth-of-type(6) .row,
+.categories-wrapper>.forabg:nth-of-type(7) .row,
 .category-card .row{
   position:relative;
   z-index:2;
@@ -701,6 +698,28 @@ a.forumtitle:hover{
   padding-left:0;
 }
 
+/* On masque les éléments de ligne normale dans les cartes */
+.categories-wrapper>.forabg:nth-of-type(5) .avatcat_icon,
+.categories-wrapper>.forabg:nth-of-type(5) .sujetmess,
+.categories-wrapper>.forabg:nth-of-type(5) .icon,
+.categories-wrapper>.forabg:nth-of-type(5) .cattitre1,
+.categories-wrapper>.forabg:nth-of-type(5) .subforums,
+.categories-wrapper>.forabg:nth-of-type(5) .forum-content strong,
+.categories-wrapper>.forabg:nth-of-type(5) .hierarchy,
+.categories-wrapper>.forabg:nth-of-type(6) .avatcat_icon,
+.categories-wrapper>.forabg:nth-of-type(6) .sujetmess,
+.categories-wrapper>.forabg:nth-of-type(6) .icon,
+.categories-wrapper>.forabg:nth-of-type(6) .cattitre1,
+.categories-wrapper>.forabg:nth-of-type(6) .subforums,
+.categories-wrapper>.forabg:nth-of-type(6) .forum-content strong,
+.categories-wrapper>.forabg:nth-of-type(6) .hierarchy,
+.categories-wrapper>.forabg:nth-of-type(7) .avatcat_icon,
+.categories-wrapper>.forabg:nth-of-type(7) .sujetmess,
+.categories-wrapper>.forabg:nth-of-type(7) .icon,
+.categories-wrapper>.forabg:nth-of-type(7) .cattitre1,
+.categories-wrapper>.forabg:nth-of-type(7) .subforums,
+.categories-wrapper>.forabg:nth-of-type(7) .forum-content strong,
+.categories-wrapper>.forabg:nth-of-type(7) .hierarchy,
 .category-card .avatcat_icon,
 .category-card .sujetmess,
 .category-card .icon,
@@ -711,14 +730,9 @@ a.forumtitle:hover{
   display:none!important;
 }
 
-.category-card .forum_lastpost{
-  display:block;
-  margin-top:8px;
-  color:var(--idx-card-text);
-  font-size:12px;
-  text-align:center;
-}
-
+.categories-wrapper>.forabg:nth-of-type(5) .forum-content,
+.categories-wrapper>.forabg:nth-of-type(6) .forum-content,
+.categories-wrapper>.forabg:nth-of-type(7) .forum-content,
 .category-card .forum-content{
   position:relative;
   z-index:3;
@@ -733,6 +747,9 @@ a.forumtitle:hover{
   box-sizing:border-box;
 }
 
+.categories-wrapper>.forabg:nth-of-type(5) .forum-content::before,
+.categories-wrapper>.forabg:nth-of-type(6) .forum-content::before,
+.categories-wrapper>.forabg:nth-of-type(7) .forum-content::before,
 .category-card .forum-content::before{
   display:block;
   margin-bottom:10px;
@@ -743,22 +760,194 @@ a.forumtitle:hover{
   text-transform:uppercase;
 }
 
+.categories-wrapper>.forabg:nth-of-type(5) .forum-content::before,
 .cat-paradis .forum-content::before{
   content:"PARADIS";
+  color:var(--idx-gold-soft);
+  text-shadow:0 0 5px var(--idx-gold),0 0 15px #c2a368,0 0 30px var(--idx-gold-deep);
 }
 
+.categories-wrapper>.forabg:nth-of-type(6) .forum-content::before,
 .cat-terre .forum-content::before{
   content:"TERRE";
+  color:var(--idx-white);
+  text-shadow:0 0 5px var(--idx-cyan-soft),0 0 15px var(--idx-cyan),0 0 30px var(--idx-blue);
 }
 
+.categories-wrapper>.forabg:nth-of-type(7) .forum-content::before,
 .cat-enfer .forum-content::before{
   content:"ENFER";
+  color:#ffd8e2;
+  text-shadow:0 0 5px var(--idx-red),0 0 15px var(--idx-pink),0 0 30px var(--idx-bg);
+}
+
+/* Description */
+.categories-wrapper>.forabg:nth-of-type(5) .descrpfo,
+.categories-wrapper>.forabg:nth-of-type(6) .descrpfo,
+.categories-wrapper>.forabg:nth-of-type(7) .descrpfo,
+.category-card .descrpfo{
+  position:relative;
+  display:block;
+  width:100%!important;
+  min-height:100px;
+  height:100px;
+  max-height:100px;
+  margin-top:0;
+  padding:12px 14px;
+  overflow:hidden;
+  border-radius:10px;
+  box-sizing:border-box;
+  color:rgba(216,236,255,.72);
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+
+.categories-wrapper>.forabg:nth-of-type(5) .descrpfo,
+.cat-paradis .descrpfo{
+  border:1px solid rgba(228,211,180,.65);
+  background:var(--idx-paradis-desc-bg);
+}
+
+.categories-wrapper>.forabg:nth-of-type(6) .descrpfo,
+.cat-terre .descrpfo{
+  border:1px solid rgba(140,236,255,.65);
+  background:var(--idx-terre-desc-bg);
+}
+
+.categories-wrapper>.forabg:nth-of-type(7) .descrpfo,
+.cat-enfer .descrpfo{
+  border:1px solid rgba(255,47,95,.65);
+  background:var(--idx-enfer-desc-bg);
+}
+
+/* Overlay des sous-forums */
+.categories-wrapper>.forabg:nth-of-type(5) .descrpfo>.subforum-buttons,
+.categories-wrapper>.forabg:nth-of-type(6) .descrpfo>.subforum-buttons,
+.categories-wrapper>.forabg:nth-of-type(7) .descrpfo>.subforum-buttons,
+.category-card .descrpfo>.subforum-buttons{
+  position:absolute;
+  inset:0;
+  z-index:30;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  align-content:flex-start;
+  align-items:flex-start;
+  justify-content:flex-start;
+  width:100%;
+  height:100%;
+  max-height:none;
+  overflow:auto;
+  padding:8px;
+  box-sizing:border-box;
+  background:var(--idx-card-overlay-bg);
+  font-size:0;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .25s ease,visibility .25s ease;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+
+.categories-wrapper>.forabg:nth-of-type(5) .descrpfo:hover>.subforum-buttons,
+.categories-wrapper>.forabg:nth-of-type(6) .descrpfo:hover>.subforum-buttons,
+.categories-wrapper>.forabg:nth-of-type(7) .descrpfo:hover>.subforum-buttons,
+.category-card .descrpfo:hover>.subforum-buttons,
+.category-card .descrpfo:focus-within>.subforum-buttons{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+
+.categories-wrapper>.forabg:nth-of-type(5) .subforum-buttons:empty,
+.categories-wrapper>.forabg:nth-of-type(6) .subforum-buttons:empty,
+.categories-wrapper>.forabg:nth-of-type(7) .subforum-buttons:empty,
+.category-card .subforum-buttons:empty{
+  display:none!important;
+}
+
+.categories-wrapper>.forabg:nth-of-type(5) .subforum-buttons img,
+.categories-wrapper>.forabg:nth-of-type(5) .subforum-buttons br,
+.categories-wrapper>.forabg:nth-of-type(6) .subforum-buttons img,
+.categories-wrapper>.forabg:nth-of-type(6) .subforum-buttons br,
+.categories-wrapper>.forabg:nth-of-type(7) .subforum-buttons img,
+.categories-wrapper>.forabg:nth-of-type(7) .subforum-buttons br,
+.category-card .subforum-buttons img,
+.category-card .subforum-buttons br{
+  display:none!important;
+}
+
+.categories-wrapper>.forabg:nth-of-type(5) .subforum-buttons a,
+.categories-wrapper>.forabg:nth-of-type(6) .subforum-buttons a,
+.categories-wrapper>.forabg:nth-of-type(7) .subforum-buttons a,
+.category-card .subforum-buttons a{
+  flex:0 0 calc(50% - 3px);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  max-width:100%;
+  margin:0;
+  padding:6px 8px;
+  box-sizing:border-box;
+  border:0;
+  border-radius:999px;
+  color:var(--idx-card-text)!important;
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:11px;
+  font-weight:900;
+  line-height:1.1;
+  text-align:center;
+  text-decoration:none!important;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  box-shadow:none;
+}
+
+.categories-wrapper>.forabg:nth-of-type(5) .subforum-buttons a,
+.cat-paradis .subforum-buttons a{
+  background:var(--idx-paradis-button-bg);
+}
+
+.categories-wrapper>.forabg:nth-of-type(6) .subforum-buttons a,
+.cat-terre .subforum-buttons a{
+  background:var(--idx-terre-button-bg);
+}
+
+.categories-wrapper>.forabg:nth-of-type(7) .subforum-buttons a,
+.cat-enfer .subforum-buttons a{
+  background:var(--idx-enfer-button-bg);
+}
+
+.categories-wrapper>.forabg:nth-of-type(5) .subforum-buttons a:hover,
+.categories-wrapper>.forabg:nth-of-type(6) .subforum-buttons a:hover,
+.categories-wrapper>.forabg:nth-of-type(7) .subforum-buttons a:hover,
+.category-card .subforum-buttons a:hover{
+  opacity:.9;
+}
+
+.categories-wrapper>.forabg:nth-of-type(5) .forum_lastpost,
+.categories-wrapper>.forabg:nth-of-type(6) .forum_lastpost,
+.categories-wrapper>.forabg:nth-of-type(7) .forum_lastpost,
+.category-card .forum_lastpost{
+  display:block;
+  margin-top:8px;
+  color:var(--idx-card-text);
+  font-size:12px;
+  text-align:center;
 }
 
 
 /* ===================== RESPONSIVE ===================== */
 
 @media(max-width:1100px){
+  .categories-wrapper>.forabg:nth-of-type(5),
+  .categories-wrapper>.forabg:nth-of-type(6),
+  .categories-wrapper>.forabg:nth-of-type(7),
   .category-card{
     width:calc(50% - 10px)!important;
   }
@@ -768,6 +957,9 @@ a.forumtitle:hover{
   .categories-wrapper > .forabg:nth-child(2),
   .categories-wrapper > .forabg:nth-child(3),
   .categories-wrapper > .forabg:nth-child(4),
+  .categories-wrapper>.forabg:nth-of-type(5),
+  .categories-wrapper>.forabg:nth-of-type(6),
+  .categories-wrapper>.forabg:nth-of-type(7),
   .category-card{
     width:100%!important;
   }
@@ -860,121 +1052,4 @@ a.forumtitle:hover{
   margin:0!important;
   padding:0!important;
   line-height:1.05!important;
-}
-
-/* =========================================================
-   CARTES PARADIS / TERRE / ENFER — DESCRIPTION + OVERLAY
-   À garder tout en bas : ne modifie pas l’agencement des cartes.
-========================================================= */
-
-.category-card .descrpfo{
-  position:relative!important;
-  display:block!important;
-  width:100%!important;
-  min-height:100px!important;
-  height:100px!important;
-  max-height:100px!important;
-  margin-top:0!important;
-  padding:12px 14px!important;
-  overflow:hidden!important;
-  border-radius:10px!important;
-  box-sizing:border-box!important;
-  color:rgba(216,236,255,.72)!important;
-}
-
-/* Compatible avec le template de base, où la description est du texte direct */
-.category-card .descrpfo{
-  scrollbar-width:none!important;
-  -ms-overflow-style:none!important;
-}
-
-.category-card .descrpfo::-webkit-scrollbar,
-.category-card .subforum-buttons::-webkit-scrollbar{
-  display:none!important;
-}
-
-/* Overlay des sous-forums : caché, puis visible au survol de la description */
-.category-card .descrpfo > .subforum-buttons{
-  position:absolute!important;
-  inset:0!important;
-  z-index:30!important;
-  display:flex!important;
-  flex-wrap:wrap!important;
-  gap:6px!important;
-  align-content:flex-start!important;
-  align-items:flex-start!important;
-  justify-content:flex-start!important;
-  width:100%!important;
-  height:100%!important;
-  max-height:none!important;
-  overflow:auto!important;
-  padding:8px!important;
-  box-sizing:border-box!important;
-  background:var(--idx-card-overlay-bg)!important;
-  font-size:0!important;
-  opacity:0!important;
-  visibility:hidden!important;
-  pointer-events:none!important;
-  transition:opacity .25s ease,visibility .25s ease!important;
-  scrollbar-width:none!important;
-  -ms-overflow-style:none!important;
-}
-
-.category-card .descrpfo:hover > .subforum-buttons,
-.category-card .descrpfo:focus-within > .subforum-buttons{
-  opacity:1!important;
-  visibility:visible!important;
-  pointer-events:auto!important;
-}
-
-.category-card .subforum-buttons:empty{
-  display:none!important;
-}
-
-.category-card .subforum-buttons img,
-.category-card .subforum-buttons br{
-  display:none!important;
-}
-
-.category-card .subforum-buttons a{
-  flex:0 0 calc(50% - 3px)!important;
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  min-width:0!important;
-  max-width:100%!important;
-  margin:0!important;
-  padding:6px 8px!important;
-  box-sizing:border-box!important;
-  border:0!important;
-  border-radius:999px!important;
-  color:var(--idx-card-text)!important;
-  font-family:"Barlow Condensed",Arial,sans-serif!important;
-  font-size:11px!important;
-  font-weight:900!important;
-  line-height:1.1!important;
-  text-align:center!important;
-  text-decoration:none!important;
-  text-transform:uppercase!important;
-  letter-spacing:.4px!important;
-  white-space:nowrap!important;
-  overflow:hidden!important;
-  text-overflow:ellipsis!important;
-  box-shadow:none!important;
-}
-
-.cat-paradis .subforum-buttons a{
-  background:var(--idx-paradis-button-bg)!important;
-}
-
-.cat-terre .subforum-buttons a{
-  background:var(--idx-terre-button-bg)!important;
-}
-
-.cat-enfer .subforum-buttons a{
-  background:var(--idx-enfer-button-bg)!important;
-}
-
-.category-card .subforum-buttons a:hover{
-  opacity:.9!important;
 }

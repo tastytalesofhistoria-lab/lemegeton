@@ -1110,3 +1110,36 @@ a.forumtitle:hover{
   opacity:1!important;
   visibility:visible!important;
 }
+/* =========================================================
+   AVATAR LASTPOST — GRIS PAR DÉFAUT / COULEUR SI NOUVEAU MESSAGE
+========================================================= */
+
+/* Avatar gris par défaut */
+.avatcat_ava_inside img,
+.avatcat_ava img,
+.avatcat_icon img{
+  filter:grayscale(100%) contrast(90%) brightness(.82)!important;
+  transition:filter .35s ease,opacity .35s ease,transform .35s ease;
+}
+
+/* Nouveau message : avatar coloré */
+.avatcat_icon.has-new .avatcat_ava_inside img,
+.avatcat_icon.has-new .avatcat_ava img,
+.avatcat_icon.has-new img{
+  filter:grayscale(0%) contrast(105%) brightness(1)!important;
+}
+
+/* Petit boost visuel sur le cercle quand nouveau message */
+.avatcat_icon.has-new .avatcat_ava_inside{
+  border-color:var(--idx-border-pink)!important;
+  box-shadow:
+    0 0 12px var(--idx-shadow-pink),
+    0 0 24px var(--idx-shadow-cyan),
+    0 0 42px rgba(254,3,124,.22),
+    inset 0 0 16px rgba(254,3,124,.22)!important;
+}
+
+/* Pas de nouveau message : cercle plus discret */
+.avatcat_icon:not(.has-new) .avatcat_ava_inside{
+  opacity:.72;
+}

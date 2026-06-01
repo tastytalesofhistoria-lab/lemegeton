@@ -604,9 +604,8 @@ a.forumtitle:hover{
 
 /* ===================== CARTES PARADIS / TERRE / ENFER ===================== */
 
-/* Fallback : si le script séparé tarde ou ne pose pas les classes,
-   les catégories 5/6/7 gardent quand même le rendu en cartes. */
-
+/* Fallback nth-of-type + classes posées par le script séparé.
+   Les catégories 5/6/7 restent en cartes même si le JS tarde. */
 .categories-wrapper>.forabg:nth-of-type(5),
 .categories-wrapper>.forabg:nth-of-type(6),
 .categories-wrapper>.forabg:nth-of-type(7),
@@ -635,7 +634,7 @@ a.forumtitle:hover{
   background:var(--idx-enfer-topic-bg);
 }
 
-/* Structure de la carte */
+/* Structure carte */
 .categories-wrapper>.forabg:nth-of-type(5)>.topiclist.forums,
 .categories-wrapper>.forabg:nth-of-type(6)>.topiclist.forums,
 .categories-wrapper>.forabg:nth-of-type(7)>.topiclist.forums,
@@ -660,7 +659,7 @@ a.forumtitle:hover{
   background-position:center;
   background-repeat:no-repeat;
   opacity:1;
-  transition:.4s ease;
+  transition:opacity .4s ease,transform .4s ease;
   pointer-events:none;
 }
 
@@ -698,7 +697,7 @@ a.forumtitle:hover{
   padding-left:0;
 }
 
-/* On masque les éléments de ligne normale dans les cartes */
+/* Masque les éléments du layout forum normal dans les trois cartes */
 .categories-wrapper>.forabg:nth-of-type(5) .avatcat_icon,
 .categories-wrapper>.forabg:nth-of-type(5) .sujetmess,
 .categories-wrapper>.forabg:nth-of-type(5) .icon,
@@ -743,6 +742,7 @@ a.forumtitle:hover{
   width:100%!important;
   min-height:250px;
   height:250px;
+  max-height:250px;
   padding:18px 14px 12px;
   box-sizing:border-box;
 }
@@ -752,6 +752,7 @@ a.forumtitle:hover{
 .categories-wrapper>.forabg:nth-of-type(7) .forum-content::before,
 .category-card .forum-content::before{
   display:block;
+  flex:0 0 auto;
   margin-bottom:10px;
   font-family:"Bahianita",cursive;
   font-size:38px;
@@ -781,19 +782,20 @@ a.forumtitle:hover{
   text-shadow:0 0 5px var(--idx-red),0 0 15px var(--idx-pink),0 0 30px var(--idx-bg);
 }
 
-/* Description */
+/* Description + zone overlay : hauteur maîtrisée pour garder le lastpost visible */
 .categories-wrapper>.forabg:nth-of-type(5) .descrpfo,
 .categories-wrapper>.forabg:nth-of-type(6) .descrpfo,
 .categories-wrapper>.forabg:nth-of-type(7) .descrpfo,
 .category-card .descrpfo{
   position:relative;
   display:block;
+  flex:0 0 auto;
   width:100%!important;
-  min-height:100px;
-  height:100px;
-  max-height:100px;
-  margin-top:0;
-  padding:12px 14px;
+  min-height:88px;
+  height:88px;
+  max-height:88px;
+  margin:0;
+  padding:10px 12px;
   overflow:hidden;
   border-radius:10px;
   box-sizing:border-box;
@@ -820,7 +822,14 @@ a.forumtitle:hover{
   background:var(--idx-enfer-desc-bg);
 }
 
-/* Overlay des sous-forums */
+.categories-wrapper>.forabg:nth-of-type(5) .descrpfo::-webkit-scrollbar,
+.categories-wrapper>.forabg:nth-of-type(6) .descrpfo::-webkit-scrollbar,
+.categories-wrapper>.forabg:nth-of-type(7) .descrpfo::-webkit-scrollbar,
+.category-card .descrpfo::-webkit-scrollbar{
+  display:none;
+}
+
+/* Sous-forums : overlay au hover, une ligne 100% par bouton */
 .categories-wrapper>.forabg:nth-of-type(5) .descrpfo>.subforum-buttons,
 .categories-wrapper>.forabg:nth-of-type(6) .descrpfo>.subforum-buttons,
 .categories-wrapper>.forabg:nth-of-type(7) .descrpfo>.subforum-buttons,
@@ -829,14 +838,15 @@ a.forumtitle:hover{
   inset:0;
   z-index:30;
   display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  align-content:flex-start;
-  align-items:flex-start;
+  flex-direction:column;
+  flex-wrap:nowrap;
+  gap:5px;
+  align-content:stretch;
+  align-items:stretch;
   justify-content:flex-start;
   width:100%;
   height:100%;
-  max-height:none;
+  max-height:100%;
   overflow:auto;
   padding:8px;
   box-sizing:border-box;
@@ -848,6 +858,13 @@ a.forumtitle:hover{
   transition:opacity .25s ease,visibility .25s ease;
   scrollbar-width:none;
   -ms-overflow-style:none;
+}
+
+.categories-wrapper>.forabg:nth-of-type(5) .descrpfo>.subforum-buttons::-webkit-scrollbar,
+.categories-wrapper>.forabg:nth-of-type(6) .descrpfo>.subforum-buttons::-webkit-scrollbar,
+.categories-wrapper>.forabg:nth-of-type(7) .descrpfo>.subforum-buttons::-webkit-scrollbar,
+.category-card .descrpfo>.subforum-buttons::-webkit-scrollbar{
+  display:none;
 }
 
 .categories-wrapper>.forabg:nth-of-type(5) .descrpfo:hover>.subforum-buttons,
@@ -882,14 +899,15 @@ a.forumtitle:hover{
 .categories-wrapper>.forabg:nth-of-type(6) .subforum-buttons a,
 .categories-wrapper>.forabg:nth-of-type(7) .subforum-buttons a,
 .category-card .subforum-buttons a{
-  flex:0 0 calc(50% - 3px);
-  display:inline-flex;
+  flex:0 0 auto!important;
+  display:flex;
   align-items:center;
   justify-content:center;
-  min-width:0;
+  width:100%!important;
   max-width:100%;
+  min-height:22px;
   margin:0;
-  padding:6px 8px;
+  padding:5px 9px;
   box-sizing:border-box;
   border:0;
   border-radius:999px;
@@ -897,14 +915,14 @@ a.forumtitle:hover{
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:11px;
   font-weight:900;
-  line-height:1.1;
+  line-height:1.05;
   text-align:center;
   text-decoration:none!important;
   text-transform:uppercase;
   letter-spacing:.4px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:clip;
   box-shadow:none;
 }
 
@@ -930,17 +948,40 @@ a.forumtitle:hover{
   opacity:.9;
 }
 
+/* Lastpost des trois cartes : toujours visible sous la description */
 .categories-wrapper>.forabg:nth-of-type(5) .forum_lastpost,
 .categories-wrapper>.forabg:nth-of-type(6) .forum_lastpost,
 .categories-wrapper>.forabg:nth-of-type(7) .forum_lastpost,
 .category-card .forum_lastpost{
-  display:block;
-  margin-top:8px;
+  position:relative;
+  z-index:35;
+  display:flex!important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  min-height:34px;
+  margin:7px 0 0;
+  padding:0;
+  overflow:visible;
   color:var(--idx-card-text);
   font-size:12px;
+  line-height:1.05;
   text-align:center;
 }
 
+.categories-wrapper>.forabg:nth-of-type(5) .lastpost-infos,
+.categories-wrapper>.forabg:nth-of-type(6) .lastpost-infos,
+.categories-wrapper>.forabg:nth-of-type(7) .lastpost-infos,
+.category-card .lastpost-infos{
+  display:flex!important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2px;
+  max-width:100%;
+  line-height:1.05;
+}
 
 /* ===================== RESPONSIVE ===================== */
 
@@ -1051,31 +1092,5 @@ a.forumtitle:hover{
 .lastpost_auteurdate .lastpost-sep{
   margin:0!important;
   padding:0!important;
-  line-height:1.05!important;
-}
-/* =========================================================
-   CARTES PARADIS / TERRE / ENFER — SOUS-FORUMS EN 100%
-========================================================= */
-
-.categories-wrapper>.forabg:nth-of-type(5) .subforum-buttons,
-.categories-wrapper>.forabg:nth-of-type(6) .subforum-buttons,
-.categories-wrapper>.forabg:nth-of-type(7) .subforum-buttons,
-.category-card .subforum-buttons{
-  gap:5px!important;
-  align-content:flex-start!important;
-}
-
-.categories-wrapper>.forabg:nth-of-type(5) .subforum-buttons a,
-.categories-wrapper>.forabg:nth-of-type(6) .subforum-buttons a,
-.categories-wrapper>.forabg:nth-of-type(7) .subforum-buttons a,
-.category-card .subforum-buttons a{
-  flex:0 0 100%!important;
-  width:100%!important;
-  max-width:100%!important;
-  min-height:22px!important;
-  padding:6px 10px!important;
-  white-space:normal!important;
-  overflow:visible!important;
-  text-overflow:clip!important;
   line-height:1.05!important;
 }

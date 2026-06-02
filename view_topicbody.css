@@ -1756,51 +1756,48 @@
     padding-left:42px!important;
     padding-right:42px!important;
   }
-}
+} 
+
 /* =========================
-   FIX AWARDS — BULLES DOUBLÉES
+   FIX AWARDS — BULLE UNIQUE
 ========================= */
 
+.postprofile-awards.promess,
 .postprofile-awards.promess .award,
-.postprofile-awards.promess div.award,
-.postprofile-awards.promess .pm-award{
-  position:relative!important;
-  z-index:10!important;
+.postprofile-awards.promess div.award{
+  overflow:visible!important;
 }
 
 .postprofile-awards.promess .award:hover,
-.postprofile-awards.promess div.award:hover,
-.postprofile-awards.promess .pm-award:hover{
-  z-index:999999999!important;
+.postprofile-awards.promess div.award:hover{
+  z-index:2147483647!important;
 }
 
-/* Bulle native Forumactif */
-.postprofile-awards.promess .award > .award_tooltiptext,
 .postprofile-awards.promess div.award > span.award_tooltiptext,
+.postprofile-awards.promess .award > .award_tooltiptext,
 .postprofile-awards.promess .award .award_tooltiptext{
-  display:none!important;
-}
-
-/* Bulle custom bleue */
-.postprofile-awards.promess .pm-award-bubble{
+  display:block!important;
+  position:absolute!important;
+  top:50%!important;
+  left:auto!important;
+  right:calc(100% + 16px)!important;
   width:170px!important;
   min-width:170px!important;
   max-width:170px!important;
   min-height:92px!important;
   padding:12px 14px!important;
   box-sizing:border-box!important;
-  z-index:999999999!important;
+  overflow:hidden!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transform:translateY(-50%) translateX(8px) scale(.96)!important;
 }
 
-/* Force la bleue à recouvrir proprement */
-.postprofile-awards.promess .pm-award:hover .pm-award-bubble{
+.postprofile-awards.promess div.award:hover > span.award_tooltiptext,
+.postprofile-awards.promess .award:hover > .award_tooltiptext,
+.postprofile-awards.promess .award:hover .award_tooltiptext{
   opacity:1!important;
   visibility:visible!important;
   transform:translateY(-50%) translateX(0) scale(1)!important;
-}
-
-/* Évite que la blanche déborde visuellement derrière */
-.postprofile-awards.promess .award_tooltiptext{
-  overflow:hidden!important;
-  border-radius:8px!important;
 }

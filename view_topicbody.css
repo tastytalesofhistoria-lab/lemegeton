@@ -1914,3 +1914,66 @@
   max-height:96px!important;
   object-fit:cover!important;
 }
+/* =========================
+   TAG PSEUDO — FIX BOUTONS CONTACT
+========================= */
+
+.tooltipster-content .preview_contacts a,
+.preview_contacts a{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:24px!important;
+  height:24px!important;
+  margin:0 3px 0 0!important;
+  padding:0!important;
+  border:1px solid var(--pm-border-cyan-soft)!important;
+  border-radius:7px!important;
+  background:rgba(6,12,38,.78)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.04),
+    0 0 8px rgba(36,228,255,.22)!important;
+  overflow:hidden!important;
+  text-indent:0!important;
+  font-size:0!important;
+}
+
+.tooltipster-content .preview_contacts a:hover,
+.preview_contacts a:hover{
+  border-color:var(--pm-pink)!important;
+  background:linear-gradient(135deg,rgba(36,228,255,.18),rgba(255,64,120,.20))!important;
+  box-shadow:
+    0 0 10px rgba(36,228,255,.35),
+    0 0 14px rgba(255,64,120,.22)!important;
+}
+
+.tooltipster-content .preview_contacts img,
+.preview_contacts img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:15px!important;
+  max-height:15px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  object-fit:contain!important;
+  filter:none!important;
+}
+
+/* Si Forumactif utilise des images blanches/transparentes, on colore via le conteneur */
+.tooltipster-content .preview_contacts a::before,
+.preview_contacts a::before{
+  color:var(--pm-cyan)!important;
+}
+
+/* Sécurité : empêche les images de contact d'hériter du style avatar */
+.tooltipster-content .preview_contacts a img{
+  width:auto!important;
+  height:auto!important;
+  max-width:15px!important;
+  max-height:15px!important;
+  border-radius:0!important;
+}

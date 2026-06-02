@@ -809,7 +809,7 @@
 }
 
 /* =========================
-   AWARDS + BULLES AWARDS
+   AWARDS + BULLE NATIVE FORUMACTIF
 ========================= */
 
 .col-awards,
@@ -849,10 +849,18 @@
   overflow:visible!important;
 }
 
+.postprofile-awards.promess .pm-award-bubble,
+.postprofile-awards.promess .pm-award-tooltip-clean{
+  display:none!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+
 .postprofile-awards.promess div.award,
 .postprofile-awards.promess .award{
   position:relative!important;
-  z-index:999999!important;
+  z-index:10!important;
   isolation:isolate!important;
   display:inline-flex!important;
   align-items:center!important;
@@ -873,122 +881,17 @@
   box-shadow:var(--pm-award-shadow)!important;
   cursor:help;
   scroll-snap-align:center;
-  transition:
-    transform .22s ease,
-    filter .22s ease,
-    box-shadow .22s ease,
-    border-color .22s ease;
+  transition:transform .22s ease,filter .22s ease,box-shadow .22s ease,border-color .22s ease;
 }
 
 .postprofile-awards.promess div.award::before,
-.postprofile-awards.promess .award::before,
-.postprofile-awards.promess .pm-award::before{
+.postprofile-awards.promess .award::before{
   content:none!important;
   display:none!important;
 }
 
-.postprofile-awards.promess div.award > span.award_tooltiptext,
-.postprofile-awards.promess .award > .award_tooltiptext,
-.postprofile-awards.promess .award .award_tooltiptext{
-  position:absolute!important;
-  top:50%!important;
-  left:auto!important;
-  right:calc(100% + 16px)!important;
-  z-index:2147483647!important;
-  isolation:isolate!important;
-  width:150px!important;
-  min-height:58px!important;
-  padding:10px 12px!important;
-  box-sizing:border-box!important;
-  overflow:hidden!important;
-  border:1px solid var(--pm-award-tooltip-border)!important;
-  border-radius:6px!important;
-  background-color:var(--pm-award-tooltip-bg)!important;
-  background-image:var(--pm-award-tooltip-img)!important;
-  background-repeat:no-repeat!important;
-  background-size:cover!important;
-  color:var(--pm-cyan)!important;
-  box-shadow:var(--pm-award-tooltip-shadow)!important;
-  font-family:Rajdhani,Arial,sans-serif!important;
-  font-size:11px!important;
-  font-weight:600!important;
-  line-height:1.25!important;
-  text-align:center!important;
-  white-space:normal!important;
-  word-break:break-word!important;
-  opacity:0!important;
-  visibility:hidden!important;
-  pointer-events:none!important;
-  transform:translateY(-50%) translateX(8px) scale(.96)!important;
-  transition:
-    opacity .22s ease,
-    visibility .22s ease,
-    transform .22s ease!important;
-}
-
-.postprofile-awards.promess div.award > span.award_tooltiptext *,
-.postprofile-awards.promess .award > .award_tooltiptext *,
-.postprofile-awards.promess .award .award_tooltiptext *{
-  position:relative!important;
-  z-index:2!important;
-  background:transparent!important;
-  background-color:transparent!important;
-  background-image:none!important;
-  color:inherit!important;
-  box-shadow:none!important;
-}
-
-.postprofile-awards.promess .award_tooltiptext_title{
-  display:block!important;
-  margin:0 0 4px!important;
-  padding:0!important;
-  color:var(--pm-cyan)!important;
-  font-family:"Barlow Condensed",Rajdhani,Arial,sans-serif!important;
-  font-size:13px!important;
-  font-style:normal!important;
-  font-weight:900!important;
-  line-height:1!important;
-  text-transform:uppercase!important;
-  letter-spacing:.5px!important;
-  text-shadow:0 0 6px rgba(36,228,255,.45)!important;
-}
-
-[data-color-scheme="light"] .postprofile-awards.promess .award_tooltiptext_title{
-  text-shadow:0 0 6px rgba(0,127,163,.14)!important;
-}
-
-.postprofile-awards.promess div.award > span.award_tooltiptext::after,
-.postprofile-awards.promess .award > .award_tooltiptext::after,
-.postprofile-awards.promess .award .award_tooltiptext::after{
-  content:""!important;
-  position:absolute!important;
-  top:50%!important;
-  left:100%!important;
-  right:auto!important;
-  z-index:2147483647!important;
-  width:16px!important;
-  height:6px!important;
-  margin:0!important;
-  transform:translateY(-50%)!important;
-  border:0!important;
-  background:var(--pm-cyan)!important;
-  box-shadow:0 0 8px rgba(36,228,255,.55)!important;
-}
-
-[data-color-scheme="light"] .postprofile-awards.promess div.award > span.award_tooltiptext::after,
-[data-color-scheme="light"] .postprofile-awards.promess .award > .award_tooltiptext::after,
-[data-color-scheme="light"] .postprofile-awards.promess .award .award_tooltiptext::after{
-  box-shadow:0 0 8px rgba(0,127,163,.16)!important;
-}
-
-.postprofile-awards.promess div.award > span.award_tooltiptext::before,
-.postprofile-awards.promess .award > .award_tooltiptext::before,
-.postprofile-awards.promess .award .award_tooltiptext::before{
-  content:none!important;
-  display:none!important;
-}/* Hover award natif */
-.postprofile-awards.promess div.award:hover,
-.postprofile-awards.promess .award:hover{
+.postprofile-awards.promess .award:hover,
+.postprofile-awards.promess div.award:hover{
   z-index:2147483647!important;
   transform:scale(1.08);
   filter:saturate(1.15) brightness(1.08);
@@ -996,94 +899,99 @@
   box-shadow:var(--pm-award-hover-shadow)!important;
 }
 
-.postprofile-awards.promess div.award:hover > span.award_tooltiptext,
-.postprofile-awards.promess .award:hover > .award_tooltiptext,
-.postprofile-awards.promess .award:hover .award_tooltiptext{
-  z-index:2147483647!important;
-  opacity:1!important;
-  visibility:visible!important;
-  transform:translateY(-50%) translateX(0) scale(1)!important;
+.postprofile-awards.promess .award > .award_tooltiptext_title,
+.postprofile-awards.promess div.award > span.award_tooltiptext_title{
+  display:none!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
 }
 
-/* Ancien système custom pm-award conservé */
-.postprofile-awards.promess .pm-award{
-  position:relative!important;
-  z-index:999999!important;
-  isolation:isolate;
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  width:42px!important;
-  height:42px!important;
-  min-width:42px!important;
-  min-height:42px!important;
-  overflow:visible!important;
-  border-radius:6px!important;
-  background:transparent!important;
-}
-
-.postprofile-awards.promess .pm-award img{
-  position:relative;
-  z-index:2;
-  display:block;
-  width:100%!important;
-  height:100%!important;
-  max-width:100%!important;
-  max-height:100%!important;
-  margin:0!important;
-  padding:0!important;
-  border-radius:4px!important;
-  object-fit:cover!important;
-  cursor:help;
-  filter:saturate(.9) brightness(.95);
-  box-shadow:none!important;
-  transition:.22s ease;
-}
-
-.postprofile-awards.promess .pm-award-bubble{
+.postprofile-awards.promess div.award > span.award_tooltiptext,
+.postprofile-awards.promess .award > .award_tooltiptext,
+.postprofile-awards.promess .award .award_tooltiptext{
+  display:block!important;
   position:absolute!important;
   top:50%!important;
-  right:calc(100% + 16px)!important;
+  right:calc(100% + 14px)!important;
+  left:auto!important;
+  bottom:auto!important;
   z-index:2147483647!important;
-  isolation:isolate!important;
-  width:150px!important;
-  min-height:58px!important;
-  padding:10px 12px!important;
+  width:180px!important;
+  min-width:180px!important;
+  max-width:180px!important;
+  min-height:74px!important;
+  padding:12px 14px!important;
   box-sizing:border-box!important;
   overflow:hidden!important;
-  border:1px solid var(--pm-award-tooltip-border)!important;
-  border-radius:6px!important;
-  background:var(--pm-award-tooltip-bg)!important;
-  background-image:var(--pm-award-tooltip-img)!important;
-  color:var(--pm-cyan)!important;
-  box-shadow:var(--pm-award-tooltip-shadow)!important;
+  border:2px solid var(--pm-cyan)!important;
+  border-radius:8px!important;
+  background:#f8fbff!important;
+  background-image:none!important;
+  color:#0b1b3a!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.9),0 0 12px rgba(36,228,255,.45),0 8px 18px rgba(0,0,0,.35)!important;
   font-family:Rajdhani,Arial,sans-serif!important;
   font-size:11px!important;
-  font-weight:600!important;
+  font-weight:700!important;
   line-height:1.25!important;
   text-align:center!important;
+  white-space:normal!important;
+  word-break:normal!important;
   opacity:0!important;
   visibility:hidden!important;
   pointer-events:none!important;
   transform:translateY(-50%) translateX(8px) scale(.96)!important;
-  transition:.22s ease!important;
+  transition:.18s ease!important;
 }
 
-.postprofile-awards.promess .pm-award:hover{
-  z-index:2147483647!important;
-  transform:scale(1.08);
-  filter:saturate(1.15) brightness(1.08);
-}
-
-.postprofile-awards.promess .pm-award:hover img{
-  box-shadow:var(--pm-pm-award-hover-shadow)!important;
-}
-
-.postprofile-awards.promess .pm-award:hover .pm-award-bubble{
-  z-index:2147483647!important;
+.postprofile-awards.promess div.award:hover > span.award_tooltiptext,
+.postprofile-awards.promess .award:hover > .award_tooltiptext,
+.postprofile-awards.promess .award:hover .award_tooltiptext{
   opacity:1!important;
   visibility:visible!important;
   transform:translateY(-50%) translateX(0) scale(1)!important;
+}
+
+.postprofile-awards.promess .award_tooltiptext .award_tooltiptext_title{
+  display:block!important;
+  position:static!important;
+  width:auto!important;
+  height:auto!important;
+  margin:0 0 5px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  color:#061a35!important;
+  box-shadow:none!important;
+  font-family:"Barlow Condensed",Rajdhani,Arial,sans-serif!important;
+  font-size:15px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  text-transform:uppercase!important;
+  letter-spacing:.6px!important;
+  text-align:center!important;
+  text-shadow:none!important;
+}
+
+.postprofile-awards.promess .award_tooltiptext::before{
+  content:none!important;
+  display:none!important;
+}
+
+.postprofile-awards.promess .award_tooltiptext::after{
+  content:""!important;
+  position:absolute!important;
+  top:50%!important;
+  left:100%!important;
+  right:auto!important;
+  z-index:2147483647!important;
+  width:14px!important;
+  height:7px!important;
+  margin:0!important;
+  transform:translateY(-50%)!important;
+  border:0!important;
+  background:var(--pm-cyan)!important;
+  box-shadow:0 0 8px rgba(36,228,255,.5)!important;
 }
 
 /* =========================
@@ -1689,7 +1597,6 @@
     height:320px!important;
   }
 
-  .postprofile-awards.promess .pm-award-bubble,
   .postprofile-awards.promess .award_tooltiptext{
     top:auto!important;
     right:auto!important;
@@ -1698,7 +1605,6 @@
     transform:translateX(-50%) translateY(8px) scale(.96)!important;
   }
 
-  .postprofile-awards.promess .pm-award-bubble::after,
   .postprofile-awards.promess .award_tooltiptext::after{
     top:100%!important;
     left:50%!important;
@@ -1708,7 +1614,6 @@
     transform:translateX(-50%)!important;
   }
 
-  .postprofile-awards.promess .pm-award:hover .pm-award-bubble,
   .postprofile-awards.promess .award:hover .award_tooltiptext{
     transform:translateX(-50%) translateY(0) scale(1)!important;
   }
@@ -1758,158 +1663,9 @@
   }
 }
 
-
-/* =========================================================
-   AWARDS — FIX BULLE UNIQUE / ANTI-SUPERPOSITION
-========================================================= */
-
-/* Conteneurs : laisser sortir la bulle */
-.col-awards.promess,
-.postprofile-awards.promess,
-.postprofile-awards.promess .award,
-.postprofile-awards.promess div.award{
-  overflow:visible!important;
-}
-
-/* On tue les anciennes bulles custom/reconstruites */
-.postprofile-awards.promess .pm-award-bubble,
-.postprofile-awards.promess .pm-award-bubble *,
-.postprofile-awards.promess .pm-award-tooltip-clean,
-.postprofile-awards.promess .pm-award-tooltip-clean *{
-  display:none!important;
-  opacity:0!important;
-  visibility:hidden!important;
-  pointer-events:none!important;
-}
-
-/* Award au-dessus pendant le hover */
-.postprofile-awards.promess .award,
-.postprofile-awards.promess div.award{
-  position:relative!important;
-  overflow:visible!important;
-  z-index:10!important;
-}
-
-.postprofile-awards.promess .award:hover,
-.postprofile-awards.promess div.award:hover{
-  z-index:2147483647!important;
-}
-
-/* LA bulle gardée : award_tooltiptext */
-.postprofile-awards.promess div.award > span.award_tooltiptext,
-.postprofile-awards.promess .award > .award_tooltiptext,
-.postprofile-awards.promess .award .award_tooltiptext{
-  display:block!important;
-  position:absolute!important;
-  top:50%!important;
-  right:calc(100% + 14px)!important;
-  left:auto!important;
-  bottom:auto!important;
-  z-index:2147483647!important;
-  width:180px!important;
-  min-width:180px!important;
-  max-width:180px!important;
-  min-height:74px!important;
-  padding:12px 14px!important;
-  box-sizing:border-box!important;
-  overflow:hidden!important;
-  border:2px solid var(--pm-cyan)!important;
-  border-radius:8px!important;
-  background:#f8fbff!important;
-  background-image:none!important;
-  color:#0b1b3a!important;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.9),
-    0 0 12px rgba(36,228,255,.45),
-    0 8px 18px rgba(0,0,0,.35)!important;
-  font-family:Rajdhani,Arial,sans-serif!important;
-  font-size:11px!important;
-  font-weight:700!important;
-  line-height:1.25!important;
-  text-align:center!important;
-  white-space:normal!important;
-  word-break:normal!important;
-  opacity:0!important;
-  visibility:hidden!important;
-  pointer-events:none!important;
-  transform:translateY(-50%) translateX(8px) scale(.96)!important;
-  transition:.18s ease!important;
-}
-
-/* Affichage de la bulle unique */
-.postprofile-awards.promess div.award:hover > span.award_tooltiptext,
-.postprofile-awards.promess .award:hover > .award_tooltiptext,
-.postprofile-awards.promess .award:hover .award_tooltiptext{
-  opacity:1!important;
-  visibility:visible!important;
-  transform:translateY(-50%) translateX(0) scale(1)!important;
-}
-
-/* IMPORTANT : cache la mini-pastille titre quand elle est EN DEHORS de la vraie bulle */
-.postprofile-awards.promess .award > .award_tooltiptext_title,
-.postprofile-awards.promess div.award > span.award_tooltiptext_title{
-  display:none!important;
-  opacity:0!important;
-  visibility:hidden!important;
-  pointer-events:none!important;
-}
-
-/* Mais conserve le titre quand il est DANS .award_tooltiptext */
-.postprofile-awards.promess .award_tooltiptext .award_tooltiptext_title{
-  display:block!important;
-  position:static!important;
-  width:auto!important;
-  height:auto!important;
-  margin:0 0 5px!important;
-  padding:0!important;
-  border:0!important;
-  background:transparent!important;
-  color:#061a35!important;
-  box-shadow:none!important;
-  font-family:"Barlow Condensed",Rajdhani,Arial,sans-serif!important;
-  font-size:15px!important;
-  font-weight:900!important;
-  line-height:1!important;
-  text-transform:uppercase!important;
-  letter-spacing:.6px!important;
-  text-align:center!important;
-  text-shadow:none!important;
-}
-
-/* Cache les autres morceaux directs qui deviennent des mini-bulles parasites */
-.postprofile-awards.promess .award > span:not(.award_tooltiptext):not(:has(img)),
-.postprofile-awards.promess div.award > span:not(.award_tooltiptext):not(:has(img)),
-.postprofile-awards.promess .award > a:not(:has(img)),
-.postprofile-awards.promess div.award > a:not(:has(img)),
-.postprofile-awards.promess .award > strong,
-.postprofile-awards.promess .award > em{
-  display:none!important;
-  opacity:0!important;
-  visibility:hidden!important;
-  pointer-events:none!important;
-}
-
-/* Flèche de la bulle principale */
-.postprofile-awards.promess .award_tooltiptext::before{
-  content:none!important;
-  display:none!important;
-}
-
-.postprofile-awards.promess .award_tooltiptext::after{
-  content:""!important;
-  position:absolute!important;
-  top:50%!important;
-  left:100%!important;
-  right:auto!important;
-  width:14px!important;
-  height:7px!important;
-  transform:translateY(-50%)!important;
-  border:0!important;
-  background:var(--pm-cyan)!important;
-  box-shadow:0 0 8px rgba(36,228,255,.5)!important;
-}
-
-/* Version mobile : bulle au-dessus, même taille */
+/* =========================
+   AWARDS RESPONSIVE
+========================= */
 @media screen and (max-width:900px){
   .postprofile-awards.promess div.award > span.award_tooltiptext,
   .postprofile-awards.promess .award > .award_tooltiptext,
@@ -1920,20 +1676,16 @@
     bottom:calc(100% + 14px)!important;
     transform:translateX(-50%) translateY(8px) scale(.96)!important;
   }
-
   .postprofile-awards.promess div.award:hover > span.award_tooltiptext,
   .postprofile-awards.promess .award:hover > .award_tooltiptext,
   .postprofile-awards.promess .award:hover .award_tooltiptext{
     transform:translateX(-50%) translateY(0) scale(1)!important;
   }
-
   .postprofile-awards.promess .award_tooltiptext::after{
     top:100%!important;
     left:50%!important;
-    right:auto!important;
     width:7px!important;
     height:12px!important;
     transform:translateX(-50%)!important;
   }
 }
-

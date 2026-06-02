@@ -849,12 +849,6 @@
   overflow:visible!important;
 }
 
-
-.postprofile-awards.promess a,
-.postprofile-awards.promess img{
-  max-width:100%;
-}
-
 .postprofile-awards.promess div.award,
 .postprofile-awards.promess .award{
   position:relative!important;
@@ -1576,13 +1570,62 @@
     padding-right:42px!important;
   }
 }
+
+
+
 /* =========================
-   AWARDS — STATIQUE / BASE FA
+   AWARDS — ZONE FA SANS DÉFILEMENT
 ========================= */
+
+/* On garde la structure Forumactif dd_award pour éviter la double bulle,
+   mais on neutralise le bouton/mouvement de défilement natif. */
 .col-awards.promess .award_more,
-.col-awards.promess .award_more *{
+.col-awards.promess .award_more *,
+.award_more,
+.award_more *{
   display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
 }
-.postprofile-awards.promess{
+
+.col-awards.promess,
+.postprofile-awards.promess,
+.postprofile-awards.promess.dd_award{
   overflow:visible!important;
+}
+
+.postprofile-awards.promess.dd_award{
+  position:relative!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  width:100%!important;
+  min-height:100%!important;
+  max-height:none!important;
+  height:auto!important;
+  padding:0!important;
+  margin:0!important;
+  transform:none!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+}
+
+.postprofile-awards.promess.dd_award .award,
+.postprofile-awards.promess.dd_award div.award{
+  position:relative!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:none;
+}
+
+.postprofile-awards.promess.dd_award .award:hover,
+.postprofile-awards.promess.dd_award div.award:hover{
+  transform:scale(1.08)!important;
 }

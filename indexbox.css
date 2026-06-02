@@ -8,6 +8,12 @@
 /* ===================== LAST POST ===================== */
 
 .forum_lastpost{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2px;
+  line-height:1.1;
   text-align:center;
   color:var(--idx-text);
   font-family:"Rajdhani",Arial,sans-serif;
@@ -15,8 +21,18 @@
 }
 
 .forum_lastpost .lastpost-infos{
-  display:block;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2px;
   min-width:0;
+  max-width:100%;
+  line-height:1.1;
+}
+
+.forum_lastpost .lastpost-infos br{
+  display:none!important;
 }
 
 .lastpost-topic-line{
@@ -26,6 +42,9 @@
   gap:5px;
   min-width:0;
   max-width:100%;
+  margin:0;
+  padding:0;
+  line-height:1.05;
 }
 
 .lastpost-topic-line .lastpost_link{
@@ -85,15 +104,26 @@
 }
 
 .lastpost_auteurdate a,
+.lastpost-author-wrap a,
 .lastpost_auteurdate .lastpost-author-text{
-  color:var(--idx-cyan-soft)!important;
   font:inherit;
   font-weight:900;
   text-decoration:none!important;
 }
 
-.lastpost_auteurdate a:hover{
-  color:var(--idx-pink-soft)!important;
+.lastpost_auteurdate a:hover,
+.lastpost-author-wrap a:hover{
+  text-decoration:none!important;
+  filter:brightness(1.18);
+}
+
+.lastpost_auteurdate a span,
+.lastpost-author-wrap a span,
+.lastpost_auteurdate a strong,
+.lastpost-author-wrap a strong,
+.lastpost_auteurdate a font,
+.lastpost-author-wrap a font{
+  color:inherit;
 }
 
 .lastpost_auteurdate .lastpost-sep,
@@ -210,7 +240,8 @@
   height:80px;
   margin-top:0;
   margin-left:0;
-  filter:grayscale(63%) contrast(90%);
+  filter:none;
+  transition:filter .35s ease;
 }
 
 .avatcat_ava_inside{
@@ -249,7 +280,7 @@
   object-fit:cover!important;
   object-position:center!important;
   border-radius:50%;
-  filter:grayscale(63%) contrast(90%);
+  filter:none!important;
 }
 
 .avatcat_icon:hover .avatcat_ava_inside{
@@ -956,16 +987,16 @@ a.forumtitle:hover{
   position:relative;
   z-index:35;
   display:flex!important;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  flex:0 0 auto;
-  min-height:34px;
-  margin:7px 0 0;
-  padding:0;
-  overflow:visible;
-  opacity:1;
-  visibility:visible;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+  min-height:34px!important;
+  margin:7px 0 0!important;
+  padding:0!important;
+  overflow:visible!important;
+  opacity:1!important;
+  visibility:visible!important;
   color:var(--idx-card-text);
   font-size:12px;
   line-height:1.05;
@@ -1029,90 +1060,6 @@ a.forumtitle:hover{
   }
 }
 
-/* =========================================================
-   PATCH LASTPOST INDEX — SUPPRIME L'ESPACE ENTRE TITRE / AUTEUR
-========================================================= */
-
-.forum_lastpost{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:2px!important;
-  line-height:1.1!important;
-}
-
-.forum_lastpost .lastpost-infos{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:2px!important;
-  line-height:1.1!important;
-}
-
-.forum_lastpost .lastpost-infos br{
-  display:none!important;
-}
-
-.lastpost-topic-line{
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:5px!important;
-  margin:0!important;
-  padding:0!important;
-  line-height:1.05!important;
-}
-
-.lastpost-topic-line .lastpost_link{
-  margin:0!important;
-  padding:0!important;
-  line-height:1.05!important;
-}
-
-.lastpost-goto{
-  margin:0!important;
-  padding:0!important;
-  line-height:1!important;
-}
-
-.lastpost_auteurdate{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  flex-wrap:wrap!important;
-  gap:4px!important;
-  margin:0!important;
-  padding:0!important;
-  line-height:1.05!important;
-}
-
-.lastpost_auteurdate a,
-.lastpost_auteurdate .lastpost-author-text,
-.lastpost_auteurdate .lastpost-date-text,
-.lastpost_auteurdate .lastpost-sep{
-  margin:0!important;
-  padding:0!important;
-  line-height:1.05!important;
-}
-.categories-wrapper>.forabg:nth-of-type(5) .forum_lastpost,
-.categories-wrapper>.forabg:nth-of-type(6) .forum_lastpost,
-.categories-wrapper>.forabg:nth-of-type(7) .forum_lastpost,
-.category-card .forum_lastpost{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  justify-content:center!important;
-  flex:0 0 auto!important;
-  min-height:34px!important;
-  margin:7px 0 0!important;
-  padding:0!important;
-  overflow:visible!important;
-  opacity:1!important;
-  visibility:visible!important;
-}
- 
 /* =========================================================
    AVATAR FORUM — GRIS SI RIEN / COULEUR SI NOUVEAU MESSAGE
 ========================================================= */

@@ -1757,3 +1757,56 @@
     padding-right:42px!important;
   }
 }
+/* =========================
+   FIX AWARDS — BULLES DOUBLÉES
+========================= */
+
+.postprofile-awards.promess .award,
+.postprofile-awards.promess div.award,
+.postprofile-awards.promess .pm-award{
+  position:relative!important;
+  z-index:10!important;
+}
+
+.postprofile-awards.promess .award:hover,
+.postprofile-awards.promess div.award:hover,
+.postprofile-awards.promess .pm-award:hover{
+  z-index:999999999!important;
+}
+
+/* Bulle native Forumactif */
+.postprofile-awards.promess .award > .award_tooltiptext,
+.postprofile-awards.promess div.award > span.award_tooltiptext,
+.postprofile-awards.promess .award .award_tooltiptext{
+  width:170px!important;
+  min-width:170px!important;
+  max-width:170px!important;
+  min-height:92px!important;
+  padding:12px 14px!important;
+  box-sizing:border-box!important;
+  z-index:999999998!important;
+}
+
+/* Bulle custom bleue */
+.postprofile-awards.promess .pm-award-bubble{
+  width:170px!important;
+  min-width:170px!important;
+  max-width:170px!important;
+  min-height:92px!important;
+  padding:12px 14px!important;
+  box-sizing:border-box!important;
+  z-index:999999999!important;
+}
+
+/* Force la bleue à recouvrir proprement */
+.postprofile-awards.promess .pm-award:hover .pm-award-bubble{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:translateY(-50%) translateX(0) scale(1)!important;
+}
+
+/* Évite que la blanche déborde visuellement derrière */
+.postprofile-awards.promess .award_tooltiptext{
+  overflow:hidden!important;
+  border-radius:8px!important;
+}

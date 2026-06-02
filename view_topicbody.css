@@ -849,6 +849,19 @@
   overflow:visible!important;
 }
 
+.postprofile-awards.promess.dd_award{
+  position:relative;
+}
+
+.col-awards.promess .award_more{
+  display:none;
+}
+
+.postprofile-awards.promess a,
+.postprofile-awards.promess img{
+  max-width:100%;
+}
+
 .postprofile-awards.promess div.award,
 .postprofile-awards.promess .award{
   position:relative!important;

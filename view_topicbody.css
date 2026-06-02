@@ -1756,11 +1756,14 @@
     padding-left:42px!important;
     padding-right:42px!important;
   }
-} 
+}
+
+
 /* =========================================================
-   AWARDS — BULLE FORUMACTIF UNIQUE
+   AWARDS — FIX BULLE UNIQUE / ANTI-SUPERPOSITION
 ========================================================= */
 
+/* Conteneurs : laisser sortir la bulle */
 .col-awards.promess,
 .postprofile-awards.promess,
 .postprofile-awards.promess .award,
@@ -1768,22 +1771,18 @@
   overflow:visible!important;
 }
 
+/* On tue les anciennes bulles custom/reconstruites */
 .postprofile-awards.promess .pm-award-bubble,
 .postprofile-awards.promess .pm-award-bubble *,
-.postprofile-awards.promess .pm-award:hover .pm-award-bubble{
+.postprofile-awards.promess .pm-award-tooltip-clean,
+.postprofile-awards.promess .pm-award-tooltip-clean *{
   display:none!important;
   opacity:0!important;
   visibility:hidden!important;
   pointer-events:none!important;
 }
 
-.postprofile-awards.promess .pm-award-tooltip-clean{
-  display:none!important;
-  opacity:0!important;
-  visibility:hidden!important;
-  pointer-events:none!important;
-}
-
+/* Award au-dessus pendant le hover */
 .postprofile-awards.promess .award,
 .postprofile-awards.promess div.award{
   position:relative!important;
@@ -1796,6 +1795,7 @@
   z-index:2147483647!important;
 }
 
+/* LA bulle gardée : award_tooltiptext */
 .postprofile-awards.promess div.award > span.award_tooltiptext,
 .postprofile-awards.promess .award > .award_tooltiptext,
 .postprofile-awards.promess .award .award_tooltiptext{
@@ -1804,6 +1804,7 @@
   top:50%!important;
   right:calc(100% + 14px)!important;
   left:auto!important;
+  bottom:auto!important;
   z-index:2147483647!important;
   width:180px!important;
   min-width:180px!important;
@@ -1835,6 +1836,7 @@
   transition:.18s ease!important;
 }
 
+/* Affichage de la bulle unique */
 .postprofile-awards.promess div.award:hover > span.award_tooltiptext,
 .postprofile-awards.promess .award:hover > .award_tooltiptext,
 .postprofile-awards.promess .award:hover .award_tooltiptext{
@@ -1843,7 +1845,17 @@
   transform:translateY(-50%) translateX(0) scale(1)!important;
 }
 
-.postprofile-awards.promess .award_tooltiptext_title{
+/* IMPORTANT : cache la mini-pastille titre quand elle est EN DEHORS de la vraie bulle */
+.postprofile-awards.promess .award > .award_tooltiptext_title,
+.postprofile-awards.promess div.award > span.award_tooltiptext_title{
+  display:none!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+
+/* Mais conserve le titre quand il est DANS .award_tooltiptext */
+.postprofile-awards.promess .award_tooltiptext .award_tooltiptext_title{
   display:block!important;
   position:static!important;
   width:auto!important;
@@ -1864,6 +1876,20 @@
   text-shadow:none!important;
 }
 
+/* Cache les autres morceaux directs qui deviennent des mini-bulles parasites */
+.postprofile-awards.promess .award > span:not(.award_tooltiptext):not(:has(img)),
+.postprofile-awards.promess div.award > span:not(.award_tooltiptext):not(:has(img)),
+.postprofile-awards.promess .award > a:not(:has(img)),
+.postprofile-awards.promess div.award > a:not(:has(img)),
+.postprofile-awards.promess .award > strong,
+.postprofile-awards.promess .award > em{
+  display:none!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+
+/* Flèche de la bulle principale */
 .postprofile-awards.promess .award_tooltiptext::before{
   content:none!important;
   display:none!important;
@@ -1882,3 +1908,32 @@
   background:var(--pm-cyan)!important;
   box-shadow:0 0 8px rgba(36,228,255,.5)!important;
 }
+
+/* Version mobile : bulle au-dessus, même taille */
+@media screen and (max-width:900px){
+  .postprofile-awards.promess div.award > span.award_tooltiptext,
+  .postprofile-awards.promess .award > .award_tooltiptext,
+  .postprofile-awards.promess .award .award_tooltiptext{
+    top:auto!important;
+    right:auto!important;
+    left:50%!important;
+    bottom:calc(100% + 14px)!important;
+    transform:translateX(-50%) translateY(8px) scale(.96)!important;
+  }
+
+  .postprofile-awards.promess div.award:hover > span.award_tooltiptext,
+  .postprofile-awards.promess .award:hover > .award_tooltiptext,
+  .postprofile-awards.promess .award:hover .award_tooltiptext{
+    transform:translateX(-50%) translateY(0) scale(1)!important;
+  }
+
+  .postprofile-awards.promess .award_tooltiptext::after{
+    top:100%!important;
+    left:50%!important;
+    right:auto!important;
+    width:7px!important;
+    height:12px!important;
+    transform:translateX(-50%)!important;
+  }
+}
+

@@ -849,13 +849,6 @@
   overflow:visible!important;
 }
 
-.postprofile-awards.promess.dd_award{
-  position:relative;
-}
-
-.col-awards.promess .award_more{
-  display:none;
-}
 
 .postprofile-awards.promess a,
 .postprofile-awards.promess img{
@@ -1583,4 +1576,13 @@
     padding-right:42px!important;
   }
 }
-
+/* =========================
+   AWARDS — STATIQUE / BASE FA
+========================= */
+.col-awards.promess .award_more,
+.col-awards.promess .award_more *{
+  display:none!important;
+}
+.postprofile-awards.promess{
+  overflow:visible!important;
+}

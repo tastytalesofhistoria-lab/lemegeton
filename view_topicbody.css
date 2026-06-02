@@ -1629,3 +1629,96 @@
 .postprofile-awards.promess.dd_award div.award:hover{
   transform:scale(1.08)!important;
 }
+/* =========================
+   AWARDS — ZONE PLEINE + SCROLL
+========================= */
+
+.col-awards.promess{
+  position:relative!important;
+  display:flex!important;
+  align-items:stretch!important;
+  justify-content:stretch!important;
+  width:140px!important;
+  min-width:140px!important;
+  height:320px!important;
+  min-height:320px!important;
+  padding:12px!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+}
+
+/* La zone Forumactif des awards prend toute la case bleue */
+.col-awards.promess .postprofile-awards.promess,
+.col-awards.promess .dd_award,
+.col-awards.promess .postprofile-awards.promess.dd_award{
+  position:relative!important;
+  inset:auto!important;
+  top:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  left:auto!important;
+
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-content:flex-start!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:8px!important;
+
+  width:100%!important;
+  height:100%!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:100%!important;
+  max-height:100%!important;
+
+  margin:0!important;
+  padding:8px!important;
+  box-sizing:border-box!important;
+
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* Scroll discret */
+.col-awards.promess .postprofile-awards.promess::-webkit-scrollbar,
+.col-awards.promess .dd_award::-webkit-scrollbar{
+  width:5px;
+}
+
+.col-awards.promess .postprofile-awards.promess::-webkit-scrollbar-track,
+.col-awards.promess .dd_award::-webkit-scrollbar-track{
+  background:rgba(5,10,35,.45);
+  border-radius:999px;
+}
+
+.col-awards.promess .postprofile-awards.promess::-webkit-scrollbar-thumb,
+.col-awards.promess .dd_award::-webkit-scrollbar-thumb{
+  background:var(--pm-cyan);
+  border-radius:999px;
+}
+
+/* Icônes fixes */
+.col-awards.promess .award,
+.col-awards.promess div.award,
+.col-awards.promess .pm-award{
+  flex:0 0 42px!important;
+  width:42px!important;
+  height:42px!important;
+  min-width:42px!important;
+  min-height:42px!important;
+  margin:0!important;
+}
+
+/* On neutralise définitivement le bouton de défilement natif Forumactif */
+.col-awards.promess .award_more,
+.award_more{
+  display:none!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}

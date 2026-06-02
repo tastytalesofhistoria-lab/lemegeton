@@ -1959,3 +1959,110 @@
     transform:translateX(-50%)!important;
   }
 }
+/* =========================
+   FIX FINAL AWARDS — UNE SEULE BULLE
+========================= */
+
+/* On garde uniquement la vraie bulle */
+.postprofile-awards.promess .award_tooltiptext{
+  display:block!important;
+  position:absolute!important;
+  top:50%!important;
+  right:calc(100% + 14px)!important;
+  left:auto!important;
+  z-index:2147483647!important;
+  width:180px!important;
+  min-width:180px!important;
+  max-width:180px!important;
+  min-height:74px!important;
+  padding:12px 14px!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  border:2px solid var(--pm-cyan)!important;
+  border-radius:8px!important;
+  background:#f8fbff!important;
+  background-image:none!important;
+  color:#0b1b3a!important;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.9) inset,
+    0 0 12px rgba(36,228,255,.45),
+    0 8px 18px rgba(0,0,0,.35)!important;
+  font-family:Rajdhani,Arial,sans-serif!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  line-height:1.25!important;
+  text-align:center!important;
+  white-space:normal!important;
+  word-break:normal!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transform:translateY(-50%) translateX(8px) scale(.96)!important;
+  transition:.18s ease!important;
+}
+
+/* Affichage au hover */
+.postprofile-awards.promess .award:hover .award_tooltiptext,
+.postprofile-awards.promess div.award:hover > span.award_tooltiptext{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:translateY(-50%) translateX(0) scale(1)!important;
+}
+
+/* Titre DANS la bulle, pas en pastille séparée */
+.postprofile-awards.promess .award_tooltiptext_title{
+  display:block!important;
+  position:static!important;
+  width:auto!important;
+  height:auto!important;
+  margin:0 0 5px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  color:#061a35!important;
+  box-shadow:none!important;
+  font-family:"Barlow Condensed",Rajdhani,Arial,sans-serif!important;
+  font-size:15px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  text-transform:uppercase!important;
+  letter-spacing:.6px!important;
+  text-align:center!important;
+}
+
+/* Coupe les morceaux parasites type "First One ▼" / "aime !" */
+.postprofile-awards.promess .award > a:not(:has(img)),
+.postprofile-awards.promess .award > span:not(.award_tooltiptext):not(:has(img)),
+.postprofile-awards.promess .award > strong,
+.postprofile-awards.promess .award > em{
+  display:none!important;
+}
+
+/* Supprime toute ancienne bulle custom bleue */
+.postprofile-awards.promess .pm-award-bubble,
+.postprofile-awards.promess .pm-award-bubble *,
+.postprofile-awards.promess .award .pm-award-bubble{
+  display:none!important;
+  opacity:0!important;
+  visibility:hidden!important;
+}
+
+/* Triangle propre de la bulle blanche */
+.postprofile-awards.promess .award_tooltiptext::after{
+  content:""!important;
+  position:absolute!important;
+  top:50%!important;
+  left:100%!important;
+  right:auto!important;
+  width:14px!important;
+  height:7px!important;
+  transform:translateY(-50%)!important;
+  border:0!important;
+  background:var(--pm-cyan)!important;
+  box-shadow:0 0 8px rgba(36,228,255,.5)!important;
+}
+
+.postprofile-awards.promess .award_tooltiptext::before{
+  content:none!important;
+  display:none!important;
+}

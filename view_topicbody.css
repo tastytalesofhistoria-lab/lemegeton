@@ -1778,13 +1778,7 @@
 .postprofile-awards.promess .award > .award_tooltiptext,
 .postprofile-awards.promess div.award > span.award_tooltiptext,
 .postprofile-awards.promess .award .award_tooltiptext{
-  width:170px!important;
-  min-width:170px!important;
-  max-width:170px!important;
-  min-height:92px!important;
-  padding:12px 14px!important;
-  box-sizing:border-box!important;
-  z-index:999999998!important;
+  display:none!important;
 }
 
 /* Bulle custom bleue */

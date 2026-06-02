@@ -1891,12 +1891,11 @@
 }
 
 .preview_contacts img{
-  max-width:14px!important;
-  max-height:14px!important;
+  max-width:15px!important;
+  max-height:15px!important;
   object-fit:contain!important;
-  filter:brightness(0) invert(1)!important;
+  filter:none!important;
 }
-
 /* Liens dans la preview */
 .tooltipster-content a{
   color:var(--pm-cyan)!important;

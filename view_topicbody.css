@@ -2163,3 +2163,120 @@
   background:var(--pm-cyan)!important;
   box-shadow:0 0 8px rgba(36,228,255,.5)!important;
 }
+
+/* =========================
+   AWARDS — FIX FINAL RÉEL / BULLE UNIQUE
+   (à garder tout à la fin du CSS)
+========================= */
+.postprofile-awards.promess .award_tooltiptext,
+.postprofile-awards.promess .pm-award-bubble{
+  display:none!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+
+.postprofile-awards.promess .award,
+.postprofile-awards.promess div.award{
+  position:relative!important;
+  overflow:visible!important;
+  z-index:10!important;
+}
+
+.postprofile-awards.promess .award:hover,
+.postprofile-awards.promess div.award:hover{
+  z-index:2147483647!important;
+}
+
+.postprofile-awards.promess .award > a,
+.postprofile-awards.promess .award > a img,
+.postprofile-awards.promess .award > img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+}
+
+/* important : sélecteur plus fort que l'ancien span:not(...) qui cachait la bulle propre */
+.postprofile-awards.promess .award > .pm-award-tooltip-clean,
+.postprofile-awards.promess div.award > .pm-award-tooltip-clean,
+.postprofile-awards.promess .pm-award-tooltip-clean{
+  position:absolute!important;
+  top:50%!important;
+  right:calc(100% + 14px)!important;
+  left:auto!important;
+  z-index:2147483647!important;
+  display:block!important;
+  width:180px!important;
+  min-width:180px!important;
+  max-width:180px!important;
+  min-height:74px!important;
+  padding:12px 14px!important;
+  box-sizing:border-box!important;
+  border:2px solid var(--pm-cyan)!important;
+  border-radius:8px!important;
+  background:#f8fbff!important;
+  background-image:none!important;
+  color:#0b1b3a!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.9),0 0 12px rgba(36,228,255,.45),0 8px 18px rgba(0,0,0,.35)!important;
+  font-family:Rajdhani,Arial,sans-serif!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  line-height:1.25!important;
+  text-align:center!important;
+  white-space:normal!important;
+  word-break:normal!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transform:translateY(-50%) translateX(8px) scale(.96)!important;
+  transition:.18s ease!important;
+}
+
+.postprofile-awards.promess .award:hover > .pm-award-tooltip-clean,
+.postprofile-awards.promess div.award:hover > .pm-award-tooltip-clean{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:translateY(-50%) translateX(0) scale(1)!important;
+}
+
+.postprofile-awards.promess .pm-award-tooltip-clean .award_tooltiptext_title{
+  display:block!important;
+  position:static!important;
+  width:auto!important;
+  height:auto!important;
+  margin:0 0 5px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  color:#061a35!important;
+  box-shadow:none!important;
+  font-family:"Barlow Condensed",Rajdhani,Arial,sans-serif!important;
+  font-size:15px!important;
+  font-style:normal!important;
+  font-weight:900!important;
+  line-height:1!important;
+  text-transform:uppercase!important;
+  letter-spacing:.6px!important;
+  text-align:center!important;
+  text-shadow:none!important;
+}
+
+.postprofile-awards.promess .pm-award-tooltip-clean::before{
+  content:none!important;
+  display:none!important;
+}
+
+.postprofile-awards.promess .pm-award-tooltip-clean::after{
+  content:""!important;
+  position:absolute!important;
+  top:50%!important;
+  left:100%!important;
+  right:auto!important;
+  width:14px!important;
+  height:7px!important;
+  transform:translateY(-50%)!important;
+  border:0!important;
+  background:var(--pm-cyan)!important;
+  box-shadow:0 0 8px rgba(36,228,255,.5)!important;
+}

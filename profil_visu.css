@@ -1,15 +1,14 @@
 /* =========================================================
    LEMEGETON — PROFIL AFFICHÉ MODERNBB
    Fichier : profil_visu.css
-   Base : profile-modern Forumactif
-   Classes ajoutées : vp-
-   CSS corrigé / fusionné
+   Version corrigée / fusionnée
    - sidebar 200px
    - avatar exact 200x320px
-   - image interne forcée à remplir
-   - contacts centrés
-   - hover rose
-   - anti-casse colonne gauche
+   - présence supprimée
+   - rang supprimé sous le pseudo
+   - image rang réduite dans la colonne gauche
+   - couleurs natives Forumactif conservées pour les groupes
+   - doublons et patchs fusionnés
 ========================================================= */
 
 /* ===================== BASE ===================== */
@@ -24,16 +23,16 @@
 .profile-modern{
   width:min(1080px,100%);
   margin:24px auto;
-  color:var(--vp-text);
+  color:var(--vp-text,#c8efff);
   font-family:"Rajdhani",Arial,sans-serif;
 }
 
-/* ===================== TITRES ===================== */
+/* ===================== TITRE PAGE ===================== */
 
 .vp-page-title{
   width:min(1080px,100%);
   margin:0 auto 18px!important;
-  color:var(--vp-cyan)!important;
+  color:var(--vp-cyan,#24e4ff)!important;
   font-family:"Barlow Condensed",Arial,sans-serif!important;
   font-size:20px!important;
   font-weight:900!important;
@@ -41,21 +40,25 @@
   text-transform:uppercase;
 }
 
+/* ===================== GRAND TITRE PROFIL ===================== */
+
 .vp-title{
   position:relative;
   margin:0 0 18px!important;
-  padding:28px 30px 30px!important;
-  border:1px solid rgba(36,228,255,.18);
-  border-top:2px solid rgba(42,233,255,.22);
+  padding:24px 30px 30px!important;
+  border:1px solid var(--vp-border-cyan,rgba(36,228,255,.18));
+  border-top:2px solid var(--vp-border-cyan-soft,rgba(42,233,255,.22));
   border-radius:22px;
-  background:
+  background:var(--vp-title-bg,
     radial-gradient(circle at 12% 0%,rgba(36,228,255,.14),transparent 28%),
     radial-gradient(circle at 88% 12%,rgba(254,3,124,.15),transparent 32%),
-    linear-gradient(135deg,rgba(4,6,20,.98) 0%,rgba(11,15,42,.98) 45%,rgba(32,27,61,.98) 100%);
-  box-shadow:
+    linear-gradient(135deg,rgba(4,6,20,.98) 0%,rgba(11,15,42,.98) 45%,rgba(32,27,61,.98) 100%)
+  );
+  box-shadow:var(--vp-shadow-main,
     inset 0 0 0 1px rgba(255,255,255,.035),
     0 0 26px rgba(0,0,0,.38),
-    0 0 24px rgba(36,228,255,.06);
+    0 0 24px rgba(36,228,255,.06)
+  );
   overflow:hidden;
   text-align:left!important;
 }
@@ -65,7 +68,13 @@
   position:absolute;
   inset:0 0 auto 0;
   height:7px;
-  background:linear-gradient(90deg,var(--vp-cyan),var(--vp-pink-hot),var(--vp-purple),var(--vp-cyan));
+  background:linear-gradient(
+    90deg,
+    var(--vp-cyan,#24e4ff),
+    var(--vp-pink-hot,#fe037c),
+    var(--vp-purple,#b88cff),
+    var(--vp-cyan,#24e4ff)
+  );
   background-size:220% 100%;
   animation:vpKaraokeBar 7s linear infinite;
 }
@@ -76,7 +85,7 @@
   right:22px;
   top:50%;
   transform:translateY(-50%);
-  color:rgba(255,255,255,.045);
+  color:var(--vp-ghost,rgba(255,255,255,.045));
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:76px;
   font-weight:900;
@@ -86,24 +95,14 @@
 }
 
 .vp-title-kicker{
-  position:relative;
-  z-index:2;
-  display:block;
-  margin-bottom:7px;
-  color:var(--vp-cyan);
-  font-family:"Barlow Condensed",Arial,sans-serif;
-  font-size:14px;
-  font-weight:900;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  text-shadow:0 0 8px rgba(36,228,255,.35);
+  display:none!important;
 }
 
 .vp-title-main{
   position:relative;
   z-index:2;
   display:block;
-  color:var(--vp-white);
+  color:var(--vp-white,#ecfbff)!important;
   font-family:"Monoton",Arial,sans-serif;
   font-size:52px;
   font-weight:400;
@@ -115,7 +114,11 @@
     3px 3px 0 rgba(254,3,124,.20);
 }
 
-/* ===================== HERO / MAIN CARD ===================== */
+[data-color-scheme="light"] .vp-title-main{
+  text-shadow:none!important;
+}
+
+/* ===================== STRUCTURE GÉNÉRALE ===================== */
 
 .profile-main.vp-hero{
   position:relative;
@@ -125,16 +128,18 @@
   align-items:start!important;
   margin:0 0 18px!important;
   padding:22px!important;
-  border:1px solid rgba(36,228,255,.18)!important;
-  border-top:2px solid rgba(42,233,255,.22)!important;
+  border:1px solid var(--vp-border-cyan,rgba(36,228,255,.18))!important;
+  border-top:2px solid var(--vp-border-cyan-soft,rgba(42,233,255,.22))!important;
   border-radius:22px!important;
-  background:
+  background:var(--vp-hero-bg,
     linear-gradient(90deg,rgba(4,6,20,.92) 0%,rgba(11,15,42,.64) 45%,rgba(4,6,20,.96) 100%),
-    var(--vp-header) center/cover no-repeat!important;
-  box-shadow:
+    var(--vp-header) center/cover no-repeat
+  )!important;
+  box-shadow:var(--vp-shadow-card,
     inset 0 0 0 1px rgba(255,255,255,.03),
     0 0 26px rgba(0,0,0,.36),
-    0 0 24px rgba(36,228,255,.06)!important;
+    0 0 24px rgba(36,228,255,.06)
+  )!important;
   overflow:hidden;
 }
 
@@ -142,10 +147,11 @@
   content:"";
   position:absolute;
   inset:0;
-  background:
+  background:var(--vp-hero-overlay,
     radial-gradient(circle at top left,rgba(36,228,255,.16),transparent 32%),
     radial-gradient(circle at top right,rgba(254,3,124,.17),transparent 36%),
-    linear-gradient(to bottom,rgba(4,6,20,.05),rgba(4,6,20,.72));
+    linear-gradient(to bottom,rgba(4,6,20,.05),rgba(4,6,20,.72))
+  );
   pointer-events:none;
 }
 
@@ -154,7 +160,7 @@
   position:absolute;
   right:24px;
   bottom:16px;
-  color:rgba(255,255,255,.045);
+  color:var(--vp-ghost,rgba(255,255,255,.045));
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:70px;
   font-weight:900;
@@ -186,7 +192,7 @@
   min-width:0;
 }
 
-/* ===================== AVATAR 200x320 EXACT ===================== */
+/* ===================== AVATAR ===================== */
 
 .profile-avatar,
 .profile-avatar.vp-avatar-card{
@@ -199,9 +205,9 @@
   max-height:320px!important;
   margin:0!important;
   padding:0!important;
-  border:1px solid rgba(36,228,255,.28)!important;
+  border:1px solid var(--vp-border-cyan-mid,rgba(36,228,255,.28))!important;
   border-radius:18px!important;
-  background:rgba(4,6,20,.50)!important;
+  background:var(--vp-avatar-bg,rgba(4,6,20,.50))!important;
   box-shadow:
     0 0 0 1px rgba(255,255,255,.03) inset,
     0 0 18px rgba(36,228,255,.12)!important;
@@ -210,21 +216,7 @@
 }
 
 .profile-avatar .vp-avatar,
-.vp-avatar{
-  display:block!important;
-  width:100%!important;
-  min-width:100%!important;
-  max-width:100%!important;
-  height:100%!important;
-  min-height:100%!important;
-  max-height:100%!important;
-  margin:0!important;
-  padding:0!important;
-  border:0!important;
-  border-radius:18px!important;
-  overflow:hidden!important;
-}
-
+.vp-avatar,
 .profile-avatar a,
 .profile-avatar span,
 .profile-avatar .vp-avatar a,
@@ -240,6 +232,8 @@
   max-height:100%!important;
   margin:0!important;
   padding:0!important;
+  border:0!important;
+  border-radius:18px!important;
   overflow:hidden!important;
 }
 
@@ -258,12 +252,13 @@
   padding:0!important;
   object-fit:cover!important;
   object-position:center center!important;
-  border:1px solid rgba(36,228,255,.52)!important;
+  border:1px solid var(--vp-border-cyan-strong,rgba(36,228,255,.52))!important;
   border-radius:18px!important;
-  background:#040614!important;
-  box-shadow:
+  background:var(--vp-bg,#040614)!important;
+  box-shadow:var(--vp-shadow-avatar,
     0 0 0 2px rgba(4,6,20,.85),
-    0 0 18px rgba(36,228,255,.22)!important;
+    0 0 18px rgba(36,228,255,.22)
+  )!important;
 }
 
 .profile-avatar br,
@@ -275,14 +270,17 @@
 
 .vp-identity{
   position:relative;
-  min-height:190px;
+  display:flex!important;
+  align-items:center!important;
+  min-height:130px!important;
   margin-bottom:0;
   padding:28px 24px 24px;
-  border:1px solid rgba(36,228,255,.18);
+  border:1px solid var(--vp-border-cyan,rgba(36,228,255,.18));
   border-radius:18px;
-  background:
+  background:var(--vp-identity-bg,
     radial-gradient(circle at top right,rgba(255,95,140,.12),transparent 36%),
-    rgba(4,6,20,.38);
+    rgba(4,6,20,.38)
+  );
   overflow:hidden;
 }
 
@@ -291,7 +289,7 @@
   position:absolute;
   right:16px;
   bottom:8px;
-  color:rgba(255,255,255,.045);
+  color:var(--vp-ghost,rgba(255,255,255,.045));
   font-family:"Barlow Condensed",Arial,sans-serif;
   font-size:70px;
   font-weight:900;
@@ -299,31 +297,17 @@
   pointer-events:none;
 }
 
-.vp-kicker{
-  position:relative;
-  z-index:2;
-  display:inline-flex;
-  width:max-content;
-  max-width:100%;
-  padding:5px 10px;
-  border:1px solid rgba(36,228,255,.28);
-  border-radius:999px;
-  background:rgba(4,6,20,.46);
-  color:var(--vp-cyan);
-  font-family:"Barlow Condensed",Arial,sans-serif;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  text-shadow:0 0 8px rgba(36,228,255,.35);
+.vp-kicker,
+.vp-rank{
+  display:none!important;
 }
 
 .profile-username,
 .vp-name{
   position:relative;
   z-index:2;
-  margin:10px 0 8px!important;
-  color:var(--vp-white)!important;
+  margin:0!important;
+  color:var(--vp-white,#ecfbff)!important;
   font-family:"Barlow Condensed",Arial,sans-serif!important;
   font-size:56px!important;
   font-weight:900!important;
@@ -335,29 +319,9 @@
     0 0 12px rgba(36,228,255,.18);
 }
 
-.vp-rank{
-  position:relative;
-  z-index:2;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  margin-bottom:0;
-  padding:6px 12px;
-  border:1px solid rgba(255,79,134,.26);
-  border-radius:999px;
-  background:rgba(4,6,20,.36);
-  color:var(--vp-pink);
-  font-family:"Barlow Condensed",Arial,sans-serif;
-  font-size:14px;
-  font-weight:900;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-
-.vp-rank::before{
-  content:"⛧";
-  color:var(--vp-cyan);
-  text-shadow:0 0 6px rgba(36,228,255,.52);
+[data-color-scheme="light"] .profile-username,
+[data-color-scheme="light"] .vp-name{
+  text-shadow:none!important;
 }
 
 /* ===================== BOXES ===================== */
@@ -367,16 +331,18 @@
   position:relative;
   margin:0!important;
   padding:14px!important;
-  border:1px solid rgba(36,228,255,.18)!important;
-  border-top:2px solid rgba(42,233,255,.22)!important;
+  border:1px solid var(--vp-border-cyan,rgba(36,228,255,.18))!important;
+  border-top:2px solid var(--vp-border-cyan-soft,rgba(42,233,255,.22))!important;
   border-radius:18px!important;
-  background:
+  background:var(--vp-box-bg,
     radial-gradient(circle at 12% 0%,rgba(36,228,255,.10),transparent 28%),
     radial-gradient(circle at 88% 12%,rgba(254,3,124,.12),transparent 32%),
-    linear-gradient(135deg,rgba(4,6,20,.92) 0%,rgba(11,15,42,.94) 45%,rgba(32,27,61,.94) 100%)!important;
-  box-shadow:
+    linear-gradient(135deg,rgba(4,6,20,.92) 0%,rgba(11,15,42,.94) 45%,rgba(32,27,61,.94) 100%)
+  )!important;
+  box-shadow:var(--vp-shadow-box,
     inset 0 0 0 1px rgba(255,255,255,.035),
-    0 0 18px rgba(0,0,0,.24)!important;
+    0 0 18px rgba(0,0,0,.24)
+  )!important;
   overflow:hidden;
 }
 
@@ -385,7 +351,7 @@
   content:"";
   position:absolute;
   inset:0;
-  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
+  background-image:radial-gradient(var(--vp-dot,rgba(255,255,255,.06)) 1px,transparent 1px);
   background-size:14px 14px;
   opacity:.10;
   pointer-events:none;
@@ -397,14 +363,14 @@
   z-index:2;
   margin:0 0 12px!important;
   padding:0 0 10px!important;
-  border-bottom:1px solid rgba(36,228,255,.18)!important;
-  color:var(--vp-cyan)!important;
+  border-bottom:1px solid var(--vp-border-cyan,rgba(36,228,255,.18))!important;
+  color:var(--vp-cyan,#24e4ff)!important;
   font-family:"Barlow Condensed",Arial,sans-serif!important;
   font-size:18px!important;
   font-weight:900!important;
   letter-spacing:1.6px!important;
   text-transform:uppercase!important;
-  text-shadow:0 0 8px rgba(36,228,255,.35);
+  text-shadow:var(--vp-shadow-cyan,0 0 8px rgba(36,228,255,.35));
   opacity:1!important;
 }
 
@@ -412,11 +378,16 @@
 .profile-card h3::before{
   content:"⛧";
   margin-right:7px;
-  color:var(--vp-pink);
-  text-shadow:0 0 6px rgba(255,79,134,.52);
+  color:var(--vp-pink,#ff4f86);
+  text-shadow:var(--vp-shadow-pink,0 0 6px rgba(255,79,134,.52));
 }
 
-/* ===================== FIELDS GÉNÉRAUX ===================== */
+/* cache le titre du bloc présence si encore présent dans le template */
+.vp-presence-box > h3{
+  display:none!important;
+}
+
+/* ===================== CHAMPS ===================== */
 
 .profile-field{
   position:relative;
@@ -428,19 +399,19 @@
   min-height:42px;
   margin:0 0 9px!important;
   padding:10px!important;
-  border:1px solid rgba(36,228,255,.14)!important;
+  border:1px solid var(--vp-border-cyan,rgba(36,228,255,.14))!important;
   border-radius:14px!important;
-  background:rgba(4,6,20,.24)!important;
+  background:var(--vp-soft-bg,rgba(4,6,20,.24))!important;
 }
 
 .profile-field:last-child{
   margin-bottom:0!important;
-  border-bottom:1px solid rgba(36,228,255,.14)!important;
+  border-bottom:1px solid var(--vp-border-cyan,rgba(36,228,255,.14))!important;
 }
 
 .profile-label{
   display:block;
-  color:var(--vp-cyan-soft)!important;
+  color:var(--vp-cyan-soft,#8cecff)!important;
   font-family:"Barlow Condensed",Arial,sans-serif!important;
   font-size:13px!important;
   font-weight:900!important;
@@ -453,17 +424,15 @@
 .profile-value{
   display:block;
   min-width:0;
-  color:var(--vp-text)!important;
+  color:var(--vp-text,#c8efff)!important;
   font-size:13px!important;
   font-weight:800!important;
   line-height:1.28!important;
   overflow-wrap:anywhere;
 }
 
-/* Images générales, sans casser l’avatar */
+/* images générales, sans casser l’avatar ni le rang */
 .profile-content .profile-value img,
-.profile-box img:not(.profile-avatar img):not(.vp-avatar img),
-.profile-card img:not(.profile-avatar img):not(.vp-avatar img),
 .profile-content img,
 .profile-rpg-image img{
   max-width:100%!important;
@@ -471,7 +440,7 @@
   border-radius:12px;
 }
 
-/* ===================== SIDEBAR 200PX — ANTI CASSE ===================== */
+/* ===================== SIDEBAR ===================== */
 
 .profile-sidebar .profile-field,
 .profile-sidebar .profile-presence .profile-field,
@@ -484,7 +453,6 @@
 
 .profile-sidebar .profile-value,
 .profile-sidebar .profile-value *,
-.profile-sidebar .profile-field a,
 .profile-sidebar .profile-field strong{
   word-break:normal!important;
   overflow-wrap:normal!important;
@@ -496,7 +464,8 @@
   width:100%!important;
 }
 
-.profile-sidebar .profile-value a{
+/* liens sidebar ordinaires uniquement, on exclut les groupes */
+.profile-sidebar .profile-value:not(.profile-groups) a{
   display:inline-flex!important;
   width:auto!important;
   max-width:100%!important;
@@ -504,39 +473,120 @@
   padding:0!important;
   border:0!important;
   background:transparent!important;
-  color:var(--vp-cyan-soft)!important;
+  color:var(--vp-cyan-soft,#8cecff)!important;
   box-shadow:none!important;
   text-align:left!important;
 }
 
-.profile-sidebar .profile-value a:hover{
-  color:var(--vp-pink)!important;
-  text-shadow:0 0 8px rgba(255,79,134,.35);
+.profile-sidebar .profile-value:not(.profile-groups) a:hover{
+  color:var(--vp-pink,#ff4f86)!important;
+  text-shadow:var(--vp-shadow-pink,0 0 8px rgba(255,79,134,.35));
 }
 
-/* ===================== GROUPES / LIENS PROFIL ===================== */
+/* ===================== RANG COLONNE GAUCHE ===================== */
 
-.profile-groups,
+.vp-rank-field .profile-value{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  text-align:center!important;
+}
+
+.vp-rank-field .profile-value img{
+  display:block!important;
+  width:auto!important;
+  max-width:95px!important;
+  max-height:80px!important;
+  height:auto!important;
+  object-fit:contain!important;
+  margin:6px auto 0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* ===================== GROUPES NATIFS FORUMACTIF ===================== */
+
+.profile-groups{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  justify-content:center!important;
+  gap:6px 8px!important;
+  text-align:center!important;
+}
+
+/* structure native : <div id="gX-name"><a>Groupe</a></div> */
+.profile-groups .vp-group-native,
+.profile-groups [id$="-name"]{
+  display:inline!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* surtout : aucune couleur forcée ici, pour laisser Forumactif appliquer les couleurs groupes */
+.profile-groups a,
+.profile-sidebar .profile-groups a,
+.profile-sidebar .profile-value.profile-groups a,
+.profile-groups .vp-group-native a,
+.profile-groups [id$="-name"] a{
+  display:inline!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  font-family:"Barlow Condensed",Arial,sans-serif!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  line-height:1.2!important;
+  letter-spacing:.7px!important;
+  text-transform:uppercase!important;
+  text-align:center!important;
+  text-decoration:none!important;
+  white-space:normal!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  text-shadow:none!important;
+}
+
+.profile-groups a:hover,
+.profile-groups .vp-group-native a:hover,
+.profile-groups [id$="-name"] a:hover{
+  filter:brightness(1.25);
+  text-shadow:0 0 7px currentColor!important;
+}
+
+/* ===================== LIENS STATS PROFIL ===================== */
+
 .profile-links{
   display:flex!important;
   flex-wrap:wrap;
   gap:7px;
 }
 
-.profile-sidebar .profile-groups{
-  justify-content:center!important;
-}
-
-.profile-groups a,
 .profile-links a{
   display:inline-flex!important;
   align-items:center;
   justify-content:center;
   padding:4px 9px!important;
-  border:1px solid rgba(255,79,134,.26)!important;
+  border:1px solid var(--vp-border-pink,rgba(255,79,134,.26))!important;
   border-radius:999px!important;
-  background:rgba(4,6,20,.30)!important;
-  color:var(--vp-pink)!important;
+  background:var(--vp-soft-bg-3,rgba(4,6,20,.30))!important;
+  color:var(--vp-pink,#ff4f86)!important;
   font-family:"Barlow Condensed",Arial,sans-serif!important;
   font-size:11px!important;
   font-weight:900!important;
@@ -549,13 +599,12 @@
   overflow-wrap:normal!important;
 }
 
-.profile-groups a:hover,
 .profile-links a:hover{
-  border-color:rgba(36,228,255,.45)!important;
-  color:var(--vp-cyan)!important;
+  border-color:var(--vp-border-cyan-strong,rgba(36,228,255,.45))!important;
+  color:var(--vp-cyan,#24e4ff)!important;
 }
 
-/* ===================== CONTACTS — TEXTE UNIQUEMENT / CENTRÉS ===================== */
+/* ===================== CONTACTS ===================== */
 
 .vp-contact-box{
   display:flex!important;
@@ -614,10 +663,10 @@
   min-height:38px!important;
   margin:0 auto!important;
   padding:7px 9px!important;
-  border:1px solid rgba(36,228,255,.22)!important;
+  border:1px solid var(--vp-border-cyan-soft,rgba(36,228,255,.22))!important;
   border-radius:12px!important;
-  background:rgba(4,6,20,.28)!important;
-  color:var(--vp-cyan-soft)!important;
+  background:var(--vp-soft-bg-2,rgba(4,6,20,.28))!important;
+  color:var(--vp-cyan-soft,#8cecff)!important;
   font-family:"Barlow Condensed",Arial,sans-serif!important;
   font-size:12px!important;
   font-weight:900!important;
@@ -638,13 +687,10 @@
 .vp-contact-box .vp-contact-field .profile-value a:hover,
 .vp-contact-box .vp-contact-text:hover,
 .vp-contact-text:hover{
-  border-color:rgba(255,79,134,.65)!important;
-  background:
-    linear-gradient(135deg,
-      rgba(110,32,92,.96) 0%,
-      rgba(164,38,106,.96) 48%,
-      rgba(255,79,134,.96) 100%
-    )!important;
+  border-color:var(--vp-border-pink-strong,rgba(255,79,134,.65))!important;
+  background:var(--vp-button-hover-bg,
+    linear-gradient(135deg,rgba(110,32,92,.96) 0%,rgba(164,38,106,.96) 48%,rgba(255,79,134,.96) 100%)
+  )!important;
   color:#fff!important;
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,.05),
@@ -663,14 +709,13 @@
   display:none!important;
 }
 
-/* Bloc administrer l'utilisateur dans contact */
 .vp-contact-extra{
   width:100%!important;
   margin-top:8px!important;
   padding:10px!important;
-  border:1px solid rgba(36,228,255,.14)!important;
+  border:1px solid var(--vp-border-cyan,rgba(36,228,255,.14))!important;
   border-radius:14px!important;
-  background:rgba(4,6,20,.24)!important;
+  background:var(--vp-soft-bg,rgba(4,6,20,.24))!important;
 }
 
 .vp-contact-extra .profile-label{
@@ -682,7 +727,7 @@
   display:block!important;
 }
 
-/* ===================== BOUTONS GÉNÉRAUX ===================== */
+/* ===================== BOUTONS ===================== */
 
 .vp-button,
 .profile-modern .button1,
@@ -695,11 +740,12 @@
   min-height:42px!important;
   min-width:0!important;
   padding:0 14px!important;
-  border:1px solid rgba(36,228,255,.26)!important;
+  border:1px solid var(--vp-border-cyan-mid,rgba(36,228,255,.26))!important;
   border-radius:14px!important;
-  background:
-    linear-gradient(135deg,rgba(12,20,54,.96) 0%,rgba(20,28,74,.96) 52%,rgba(39,28,86,.96) 100%)!important;
-  color:#ecfbff!important;
+  background:var(--vp-button-bg,
+    linear-gradient(135deg,rgba(12,20,54,.96) 0%,rgba(20,28,74,.96) 52%,rgba(39,28,86,.96) 100%)
+  )!important;
+  color:var(--vp-white,#ecfbff)!important;
   font-family:"Barlow Condensed",Arial,sans-serif!important;
   font-size:16px!important;
   font-weight:900!important;
@@ -724,13 +770,10 @@
 .profile-modern .button1:hover,
 .profile-modern .button2:hover,
 .profile-modern .followBtn:hover{
-  border-color:rgba(255,79,134,.65)!important;
-  background:
-    linear-gradient(135deg,
-      rgba(110,32,92,.96) 0%,
-      rgba(164,38,106,.96) 48%,
-      rgba(255,79,134,.96) 100%
-    )!important;
+  border-color:var(--vp-border-pink-strong,rgba(255,79,134,.65))!important;
+  background:var(--vp-button-hover-bg,
+    linear-gradient(135deg,rgba(110,32,92,.96) 0%,rgba(164,38,106,.96) 48%,rgba(255,79,134,.96) 100%)
+  )!important;
   color:#fff!important;
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,.05),
@@ -744,6 +787,16 @@
 .profile-modern .button2:active,
 .profile-modern .followBtn:active{
   transform:translateY(0);
+}
+
+[data-color-scheme="light"] .vp-contact-box .vp-contact-field .profile-value a:hover,
+[data-color-scheme="light"] .vp-contact-box .vp-contact-text:hover,
+[data-color-scheme="light"] .vp-contact-text:hover,
+[data-color-scheme="light"] .vp-button:hover,
+[data-color-scheme="light"] .profile-modern .button1:hover,
+[data-color-scheme="light"] .profile-modern .button2:hover,
+[data-color-scheme="light"] .profile-modern .followBtn:hover{
+  color:#fff!important;
 }
 
 /* ===================== CHAMPS TECHNIQUES ===================== */
@@ -764,10 +817,10 @@
   width:100%!important;
   min-height:120px;
   padding:10px!important;
-  border:1px solid rgba(36,228,255,.24)!important;
+  border:1px solid var(--vp-border-cyan-mid,rgba(36,228,255,.24))!important;
   border-radius:12px!important;
-  background:rgba(4,6,20,.46)!important;
-  color:var(--vp-white)!important;
+  background:var(--vp-admin-textarea-bg,rgba(4,6,20,.46))!important;
+  color:var(--vp-white,#ecfbff)!important;
   font-family:"Rajdhani",Arial,sans-serif!important;
   font-size:13px!important;
   font-weight:800!important;
@@ -798,9 +851,9 @@
   flex-wrap:wrap;
   gap:10px;
   padding:12px;
-  border:1px solid rgba(255,79,134,.22);
+  border:1px solid var(--vp-border-pink,rgba(255,79,134,.22));
   border-radius:14px;
-  background:rgba(4,6,20,.30);
+  background:var(--vp-awards-bg,rgba(4,6,20,.30));
 }
 
 /* ===================== RPG ===================== */
@@ -809,16 +862,18 @@
   position:relative;
   margin:0 0 18px!important;
   padding:22px!important;
-  border:1px solid rgba(36,228,255,.18)!important;
-  border-top:2px solid rgba(42,233,255,.22)!important;
+  border:1px solid var(--vp-border-cyan,rgba(36,228,255,.18))!important;
+  border-top:2px solid var(--vp-border-cyan-soft,rgba(42,233,255,.22))!important;
   border-radius:22px!important;
-  background:
+  background:var(--vp-rpg-bg,
     radial-gradient(circle at 12% 0%,rgba(36,228,255,.10),transparent 28%),
     radial-gradient(circle at 88% 12%,rgba(254,3,124,.12),transparent 32%),
-    linear-gradient(135deg,rgba(4,6,20,.98) 0%,rgba(11,15,42,.98) 45%,rgba(32,27,61,.98) 100%)!important;
-  box-shadow:
+    linear-gradient(135deg,rgba(4,6,20,.98) 0%,rgba(11,15,42,.98) 45%,rgba(32,27,61,.98) 100%)
+  )!important;
+  box-shadow:var(--vp-shadow-main,
     inset 0 0 0 1px rgba(255,255,255,.035),
-    0 0 26px rgba(0,0,0,.38)!important;
+    0 0 26px rgba(0,0,0,.38)
+  )!important;
   overflow:hidden;
 }
 
@@ -832,7 +887,7 @@
 .profile-rpg-image img{
   max-width:260px!important;
   height:auto!important;
-  border:1px solid rgba(36,228,255,.24);
+  border:1px solid var(--vp-border-cyan-mid,rgba(36,228,255,.24));
   border-radius:16px;
 }
 
@@ -854,7 +909,7 @@
 
 .form-error{
   margin-top:6px;
-  color:var(--vp-pink);
+  color:var(--vp-pink,#ff4f86);
   font-size:12px;
   font-weight:800;
 }
@@ -862,13 +917,18 @@
 /* ===================== CLEANUP ===================== */
 
 .profile-modern .italic{
-  color:var(--vp-muted)!important;
+  color:var(--vp-muted,#7ec7e5)!important;
   font-style:normal!important;
   font-weight:700;
 }
 
 .profile-modern strong{
-  color:var(--vp-white)!important;
+  color:var(--vp-white,#ecfbff)!important;
+}
+
+.profile-groups strong,
+.profile-groups strong *{
+  color:inherit!important;
 }
 
 .profile-modern br + br{
@@ -945,336 +1005,4 @@
     min-width:0!important;
     max-width:100%!important;
   }
-}
-/* =========================================================
-   PATCH EDISON — PROFIL AFFICHÉ
-   À placer en bas de profil_visu.css
-========================================================= */
-
-.vp-page-title{
-  color:var(--vp-cyan)!important;
-}
-
-.vp-title{
-  border-color:var(--vp-border-cyan);
-  border-top-color:var(--vp-border-cyan-soft);
-  background:var(--vp-title-bg);
-  box-shadow:var(--vp-shadow-main);
-}
-
-.vp-title::after{
-  color:var(--vp-ghost);
-}
-
-.vp-title-kicker{
-  color:var(--vp-cyan);
-  text-shadow:var(--vp-shadow-cyan);
-}
-
-.vp-title-main{
-  color:var(--vp-white);
-}
-
-[data-color-scheme="light"] .vp-title-main{
-  text-shadow:
-    0 0 8px rgba(0,127,163,.16),
-    0 0 18px rgba(201,38,98,.08);
-}
-
-.profile-main.vp-hero{
-  border-color:var(--vp-border-cyan)!important;
-  border-top-color:var(--vp-border-cyan-soft)!important;
-  background:var(--vp-hero-bg)!important;
-  box-shadow:var(--vp-shadow-card)!important;
-}
-
-.profile-main.vp-hero::before{
-  background:var(--vp-hero-overlay);
-}
-
-.profile-main.vp-hero::after,
-.vp-identity::after{
-  color:var(--vp-ghost);
-}
-
-.profile-avatar,
-.profile-avatar.vp-avatar-card{
-  border-color:var(--vp-border-cyan-mid)!important;
-  background:var(--vp-avatar-bg)!important;
-}
-
-.profile-avatar img,
-.vp-avatar img,
-.profile-modern .profile-avatar img,
-.profile-modern .vp-avatar img{
-  border-color:var(--vp-border-cyan-strong)!important;
-  background:var(--vp-bg)!important;
-  box-shadow:var(--vp-shadow-avatar)!important;
-}
-
-.vp-identity{
-  border-color:var(--vp-border-cyan);
-  background:var(--vp-identity-bg);
-}
-
-.vp-kicker{
-  border-color:var(--vp-border-cyan-mid);
-  background:var(--vp-soft-bg-5);
-  color:var(--vp-cyan);
-  text-shadow:var(--vp-shadow-cyan);
-}
-
-.profile-username,
-.vp-name{
-  color:var(--vp-white)!important;
-}
-
-[data-color-scheme="light"] .profile-username,
-[data-color-scheme="light"] .vp-name{
-  text-shadow:none;
-}
-
-.vp-rank{
-  border-color:var(--vp-border-pink);
-  background:var(--vp-soft-bg-4);
-  color:var(--vp-pink);
-}
-
-.vp-rank::before{
-  color:var(--vp-cyan);
-  text-shadow:var(--vp-shadow-cyan);
-}
-
-.profile-box,
-.vp-box{
-  border-color:var(--vp-border-cyan)!important;
-  border-top-color:var(--vp-border-cyan-soft)!important;
-  background:var(--vp-box-bg)!important;
-  box-shadow:var(--vp-shadow-box)!important;
-}
-
-.profile-box::before,
-.vp-box::before{
-  background-image:radial-gradient(var(--vp-dot) 1px,transparent 1px);
-}
-
-.profile-box h3,
-.profile-card h3{
-  border-bottom-color:var(--vp-border-cyan)!important;
-  color:var(--vp-cyan)!important;
-  text-shadow:var(--vp-shadow-cyan);
-}
-
-.profile-box h3::before,
-.profile-card h3::before{
-  color:var(--vp-pink);
-  text-shadow:var(--vp-shadow-pink);
-}
-
-.profile-field{
-  border-color:var(--vp-border-cyan)!important;
-  background:var(--vp-soft-bg)!important;
-}
-
-.profile-field:last-child{
-  border-bottom-color:var(--vp-border-cyan)!important;
-}
-
-.profile-label{
-  color:var(--vp-cyan-soft)!important;
-}
-
-.profile-value{
-  color:var(--vp-text)!important;
-}
-
-.profile-sidebar .profile-value a{
-  color:var(--vp-cyan-soft)!important;
-}
-
-.profile-sidebar .profile-value a:hover{
-  color:var(--vp-pink)!important;
-  text-shadow:var(--vp-shadow-pink);
-}
-
-.profile-groups a,
-.profile-links a{
-  border-color:var(--vp-border-pink)!important;
-  background:var(--vp-soft-bg-3)!important;
-  color:var(--vp-pink)!important;
-}
-
-.profile-groups a:hover,
-.profile-links a:hover{
-  border-color:var(--vp-border-cyan-strong)!important;
-  color:var(--vp-cyan)!important;
-}
-
-.vp-contact-extra{
-  border-color:var(--vp-border-cyan)!important;
-  background:var(--vp-soft-bg)!important;
-}
-
-.vp-contact-box .vp-contact-field .profile-value a,
-.vp-contact-box .vp-contact-text,
-.vp-contact-text{
-  border-color:var(--vp-border-cyan-soft)!important;
-  background:var(--vp-soft-bg-2)!important;
-  color:var(--vp-cyan-soft)!important;
-}
-
-.vp-contact-box .vp-contact-field .profile-value a:hover,
-.vp-contact-box .vp-contact-text:hover,
-.vp-contact-text:hover{
-  border-color:var(--vp-border-pink-strong)!important;
-  background:var(--vp-button-hover-bg)!important;
-  color:#fff!important;
-}
-
-.vp-button,
-.profile-modern .button1,
-.profile-modern .button2,
-.profile-modern .followBtn{
-  border-color:var(--vp-border-cyan-mid)!important;
-  background:var(--vp-button-bg)!important;
-  color:var(--vp-white)!important;
-}
-
-.vp-button:hover,
-.profile-modern .button1:hover,
-.profile-modern .button2:hover,
-.profile-modern .followBtn:hover{
-  border-color:var(--vp-border-pink-strong)!important;
-  background:var(--vp-button-hover-bg)!important;
-  color:#fff!important;
-}
-
-.profile-admin-comment textarea{
-  border-color:var(--vp-border-cyan-mid)!important;
-  background:var(--vp-admin-textarea-bg)!important;
-  color:var(--vp-white)!important;
-}
-
-.awards_block.simple{
-  border-color:var(--vp-border-pink);
-  background:var(--vp-awards-bg);
-}
-
-.vp-rpg-card{
-  border-color:var(--vp-border-cyan)!important;
-  border-top-color:var(--vp-border-cyan-soft)!important;
-  background:var(--vp-rpg-bg)!important;
-  box-shadow:var(--vp-shadow-main)!important;
-}
-
-.profile-rpg-image img{
-  border-color:var(--vp-border-cyan-mid);
-}
-
-.profile-modern .italic{
-  color:var(--vp-muted)!important;
-}
-
-.profile-modern strong{
-  color:var(--vp-white)!important;
-}
-
-.form-error{
-  color:var(--vp-pink);
-}
-
-[data-color-scheme="light"] .vp-title-main,
-[data-color-scheme="light"] .profile-username,
-[data-color-scheme="light"] .vp-name{
-  text-shadow:none!important;
-}
-
-[data-color-scheme="light"] .vp-contact-box .vp-contact-field .profile-value a:hover,
-[data-color-scheme="light"] .vp-contact-box .vp-contact-text:hover,
-[data-color-scheme="light"] .vp-contact-text:hover,
-[data-color-scheme="light"] .vp-button:hover,
-[data-color-scheme="light"] .profile-modern .button1:hover,
-[data-color-scheme="light"] .profile-modern .button2:hover,
-[data-color-scheme="light"] .profile-modern .followBtn:hover{
-  color:#fff!important;
-}
-
-
-
-
-
-
-/* =========================================================
-   PATCH PROFIL — GROUPES NATIFS + RANG PLUS PETIT
-========================================================= */
-
-/* retire le forçage rose/cyan sur les groupes */
-.profile-groups a,
-.profile-sidebar .profile-groups a,
-.profile-sidebar .profile-value.profile-groups a{
-  color:inherit!important;
-  text-shadow:none!important;
-}
-
-/* garde le style bouton/pastille sans écraser la couleur du groupe */
-.profile-groups a{
-  border-color:rgba(36,228,255,.22)!important;
-  background:rgba(4,6,20,.22)!important;
-}
-
-.profile-groups a:hover{
-  border-color:rgba(255,79,134,.45)!important;
-  background:rgba(4,6,20,.34)!important;
-  filter:brightness(1.18);
-}
-
-/* si Forumactif met la couleur dans un span interne */
-.profile-groups a span,
-.profile-sidebar .profile-groups a span{
-  color:inherit!important;
-}
-
-/* réduit l'image du rang dans la colonne gauche */
-.vp-rank-field .profile-value{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  gap:6px!important;
-}
-
-.vp-rank-field .profile-value img{
-  display:block!important;
-  width:auto!important;
-  max-width:105px!important;
-  max-height:95px!important;
-  height:auto!important;
-  object-fit:contain!important;
-  margin:6px auto 0!important;
-  border:0!important;
-  border-radius:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-}
-
-/* réduit aussi l'image du rang dans le bandeau identité */
-.vp-rank img{
-  display:block!important;
-  width:auto!important;
-  max-width:120px!important;
-  max-height:90px!important;
-  height:auto!important;
-  object-fit:contain!important;
-  margin:0!important;
-  border:0!important;
-  border-radius:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-}
-
-/* évite que le bloc rang devienne énorme si l'image est dedans */
-.vp-rank{
-  max-width:260px;
-  align-items:center!important;
-  justify-content:center!important;
-  flex-wrap:wrap!important;
 }

@@ -6,7 +6,213 @@
 ========================================================= */
 
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800;900&family=Monoton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
 
+/* =========================================================
+   DEMANDE DE PARTENARIAT — LEMEGETON
+========================================================= */
+
+.corpsfichefo,
+.corpsfichefo *{
+  box-sizing:border-box;
+}
+
+.corpsfichefo{
+  width:720px;
+  max-width:100%;
+  margin:30px auto;
+  padding:22px;
+  position:relative;
+  overflow:hidden;
+  color:var(--lem-text,#b9cce8);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:16px;
+  font-weight:600;
+  line-height:1.75;
+  text-align:left;
+  white-space:pre-line;
+  border:1px solid var(--lem-line,rgba(36,228,255,.26));
+  border-radius:22px;
+  background:radial-gradient(circle at 12% 0%,rgba(36,228,255,.16),transparent 34%),radial-gradient(circle at 92% 8%,rgba(254,3,124,.14),transparent 32%),radial-gradient(circle at 50% 100%,rgba(184,140,255,.12),transparent 42%),linear-gradient(180deg,var(--lem-bg,#0a122d) 0%,var(--lem-bg-deep,#070b18) 100%);
+  box-shadow:0 28px 70px rgba(0,0,0,.48),0 0 24px rgba(36,228,255,.14),inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+.corpsfichefo:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.18;
+  background-image:radial-gradient(circle,rgba(140,236,255,.75) 1px,transparent 1.4px),linear-gradient(135deg,transparent 0 48%,rgba(255,79,134,.10) 49% 51%,transparent 52% 100%);
+  background-size:18px 18px,58px 58px;
+}
+
+.corpsfichefo:after{
+  content:"PARTNER";
+  position:absolute;
+  right:12px;
+  bottom:-8px;
+  z-index:0;
+  color:rgba(255,255,255,.032);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:86px;
+  line-height:1;
+  letter-spacing:2px;
+  pointer-events:none;
+}
+
+.corpsfichefo > *{
+  position:relative;
+  z-index:1;
+}
+
+/* =========================
+   ENTETE
+========================= */
+
+.entetefichefo{
+  position:relative;
+  overflow:hidden;
+  margin:0 0 20px;
+  padding:28px 24px;
+  border:1px solid rgba(140,236,255,.30);
+  border-left:5px solid var(--lem-pink,#fe037c);
+  border-radius:18px;
+  background:linear-gradient(90deg,rgba(5,8,22,.94),rgba(24,18,55,.72)),radial-gradient(circle at 14% 0%,rgba(36,228,255,.20),transparent 38%),radial-gradient(circle at 88% 18%,rgba(254,3,124,.22),transparent 36%);
+  color:var(--lem-cyan-soft,#8cecff);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:clamp(42px,7vw,70px);
+  font-weight:400;
+  line-height:.9;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-shadow:0 0 6px rgba(140,236,255,.85),0 0 18px rgba(36,228,255,.58),0 0 34px rgba(36,228,255,.30),3px 3px 0 rgba(254,3,124,.86),-2px -2px 0 rgba(184,140,255,.34);
+  box-shadow:inset 0 0 48px rgba(5,10,25,.78),0 14px 32px rgba(0,0,0,.30);
+}
+
+.entetefichefo:before{
+  content:"AFFILIATION";
+  position:absolute;
+  right:18px;
+  bottom:8px;
+  color:rgba(255,255,255,.045);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:42px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  pointer-events:none;
+}
+
+/* =========================
+   LIBELLES
+========================= */
+
+.corpsfichefo b,
+.corpsfichefo strong{
+  display:inline-block;
+  margin:8px 6px 2px 0;
+  color:var(--lem-white,#d8ecff);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:18px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  text-shadow:0 0 10px rgba(36,228,255,.24);
+}
+
+/* =========================
+   ZONES CODE
+========================= */
+
+.corpsfichefo code,
+.corpsfichefo pre,
+.corpsfichefo .codebox,
+.corpsfichefo dl.codebox,
+.corpsfichefo .cont_code,
+.corpsfichefo .code{
+  display:block;
+  width:100%;
+  margin:10px 0 16px;
+  padding:14px 16px;
+  overflow:auto;
+  white-space:pre-wrap;
+  word-break:break-word;
+  border:1px solid rgba(140,236,255,.22);
+  border-left:4px solid var(--lem-cyan,#24e4ff);
+  border-radius:14px;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.018)),rgba(7,11,24,.72);
+  color:var(--lem-cyan-soft,#8cecff);
+  font-family:Consolas,"Courier New",monospace;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.55;
+  text-align:left;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 0 18px rgba(36,228,255,.08);
+}
+
+.corpsfichefo .codebox dt{
+  margin:-14px -16px 12px;
+  padding:8px 12px;
+  border-bottom:1px solid rgba(140,236,255,.18);
+  background:rgba(36,228,255,.07);
+  color:var(--lem-pink-soft,#ff4f86);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:14px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.corpsfichefo .codebox dd{
+  margin:0;
+  padding:0;
+}
+
+/* =========================
+   LIENS
+========================= */
+
+.corpsfichefo a{
+  color:var(--lem-cyan-soft,#8cecff);
+  font-weight:900;
+  text-decoration:none;
+  border-bottom:1px solid rgba(140,236,255,.42);
+  transition:.2s ease;
+}
+
+.corpsfichefo a:hover{
+  color:var(--lem-pink-soft,#ff4f86);
+  border-bottom-color:var(--lem-pink,#fe037c);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:680px){
+  .corpsfichefo{
+    padding:16px;
+    font-size:15px;
+  }
+
+  .entetefichefo{
+    padding:22px 18px;
+    font-size:38px;
+  }
+
+  .entetefichefo:before{
+    font-size:32px;
+  }
+
+  .corpsfichefo b,
+  .corpsfichefo strong{
+    font-size:16px;
+  }
+}
 /* =========================================================
 RGL — FICHE ADMIN LEMEGETON
 CSS nettoyé / stable Forumactif

@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap");
 
 .newsfaq,.newsfaq * {
   box-sizing:border-box;
@@ -1166,47 +1166,6 @@
     height:88px;
   }
 }
-
-
-/* =========================
-   PATCH FINAL IFRAME FOND MIDNIGHT
-========================= */
- 
-
- 
-
-.newsfaq {
-  margin:0 auto!important;
-  padding:24px!important;
-  background:#0a122d!important;
-  background-color:#0a122d!important;
-  box-shadow:none!important;
-  border-radius:22px!important;
-}
-
-.newsfaq-box {
-  margin:0!important;
-}/* PATCH FINAL IFRAME MIDNIGHT */
-:root{
-  color-scheme:dark!important;
-}
-
- 
-
-.newsfaq{
-  margin:0 auto!important;
-  padding:24px!important;
-  background:#0a122d!important;
-  background-color:#0a122d!important;
-  box-shadow:none!important;
-  border-radius:22px!important;
-}
-
-.newsfaq-box{
-  margin:0!important;
-}
-
-
 
 
 

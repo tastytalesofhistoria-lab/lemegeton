@@ -81,20 +81,8 @@
 }
 
 .entetefichefo:before{
-  content:"FAVORABILITE";
-  position:absolute;
-  right:18px;
-  bottom:8px;
-  color:rgba(255,255,255,.045);
-  font-family:"Barlow Condensed",Arial,sans-serif;
-  font-size:42px;
-  font-weight:900;
-  line-height:1;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  pointer-events:none;
+  content:none;
 }
-
 .titrefiche{
   display:flex;
   align-items:center;

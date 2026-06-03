@@ -1,62 +1,68 @@
 /* =========================================================
    LEMEGETON — PAGE RECHERCHE / RESULTATS SUJETS
+   Cible réelle Forumactif ModernBB
    ========================================================= */
 
-#search{
+#main-content>.container:has(form[action^="/search"]),
+#main-content>.container:has(form[action*="search_id"]){
   max-width:1100px;
   margin:0 auto;
-  padding:35px 18px 60px;
+  padding:38px 24px 70px;
 }
 
-#search .page-title,
-#search h1.page-title{
-  margin:0 0 28px;
+#main-content>.container:has(form[action^="/search"]) .page-title,
+#main-content>.container:has(form[action*="search_id"]) .page-title{
+  margin:0 0 30px;
   font-family:Monoton,Arial,sans-serif;
-  font-size:clamp(34px,4vw,62px);
+  font-size:clamp(34px,4vw,58px);
   font-weight:400;
   letter-spacing:2px;
   color:#8cecff;
-  text-shadow:0 0 12px rgba(25,217,255,.8),0 0 30px rgba(255,79,124,.28);
+  text-shadow:0 0 12px rgba(25,217,255,.75),0 0 28px rgba(255,79,124,.28);
 }
 
-#search .topicslist_row{
+#main-content>.container:has(form[action^="/search"]) .topicslist_row,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_row{
   position:relative;
-  display:grid;
-  grid-template-columns:90px minmax(0,1fr) 125px 230px;
+  display:grid!important;
+  grid-template-columns:92px minmax(0,1fr) 135px 230px;
   gap:16px;
   align-items:stretch;
-  margin:0 0 18px;
-  padding:14px;
-  border:1px solid rgba(25,217,255,.35);
+  margin:0 0 18px!important;
+  padding:14px!important;
+  border:1px solid rgba(25,217,255,.36)!important;
   border-radius:18px;
   background:
-    linear-gradient(135deg,rgba(25,217,255,.14),rgba(255,79,124,.16)),
-    rgba(10,18,45,.84);
-  box-shadow:0 0 22px rgba(25,217,255,.12),inset 0 0 20px rgba(255,255,255,.03);
+    linear-gradient(135deg,rgba(25,217,255,.16),rgba(255,79,124,.14)),
+    rgba(10,18,45,.88)!important;
+  box-shadow:0 0 22px rgba(25,217,255,.14),inset 0 0 22px rgba(255,255,255,.03);
   overflow:hidden;
 }
 
-#search .topicslist_row:before{
+#main-content>.container:has(form[action^="/search"]) .topicslist_row:before,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_row:before{
   content:"";
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:linear-gradient(90deg,rgba(25,217,255,.16),transparent 34%,rgba(255,79,124,.16));
-  opacity:.65;
+  background:linear-gradient(90deg,rgba(25,217,255,.16),transparent 42%,rgba(255,79,124,.15));
+  opacity:.75;
 }
 
-#search .topicslist_row > *{
+#main-content>.container:has(form[action^="/search"]) .topicslist_row>*,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_row>*{
   position:relative;
   z-index:1;
 }
 
-#search .topicslist-img{
-  width:90px;
-  min-height:90px;
-  border-radius:15px;
-  border:1px solid rgba(140,236,255,.35);
+#main-content>.container:has(form[action^="/search"]) .topicslist-img,
+#main-content>.container:has(form[action*="search_id"]) .topicslist-img{
+  width:92px!important;
+  min-height:92px!important;
+  border-radius:16px;
+  border:1px solid rgba(140,236,255,.38);
   background:
-    radial-gradient(circle at 50% 35%,rgba(25,217,255,.35),transparent 45%),
+    radial-gradient(circle at 50% 38%,rgba(25,217,255,.34),transparent 48%),
     rgba(5,8,25,.72);
   display:flex;
   align-items:center;
@@ -64,66 +70,83 @@
   overflow:hidden;
 }
 
-#search .topicslist-img img{
+#main-content>.container:has(form[action^="/search"]) .topicslist-img img,
+#main-content>.container:has(form[action*="search_id"]) .topicslist-img img{
   width:100%;
   height:100%;
   object-fit:cover;
 }
 
-#search .topicslist_infos{
+#main-content>.container:has(form[action^="/search"]) .topicslist_infos,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_infos{
   min-width:0;
   display:flex;
   flex-direction:column;
   justify-content:center;
   gap:6px;
-  padding:10px 12px;
-  border-radius:14px;
-  background:rgba(5,8,25,.34);
+  padding:12px 14px!important;
+  border-radius:15px;
+  background:rgba(5,8,25,.35)!important;
 }
 
-#search .topicslist_infos > a,
-#search .topicslist_infos .topictitle{
+#main-content>.container:has(form[action^="/search"]) .topicslist_infos a,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_infos a{
+  text-decoration:none;
+}
+
+#main-content>.container:has(form[action^="/search"]) .topicslist_infos>a:first-child,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_infos>a:first-child,
+#main-content>.container:has(form[action^="/search"]) .topicslist_infos .topictitle,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_infos .topictitle{
+  display:block;
+  margin:0 0 4px;
   font-family:Rajdhani,Arial,sans-serif;
   font-size:24px;
   line-height:1.05;
   font-weight:800;
   text-transform:uppercase;
   letter-spacing:.8px;
-  color:#ecfbff;
-  text-shadow:0 0 9px rgba(25,217,255,.45);
+  color:#ecfbff!important;
+  text-shadow:0 0 9px rgba(25,217,255,.48);
 }
 
-#search .topicslist_infos a:hover{
-  color:#8cecff;
-  text-shadow:0 0 12px rgba(25,217,255,.8);
+#main-content>.container:has(form[action^="/search"]) .topicslist_infos>a:first-child:hover,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_infos>a:first-child:hover{
+  color:#8cecff!important;
 }
 
-#search .topicslist_infos br{
+#main-content>.container:has(form[action^="/search"]) .topicslist_infos br,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_infos br{
   display:none;
 }
 
-#search .topicslist_infos .gensmall,
-#search .topicslist_infos span,
-#search .topicslist_infos div{
+#main-content>.container:has(form[action^="/search"]) .topicslist_infos,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_infos,
+#main-content>.container:has(form[action^="/search"]) .topicslist_infos span,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_infos span{
   font-family:Rajdhani,Arial,sans-serif;
   font-size:15px;
   color:#b9ecff;
 }
 
-#search .topicslist_infos a[href^="/u"],
-#search .topicslist-lastpost a[href^="/u"]{
+/* On ne force PAS les couleurs de pseudos */
+#main-content>.container:has(form[action^="/search"]) .topicslist_infos a[href^="/u"],
+#main-content>.container:has(form[action*="search_id"]) .topicslist_infos a[href^="/u"],
+#main-content>.container:has(form[action^="/search"]) .topicslist-lastpost a[href^="/u"],
+#main-content>.container:has(form[action*="search_id"]) .topicslist-lastpost a[href^="/u"]{
   font-weight:800;
   text-shadow:none;
 }
 
-#search .topicslist-stats{
+#main-content>.container:has(form[action^="/search"]) .topicslist-stats,
+#main-content>.container:has(form[action*="search_id"]) .topicslist-stats{
   display:flex;
   flex-direction:column;
   justify-content:center;
   gap:7px;
-  padding:12px;
-  border-radius:14px;
-  background:rgba(10,18,45,.72);
+  padding:12px!important;
+  border-radius:15px;
+  background:rgba(10,18,45,.74)!important;
   border:1px solid rgba(255,255,255,.08);
   font-family:Rajdhani,Arial,sans-serif;
   font-size:17px;
@@ -132,22 +155,15 @@
   text-align:center;
 }
 
-#search .topicslist-stats strong,
-#search .topicslist-stats b{
-  display:block;
-  font-size:22px;
-  color:#8cecff;
-  text-shadow:0 0 9px rgba(25,217,255,.5);
-}
-
-#search .topicslist-lastpost{
+#main-content>.container:has(form[action^="/search"]) .topicslist-lastpost,
+#main-content>.container:has(form[action*="search_id"]) .topicslist-lastpost{
   display:flex;
   flex-direction:column;
   justify-content:center;
   gap:6px;
-  padding:12px 14px;
-  border-radius:14px;
-  background:linear-gradient(135deg,rgba(255,79,124,.16),rgba(25,217,255,.08));
+  padding:12px 14px!important;
+  border-radius:15px;
+  background:linear-gradient(135deg,rgba(255,79,124,.17),rgba(25,217,255,.09))!important;
   border:1px solid rgba(255,79,124,.28);
   font-family:Rajdhani,Arial,sans-serif;
   font-size:16px;
@@ -155,7 +171,8 @@
   color:#c8efff;
 }
 
-#search .topicslist-lastpost:before{
+#main-content>.container:has(form[action^="/search"]) .topicslist-lastpost:before,
+#main-content>.container:has(form[action*="search_id"]) .topicslist-lastpost:before{
   content:"Dernier message";
   display:block;
   width:max-content;
@@ -172,107 +189,51 @@
   color:#8cecff;
 }
 
-#search .topicslist-lastpost a{
-  font-weight:800;
-}
-
-#search .topicslist-lastpost a[href*="view=newest"],
-#search .topicslist-lastpost a[href*="goto="]{
-  display:inline-flex;
-  width:28px;
-  height:28px;
-  align-items:center;
-  justify-content:center;
-  margin-top:5px;
-  border-radius:50%;
-  background:rgba(25,217,255,.15);
-  border:1px solid rgba(25,217,255,.45);
-  color:#8cecff;
-  box-shadow:0 0 12px rgba(25,217,255,.25);
-}
-
-#search .topicslist-lastpost a[href*="view=newest"]:hover,
-#search .topicslist-lastpost a[href*="goto="]:hover{
-  background:rgba(255,79,124,.22);
-  border-color:rgba(255,79,124,.55);
-  color:#ff8eaf;
-}
-
-#search .pagination{
-  margin:25px 0;
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  font-family:Rajdhani,Arial,sans-serif;
-}
-
-#search .pagination span,
-#search .pagination a{
-  min-width:32px;
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(10,18,45,.82);
-  border:1px solid rgba(25,217,255,.32);
-  color:#c8efff;
-  text-align:center;
-}
-
-#search .pagination a:hover,
-#search .pagination span strong{
-  color:#8cecff;
-  text-shadow:0 0 8px rgba(25,217,255,.7);
-}
-
-/* Nettoyage des vieux fonds Forumactif */
-#search .topicslist_row,
-#search .topicslist_row:nth-child(even),
-#search .topicslist_row:nth-child(odd){
-  background-color:transparent!important;
-}
-
-#search .topicslist_row:hover{
+#main-content>.container:has(form[action^="/search"]) .topicslist_row:hover,
+#main-content>.container:has(form[action*="search_id"]) .topicslist_row:hover{
   transform:translateY(-2px);
-  border-color:rgba(140,236,255,.65);
+  border-color:rgba(140,236,255,.65)!important;
   box-shadow:0 0 28px rgba(25,217,255,.2),0 0 22px rgba(255,79,124,.12);
 }
 
-/* Responsive */
 @media(max-width:900px){
-  #search .topicslist_row{
+  #main-content>.container:has(form[action^="/search"]) .topicslist_row,
+  #main-content>.container:has(form[action*="search_id"]) .topicslist_row{
     grid-template-columns:78px minmax(0,1fr);
   }
 
-  #search .topicslist-img{
-    width:78px;
-    min-height:78px;
+  #main-content>.container:has(form[action^="/search"]) .topicslist-img,
+  #main-content>.container:has(form[action*="search_id"]) .topicslist-img{
+    width:78px!important;
+    min-height:78px!important;
   }
 
-  #search .topicslist-stats,
-  #search .topicslist-lastpost{
-    grid-column:1 / -1;
-  }
-
-  #search .topicslist-lastpost{
-    display:block;
+  #main-content>.container:has(form[action^="/search"]) .topicslist-stats,
+  #main-content>.container:has(form[action*="search_id"]) .topicslist-stats,
+  #main-content>.container:has(form[action^="/search"]) .topicslist-lastpost,
+  #main-content>.container:has(form[action*="search_id"]) .topicslist-lastpost{
+    grid-column:1/-1;
   }
 }
 
 @media(max-width:560px){
-  #search{
-    padding:25px 10px 45px;
+  #main-content>.container:has(form[action^="/search"]),
+  #main-content>.container:has(form[action*="search_id"]){
+    padding:26px 10px 45px;
   }
 
-  #search .topicslist_row{
+  #main-content>.container:has(form[action^="/search"]) .topicslist_row,
+  #main-content>.container:has(form[action*="search_id"]) .topicslist_row{
     grid-template-columns:1fr;
-    padding:12px;
   }
 
-  #search .topicslist-img{
+  #main-content>.container:has(form[action^="/search"]) .topicslist-img,
+  #main-content>.container:has(form[action*="search_id"]) .topicslist-img{
     display:none;
   }
 
-  #search .topicslist_infos > a,
-  #search .topicslist_infos .topictitle{
+  #main-content>.container:has(form[action^="/search"]) .topicslist_infos>a:first-child,
+  #main-content>.container:has(form[action*="search_id"]) .topicslist_infos>a:first-child{
     font-size:20px;
   }
 }

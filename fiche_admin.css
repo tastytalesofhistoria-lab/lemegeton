@@ -92,7 +92,7 @@
 }
 
 .entetefichefo:before{
-  content:"AFFILIATION";
+  content:"";
   position:absolute;
   right:18px;
   bottom:8px;

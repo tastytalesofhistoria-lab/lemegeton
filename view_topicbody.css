@@ -982,63 +982,6 @@
 }
 
 /* =========================
-   BOUTONS CONTACT HERO
-========================= */
-
-.promess-contact-buttons.promess{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:10px;
-}
-
-.promess-contact-field.promess{
-  display:inline-flex;
-}
-
-.promess-contact-buttons.promess a{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:88px;
-  height:34px;
-  padding:0 16px;
-  overflow:hidden;
-  border-left:3px solid var(--pm-cyan)!important;
-  border-radius:10px;
-  background:var(--pm-contact-button-bg)!important;
-  box-shadow:var(--pm-shadow-card)!important;
-  font-family:"Barlow Condensed",Rajdhani,Arial,sans-serif;
-  font-size:12px;
-  font-weight:700;
-  text-decoration:none!important;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-  transition:.25s ease;
-}
-
-.promess-contact-buttons.promess a:hover{
-  transform:translateY(-1px);
-  border-color:var(--pm-button-hover-border)!important;
-  background:var(--pm-contact-button-hover-bg)!important;
-  color:#fff!important;
-}
-
-.promess-btn-fiche{
-  color:var(--pm-btn-fiche)!important;
-}
-
-.promess-btn-dating{
-  color:var(--pm-btn-dating)!important;
-}
-
-.promess-btn-looking{
-  color:var(--pm-btn-looking)!important;
-}
-
-/* =========================
    HEADER MESSAGE
 ========================= */
 
@@ -1937,9 +1880,6 @@
   display:none!important;
 }
 
-.promess-contact-buttons.promess .promess-contact-field img{
-  display:none!important;
-}
 
 .promess-hero-media.promess img.promess-hero-thumb.promess{
   width:180px!important;

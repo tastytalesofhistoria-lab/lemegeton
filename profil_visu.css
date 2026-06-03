@@ -1198,3 +1198,83 @@
 [data-color-scheme="light"] .profile-modern .followBtn:hover{
   color:#fff!important;
 }
+
+
+
+
+
+
+/* =========================================================
+   PATCH PROFIL — GROUPES NATIFS + RANG PLUS PETIT
+========================================================= */
+
+/* retire le forçage rose/cyan sur les groupes */
+.profile-groups a,
+.profile-sidebar .profile-groups a,
+.profile-sidebar .profile-value.profile-groups a{
+  color:inherit!important;
+  text-shadow:none!important;
+}
+
+/* garde le style bouton/pastille sans écraser la couleur du groupe */
+.profile-groups a{
+  border-color:rgba(36,228,255,.22)!important;
+  background:rgba(4,6,20,.22)!important;
+}
+
+.profile-groups a:hover{
+  border-color:rgba(255,79,134,.45)!important;
+  background:rgba(4,6,20,.34)!important;
+  filter:brightness(1.18);
+}
+
+/* si Forumactif met la couleur dans un span interne */
+.profile-groups a span,
+.profile-sidebar .profile-groups a span{
+  color:inherit!important;
+}
+
+/* réduit l'image du rang dans la colonne gauche */
+.vp-rank-field .profile-value{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  gap:6px!important;
+}
+
+.vp-rank-field .profile-value img{
+  display:block!important;
+  width:auto!important;
+  max-width:105px!important;
+  max-height:95px!important;
+  height:auto!important;
+  object-fit:contain!important;
+  margin:6px auto 0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* réduit aussi l'image du rang dans le bandeau identité */
+.vp-rank img{
+  display:block!important;
+  width:auto!important;
+  max-width:120px!important;
+  max-height:90px!important;
+  height:auto!important;
+  object-fit:contain!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* évite que le bloc rang devienne énorme si l'image est dedans */
+.vp-rank{
+  max-width:260px;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:wrap!important;
+}

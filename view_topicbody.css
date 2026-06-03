@@ -457,13 +457,17 @@
   border-top-right-radius:12px;
   border-bottom-right-radius:12px;
   background:var(--pm-hero-media-bg);
+  box-sizing:border-box;
 }
 
 .promess-hero-thumb.promess{
   display:none;
   width:100%;
-  height:100%;
+  max-width:180px;
+  aspect-ratio:1/1;
+  height:auto!important;
   object-fit:cover;
+  object-position:center;
   border-radius:10px;
   filter:saturate(.95) brightness(.82) contrast(1.06);
 }

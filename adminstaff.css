@@ -5327,3 +5327,238 @@ center{
     font-size:42px;
   }
 }
+/* =========================================================
+   PATCH VERIFICATION — FICHES LEMEGETON
+   À placer tout en bas du CSS.
+   Ne touche pas aux BBCode [b], [url], [code].
+========================================================= */
+
+/* =========================
+   PATCH HTML JOURNAL :
+   si le commentaire est resté collé dans la balise, corriger plutôt le HTML :
+   <div class="GroupJournal"><!-- Change "Group" par ... -->
+========================= */
+
+/* =========================
+   SCOPAGE JOURNAL
+   Empêche .Titr / sp / gg / anot1 / anot2 d'être écrasés
+   par les autres fiches placées plus bas dans le CSS.
+========================= */
+
+.GroupJournal .Titr,
+.AngeJournal .Titr,
+.LambJournal .Titr,
+.HumainJournal .Titr,
+.FallenJournal .Titr,
+.DemonJournal .Titr{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:0 0 12px;
+  color:var(--jr-second-soft);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:30px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  text-shadow:0 0 10px rgba(36,228,255,.42),2px 2px 0 rgba(254,3,124,.48);
+}
+
+.GroupJournal .Titr:before,
+.GroupJournal .Titr:after,
+.AngeJournal .Titr:before,
+.AngeJournal .Titr:after,
+.LambJournal .Titr:before,
+.LambJournal .Titr:after,
+.HumainJournal .Titr:before,
+.HumainJournal .Titr:after,
+.FallenJournal .Titr:before,
+.FallenJournal .Titr:after,
+.DemonJournal .Titr:before,
+.DemonJournal .Titr:after{
+  content:"✦";
+  color:var(--bloc-color,var(--jr-main));
+  font-size:14px;
+  text-shadow:0 0 10px currentColor;
+}
+
+.GroupJournal sp,
+.AngeJournal sp,
+.LambJournal sp,
+.HumainJournal sp,
+.FallenJournal sp,
+.DemonJournal sp{
+  display:inline-block;
+  margin:4px 6px 2px 0;
+  color:var(--lem-white,#d8ecff);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:16px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  text-shadow:0 0 10px rgba(36,228,255,.24);
+}
+
+.GroupJournal gg,
+.AngeJournal gg,
+.LambJournal gg,
+.HumainJournal gg,
+.FallenJournal gg,
+.DemonJournal gg{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:34px;
+  min-height:24px;
+  margin:3px 6px 3px 0;
+  padding:5px 9px;
+  border:1px solid rgba(140,236,255,.24);
+  border-left:3px solid var(--jr-main);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+  color:var(--lem-white,#d8ecff);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+.GroupJournal anot1,
+.AngeJournal anot1,
+.LambJournal anot1,
+.HumainJournal anot1,
+.FallenJournal anot1,
+.DemonJournal anot1{
+  display:inline-block;
+  margin:3px 2px;
+  padding:4px 8px;
+  border:1px solid rgba(36,228,255,.30);
+  border-radius:999px;
+  background:rgba(36,228,255,.10);
+  color:var(--jr-second-soft);
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+.GroupJournal anot2,
+.AngeJournal anot2,
+.LambJournal anot2,
+.HumainJournal anot2,
+.FallenJournal anot2,
+.DemonJournal anot2{
+  display:inline-block;
+  margin:3px 2px;
+  padding:4px 8px;
+  border:1px solid rgba(254,3,124,.30);
+  border-radius:999px;
+  background:rgba(254,3,124,.10);
+  color:var(--jr-main-soft);
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+/* Texte direct dans les cartes de liens journal, quand il n'est pas dans spanjour. */
+.GroupJournal .lienimage .textehist,
+.AngeJournal .lienimage .textehist,
+.LambJournal .lienimage .textehist,
+.HumainJournal .lienimage .textehist,
+.FallenJournal .lienimage .textehist,
+.DemonJournal .lienimage .textehist{
+  max-height:calc(100% - 28px);
+  overflow:auto;
+  padding:14px 16px;
+  border:1px solid rgba(255,255,255,.045);
+  border-radius:14px;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.018)),rgba(7,11,24,.72);
+  color:var(--lem-text,#b9cce8);
+  font-size:15px;
+  font-weight:600;
+  line-height:1.62;
+  text-align:justify;
+  white-space:pre-line;
+  overflow-wrap:break-word;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+/* Quand la carte image contient déjà un spanjour, éviter le double effet trop lourd. */
+.GroupJournal .textehist spanjour,
+.AngeJournal .textehist spanjour,
+.LambJournal .textehist spanjour,
+.HumainJournal .textehist spanjour,
+.FallenJournal .textehist spanjour,
+.DemonJournal .textehist spanjour{
+  max-height:280px;
+  overflow:auto;
+  padding-right:18px;
+}
+
+/* =========================
+   SCOPAGE PRESENTATION
+========================= */
+
+.GroupPres .Titr{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:0 0 12px;
+  color:var(--lem-cyan-soft,#8cecff);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:30px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  text-shadow:0 0 10px rgba(36,228,255,.42),2px 2px 0 rgba(254,3,124,.48);
+}
+
+.GroupPres .Titr:before,
+.GroupPres .Titr:after{
+  content:"✦";
+  color:var(--bloc-color,var(--lem-pink-soft,#ff4f86));
+  font-size:14px;
+  text-shadow:0 0 10px currentColor;
+}
+
+.GroupPres gg{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:42px;
+  min-height:24px;
+  margin:3px 6px 3px 0;
+  padding:5px 9px;
+  border:1px solid rgba(140,236,255,.24);
+  border-left:3px solid var(--lem-pink,#fe037c);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+  color:var(--lem-white,#d8ecff);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+/* =========================
+   FICHE LIENS
+   Sécurise les textes longs dans .Link.
+========================= */
+
+.FdLink .Link span{
+  min-width:0;
+  overflow-wrap:break-word;
+  word-break:normal;
+}

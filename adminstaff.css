@@ -2,6 +2,975 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800;900&family=Monoton&display=swap');
 
+
+/* =========================================================
+   FICHE PRESENTATION / LIENS — LEMEGETON
+========================================================= */
+
+.GroupPres,
+.GroupPres *{
+  box-sizing:border-box;
+}
+
+.GroupPres{
+  width:900px;
+  max-width:100%;
+  margin:30px auto;
+  padding:22px;
+  position:relative;
+  overflow:hidden;
+  color:var(--lem-text,#b9cce8);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:15px;
+  font-weight:600;
+  line-height:1.62;
+  border:1px solid var(--lem-line,rgba(36,228,255,.26));
+  border-radius:24px;
+  background:radial-gradient(circle at 10% 0%,rgba(36,228,255,.16),transparent 34%),radial-gradient(circle at 92% 6%,rgba(254,3,124,.14),transparent 32%),radial-gradient(circle at 50% 100%,rgba(184,140,255,.13),transparent 42%),linear-gradient(180deg,var(--lem-bg,#0a122d) 0%,var(--lem-bg-deep,#070b18) 100%);
+  box-shadow:0 28px 70px rgba(0,0,0,.50),0 0 24px rgba(36,228,255,.14),inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+.GroupPres:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.18;
+  background-image:radial-gradient(circle,rgba(140,236,255,.75) 1px,transparent 1.4px),linear-gradient(135deg,transparent 0 48%,rgba(255,79,134,.10) 49% 51%,transparent 52% 100%);
+  background-size:18px 18px,58px 58px;
+}
+
+.GroupPres:after{
+  content:"PROFILE";
+  position:absolute;
+  right:12px;
+  bottom:-10px;
+  z-index:0;
+  color:rgba(255,255,255,.030);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:92px;
+  line-height:1;
+  letter-spacing:2px;
+  pointer-events:none;
+}
+
+.GroupPres > *{
+  position:relative;
+  z-index:1;
+}
+
+/* =========================
+   ENTETE
+========================= */
+
+.BckPres{
+  display:grid;
+  grid-template-columns:170px minmax(0,1fr);
+  gap:18px;
+  align-items:stretch;
+  margin:0 0 20px;
+  padding:16px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(140,236,255,.30);
+  border-radius:20px;
+  background:linear-gradient(90deg,rgba(5,8,22,.94),rgba(24,18,55,.72)),radial-gradient(circle at 14% 0%,rgba(36,228,255,.20),transparent 38%),radial-gradient(circle at 88% 18%,rgba(254,3,124,.22),transparent 36%);
+  box-shadow:inset 0 0 48px rgba(5,10,25,.78),0 14px 32px rgba(0,0,0,.30);
+}
+
+.BckPres:before{
+  content:"IDENTITY";
+  position:absolute;
+  right:20px;
+  bottom:8px;
+  color:rgba(255,255,255,.045);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:48px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  pointer-events:none;
+}
+
+.Presimg{
+  width:170px;
+  height:260px;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  border:1px solid rgba(140,236,255,.36);
+  border-radius:18px;
+  background:rgba(7,11,24,.72);
+  filter:saturate(1.08) contrast(1.05);
+  box-shadow:0 0 22px rgba(36,228,255,.18),inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+.NmPres{
+  min-width:0;
+  min-height:260px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:26px 24px;
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.045);
+  border-radius:18px;
+  background:radial-gradient(circle at 50% 0%,rgba(36,228,255,.14),transparent 42%),rgba(7,11,24,.48);
+  color:var(--lem-cyan-soft,#8cecff);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:clamp(46px,7vw,82px);
+  font-weight:400;
+  line-height:.88;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-shadow:0 0 6px rgba(140,236,255,.85),0 0 18px rgba(36,228,255,.58),0 0 34px rgba(36,228,255,.30),3px 3px 0 rgba(254,3,124,.86),-2px -2px 0 rgba(184,140,255,.34);
+}
+
+.FtPres{
+  display:block;
+  margin:13px 0 0;
+  color:var(--lem-gold,#e4d3b4);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.2;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  text-shadow:0 0 12px rgba(228,211,180,.28);
+}
+
+.TWPres{
+  max-height:74px;
+  overflow:auto;
+  margin:16px 0 0;
+  padding:12px 14px;
+  border:1px solid rgba(255,79,134,.25);
+  border-left:4px solid var(--lem-pink,#fe037c);
+  border-radius:14px;
+  background:linear-gradient(90deg,rgba(254,3,124,.14),rgba(36,228,255,.05)),rgba(255,255,255,.025);
+  color:var(--lem-white,#d8ecff);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.35;
+  text-transform:none;
+  letter-spacing:.4px;
+  text-shadow:none;
+}
+
+/* =========================
+   CORPS / COLONNES
+========================= */
+
+.CrpsPres{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);
+  gap:18px;
+  align-items:start;
+}
+
+.LftPres,
+.RghtPres,
+.IntrPres{
+  min-width:0;
+}
+
+.LftPres,
+.IntrPres{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+/* =========================
+   BLOCS
+========================= */
+
+.InfPres,
+.AnCarPres,
+.HistPres{
+  position:relative;
+  overflow:hidden;
+  padding:16px;
+  border:1px solid rgba(140,236,255,.18);
+  border-left:4px solid var(--bloc-color,var(--lem-pink,#fe037c));
+  border-radius:17px;
+  background:linear-gradient(90deg,rgba(254,3,124,.10),rgba(36,228,255,.04)),rgba(255,255,255,.025);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 12px 28px rgba(0,0,0,.22),0 0 18px rgba(254,3,124,.08);
+}
+
+.InfPres:nth-child(even),
+.AnCarPres:nth-child(even),
+.HistPres{
+  --bloc-color:var(--lem-cyan,#24e4ff);
+  background:linear-gradient(90deg,rgba(36,228,255,.08),rgba(184,140,255,.06)),rgba(255,255,255,.025);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 12px 28px rgba(0,0,0,.22),0 0 18px rgba(36,228,255,.08);
+}
+
+.Cred{
+  --bloc-color:var(--lem-gold,#e4d3b4);
+  background:linear-gradient(90deg,rgba(228,211,180,.12),rgba(36,228,255,.04)),rgba(255,255,255,.025);
+}
+
+.Titr{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:0 0 12px;
+  color:var(--lem-cyan-soft,#8cecff);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:30px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  text-shadow:0 0 10px rgba(36,228,255,.42),2px 2px 0 rgba(254,3,124,.48);
+}
+
+.Titr:before,
+.Titr:after{
+  content:"✦";
+  color:var(--bloc-color,var(--lem-pink-soft,#ff4f86));
+  font-size:14px;
+  text-shadow:0 0 10px currentColor;
+}
+
+.InfPres span,
+.AnCarPres span,
+.HistPres span{
+  display:block;
+  min-width:0;
+  padding:14px 16px;
+  border:1px solid rgba(255,255,255,.045);
+  border-radius:14px;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.018)),rgba(7,11,24,.44);
+  color:var(--lem-text,#b9cce8);
+  font-size:15px;
+  font-weight:600;
+  line-height:1.62;
+  text-align:justify;
+  white-space:pre-line;
+  overflow-wrap:break-word;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+/* =========================
+   HAUTEURS / SCROLLS
+========================= */
+
+.LftPres .InfPres:nth-child(2) span{
+  max-height:390px;
+  overflow:auto;
+  padding-right:18px;
+}
+
+.AnCarPres span{
+  max-height:265px;
+  overflow:auto;
+  padding-right:18px;
+}
+
+.HistPres span{
+  max-height:230px;
+  overflow:auto;
+  padding-right:18px;
+}
+
+/* =========================
+   BALISES CUSTOM
+========================= */
+
+sp{
+  display:inline-block;
+  margin:4px 6px 2px 0;
+  color:var(--lem-white,#d8ecff);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:16px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  text-shadow:0 0 10px rgba(36,228,255,.24);
+}
+
+gg{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:42px;
+  min-height:24px;
+  margin:3px 6px 3px 0;
+  padding:5px 9px;
+  border:1px solid rgba(140,236,255,.24);
+  border-left:3px solid var(--lem-pink,#fe037c);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+  color:var(--lem-white,#d8ecff);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+anot1,
+anot2{
+  display:inline-block;
+  margin:3px 2px;
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+anot1{
+  border:1px solid rgba(36,228,255,.30);
+  background:rgba(36,228,255,.10);
+  color:var(--lem-cyan-soft,#8cecff);
+}
+
+anot2{
+  border:1px solid rgba(254,3,124,.30);
+  background:rgba(254,3,124,.10);
+  color:var(--lem-pink-soft,#ff4f86);
+}
+
+center{
+  display:block;
+  margin:0 0 12px;
+  text-align:center;
+}
+
+/* =========================
+   TEXTE / LIENS
+========================= */
+
+.GroupPres b,
+.GroupPres strong{
+  color:var(--lem-white,#d8ecff);
+  font-weight:900;
+  text-shadow:0 0 10px rgba(36,228,255,.22);
+}
+
+.GroupPres i,
+.GroupPres em{
+  color:var(--lem-pink-soft,#ff4f86);
+  font-weight:700;
+}
+
+.GroupPres a{
+  color:var(--lem-cyan-soft,#8cecff);
+  font-weight:800;
+  text-decoration:none;
+  border-bottom:1px solid rgba(140,236,255,.42);
+  transition:.2s ease;
+}
+
+.GroupPres a:hover{
+  color:var(--lem-pink-soft,#ff4f86);
+  border-bottom-color:var(--lem-pink,#fe037c);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:820px){
+  .GroupPres{
+    padding:16px;
+  }
+
+  .BckPres{
+    grid-template-columns:130px minmax(0,1fr);
+    gap:14px;
+    padding:13px;
+  }
+
+  .Presimg{
+    width:130px;
+    height:210px;
+  }
+
+  .NmPres{
+    min-height:210px;
+    padding:20px;
+    font-size:44px;
+  }
+
+  .CrpsPres{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:560px){
+  .BckPres{
+    grid-template-columns:1fr;
+  }
+
+  .Presimg{
+    width:100%;
+    height:240px;
+  }
+
+  .NmPres{
+    min-height:auto;
+    font-size:38px;
+    text-align:center;
+  }
+
+  .FtPres{
+    font-size:12px;
+  }
+
+  .Titr{
+    font-size:25px;
+  }
+
+  .InfPres span,
+  .AnCarPres span,
+  .HistPres span{
+    padding:12px;
+    text-align:left;
+  }
+}
+
+/* =========================================================
+   FICHE LIENS — LEMEGETON
+   Version corrigée : placement stable en grid-area
+========================================================= */
+
+.FdLink,
+.FdLink *{
+  box-sizing:border-box;
+}
+
+.FdLink{
+  width:760px;
+  max-width:100%;
+  margin:30px auto;
+  padding:22px;
+  position:relative;
+  overflow:hidden;
+  color:var(--lem-text,#b9cce8);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:15px;
+  font-weight:600;
+  line-height:1.6;
+  border:1px solid var(--lem-line,rgba(36,228,255,.26));
+  border-radius:22px;
+  background:radial-gradient(circle at 10% 0%,rgba(36,228,255,.16),transparent 34%),radial-gradient(circle at 92% 6%,rgba(254,3,124,.14),transparent 32%),radial-gradient(circle at 50% 100%,rgba(184,140,255,.13),transparent 42%),linear-gradient(180deg,var(--lem-bg,#0a122d) 0%,var(--lem-bg-deep,#070b18) 100%);
+  box-shadow:0 28px 70px rgba(0,0,0,.48),0 0 24px rgba(36,228,255,.14),inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+.FdLink:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.18;
+  background-image:radial-gradient(circle,rgba(140,236,255,.75) 1px,transparent 1.4px),linear-gradient(135deg,transparent 0 48%,rgba(255,79,134,.10) 49% 51%,transparent 52% 100%);
+  background-size:18px 18px,58px 58px;
+}
+
+.FdLink:after{
+  content:"LINKS";
+  position:absolute;
+  right:14px;
+  bottom:-8px;
+  z-index:0;
+  color:rgba(255,255,255,.035);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:90px;
+  line-height:1;
+  letter-spacing:2px;
+  pointer-events:none;
+}
+
+.FdLink > *{
+  position:relative;
+  z-index:1;
+}
+
+/* =========================
+   ENTETE
+========================= */
+
+.BckLink{
+  position:relative;
+  overflow:hidden;
+  margin:0 0 20px;
+  padding:28px 24px;
+  border:1px solid rgba(140,236,255,.30);
+  border-radius:18px;
+  background:linear-gradient(90deg,rgba(5,8,22,.92),rgba(24,18,55,.68)),radial-gradient(circle at 14% 0%,rgba(36,228,255,.20),transparent 38%),radial-gradient(circle at 88% 18%,rgba(254,3,124,.22),transparent 36%);
+  box-shadow:inset 0 0 44px rgba(5,10,25,.76),0 14px 32px rgba(0,0,0,.28);
+}
+
+.BckLink:before{
+  content:"RELATIONS";
+  position:absolute;
+  right:18px;
+  bottom:8px;
+  color:rgba(255,255,255,.045);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:44px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  pointer-events:none;
+}
+
+.NmLink{
+  position:relative;
+  z-index:1;
+  color:var(--lem-cyan-soft,#8cecff);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:clamp(44px,8vw,76px);
+  font-weight:400;
+  line-height:.9;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-shadow:0 0 6px rgba(140,236,255,.85),0 0 18px rgba(36,228,255,.58),0 0 34px rgba(36,228,255,.30),3px 3px 0 rgba(254,3,124,.86),-2px -2px 0 rgba(184,140,255,.34);
+}
+
+/* =========================
+   BLOC LIEN
+========================= */
+
+.Link{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 110px;
+  grid-template-areas:
+    "titre titre"
+    "texte image";
+  gap:14px 16px;
+  align-items:start;
+  margin:16px 0;
+  padding:16px;
+  border:1px solid rgba(140,236,255,.18);
+  border-left:4px solid var(--lem-pink,#fe037c);
+  border-radius:17px;
+  background:linear-gradient(90deg,rgba(254,3,124,.10),rgba(36,228,255,.04)),rgba(255,255,255,.025);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 12px 28px rgba(0,0,0,.22),0 0 18px rgba(254,3,124,.08);
+}
+
+.Link:has(> img:first-of-type){
+  grid-template-columns:110px minmax(0,1fr);
+  grid-template-areas:
+    "titre titre"
+    "image texte";
+  border-left-color:var(--lem-cyan,#24e4ff);
+  background:linear-gradient(90deg,rgba(36,228,255,.08),rgba(184,140,255,.06)),rgba(255,255,255,.025);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 12px 28px rgba(0,0,0,.22),0 0 18px rgba(36,228,255,.08);
+}
+
+.Link:hover{
+  transform:translateY(-1px);
+  border-color:rgba(140,236,255,.30);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.035),0 16px 34px rgba(0,0,0,.26),0 0 24px rgba(36,228,255,.13);
+  transition:.22s ease;
+}
+
+/* =========================
+   TITRE DU LIEN
+========================= */
+
+.Nmpart{
+  grid-area:titre;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:0;
+  padding:0 2px;
+  color:var(--lem-cyan-soft,#8cecff);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:30px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  text-shadow:0 0 10px rgba(36,228,255,.42),2px 2px 0 rgba(254,3,124,.48);
+}
+
+.Nmpart:before,
+.Nmpart:after{
+  content:"✦";
+  color:var(--lem-pink-soft,#ff4f86);
+  font-size:14px;
+  text-shadow:0 0 10px rgba(254,3,124,.58);
+}
+
+.Link:has(> img:first-of-type) .Nmpart{
+  justify-content:flex-end;
+  text-align:right;
+}
+
+.Link:has(> img:first-of-type) .Nmpart:before{
+  color:var(--lem-cyan,#24e4ff);
+}
+
+.Link:has(> img:first-of-type) .Nmpart:after{
+  color:var(--lem-purple,#b88cff);
+}
+
+/* =========================
+   TEXTE DU LIEN
+========================= */
+
+.Link span{
+  grid-area:texte;
+  display:block;
+  min-width:0;
+  min-height:110px;
+  padding:14px 16px;
+  border:1px solid rgba(255,255,255,.045);
+  border-radius:14px;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.018)),rgba(7,11,24,.44);
+  color:var(--lem-text,#b9cce8);
+  font-size:15px;
+  font-weight:600;
+  line-height:1.58;
+  text-align:justify;
+  overflow-wrap:break-word;
+  word-break:normal;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+.Link span b,
+.Link span strong{
+  color:var(--lem-white,#d8ecff);
+  font-weight:900;
+  text-shadow:0 0 10px rgba(36,228,255,.22);
+}
+
+/* =========================
+   IMAGE DU LIEN
+========================= */
+
+.Link img{
+  grid-area:image;
+  width:110px;
+  height:110px;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  border:1px solid rgba(140,236,255,.34);
+  border-radius:16px;
+  background:rgba(7,11,24,.72);
+  filter:saturate(1.08) contrast(1.05);
+  box-shadow:0 0 18px rgba(36,228,255,.16),inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+.Link:has(> img:first-of-type) img{
+  box-shadow:0 0 18px rgba(254,3,124,.14),inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:680px){
+  .FdLink{
+    padding:16px;
+    font-size:14px;
+  }
+
+  .BckLink{
+    padding:22px 18px;
+  }
+
+  .NmLink{
+    font-size:42px;
+  }
+
+  .Link,
+  .Link:has(> img:first-of-type){
+    grid-template-columns:90px minmax(0,1fr);
+    grid-template-areas:
+      "titre titre"
+      "image texte";
+    gap:12px;
+    padding:13px;
+  }
+
+  .Link img{
+    width:90px;
+    height:90px;
+  }
+
+  .Link span{
+    min-height:90px;
+    padding:12px;
+    text-align:left;
+  }
+
+  .Nmpart,
+  .Link:has(> img:first-of-type) .Nmpart{
+    justify-content:flex-start;
+    text-align:left;
+    font-size:25px;
+  }
+}
+
+@media(max-width:480px){
+  .Link,
+  .Link:has(> img:first-of-type){
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "titre"
+      "image"
+      "texte";
+  }
+
+  .Link img{
+    width:100%;
+    height:140px;
+  }
+}
+
+/* =========================================================
+   FICHE RP — LEMEGETON
+========================================================= */
+
+.corpsfichefo,
+.corpsfichefo *{
+  box-sizing:border-box;
+}
+
+.corpsfichefo{
+  width:720px;
+  max-width:100%;
+  margin:30px auto;
+  padding:22px;
+  position:relative;
+  overflow:hidden;
+  color:var(--lem-text,#b9cce8);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:16px;
+  font-weight:600;
+  line-height:1.75;
+  text-align:justify;
+  border:1px solid var(--lem-line,rgba(36,228,255,.26));
+  border-radius:22px;
+  background:radial-gradient(circle at 12% 0%,rgba(36,228,255,.16),transparent 34%),radial-gradient(circle at 92% 8%,rgba(254,3,124,.14),transparent 32%),radial-gradient(circle at 50% 100%,rgba(184,140,255,.12),transparent 42%),linear-gradient(180deg,var(--lem-bg,#0a122d) 0%,var(--lem-bg-deep,#070b18) 100%);
+  box-shadow:0 28px 70px rgba(0,0,0,.48),0 0 24px rgba(36,228,255,.14),inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+.corpsfichefo:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.18;
+  background-image:radial-gradient(circle,rgba(140,236,255,.75) 1px,transparent 1.4px),linear-gradient(135deg,transparent 0 48%,rgba(255,79,134,.10) 49% 51%,transparent 52% 100%);
+  background-size:18px 18px,58px 58px;
+}
+
+.corpsfichefo:after{
+  content:"RP";
+  position:absolute;
+  right:16px;
+  bottom:-10px;
+  z-index:0;
+  color:rgba(255,255,255,.035);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:110px;
+  line-height:1;
+  letter-spacing:2px;
+  pointer-events:none;
+}
+
+.corpsfichefo > *{
+  position:relative;
+  z-index:1;
+}
+
+/* =========================
+   ENTETE
+========================= */
+
+.LgRpHt{
+  display:grid;
+  grid-template-columns:92px minmax(0,1fr) 92px;
+  gap:14px;
+  align-items:stretch;
+  margin:0 0 22px;
+  padding:14px;
+  border:1px solid rgba(140,236,255,.28);
+  border-radius:18px;
+  background:linear-gradient(90deg,rgba(5,8,22,.92),rgba(24,18,55,.68)),radial-gradient(circle at 15% 0%,rgba(36,228,255,.18),transparent 38%),radial-gradient(circle at 90% 20%,rgba(254,3,124,.20),transparent 36%);
+  box-shadow:inset 0 0 42px rgba(5,10,25,.72),0 14px 32px rgba(0,0,0,.28);
+}
+
+.LgRpImg1,
+.LgRpImg2{
+  width:92px;
+  height:92px;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  border:1px solid rgba(140,236,255,.34);
+  border-radius:16px;
+  background:rgba(7,11,24,.72);
+  filter:saturate(1.08) contrast(1.05);
+  box-shadow:0 0 18px rgba(36,228,255,.18),inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+.LgRpTtrFt{
+  min-height:92px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:16px 18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.045);
+  border-radius:16px;
+  background:radial-gradient(circle at 50% 0%,rgba(36,228,255,.14),transparent 40%),rgba(7,11,24,.52);
+  color:var(--lem-cyan-soft,#8cecff);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:34px;
+  font-weight:900;
+  line-height:.95;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  text-shadow:0 0 8px rgba(140,236,255,.62),0 0 22px rgba(36,228,255,.26),2px 2px 0 rgba(254,3,124,.72);
+}
+
+.LgRpTtrFt span{
+  display:block;
+  margin-top:9px;
+  color:var(--lem-gold,#e4d3b4);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.2;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  text-shadow:0 0 12px rgba(228,211,180,.28);
+}
+
+/* =========================
+   TEXTE RP
+========================= */
+
+.corpsfichefo p{
+  margin:0 0 16px;
+  padding:0;
+}
+
+.corpsfichefo p:last-child{
+  margin-bottom:0;
+}
+
+.corpsfichefo b,
+.corpsfichefo strong{
+  color:var(--lem-white,#d8ecff);
+  font-weight:900;
+  text-shadow:0 0 10px rgba(36,228,255,.24);
+}
+
+.corpsfichefo i,
+.corpsfichefo em{
+  color:var(--lem-pink-soft,#ff4f86);
+  font-weight:700;
+}
+
+.corpsfichefo u{
+  color:var(--lem-cyan-soft,#8cecff);
+  text-decoration-color:var(--lem-pink,#fe037c);
+  text-decoration-thickness:2px;
+  text-underline-offset:3px;
+}
+
+.corpsfichefo a{
+  color:var(--lem-cyan-soft,#8cecff);
+  font-weight:800;
+  text-decoration:none;
+  border-bottom:1px solid rgba(140,236,255,.42);
+  transition:.2s ease;
+}
+
+.corpsfichefo a:hover{
+  color:var(--lem-pink-soft,#ff4f86);
+  border-bottom-color:var(--lem-pink,#fe037c);
+}
+
+.corpsfichefo blockquote{
+  margin:18px 0;
+  padding:15px 18px;
+  border:1px solid rgba(255,79,134,.25);
+  border-left:4px solid var(--lem-pink,#fe037c);
+  border-radius:14px;
+  background:linear-gradient(90deg,rgba(254,3,124,.16),rgba(36,228,255,.06)),rgba(255,255,255,.025);
+  color:var(--lem-white,#d8ecff);
+  font-weight:800;
+  line-height:1.55;
+  text-align:left;
+  box-shadow:0 0 18px rgba(254,3,124,.10);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:680px){
+  .corpsfichefo{
+    padding:16px;
+    font-size:15px;
+    text-align:left;
+  }
+
+  .LgRpHt{
+    grid-template-columns:70px minmax(0,1fr) 70px;
+    gap:10px;
+    padding:10px;
+  }
+
+  .LgRpImg1,
+  .LgRpImg2{
+    width:70px;
+    height:70px;
+    border-radius:13px;
+  }
+
+  .LgRpTtrFt{
+    min-height:70px;
+    padding:12px;
+    font-size:24px;
+    letter-spacing:1px;
+  }
+
+  .LgRpTtrFt span{
+    margin-top:6px;
+    font-size:11px;
+    letter-spacing:1.4px;
+  }
+}
+
+@media(max-width:460px){
+  .LgRpHt{
+    grid-template-columns:1fr;
+  }
+
+  .LgRpImg1,
+  .LgRpImg2{
+    width:100%;
+    height:90px;
+  }
+}
 .adms-portal,.adms-portal *{box-sizing:border-box}
 .adms-portal{width:900px;max-width:100%;margin:30px auto;padding:26px;color:var(--lem-text,#b9cce8);font-family:"Rajdhani",Arial,sans-serif;background:radial-gradient(circle at 15% 0%,rgba(36,228,255,.18),transparent 34%),radial-gradient(circle at 88% 10%,rgba(184,140,255,.18),transparent 34%),radial-gradient(circle at 50% 100%,rgba(254,3,124,.12),transparent 38%),linear-gradient(180deg,var(--lem-bg,#0a122d) 0%,var(--lem-bg-deep,#070b18) 100%);box-shadow:0 28px 80px rgba(0,0,0,.55),0 0 34px rgba(36,228,255,.12),0 0 52px rgba(254,3,124,.10)}
 .adms-portal .adms-box{position:relative;overflow:hidden;padding:20px;border:1px solid rgba(140,236,255,.28);border-radius:22px;background:radial-gradient(circle at 50% 0%,rgba(36,228,255,.15),transparent 34%),radial-gradient(circle at 92% 12%,rgba(254,3,124,.13),transparent 32%),linear-gradient(180deg,rgba(22,19,45,.96) 0%,rgba(11,18,42,.98) 58%,rgba(7,11,24,.98) 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.035),0 0 0 1px rgba(5,10,25,.80),0 0 22px rgba(36,228,255,.20)}

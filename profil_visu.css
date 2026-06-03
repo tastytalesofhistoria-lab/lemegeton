@@ -1,14 +1,7 @@
 /* =========================================================
    LEMEGETON — PROFIL AFFICHÉ MODERNBB
    Fichier : profil_visu.css
-   Version corrigée / fusionnée
-   - sidebar 200px
-   - avatar exact 200x320px
-   - présence supprimée
-   - rang supprimé sous le pseudo
-   - image rang réduite dans la colonne gauche
-   - couleurs natives Forumactif conservées pour les groupes
-   - doublons et patchs fusionnés
+   Version propre / fusionnée
 ========================================================= */
 
 /* ===================== BASE ===================== */
@@ -118,7 +111,7 @@
   text-shadow:none!important;
 }
 
-/* ===================== STRUCTURE GÉNÉRALE ===================== */
+/* ===================== STRUCTURE ===================== */
 
 .profile-main.vp-hero{
   position:relative;
@@ -188,7 +181,7 @@
 .profile-content{
   display:flex;
   flex-direction:column;
-  gap:16px;
+  gap:16px!important;
   min-width:0;
 }
 
@@ -266,62 +259,16 @@
   display:none!important;
 }
 
-/* ===================== IDENTITÉ HEADER ===================== */
+/* ===================== IDENTITÉ / DOUBLE PSEUDO ===================== */
 
-.vp-identity{
-  position:relative;
-  display:flex!important;
-  align-items:center!important;
-  min-height:130px!important;
-  margin-bottom:0;
-  padding:28px 24px 24px;
-  border:1px solid var(--vp-border-cyan,rgba(36,228,255,.18));
-  border-radius:18px;
-  background:var(--vp-identity-bg,
-    radial-gradient(circle at top right,rgba(255,95,140,.12),transparent 36%),
-    rgba(4,6,20,.38)
-  );
-  overflow:hidden;
-}
-
-.vp-identity::after{
-  content:"PROFIL";
-  position:absolute;
-  right:16px;
-  bottom:8px;
-  color:var(--vp-ghost,rgba(255,255,255,.045));
-  font-family:"Barlow Condensed",Arial,sans-serif;
-  font-size:70px;
-  font-weight:900;
-  letter-spacing:4px;
-  pointer-events:none;
-}
-
+.vp-identity,
 .vp-kicker,
 .vp-rank{
   display:none!important;
 }
 
-.profile-username,
-.vp-name{
-  position:relative;
-  z-index:2;
-  margin:0!important;
-  color:var(--vp-white,#ecfbff)!important;
-  font-family:"Barlow Condensed",Arial,sans-serif!important;
-  font-size:56px!important;
-  font-weight:900!important;
-  line-height:.92!important;
-  letter-spacing:1.6px;
-  text-transform:uppercase;
-  text-shadow:
-    0 0 5px rgba(255,255,255,.22),
-    0 0 12px rgba(36,228,255,.18);
-}
-
-[data-color-scheme="light"] .profile-username,
-[data-color-scheme="light"] .vp-name{
-  text-shadow:none!important;
+.vp-profile-box{
+  margin-top:0!important;
 }
 
 /* ===================== BOXES ===================== */
@@ -382,7 +329,6 @@
   text-shadow:var(--vp-shadow-pink,0 0 6px rgba(255,79,134,.52));
 }
 
-/* cache le titre du bloc présence si encore présent dans le template */
 .vp-presence-box > h3{
   display:none!important;
 }
@@ -431,7 +377,7 @@
   overflow-wrap:anywhere;
 }
 
-/* images générales, sans casser l’avatar ni le rang */
+/* images générales dans le profil */
 .profile-content .profile-value img,
 .profile-content img,
 .profile-rpg-image img{
@@ -464,7 +410,6 @@
   width:100%!important;
 }
 
-/* liens sidebar ordinaires uniquement, on exclut les groupes */
 .profile-sidebar .profile-value:not(.profile-groups) a{
   display:inline-flex!important;
   width:auto!important;
@@ -509,17 +454,20 @@
   box-shadow:none!important;
 }
 
-/* ===================== GROUPES NATIFS FORUMACTIF ===================== */
+/* ===================== GROUPES NATIFS VIA SCRIPT ===================== */
 
-.profile-groups{
+.profile-groups,
+.profile-value.profile-groups,
+.profile-sidebar .profile-value.profile-groups{
   display:flex!important;
   flex-wrap:wrap!important;
   justify-content:center!important;
-  gap:6px 8px!important;
+  align-items:center!important;
+  gap:5px 7px!important;
+  color:inherit!important;
   text-align:center!important;
 }
 
-/* structure native : <div id="gX-name"><a>Groupe</a></div> */
 .profile-groups .vp-group-native,
 .profile-groups [id$="-name"]{
   display:inline!important;
@@ -531,14 +479,16 @@
   border:0!important;
   background:transparent!important;
   box-shadow:none!important;
+  line-height:1.15!important;
 }
 
-/* surtout : aucune couleur forcée ici, pour laisser Forumactif appliquer les couleurs groupes */
 .profile-groups a,
 .profile-sidebar .profile-groups a,
 .profile-sidebar .profile-value.profile-groups a,
 .profile-groups .vp-group-native a,
-.profile-groups [id$="-name"] a{
+.profile-groups [id$="-name"] a,
+.profile-sidebar .profile-groups .vp-group-native a,
+.profile-sidebar .profile-groups [id$="-name"] a{
   display:inline!important;
   width:auto!important;
   min-width:0!important;
@@ -552,11 +502,11 @@
   font-family:"Barlow Condensed",Arial,sans-serif!important;
   font-size:11px!important;
   font-weight:900!important;
-  line-height:1.2!important;
+  line-height:1.15!important;
   letter-spacing:.7px!important;
   text-transform:uppercase!important;
-  text-align:center!important;
   text-decoration:none!important;
+  text-align:center!important;
   white-space:normal!important;
   word-break:normal!important;
   overflow-wrap:normal!important;
@@ -567,7 +517,6 @@
 .profile-groups .vp-group-native a:hover,
 .profile-groups [id$="-name"] a:hover{
   filter:brightness(1.25);
-  text-shadow:0 0 7px currentColor!important;
 }
 
 /* ===================== LIENS STATS PROFIL ===================== */
@@ -602,6 +551,27 @@
 .profile-links a:hover{
   border-color:var(--vp-border-cyan-strong,rgba(36,228,255,.45))!important;
   color:var(--vp-cyan,#24e4ff)!important;
+}
+
+/* ===================== IMAGE TON MONDE ===================== */
+
+.profile-modern .vp-profile-field[data-vp-field="ton-monde"] .profile-value img,
+.profile-modern .vp-profile-field[data-vp-field="ton-monde-"] .profile-value img,
+.profile-modern .vp-profile-field[data-vp-field*="monde"] .profile-value img{
+  display:block!important;
+  width:auto!important;
+  max-width:110px!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  margin:0!important;
+  border-radius:10px!important;
+}
+
+.profile-modern .vp-profile-field[data-vp-field="ton-monde"],
+.profile-modern .vp-profile-field[data-vp-field="ton-monde-"],
+.profile-modern .vp-profile-field[data-vp-field*="monde"]{
+  align-items:start!important;
 }
 
 /* ===================== CONTACTS ===================== */
@@ -676,12 +646,7 @@
   text-decoration:none!important;
   text-transform:uppercase!important;
   box-shadow:inset 0 0 8px rgba(36,228,255,.04);
-  transition:
-    background .22s ease,
-    border-color .22s ease,
-    box-shadow .22s ease,
-    color .22s ease,
-    transform .22s ease;
+  transition:background .22s ease,border-color .22s ease,box-shadow .22s ease,color .22s ease,transform .22s ease;
 }
 
 .vp-contact-box .vp-contact-field .profile-value a:hover,
@@ -758,12 +723,7 @@
     inset 0 0 0 1px rgba(255,255,255,.03),
     0 0 14px rgba(36,228,255,.08);
   cursor:pointer;
-  transition:
-    background .22s ease,
-    border-color .22s ease,
-    box-shadow .22s ease,
-    color .22s ease,
-    transform .22s ease;
+  transition:background .22s ease,border-color .22s ease,box-shadow .22s ease,color .22s ease,transform .22s ease;
 }
 
 .vp-button:hover,
@@ -1005,200 +965,4 @@
     min-width:0!important;
     max-width:100%!important;
   }
-}
-/* =========================================================
-   PATCH FINAL PROFIL — SUPPRESSION DOUBLE PSEUDO + GROUPES NATIFS
-========================================================= */
-
-/* supprime le deuxième pseudo / bandeau identité */
-.vp-identity,
-.vp-kicker,
-.vp-rank{
-  display:none!important;
-}
-
-/* enlève l'espace qui venait du bloc identité */
-.profile-content.vp-content{
-  gap:16px!important;
-}
-
-/* le premier bloc profil remonte proprement */
-.vp-profile-box{
-  margin-top:0!important;
-}
-
-/* =========================================================
-   GROUPES — RESTAURATION COULEURS NATIVES FORUMACTIF
-========================================================= */
-
-/* le conteneur ne doit pas imposer de couleur */
-.profile-value.profile-groups,
-.profile-sidebar .profile-value.profile-groups{
-  color:unset!important;
-}
-
-/* organisation des groupes */
-.profile-groups{
-  display:flex!important;
-  flex-wrap:wrap!important;
-  justify-content:center!important;
-  align-items:center!important;
-  gap:5px 7px!important;
-  text-align:center!important;
-}
-
-/* chaque div natif Forumactif garde son ID couleur */
-.profile-groups [id$="-name"],
-.profile-groups .vp-group-native{
-  display:inline!important;
-  width:auto!important;
-  min-width:0!important;
-  max-width:none!important;
-  margin:0!important;
-  padding:0!important;
-  border:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-  line-height:1.15!important;
-}
-
-/* le lien hérite de la couleur native du div #gX-name */
-.profile-groups [id$="-name"] a,
-.profile-groups .vp-group-native a,
-.profile-sidebar .profile-groups [id$="-name"] a,
-.profile-sidebar .profile-groups .vp-group-native a{
-  display:inline!important;
-  width:auto!important;
-  min-width:0!important;
-  max-width:none!important;
-  margin:0!important;
-  padding:0!important;
-  border:0!important;
-  border-radius:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-  font-family:"Barlow Condensed",Arial,sans-serif!important;
-  font-size:11px!important;
-  font-weight:900!important;
-  line-height:1.15!important;
-  letter-spacing:.7px!important;
-  text-transform:uppercase!important;
-  text-decoration:none!important;
-  text-align:center!important;
-  white-space:normal!important;
-  word-break:normal!important;
-  overflow-wrap:normal!important;
-  color:currentColor!important;
-  text-shadow:none!important;
-}
-
-/* si Forumactif met la couleur directement sur le lien ou span interne */
-.profile-groups [id$="-name"] a span,
-.profile-groups .vp-group-native a span{
-  color:inherit!important;
-}
-
-/* hover sans changer la couleur */
-.profile-groups [id$="-name"] a:hover,
-.profile-groups .vp-group-native a:hover{
-  filter:brightness(1.25);
-  text-shadow:0 0 7px currentColor!important;
-}
-
-/* neutralise les anciennes règles rose/cyan sur les groupes uniquement */
-.profile-groups a:hover{
-  color:currentColor!important;
-  border-color:transparent!important;
-  background:transparent!important;
-}
-
-
-
-
-
-/* =========================================================
-   PROFIL UNIQUEMENT — IMAGE "TON MONDE" MAX 110PX
-========================================================= */
-
-.profile-modern .vp-profile-field[data-vp-field="ton-monde"] .profile-value img,
-.profile-modern .vp-profile-field[data-vp-field="ton-monde-"] .profile-value img{
-  display:block!important;
-  width:auto!important;
-  max-width:110px!important;
-  height:auto!important;
-  max-height:none!important;
-  object-fit:contain!important;
-  margin:0!important;
-  border-radius:10px!important;
-}
-
-/* optionnel : évite que le champ fasse une énorme hauteur à cause de l'image */
-.profile-modern .vp-profile-field[data-vp-field="ton-monde"],
-.profile-modern .vp-profile-field[data-vp-field="ton-monde-"]{
-  align-items:start!important;
-}
-
-/* =========================================================
-   GROUPES PROFIL — COULEUR NATIVE FORUMACTIF VIA SCRIPT
-========================================================= */
-
-.profile-groups,
-.profile-value.profile-groups,
-.profile-sidebar .profile-value.profile-groups{
-  color:inherit!important;
-}
-
-.profile-groups{
-  display:flex!important;
-  flex-wrap:wrap!important;
-  justify-content:center!important;
-  align-items:center!important;
-  gap:5px 7px!important;
-  text-align:center!important;
-}
-
-.profile-groups [id$="-name"],
-.profile-groups .vp-group-native{
-  display:inline!important;
-  width:auto!important;
-  min-width:0!important;
-  max-width:none!important;
-  margin:0!important;
-  padding:0!important;
-  border:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-  line-height:1.15!important;
-}
-
-.profile-groups [id$="-name"] a,
-.profile-groups .vp-group-native a,
-.profile-sidebar .profile-groups [id$="-name"] a,
-.profile-sidebar .profile-groups .vp-group-native a{
-  display:inline!important;
-  width:auto!important;
-  min-width:0!important;
-  max-width:none!important;
-  margin:0!important;
-  padding:0!important;
-  border:0!important;
-  border-radius:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-  font-family:"Barlow Condensed",Arial,sans-serif!important;
-  font-size:11px!important;
-  font-weight:900!important;
-  line-height:1.15!important;
-  letter-spacing:.7px!important;
-  text-transform:uppercase!important;
-  text-decoration:none!important;
-  text-align:center!important;
-  white-space:normal!important;
-  word-break:normal!important;
-  overflow-wrap:normal!important;
-}
-
-.profile-groups [id$="-name"] a:hover,
-.profile-groups .vp-group-native a:hover{
-  filter:brightness(1.25);
 }

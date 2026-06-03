@@ -158,6 +158,7 @@
   padding:0;
   list-style:none;
 }
+
 /* =====================
    PATCH FONDS INTERNES FORUMACTIF
    Empêche le fond natif ModernBB de ressortir
@@ -188,6 +189,7 @@
 .topiclist.forums .forum-content{
   background:transparent!important;
 }
+
 .topiclist.forums .row{
   display:flex;
   width:100%;
@@ -635,8 +637,6 @@ a.forumtitle:hover{
 
 /* ===================== CARTES PARADIS / TERRE / ENFER ===================== */
 
-/* Fallback nth-of-type + classes posées par le script séparé.
-   Les catégories 5/6/7 restent en cartes même si le JS tarde. */
 .categories-wrapper>.forabg:nth-of-type(5),
 .categories-wrapper>.forabg:nth-of-type(6),
 .categories-wrapper>.forabg:nth-of-type(7),
@@ -650,6 +650,7 @@ a.forumtitle:hover{
 }
 
 /* Fonds colorés internes */
+
 .categories-wrapper>.forabg:nth-of-type(5) .topiclist.forums,
 .cat-paradis .topiclist.forums{
   background:var(--idx-paradis-topic-bg);
@@ -666,6 +667,7 @@ a.forumtitle:hover{
 }
 
 /* Structure carte */
+
 .categories-wrapper>.forabg:nth-of-type(5)>.topiclist.forums,
 .categories-wrapper>.forabg:nth-of-type(6)>.topiclist.forums,
 .categories-wrapper>.forabg:nth-of-type(7)>.topiclist.forums,
@@ -729,34 +731,40 @@ a.forumtitle:hover{
 }
 
 /* Masque les éléments du layout forum normal dans les trois cartes */
+
 .categories-wrapper>.forabg:nth-of-type(5) .avatcat_icon,
 .categories-wrapper>.forabg:nth-of-type(5) .sujetmess,
 .categories-wrapper>.forabg:nth-of-type(5) .icon,
 .categories-wrapper>.forabg:nth-of-type(5) .cattitre1,
 .categories-wrapper>.forabg:nth-of-type(5) .subforums,
-.categories-wrapper>.forabg:nth-of-type(5) .forum-content strong,
 .categories-wrapper>.forabg:nth-of-type(5) .hierarchy,
 .categories-wrapper>.forabg:nth-of-type(6) .avatcat_icon,
 .categories-wrapper>.forabg:nth-of-type(6) .sujetmess,
 .categories-wrapper>.forabg:nth-of-type(6) .icon,
 .categories-wrapper>.forabg:nth-of-type(6) .cattitre1,
 .categories-wrapper>.forabg:nth-of-type(6) .subforums,
-.categories-wrapper>.forabg:nth-of-type(6) .forum-content strong,
 .categories-wrapper>.forabg:nth-of-type(6) .hierarchy,
 .categories-wrapper>.forabg:nth-of-type(7) .avatcat_icon,
 .categories-wrapper>.forabg:nth-of-type(7) .sujetmess,
 .categories-wrapper>.forabg:nth-of-type(7) .icon,
 .categories-wrapper>.forabg:nth-of-type(7) .cattitre1,
 .categories-wrapper>.forabg:nth-of-type(7) .subforums,
-.categories-wrapper>.forabg:nth-of-type(7) .forum-content strong,
 .categories-wrapper>.forabg:nth-of-type(7) .hierarchy,
 .category-card .avatcat_icon,
 .category-card .sujetmess,
 .category-card .icon,
 .category-card .cattitre1,
 .category-card .subforums,
-.category-card .forum-content strong,
 .category-card .hierarchy{
+  display:none!important;
+}
+
+/* On masque les strong seulement dans la description, pas dans le lastpost */
+
+.categories-wrapper>.forabg:nth-of-type(5) .descrpfo>strong,
+.categories-wrapper>.forabg:nth-of-type(6) .descrpfo>strong,
+.categories-wrapper>.forabg:nth-of-type(7) .descrpfo>strong,
+.category-card .descrpfo>strong{
   display:none!important;
 }
 
@@ -770,6 +778,7 @@ a.forumtitle:hover{
   flex-direction:column;
   justify-content:flex-start;
   align-items:stretch;
+  gap:7px;
   width:100%!important;
   min-height:250px;
   height:250px;
@@ -784,7 +793,7 @@ a.forumtitle:hover{
 .category-card .forum-content::before{
   display:block;
   flex:0 0 auto;
-  margin-bottom:10px;
+  margin-bottom:3px;
   font-family:"Bahianita",cursive;
   font-size:38px;
   line-height:1;
@@ -814,6 +823,7 @@ a.forumtitle:hover{
 }
 
 /* Description + zone overlay : hauteur maîtrisée pour garder le lastpost visible */
+
 .categories-wrapper>.forabg:nth-of-type(5) .descrpfo,
 .categories-wrapper>.forabg:nth-of-type(6) .descrpfo,
 .categories-wrapper>.forabg:nth-of-type(7) .descrpfo,
@@ -861,6 +871,7 @@ a.forumtitle:hover{
 }
 
 /* Sous-forums : overlay au hover, une ligne 100% par bouton */
+
 .categories-wrapper>.forabg:nth-of-type(5) .descrpfo>.subforum-buttons,
 .categories-wrapper>.forabg:nth-of-type(6) .descrpfo>.subforum-buttons,
 .categories-wrapper>.forabg:nth-of-type(7) .descrpfo>.subforum-buttons,
@@ -980,19 +991,20 @@ a.forumtitle:hover{
 }
 
 /* Lastpost des trois cartes : toujours visible sous la description */
+
 .categories-wrapper>.forabg:nth-of-type(5) .forum_lastpost,
 .categories-wrapper>.forabg:nth-of-type(6) .forum_lastpost,
 .categories-wrapper>.forabg:nth-of-type(7) .forum_lastpost,
 .category-card .forum_lastpost{
-  position:relative;
-  z-index:35;
+  position:relative!important;
+  z-index:90!important;
   display:flex!important;
   flex-direction:column!important;
   align-items:center!important;
   justify-content:center!important;
   flex:0 0 auto!important;
-  min-height:34px!important;
-  margin:7px 0 0!important;
+  min-height:38px!important;
+  margin:0!important;
   padding:0!important;
   overflow:visible!important;
   opacity:1!important;
@@ -1001,6 +1013,7 @@ a.forumtitle:hover{
   font-size:12px;
   line-height:1.05;
   text-align:center;
+  pointer-events:auto!important;
 }
 
 .categories-wrapper>.forabg:nth-of-type(5) .lastpost-infos,
@@ -1008,12 +1021,24 @@ a.forumtitle:hover{
 .categories-wrapper>.forabg:nth-of-type(7) .lastpost-infos,
 .category-card .lastpost-infos{
   display:flex!important;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:2px;
-  max-width:100%;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:2px!important;
+  max-width:100%!important;
   line-height:1.05;
+}
+
+.category-card .forum-content>.forum_lastpost .lastpost-topic-line{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  max-width:100%!important;
+}
+
+.category-card .forum-content>.forum_lastpost a{
+  pointer-events:auto!important;
 }
 
 /* ===================== RESPONSIVE ===================== */
@@ -1064,7 +1089,6 @@ a.forumtitle:hover{
    AVATAR FORUM — GRIS SI RIEN / COULEUR SI NOUVEAU MESSAGE
 ========================================================= */
 
-/* Reset : jamais de transparence sur l'avatar */
 .avatcat_icon,
 .avatcat_ava,
 .avatcat_ava_inside,
@@ -1073,30 +1097,25 @@ a.forumtitle:hover{
   opacity:1!important;
 }
 
-/* On neutralise le filtre de l'image elle-même */
 .avatcat_ava_inside img{
   filter:none!important;
 }
 
-/* Par défaut : avatar gris */
 .avatcat_icon .avatcat_ava{
   filter:grayscale(100%) contrast(90%) brightness(.82)!important;
   transition:filter .35s ease;
 }
 
-/* Pas de nouveau message : avatar gris */
 .avatcat_icon.no-new .avatcat_ava,
 .avatcat_icon[data-new-status="none"] .avatcat_ava{
   filter:grayscale(100%) contrast(90%) brightness(.82)!important;
 }
 
-/* Nouveau message : avatar couleur */
 .avatcat_icon.has-new .avatcat_ava,
 .avatcat_icon[data-new-status="new"] .avatcat_ava{
   filter:grayscale(0%) contrast(105%) brightness(1)!important;
 }
 
-/* Cercle normal */
 .avatcat_icon.no-new .avatcat_ava_inside,
 .avatcat_icon[data-new-status="none"] .avatcat_ava_inside{
   border-color:var(--idx-border-cyan-strong)!important;
@@ -1106,7 +1125,6 @@ a.forumtitle:hover{
     inset 0 0 10px rgba(36,228,255,.14)!important;
 }
 
-/* Cercle nouveau message */
 .avatcat_icon.has-new .avatcat_ava_inside,
 .avatcat_icon[data-new-status="new"] .avatcat_ava_inside{
   border-color:var(--idx-border-pink)!important;
@@ -1115,22 +1133,4 @@ a.forumtitle:hover{
     0 0 24px var(--idx-shadow-cyan),
     0 0 42px rgba(254,3,124,.22),
     inset 0 0 16px rgba(254,3,124,.22)!important;
-}
-/*--------------------------*/
-.category-card .forum-content{
-gap:7px!important;
-}
-.category-card .forum-content>.forum_lastpost{
-display:flex!important;
-position:relative!important;
-z-index:90!important;
-flex:0 0 auto!important;
-min-height:38px!important;
-margin:0!important;
-opacity:1!important;
-visibility:visible!important;
-overflow:visible!important;
-}
-.category-card .forum-content>.forum_lastpost:empty{
-display:none!important;
 }

@@ -479,7 +479,9 @@
 .field.promess.is-banner-promess,
 .field.promess.is-header-bg-promess{
   display:none!important;
-}/* =========================
+}
+
+/* =========================
    INFOS PROFIL
 ========================= */
 
@@ -1578,62 +1580,6 @@
 
 
 /* =========================
-   AWARDS — ZONE FA SANS DÉFILEMENT
-========================= */
-
-/* On garde la structure Forumactif dd_award pour éviter la double bulle,
-   mais on neutralise le bouton/mouvement de défilement natif. */
-.col-awards.promess .award_more,
-.col-awards.promess .award_more *,
-.award_more,
-.award_more *{
-  display:none!important;
-  visibility:hidden!important;
-  opacity:0!important;
-  pointer-events:none!important;
-}
-
-.col-awards.promess,
-.postprofile-awards.promess,
-.postprofile-awards.promess.dd_award{
-  overflow:visible!important;
-}
-
-.postprofile-awards.promess.dd_award{
-  position:relative!important;
-  display:flex!important;
-  flex-wrap:wrap!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:8px!important;
-  width:100%!important;
-  min-height:100%!important;
-  max-height:none!important;
-  height:auto!important;
-  padding:0!important;
-  margin:0!important;
-  transform:none!important;
-  top:auto!important;
-  left:auto!important;
-  right:auto!important;
-  bottom:auto!important;
-}
-
-.postprofile-awards.promess.dd_award .award,
-.postprofile-awards.promess.dd_award div.award{
-  position:relative!important;
-  top:auto!important;
-  left:auto!important;
-  right:auto!important;
-  bottom:auto!important;
-  transform:none;
-}
-
-.postprofile-awards.promess.dd_award .award:hover,
-.postprofile-awards.promess.dd_award div.award:hover{
-  transform:scale(1.08)!important;
-}
-/* =========================
    AWARDS — ZONE PLEINE + SCROLL
 ========================= */
 
@@ -1980,6 +1926,26 @@
   max-height:15px!important;
   border-radius:0!important;
 }
-.postprofile-info.promess .field.promess.is-contact-promess{
-	display:none!important;
+
+/* =========================
+   FIX FINAL — HERO CONTACTS / CHAMPS TECHNIQUES
+========================= */
+
+.postprofile-info.promess .field.promess.is-contact-promess,
+.postprofile-info.promess .field.promess.is-banner-promess,
+.postprofile-info.promess .field.promess.is-header-bg-promess{
+  display:none!important;
+}
+
+.promess-contact-buttons.promess .promess-contact-field img{
+  display:none!important;
+}
+
+.promess-hero-media.promess img.promess-hero-thumb.promess{
+  width:180px!important;
+  height:180px!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
 }

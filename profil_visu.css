@@ -1006,3 +1006,108 @@
     max-width:100%!important;
   }
 }
+/* =========================================================
+   PATCH FINAL PROFIL — SUPPRESSION DOUBLE PSEUDO + GROUPES NATIFS
+========================================================= */
+
+/* supprime le deuxième pseudo / bandeau identité */
+.vp-identity,
+.vp-kicker,
+.vp-rank{
+  display:none!important;
+}
+
+/* enlève l'espace qui venait du bloc identité */
+.profile-content.vp-content{
+  gap:16px!important;
+}
+
+/* le premier bloc profil remonte proprement */
+.vp-profile-box{
+  margin-top:0!important;
+}
+
+/* =========================================================
+   GROUPES — RESTAURATION COULEURS NATIVES FORUMACTIF
+========================================================= */
+
+/* le conteneur ne doit pas imposer de couleur */
+.profile-value.profile-groups,
+.profile-sidebar .profile-value.profile-groups{
+  color:unset!important;
+}
+
+/* organisation des groupes */
+.profile-groups{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:5px 7px!important;
+  text-align:center!important;
+}
+
+/* chaque div natif Forumactif garde son ID couleur */
+.profile-groups [id$="-name"],
+.profile-groups .vp-group-native{
+  display:inline!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  line-height:1.15!important;
+}
+
+/* le lien hérite de la couleur native du div #gX-name */
+.profile-groups [id$="-name"] a,
+.profile-groups .vp-group-native a,
+.profile-sidebar .profile-groups [id$="-name"] a,
+.profile-sidebar .profile-groups .vp-group-native a{
+  display:inline!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  font-family:"Barlow Condensed",Arial,sans-serif!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  line-height:1.15!important;
+  letter-spacing:.7px!important;
+  text-transform:uppercase!important;
+  text-decoration:none!important;
+  text-align:center!important;
+  white-space:normal!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  color:currentColor!important;
+  text-shadow:none!important;
+}
+
+/* si Forumactif met la couleur directement sur le lien ou span interne */
+.profile-groups [id$="-name"] a span,
+.profile-groups .vp-group-native a span{
+  color:inherit!important;
+}
+
+/* hover sans changer la couleur */
+.profile-groups [id$="-name"] a:hover,
+.profile-groups .vp-group-native a:hover{
+  filter:brightness(1.25);
+  text-shadow:0 0 7px currentColor!important;
+}
+
+/* neutralise les anciennes règles rose/cyan sur les groupes uniquement */
+.profile-groups a:hover{
+  color:currentColor!important;
+  border-color:transparent!important;
+  background:transparent!important;
+}

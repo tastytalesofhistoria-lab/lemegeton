@@ -1111,3 +1111,29 @@
   border-color:transparent!important;
   background:transparent!important;
 }
+
+
+
+
+
+/* =========================================================
+   PROFIL UNIQUEMENT — IMAGE "TON MONDE" MAX 110PX
+========================================================= */
+
+.profile-modern .vp-profile-field[data-vp-field="ton-monde"] .profile-value img,
+.profile-modern .vp-profile-field[data-vp-field="ton-monde-"] .profile-value img{
+  display:block!important;
+  width:auto!important;
+  max-width:110px!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  margin:0!important;
+  border-radius:10px!important;
+}
+
+/* optionnel : évite que le champ fasse une énorme hauteur à cause de l'image */
+.profile-modern .vp-profile-field[data-vp-field="ton-monde"],
+.profile-modern .vp-profile-field[data-vp-field="ton-monde-"]{
+  align-items:start!important;
+}

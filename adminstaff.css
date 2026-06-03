@@ -1922,74 +1922,86 @@
 
 /* ===================== COULEURS PAR GROUPE ===================== */
 
-.grpm-hellborn{
-  --grp:var(--grpm-hellborn);
-  --grp-rgb:167,255,63;
+/* ===================== COULEURS PAR GROUPE ===================== */
+
+.grpm-deadly-sin{
+  --grp:#C800FF;
+  --grp-rgb:200,0,255;
 }
 
-.grpm-sinner{
-  --grp:var(--grpm-sinner);
-  --grp-rgb:255,142,175;
+.grpm-goetia{
+  --grp:#87085F;
+  --grp-rgb:135,8,95;
 }
 
 .grpm-overlord{
-  --grp:var(--grpm-overlord);
-  --grp-rgb:214,64,102;
+  --grp:#9F2219;
+  --grp-rgb:159,34,25;
 }
 
-.grpm-deadly-sin{
-  --grp:var(--grpm-deadly-sin);
-  --grp-rgb:184,140,255;
+.grpm-hellborn{
+  --grp:#F27B73;
+  --grp-rgb:242,123,115;
 }
 
-.grpm-fallen{
-  --grp:var(--grpm-fallen);
-  --grp-rgb:154,163,173;
-}
-
-.grpm-heavenborn{
-  --grp:var(--grpm-heavenborn);
-  --grp-rgb:216,247,255;
-}
-
-.grpm-winner{
-  --grp:var(--grpm-winner);
-  --grp-rgb:255,211,110;
+.grpm-sinner{
+  --grp:#D0483E;
+  --grp-rgb:208,72,62;
 }
 
 .grpm-vertue{
-  --grp:var(--grpm-vertue);
-  --grp-rgb:140,236,255;
+  --grp:#D2AA19;
+  --grp-rgb:210,170,25;
 }
 
 .grpm-seraphin{
-  --grp:var(--grpm-seraphin);
-  --grp-rgb:199,125,255;
+  --grp:#E0AC3E;
+  --grp-rgb:224,172,62;
+}
+
+.grpm-winner{
+  --grp:#F0EEB7;
+  --grp-rgb:240,238,183;
+}
+
+.grpm-heavenborn{
+  --grp:#DFC568;
+  --grp-rgb:223,197,104;
+}
+
+.grpm-fallen{
+  --grp:#E7936E;
+  --grp-rgb:231,147,110;
 }
 
 .grpm-lamb{
-  --grp:var(--grpm-lamb);
-  --grp-rgb:255,201,130;
-}
-
-.grpm-humain-innocent{
-  --grp:var(--grpm-humain-innocent);
-  --grp-rgb:31,91,67;
-}
-
-.grpm-humain-initie{
-  --grp:var(--grpm-humain-initie);
-  --grp-rgb:31,156,138;
-}
-
-.grpm-creature{
-  --grp:var(--grpm-creature);
-  --grp-rgb:255,79,216;
+  --grp:#F9CDCD;
+  --grp-rgb:249,205,205;
 }
 
 .grpm-fausse-divinite{
-  --grp:var(--grpm-fausse-divinite);
-  --grp-rgb:255,127,110;
+  --grp:#691986;
+  --grp-rgb:105,25,134;
+}
+
+.grpm-creature{
+  --grp:#B84778;
+  --grp-rgb:184,71,120;
+}
+
+.grpm-archange{
+  --grp:#FFFFFF;
+  --grp-rgb:255,255,255;
+}
+
+.grpm-humain-initie{
+  --grp:#65B13E;
+  --grp-rgb:101,177,62;
+}
+
+.grpm-humain-innocent{
+  --grp:#A4F0A3;
+  --grp-rgb:164,240,163;
 }
 
 .grpm-footer{

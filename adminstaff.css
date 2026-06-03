@@ -1,7 +1,499 @@
  
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800;900&family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&family=Rajdhani:wght@400;500;600;700;800&family=Monoton&display=swap');
 
+/* =========================================================
+   FICHE PRESENTATION COMPLETE — LEMEGETON
+========================================================= */
+
+.GroupPres,
+.GroupPres *{
+  box-sizing:border-box;
+}
+
+.GroupPres{
+  width:900px;
+  max-width:100%;
+  margin:30px auto;
+  padding:22px;
+  position:relative;
+  overflow:hidden;
+  color:var(--lem-text,#b9cce8);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:15px;
+  font-weight:600;
+  line-height:1.62;
+  border:1px solid var(--lem-line,rgba(36,228,255,.26));
+  border-radius:24px;
+  background:radial-gradient(circle at 10% 0%,rgba(36,228,255,.16),transparent 34%),radial-gradient(circle at 92% 6%,rgba(254,3,124,.14),transparent 32%),radial-gradient(circle at 50% 100%,rgba(184,140,255,.13),transparent 42%),linear-gradient(180deg,var(--lem-bg,#0a122d) 0%,var(--lem-bg-deep,#070b18) 100%);
+  box-shadow:0 28px 70px rgba(0,0,0,.50),0 0 24px rgba(36,228,255,.14),inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+.GroupPres:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.18;
+  background-image:radial-gradient(circle,rgba(140,236,255,.75) 1px,transparent 1.4px),linear-gradient(135deg,transparent 0 48%,rgba(255,79,134,.10) 49% 51%,transparent 52% 100%);
+  background-size:18px 18px,58px 58px;
+}
+
+.GroupPres:after{
+  content:"PROFILE";
+  position:absolute;
+  right:12px;
+  bottom:-10px;
+  z-index:0;
+  color:rgba(255,255,255,.030);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:92px;
+  line-height:1;
+  letter-spacing:2px;
+  pointer-events:none;
+}
+
+.GroupPres > *{
+  position:relative;
+  z-index:1;
+}
+
+/* =========================
+   ENTETE
+========================= */
+
+.BckPres{
+  display:grid;
+  grid-template-columns:170px minmax(0,1fr);
+  gap:18px;
+  align-items:stretch;
+  margin:0 0 20px;
+  padding:16px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(140,236,255,.30);
+  border-radius:20px;
+  background:linear-gradient(90deg,rgba(5,8,22,.94),rgba(24,18,55,.72)),radial-gradient(circle at 14% 0%,rgba(36,228,255,.20),transparent 38%),radial-gradient(circle at 88% 18%,rgba(254,3,124,.22),transparent 36%);
+  box-shadow:inset 0 0 48px rgba(5,10,25,.78),0 14px 32px rgba(0,0,0,.30);
+}
+
+.BckPres:before{
+  content:"IDENTITY";
+  position:absolute;
+  right:20px;
+  bottom:8px;
+  color:rgba(255,255,255,.045);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:48px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  pointer-events:none;
+}
+
+.Presimg{
+  width:170px;
+  height:260px;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  border:1px solid rgba(140,236,255,.36);
+  border-radius:18px;
+  background:rgba(7,11,24,.72);
+  filter:saturate(1.08) contrast(1.05);
+  box-shadow:0 0 22px rgba(36,228,255,.18),inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+.NmPres{
+  min-width:0;
+  min-height:260px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:26px 24px;
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.045);
+  border-radius:18px;
+  background:radial-gradient(circle at 50% 0%,rgba(36,228,255,.14),transparent 42%),rgba(7,11,24,.48);
+  color:var(--lem-cyan-soft,#8cecff);
+  font-family:"Monoton",Arial,sans-serif;
+  font-size:clamp(46px,7vw,82px);
+  font-weight:400;
+  line-height:.88;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-shadow:0 0 6px rgba(140,236,255,.85),0 0 18px rgba(36,228,255,.58),0 0 34px rgba(36,228,255,.30),3px 3px 0 rgba(254,3,124,.86),-2px -2px 0 rgba(184,140,255,.34);
+}
+
+.FtPres{
+  display:block;
+  margin:13px 0 0;
+  color:var(--lem-gold,#e4d3b4);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.2;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  text-shadow:0 0 12px rgba(228,211,180,.28);
+}
+
+.TWPres{
+  max-height:74px;
+  overflow:auto;
+  margin:16px 0 0;
+  padding:12px 14px;
+  border:1px solid rgba(255,79,134,.25);
+  border-left:4px solid var(--lem-pink,#fe037c);
+  border-radius:14px;
+  background:linear-gradient(90deg,rgba(254,3,124,.14),rgba(36,228,255,.05)),rgba(255,255,255,.025);
+  color:var(--lem-white,#d8ecff);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.35;
+  text-transform:none;
+  letter-spacing:.4px;
+  text-shadow:none;
+}
+
+/* =========================
+   CORPS / COLONNES
+========================= */
+
+.CrpsPres{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);
+  gap:18px;
+  align-items:start;
+}
+
+.LftPres,
+.RghtPres,
+.IntrPres{
+  min-width:0;
+}
+
+.LftPres,
+.IntrPres{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+/* =========================
+   BLOCS COMMUNS
+========================= */
+
+.InfPres,
+.AnCarPres,
+.HistPres,
+.PvrNvtr{
+  position:relative;
+  overflow:hidden;
+  padding:16px;
+  border:1px solid rgba(140,236,255,.18);
+  border-left:4px solid var(--bloc-color,var(--lem-pink,#fe037c));
+  border-radius:17px;
+  background:linear-gradient(90deg,rgba(254,3,124,.10),rgba(36,228,255,.04)),rgba(255,255,255,.025);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 12px 28px rgba(0,0,0,.22),0 0 18px rgba(254,3,124,.08);
+}
+
+.InfPres:nth-child(even),
+.AnCarPres:nth-child(even),
+.HistPres{
+  --bloc-color:var(--lem-cyan,#24e4ff);
+  background:linear-gradient(90deg,rgba(36,228,255,.08),rgba(184,140,255,.06)),rgba(255,255,255,.025);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 12px 28px rgba(0,0,0,.22),0 0 18px rgba(36,228,255,.08);
+}
+
+.Cred{
+  --bloc-color:var(--lem-gold,#e4d3b4);
+  background:linear-gradient(90deg,rgba(228,211,180,.12),rgba(36,228,255,.04)),rgba(255,255,255,.025);
+}
+
+/* =========================
+   TITRES
+========================= */
+
+.Titr{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:0 0 12px;
+  color:var(--lem-cyan-soft,#8cecff);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:30px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  text-shadow:0 0 10px rgba(36,228,255,.42),2px 2px 0 rgba(254,3,124,.48);
+}
+
+.Titr:before,
+.Titr:after{
+  content:"✦";
+  color:var(--bloc-color,var(--lem-pink-soft,#ff4f86));
+  font-size:14px;
+  text-shadow:0 0 10px currentColor;
+}
+
+/* =========================
+   CONTENUS
+========================= */
+
+.InfPres span,
+.AnCarPres span,
+.HistPres span,
+.PvrNvtr span{
+  display:block;
+  min-width:0;
+  padding:14px 16px;
+  border:1px solid rgba(255,255,255,.045);
+  border-radius:14px;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.018)),rgba(7,11,24,.44);
+  color:var(--lem-text,#b9cce8);
+  font-size:15px;
+  font-weight:600;
+  line-height:1.62;
+  text-align:justify;
+  white-space:pre-line;
+  overflow-wrap:break-word;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+/* =========================
+   HAUTEURS / SCROLLS
+========================= */
+
+.LftPres .InfPres:nth-child(2) span{
+  max-height:390px;
+  overflow:auto;
+  padding-right:18px;
+}
+
+.AnCarPres span{
+  max-height:265px;
+  overflow:auto;
+  padding-right:18px;
+}
+
+.HistPres span{
+  max-height:230px;
+  overflow:auto;
+  padding-right:18px;
+}
+
+/* =========================
+   SECTION BASSE
+========================= */
+
+.BottJour{
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin:18px 0 0;
+}
+
+.PvrNvtr{
+  display:flex;
+  flex-direction:column-reverse;
+  gap:12px;
+  --bloc-color:var(--lem-purple,#b88cff);
+  background:linear-gradient(90deg,rgba(184,140,255,.12),rgba(36,228,255,.05)),rgba(255,255,255,.025);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 12px 28px rgba(0,0,0,.22),0 0 18px rgba(184,140,255,.08);
+}
+
+.PvrNvtr:nth-child(2){
+  --bloc-color:var(--lem-gold,#e4d3b4);
+  background:linear-gradient(90deg,rgba(228,211,180,.12),rgba(254,3,124,.05)),rgba(255,255,255,.025);
+}
+
+.PvrNvtr .Titr{
+  margin:0;
+  justify-content:center;
+  text-align:center;
+}
+
+.PvrNvtr span{
+  min-height:190px;
+  max-height:240px;
+  overflow:auto;
+  padding-right:18px;
+}
+
+/* =========================
+   BALISES CUSTOM
+========================= */
+
+sp{
+  display:inline-block;
+  margin:4px 6px 2px 0;
+  color:var(--lem-white,#d8ecff);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:16px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  text-shadow:0 0 10px rgba(36,228,255,.24);
+}
+
+gg{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:42px;
+  min-height:24px;
+  margin:3px 6px 3px 0;
+  padding:5px 9px;
+  border:1px solid rgba(140,236,255,.24);
+  border-left:3px solid var(--lem-pink,#fe037c);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+  color:var(--lem-white,#d8ecff);
+  font-family:"Rajdhani",Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+anot1,
+anot2{
+  display:inline-block;
+  margin:3px 2px;
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+anot1{
+  border:1px solid rgba(36,228,255,.30);
+  background:rgba(36,228,255,.10);
+  color:var(--lem-cyan-soft,#8cecff);
+  box-shadow:0 0 10px rgba(36,228,255,.10);
+}
+
+anot2{
+  border:1px solid rgba(254,3,124,.30);
+  background:rgba(254,3,124,.10);
+  color:var(--lem-pink-soft,#ff4f86);
+  box-shadow:0 0 10px rgba(254,3,124,.10);
+}
+
+center{
+  display:block;
+  margin:0 0 12px;
+  text-align:center;
+}
+
+/* =========================
+   TEXTE / LIENS
+========================= */
+
+.GroupPres b,
+.GroupPres strong{
+  color:var(--lem-white,#d8ecff);
+  font-weight:900;
+  text-shadow:0 0 10px rgba(36,228,255,.22);
+}
+
+.GroupPres i,
+.GroupPres em{
+  color:var(--lem-pink-soft,#ff4f86);
+  font-weight:700;
+}
+
+.GroupPres a{
+  color:var(--lem-cyan-soft,#8cecff);
+  font-weight:800;
+  text-decoration:none;
+  border-bottom:1px solid rgba(140,236,255,.42);
+  transition:.2s ease;
+}
+
+.GroupPres a:hover{
+  color:var(--lem-pink-soft,#ff4f86);
+  border-bottom-color:var(--lem-pink,#fe037c);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:820px){
+  .GroupPres{
+    padding:16px;
+  }
+
+  .BckPres{
+    grid-template-columns:130px minmax(0,1fr);
+    gap:14px;
+    padding:13px;
+  }
+
+  .Presimg{
+    width:130px;
+    height:210px;
+  }
+
+  .NmPres{
+    min-height:210px;
+    padding:20px;
+    font-size:44px;
+  }
+
+  .CrpsPres,
+  .BottJour{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:560px){
+  .BckPres{
+    grid-template-columns:1fr;
+  }
+
+  .Presimg{
+    width:100%;
+    height:240px;
+  }
+
+  .NmPres{
+    min-height:auto;
+    font-size:38px;
+    text-align:center;
+  }
+
+  .FtPres{
+    font-size:12px;
+  }
+
+  .Titr{
+    font-size:25px;
+  }
+
+  .InfPres span,
+  .AnCarPres span,
+  .HistPres span,
+  .PvrNvtr span{
+    padding:12px;
+    text-align:left;
+  }
+}
 
 /* =========================================================
    GÉNÉRATEUR SCÉNARIO — INTERFACE

@@ -1,240 +1,235 @@
 /* =========================================================
-   LEMEGETON — PAGE RECHERCHE / RESULTATS SUJETS
-   Cible réelle Forumactif ModernBB
+   LEMEGETON — RECHERCHE SUJETS / TOPICSLIST
    ========================================================= */
 
-#main-content>.container:has(form[action^="/search"]),
-#main-content>.container:has(form[action*="search_id"]){
-  max-width:1100px;
-  margin:0 auto;
-  padding:38px 24px 70px;
-}
-
-#main-content>.container:has(form[action^="/search"]) .page-title,
-#main-content>.container:has(form[action*="search_id"]) .page-title{
-  margin:0 0 30px;
-  font-family:Monoton,Arial,sans-serif;
-  font-size:clamp(34px,4vw,58px);
-  font-weight:400;
-  letter-spacing:2px;
-  color:#8cecff;
-  text-shadow:0 0 12px rgba(25,217,255,.75),0 0 28px rgba(255,79,124,.28);
-}
-
-#main-content>.container:has(form[action^="/search"]) .topicslist_row,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_row{
-  position:relative;
+.topicslist_row{
+  position:relative!important;
   display:grid!important;
-  grid-template-columns:92px minmax(0,1fr) 135px 230px;
-  gap:16px;
-  align-items:stretch;
+  grid-template-columns:110px minmax(0,1fr) 120px 220px!important;
+  gap:16px!important;
+  align-items:stretch!important;
+  width:100%!important;
   margin:0 0 18px!important;
   padding:14px!important;
-  border:1px solid rgba(25,217,255,.36)!important;
-  border-radius:18px;
+  border:1px solid rgba(25,217,255,.35)!important;
+  border-radius:18px!important;
   background:
-    linear-gradient(135deg,rgba(25,217,255,.16),rgba(255,79,124,.14)),
+    linear-gradient(135deg,rgba(25,217,255,.18),rgba(255,79,124,.14)),
     rgba(10,18,45,.88)!important;
-  box-shadow:0 0 22px rgba(25,217,255,.14),inset 0 0 22px rgba(255,255,255,.03);
-  overflow:hidden;
+  box-shadow:
+    0 0 24px rgba(25,217,255,.15),
+    inset 0 0 22px rgba(255,255,255,.035)!important;
+  overflow:hidden!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist_row:before,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_row:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:linear-gradient(90deg,rgba(25,217,255,.16),transparent 42%,rgba(255,79,124,.15));
-  opacity:.75;
+.topicslist_row:before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  pointer-events:none!important;
+  background:linear-gradient(90deg,rgba(25,217,255,.12),transparent 45%,rgba(255,79,124,.12))!important;
+  opacity:.8!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist_row>*,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_row>*{
-  position:relative;
-  z-index:1;
+.topicslist_row>*{
+  position:relative!important;
+  z-index:1!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist-img,
-#main-content>.container:has(form[action*="search_id"]) .topicslist-img{
-  width:92px!important;
-  min-height:92px!important;
-  border-radius:16px;
-  border:1px solid rgba(140,236,255,.38);
+/* Image sujet */
+.topicslist-img{
+  width:110px!important;
+  min-height:110px!important;
+  height:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:16px!important;
+  border:1px solid rgba(140,236,255,.45)!important;
   background:
-    radial-gradient(circle at 50% 38%,rgba(25,217,255,.34),transparent 48%),
-    rgba(5,8,25,.72);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+    radial-gradient(circle at 50% 40%,rgba(25,217,255,.3),transparent 48%),
+    rgba(5,8,25,.75)!important;
+  overflow:hidden!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist-img img,
-#main-content>.container:has(form[action*="search_id"]) .topicslist-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.topicslist-img img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  display:block!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist_infos,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_infos{
-  min-width:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:6px;
-  padding:12px 14px!important;
-  border-radius:15px;
-  background:rgba(5,8,25,.35)!important;
+/* Infos sujet */
+.topicslist_infos{
+  min-width:0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  gap:6px!important;
+  padding:14px 16px!important;
+  border-radius:15px!important;
+  background:rgba(5,8,25,.36)!important;
+  font-family:Rajdhani,Arial,sans-serif!important;
+  color:#c8efff!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist_infos a,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_infos a{
-  text-decoration:none;
+.topicslist_infos br{
+  display:none!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist_infos>a:first-child,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_infos>a:first-child,
-#main-content>.container:has(form[action^="/search"]) .topicslist_infos .topictitle,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_infos .topictitle{
-  display:block;
-  margin:0 0 4px;
-  font-family:Rajdhani,Arial,sans-serif;
-  font-size:24px;
-  line-height:1.05;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.8px;
+.topicslist_infos a{
+  text-decoration:none!important;
+}
+
+.topicslist_infos>a:first-child,
+.topicslist_infos .topictitle{
+  display:block!important;
+  margin:0 0 4px!important;
+  font-family:Rajdhani,Arial,sans-serif!important;
+  font-size:24px!important;
+  line-height:1.05!important;
+  font-weight:800!important;
+  text-transform:uppercase!important;
+  letter-spacing:.8px!important;
   color:#ecfbff!important;
-  text-shadow:0 0 9px rgba(25,217,255,.48);
+  text-shadow:0 0 10px rgba(25,217,255,.5)!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist_infos>a:first-child:hover,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_infos>a:first-child:hover{
+.topicslist_infos>a:first-child:hover,
+.topicslist_infos .topictitle:hover{
   color:#8cecff!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist_infos br,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_infos br{
-  display:none;
+.topicslist_infos,
+.topicslist_infos span,
+.topicslist_infos div{
+  font-size:15px!important;
+  line-height:1.25!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist_infos,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_infos,
-#main-content>.container:has(form[action^="/search"]) .topicslist_infos span,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_infos span{
-  font-family:Rajdhani,Arial,sans-serif;
-  font-size:15px;
-  color:#b9ecff;
+/* NE PAS casser les couleurs natives Forumactif des pseudos */
+.topicslist_infos a[href^="/u"],
+.topicslist-lastpost a[href^="/u"]{
+  font-weight:800!important;
+  color:inherit;
+  text-shadow:none!important;
 }
 
-/* On ne force PAS les couleurs de pseudos */
-#main-content>.container:has(form[action^="/search"]) .topicslist_infos a[href^="/u"],
-#main-content>.container:has(form[action*="search_id"]) .topicslist_infos a[href^="/u"],
-#main-content>.container:has(form[action^="/search"]) .topicslist-lastpost a[href^="/u"],
-#main-content>.container:has(form[action*="search_id"]) .topicslist-lastpost a[href^="/u"]{
-  font-weight:800;
-  text-shadow:none;
-}
-
-#main-content>.container:has(form[action^="/search"]) .topicslist-stats,
-#main-content>.container:has(form[action*="search_id"]) .topicslist-stats{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:7px;
+/* Stats */
+.topicslist-stats{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
   padding:12px!important;
-  border-radius:15px;
+  border-radius:15px!important;
+  border:1px solid rgba(140,236,255,.18)!important;
   background:rgba(10,18,45,.74)!important;
-  border:1px solid rgba(255,255,255,.08);
-  font-family:Rajdhani,Arial,sans-serif;
-  font-size:17px;
-  line-height:1.1;
-  color:#c8efff;
-  text-align:center;
+  font-family:Rajdhani,Arial,sans-serif!important;
+  font-size:17px!important;
+  line-height:1.1!important;
+  text-align:center!important;
+  color:#c8efff!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist-lastpost,
-#main-content>.container:has(form[action*="search_id"]) .topicslist-lastpost{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:6px;
+.topicslist-stats strong,
+.topicslist-stats b{
+  display:block!important;
+  font-size:22px!important;
+  color:#8cecff!important;
+  text-shadow:0 0 8px rgba(25,217,255,.55)!important;
+}
+
+/* Dernier message */
+.topicslist-lastpost{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  gap:6px!important;
   padding:12px 14px!important;
-  border-radius:15px;
-  background:linear-gradient(135deg,rgba(255,79,124,.17),rgba(25,217,255,.09))!important;
-  border:1px solid rgba(255,79,124,.28);
-  font-family:Rajdhani,Arial,sans-serif;
-  font-size:16px;
-  line-height:1.15;
-  color:#c8efff;
+  border-radius:15px!important;
+  border:1px solid rgba(255,79,124,.3)!important;
+  background:linear-gradient(135deg,rgba(255,79,124,.18),rgba(25,217,255,.09))!important;
+  font-family:Rajdhani,Arial,sans-serif!important;
+  font-size:16px!important;
+  line-height:1.15!important;
+  color:#c8efff!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist-lastpost:before,
-#main-content>.container:has(form[action*="search_id"]) .topicslist-lastpost:before{
-  content:"Dernier message";
-  display:block;
-  width:max-content;
-  max-width:100%;
-  margin:0 0 3px;
-  padding:3px 8px;
-  border-radius:999px;
-  background:rgba(25,217,255,.16);
-  border:1px solid rgba(25,217,255,.28);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  color:#8cecff;
+.topicslist-lastpost:before{
+  content:"Dernier message"!important;
+  display:block!important;
+  width:max-content!important;
+  max-width:100%!important;
+  margin:0 0 4px!important;
+  padding:3px 8px!important;
+  border-radius:999px!important;
+  border:1px solid rgba(25,217,255,.3)!important;
+  background:rgba(25,217,255,.16)!important;
+  font-size:11px!important;
+  font-weight:800!important;
+  letter-spacing:1px!important;
+  text-transform:uppercase!important;
+  color:#8cecff!important;
 }
 
-#main-content>.container:has(form[action^="/search"]) .topicslist_row:hover,
-#main-content>.container:has(form[action*="search_id"]) .topicslist_row:hover{
-  transform:translateY(-2px);
+.topicslist-lastpost a{
+  text-decoration:none!important;
+  font-weight:800!important;
+}
+
+/* Hover carte */
+.topicslist_row:hover{
+  transform:translateY(-2px)!important;
   border-color:rgba(140,236,255,.65)!important;
-  box-shadow:0 0 28px rgba(25,217,255,.2),0 0 22px rgba(255,79,124,.12);
+  box-shadow:
+    0 0 30px rgba(25,217,255,.22),
+    0 0 22px rgba(255,79,124,.13)!important;
 }
 
+/* Titre de page recherche */
+.page-title{
+  margin:0 0 30px!important;
+  font-family:Monoton,Arial,sans-serif!important;
+  font-size:clamp(34px,4vw,58px)!important;
+  font-weight:400!important;
+  letter-spacing:2px!important;
+  color:#8cecff!important;
+  text-shadow:
+    0 0 12px rgba(25,217,255,.75),
+    0 0 28px rgba(255,79,124,.28)!important;
+}
+
+/* Responsive */
 @media(max-width:900px){
-  #main-content>.container:has(form[action^="/search"]) .topicslist_row,
-  #main-content>.container:has(form[action*="search_id"]) .topicslist_row{
-    grid-template-columns:78px minmax(0,1fr);
+  .topicslist_row{
+    grid-template-columns:90px minmax(0,1fr)!important;
   }
 
-  #main-content>.container:has(form[action^="/search"]) .topicslist-img,
-  #main-content>.container:has(form[action*="search_id"]) .topicslist-img{
-    width:78px!important;
-    min-height:78px!important;
+  .topicslist-img{
+    width:90px!important;
+    min-height:90px!important;
   }
 
-  #main-content>.container:has(form[action^="/search"]) .topicslist-stats,
-  #main-content>.container:has(form[action*="search_id"]) .topicslist-stats,
-  #main-content>.container:has(form[action^="/search"]) .topicslist-lastpost,
-  #main-content>.container:has(form[action*="search_id"]) .topicslist-lastpost{
-    grid-column:1/-1;
+  .topicslist-stats,
+  .topicslist-lastpost{
+    grid-column:1/-1!important;
   }
 }
 
 @media(max-width:560px){
-  #main-content>.container:has(form[action^="/search"]),
-  #main-content>.container:has(form[action*="search_id"]){
-    padding:26px 10px 45px;
+  .topicslist_row{
+    grid-template-columns:1fr!important;
   }
 
-  #main-content>.container:has(form[action^="/search"]) .topicslist_row,
-  #main-content>.container:has(form[action*="search_id"]) .topicslist_row{
-    grid-template-columns:1fr;
+  .topicslist-img{
+    display:none!important;
   }
 
-  #main-content>.container:has(form[action^="/search"]) .topicslist-img,
-  #main-content>.container:has(form[action*="search_id"]) .topicslist-img{
-    display:none;
-  }
-
-  #main-content>.container:has(form[action^="/search"]) .topicslist_infos>a:first-child,
-  #main-content>.container:has(form[action*="search_id"]) .topicslist_infos>a:first-child{
-    font-size:20px;
+  .topicslist_infos>a:first-child,
+  .topicslist_infos .topictitle{
+    font-size:20px!important;
   }
 }
 

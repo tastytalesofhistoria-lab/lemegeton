@@ -1116,3 +1116,21 @@ a.forumtitle:hover{
     0 0 42px rgba(254,3,124,.22),
     inset 0 0 16px rgba(254,3,124,.22)!important;
 }
+/*--------------------------*/
+.category-card .forum-content{
+gap:7px!important;
+}
+.category-card .forum-content>.forum_lastpost{
+display:flex!important;
+position:relative!important;
+z-index:90!important;
+flex:0 0 auto!important;
+min-height:38px!important;
+margin:0!important;
+opacity:1!important;
+visibility:visible!important;
+overflow:visible!important;
+}
+.category-card .forum-content>.forum_lastpost:empty{
+display:none!important;
+}

@@ -1137,3 +1137,68 @@
 .profile-modern .vp-profile-field[data-vp-field="ton-monde-"]{
   align-items:start!important;
 }
+
+/* =========================================================
+   GROUPES PROFIL — COULEUR NATIVE FORUMACTIF VIA SCRIPT
+========================================================= */
+
+.profile-groups,
+.profile-value.profile-groups,
+.profile-sidebar .profile-value.profile-groups{
+  color:inherit!important;
+}
+
+.profile-groups{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:5px 7px!important;
+  text-align:center!important;
+}
+
+.profile-groups [id$="-name"],
+.profile-groups .vp-group-native{
+  display:inline!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  line-height:1.15!important;
+}
+
+.profile-groups [id$="-name"] a,
+.profile-groups .vp-group-native a,
+.profile-sidebar .profile-groups [id$="-name"] a,
+.profile-sidebar .profile-groups .vp-group-native a{
+  display:inline!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  font-family:"Barlow Condensed",Arial,sans-serif!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  line-height:1.15!important;
+  letter-spacing:.7px!important;
+  text-transform:uppercase!important;
+  text-decoration:none!important;
+  text-align:center!important;
+  white-space:normal!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+}
+
+.profile-groups [id$="-name"] a:hover,
+.profile-groups .vp-group-native a:hover{
+  filter:brightness(1.25);
+}

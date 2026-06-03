@@ -1980,3 +1980,6 @@
   max-height:15px!important;
   border-radius:0!important;
 }
+.postprofile-info.promess .field.promess.is-contact-promess{
+	display:none!important;
+}
